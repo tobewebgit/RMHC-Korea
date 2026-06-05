@@ -17,5 +17,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- 모바일 GNB 인터랙션 추가 ---
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const mobileMenuPanel = document.querySelector('.mobile-menu-panel');
+  const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+  const mobileMenuClose = document.querySelector('.mobile-menu-close');
+  const mGnbTriggers = document.querySelectorAll('.m-gnb-trigger');
+
+  // 모바일 메뉴 열기/닫기 함수
+  const toggleMobileMenu = (isOpen) => {
+    const shouldOpen = typeof isOpen === 'boolean' ? isOpen : !mobileMenuPanel.classList.contains('active');
+    
+    if (shouldOpen) {
+      if (mobileMenuPanel) mobileMenuPanel.classList.add('active');
+      if (mobileMenuOverlay) mobileMenuOverlay.classList.add('active');
+      if (mobileNavToggle) mobileNavToggle.classList.add('active');
+      document.body.classList.add('menu-open');
+      if (mobileMenuPanel) mobileMenuPanel.setAttribute('aria-hidden', 'false');
+      if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'true');
+    } else {
+      if (mobileMenuPanel) mobileMenuPanel.classList.remove('active');
+      if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
+      if (mobileNavToggle) mobileNavToggle.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      if (mobileMenuPanel) mobileMenuPanel.setAttribute('aria-hidden', 'true');
+      if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'false');
+    }
+  };
+
+  // 이벤트 리스너 바인딩
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', () => toggleMobileMenu());
+  }
+
+  if (mobileMenuClose) {
+    mobileMenuClose.addEventListener('click', () => toggleMobileMenu(false));
+  }
+
+  if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', () => toggleMobileMenu(false));
+  }
+
+  // 모바일 2Depth 아코디언 메뉴 제어
+  mGnbTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      const parentLi = e.currentTarget.closest('.m-gnb-item');
+      if (!parentLi) return;
+
+      const isActive = parentLi.classList.contains('active');
+      
+      // 다른 열려있는 메뉴 닫기 (아코디언 동작)
+      const allSiblings = parentLi.parentNode.querySelectorAll('.m-gnb-item');
+      allSiblings.forEach(sibling => {
+        if (sibling !== parentLi) {
+          sibling.classList.remove('active');
+        }
+      });
+
+      // 현재 메뉴 토글
+      if (isActive) {
+        parentLi.classList.remove('active');
+      } else {
+        parentLi.classList.add('active');
+      }
+    });
+  });
+
   console.log('RMHC Portal template initialized successfully.');
 });
