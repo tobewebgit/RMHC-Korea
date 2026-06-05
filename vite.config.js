@@ -10,9 +10,10 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      // 루트 디렉토리 내의 모든 HTML 파일을 수집하여 빌드 대상으로 지정 (Multi-Page App 지원)
-      input: globSync('./*.html').reduce((acc, file) => {
-        const name = file.replace(/^\.\//, '').replace(/\.html$/, '');
+      // 프로젝트 내의 모든 HTML 파일(하위 폴더 포함)을 수집하여 빌드 대상으로 지정 (공통 인클루드 폴더는 제외)
+      input: globSync('./**/*.html', { ignore: ['node_modules/**', 'dist/**', 'src/includes/**'] }).reduce((acc, file) => {
+        // 상대 경로 정리 (예: ./login/find-id.html -> login/find-id)
+        const name = file.replace(/^\.\//, '').replace(/\.html$/, '').replace(/\\/g, '/');
         acc[name] = resolve(__dirname, file);
         return acc;
       }, {}),
