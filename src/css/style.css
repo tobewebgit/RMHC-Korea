@@ -940,6 +940,8 @@ button, input, select, textarea {
   justify-content: space-between;
   width: 100%;
   height: 100%;
+  padding-left: 2.5rem; /* 40px */
+  padding-right: 2.5rem; /* 40px */
 }
 
 .header__left-group {
