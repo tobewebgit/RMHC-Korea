@@ -8,7 +8,7 @@
 ## 🛠️ Build & Verification Commands
 - **로컬 개발 서버 구동**: `npm run dev` (기본 포트: 5173)
 - **정적 빌드 검증**: `npm run build`
-- **퍼블리싱 현황판**: `http://localhost:5173/harness.html` 접속
+- **퍼블리싱 현황판**: `http://localhost:5173/index_ia.html` 접속
 
 ---
 
