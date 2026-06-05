@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RMHC Portal 프로젝트 소개 및 아키텍처 안내 페이지입니다.">
+  <title>RMHC Portal - About</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+
+  <!-- 헤더 공통 영역 인클루드 -->
+  <load ="src/parts/header.html" />
+
+  <div class="page-wrapper">
+    <main class="hero-section">
+      <div class="badge">About Us</div>
+      <h1 class="hero-title">저희 <span>프로젝트</span>를 소개합니다</h1>
+      <p class="hero-desc">
+        이 페이지 역시 동일한 헤더와 푸터를 공유하고 있습니다. 공통 인클루드가 정상적으로 작동하여 여러 웹페이지 간 일관성 있는 디자인 레이아웃을 제공합니다.
+      </p>
+      <div class="hero-buttons">
+        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>프로젝트 목표</h3>
+          <p>프레임워크의 무거운 의존성 없이 순수 HTML, CSS, JS만으로 빠르고 가벼운 고성능 정적 웹을 개발하는 것입니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>유지 보수성</h3>
+          <p>공통 헤더나 푸터 수정 시, 해당 HTML 파일 조각 하나만 변경하면 전체 페이지에 즉시 자동 적용되므로 실수가 줄어듭니다.</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- 푸터 공통 영역 인클루드 -->
+    <load ="src/parts/footer.html" />
+  </div>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

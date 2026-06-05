@@ -1,0 +1,16 @@
+{
+  "name": "rmhc-front",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "glob": "^10.4.1",
+    "vite": "^5.2.11",
+    "vite-plugin-html-inject": "^1.1.2"
+  }
+}
