@@ -1,0 +1,334 @@
+/* ==========================================================================
+   index.css — 메인 페이지 전용 스타일 (style.css와 1:1 분리)
+   대상 파일: index.html
+   ========================================================================== */
+
+/* ==========================================================================
+   키비주얼 섹션 (KV Section)
+   구조: .kv-section (overflow:hidden → 하트 우측 잘림)
+        └─ .kv-section__inner
+             ├─ .kv-section__content (좌: 텍스트 및 소제목)
+             └─ .kv-section__heart-wrap (우: 피그마 실측 absolute 배치)
+                  └─ .kv-section__heart-svg (하트 클립 마스크 및 이미지)
+   ========================================================================== */
+.kv-section {
+  position: relative;
+  background-color: var(--kv-bg); /* 피그마: rgb(208,201,255) = #d0c9ff */
+  overflow: hidden; /* 하트 우측 잘림 핵심 */
+}
+
+.kv-section__inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 192rem; /* 피그마 캔버스 폭 1920px */
+  margin: 0 auto;
+  position: relative;
+  height: 97.8rem; /* 978px (피그마 KV 전체 1080 - GNB 헤더 100 = 978 잔여 = 2 보정) */
+}
+
+/* ── 좌측: 텍스트 영역 ── */
+/* 피그마 실측: text 프레임 w:1060 h:203, 내부 그룹 rel(150, 438) */
+.kv-section__content {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 106rem; /* 피그마: text 프레임 w:1060 */
+  max-width: 106rem;
+  padding-left: 15rem; /* 피그마: rel(150, 438) → left 150px */
+  padding-right: 0;
+}
+
+.kv-section__title {
+  font-family: "NanumSquare Neo", var(--font-sans);
+  font-size: 5.8rem; /* 58px */
+  font-weight: 800;
+  line-height: 1.3; /* 75.4px / 58px = 1.3 */
+  color: #000000;
+  word-break: keep-all;
+}
+
+.kv-section__desc {
+  margin-top: 2.4rem;
+  font-family: var(--font-sans);
+  font-size: 2.2rem; /* 22px */
+  font-weight: 400;
+  line-height: 1.3; /* 28.6px / 22px = 1.3 */
+  color: #000000;
+  word-break: keep-all;
+}
+
+/* ── 우측: 하트 래퍼 (피그마 실측 기반 absolute 배치) ── */
+/* 피그마 실측: 마스크 원본 w:1898.299 h:1653.096 */
+/* 클리핑 프레임 위치: rel(923, 102) — KV overflow:hidden으로 좌측 상단 ~25%만 노출 */
+.kv-section__heart-wrap {
+  position: absolute;
+  left: 92.3rem; /* 피그마: rel x:923 */
+  top: 0rem; /* 피그마: rel y:102 */
+  width: 189.83rem; /* 피그마 마스크 원본: w:1898.299 */
+  height: 165.31rem; /* 피그마 마스크 원본: h:1653.096 */
+  z-index: 1;
+  pointer-events: none;
+
+  /* CSS mask-image: 하트 형태 SVG를 Base64로 인코딩 */
+  mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9Jy00MiAtOTcgMTk0MSAxNzU3Jz48cGF0aCBkPSdNMTg5OC4zIDM5MS41NjZDMTg5OC4zOSA3NzkuNTU4IDE0MzIuMjcgMTM0Ni43MyAxMTA1LjQyIDE2MzNDMTA3OC41MiAxNjU2LjU3IDEwMzkuMzIgMTY1OS43NSAxMDA5LjAxIDE2NDAuNzNDNTY2LjcyNyAxMzYzLjMzIDI2NC4xMzUgMTE0My4yMyA4OS4wOTc3IDgxMC4wOTZDLTQxLjM0ODUgNTYxLjgzMSAtMzQuOTg1MSAyNDkuMTY3IDE1MS4wMDQgODkuNTg2N0MzNjguMTkgLTk2Ljc2NDIgNzUyLjc1OSAzNS40MDExIDk4MS4zMzIgMjMyLjQ4NEM5OTMuMDU5IDI0Mi41OTYgMTAxMC4zOCAyNDIuODM2IDEwMjIuMjUgMjMyLjg5N0MxMTMwLjIyIDE0Mi41MjcgMTM2OS43OCAwLjM4MjEzNSAxNTc0LjY0IDIuODgxNjRDMTc0Ny4xNyA0Ljk4NjkzIDE4OTguMjQgMTM0LjQxMiAxODk4LjMgMzkxLjU2NlonIGZpbGw9J2JsYWNrJy8+PC9zdmc+");
+  -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9Jy00MiAtOTcgMTk0MSAxNzU3Jz48cGF0aCBkPSdNMTg5OC4zIDM5MS41NjZDMTg5OC4zOSA3NzkuNTU4IDE0MzIuMjcgMTM0Ni43MyAxMTA1LjQyIDE2MzNDMTA3OC41MiAxNjU2LjU3IDEwMzkuMzIgMTY1OS43NSAxMDA5LjAxIDE2NDAuNzNDNTY2LjcyNyAxMzYzLjMzIDI2NC4xMzUgMTE0My4yMyA4OS4wOTc3IDgxMC4wOTZDLTQxLjM0ODUgNTYxLjgzMSAtMzQuOTg1MSAyNDkuMTY3IDE1MS4wMDQgODkuNTg2N0MzNjguMTkgLTk2Ljc2NDIgNzUyLjc1OSAzNS40MDExIDk4MS4zMzIgMjMyLjQ4NEM5OTMuMDU5IDI0Mi41OTYgMTAxMC4zOCAyNDIuODM2IDEwMjIuMjUgMjMyLjg5N0MxMTMwLjIyIDE0Mi41MjcgMTM2OS43OCAwLjM4MjEzNSAxNTc0LjY0IDIuODgxNjRDMTc0Ny4xNyA0Ljk4NjkzIDE4OTguMjQgMTM0LjQxMiAxODk4LjMgMzkxLjU2NlonIGZpbGw9J2JsYWNrJy8+PC9zdmc+");
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: left top;
+  -webkit-mask-position: left top;
+}
+
+/* ── 하트 내부 사진: 마스크 뚫린 부분 상단/좌측에 정확히 맞춤 ── */
+/* 피그마 오프셋: 이미지가 하트 대비 x:12 y:112 (rel(935,214) - rel(923,102)) */
+.kv-section__heart-img {
+  display: block;
+  position: absolute;
+  left: -24rem; /* 피그마: 하트 대비 x 오프셋 12px */
+  top: 9rem; /* 1.2rem에서 100px(10rem) 위로 올림 */
+  width: 146.67rem; /* 원본 비율(4096:2731) 기준, 높이 978 고정 시 너비 1466.7px */
+  height: 97.8rem; /* 978px */
+  transform: scale(0.85); /* 5% 축소 */
+  transform-origin: left top;
+}
+
+/* ==========================================================================
+   반응형: 태블릿 (≤ 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .kv-section__inner {
+    height: 60rem;
+  }
+
+  .kv-section__heart-wrap {
+    left: 42rem;
+    top: 4rem;
+    width: 65rem;
+    height: 64rem;
+  }
+
+  .kv-section__content {
+    flex: 0 0 50rem;
+    max-width: 50rem;
+    padding-left: 6rem;
+  }
+
+  .kv-section__title {
+    font-size: 3.6rem;
+  }
+}
+
+/* ==========================================================================
+   반응형: 모바일 (≤ 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .kv-section__inner {
+    flex-direction: column;
+    text-align: center;
+    min-height: auto;
+    padding-top: 4rem;
+    padding-bottom: 0;
+    gap: 3.2rem;
+  }
+
+  .kv-section__content {
+    flex: none;
+    max-width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    order: 1;
+  }
+
+  .kv-section__title {
+    font-size: 2.8rem;
+  }
+
+  .kv-section__desc {
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+  }
+
+  .kv-section__heart-wrap {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    aspect-ratio: 1941 / 1757; /* 하트 오리지널 비율 고정 */
+    flex: none;
+    order: 2;
+    overflow: hidden;
+  }
+}
+
+/* ==========================================================================
+   퀵 바 섹션 (Quick Bar Section)
+   ========================================================================== */
+.quick-bar {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 146rem; /* 1460px */
+  height: 12rem; /* 120px */
+  margin: 0 auto;
+  margin-top: -6rem; /* KV 하단에 60px 걸쳐 얹음 */
+  background-color: #db0007; /* 주조 레드 */
+  border-radius: 2rem;
+  box-shadow: 0 1rem 3rem rgba(219, 0, 7, 0.15);
+}
+
+.quick-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 4.8rem;
+}
+
+.quick-bar__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.quick-bar__symbol-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  height: 7rem;
+  background-color: #ffffff;
+  border-radius: 2.4rem;
+}
+
+.quick-bar__symbol {
+  width: 4.4rem;
+  height: 5.2rem;
+}
+
+.quick-bar__title {
+  font-family: "NanumSquare Neo", var(--font-sans);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.quick-bar__menu {
+  display: flex;
+  align-items: center;
+  gap: 5.4rem; /* 버튼 간격 54px */
+}
+
+.quick-bar__btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 1.2rem 1.6rem;
+  border-radius: 1.2rem;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.quick-bar__btn:hover {
+  transform: translateY(-0.3rem);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.quick-bar__btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.quick-bar__btn-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.quick-bar__btn-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #ffffff;
+}
+
+.quick-bar__btn-text {
+  font-family: var(--font-sans);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ── 태블릿 반응형 (≤ 1200px) ── */
+@media (max-width: 1200px) {
+  .quick-bar {
+    max-width: calc(100% - 8rem);
+    padding: 0;
+  }
+
+  .quick-bar__inner {
+    padding: 0 3.2rem;
+  }
+
+  .quick-bar__menu {
+    gap: 2.4rem;
+  }
+}
+
+/* ── 모바일 반응형 (≤ 768px) ── */
+@media (max-width: 768px) {
+  .quick-bar {
+    max-width: calc(100% - 4rem);
+    height: auto;
+    margin-top: -4rem; /* 모바일에서는 40px 정도 얹음 */
+    border-radius: 2.4rem;
+    padding: 3.2rem 2.4rem;
+  }
+
+  .quick-bar__inner {
+    flex-direction: column;
+    gap: 3.2rem;
+    padding: 0;
+  }
+
+  .quick-bar__title-wrap {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.6rem;
+  }
+
+  .quick-bar__title {
+    font-size: 2rem;
+  }
+
+  .quick-bar__menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    width: 100%;
+  }
+
+  .quick-bar__btn {
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 1.6rem 0; /* 터치 영역 48px 이상 확보 */
+    border-radius: 1.6rem;
+    width: 100%;
+  }
+
+  .quick-bar__btn:hover {
+    transform: none; /* 모바일 호버 효과 제거 */
+  }
+
+  .quick-bar__btn-text {
+    font-size: 1.8rem;
+  }
+}

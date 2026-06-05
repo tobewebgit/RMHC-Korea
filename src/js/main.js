@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
   // 현재 URL 경로 분석 및 네비게이션 링크 active 상태 동적 매칭
   const currentPath = window.location.pathname;
@@ -82,6 +84,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // --- Footer: Family site 커스텀 셀렉트 ---
+  const familySite = document.querySelector('.footer__family-site');
+  if (familySite) {
+    familySite.addEventListener('click', (e) => {
+      // 링크 클릭은 별도 처리
+      if (e.target.closest('.footer__family-site-list a')) return;
+      
+      const isOpen = familySite.getAttribute('aria-expanded') === 'true';
+      familySite.setAttribute('aria-expanded', !isOpen);
+    });
+
+    // 외부 클릭 시 닫기
+    document.addEventListener('click', (e) => {
+      if (!familySite.contains(e.target)) {
+        familySite.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+
+
 
   console.log('RMHC Portal template initialized successfully.');
 });

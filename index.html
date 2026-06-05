@@ -6,6 +6,7 @@
   <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 공식 홈페이지입니다. 중증 환아와 가족을 위한 사랑의 쉼터 패밀리하우스 건립 및 아동 복지 지원에 함께해주세요.">
   <title>한국로날드맥도날드하우스 - RMHC Korea</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/index.css">
 </head>
 <body>
 
@@ -17,7 +18,95 @@
 
   <div class="page-wrapper">
     <main id="main-content">
-      <!-- 본문 콘텐츠 영역 -->
+
+      <!-- ====================================================================
+           섹션 1: 키비주얼 (Key Visual)
+           ==================================================================== -->
+      <section class="kv-section" id="kv-section">
+        <div class="kv-section__inner">
+          <!-- 좌: 텍스트 영역 -->
+          <div class="kv-section__content">
+            <h1 class="kv-section__title">
+              아이의 곁을 지키는 따뜻한<br>
+              하루를 선물해 주세요
+            </h1>
+            <p class="kv-section__desc">
+              치료에 집중할 수 있도록, 가족이 함께 머물 수 있는 공간을 만들어갑니다
+            </p>
+          </div>
+
+          <!-- 우: 하트 이미지 영역 (CSS mask-image + img 태그 분리 제어) -->
+          <div class="kv-section__heart-wrap">
+            <img src="/src/images/main/kv_image.jpg" class="kv-section__heart-img" alt="아이와 엄마">
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           섹션 2: 퀵 바 (Quick Bar)
+           ==================================================================== -->
+      <div class="quick-bar" id="quick-bar">
+        <div class="quick-bar__inner">
+          <div class="quick-bar__title-wrap">
+            <div class="quick-bar__symbol-bg">
+              <svg class="quick-bar__symbol" width="44" height="52" viewBox="0 0 44 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M43.9769 49.8916C43.9245 51.0872 43.5056 51.5027 42.1952 51.5027C38.683 51.5027 30.6114 50.9301 21.9637 50.9301C12.634 50.9301 5.6096 51.6065 1.94163 51.5027C0.788346 51.4507 0.224457 50.9834 0.212374 50.0474C0.192235 48.5574 0.429874 44.808 0.429874 36.4397C0.429874 30.5652 0.00158691 22.0305 0.00158691 19.4315C0.00158691 18.5474 0.211031 18.1839 0.945429 17.6646C5.8177 14.232 14.6238 6.79843 20.7567 0.665666C21.6482 -0.166505 22.3289 -0.218433 23.4298 0.509883C28.3571 3.88916 38.4722 12.2055 42.7189 16.4157C43.5056 17.144 43.7151 17.7152 43.7151 18.7551C44.2387 30.0353 44.291 40.1705 43.9769 49.8916Z" fill="#DB0007"/>
+                <path d="M7.02307 29.4106C7.02307 25.5121 9.69617 22.913 13.6796 22.913C16.5098 22.913 19.3924 24.2126 21.856 26.6039C22.1702 26.9154 22.4844 26.9154 22.9046 26.5C27.8319 21.6135 31.8677 19.0664 34.6456 19.0664C36.638 19.0664 37.7376 20.314 37.7376 22.5495C37.7376 27.7476 31.7093 36.7404 22.8522 44.7452C22.2239 45.3177 21.6989 45.3177 20.7551 44.8491C12.2632 40.6389 7.02307 34.7645 7.02307 29.4106Z" fill="#FFFDE9"/>
+              </svg>
+            </div>
+            <h2 class="quick-bar__title">지금 아이들에게 전하고 싶은<br>마음은 무엇인가요?</h2>
+          </div>
+          <div class="quick-bar__menu">
+            <a href="/donate/" class="quick-bar__btn">
+              <div class="quick-bar__btn-icon-wrap">
+                <svg class="quick-bar__btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                  <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.8.8 2.1 1 3 .2l2.3-2"/>
+                  <path d="m14 15 2.5 2.5"/>
+                </svg>
+              </div>
+              <span class="quick-bar__btn-text">일시후원</span>
+            </a>
+            <a href="/donate/" class="quick-bar__btn">
+              <div class="quick-bar__btn-icon-wrap">
+                <svg class="quick-bar__btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                  <line x1="16" x2="16" y1="2" y2="6"/>
+                  <line x1="8" x2="8" y1="2" y2="6"/>
+                  <line x1="3" x2="21" y1="10" y2="10"/>
+                </svg>
+              </div>
+              <span class="quick-bar__btn-text">정기후원</span>
+            </a>
+            <a href="/donate/" class="quick-bar__btn">
+              <div class="quick-bar__btn-icon-wrap">
+                <svg class="quick-bar__btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="18" height="14" x="3" y="8" rx="2"/>
+                  <path d="M12 5a3 3 0 1 0-3 3h3Z"/>
+                  <path d="M12 5a3 3 0 1 1 3 3h-3Z"/>
+                  <path d="M12 8v14"/>
+                  <path d="M3 12h18"/>
+                </svg>
+              </div>
+              <span class="quick-bar__btn-text">물품후원</span>
+            </a>
+            <a href="/campaign/" class="quick-bar__btn">
+              <div class="quick-bar__btn-icon-wrap">
+                <svg class="quick-bar__btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4-4a1 1 0 0 0 0-1.4l-1.6-1.6"/>
+                  <path d="m13 15.3-2.3-2.3a1 1 0 0 0-1.4 0L5 17a1 1 0 0 0 0 1.4L7 20a1 1 0 0 0 1.4 0l3-3"/>
+                  <path d="m16 12-4-4a1 1 0 0 0-1.4 0l-5 5A1 1 0 0 0 5 14.4l1.6 1.6"/>
+                  <path d="m12 10.3 3.7 3.7a1 1 0 0 0 1.4 0l3-3a1 1 0 0 0 0-1.4L15 4.6a1 1 0 0 0-1.4 0l-5 5A1 1 0 0 0 8.3 11l1.7 1.7"/>
+                </svg>
+              </div>
+              <span class="quick-bar__btn-text">자원봉사</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+
     </main>
 
     <!-- 푸터 공통 영역 인클루드 -->
