@@ -186,51 +186,38 @@ document.addEventListener('DOMContentLoaded', () => {
   // 초기 1회 글자 분할 실행
   splitTextIntoChars();
 
-  // 3) 글자별 실시간 스크롤 리빌 (실시간 스크롤 진행도 + Stagger 시차 매핑)
+  // 3) 개별 문자 절대 좌표 기반 실시간 스크롤 리빌 (투명도 없이 구동)
   const handleTextScrollReveal = () => {
-    const revealTrigger = document.querySelector('.reveal-trigger');
-    if (!revealTrigger) return;
-
-    const rect = revealTrigger.getBoundingClientRect();
-    const viewHeight = window.innerHeight;
-
-    // 텍스트 영역 전체 기준 반응 경계선 설정 (화면 밑 90% ~ 화면 위 20%)
-    const start = viewHeight * 0.9;
-    const end = viewHeight * 0.2;
-
-    // 전체 텍스트 진행도 계산 (0 ~ 1)
-    let progress = (start - rect.top) / (start - end);
-    progress = Math.max(0, Math.min(1, progress));
-
     const chars = document.querySelectorAll('.reveal-char');
     const icons = document.querySelectorAll('.reveal-line .inline-icon');
+    const viewHeight = window.innerHeight;
 
-    // 각 개별 문자(char)별로 순차적 stagger 시차를 적용하여 속성 매핑
-    chars.forEach((char, index) => {
-      // 글자별 활성화 지연 비율 (0.0 ~ 0.7 구간에 골고루 분배)
-      const charDelay = index / chars.length;
-      // 각 글자별 진행률 계산 (가속 계수 4배 적용)
-      let charProgress = (progress - charDelay * 0.7) * 4;
-      charProgress = Math.max(0, Math.min(1, charProgress));
+    // [1] 각 글자별 뷰포트 기준 절대 Y 좌표에 따른 개별 연동
+    chars.forEach(char => {
+      const rect = char.getBoundingClientRect();
+      
+      // 글자 개별 뷰포트 top 좌표 기준 반응 경계선 설정 (화면 밑 80% ~ 화면 중앙 55%)
+      const start = viewHeight * 0.8;
+      const end = viewHeight * 0.55;
 
-      // [1] transform: 2rem -> 0rem 위로 안착
-      const translateY = (1 - charProgress) * 2;
+      // 글자 개별 진행도 계산 (0 ~ 1)
+      let progress = (start - rect.top) / (start - end);
+      progress = Math.max(0, Math.min(1, progress));
+
+      // 1) transform: 2rem -> 0rem 위로 안착
+      const translateY = (1 - progress) * 2;
       char.style.transform = `translateY(${translateY}rem)`;
 
-      // [2] opacity: 0.25 -> 1.0 페이드인
-      const opacity = 0.25 + (charProgress * 0.75);
-      char.style.opacity = opacity;
-
-      // [3] color: 그레이 rgb(158,158,158) -> 차콜 rgb(31,41,55) 스무스 보간
-      const r = Math.round(158 - charProgress * (158 - 31));
-      const g = Math.round(158 - charProgress * (158 - 41));
-      const b = Math.round(158 - charProgress * (158 - 55));
+      // 2) color: 연한 그레이 rgb(200,200,200) -> 차콜 블랙 rgb(31,41,55) (투명도 조절 없음)
+      const r = Math.round(200 - progress * (200 - 31));
+      const g = Math.round(200 - progress * (200 - 41));
+      const b = Math.round(200 - progress * (200 - 55));
       char.style.color = `rgb(${r}, ${g}, ${b})`;
 
-      // reveal-highlight 클래스 추가 여부 결정
+      // reveal-highlight 밑줄 클래스 제어
       const parentLine = char.closest('.reveal-line');
       if (parentLine && char.closest('.reveal-highlight')) {
-        if (charProgress >= 0.7) {
+        if (progress >= 0.95) {
           parentLine.classList.add('is-highlighted');
         } else {
           parentLine.classList.remove('is-highlighted');
@@ -238,20 +225,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 인라인 아이콘(icon) 스크롤 시차 처리
-    icons.forEach((icon, index) => {
-      const iconDelay = index / (icons.length + 1);
-      let iconProgress = (progress - iconDelay * 0.7) * 4;
-      iconProgress = Math.max(0, Math.min(1, iconProgress));
+    // [2] 인라인 아이콘 개별 스크롤 연동 (투명도 없이 grayscale 필터와 translateY 보간)
+    icons.forEach(icon => {
+      const rect = icon.getBoundingClientRect();
+      const start = viewHeight * 0.8;
+      const end = viewHeight * 0.55;
 
-      icon.style.opacity = 0.25 + (iconProgress * 0.75);
-      icon.style.filter = `grayscale(${1 - iconProgress})`;
+      let progress = (start - rect.top) / (start - end);
+      progress = Math.max(0, Math.min(1, progress));
+
+      const translateY = (1 - progress) * 2;
+      icon.style.transform = `translateY(${translateY - 0.2}rem)`;
+      icon.style.filter = `grayscale(${1 - progress})`;
     });
   };
 
+  // requestAnimationFrame 기반 부하 방지 스크롤 핸들러
+  let isScrolling = false;
+  const onScroll = () => {
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        handleTextScrollReveal();
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
+  };
+
   // 이벤트 등록 및 초기 실행
-  window.addEventListener('scroll', handleTextScrollReveal);
-  window.addEventListener('resize', handleTextScrollReveal);
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('resize', () => {
+    window.requestAnimationFrame(handleTextScrollReveal);
+  });
   handleTextScrollReveal();
 
   console.log('RMHC Portal template initialized successfully.');

@@ -374,15 +374,13 @@
   margin-bottom: 0.8rem;
 }
 
-/* 개별 글자 실시간 스크롤 리빌 */
+/* 개별 글자 실시간 스크롤 리빌 (투명도 없이 구동) */
 .reveal-char {
   display: inline-block;
-  color: #9e9e9e; /* 초기 그레이 */
-  opacity: 0.25; /* 초기 불투명도 */
+  color: #c8c8c8; /* 초기 그레이 */
   transform: translateY(2rem);
-  will-change: transform, opacity, color;
+  will-change: transform, color;
   transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1),
-              opacity 0.2s cubic-bezier(0.25, 1, 0.5, 1),
               color 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -395,10 +393,9 @@
   height: 2.4rem;
   transform: translateY(-0.2rem);
   filter: grayscale(1);
-  opacity: 0.25;
-  will-change: filter, opacity;
+  will-change: filter, transform;
   transition: filter 0.2s cubic-bezier(0.25, 1, 0.5, 1),
-              opacity 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+              transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* 하이라이트 노란 밑줄/색상 효과 */
