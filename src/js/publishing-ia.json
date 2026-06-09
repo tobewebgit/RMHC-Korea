@@ -138,9 +138,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/campaign/family.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "패밀리하우스 캠페인 소개 및 소구 정보 구현 완료"
   },
   {
     "id": 14,
@@ -149,9 +149,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/campaign/kcr.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "KCR 캠페인 역사 및 성과 지표 구현 완료"
   },
   {
     "id": 15,
@@ -160,9 +160,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/campaign/gala.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "갈라 디너 캠페인 연혁 및 티켓/후원 신청 영역 구현 완료"
   },
   {
     "id": 16,
@@ -171,9 +171,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/campaign/writing-contest.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "울림백일장 공모 요강 테이블 및 접수 바로가기 구현 완료"
   },
   {
     "id": 17,
@@ -237,9 +237,9 @@
     "depth3": "목록",
     "depth4": "",
     "path": "/news/notice.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "공지사항 게시판 목록 반응형 테이블 구현 완료"
   },
   {
     "id": 23,
@@ -248,9 +248,9 @@
     "depth3": "상세",
     "depth4": "",
     "path": "/news/notice/detail.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "공지사항 보도자료 및 첨부파일 상세 페이지 구현 완료"
   },
   {
     "id": 24,
@@ -259,9 +259,9 @@
     "depth3": "목록",
     "depth4": "",
     "path": "/news/activity.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "활동소식 카드 그리드(3열/1열) 반응형 목록 구현 완료"
   },
   {
     "id": 25,
@@ -270,9 +270,9 @@
     "depth3": "상세",
     "depth4": "",
     "path": "/news/activity/detail.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "활동소식 이벤트 상세 및 사진 보도 본문 구현 완료"
   },
   {
     "id": 26,
@@ -281,9 +281,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/faq.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "FAQ 아코디언 토글(바닐라 JS 연동) 및 카테고리 필터/검색 구현 완료"
   },
   {
     "id": 27,
@@ -523,9 +523,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/policy/terms.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "이용약관 조/항 구조화 및 정책 탭 연동 완료"
   },
   {
     "id": 49,
@@ -534,9 +534,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/policy/privacy.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "개인정보 수집 목적 및 보유 기간 테이블 표기 및 처리방침 완성"
   },
   {
     "id": 50,
@@ -545,8 +545,8 @@
     "depth3": "",
     "depth4": "",
     "path": "/policy/email.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "이메일 무단수집 금지 정보통신망법 조항 안내 페이지 구현 완료"
   }
 ]
