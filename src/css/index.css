@@ -577,15 +577,8 @@
   padding: 2.4rem 3.2rem;
   border-radius: 2rem;
   color: #000000; /* 모든 텍스트 완전 블랙으로 통일 */
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--shadow-sm);
   min-height: 8rem;
-}
-
-.house-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
 
 .house-card__icon-wrap {
