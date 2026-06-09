@@ -100,7 +100,7 @@
 
   /* Typography Fonts */
   --font-sans:
-    "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    "NanumSquare Neo", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-title: "Outfit", var(--font-sans);
 
   /* Typography Scale */
