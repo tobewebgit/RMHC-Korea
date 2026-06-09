@@ -186,50 +186,60 @@ document.addEventListener('DOMContentLoaded', () => {
   // 초기 1회 글자 분할 실행
   splitTextIntoChars();
 
-  // 3) 개별 문자 절대 좌표 기반 실시간 스크롤 리빌 (투명도 없이 구동)
+  // 3) 줄 내부 문자별 가로 시차(stagger) 기반 실시간 스크롤 리빌 (투명도 없이 구동)
   const handleTextScrollReveal = () => {
-    const chars = document.querySelectorAll('.reveal-char');
-    const icons = document.querySelectorAll('.reveal-line .inline-icon');
+    const revealLines = document.querySelectorAll('.reveal-line');
     const viewHeight = window.innerHeight;
 
-    // [1] 각 글자별 뷰포트 기준 절대 Y 좌표에 따른 개별 연동
-    chars.forEach(char => {
-      const rect = char.getBoundingClientRect();
+    revealLines.forEach(line => {
+      const rect = line.getBoundingClientRect();
       
-      // 글자 개별 뷰포트 top 좌표 기준 반응 경계선 설정 (화면 밑 80% ~ 화면 중앙 55%)
-      const start = viewHeight * 0.8;
-      const end = viewHeight * 0.55;
+      // 줄 단위 뷰포트 기준 반응 경계선 설정 (화면 밑 85% ~ 화면 중앙 50%)
+      const start = viewHeight * 0.85;
+      const end = viewHeight * 0.50;
 
-      // 글자 개별 진행도 계산 (0 ~ 1)
-      let progress = (start - rect.top) / (start - end);
-      progress = Math.max(0, Math.min(1, progress));
+      // 줄별 진행도 계산 (0 ~ 1)
+      let lineProgress = (start - rect.top) / (start - end);
+      lineProgress = Math.max(0, Math.min(1, lineProgress));
 
-      // 1) transform: 2rem -> 0rem 위로 안착
-      const translateY = (1 - progress) * 2;
-      char.style.transform = `translateY(${translateY}rem)`;
+      const lineChars = line.querySelectorAll('.reveal-char');
+      const totalChars = lineChars.length;
 
-      // 2) color: 연한 그레이 rgb(200,200,200) -> 차콜 블랙 rgb(31,41,55) (투명도 조절 없음)
-      const r = Math.round(200 - progress * (200 - 31));
-      const g = Math.round(200 - progress * (200 - 41));
-      const b = Math.round(200 - progress * (200 - 55));
-      char.style.color = `rgb(${r}, ${g}, ${b})`;
+      // 줄 내부의 문자(char)별로 순차적 stagger 시차를 적용하여 속성 매핑
+      lineChars.forEach((char, index) => {
+        // 줄 내부 가로 인덱스 기준 시차 분배 (0.0 ~ 0.7 구간 분배)
+        const charDelay = index / totalChars;
+        // 각 글자별 진행률 계산 (stagger 와이프 감도 3.5배 적용)
+        let charProgress = (lineProgress - charDelay * 0.7) * 3.5;
+        charProgress = Math.max(0, Math.min(1, charProgress));
 
-      // reveal-highlight 밑줄 클래스 제어
-      const parentLine = char.closest('.reveal-line');
-      if (parentLine && char.closest('.reveal-highlight')) {
-        if (progress >= 0.95) {
-          parentLine.classList.add('is-highlighted');
-        } else {
-          parentLine.classList.remove('is-highlighted');
+        // 1) transform: 2rem -> 0rem 위로 안착
+        const translateY = (1 - charProgress) * 2;
+        char.style.transform = `translateY(${translateY}rem)`;
+
+        // 2) color: 연한 그레이 rgb(200,200,200) -> 차콜 블랙 rgb(31,41,55) (투명도 조절 없음)
+        const r = Math.round(200 - charProgress * (200 - 31));
+        const g = Math.round(200 - charProgress * (200 - 41));
+        const b = Math.round(200 - charProgress * (200 - 55));
+        char.style.color = `rgb(${r}, ${g}, ${b})`;
+
+        // reveal-highlight 밑줄 클래스 제어
+        if (char.closest('.reveal-highlight')) {
+          if (charProgress >= 0.95) {
+            line.classList.add('is-highlighted');
+          } else {
+            line.classList.remove('is-highlighted');
+          }
         }
-      }
+      });
     });
 
-    // [2] 인라인 아이콘 개별 스크롤 연동 (투명도 없이 grayscale 필터와 translateY 보간)
-    icons.forEach(icon => {
+    // 인라인 아이콘 개별 스크롤 연동 (투명도 없이 grayscale 필터와 translateY 보간)
+    const icons = document.querySelectorAll('.reveal-line .inline-icon');
+    icons.forEach((icon, index) => {
       const rect = icon.getBoundingClientRect();
-      const start = viewHeight * 0.8;
-      const end = viewHeight * 0.55;
+      const start = viewHeight * 0.85;
+      const end = viewHeight * 0.50;
 
       let progress = (start - rect.top) / (start - end);
       progress = Math.max(0, Math.min(1, progress));
