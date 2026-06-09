@@ -17,25 +17,25 @@
   - [x] 공통 팝업(VMS 안내 모달 등 4종) 마크업 리팩토링 및 주석 가독성 강화
   - [x] 탭/UI 제어용 최소화 스크립트 외 미사용 모션 요소 제거 확인
 
-- [ ] **2단계: 회원/로그인 (총 11개 페이지)**
-  - [ ] 로그인 메인 (`login.html`)
-  - [ ] 아이디 찾기 (`login/find-id.html`)
-  - [ ] 아이디 찾기 결과 (`login/find-id/result.html`)
-  - [ ] 비밀번호 재설정 (`login/reset-pw.html`)
-  - [ ] 비밀번호 재설정 입력 (`login/reset-pw/new.html`)
-  - [ ] 비밀번호 재설정 완료 (`login/reset-pw/complete.html`)
-  - [ ] SNS 계정 연동 (`login/link-sns.html`)
-  - [ ] 회원가입 메인 (`join.html`)
-  - [ ] 회원가입 본인 인증 (`join/auth.html`)
-  - [ ] 회원가입 정보 입력 (`join/form.html`)
-  - [ ] 회원가입 완료 (`join/complete.html`)
+- [x] **2단계: 회원/로그인 (총 11개 페이지)**
+  - [x] 로그인 메인 (`login.html`)
+  - [x] 아이디 찾기 (`login/find-id.html`)
+  - [x] 아이디 찾기 결과 (`login/find-id/result.html`)
+  - [x] 비밀번호 재설정 (`login/reset-pw.html`)
+  - [x] 비밀번호 재설정 입력 (`login/reset-pw/new.html`)
+  - [x] 비밀번호 재설정 완료 (`login/reset-pw/complete.html`)
+  - [x] SNS 계정 연동 (`login/link-sns.html`)
+  - [x] 회원가입 메인 (`join.html`)
+  - [x] 회원가입 본인 인증 (`join/auth.html`)
+  - [x] 회원가입 정보 입력 (`join/form.html`)
+  - [x] 회원가입 완료 (`join/complete.html`)
 
-- [ ] **3단계: 후원 및 자원봉사 (총 5개 페이지)**
-  - [ ] 정기후원 (`donate/regular.html`)
-  - [ ] 일시후원 (`donate/one-time.html`)
-  - [ ] 물품후원 (`donate/goods.html`)
-  - [ ] 후원완료 (`donate/complete.html`)
-  - [ ] 자원봉사 신청 (`volunteer.html`)
+- [/] **3단계: 후원 및 자원봉사 (총 5개 페이지)**
+  - [/] 정기후원 (`donate/regular.html`)
+  - [/] 일시후원 (`donate/one-time.html`)
+  - [/] 물품후원 (`donate/goods.html`)
+  - [/] 후원완료 (`donate/complete.html`)
+  - [/] 자원봉사 신청 (`volunteer.html`)
 
 - [ ] **4단계: 소개 및 하우스 (총 11개 페이지)**
   - [ ] 소개 메인 (`about.html`)

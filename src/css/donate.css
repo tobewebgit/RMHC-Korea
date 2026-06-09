@@ -1,0 +1,405 @@
+/* ==========================================================================
+   donate.css — 후원 관련 페이지 전용 스타일
+   ========================================================================== */
+
+/* 1. 후원 컨테이너 & 레이아웃 */
+.donate-wrapper {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: var(--spacing-8) var(--spacing-4) var(--spacing-16);
+}
+
+.donate-header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.donate-title {
+  font-family: var(--font-title);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: var(--spacing-2);
+}
+
+/* 2. 후원 탭 컴포넌트 */
+.donate-tabs {
+  display: flex;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: 0.6rem;
+  margin-bottom: var(--spacing-8);
+  border: 1px solid var(--border-color);
+}
+
+.donate-tab-item {
+  flex: 1;
+  text-align: center;
+}
+
+.donate-tab-btn {
+  display: block;
+  width: 100%;
+  padding: 1.4rem 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  border-radius: calc(var(--radius-md) - 0.4rem);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.donate-tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.donate-tab-btn.active {
+  background-color: var(--bg-primary);
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 3. 후원 카드 섹션 */
+.donate-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-6);
+}
+
+@media (max-width: 768px) {
+  .donate-card {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+}
+
+.donate-section-title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-6);
+  border-left: 4px solid var(--primary);
+  padding-left: var(--spacing-3);
+  line-height: 1.2;
+}
+
+/* 4. 칩 그리드 및 버튼 */
+.chip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+}
+
+@media (max-width: 576px) {
+  .chip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.chip-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 5.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-primary);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  padding: var(--spacing-2) var(--spacing-4);
+  text-align: center;
+}
+
+.chip-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.chip-btn.active {
+  background-color: var(--primary-glow);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* 5. 에러 메시지 */
+.error-text {
+  display: none;
+  font-size: var(--text-sm);
+  color: var(--primary);
+  font-weight: 500;
+  margin-top: var(--spacing-2);
+  padding-left: var(--spacing-1);
+}
+
+.error-text.show {
+  display: block;
+}
+
+.form-control.has-error {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-glow);
+}
+
+/* 6. 기부금 영수증 아코디언 */
+.receipt-accordion {
+  margin-top: var(--spacing-6);
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--spacing-6);
+}
+
+.accordion-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+.accordion-content.active {
+  max-height: 120rem; /* 충분한 높이 제공 */
+  opacity: 1;
+  margin-top: var(--spacing-6);
+  padding: var(--spacing-6);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+/* 기부금 영수증 내 세부 구분 탭 (개인/기업) */
+.receipt-tabs {
+  display: flex;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-6);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--spacing-3);
+}
+
+.receipt-tab-btn {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: var(--spacing-2) var(--spacing-4);
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.receipt-tab-btn:hover {
+  color: var(--text-secondary);
+}
+
+.receipt-tab-btn.active {
+  color: var(--primary);
+}
+
+.receipt-tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1.3rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.receipt-panel {
+  display: none;
+}
+
+.receipt-panel.active {
+  display: block;
+}
+
+.legal-notice {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-sm);
+  margin-top: var(--spacing-6);
+  border-left: 3px solid var(--text-muted);
+}
+
+/* 7. 안내 및 약관 동의 */
+.donation-notice-box {
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-5);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-6);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.donation-notice-box ul {
+  list-style: disc;
+  padding-left: var(--spacing-5);
+}
+
+.donation-notice-box li {
+  margin-bottom: var(--spacing-1);
+}
+
+.agree-terms-container {
+  margin-top: var(--spacing-6);
+}
+
+.agree-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.agree-item:first-child {
+  border-top: 1px solid var(--border-color);
+}
+
+.agree-link {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+
+.agree-link:hover {
+  color: var(--text-secondary);
+}
+
+/* 8. 물품후원 스텝 */
+.goods-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .goods-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-3);
+  }
+}
+
+.step-item {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5) var(--spacing-3);
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: var(--primary-glow);
+  color: var(--primary);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  margin-bottom: var(--spacing-3);
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-1);
+}
+
+.step-desc {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+/* 9. 후원완료 페이지 */
+.complete-card {
+  text-align: center;
+  padding: var(--spacing-12) var(--spacing-8);
+}
+
+.complete-icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 8.8rem;
+  height: 8.8rem;
+  background-color: var(--secondary-glow);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-6);
+}
+
+.complete-icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  fill: var(--secondary-hover);
+}
+
+.complete-title {
+  font-family: var(--font-title);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-3);
+}
+
+.complete-subtitle {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-8);
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-8);
+  text-align: left;
+  border-top: 2px solid var(--text-primary);
+}
+
+.summary-table th,
+.summary-table td {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--border-color);
+  font-size: var(--text-sm);
+}
+
+.summary-table th {
+  background-color: var(--bg-secondary);
+  font-weight: 700;
+  color: var(--text-primary);
+  width: 30%;
+}
+
+.summary-table td {
+  color: var(--text-secondary);
+}
+
+.complete-notice {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-8);
+}
+
+.complete-notice-title {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-2);
+}

@@ -182,9 +182,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/donate/regular.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "정기후원 폼 고도화, 기부금 영수증 신청 토글 및 분기 폼 연동"
   },
   {
     "id": 18,
@@ -193,9 +193,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/donate/one-time.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "일시후원 폼 고도화, 결제 수단 그리드 칩 탑재"
   },
   {
     "id": 19,
@@ -204,9 +204,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/donate/goods.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "물품후원 프로세스 가이드 및 카테고리별 폼 고도화"
   },
   {
     "id": 20,
@@ -215,9 +215,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/donate/complete.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "후원 완료 내역 테이블 및 비회원 조회 바로가기 연동"
   },
   {
     "id": 21,
@@ -226,9 +226,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/volunteer.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "자원봉사 신청 페이지 신규 구축, 개인/단체 탭 및 달력 마크업"
   },
   {
     "id": 22,

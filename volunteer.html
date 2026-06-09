@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="중증 환아와 가족들에게 따뜻한 쉼터를 선물하는 RMHC Korea 자원봉사 신청 페이지입니다. 개인 및 기업/단체 자원봉사 신청을 접수하고 있습니다.">
+  <title>자원봉사 신청 - 한국로날드맥도날드하우스</title>
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/volunteer.css">
+</head>
+<body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+
+  <!-- 헤더 공통 영역 인클루드 -->
+  <load ="src/includes/header.html" />
+
+  <div class="page-wrapper">
+    <main id="main-content" class="volunteer-container container">
+      
+      <!-- 타이틀 영역 -->
+      <section class="volunteer-header">
+        <h1 class="volunteer-title">자원봉사 신청</h1>
+        <p class="volunteer-desc">
+          로날드맥도날드하우스의 따뜻한 여정에 함께해 주세요.<br>
+          여러분의 소중한 시간과 정성이 중증 환아와 가족들에게 희망의 쉼터를 선물합니다.
+        </p>
+      </section>
+
+      <!-- 탭 메뉴 (개인 / 기업·단체) -->
+      <nav class="tab-menu-wrapper" aria-label="신청 유형 선택">
+        <div class="tab-menu" role="tablist">
+          <button type="button" id="tab-individual" class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-individual" tabindex="0">
+            개인 봉사 신청
+          </button>
+          <button type="button" id="tab-group" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-group" tabindex="-1">
+            기업/단체 봉사 신청
+          </button>
+        </div>
+      </nav>
+
+      <!-- 자원봉사 신청 콘텐츠 영역 -->
+      <div class="volunteer-content">
+        
+        <!-- 1단계: 희망 일정 및 장소 선택 (공통 카드) -->
+        <section class="schedule-section card">
+          <h2 class="section-title"><span class="step-num">1</span>희망 일정 및 장소 선택</h2>
+          
+          <div class="schedule-layout">
+            <!-- 캘린더 영역 -->
+            <div class="calendar-wrapper">
+              <h3 class="schedule-sub-title">봉사 희망일 선택</h3>
+              <div class="calendar-ctrl">
+                <button type="button" class="btn-cal-prev" aria-label="이전 달"><span aria-hidden="true">&lt;</span></button>
+                <strong class="calendar-current-month">2026.06</strong>
+                <button type="button" class="btn-cal-next" aria-label="다음 달"><span aria-hidden="true">&gt;</span></button>
+              </div>
+              
+              <table class="calendar-table">
+                <caption>2026년 6월 봉사 희망일 선택 달력</caption>
+                <thead>
+                  <tr>
+                    <th scope="col" class="sun">일</th>
+                    <th scope="col">월</th>
+                    <th scope="col">화</th>
+                    <th scope="col">수</th>
+                    <th scope="col">목</th>
+                    <th scope="col">금</th>
+                    <th scope="col" class="sat">토</th>
+                  </tr>
+                </thead>
+                <tbody id="calendar-days">
+                  <tr>
+                    <td class="sun disabled"><span class="day-val">31</span></td>
+                    <td class="disabled"><span class="day-val">1</span></td>
+                    <td class="disabled"><span class="day-val">2</span></td>
+                    <td class="disabled"><span class="day-val">3</span></td>
+                    <td class="disabled"><span class="day-val">4</span></td>
+                    <td class="disabled"><span class="day-val">5</span></td>
+                    <td class="sat disabled"><span class="day-val">6</span></td>
+                  </tr>
+                  <tr>
+                    <td class="sun disabled"><span class="day-val">7</span></td>
+                    <td class="disabled"><span class="day-val">8</span></td>
+                    <td class="today"><button type="button" class="day-btn" aria-label="6월 9일 오늘">9</button></td>
+                    <td class="selected"><button type="button" class="day-btn" aria-label="6월 10일 선택됨" aria-pressed="true">10</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 11일 선택 가능">11</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 12일 선택 가능">12</button></td>
+                    <td class="sat"><button type="button" class="day-btn" aria-label="6월 13일 선택 가능">13</button></td>
+                  </tr>
+                  <tr>
+                    <td class="sun"><button type="button" class="day-btn" aria-label="6월 14일 선택 가능">14</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 15일 선택 가능">15</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 16일 선택 가능">16</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 17일 선택 가능">17</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 18일 선택 가능">18</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 19일 선택 가능">19</button></td>
+                    <td class="sat"><button type="button" class="day-btn" aria-label="6월 20일 선택 가능">20</button></td>
+                  </tr>
+                  <tr>
+                    <td class="sun"><button type="button" class="day-btn" aria-label="6월 21일 선택 가능">21</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 22일 선택 가능">22</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 23일 선택 가능">23</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 24일 선택 가능">24</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 25일 선택 가능">25</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 26일 선택 가능">26</button></td>
+                    <td class="sat"><button type="button" class="day-btn" aria-label="6월 27일 선택 가능">27</button></td>
+                  </tr>
+                  <tr>
+                    <td class="sun"><button type="button" class="day-btn" aria-label="6월 28일 선택 가능">28</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 29일 선택 가능">29</button></td>
+                    <td><button type="button" class="day-btn" aria-label="6월 30일 선택 가능">30</button></td>
+                    <td class="disabled"><span class="day-val">1</span></td>
+                    <td class="disabled"><span class="day-val">2</span></td>
+                    <td class="disabled"><span class="day-val">3</span></td>
+                    <td class="sat disabled"><span class="day-val">4</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="calendar-legend">
+                <span class="legend-item"><span class="legend-color legend-today"></span>오늘</span>
+                <span class="legend-item"><span class="legend-color legend-selected"></span>선택됨</span>
+                <span class="legend-item"><span class="legend-color legend-disabled"></span>선택 불가</span>
+              </div>
+            </div>
+
+            <!-- 하우스 및 시간대 선택 영역 -->
+            <div class="schedule-details">
+              <h3 class="schedule-sub-title">장소 및 시간대 선택</h3>
+              
+              <div class="form-group">
+                <label for="select-house" class="form-label">봉사 희망 하우스 <span class="required" aria-hidden="true">*</span></label>
+                <div class="select-wrapper">
+                  <select id="select-house" class="form-control" required>
+                    <option value="" disabled selected>하우스를 선택해 주세요</option>
+                    <option value="yangsan">RMHC 양산 하우스 (부산대학교어린이병원 내)</option>
+                    <option value="seoul">RMHC 서울 하우스 (준비 중)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="select-time" class="form-label">희망 봉사 시간 <span class="required" aria-hidden="true">*</span></label>
+                <div class="select-wrapper">
+                  <select id="select-time" class="form-control" required>
+                    <option value="" disabled selected>시간대를 선택해 주세요</option>
+                    <option value="morning">오전 봉사 (09:00 ~ 13:00)</option>
+                    <option value="afternoon">오후 봉사 (13:00 ~ 17:00)</option>
+                    <option value="all-day">종일 봉사 (09:00 ~ 17:00)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="selected-schedule-box">
+                <h4 class="box-title">선택한 일정 정보</h4>
+                <div class="box-content">
+                  <div class="info-row">
+                    <span class="info-label">선택 날짜</span>
+                    <span id="selected-date-txt" class="info-val">2026년 6월 10일</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">희망 하우스</span>
+                    <span id="selected-house-txt" class="info-val">선택 안 함</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="info-label">희망 시간</span>
+                    <span id="selected-time-txt" class="info-val">선택 안 함</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2단계: 신청 폼 (개인 / 기업·단체로 분기 및 탭으로 활성화) -->
+        <form id="volunteer-application-form" class="application-form">
+          <!-- 캘린더 선택 데이터 전달용 hidden input -->
+          <input type="hidden" id="input-date" name="volunteer_date" value="2026-06-10" required>
+          
+          <!-- 개인 봉사 신청 폼 패널 -->
+          <section id="panel-individual" class="tab-panel card active" role="tabpanel" aria-labelledby="tab-individual">
+            <h2 class="section-title"><span class="step-num">2</span>신청자 정보 입력 (개인)</h2>
+            
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="ind-name" class="form-label">성명 <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="ind-name" class="form-control" placeholder="성명을 입력해 주세요" required>
+                <span class="error-text" id="ind-name-error">성명을 입력해 주세요.</span>
+              </div>
+              <div class="form-group">
+                <label for="ind-birth" class="form-label">생년월일 <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="ind-birth" class="form-control" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" required>
+                <span class="error-text" id="ind-birth-error">올바른 형식(YYYY-MM-DD)으로 입력해 주세요.</span>
+              </div>
+              <div class="form-group">
+                <label for="ind-tel" class="form-label">연락처 <span class="required" aria-hidden="true">*</span></label>
+                <input type="tel" id="ind-tel" class="form-control" placeholder="예: 010-1234-5678" required>
+                <span class="error-text" id="ind-tel-error">연락처를 입력해 주세요.</span>
+              </div>
+              <div class="form-group">
+                <label for="ind-lang" class="form-label">어학 능력 (선택)</label>
+                <input type="text" id="ind-lang" class="form-control" placeholder="예: 영어 회화 가능, 일본어 번역 가능">
+              </div>
+            </div>
+
+            <!-- 개인정보 수집 및 이용 동의 -->
+            <div class="agreement-area">
+              <div class="agreement-box">
+                <h3 class="agreement-title">개인정보 수집 및 이용 동의 (필수)</h3>
+                <div class="agreement-text" tabindex="0">
+                  <p>1. 개인정보 수집·이용 목적: 자원봉사 신청 접수, 봉사자 배치 및 이력 관리, VMS 실적 등록 연계.</p>
+                  <p>2. 수집하는 개인정보 항목: 성명, 생년월일, 연락처, 어학 능력(선택).</p>
+                  <p>3. 개인정보의 보유 및 이용 기간: 봉사활동 참여 종료일로부터 5년 또는 신청자의 파기 요청 시 즉시 파기.</p>
+                  <p>※ 동의를 거부할 권리가 있으나, 거부 시 자원봉사 신청이 불가능합니다.</p>
+                </div>
+                <div class="checkbox-wrap">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="ind-agree" required>
+                    <span>동의합니다.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 기업/단체 봉사 신청 폼 패널 -->
+          <section id="panel-group" class="tab-panel card" role="tabpanel" aria-labelledby="tab-group" style="display: none;">
+            <h2 class="section-title"><span class="step-num">2</span>신청자 정보 입력 (기업/단체)</h2>
+            
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="grp-org" class="form-label">기업/단체명 <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="grp-org" class="form-control" placeholder="기업 또는 단체명을 입력해 주세요">
+                <span class="error-text" id="grp-org-error">기업/단체명을 입력해 주세요.</span>
+              </div>
+              <div class="form-group">
+                <label for="grp-count" class="form-label">참여 예정 인원수 <span class="required" aria-hidden="true">*</span></label>
+                <input type="number" id="grp-count" class="form-control" min="2" placeholder="최소 2명 이상 입력해 주세요">
+                <span class="error-text" id="grp-count-error">참여 인원수는 최소 2명 이상이어야 합니다.</span>
+              </div>
+              <div class="form-group">
+                <label for="grp-name" class="form-label">담당자 성명 <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="grp-name" class="form-control" placeholder="담당자 성명을 입력해 주세요">
+                <span class="error-text" id="grp-name-error">담당자 성명을 입력해 주세요.</span>
+              </div>
+              <div class="form-group">
+                <label for="grp-tel" class="form-label">담당자 연락처 <span class="required" aria-hidden="true">*</span></label>
+                <input type="tel" id="grp-tel" class="form-control" placeholder="예: 010-1234-5678">
+                <span class="error-text" id="grp-tel-error">담당자 연락처를 입력해 주세요.</span>
+              </div>
+            </div>
+
+            <!-- 개인정보 수집 및 이용 동의 -->
+            <div class="agreement-area">
+              <div class="agreement-box">
+                <h3 class="agreement-title">개인정보 수집 및 이용 동의 (필수)</h3>
+                <div class="agreement-text" tabindex="0">
+                  <p>1. 개인정보 수집·이용 목적: 단체 자원봉사 일정 조율, 담당자 연락 및 안내, 이력 관리.</p>
+                  <p>2. 수집하는 개인정보 항목: 기업/단체명, 참여 인원수, 담당자 성명, 연락처.</p>
+                  <p>3. 개인정보의 보유 및 이용 기간: 봉사활동 참여 종료일로부터 5년 또는 신청자의 파기 요청 시 즉시 파기.</p>
+                  <p>※ 동의를 거부할 권리가 있으나, 거부 시 자원봉사 신청이 불가능합니다.</p>
+                </div>
+                <div class="checkbox-wrap">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="grp-agree">
+                    <span>동의합니다.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- VMS 연계 안내 고지 영역 (공통) -->
+          <article class="vms-notice-card">
+            <div class="vms-notice-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+            </div>
+            <div class="vms-notice-content">
+              <h3 class="vms-notice-title">VMS 자원봉사 실적 등록 안내</h3>
+              <p class="vms-notice-desc">
+                봉사활동 시간은 <strong>VMS(사회복지자원봉사인증관리시스템)</strong> 가입 및 등록 후 확인 가능 합니다.<br>
+                봉사 실적의 정상 연계를 위하여 봉사 신청 전에 VMS 회원가입을 완료해 주시기 바랍니다.
+              </p>
+            </div>
+          </article>
+
+          <!-- 제출 버튼 영역 -->
+          <div class="form-submit-wrap">
+            <button type="submit" class="btn btn-primary btn-submit">자원봉사 신청하기</button>
+          </div>
+        </form>
+
+      </div>
+    </main>
+
+    <!-- 푸터 공통 영역 인클루드 -->
+    <load ="src/includes/footer.html" />
+  </div>
+
+  <script type="module" src="/src/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. 탭 메뉴 전환 인터랙션
+      const tabIndividual = document.getElementById('tab-individual');
+      const tabGroup = document.getElementById('tab-group');
+      const panelIndividual = document.getElementById('panel-individual');
+      const panelGroup = document.getElementById('panel-group');
+
+      const inputNameInd = document.getElementById('ind-name');
+      const inputBirthInd = document.getElementById('ind-birth');
+      const inputTelInd = document.getElementById('ind-tel');
+      const checkboxAgreeInd = document.getElementById('ind-agree');
+
+      const inputOrgGrp = document.getElementById('grp-org');
+      const inputCountGrp = document.getElementById('grp-count');
+      const inputNameGrp = document.getElementById('grp-name');
+      const inputTelGrp = document.getElementById('grp-tel');
+      const checkboxAgreeGrp = document.getElementById('grp-agree');
+
+      let currentTab = 'individual'; // 'individual' | 'group'
+
+      function switchTab(tab) {
+        if (tab === 'individual') {
+          currentTab = 'individual';
+          tabIndividual.classList.add('active');
+          tabIndividual.setAttribute('aria-selected', 'true');
+          tabIndividual.setAttribute('tabindex', '0');
+          tabGroup.classList.remove('active');
+          tabGroup.setAttribute('aria-selected', 'false');
+          tabGroup.setAttribute('tabindex', '-1');
+
+          panelIndividual.style.display = 'block';
+          panelIndividual.classList.add('active');
+          panelGroup.style.display = 'none';
+          panelGroup.classList.remove('active');
+
+          // Required 속성 동적 활성화
+          inputNameInd.setAttribute('required', 'required');
+          inputBirthInd.setAttribute('required', 'required');
+          inputTelInd.setAttribute('required', 'required');
+          checkboxAgreeInd.setAttribute('required', 'required');
+
+          inputOrgGrp.removeAttribute('required');
+          inputCountGrp.removeAttribute('required');
+          inputNameGrp.removeAttribute('required');
+          inputTelGrp.removeAttribute('required');
+          checkboxAgreeGrp.removeAttribute('required');
+        } else {
+          currentTab = 'group';
+          tabGroup.classList.add('active');
+          tabGroup.setAttribute('aria-selected', 'true');
+          tabGroup.setAttribute('tabindex', '0');
+          tabIndividual.classList.remove('active');
+          tabIndividual.setAttribute('aria-selected', 'false');
+          tabIndividual.setAttribute('tabindex', '-1');
+
+          panelGroup.style.display = 'block';
+          panelGroup.classList.add('active');
+          panelIndividual.style.display = 'none';
+          panelIndividual.classList.remove('active');
+
+          // Required 속성 동적 활성화
+          inputNameInd.removeAttribute('required');
+          inputBirthInd.removeAttribute('required');
+          inputTelInd.removeAttribute('required');
+          checkboxAgreeInd.removeAttribute('required');
+
+          inputOrgGrp.setAttribute('required', 'required');
+          inputCountGrp.setAttribute('required', 'required');
+          inputNameGrp.setAttribute('required', 'required');
+          inputTelGrp.setAttribute('required', 'required');
+          checkboxAgreeGrp.setAttribute('required', 'required');
+        }
+      }
+
+      tabIndividual.addEventListener('click', () => switchTab('individual'));
+      tabGroup.addEventListener('click', () => switchTab('group'));
+
+      tabIndividual.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+          tabGroup.focus();
+          switchTab('group');
+        }
+      });
+
+      tabGroup.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          tabIndividual.focus();
+          switchTab('individual');
+        }
+      });
+
+      // 2. 캘린더 인터랙션
+      const dayButtons = document.querySelectorAll('.calendar-table button.day-btn');
+      const inputDate = document.getElementById('input-date');
+      const selectedDateTxt = document.getElementById('selected-date-txt');
+
+      dayButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // 기존 선택 해제
+          dayButtons.forEach(b => {
+            b.parentElement.classList.remove('selected');
+            b.removeAttribute('aria-pressed');
+          });
+
+          // 새 선택 설정
+          const td = btn.parentElement;
+          td.classList.add('selected');
+          btn.setAttribute('aria-pressed', 'true');
+
+          const day = btn.textContent.trim().padStart(2, '0');
+          const dateString = `2026-06-${day}`;
+          inputDate.value = dateString;
+          selectedDateTxt.textContent = `2026년 6월 ${parseInt(day, 10)}일`;
+        });
+      });
+
+      // 3. 하우스 및 시간대 변경 시 텍스트 업데이트
+      const selectHouse = document.getElementById('select-house');
+      const selectTime = document.getElementById('select-time');
+      const selectedHouseTxt = document.getElementById('selected-house-txt');
+      const selectedTimeTxt = document.getElementById('selected-time-txt');
+
+      selectHouse.addEventListener('change', () => {
+        selectedHouseTxt.textContent = selectHouse.options[selectHouse.selectedIndex].text;
+      });
+
+      selectTime.addEventListener('change', () => {
+        selectedTimeTxt.textContent = selectTime.options[selectTime.selectedIndex].text;
+      });
+
+      // 4. 간단한 폼 유효성 검사 및 에러 문구 제어
+      const form = document.getElementById('volunteer-application-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // 캘린더 선택 확인
+        if (!inputDate.value) {
+          alert('봉사 희망 날짜를 캘린더에서 선택해 주세요.');
+          return;
+        }
+
+        // 각 폼 필드의 에러 메시지 초기화
+        document.querySelectorAll('.error-text').forEach(t => {
+          t.style.display = 'none';
+        });
+
+        let isValid = true;
+
+        if (currentTab === 'individual') {
+          if (!inputNameInd.value.trim()) {
+            document.getElementById('ind-name-error').style.display = 'block';
+            isValid = false;
+          }
+          if (!inputBirthInd.value.trim() || !/^\d{4}-\d{2}-\d{2}$/.test(inputBirthInd.value.trim())) {
+            document.getElementById('ind-birth-error').style.display = 'block';
+            isValid = false;
+          }
+          if (!inputTelInd.value.trim()) {
+            document.getElementById('ind-tel-error').style.display = 'block';
+            isValid = false;
+          }
+          if (!checkboxAgreeInd.checked) {
+            alert('개인정보 수집 및 이용에 동의해야 신청이 가능합니다.');
+            isValid = false;
+          }
+        } else {
+          if (!inputOrgGrp.value.trim()) {
+            document.getElementById('grp-org-error').style.display = 'block';
+            isValid = false;
+          }
+          if (!inputCountGrp.value.trim() || parseInt(inputCountGrp.value, 10) < 2) {
+            document.getElementById('grp-count-error').style.display = 'block';
+            isValid = false;
+          }
+          if (!inputNameGrp.value.trim()) {
+            document.getElementById('grp-name-error').style.display = 'block';
+            isValid = false;
+          }
+          if (!inputTelGrp.value.trim()) {
+            document.getElementById('grp-tel-error').style.display = 'block';
+            isValid = false;
+          }
+          if (!checkboxAgreeGrp.checked) {
+            alert('개인정보 수집 및 이용에 동의해야 신청이 가능합니다.');
+            isValid = false;
+          }
+        }
+
+        if (isValid) {
+          alert('자원봉사 신청이 성공적으로 접수되었습니다. 담당자 확인 후 기재하신 연락처로 안내해 드리겠습니다.');
+          form.reset();
+          // 선택 영역 텍스트 초기화
+          selectedHouseTxt.textContent = '선택 안 함';
+          selectedTimeTxt.textContent = '선택 안 함';
+          // 기본 선택일로 초기화
+          inputDate.value = '2026-06-10';
+          selectedDateTxt.textContent = '2026년 6월 10일';
+          dayButtons.forEach(b => {
+            b.parentElement.classList.remove('selected');
+            b.removeAttribute('aria-pressed');
+          });
+          const defaultSelectedDay = Array.from(dayButtons).find(b => b.textContent.trim() === '10');
+          if (defaultSelectedDay) {
+            defaultSelectedDay.parentElement.classList.add('selected');
+            defaultSelectedDay.setAttribute('aria-pressed', 'true');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
