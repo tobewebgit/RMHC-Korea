@@ -1123,7 +1123,7 @@ textarea {
   }
   .footer__top,
   .footer__middle,
-  .footer__bottom {
+  .footer__info {
     flex-direction: column;
     align-items: flex-start;
     gap: 2.4rem;
@@ -1147,11 +1147,12 @@ textarea {
     flex-wrap: wrap;
     gap: 1.6rem;
   }
-  .footer__bottom {
+  .footer__info {
     align-items: flex-start;
+    width: 100%;
   }
-  .footer__copyright-wrapper {
-    align-items: flex-start;
+  .footer__copyright {
+    margin-top: 3.2rem;
     width: 100%;
   }
   .footer__family-site {

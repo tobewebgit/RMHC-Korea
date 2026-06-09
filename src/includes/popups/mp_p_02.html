@@ -1,15 +1,72 @@
-<!-- MP_P_02: 결제수단변경팝업 팝업 -->
+<!-- MP_P_02: 결제수단변경 팝업 (다음 결제일 적용 필수 고지 문구 포함) -->
 <div class="modal-overlay" id="modal-mp_p_02">
-  <div class="modal-container">
+  <div class="modal-container modal-container--md">
+    
+    <!-- S: 팝업 헤더 -->
     <div class="modal-header">
-      <h3>결제수단변경팝업</h3>
-      <button class="modal-close-btn">&times;</button>
+      <h3 class="modal-title">결제 수단 변경</h3>
+      <button type="button" class="modal-close-btn" aria-label="닫기">&times;</button>
     </div>
+    <!-- E: 팝업 헤더 -->
+
+    <!-- S: 팝업 본문 -->
     <div class="modal-body">
-      <p>정기후원 / 후원상세 공통 사용</p>
+      <form id="paymentMethodForm" class="payment-method-form">
+        
+        <!-- 결제수단 대분류 선택 (신용카드 / 자동이체) -->
+        <div class="form-group mb-4">
+          <span class="form-label">결제 방법 선택 <span class="required">*</span></span>
+          <div class="form-flex gap-4 mt-2">
+            <label class="custom-radio">
+              <input type="radio" name="payment_type" value="card" checked>
+              <span>신용·체크카드</span>
+            </label>
+            <label class="custom-radio">
+              <input type="radio" name="payment_type" value="bank">
+              <span>계좌 자동이체</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-section-divider"></div>
+
+        <!-- 카드 결제 세부 입력 폼 -->
+        <div class="payment-detail-fields mt-4" id="payment-card-fields">
+          <div class="form-group">
+            <label for="card_num" class="form-label">카드번호 <span class="required">*</span></label>
+            <input type="text" id="card_num" class="form-control" placeholder="16자리 번호 입력" required>
+          </div>
+          <div class="form-grid mt-2">
+            <div class="form-group">
+              <label for="card_expiry" class="form-label">유효기간 <span class="required">*</span></label>
+              <input type="text" id="card_expiry" class="form-control" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+              <label for="card_birth" class="form-label">생년월일 (법인은 사업자번호) <span class="required">*</span></label>
+              <input type="text" id="card_birth" class="form-control" placeholder="6자리 또는 10자리" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- S: 결제 효력 시점 고지 문구 (기획서 사양 필수 노출) -->
+        <div class="notice-info-box mt-6">
+          <p class="notice-text">
+            ℹ️ 변경된 결제수단은 다음 결제일부터 적용됩니다.
+          </p>
+        </div>
+        <!-- E: 결제 효력 시점 고지 -->
+
+      </form>
     </div>
+    <!-- E: 팝업 본문 -->
+
+    <!-- S: 팝업 푸터 -->
     <div class="modal-footer">
-      <button class="btn btn-primary">확인</button>
+      <button type="button" class="btn btn-outline modal-close-btn">취소</button>
+      <button type="submit" form="paymentMethodForm" class="btn btn-primary">변경 사항 적용</button>
     </div>
+    <!-- E: 팝업 푸터 -->
+
   </div>
 </div>
+
