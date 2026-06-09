@@ -186,38 +186,44 @@ document.addEventListener('DOMContentLoaded', () => {
   // 초기 1회 글자 분할 실행
   splitTextIntoChars();
 
-  // 3) 줄 내부 문자별 가로 시차(stagger) 기반 실시간 스크롤 리빌 (투명도 없이 구동)
-  const handleTextScrollReveal = () => {
+  // 3) 줄별 순차 전개(Timeline Sequence) 및 글자 간 정지 텀(Pause Gap) 기반 실시간 스크롤 리빌
+  let targetProgress = 0;
+  let currentProgress = 0;
+  let rafId = null;
+  const lerpFactor = 0.05; // 스크롤을 묵직하고 천천히 추종하도록 세팅
+
+  const updateTextReveal = (progress) => {
     const revealLines = document.querySelectorAll('.reveal-line');
+    const N = revealLines.length; // 총 줄 개수 (4줄)
     const viewHeight = window.innerHeight;
 
-    revealLines.forEach(line => {
-      const rect = line.getBoundingClientRect();
-      
-      // 줄 단위 뷰포트 기준 반응 경계선 설정 (화면 밑 85% ~ 화면 중앙 50%)
-      const start = viewHeight * 0.85;
-      const end = viewHeight * 0.50;
+    revealLines.forEach((line, lineIndex) => {
+      // 각 줄이 독립적으로 반응할 전체 타임라인 내 스크롤 구간 설정
+      const startRange = lineIndex / N;
+      const endRange = (lineIndex + 1) / N;
 
-      // 줄별 진행도 계산 (0 ~ 1)
-      let lineProgress = (start - rect.top) / (start - end);
+      // 전체 진행도가 해당 줄의 시작 경계에 진입했을 때부터 개별 진행률 작동
+      let lineProgress = (progress - startRange) / (endRange - startRange);
       lineProgress = Math.max(0, Math.min(1, lineProgress));
 
       const lineChars = line.querySelectorAll('.reveal-char');
       const totalChars = lineChars.length;
 
-      // 줄 내부의 문자(char)별로 순차적 stagger 시차를 적용하여 속성 매핑
+      // 줄 내부의 글자들은 해당 줄의 lineProgress 내에서 완전 순차(오버랩 없음) 전개
       lineChars.forEach((char, index) => {
-        // 줄 내부 가로 인덱스 기준 시차 분배 (0.0 ~ 0.7 구간 분배)
-        const charDelay = index / totalChars;
-        // 각 글자별 진행률 계산 (stagger 와이프 감도 3.5배 적용)
-        let charProgress = (lineProgress - charDelay * 0.7) * 3.5;
+        const charInterval = 1.0 / totalChars;
+        // 각 글자가 움직이는 시간은 인터벌의 55%로 축소하여, 나머지 45%를 이전 글자 완료 후 다음 글자 시작 전의 정적 대기 시간(텀)으로 확보
+        const charDuration = charInterval * 0.55; 
+        const charStart = index * charInterval;
+
+        let charProgress = (lineProgress - charStart) / charDuration;
         charProgress = Math.max(0, Math.min(1, charProgress));
 
         // 1) transform: 2rem -> 0rem 위로 안착
         const translateY = (1 - charProgress) * 2;
         char.style.transform = `translateY(${translateY}rem)`;
 
-        // 2) color: 연한 그레이 rgb(200,200,200) -> 차콜 블랙 rgb(31,41,55) (투명도 조절 없음)
+        // 2) color: 연한 그레이 rgb(200,200,200) -> 차콜 블랙 rgb(31,41,55)
         const r = Math.round(200 - charProgress * (200 - 31));
         const g = Math.round(200 - charProgress * (200 - 41));
         const b = Math.round(200 - charProgress * (200 - 55));
@@ -234,40 +240,93 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // 인라인 아이콘 개별 스크롤 연동 (투명도 없이 grayscale 필터와 translateY 보간)
+    // 인라인 아이콘 개별 스크롤 연동 (전체 progress 비례)
     const icons = document.querySelectorAll('.reveal-line .inline-icon');
     icons.forEach((icon, index) => {
       const rect = icon.getBoundingClientRect();
-      const start = viewHeight * 0.85;
-      const end = viewHeight * 0.50;
+      const start = viewHeight * 0.90;
+      const end = viewHeight * 0.25;
 
-      let progress = (start - rect.top) / (start - end);
-      progress = Math.max(0, Math.min(1, progress));
+      let iconProgress = (start - rect.top) / (start - end);
+      iconProgress = Math.max(0, Math.min(1, iconProgress));
 
-      const translateY = (1 - progress) * 2;
+      const translateY = (1 - iconProgress) * 2;
       icon.style.transform = `translateY(${translateY - 0.2}rem)`;
-      icon.style.filter = `grayscale(${1 - progress})`;
+      icon.style.filter = `grayscale(${1 - iconProgress})`;
     });
   };
 
-  // requestAnimationFrame 기반 부하 방지 스크롤 핸들러
-  let isScrolling = false;
-  const onScroll = () => {
-    if (!isScrolling) {
-      window.requestAnimationFrame(() => {
-        handleTextScrollReveal();
-        isScrolling = false;
-      });
-      isScrolling = true;
+  const tick = () => {
+    // Lerp 연산 적용
+    currentProgress += (targetProgress - currentProgress) * lerpFactor;
+    
+    // 차이가 극히 적어지면 근사치 대입 후 애니메이션 종료
+    if (Math.abs(targetProgress - currentProgress) < 0.0001) {
+      currentProgress = targetProgress;
+      updateTextReveal(currentProgress);
+      rafId = null;
+    } else {
+      updateTextReveal(currentProgress);
+      rafId = requestAnimationFrame(tick);
     }
   };
 
-  // 이벤트 등록 및 초기 실행
-  window.addEventListener('scroll', onScroll);
+  const handleTextScrollReveal = () => {
+    const revealTrigger = document.querySelector('.reveal-trigger');
+    if (!revealTrigger) return;
+
+    const rect = revealTrigger.getBoundingClientRect();
+    const viewHeight = window.innerHeight;
+
+    // 텍스트 영역 전체 기준 스크롤 경계선 설정 (화면 밑 90% ~ 화면 위 25% 범위)
+    const start = viewHeight * 0.90;
+    const end = viewHeight * 0.25;
+
+    // 전체 텍스트 박스 진행도 계산 (0 ~ 1)
+    let progress = (start - rect.top) / (start - end);
+    progress = Math.max(0, Math.min(1, progress));
+
+    targetProgress = progress;
+
+    if (!rafId) {
+      rafId = requestAnimationFrame(tick);
+    }
+  };
+
+  // 스크롤 및 브라우저 크기 변경 시 이벤트 등록
+  window.addEventListener('scroll', handleTextScrollReveal);
   window.addEventListener('resize', () => {
-    window.requestAnimationFrame(handleTextScrollReveal);
+    // 리사이즈 시에는 즉시 업데이트
+    const revealTrigger = document.querySelector('.reveal-trigger');
+    if (revealTrigger) {
+      const rect = revealTrigger.getBoundingClientRect();
+      const viewHeight = window.innerHeight;
+      const start = viewHeight * 0.90;
+      const end = viewHeight * 0.25;
+      let progress = (start - rect.top) / (start - end);
+      progress = Math.max(0, Math.min(1, progress));
+      targetProgress = progress;
+      currentProgress = progress;
+      updateTextReveal(progress);
+    }
   });
-  handleTextScrollReveal();
+
+  // 초기 1회 즉시 실행
+  const initTextReveal = () => {
+    const revealTrigger = document.querySelector('.reveal-trigger');
+    if (revealTrigger) {
+      const rect = revealTrigger.getBoundingClientRect();
+      const viewHeight = window.innerHeight;
+      const start = viewHeight * 0.90;
+      const end = viewHeight * 0.25;
+      let progress = (start - rect.top) / (start - end);
+      progress = Math.max(0, Math.min(1, progress));
+      targetProgress = progress;
+      currentProgress = progress;
+      updateTextReveal(progress);
+    }
+  };
+  initTextReveal();
 
   console.log('RMHC Portal template initialized successfully.');
 });
