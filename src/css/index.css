@@ -352,7 +352,7 @@
 
 .house-intro__text {
   font-family: "NanumSquare Neo", var(--font-sans);
-  font-size: 3.4rem;
+  font-size: 4.8rem; /* 피그마 스펙: 48px */
   font-weight: 800;
   line-height: 1.6;
   color: var(--text-primary);
@@ -529,7 +529,7 @@
 
 .deco-caption__text {
   font-family: var(--font-sans);
-  font-size: 1.3rem;
+  font-size: 2.0rem; /* 피그마 스펙: 20px */
   font-weight: 700;
   line-height: 1.4;
   color: var(--text-primary);
@@ -544,7 +544,7 @@
 
 .house-intro__bottom-title {
   font-family: "NanumSquare Neo", var(--font-sans);
-  font-size: 2.4rem;
+  font-size: 4.8rem; /* 피그마 스펙: 48px */
   font-weight: 800;
   line-height: 1.5;
   color: var(--text-primary);
@@ -597,7 +597,7 @@
 
 .house-card__title {
   font-family: var(--font-sans);
-  font-size: 1.8rem;
+  font-size: 2.8rem; /* 피그마 스펙: 28px */
   font-weight: 700;
 }
 
@@ -624,7 +624,7 @@
   color: #ffffff;
   padding: 1.6rem 3.6rem;
   border-radius: var(--radius-full);
-  font-size: 1.6rem;
+  font-size: 1.8rem; /* 피그마 스펙: 18px */
   font-weight: 700;
   transition: background-color 0.25s ease, transform 0.2s ease;
   box-shadow: 0 0.8rem 1.6rem rgba(219, 0, 7, 0.15);
