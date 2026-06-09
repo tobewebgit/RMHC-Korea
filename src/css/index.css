@@ -364,6 +364,8 @@
   vertical-align: middle;
   margin: 0 0.4rem;
   transform: translateY(-0.2rem);
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 /* 텍스트 줄별 스크롤 리빌 애니메이션 */
@@ -487,7 +489,7 @@
   width: 24rem;
   height: 9rem;
   z-index: 3;
-  background-image: url('/src/images/main/house_caption_bg.svg');
+  background-image: url('../images/main/house_caption_bg.svg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   display: flex;
@@ -688,8 +690,8 @@
   }
   
   .house-intro__text .inline-icon {
-    width: 18px;
-    height: 18px;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .house-intro__visual-wrap {

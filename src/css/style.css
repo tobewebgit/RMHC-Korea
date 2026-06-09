@@ -12,21 +12,21 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url("/src/fonts/outfit-latin-600-normal.woff2") format("woff2");
+  src: url("../fonts/outfit-latin-600-normal.woff2") format("woff2");
 }
 @font-face {
   font-family: "Outfit";
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("/src/fonts/outfit-latin-700-normal.woff2") format("woff2");
+  src: url("../fonts/outfit-latin-700-normal.woff2") format("woff2");
 }
 @font-face {
   font-family: "Outfit";
   font-weight: 800;
   font-style: normal;
   font-display: swap;
-  src: url("/src/fonts/outfit-latin-800-normal.woff2") format("woff2");
+  src: url("../fonts/outfit-latin-800-normal.woff2") format("woff2");
 }
 
 /* Pretendard: 본문 전용 (사용 weight: 400, 500, 600, 700, 800) */
@@ -34,31 +34,31 @@
   font-family: "Pretendard";
   font-weight: 400;
   font-display: swap;
-  src: url("/src/fonts/Pretendard-Regular.woff2") format("woff2");
+  src: url("../fonts/Pretendard-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Pretendard";
   font-weight: 500;
   font-display: swap;
-  src: url("/src/fonts/Pretendard-Medium.woff2") format("woff2");
+  src: url("../fonts/Pretendard-Medium.woff2") format("woff2");
 }
 @font-face {
   font-family: "Pretendard";
   font-weight: 600;
   font-display: swap;
-  src: url("/src/fonts/Pretendard-SemiBold.woff2") format("woff2");
+  src: url("../fonts/Pretendard-SemiBold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Pretendard";
   font-weight: 700;
   font-display: swap;
-  src: url("/src/fonts/Pretendard-Bold.woff2") format("woff2");
+  src: url("../fonts/Pretendard-Bold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Pretendard";
   font-weight: 800;
   font-display: swap;
-  src: url("/src/fonts/Pretendard-ExtraBold.woff2") format("woff2");
+  src: url("../fonts/Pretendard-ExtraBold.woff2") format("woff2");
 }
 
 :root {
@@ -829,7 +829,7 @@ textarea {
   justify-content: center;
   width: 15rem; /* 150px */
   height: 5.2rem; /* 52px */
-  background: url("/src/images/common/btn_donate.svg") no-repeat center /
+  background: url("../images/common/btn_donate.svg") no-repeat center /
     contain;
   border: none;
   cursor: pointer;
@@ -860,7 +860,7 @@ textarea {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/src/images/common/footer_bg.svg") no-repeat top center /
+  background: url("../images/common/footer_bg.svg") no-repeat top center /
     100% auto;
   pointer-events: none;
   z-index: 0;
@@ -877,7 +877,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: url("/src/images/common/footer__top_bg.png") no-repeat center /
+  background: url("../images/common/footer__top_bg.png") no-repeat center /
     100% 100%;
   padding: 4rem 5rem;
   border-radius: 0.8rem;
