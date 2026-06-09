@@ -436,9 +436,9 @@
 
 .house-intro__image-frame {
   position: relative;
-  width: 76rem;
+  width: 120rem; /* 1200px (시안 스펙) */
   max-width: 100%;
-  aspect-ratio: 760 / 460;
+  aspect-ratio: 120 / 70; /* 1200:700 비율로 동기화 */
   border: 1.2rem solid #c8bbf8; /* 보라색 액자 테두리 */
   border-radius: 4rem; /* 둥근 액자 */
   background-color: var(--bg-primary);
@@ -604,10 +604,18 @@
 }
 
 /* 카드별 컬러 테마 (글자/아이콘 오버라이드 제거하고 배경색만 개별 부여) */
-.house-card.theme-blue { background-color: #9ce3f6; }
-.house-card.theme-purple { background-color: #c8bbf8; }
-.house-card.theme-yellow { background-color: #ffc72c; }
-.house-card.theme-green { background-color: #8dc73f; }
+.house-card.theme-blue {
+  background-color: #9ce3f6;
+}
+.house-card.theme-purple {
+  background-color: #c8bbf8;
+}
+.house-card.theme-yellow {
+  background-color: #ffc72c;
+}
+.house-card.theme-green {
+  background-color: #8dc73f;
+}
 
 /* 하단 버튼 및 액션 */
 .house-intro__actions {
