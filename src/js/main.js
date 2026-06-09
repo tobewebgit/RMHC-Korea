@@ -102,27 +102,78 @@ document.addEventListener('DOMContentLoaded', () => {
         familySite.setAttribute('aria-expanded', 'false');
       }
     });
-  }  // --- 메인 홈 하우스 소개 섹션 Intersection Observer 인터랙션 ---
-  const revealTriggers = document.querySelectorAll('.reveal-trigger');
+  }  // --- 메인 홈 하우스 소개 섹션 인터랙션 ---
   const cascadeTriggers = document.querySelectorAll('.cascade-trigger');
 
-  const observerOptions = {
+  // 1) 중앙 이미지 및 일러스트 순차 등장 (Intersection Observer 1회성 Cascade)
+  const cascadeOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.15 // 요소가 15% 이상 보일 때 활성화
+    threshold: 0.15
   };
 
-  const scrollObserver = new IntersectionObserver((entries, observer) => {
+  const cascadeObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target); // 한 번 등장한 후에는 관찰 해제
+        observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, cascadeOptions);
 
-  revealTriggers.forEach(trigger => scrollObserver.observe(trigger));
-  cascadeTriggers.forEach(trigger => scrollObserver.observe(trigger));
+  cascadeTriggers.forEach(trigger => cascadeObserver.observe(trigger));
+
+  // 2) 텍스트 리빌 (실시간 스크롤 진행도 비율 매핑)
+  const handleTextScrollReveal = () => {
+    const revealLines = document.querySelectorAll('.reveal-line');
+    const viewHeight = window.innerHeight;
+
+    revealLines.forEach(line => {
+      const rect = line.getBoundingClientRect();
+      
+      // 뷰포트 기준 반응 시작/끝 경계 설정 (화면 밑 85% ~ 화면 위 25% 범위)
+      const start = viewHeight * 0.85;
+      const end = viewHeight * 0.25;
+
+      // 스크롤 진행률 계산 (0 ~ 1)
+      let progress = (start - rect.top) / (start - end);
+      progress = Math.max(0, Math.min(1, progress));
+
+      // [1] transform: 2.5rem -> 0rem 위로 안착
+      const translateY = (1 - progress) * 2.5;
+      line.style.transform = `translateY(${translateY}rem)`;
+
+      // [2] opacity: 0.25 -> 1.0 페이드인
+      const opacity = 0.25 + (progress * 0.75);
+      line.style.opacity = opacity;
+
+      // [3] color: 그레이 rgb(158,158,158) -> 차콜 rgb(31,41,55) 스무스 보간
+      const r = Math.round(158 - progress * (158 - 31));
+      const g = Math.round(158 - progress * (158 - 41));
+      const b = Math.round(158 - progress * (158 - 55));
+      line.style.color = `rgb(${r}, ${g}, ${b})`;
+
+      // [4] inline-icon: grayscale(1) -> grayscale(0) 및 opacity 보간
+      const icon = line.querySelector('.inline-icon');
+      if (icon) {
+        const grayscale = 1 - progress;
+        icon.style.filter = `grayscale(${grayscale})`;
+        icon.style.opacity = opacity;
+      }
+
+      // [5] reveal-highlight: 진행도가 70%가 넘었을 때 노란 밑줄 클래스 활성화
+      if (progress >= 0.7) {
+        line.classList.add('is-highlighted');
+      } else {
+        line.classList.remove('is-highlighted');
+      }
+    });
+  };
+
+  // 이벤트 등록 및 초기 실행
+  window.addEventListener('scroll', handleTextScrollReveal);
+  window.addEventListener('resize', handleTextScrollReveal);
+  handleTextScrollReveal();
 
   console.log('RMHC Portal template initialized successfully.');
 });

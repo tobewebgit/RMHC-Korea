@@ -368,38 +368,57 @@
   height: 2.4rem;
 }
 
-/* 텍스트 줄별 스크롤 리빌 애니메이션 */
+/* 텍스트 줄별 실시간 스크롤 리빌 */
 .reveal-line {
   display: block;
-  opacity: 0.25;
-  filter: blur(4px);
-  transform: translateY(3rem);
-  transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
-              filter 1s cubic-bezier(0.215, 0.61, 0.355, 1),
-              transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  color: #9e9e9e; /* 초기 그레이 */
+  opacity: 0.25; /* 초기 불투명도 */
+  transform: translateY(2.5rem);
+  will-change: transform, opacity, color;
   margin-bottom: 0.8rem;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.2s cubic-bezier(0.25, 1, 0.5, 1),
+              color 0.2s cubic-bezier(0.25, 1, 0.5, 1); /* 스크롤 변화에 완충 효과 */
 }
 
-/* 스크롤 진입 활성화 시 */
-.reveal-trigger.is-visible .reveal-line {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
+/* 텍스트 내 인라인 아이콘 */
+.reveal-line .inline-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.4rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  transform: translateY(-0.2rem);
+  filter: grayscale(1);
+  opacity: 0.25;
+  will-change: filter, opacity;
+  transition: filter 0.2s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* 순차 딜레이 부여 */
-.reveal-trigger.is-visible .reveal-line:nth-child(1) { transition-delay: 0.1s; }
-.reveal-trigger.is-visible .reveal-line:nth-child(2) { transition-delay: 0.3s; }
-.reveal-trigger.is-visible .reveal-line:nth-child(3) { transition-delay: 0.5s; }
-.reveal-trigger.is-visible .reveal-line:nth-child(4) { transition-delay: 0.7s; }
-
-/* 텍스트 하이라이트 효과 */
+/* 하이라이트 노란 밑줄/색상 효과 */
 .reveal-highlight {
-  transition: color 0.8s ease;
+  position: relative;
+  font-weight: 800;
 }
 
-.reveal-trigger.is-visible .reveal-highlight {
-  color: var(--text-primary);
+.reveal-highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.2rem;
+  width: 100%;
+  height: 0.8rem;
+  background-color: #ffc72c; /* 브랜드 옐로우 */
+  opacity: 0.25; /* 연한 노란 밑줄 */
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-line.is-highlighted .reveal-highlight::after {
+  transform: scaleX(1);
 }
 
 
