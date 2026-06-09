@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   cascadeTriggers.forEach(trigger => cascadeObserver.observe(trigger));
 
-  // 2) 텍스트 노드 자동 글자 단위(char) 쪼개기 함수 (SplitText 바닐라 JS 구현)
+  // 2) 텍스트 노드 자동 글자 단위(char) 및 단어 단위(word) 쪼개기 함수 (SplitText 바닐라 JS 구현)
   const splitTextIntoChars = () => {
     const revealLines = document.querySelectorAll('.reveal-line');
     
@@ -131,23 +131,36 @@ document.addEventListener('DOMContentLoaded', () => {
       const childNodes = Array.from(line.childNodes);
       line.innerHTML = ''; // 기존 내용 청소
       
+      const processTextNode = (textNode, container) => {
+        const text = textNode.textContent;
+        // 연속된 공백 및 단어 구분 (공백 캡처 그룹 포함)
+        const tokens = text.split(/(\s+)/);
+        
+        tokens.forEach(token => {
+          if (!token) return;
+          
+          if (/^\s+$/.test(token)) {
+            // 공백 문자열인 경우 그대로 텍스트 노드로 삽입
+            container.appendChild(document.createTextNode(token));
+          } else {
+            // 일반 단어인 경우 단어 래퍼 생성 후 각 글자를 reveal-char로 쪼개어 삽입
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'reveal-word';
+            
+            for (let char of token) {
+              const charSpan = document.createElement('span');
+              charSpan.className = 'reveal-char';
+              charSpan.textContent = char;
+              wordSpan.appendChild(charSpan);
+            }
+            container.appendChild(wordSpan);
+          }
+        });
+      };
+
       childNodes.forEach(node => {
         if (node.nodeType === Node.TEXT_NODE) {
-          // 일반 텍스트 노드 분할
-          const text = node.textContent;
-          const fragment = document.createDocumentFragment();
-          
-          for (let char of text) {
-            if (char === ' ' || char === '\n' || char === '\t') {
-              fragment.appendChild(document.createTextNode(char));
-            } else {
-              const span = document.createElement('span');
-              span.className = 'reveal-char';
-              span.textContent = char;
-              fragment.appendChild(span);
-            }
-          }
-          line.appendChild(fragment);
+          processTextNode(node, line);
         } else if (node.nodeType === Node.ELEMENT_NODE) {
           if (node.classList.contains('reveal-highlight')) {
             // 하이라이트 스팬 내부의 텍스트 노드 분할
@@ -156,19 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             highlightNodes.forEach(hNode => {
               if (hNode.nodeType === Node.TEXT_NODE) {
-                const text = hNode.textContent;
-                const fragment = document.createDocumentFragment();
-                for (let char of text) {
-                  if (char === ' ' || char === '\n' || char === '\t') {
-                    fragment.appendChild(document.createTextNode(char));
-                  } else {
-                    const span = document.createElement('span');
-                    span.className = 'reveal-char';
-                    span.textContent = char;
-                    fragment.appendChild(span);
-                  }
-                }
-                node.appendChild(fragment);
+                processTextNode(hNode, node);
               } else {
                 node.appendChild(hNode);
               }

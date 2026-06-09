@@ -1,3 +1,4 @@
+@import url('https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css');
 @import "components/button.css";
 @import "components/form.css";
 
@@ -61,14 +62,7 @@
   src: url("../fonts/Pretendard-ExtraBold.woff2") format("woff2");
 }
 
-/* NanumSquare Neo: 피그마 지정 타이틀 및 헤더 전용 (가변 웹폰트) */
-@font-face {
-  font-family: "NanumSquare Neo";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
+/* NanumSquare Neo: 피그마 지정 타이틀 및 헤더 전용 (공식 웹폰트는 최상단 임포트 완료) */
 
 :root {
   /* Brand Color Palette (RMHC Warm Light Theme — 피그마 기준) */
@@ -100,7 +94,7 @@
 
   /* Typography Fonts */
   --font-sans:
-    "NanumSquare Neo", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    "NanumSquareNeo", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-title: "Outfit", var(--font-sans);
 
   /* Typography Scale */
@@ -794,9 +788,10 @@ textarea {
 }
 
 .header__nav-item {
-  font-family: var(--font-sans);
+  font-family: "Pretendard", var(--font-sans);
   font-size: 2rem; /* 20px */
   font-weight: 400;
+  line-height: 1.5; /* 150% (30px) */
   color: #000000;
   position: relative;
   height: 100%;
@@ -818,6 +813,7 @@ textarea {
 }
 
 .header__util-link {
+  font-family: "Pretendard", var(--font-sans);
   font-size: 1.8rem; /* 18px */
   font-weight: 400;
   color: #000000;
@@ -844,7 +840,7 @@ textarea {
   cursor: pointer;
 }
 .header__donate-btn-text {
-  font-family: var(--font-sans);
+  font-family: "Pretendard", var(--font-sans);
   font-size: 2rem; /* 20px */
   font-weight: 600;
   color: #fffde9; /* 피그마: 크림색 */
@@ -910,7 +906,7 @@ textarea {
 }
 
 .footer__slogan-text {
-  font-family: "NanumSquare Neo", sans-serif;
+  font-family: "NanumSquareNeo", sans-serif;
   font-size: 2.4rem;
   font-weight: 800;
   color: #000000;
