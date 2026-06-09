@@ -1,0 +1,5 @@
+<svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 크레파스로 그린 구름 모양 패스 -->
+  <path d="M30 65C19 65 10 56 10 45C10 35 17 26 27 25C30 15 39 8 50 8C60 8 68 13 72 21C76 16 83 12 90 12C101 12 110 20 111 30C121 31 130 39 130 50C130 61 121 70 110 70H30V65Z" fill="#8edcff" fill-opacity="0.8" stroke="#8edcff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 3"/>
+  <path d="M32 62C23 62 15 54 15 45C15 37 21 30 29 29C32 20 40 13 50 13C59 13 66 18 69 26C73 21 79 17 86 17C96 17 104 24 105 34C114 35 122 42 122 52C122 62 114 70 105 70H32V62Z" stroke="white" stroke-width="2" stroke-dasharray="6 6"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 연두색 손그림 화살표 -->
+  <path d="M10 10C25 15 45 30 65 45" stroke="#8dc73f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 화살표 촉 -->
+  <path d="M52 45C55 45 65 45 68 43C68 40 68 30 68 27" stroke="#8dc73f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
