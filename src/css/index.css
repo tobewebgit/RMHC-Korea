@@ -378,7 +378,7 @@
 .reveal-char {
   display: inline-block;
   color: #c8c8c8; /* 초기 그레이 */
-  transform: translateY(2rem);
+  transform: translateY(0.5rem);
   will-change: transform, color;
 }
 

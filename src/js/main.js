@@ -219,8 +219,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let charProgress = (lineProgress - charStart) / charDuration;
         charProgress = Math.max(0, Math.min(1, charProgress));
 
-        // 1) transform: 2rem -> 0rem 위로 안착
-        const translateY = (1 - charProgress) * 2;
+        // 1) transform: 0.5rem -> 0rem 위로 안착
+        const translateY = (1 - charProgress) * 0.5;
         char.style.transform = `translateY(${translateY}rem)`;
 
         // 2) color: 연한 그레이 rgb(200,200,200) -> 차콜 블랙 rgb(31,41,55)
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let iconProgress = (start - rect.top) / (start - end);
       iconProgress = Math.max(0, Math.min(1, iconProgress));
 
-      const translateY = (1 - iconProgress) * 2;
+      const translateY = (1 - iconProgress) * 0.5;
       icon.style.transform = `translateY(${translateY - 0.2}rem)`;
       icon.style.filter = `grayscale(${1 - iconProgress})`;
     });
