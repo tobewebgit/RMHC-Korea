@@ -345,7 +345,6 @@
 /* ── 텍스트 마스킹 / 리빌 ── */
 .house-intro__text-wrap {
   text-align: center;
-  max-width: 100rem;
   margin: 0 auto;
   margin-bottom: 8rem;
 }
@@ -427,7 +426,6 @@
   transform: scaleX(1);
 }
 
-
 /* ── 중앙 이미지 및 크레파스 낙서 일러스트 ── */
 .house-intro__visual-wrap {
   display: flex;
@@ -445,12 +443,13 @@
   border-radius: 4rem; /* 둥근 액자 */
   background-color: var(--bg-primary);
   box-shadow: var(--shadow-lg);
-  
+
   /* 등장 애니메이션 초기 상태 */
   opacity: 0;
   transform: translateY(5rem);
-  transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
-              transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition:
+    opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .house-intro__main-img {
@@ -472,8 +471,9 @@
   pointer-events: none;
   opacity: 0;
   transform: scale(0.6) rotate(-10deg);
-  transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
-              transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition:
+    opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* 활성화 시 낙서 등장 */
@@ -514,19 +514,20 @@
   width: 24rem;
   height: 9rem;
   z-index: 3;
-  background-image: url('../images/main/house_caption_bg.svg');
+  background-image: url("../images/main/house_caption_bg.svg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.2rem 2.4rem 2rem 2.4rem; /* 텍스트 정렬 보정 */
-  
+
   /* 초기 상태 */
   opacity: 0;
   transform: scale(0.6) translateY(20px);
-  transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-              transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition:
+    opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   transition-delay: 1s;
 }
 
@@ -537,13 +538,12 @@
 
 .deco-caption__text {
   font-family: var(--font-sans);
-  font-size: 2.0rem; /* 피그마 스펙: 20px */
+  font-size: 2rem; /* 피그마 스펙: 20px */
   font-weight: 700;
   line-height: 1.4;
   color: var(--text-primary);
   text-align: center;
 }
-
 
 /* ── 하단 카드 그리드 및 안내 문구 ── */
 .house-intro__bottom-wrap {
@@ -577,8 +577,9 @@
   padding: 2.4rem 3.2rem;
   border-radius: 2rem;
   color: #ffffff;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--shadow-sm);
   min-height: 8rem;
 }
@@ -611,12 +612,26 @@
 }
 
 /* 카드별 컬러 테마 */
-.house-card.theme-blue { background-color: #9ce3f6; color: #1f2937; }
-.house-card.theme-blue .house-card__icon-wrap img { filter: none; } /* 블루 테마에서는 아이콘 어둡게 */
-.house-card.theme-purple { background-color: #c8bbf8; }
-.house-card.theme-yellow { background-color: #ffc72c; color: #1f2937; }
-.house-card.theme-yellow .house-card__icon-wrap img { filter: none; }
-.house-card.theme-green { background-color: #8dc73f; }
+.house-card.theme-blue {
+  background-color: #9ce3f6;
+  color: #1f2937;
+}
+.house-card.theme-blue .house-card__icon-wrap img {
+  filter: none;
+} /* 블루 테마에서는 아이콘 어둡게 */
+.house-card.theme-purple {
+  background-color: #c8bbf8;
+}
+.house-card.theme-yellow {
+  background-color: #ffc72c;
+  color: #1f2937;
+}
+.house-card.theme-yellow .house-card__icon-wrap img {
+  filter: none;
+}
+.house-card.theme-green {
+  background-color: #8dc73f;
+}
 
 /* 하단 버튼 및 액션 */
 .house-intro__actions {
@@ -635,7 +650,9 @@
   border-radius: var(--radius-full);
   font-size: 1.8rem; /* 피그마 스펙: 18px */
   font-weight: 700;
-  transition: background-color 0.25s ease, transform 0.2s ease;
+  transition:
+    background-color 0.25s ease,
+    transform 0.2s ease;
   box-shadow: 0 0.8rem 1.6rem rgba(219, 0, 7, 0.15);
 }
 
@@ -651,7 +668,6 @@
 .btn-round-primary:hover svg {
   transform: translateX(4px);
 }
-
 
 /* ==========================================================================
    반응형: 태블릿 & 모바일 대응
@@ -694,7 +710,7 @@
     width: 20rem;
     height: 7.5rem;
   }
-  
+
   .deco-caption__text {
     font-size: 1.1rem;
   }
@@ -714,7 +730,7 @@
     font-size: 2.2rem;
     line-height: 1.7;
   }
-  
+
   .house-intro__text .inline-icon {
     width: 1.8rem;
     height: 1.8rem;
@@ -730,7 +746,7 @@
     border-width: 0.8rem;
     border-radius: 2.4rem;
   }
-  
+
   .house-intro__main-img {
     border-radius: 1.6rem;
   }
@@ -761,7 +777,7 @@
     height: 7rem;
     padding: 0.8rem 1.6rem 1.6rem 1.6rem;
   }
-  
+
   .deco-caption__text {
     font-size: 1rem;
   }
