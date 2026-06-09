@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let targetProgress = 0;
   let currentProgress = 0;
   let rafId = null;
-  const lerpFactor = 0.05; // 스크롤을 묵직하고 천천히 추종하도록 세팅
+  const lerpFactor = 0.15; // 스크롤 관성(바운싱)을 줄이기 위해 추종 계수를 0.15로 상향 조정
 
   const updateTextReveal = (progress) => {
     const revealLines = document.querySelectorAll('.reveal-line');
