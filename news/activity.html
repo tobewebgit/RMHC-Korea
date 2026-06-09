@@ -3,27 +3,218 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 활동소식 페이지입니다.">
-  <title>RMHC Korea - 활동소식</title>
+  <meta name="description" content="재단법인 한국로날드맥도날드하우스의 따뜻한 나눔 현장과 소중한 활동 소식을 만나보세요.">
+  <title>활동소식 | RMHC Korea</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/news.css">
 </head>
 <body>
+
+  <!-- S: Skip Navigation -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+  <!-- E: Skip Navigation -->
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
   <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">NW_02 - 페이지</div>
-      <h1 class="hero-title">활동소식</h1>
-      <p class="hero-desc">
-        이 페이지는 활동소식 화면입니다.<br>
-        추후 기획서 내용에 맞춰 퍼블리싱 마크업이 조립될 예정입니다.
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
-      </div>
+    <!-- S: Main Content Area -->
+    <main class="container" id="main-content">
+      
+      <!-- S: News Hero -->
+      <section class="news-hero mt-6">
+        <span class="badge badge-primary">NW_02 - 소식</span>
+        <h1 class="hero-title">활동소식</h1>
+        <p class="hero-desc">
+          자원봉사자, 기부자, 그리고 맥도날드 크루들이 함께 땀 흘려 만들어가는 따뜻한 치유의 여정을 모았습니다.
+        </p>
+      </section>
+      <!-- E: News Hero -->
+
+      <!-- S: Category Tabs -->
+      <nav class="news-tabs" aria-label="소식 카테고리">
+        <a href="/news/notice.html" class="tab-btn">공지사항</a>
+        <a href="/news/activity.html" class="tab-btn active" aria-current="page">활동소식</a>
+      </nav>
+      <!-- E: Category Tabs -->
+
+      <!-- S: Search Area -->
+      <section class="news-search" aria-label="활동소식 검색">
+        <form action="#" method="get" class="news-search-form">
+          <select name="searchType" class="news-search-select" aria-label="검색 조건 선택">
+            <option value="all">전체</option>
+            <option value="title">제목</option>
+            <option value="content">내용</option>
+          </select>
+          <div class="news-search-input-wrapper">
+            <input type="search" name="keyword" class="news-search-input" placeholder="검색어를 입력해 주세요" aria-label="검색어 입력">
+          </div>
+          <button type="submit" class="news-search-btn">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <span>검색</span>
+          </button>
+        </form>
+      </section>
+      <!-- E: Search Area -->
+
+      <!-- S: Activity Cards Grid -->
+      <section class="activity-grid" aria-label="활동소식 목록">
+        
+        <!-- Card 1 -->
+        <article class="activity-card">
+          <div class="activity-img-wrapper">
+            <img src="/src/images/news/img_activity_01.jpg" alt="양산 하우스 5주년 홈커밍 행사 단체 촬영 사진" class="activity-img" width="400" height="240" loading="lazy">
+          </div>
+          <div class="activity-content">
+            <span class="activity-badge">행사/캠페인</span>
+            <h2 class="activity-title">양산 부산대학교병원 RMHC 하우스 개관 5주년 기념 홈커밍 데이 성료</h2>
+            <p class="activity-desc">
+              양산 부산대 RMHC 패밀리하우스가 개관 5주년을 맞이하여 그동안 하우스를 다녀갔던 완치 환아들과 그 가족들을 초대하여 따뜻한 정을 나누는 감사 홈커밍 데이 행사를 개최하였습니다.
+            </p>
+            <div class="activity-meta">
+              <span class="date">2026-06-01</span>
+              <a href="/news/activity/detail.html" class="more-btn" aria-label="양산 하우스 5주년 홈커밍 기사 읽기">
+                <span>자세히 보기</span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="activity-card">
+          <div class="activity-img-wrapper">
+            <img src="/src/images/news/img_activity_02.jpg" alt="대청소 중인 맥도날드 임직원들의 청소 봉사 모습" class="activity-img" width="400" height="240" loading="lazy">
+          </div>
+          <div class="activity-content">
+            <span class="activity-badge">자원봉사</span>
+            <h2 class="activity-title">한국맥도날드 크루 및 임직원, 가정의 달 맞이 RMHC 하우스 봄맞이 대청소 봉사</h2>
+            <p class="activity-desc">
+              가정의 달 5월을 맞아 한국맥도날드 가맹점주 및 크루들과 재단 임직원 40여 명이 하우스를 방문하여 환아들이 쾌적하고 위생적인 환경에서 지낼 수 있도록 봄맞이 구석구석 정밀 대청소를 진행했습니다.
+            </p>
+            <div class="activity-meta">
+              <span class="date">2026-05-24</span>
+              <a href="/news/activity/detail.html" class="more-btn" aria-label="한국맥도날드 임직원 봉사 기사 읽기">
+                <span>자세히 보기</span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="activity-card">
+          <div class="activity-img-wrapper">
+            <img src="/src/images/news/img_activity_03.jpg" alt="백일장 본선에 참여하여 글을 쓰는 어린이들" class="activity-img" width="400" height="240" loading="lazy">
+          </div>
+          <div class="activity-content">
+            <span class="activity-badge">행사/캠페인</span>
+            <h2 class="activity-title">제8회 RMHC Korea 전국 어린이 백일장 본선 대회 성황리에 개최</h2>
+            <p class="activity-desc">
+              '더불어 사는 따뜻한 세상'을 주제로 한 제8회 RMHC Korea 어린이 백일장 본선 대회가 많은 어린이 작가들이 참석한 가운데 치러졌습니다. 참신하고 따뜻한 시각을 담은 심사 결과는 곧 공개됩니다.
+            </p>
+            <div class="activity-meta">
+              <span class="date">2026-05-18</span>
+              <a href="/news/activity/detail.html" class="more-btn" aria-label="어린이 백일장 본선 개최 기사 읽기">
+                <span>자세히 보기</span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="activity-card">
+          <div class="activity-img-wrapper">
+            <img src="/src/images/news/img_activity_04.jpg" alt="기부금 전달식을 진행하고 있는 파트너사 관계자들" class="activity-img" width="400" height="240" loading="lazy">
+          </div>
+          <div class="activity-content">
+            <span class="activity-badge">기업후원</span>
+            <h2 class="activity-title">RMHC 후원 파트너사 미래생활(주) 착한 소비 매칭 그랜트 기부금 전달</h2>
+            <p class="activity-desc">
+              재단 공식 파트너사인 미래생활(주)에서 자사 생필품 제품 판매 수익금의 일부를 적립하는 '착한 소비 캠페인'을 통해 모금된 매칭 그랜트 후원금과 위생용품을 RMHC 하우스에 전달하였습니다.
+            </p>
+            <div class="activity-meta">
+              <span class="date">2026-05-10</span>
+              <a href="/news/activity/detail.html" class="more-btn" aria-label="미래생활 기부금 전달 기사 읽기">
+                <span>자세히 보기</span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="activity-card">
+          <div class="activity-img-wrapper">
+            <img src="/src/images/news/img_activity_05.jpg" alt="소아암 쉼터 건립을 위한 자선 골프대회 행사 전경" class="activity-img" width="400" height="240" loading="lazy">
+          </div>
+          <div class="activity-content">
+            <span class="activity-badge">행사/캠페인</span>
+            <h2 class="activity-title">수도권 제2 소아암 환아 쉼터 건립 후원을 위한 자선 골프 대회 참가 모집</h2>
+            <p class="activity-desc">
+              중증 소아암으로 고통받는 환아들과 가족들이 안심하고 머무를 수 있는 수도권 제2 패밀리하우스 건립 기금 마련을 위한 자선 골프 대회 후원 참여자 및 참가자를 모집합니다.
+            </p>
+            <div class="activity-meta">
+              <span class="date">2026-04-28</span>
+              <a href="/news/activity/detail.html" class="more-btn" aria-label="소아암 환아 쉼터 건립 골프대회 기사 읽기">
+                <span>자세히 보기</span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="activity-card">
+          <div class="activity-img-wrapper">
+            <img src="/src/images/news/img_activity_06.jpg" alt="미술 심리 치료에 참여한 아이들이 그린 그림들" class="activity-img" width="400" height="240" loading="lazy">
+          </div>
+          <div class="activity-content">
+            <span class="activity-badge">교육/치료</span>
+            <h2 class="activity-title">서초 성모 RMHC 하우스 환아 정서 지지를 위한 전문 미술 심리 치료 프로그램 개시</h2>
+            <p class="activity-desc">
+              병원 밖에서 심리적 정서적 안정을 찾을 수 있도록 미술 치료 전문 연구진들과의 협업을 통해 환아 및 보호자를 위한 정서 케어 맞춤 미술 치료 프로그램을 서초 성모 하우스에 정식 오픈했습니다.
+            </p>
+            <div class="activity-meta">
+              <span class="date">2026-04-12</span>
+              <a href="/news/activity/detail.html" class="more-btn" aria-label="서초 성모 하우스 미술 치료 기사 읽기">
+                <span>자세히 보기</span>
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </section>
+      <!-- E: Activity Cards Grid -->
+
+      <!-- S: Pagination -->
+      <nav class="pagination" aria-label="페이지 선택">
+        <button type="button" class="pagination-btn arrow" aria-label="이전 페이지" disabled>&lt;</button>
+        <button type="button" class="pagination-btn active" aria-current="page">1</button>
+        <button type="button" class="pagination-btn">2</button>
+        <button type="button" class="pagination-btn">3</button>
+        <button type="button" class="pagination-btn arrow" aria-label="다음 페이지">&gt;</button>
+      </nav>
+      <!-- E: Pagination -->
+
     </main>
+    <!-- E: Main Content Area -->
 
     <!-- 푸터 공통 영역 인클루드 -->
     <load ="src/includes/footer.html" />

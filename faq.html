@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RMHC Korea에 대해 자주 묻는 질문과 답변을 모아두었습니다. 기부, 자원봉사, 하우스 이용에 대해 궁금한 점을 해결해 보세요.">
+  <title>자주 묻는 질문 (FAQ) | RMHC Korea</title>
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/faq.css">
+</head>
+<body>
+
+  <!-- S: Skip Navigation -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+  <!-- E: Skip Navigation -->
+
+  <!-- 헤더 공통 영역 인클루드 -->
+  <load ="src/includes/header.html" />
+
+  <div class="page-wrapper">
+    <!-- S: Main Content Area -->
+    <main class="container" id="main-content">
+      
+      <!-- S: FAQ Hero -->
+      <section class="faq-hero mt-6">
+        <span class="badge badge-primary">HELP - FAQ</span>
+        <h1 class="hero-title">자주 묻는 질문</h1>
+        <p class="hero-desc">
+          RMHC Korea의 기부 참여, 자원봉사 신청, 그리고 하우스 입실 및 운영에 관한 궁금증을 빠르게 해결해 드립니다.
+        </p>
+      </section>
+      <!-- E: FAQ Hero -->
+
+      <!-- S: FAQ Search -->
+      <section class="faq-search" aria-label="FAQ 질문 검색">
+        <form action="#" method="get" class="faq-search-form" onsubmit="return false;">
+          <input type="search" id="faqSearchInput" class="faq-search-input" placeholder="궁금하신 내용을 입력해 주세요 (예: 기부금 영수증)" aria-label="FAQ 검색어 입력">
+          <button type="button" id="faqSearchBtn" class="faq-search-btn">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <span>검색</span>
+          </button>
+        </form>
+      </section>
+      <!-- E: FAQ Search -->
+
+      <!-- S: FAQ Category Tabs -->
+      <nav class="faq-tabs" id="faqTabs" aria-label="FAQ 카테고리">
+        <button type="button" class="tab-btn active" data-category="all">전체</button>
+        <button type="button" class="tab-btn" data-category="donate">기부/후원</button>
+        <button type="button" class="tab-btn" data-category="volunteer">자원봉사</button>
+        <button type="button" class="tab-btn" data-category="house">하우스 이용</button>
+        <button type="button" class="tab-btn" data-category="etc">기타</button>
+      </nav>
+      <!-- E: FAQ Category Tabs -->
+
+      <!-- S: FAQ Accordion List -->
+      <section class="faq-container" aria-label="FAQ 질문 목록">
+        <div class="faq-list" id="faqList">
+          
+          <!-- FAQ Item 1 -->
+          <div class="faq-item" data-category="donate">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-a-1">
+              <span class="faq-title-group">
+                <span class="faq-q-badge" aria-hidden="true">Q</span>
+                <span class="faq-question-text">기부금 영수증은 어떻게 발급받을 수 있나요?</span>
+              </span>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-content" id="faq-a-1" role="region" aria-label="답변">
+              <div class="faq-answer-inner">
+                <span class="faq-a-badge" aria-hidden="true">A</span>
+                <div class="faq-answer-text">
+                  <p>국세청 연말정산 간소화 서비스를 통해 쉽고 간편하게 발급 및 조회가 가능합니다.</p>
+                  <ul>
+                    <li>후원 시 또는 회원정보 수정 시 <strong>주민등록번호 13자리</strong>(법인의 경우 사업자등록번호)를 올바르게 입력해 주셔야 국세청에 자동 연동됩니다.</li>
+                    <li>기부금 영수증 개별 출력이 필요하신 분은 홈페이지의 <strong>[비회원 후원조회]</strong> 또는 <strong>[기부금 영수증 확인]</strong> 메뉴에서 본인 인증 후 PDF로 즉시 내려받으실 수 있습니다.</li>
+                    <li>수집된 주민등록번호 등 과세 정보는 소득세법에 의거 기부금 명세서 제출 목적 외에 다른 용도로 이용되지 않으며 5년간 안전하게 보관 후 폐기됩니다.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item" data-category="donate">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-a-2">
+              <span class="faq-title-group">
+                <span class="faq-q-badge" aria-hidden="true">Q</span>
+                <span class="faq-question-text">정기 후원의 금액이나 결제일, 결제 수단을 변경하고 싶습니다.</span>
+              </span>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-content" id="faq-a-2" role="region" aria-label="답변">
+              <div class="faq-answer-inner">
+                <span class="faq-a-badge" aria-hidden="true">A</span>
+                <div class="faq-answer-text">
+                  <p>후원 내역의 변경은 로그인 후 마이페이지에서 직접 간편하게 진행하실 수 있습니다.</p>
+                  <ol>
+                    <li><strong>[마이페이지] &gt; [후원 현황]</strong> 탭으로 이동합니다.</li>
+                    <li>현재 유지 중인 정기 후원 항목의 [정보 변경] 팝업 버튼을 누릅니다.</li>
+                    <li>원하시는 변경 금액(최소 10,000원 이상)이나 새로운 결제 수단(신용카드 또는 계좌정보)을 입력하고 인증을 완료합니다.</li>
+                  </ol>
+                  <p><em>※ 주의: 변경된 결제 수단 및 기부 금액은 다음 결제 예정일부터 효력이 발생하며, 당월 이미 출금 절차가 시작된 후원금에는 소급 적용되지 않습니다.</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item" data-category="volunteer">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-a-3">
+              <span class="faq-title-group">
+                <span class="faq-q-badge" aria-hidden="true">Q</span>
+                <span class="faq-question-text">개인 및 기업/단체 자원봉사 신청 절차는 어떻게 되나요?</span>
+              </span>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-content" id="faq-a-3" role="region" aria-label="답변">
+              <div class="faq-answer-inner">
+                <span class="faq-a-badge" aria-hidden="true">A</span>
+                <div class="faq-answer-text">
+                  <p>홈페이지 상단의 <strong>[자원봉사 신청]</strong> 페이지에서 대상별 맞춤 신청 양식을 제출해 주셔야 합니다.</p>
+                  <ul>
+                    <li><strong>개인 신청:</strong> 이름, 생년월일, 연락처, 언어 능력 및 희망 하우스와 활동 요일을 기재하여 제출합니다.</li>
+                    <li><strong>기업 및 단체 신청:</strong> 기관명, 담당자 정보, 참여 예정인원수 및 희망 봉사 테마(청소, 급식, 교육 등)를 작성하여 제출합니다.</li>
+                  </ul>
+                  <p>제출 완료 후, 각 하우스 담당 사회복지사가 스케줄 검토 후 평일 기준 3일 이내에 유선으로 연락을 드려 사전 교육 및 최종 일정을 조율하게 됩니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item" data-category="volunteer">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-a-4">
+              <span class="faq-title-group">
+                <span class="faq-q-badge" aria-hidden="true">Q</span>
+                <span class="faq-question-text">자원봉사 시간은 VMS(사회복지자원봉사인증관리시스템)에 등록되나요?</span>
+              </span>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-content" id="faq-a-4" role="region" aria-label="답변">
+              <div class="faq-answer-inner">
+                <span class="faq-a-badge" aria-hidden="true">A</span>
+                <div class="faq-answer-text">
+                  <p><strong>네, 등록됩니다.</strong> 재단법인 한국로날드맥도날드하우스는 보건복지부가 인정하는 공식 VMS(사회복지 자원봉사인증관리) 연계기관입니다.</p>
+                  <p>봉사 신청을 하실 때 VMS 아이디를 기입해 주시면 활동 완료 후 7일 이내에 담당자가 봉사 실적을 전산 등록 처리합니다. <em>(단, 반드시 봉사 전 VMS 포털에 본인 명의로 가입이 완료되어 활성화된 상태여야 실적 등록이 성공합니다.)</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item" data-category="house">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-a-5">
+              <span class="faq-title-group">
+                <span class="faq-q-badge" aria-hidden="true">Q</span>
+                <span class="faq-question-text">RMHC 패밀리하우스에 입실하기 위한 조건과 절차는 무엇인가요?</span>
+              </span>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-content" id="faq-a-5" role="region" aria-label="답변">
+              <div class="faq-answer-inner">
+                <span class="faq-a-badge" aria-hidden="true">A</span>
+                <div class="faq-answer-text">
+                  <p>RMHC 패밀리하우스는 소아암, 백혈병 또는 기타 희귀 난치성 질환으로 해당 하우스 연계 대학병원에서 장기 통원 및 입원 치료를 받고 있는 만 18세 이하의 환아와 그 보호자(가족)가 거주하는 쉼터입니다.</p>
+                  <ul>
+                    <li><strong>우선 자격:</strong> 병원 근거리가 아닌 원거리(타 지역) 거주 환아 가족, 기초생활수급자 등 취약계층 가족에게 우선 순위가 배정됩니다.</li>
+                    <li><strong>이용 절차:</strong> 진료 담당 주치의 또는 병원 내 사회사업실(의료사회복지사)을 통해 추천서를 발급받은 후, 하우스 사무국 입실 신청 및 심사 과정을 거치게 됩니다.</li>
+                  </ul>
+                  <p>자세한 서류 및 연계 문의는 각 하우스별 상세 페이지의 안내 테이블 또는 재단(02-723-2013)으로 문의바랍니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="faq-item" data-category="etc">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-a-6">
+              <span class="faq-title-group">
+                <span class="faq-q-badge" aria-hidden="true">Q</span>
+                <span class="faq-question-text">회원 탈퇴는 어떻게 하며, 기존 후원 데이터는 어떻게 처리되나요?</span>
+              </span>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="faq-content" id="faq-a-6" role="region" aria-label="답변">
+              <div class="faq-answer-inner">
+                <span class="faq-a-badge" aria-hidden="true">A</span>
+                <div class="faq-answer-text">
+                  <p>로그인 후 <strong>[마이페이지] &gt; [개인정보 수정]</strong> 하단의 <strong>[회원 탈퇴]</strong> 버튼을 통해 즉시 탈퇴 처리가 가능합니다.</p>
+                  <ul>
+                    <li>이름, ID, 비밀번호를 입력하여 본인임을 최종 확인한 후 회원 탈퇴를 클릭하면 자동으로 서비스 계약이 해지되며 개인정보는 파기됩니다.</li>
+                    <li>단, 기부금 영수증 발급 등 과세 증빙을 위해 관련 소득세법 및 기부금품법에 의거, 기부 및 결제 이력 정보는 <strong>5년간 의무 보관</strong>된 후 완전히 파기됩니다.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- E: FAQ Accordion List -->
+
+      <!-- S: FAQ CTA -->
+      <section class="faq-cta" aria-label="추가 문의">
+        <h2 class="faq-cta-title">원하시는 답변을 찾지 못하셨나요?</h2>
+        <p class="faq-cta-desc">재단 담당자에게 직접 1:1 온라인 문의를 남기시거나 고객센터로 전화 주시면 친절히 안내해 드리겠습니다.</p>
+        <div class="faq-cta-buttons">
+          <a href="mailto:rmhc@rmhc.or.kr" class="btn btn-outline">이메일로 문의하기</a>
+          <a href="tel:02-723-2013" class="btn btn-primary">전화로 문의하기 (02-723-2013)</a>
+        </div>
+      </section>
+      <!-- E: FAQ CTA -->
+
+    </main>
+    <!-- E: Main Content Area -->
+
+    <!-- 푸터 공통 영역 인클루드 -->
+    <load ="src/includes/footer.html" />
+  </div>
+
+  <!-- 아코디언 토글 바닐라 JS 로직 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqItems = document.querySelectorAll('.faq-item');
+      const categoryButtons = document.querySelectorAll('#faqTabs .tab-btn');
+      const searchInput = document.getElementById('faqSearchInput');
+      const searchBtn = document.getElementById('faqSearchBtn');
+
+      // 1. 아코디언 토글 연동
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const content = item.querySelector('.faq-content');
+
+        trigger.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+
+          // 모든 아코디언을 먼저 닫음 (싱글 토글 옵션)
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+              otherItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+              otherItem.querySelector('.faq-content').style.maxHeight = '0';
+            }
+          });
+
+          // 클릭된 아이템의 상태를 토글
+          if (isActive) {
+            item.classList.remove('active');
+            trigger.setAttribute('aria-expanded', 'false');
+            content.style.maxHeight = '0';
+          } else {
+            item.classList.add('active');
+            trigger.setAttribute('aria-expanded', 'true');
+            // 패딩과 경계면을 고려한 scrollHeight 설정
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
+        });
+      });
+
+      // 2. 카테고리 필터링
+      categoryButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // 활성화 스타일 적용
+          categoryButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const category = btn.getAttribute('data-category');
+
+          faqItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+            
+            // 아코디언이 열려있다면 필터 변경 시 닫기
+            item.classList.remove('active');
+            item.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+            item.querySelector('.faq-content').style.maxHeight = '0';
+
+            if (category === 'all' || itemCategory === category) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 3. 질문 텍스트 검색 기능
+      function filterFaqBySearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        
+        // 검색 중일 때는 카테고리 탭을 '전체'로 임시 활성화
+        categoryButtons.forEach(b => {
+          if(b.getAttribute('data-category') === 'all') {
+            b.classList.add('active');
+          } else {
+            b.classList.remove('active');
+          }
+        });
+
+        faqItems.forEach(item => {
+          const questionText = item.querySelector('.faq-question-text').textContent.toLowerCase();
+          const answerText = item.querySelector('.faq-answer-text').textContent.toLowerCase();
+          
+          item.classList.remove('active');
+          item.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          item.querySelector('.faq-content').style.maxHeight = '0';
+
+          if (questionText.includes(query) || answerText.includes(query)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+
+      searchBtn.addEventListener('click', filterFaqBySearch);
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          filterFaqBySearch();
+        }
+      });
+    });
+  </script>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

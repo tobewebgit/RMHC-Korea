@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   RMHC Korea 정책 및 약관 전용 스타일 (policy.css)
+   ========================================================================== */
+
+/* 1. 영웅 영역 (Hero Banner) */
+.policy-hero {
+  padding: var(--spacing-12) 0 var(--spacing-8) 0;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-10);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.policy-hero .hero-title {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: var(--spacing-2);
+}
+
+.policy-hero .hero-desc {
+  margin: var(--spacing-4) auto 0 auto;
+  max-width: 72rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* 2. 정책 네비게이션 탭 (Policy Tabs) */
+.policy-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-10);
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: var(--spacing-4);
+}
+
+.policy-tabs .tab-btn {
+  padding: var(--spacing-3) var(--spacing-6);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.policy-tabs .tab-btn.active,
+.policy-tabs .tab-btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+/* 3. 본문 레이아웃 (Policy Body Container) */
+.policy-container {
+  max-width: 100rem;
+  margin: 0 auto var(--spacing-16) auto;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-10) var(--spacing-12);
+  box-shadow: var(--shadow-sm);
+}
+
+.policy-body {
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  line-height: 1.85;
+}
+
+.policy-body p {
+  margin-bottom: var(--spacing-4);
+  text-align: justify;
+}
+
+/* 개정일 고지 박스 */
+.policy-date-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5) var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.policy-date-box span strong {
+  color: var(--text-primary);
+}
+
+/* 약관 조(Article) 구조 */
+.policy-section {
+  margin-bottom: var(--spacing-8);
+}
+
+.policy-section:last-child {
+  margin-bottom: 0;
+}
+
+.policy-section-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-3);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+/* 리스트 계층 구조 */
+.policy-list-depth1 {
+  margin-bottom: var(--spacing-4);
+  padding-left: var(--spacing-4);
+}
+
+.policy-list-depth1 > li {
+  margin-bottom: var(--spacing-3);
+  list-style-type: decimal;
+}
+
+.policy-list-depth2 {
+  margin-top: var(--spacing-2);
+  padding-left: var(--spacing-5);
+}
+
+.policy-list-depth2 > li {
+  margin-bottom: var(--spacing-2);
+  list-style-type: circle;
+}
+
+.policy-list-depth3 {
+  margin-top: var(--spacing-1);
+  padding-left: var(--spacing-5);
+}
+
+.policy-list-depth3 > li {
+  margin-bottom: var(--spacing-1);
+  list-style-type: square;
+}
+
+.policy-body strong.highlight {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* 정책 내 표 스타일 */
+.policy-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-6) 0;
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  text-align: left;
+}
+
+.policy-table th,
+.policy-table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+.policy-table th:last-child,
+.policy-table td:last-child {
+  border-right: none;
+}
+
+.policy-table tr:last-child td {
+  border-bottom: none;
+}
+
+.policy-table th {
+  background-color: var(--bg-secondary);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.policy-table td {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   반응형 브레이크포인트 (Responsive Design)
+   ========================================================================== */
+
+/* 태블릿 및 모바일 (1024px 이하) */
+@media (max-width: 1024px) {
+  .policy-container {
+    padding: var(--spacing-8) var(--spacing-6);
+  }
+}
+
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+  .policy-hero .hero-title {
+    font-size: var(--text-2xl);
+  }
+
+  .policy-container {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .policy-section-title {
+    font-size: var(--text-base);
+  }
+}
