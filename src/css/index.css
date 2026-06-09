@@ -440,7 +440,6 @@
   max-width: 100%;
   aspect-ratio: 1024 / 587; /* 실제 보더 포함 이미지 비율로 동기화 */
   border-radius: 4rem; /* 둥근 액자 클리핑 */
-  overflow: hidden; /* 이미지 모퉁이 검은색 여백 커팅 */
   background-color: var(--bg-primary);
   box-shadow: var(--shadow-lg);
 
