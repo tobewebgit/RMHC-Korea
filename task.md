@@ -91,3 +91,29 @@
   - [x] NanumSquare Neo의 기본 넓은 자간 현상 해결을 위한 letter-spacing: -0.03em 음수 자간 적용
   - [x] HTML 린트 및 Vite 프로덕션 빌드 최종 검증 (dist 실행 시 무오류 보장)
 
+- [x] **8단계: 스크립트 구조 고도화 (모듈화 및 최적화)**
+  - [x] 공통 네비게이션 액티브 모듈 (`src/js/components/navigation.js`) 작성
+  - [x] 공통 모바일 GNB 모듈 (`src/js/components/gnb.js`) 작성
+  - [x] 공통 패밀리 사이트 모듈 (`src/js/components/family-site.js`) 작성
+  - [x] 메인 홈 스크롤 리빌 전용 모듈 (`src/js/pages/index-reveal.js`) 작성
+  - [x] 메인 엔트리포인트 (`src/js/main.js`) 통합 및 동적 임포트(Dynamic Import) 적용
+  - [x] 빌드 및 린트 결과 자가 검증 완료
+
+- [x] **9단계: 공통 스크립트 명칭 정립 (main.js -> common.js)**
+  - [x] `src/js/common.js` 신규 생성 및 기존 `main.js` 삭제
+  - [x] 임시 일괄 치환 스크립트 (`scratch/rename_script.js`) 작성 및 실행
+  - [x] 전체 HTML 내 스크립트 로드 경로 수정 완료
+  - [x] 임시 스크립트 삭제 및 청소 완료
+  - [x] 빌드 및 린트 최종 검증 완료
+
+- [x] **10단계: 업계 표준에 맞춘 공통/개별 스크립트 병렬 분리**
+  - [x] `src/js/common.js`에서 메인 전용 비동기 로딩 제거 및 순수 공통화
+  - [x] `index.html` 하단에 `index-reveal.js` 스크립트 태그 직접 추가
+  - [x] 빌드 및 린트 최종 검증 완료
+
+
+
+
+
+
+
