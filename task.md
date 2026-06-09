@@ -30,25 +30,25 @@
   - [x] 회원가입 정보 입력 (`join/form.html`)
   - [x] 회원가입 완료 (`join/complete.html`)
 
-- [/] **3단계: 후원 및 자원봉사 (총 5개 페이지)**
-  - [/] 정기후원 (`donate/regular.html`)
-  - [/] 일시후원 (`donate/one-time.html`)
-  - [/] 물품후원 (`donate/goods.html`)
-  - [/] 후원완료 (`donate/complete.html`)
-  - [/] 자원봉사 신청 (`volunteer.html`)
+- [x] **3단계: 후원 및 자원봉사 (총 5개 페이지)**
+  - [x] 정기후원 (`donate/regular.html`)
+  - [x] 일시후원 (`donate/one-time.html`)
+  - [x] 물품후원 (`donate/goods.html`)
+  - [x] 후원완료 (`donate/complete.html`)
+  - [x] 자원봉사 신청 (`volunteer.html`)
 
-- [ ] **4단계: 소개 및 하우스 (총 11개 페이지)**
-  - [ ] 소개 메인 (`about.html`)
-  - [ ] 비전 & 미션 (`about/vision.html`)
-  - [ ] 회장 인사말 (`about/greetings.html`)
-  - [ ] RMHC 이사회 (`about/board.html`)
-  - [ ] 재정 투명성 (`about/transparency.html`)
-  - [ ] 파트너사 소개 (`about/partner.html`)
-  - [ ] 양산 부산대 하우스 (`houses/yangsan.html`)
-  - [ ] 서초 성모 하우스 (`houses/seocho.html`)
-  - [ ] 연희 하우스 (`houses/yeonhui.html`)
-  - [ ] 강남 세브란스 하우스 (`houses/gangnam.html`)
-  - [ ] 인하대 하우스 (`houses/inha.html`)
+- [x] **4단계: 소개 및 하우스 (총 11개 페이지)**
+  - [x] 소개 메인 (`about.html`)
+  - [x] 비전 & 미션 (`about/vision.html`)
+  - [x] 회장 인사말 (`about/greetings.html`)
+  - [x] RMHC 이사회 (`about/board.html`)
+  - [x] 재정 투명성 (`about/transparency.html`)
+  - [x] 파트너사 소개 (`about/partner.html`)
+  - [x] 양산 부산대 하우스 (`houses/yangsan.html`)
+  - [x] 서초 성모 하우스 (`houses/seocho.html`)
+  - [x] 연희 하우스 (`houses/yeonhui.html`)
+  - [x] 강남 세브란스 하우스 (`houses/gangnam.html`)
+  - [x] 인하대 하우스 (`houses/inha.html`)
 
 - [ ] **5단계: 마이페이지 & 비회원 서비스 (총 10개 페이지)**
   - [ ] 마이페이지 메인 (`mypage.html`)

@@ -3,26 +3,240 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 하우스강남 페이지입니다.">
-  <title>RMHC Korea - 하우스강남</title>
+  <meta name="description" content="강남세브란스병원 인근에 건립 예정인 강남 세브란스 하우스입니다. 수도권 통원 치료를 받는 중증 환아와 가족을 위한 무료 쉼터로 준비 중입니다.">
+  <title>강남 세브란스 하우스 - 한국로날드맥도날드하우스</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/houses.css">
 </head>
 <body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
   <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">HS_02 - 페이지</div>
-      <h1 class="hero-title">하우스강남</h1>
-      <p class="hero-desc">
-        이 페이지는 하우스강남 화면입니다.<br>
-        하우스 추가 시 등록 (비노출 처리)
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
-      </div>
+    <main id="main-content" class="house-detail-container container">
+
+      <!-- 건립 준비 중 상태 안내 배너 -->
+      <section class="preparing-status-card" aria-label="건립 추진 현황 고지">
+        <svg class="preparing-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <div>
+          <h2 class="preparing-title">강남 세브란스 하우스 건립 준비 안내</h2>
+          <p class="preparing-desc">
+            본 하우스는 <strong>강남세브란스병원</strong> 인근에 건립을 준비 중인 신규 하우스입니다.<br>
+            현재 부지 검토와 함께 유관 기관 협의를 진행하고 있으며, 서울 동남권역 및 수도권 대형병원을 이용하는 환아 가족의 이동 편의와 주거 환경을 제공할 계획입니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- 1. 히어로 비주얼 슬라이더 영역 -->
+      <section class="house-visual-section" aria-label="강남 하우스 조감도 및 건립 계획 갤러리">
+        <div class="house-slider-wrapper">
+          <div class="house-slider" id="house-image-slider">
+            <div class="slide-item active" data-slide="0">
+              <img src="/src/images/houses/gangnam_main.jpg" width="1200" height="600" fetchpriority="high" alt="강남 세브란스 하우스 건립 조감도 이미지">
+            </div>
+            <div class="slide-item" data-slide="1">
+              <img src="/src/images/houses/gangnam_plan.jpg" width="1200" height="600" loading="lazy" alt="안전하고 아늑하게 구성 예정인 공용 라운지 조감도">
+            </div>
+          </div>
+
+          <!-- 슬라이더 좌우 컨트롤 -->
+          <button type="button" class="slider-ctrl-btn btn-prev" id="btn-slider-prev" aria-label="이전 슬라이드 이미지 보기">
+            <span aria-hidden="true">&lt;</span>
+          </button>
+          <button type="button" class="slider-ctrl-btn btn-next" id="btn-slider-next" aria-label="다음 슬라이드 이미지 보기">
+            <span aria-hidden="true">&gt;</span>
+          </button>
+
+          <!-- 슬라이더 인디케이터 (도트) -->
+          <div class="slider-indicators" role="tablist" aria-label="슬라이드 선택">
+            <button type="button" class="indicator-dot active" role="tab" aria-selected="true" aria-controls="house-image-slider" data-target="0" aria-label="1번째 슬라이드"></button>
+            <button type="button" class="indicator-dot" role="tab" aria-selected="false" aria-controls="house-image-slider" data-target="1" aria-label="2번째 슬라이드"></button>
+          </div>
+
+          <!-- 비주얼 오버레이 캡션 박스 -->
+          <div class="house-caption-box">
+            <div class="caption-content">
+              <span class="caption-badge">건립 준비 중</span>
+              <h1 class="caption-title">강남 세브란스 하우스</h1>
+              <p class="caption-desc">강남세브란스병원 등 인근 의료기관에서 암, 백혈병 등으로 통원 및 재활 치료를 받는 환아와 가족을 위한 아늑하고 쾌적한 쉼터 조성을 목표로 합니다.</p>
+            </div>
+            <div class="caption-actions">
+              <a href="#rules-section" class="btn btn-secondary text-primary-color font-bold">건립 개요</a>
+              <a href="/volunteer.html" class="btn btn-primary font-bold">자원봉사 신청</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 하우스 소개 및 층별 예정 안내 영역 -->
+      <section class="house-info-section" aria-label="하우스 건립 계획 및 예정 시설 안내">
+        <h2 class="house-section-title">건립 설계 개요</h2>
+        <p class="house-intro-text">
+          강남 세브란스 하우스는 협소한 도심지 공간의 특성을 적극 감안하여 수직적으로 효율성 높은 패밀리 객실 공간과 다목적 라운지를 복합 배치할 계획입니다.<br>
+          특히 항암 치료 등으로 감염에 취약한 환아들이 상주하므로 병원급 친환경 공기청정 설비 및 향균 인테리어를 적용하여 안전한 친환경 복합 쉼터로 기획 중입니다.
+        </p>
+
+        <!-- 층별 안내 아코디언 (details-summary 적용) -->
+        <div class="accordion-wrapper">
+          <!-- 2층 아코디언 -->
+          <details class="accordion-item" open>
+            <summary class="accordion-summary">
+              <span>지상 2층 이상 (예정) - 스마트 멸균 객실</span>
+              <span class="accordion-summary-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="accordion-content">
+              <div class="accordion-text-wrapper">
+                <h3 class="accordion-text-title">감염 예방을 위한 스마트 공조 및 맞춤형 침실</h3>
+                <ul class="accordion-list">
+                  <li class="accordion-list-item"><strong>환아 보호자 가족 룸 (예정)</strong>: 치료 일정에 맞추어 숙박할 수 있는 무균 공조 시스템과 침실 가구 완비.</li>
+                  <li class="accordion-list-item"><strong>개별 스마트 조절 패널</strong>: 객실 내 온도 및 실내 공기 상태를 모니터링하고 원격 조작하는 패널 설치 예정.</li>
+                </ul>
+              </div>
+              <div class="accordion-thumb">
+                <img src="/src/images/houses/gangnam_2f_plan.jpg" width="280" height="210" loading="lazy" alt="자동 살균 및 공기 순환 장치가 적용될 예정인 개별 객실 조감도">
+              </div>
+            </div>
+          </details>
+
+          <!-- 1층 아코디언 -->
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>지상 1층 (예정) - 웰컴 라운지 및 커뮤니티 공간</span>
+              <span class="accordion-summary-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="accordion-content">
+              <div class="accordion-text-wrapper">
+                <h3 class="accordion-text-title">따뜻한 위로와 소통이 함께하는 쉼터 공간</h3>
+                <ul class="accordion-list">
+                  <li class="accordion-list-item"><strong>오픈 쉐어 키친</strong>: 보호자들이 아이들을 위해 정성껏 음식을 조리하는 가전과 수납장이 갖추어진 공유 조리 공간 예정.</li>
+                  <li class="accordion-list-item"><strong>놀이 놀이방 &amp; 쉼터 라운지</strong>: 치료를 마친 아이들이 놀며 또래 친구들과 소통할 수 있는 어린이 복합 문화 쉼터 조성.</li>
+                </ul>
+              </div>
+              <div class="accordion-thumb">
+                <img src="/src/images/houses/gangnam_1f_plan.jpg" width="280" height="210" loading="lazy" alt="가족들이 함께 다과를 나누며 쉴 수 있게 조성 예정인 라운지 조감도">
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 3. 이용 요금 및 신청 요건 안내 영역 (예정 사항 안내) -->
+      <section class="house-rules-section" id="rules-section" aria-label="이용 요금 및 신청 요건 예정 정보 안내">
+        <h2 class="house-section-title">이용 요금 및 신청 요건(예정)</h2>
+        <div class="table-responsive">
+          <table class="house-table">
+            <caption>강남 세브란스 하우스 예정 이용 대상, 요금, 신청 방법 및 구비 서류 정보</caption>
+            <tbody>
+              <tr>
+                <th scope="row">이용 요금</th>
+                <td><strong>전액 무료 예정</strong> (숙박료 및 부대 시설 이용료 무상 지원)</td>
+              </tr>
+              <tr>
+                <th scope="row">이용 대상</th>
+                <td>강남세브란스병원 및 인근 대형 의료기관에서 통원 및 재활 치료를 받고 있는 만 18세 이하 중증 아동과 보호자 가족</td>
+              </tr>
+              <tr>
+                <th scope="row">이용 프로세스</th>
+                <td>개원 준공 일정에 맞추어 세부 사항이 별도 고지되며, 타 하우스(양산 하우스 등)와 동일하게 환아 치료 상황 및 사회적 취약도 등을 검토하여 심사 선정할 계획입니다.</td>
+              </tr>
+              <tr>
+                <th scope="row">대표 문의</th>
+                <td>한국로날드맥도날드하우스 재단 대표 전화 및 사무국 메일을 통해 관련 소식과 후원 참여가 가능합니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-helper-text">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          상기 운영 정책 및 시설 설계는 병원과의 실무 조율 및 인허가 과정에 따라 향후 변경될 수 있습니다.
+        </p>
+      </section>
+
+      <!-- 4. 오시는 길 및 교통편 영역 -->
+      <section class="house-map-section" aria-label="하우스 예정지 및 교통편 안내">
+        <h2 class="house-section-title">오시는 길</h2>
+        <div class="map-layout">
+          <!-- 지도 영역 플레이스홀더 -->
+          <div class="map-container">
+            <div class="map-canvas" id="map-canvas">
+              <div class="map-placeholder-info">
+                <svg class="map-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <p>지도가 노출되는 영역입니다.<br>(강남세브란스병원 인근 건립 예정지 지도 API 연동 예정)</p>
+              </div>
+            </div>
+            <div class="map-address-box">
+              <div class="map-address-text">
+                서울특별시 강남구 언주로 211 인근
+                <span>(강남세브란스병원 주변 건립 추진지)</span>
+              </div>
+              <button type="button" class="btn-copy-address" id="btn-copy-addr">주소 복사</button>
+            </div>
+          </div>
+
+          <!-- 교통 정보 리스트 -->
+          <div class="transit-details">
+            <div class="transit-group">
+              <h3 class="transit-title">
+                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+                지하철 이용 시
+              </h3>
+              <p class="transit-desc">
+                수인분당선 <strong>한티역</strong> 7번 출구에서 하우스 예정지 방향 도보 약 10분 소요됩니다.<br>
+                지하철 3호선/수인분당선 <strong>도곡역</strong> 2번 출구 이용 시 도보 약 15분이 소요됩니다.
+              </p>
+            </div>
+            
+            <div class="transit-group">
+              <h3 class="transit-title">
+                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
+                  <circle cx="7" cy="17" r="2"></circle>
+                  <circle cx="17" cy="17" r="2"></circle>
+                </svg>
+                버스 이용 시
+              </h3>
+              <p class="transit-desc">
+                <strong>강남세브란스병원 교차로</strong> 정류장 하차:<br>
+                간선 버스: 141번, 147번, 340번 등<br>
+                지선 버스: 3422번, 4432번 등 운행
+              </p>
+            </div>
+
+            <div class="transit-group">
+              <h3 class="transit-title">
+                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                자가용 및 주차
+              </h3>
+              <p class="transit-desc">
+                언주로 또는 도곡로 진입 후 강남세브란스병원 사거리 방향 이동.<br>
+                개원 이후 하우스 공식 주차 안내 가이드라인이 별도 제공될 예정입니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <!-- 푸터 공통 영역 인클루드 -->
@@ -30,5 +244,88 @@
   </div>
 
   <script type="module" src="/src/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. 단순 이미지 슬라이더 구동 스크립트
+      const slides = document.querySelectorAll('#house-image-slider .slide-item');
+      const dots = document.querySelectorAll('.slider-indicators .indicator-dot');
+      const btnPrev = document.getElementById('btn-slider-prev');
+      const btnNext = document.getElementById('btn-slider-next');
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
+        }
+
+        slides.forEach((slide, idx) => {
+          if (idx === currentSlide) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+
+        dots.forEach((dot, idx) => {
+          if (idx === currentSlide) {
+            dot.classList.add('active');
+            dot.setAttribute('aria-selected', 'true');
+          } else {
+            dot.classList.remove('active');
+            dot.setAttribute('aria-selected', 'false');
+          }
+        });
+      }
+
+      if (btnPrev && btnNext) {
+        btnPrev.addEventListener('click', () => {
+          showSlide(currentSlide - 1);
+        });
+
+        btnNext.addEventListener('click', () => {
+          showSlide(currentSlide + 1);
+        });
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+          const targetIndex = parseInt(e.currentTarget.getAttribute('data-target'), 10);
+          showSlide(targetIndex);
+        });
+      });
+
+      // 2. 주소 복사 스크립트
+      const btnCopy = document.getElementById('btn-copy-addr');
+      if (btnCopy) {
+        btnCopy.addEventListener('click', () => {
+          const addressText = "서울특별시 강남구 언주로 211";
+          navigator.clipboard.writeText(addressText).then(() => {
+            alert('하우스 건립 예정지 주소가 클립보드에 복사되었습니다.');
+          }).catch(err => {
+            console.error('주소 복사 실패: ', err);
+            alert('주소 복사에 실패했습니다. 주소 영역을 직접 드래그하여 복사해 주세요.');
+          });
+        });
+      }
+
+      // 3. 아코디언 접근성 제어
+      const detailsElements = document.querySelectorAll('.accordion-item');
+      detailsElements.forEach(targetDetails => {
+        targetDetails.addEventListener('toggle', (e) => {
+          if (targetDetails.open) {
+            detailsElements.forEach(details => {
+              if (details !== targetDetails) {
+                details.removeAttribute('open');
+              }
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

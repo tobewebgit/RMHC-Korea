@@ -17,9 +17,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/about.html",
-    "status": "진행",
-    "lastModified": "2026-06-05",
-    "memo": "글로벌 디자인 토큰 반영 및 헤더/푸터 조립"
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "재단 소개 메인 퍼블리싱 고도화 완료"
   },
   {
     "id": 3,
@@ -28,9 +28,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/about/vision.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": "보일러플레이트 구조 대기"
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "비전 및 미션 페이지 퍼블리싱 고도화 완료"
   },
   {
     "id": 4,
@@ -39,9 +39,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/about/greetings.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "회장 인사말 페이지 퍼블리싱 고도화 완료"
   },
   {
     "id": 5,
@@ -50,9 +50,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/about/board.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "이사회 리스트 그리드 및 퍼블리싱 고도화 완료"
   },
   {
     "id": 6,
@@ -61,9 +61,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/about/transparency.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "재정 보고 및 투명성 내역 테이블 퍼블리싱 고도화 완료"
   },
   {
     "id": 7,
@@ -72,9 +72,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/about/partner.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "파트너사 로고 그리드 퍼블리싱 고도화 완료"
   },
   {
     "id": 8,
@@ -83,9 +83,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/houses/yangsan.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "양산 하우스 비주얼 슬라이더 및 아코디언 퍼블리싱 고도화 완료"
   },
   {
     "id": 9,
@@ -94,9 +94,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/houses/seocho.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "서초 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
   },
   {
     "id": 10,
@@ -105,9 +105,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/houses/yeonhui.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "연희 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
   },
   {
     "id": 11,
@@ -116,9 +116,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/houses/gangnam.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "강남 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
   },
   {
     "id": 12,
@@ -127,9 +127,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/houses/inha.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "인하대 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
   },
   {
     "id": 13,
@@ -292,9 +292,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/login.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "로그인 폼 및 소셜 로그인 연동 화면 퍼블리싱 완료"
   },
   {
     "id": 28,
@@ -303,9 +303,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/login/find-id.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "아이디 찾기 본인인증 폼 퍼블리싱 완료"
   },
   {
     "id": 29,
@@ -314,9 +314,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/login/find-id/result.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "아이디 찾기 결과 및 로그인/비밀번호찾기 링크 연동 완료"
   },
   {
     "id": 30,
@@ -325,9 +325,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/login/reset-pw.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "비밀번호 재설정 인증 폼 퍼블리싱 완료"
   },
   {
     "id": 31,
@@ -336,9 +336,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/login/reset-pw/new.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "신규 비밀번호 입력 및 유효성 검증 마크업 완료"
   },
   {
     "id": 32,
@@ -347,9 +347,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/login/reset-pw/complete.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "비밀번호 재설정 완료 안내 화면 퍼블리싱 완료"
   },
   {
     "id": 33,
@@ -358,9 +358,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/login/link-sns.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "간편 로그인 연동 관리 및 상태 표시 화면 퍼블리싱 완료"
   },
   {
     "id": 34,
@@ -369,9 +369,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/join.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "일반/기관 회원가입 선택 및 약관 동의 퍼블리싱 완료"
   },
   {
     "id": 35,
@@ -380,9 +380,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/join/auth.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "본인 인증 수단 선택 화면 퍼블리싱 완료"
   },
   {
     "id": 36,
@@ -391,9 +391,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/join/form.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "상세 개인정보 입력 폼 및 우편번호 찾기 연동 완료"
   },
   {
     "id": 37,
@@ -402,9 +402,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/join/complete.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "가입 완료 축하 메시지 및 메인 이동 링크 연동 완료"
   },
   {
     "id": 38,

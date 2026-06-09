@@ -3,26 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 기업파트너 페이지입니다.">
-  <title>RMHC Korea - 기업파트너</title>
+  <meta name="description" content="한국로날드맥도날드하우스와 함께 기적을 만들어가는 소중한 후원 기업 및 파트너사들을 소개합니다.">
+  <title>기업 파트너 - 한국로날드맥도날드하우스</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/about.css">
 </head>
 <body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
   <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">AB_04 - 페이지</div>
-      <h1 class="hero-title">기업파트너</h1>
-      <p class="hero-desc">
-        이 페이지는 기업파트너 화면입니다.<br>
-        파트너 로고 등록 및 수정, 나눔상품 로고, 제목, 설명 등록 및 수정 가능
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
-      </div>
+    <main id="main-content" class="container p-8">
+      
+      <!-- 소개 메인 타이틀 구역 -->
+      <section class="about-hero text-center mb-8">
+        <span class="badge badge-primary">Partners</span>
+        <h1 class="hero-title mt-2">기업 파트너</h1>
+        <p class="hero-desc">
+          지속 가능한 아동 복지 실현을 위해 재단을 아낌없이 후원하며 사회공헌을 실천하는 자랑스러운 파트너 기업들입니다.
+        </p>
+      </section>
+
+      <!-- 파트너 로고 그리드 섹션 (등급별 배치) -->
+      <section class="partner-section mb-16">
+        
+        <!-- Gold Partners (주요 협력사) -->
+        <div class="mb-12">
+          <h2 class="partner-tier-title gold">골드 파트너 (Gold Partners)</h2>
+          <div class="partner-grid gold-tier">
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_mcdonalds.png" alt="한국맥도날드" width="180" height="70" loading="lazy" onerror="this.src='https://placehold.co/180x70/f3f0ea/1f2937?text=McDonalds'">
+              <span class="partner-name">한국맥도날드</span>
+            </div>
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_shinhan.png" alt="신한은행" width="180" height="70" loading="lazy" onerror="this.src='https://placehold.co/180x70/f3f0ea/1f2937?text=Shinhan+Bank'">
+              <span class="partner-name">신한은행</span>
+            </div>
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_maeil.png" alt="매일유업" width="180" height="70" loading="lazy" onerror="this.src='https://placehold.co/180x70/f3f0ea/1f2937?text=Maeil'">
+              <span class="partner-name">매일유업</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Silver Partners (일반 협력사) -->
+        <div class="mb-12">
+          <h2 class="partner-tier-title">실버 파트너 (Silver Partners)</h2>
+          <div class="partner-grid silver-tier">
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_nestle.png" alt="네슬레코리아" width="140" height="55" loading="lazy" onerror="this.src='https://placehold.co/140x55/f3f0ea/1f2937?text=Nestle'">
+              <span class="partner-name">네슬레코리아</span>
+            </div>
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_lotte.png" alt="롯데웰푸드" width="140" height="55" loading="lazy" onerror="this.src='https://placehold.co/140x55/f3f0ea/1f2937?text=Lotte'">
+              <span class="partner-name">롯데웰푸드</span>
+            </div>
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_sisley.png" alt="시슬리코리아" width="140" height="55" loading="lazy" onerror="this.src='https://placehold.co/140x55/f3f0ea/1f2937?text=Sisley'">
+              <span class="partner-name">시슬리코리아</span>
+            </div>
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_sephora.png" alt="세포라코리아" width="140" height="55" loading="lazy" onerror="this.src='https://placehold.co/140x55/f3f0ea/1f2937?text=Sephora'">
+              <span class="partner-name">세포라코리아</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bronze Partners (서포터 파트너) -->
+        <div class="mb-12">
+          <h2 class="partner-tier-title">브론즈 파트너 (Bronze Partners)</h2>
+          <div class="partner-grid bronze-tier">
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_coca.png" alt="코카콜라" width="110" height="45" loading="lazy" onerror="this.src='https://placehold.co/110x45/f3f0ea/1f2937?text=CocaCola'">
+              <span class="partner-name">코카콜라</span>
+            </div>
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_ottogi.png" alt="오뚜기" width="110" height="45" loading="lazy" onerror="this.src='https://placehold.co/110x45/f3f0ea/1f2937?text=Ottogi'">
+              <span class="partner-name">오뚜기</span>
+            </div>
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_pfizer.png" alt="한국화이자제약" width="110" height="45" loading="lazy" onerror="this.src='https://placehold.co/110x45/f3f0ea/1f2937?text=Pfizer'">
+              <span class="partner-name">한국화이자제약</span>
+            </div>
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_nice.png" alt="나이스정보통신" width="110" height="45" loading="lazy" onerror="this.src='https://placehold.co/110x45/f3f0ea/1f2937?text=NICE'">
+              <span class="partner-name">나이스정보통신</span>
+            </div>
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_kas.png" alt="한국공항" width="110" height="45" loading="lazy" onerror="this.src='https://placehold.co/110x45/f3f0ea/1f2937?text=KAS'">
+              <span class="partner-name">한국공항</span>
+            </div>
+            <div class="partner-logo-card">
+              <img src="/src/images/partners/logo_bms.png" alt="한국BMS제약" width="110" height="45" loading="lazy" onerror="this.src='https://placehold.co/110x45/f3f0ea/1f2937?text=BMS'">
+              <span class="partner-name">한국BMS제약</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 나눔 상품 소개 섹션 (Sharing Products) -->
+      <section class="sharing-product-section mb-16">
+        <h2 class="partner-tier-title gold mb-8">기부 연계 나눔 상품 (CSR Products)</h2>
+        <div class="d-grid grid-cols-12 gap-6">
+          
+          <div class="col-4 col-md-6 col-sm-12">
+            <div class="product-card">
+              <div class="product-img-box">
+                <img src="/src/images/partners/product_happymeal.png" alt="맥도날드 해피밀 세트" width="380" height="240" loading="lazy" onerror="this.src='https://placehold.co/380x240/f3f0ea/1f2937?text=Happy+Meal'">
+              </div>
+              <div class="product-content">
+                <span class="product-partner">한국맥도날드</span>
+                <h3 class="product-title">해피밀 (Happy Meal) 기부 프로그램</h3>
+                <p class="product-desc">
+                  맥도날드 해피밀 세트가 1개 판매될 때마다 50원씩 적립되어 한국로날드맥도날드하우스 건립 및 아동 쉼터 운영 기금으로 자동 기부됩니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4 col-md-6 col-sm-12">
+            <div class="product-card">
+              <div class="product-img-box">
+                <img src="/src/images/partners/product_luckybag.png" alt="해피 럭키백 캠페인" width="380" height="240" loading="lazy" onerror="this.src='https://placehold.co/380x240/f3f0ea/1f2937?text=Lucky+Bag'">
+              </div>
+              <div class="product-content">
+                <span class="product-partner">시슬리코리아</span>
+                <h3 class="product-title">시슬리 럭키 나눔 기프트 세트</h3>
+                <p class="product-desc">
+                  한정판 럭키 백 판매 수익금의 10%가 희귀난치병 환아 가족들의 치료비와 연간 하우스 숙박 관리비용으로 전액 지원됩니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4 col-md-6 col-sm-12">
+            <div class="product-card">
+              <div class="product-img-box">
+                <img src="/src/images/partners/product_bottle.png" alt="더 깨끗한 생수 나눔 에디션" width="380" height="240" loading="lazy" onerror="this.src='https://placehold.co/380x240/f3f0ea/1f2937?text=Water+Bottle'">
+              </div>
+              <div class="product-content">
+                <span class="product-partner">매일유업</span>
+                <h3 class="product-title">상하목장 나눔 에디션 우유</h3>
+                <p class="product-desc">
+                  상하목장 우유 판매액의 일부를 기부함과 동시에 양산 부산대 하우스에 머무는 아동들을 위해 신선한 유제품을 무상 제공하고 있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </main>
 
     <!-- 푸터 공통 영역 인클루드 -->

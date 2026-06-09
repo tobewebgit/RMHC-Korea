@@ -3,26 +3,255 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 하우스양산 페이지입니다.">
-  <title>RMHC Korea - 하우스양산</title>
+  <meta name="description" content="양산부산대학교병원 내에 위치하여 장기 치료 중인 중증 환아와 가족들에게 따뜻한 쉼터를 전액 무료로 제공하는 RMHC 양산 하우스입니다.">
+  <title>양산 부산대 하우스 - 한국로날드맥도날드하우스</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/houses.css">
 </head>
 <body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
   <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">HS_01 - 하우스 찾기</div>
-      <h1 class="hero-title">하우스양산</h1>
-      <p class="hero-desc">
-        이 페이지는 하우스양산 화면입니다.<br>
-        추후 기획서 내용에 맞춰 퍼블리싱 마크업이 조립될 예정입니다.
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
-      </div>
+    <main id="main-content" class="house-detail-container container">
+
+      <!-- 1. 히어로 비주얼 슬라이더 영역 -->
+      <section class="house-visual-section" aria-label="양산 하우스 전경 및 주요 시설 갤러리">
+        <div class="house-slider-wrapper">
+          <div class="house-slider" id="house-image-slider">
+            <div class="slide-item active" data-slide="0">
+              <!-- LCP 최적화: 첫 번째 핵심 비주얼 이미지에 fetchpriority="high" 지정 -->
+              <!-- CLS 방지: width, height 종횡비 명시 -->
+              <img src="/src/images/houses/yangsan_main.jpg" width="1200" height="600" fetchpriority="high" alt="RMHC 양산 부산대 하우스 건물 전경">
+            </div>
+            <div class="slide-item" data-slide="1">
+              <img src="/src/images/houses/yangsan_kitchen.jpg" width="1200" height="600" loading="lazy" alt="가족들이 함께 조리할 수 있는 공동 주방과 식당">
+            </div>
+            <div class="slide-item" data-slide="2">
+              <img src="/src/images/houses/yangsan_room.jpg" width="1200" height="600" loading="lazy" alt="내 집처럼 편안하게 쉴 수 있는 개별 객실 내부">
+            </div>
+          </div>
+
+          <!-- 슬라이더 좌우 컨트롤 -->
+          <button type="button" class="slider-ctrl-btn btn-prev" id="btn-slider-prev" aria-label="이전 슬라이드 이미지 보기">
+            <span aria-hidden="true">&lt;</span>
+          </button>
+          <button type="button" class="slider-ctrl-btn btn-next" id="btn-slider-next" aria-label="다음 슬라이드 이미지 보기">
+            <span aria-hidden="true">&gt;</span>
+          </button>
+
+          <!-- 슬라이더 인디케이터 (도트) -->
+          <div class="slider-indicators" role="tablist" aria-label="슬라이드 선택">
+            <button type="button" class="indicator-dot active" role="tab" aria-selected="true" aria-controls="house-image-slider" data-target="0" aria-label="1번째 슬라이드"></button>
+            <button type="button" class="indicator-dot" role="tab" aria-selected="false" aria-controls="house-image-slider" data-target="1" aria-label="2번째 슬라이드"></button>
+            <button type="button" class="indicator-dot" role="tab" aria-selected="false" aria-controls="house-image-slider" data-target="2" aria-label="3번째 슬라이드"></button>
+          </div>
+
+          <!-- 비주얼 오버레이 캡션 박스 -->
+          <div class="house-caption-box">
+            <div class="caption-content">
+              <span class="caption-badge">제 1호 하우스</span>
+              <h1 class="caption-title">양산 부산대 하우스</h1>
+              <p class="caption-desc">국내 최초의 로날드맥도날드하우스로, 양산부산대학교 어린이병원 내에 위치하여 장기 치료 중인 중증 환아와 가족들에게 따뜻한 쉼터를 제공합니다.</p>
+            </div>
+            <div class="caption-actions">
+              <a href="#rules-section" class="btn btn-secondary text-primary-color font-bold">이용 안내</a>
+              <a href="/volunteer.html" class="btn btn-primary font-bold">자원봉사 신청</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 하우스 소개 및 층별 안내 영역 -->
+      <section class="house-info-section" aria-label="하우스 시설 소개 및 층별 안내">
+        <h2 class="house-section-title">하우스 시설 소개</h2>
+        <p class="house-intro-text">
+          RMHC 양산 부산대 하우스는 연면적 약 1,325㎡ 규모 of 지하 1층, 지상 2층 건물로 이루어져 있습니다.<br>
+          환아와 보호자들이 병원 밖에서 겪는 정서적 불안과 경제적 부담을 덜고, 치료에만 전념할 수 있도록 세심하게 마련된 쉼터 공간입니다.
+        </p>
+
+        <!-- 층별 안내 아코디언 (details-summary 웹 표준 적용) -->
+        <div class="accordion-wrapper">
+          <!-- 2층 아코디언 -->
+          <details class="accordion-item" open>
+            <summary class="accordion-summary">
+              <span>지상 2층 (2F) - 개별 객실 및 야외 쉼터</span>
+              <span class="accordion-summary-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="accordion-content">
+              <div class="accordion-text-wrapper">
+                <h3 class="accordion-text-title">아늑한 개별 객실 및 야외 쉼터</h3>
+                <ul class="accordion-list">
+                  <li class="accordion-list-item"><strong>독립형 객실 (총 10실)</strong>: 개별 욕실과 수납 시설을 갖추어 프라이버시가 보호되는 방입니다.</li>
+                  <li class="accordion-list-item"><strong>야외 테라스 (옥상 정원)</strong>: 시원한 공기를 쐬며 가족들이 편안하게 담소를 나눌 수 있는 녹지 쉼터입니다.</li>
+                  <li class="accordion-list-item"><strong>자원봉사자 대기실</strong>: 하우스 운영을 돕는 봉사자들의 휴게 공간입니다.</li>
+                </ul>
+              </div>
+              <div class="accordion-thumb">
+                <img src="/src/images/houses/yangsan_2f.jpg" width="280" height="210" loading="lazy" alt="쾌적하고 편안하게 설계된 지상 2층의 객실 내부">
+              </div>
+            </div>
+          </details>
+
+          <!-- 1층 아코디언 -->
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>지상 1층 (1F) - 공용 커뮤니티 공간</span>
+              <span class="accordion-summary-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="accordion-content">
+              <div class="accordion-text-wrapper">
+                <h3 class="accordion-text-title">따뜻한 교류와 일상이 이루어지는 공간</h3>
+                <ul class="accordion-list">
+                  <li class="accordion-list-item"><strong>공동 주방 및 식당</strong>: 대가족 분량의 식사 준비가 동시에 가능한 풀 빌트인 대형 주방과 넓은 식당 공간입니다.</li>
+                  <li class="accordion-list-item"><strong>놀이방 &amp; 도서실</strong>: 어린이 환아와 형제자매들이 장난감을 가지고 놀거나 책을 읽으며 배움을 이어갈 수 있는 안심 공간입니다.</li>
+                  <li class="accordion-list-item"><strong>공용 세탁실</strong>: 세탁기와 건조기가 구비되어 일상적인 세탁과 침구 정리가 편리합니다.</li>
+                  <li class="accordion-list-item"><strong>운영사무실 및 상담실</strong>: 하우스 상주 직원들이 입퇴실을 지원하고 가족들을 정서적으로 보살피는 행정·상담 공간입니다.</li>
+                </ul>
+              </div>
+              <div class="accordion-thumb">
+                <img src="/src/images/houses/yangsan_1f.jpg" width="280" height="210" loading="lazy" alt="어린이 환아들이 안전하게 머무를 수 있는 지상 1층 놀이방">
+              </div>
+            </div>
+          </details>
+
+          <!-- 지하 1층 아코디언 -->
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>지하 1층 (B1F) - 설비 및 보관실</span>
+              <span class="accordion-summary-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="accordion-content">
+              <div class="accordion-text-wrapper">
+                <h3 class="accordion-text-title">하우스의 안전을 책임지는 기반 시설</h3>
+                <ul class="accordion-list">
+                  <li class="accordion-list-item"><strong>기계실 &amp; 전기실</strong>: 건물 전체의 냉난방, 소방 설비 및 전력을 안전하게 조절하는 중앙 통제 시설입니다.</li>
+                  <li class="accordion-list-item"><strong>물품 보관창고</strong>: 기부받은 생필품과 하우스 소모품, 여분의 이불 등을 청결하게 유지·보관하는 창고 공간입니다.</li>
+                </ul>
+              </div>
+              <div class="accordion-thumb">
+                <img src="/src/images/houses/yangsan_b1f.jpg" width="280" height="210" loading="lazy" alt="안전 관리 수칙을 준수하여 상시 유지·보수되는 기계실">
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 3. 이용 요금 및 신청 요건 안내 영역 -->
+      <section class="house-rules-section" id="rules-section" aria-label="이용 요금 및 신청 요건 상세 안내">
+        <h2 class="house-section-title">이용 요금 및 신청 요건</h2>
+        <div class="table-responsive">
+          <table class="house-table">
+            <caption>양산 부산대 하우스 이용 대상, 요금, 신청 방법 및 구비 서류 정보</caption>
+            <tbody>
+              <tr>
+                <th scope="row">이용 요금</th>
+                <td><strong>전액 무료</strong> (숙박 및 하우스 내 모든 편의 시설 무상 지원)</td>
+              </tr>
+              <tr>
+                <th scope="row">이용 대상</th>
+                <td>양산부산대학교병원에서 치료 중인 만 18세 이하의 중증 질환(소아암, 백혈병 및 희귀난치성 질환 등) 환아와 그 보호자 (최대 4인 이내)</td>
+              </tr>
+              <tr>
+                <th scope="row">신청 방법</th>
+                <td>입실을 원하는 날짜의 <strong>최소 3일 전</strong>까지 신청서를 작성하여 제출하셔야 합니다. (제출처: 양산부산대학교 어린이병원 1층 원무과 또는 RMHC 사무국)</td>
+              </tr>
+              <tr>
+                <th scope="row">구비 서류</th>
+                <td>
+                  <ul class="accordion-list">
+                    <li class="accordion-list-item">입실 신청서 (원무과 비치 및 홈페이지 다운로드)</li>
+                    <li class="accordion-list-item">주민등록등본 1부 (최근 3개월 이내 발급분)</li>
+                    <li class="accordion-list-item">의사 진단서 또는 소견서 1부 (중증도 확인용)</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-helper-text">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          입실 승인은 단순히 신청 순서가 아니며, 환아의 중증도, 거주지와 병원 간의 거리, 사회적 지원 필요성 등을 종합적으로 심사하여 결정됩니다.
+        </p>
+      </section>
+
+      <!-- 4. 오시는 길 및 교통편 영역 -->
+      <section class="house-map-section" aria-label="하우스 위치 지도 및 교통편 안내">
+        <h2 class="house-section-title">오시는 길</h2>
+        <div class="map-layout">
+          <!-- 지도 영역 플레이스홀더 -->
+          <div class="map-container">
+            <div class="map-canvas" id="map-canvas">
+              <div class="map-placeholder-info">
+                <svg class="map-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <p>지도가 노출되는 영역입니다.<br>(향후 지도 API 탑재 예정)</p>
+              </div>
+            </div>
+            <div class="map-address-box">
+              <div class="map-address-text">
+                경상남도 양산시 물금읍 금오로 20
+                <span>지번: 범어리 2762-1 (양산부산대학교병원 내 로날드맥도날드하우스)</span>
+              </div>
+              <button type="button" class="btn-copy-address" id="btn-copy-addr">주소 복사</button>
+            </div>
+          </div>
+
+          <!-- 교통 정보 리스트 -->
+          <div class="transit-details">
+            <div class="transit-group">
+              <h3 class="transit-title">
+                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+                지하철 이용 시
+              </h3>
+              <p class="transit-desc">부산 지하철 2호선 <strong>남양산역</strong> 1번 출구에서 하우스까지 도보로 약 15분 소요됩니다.</p>
+            </div>
+            
+            <div class="transit-group">
+              <h3 class="transit-title">
+                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
+                  <circle cx="7" cy="17" r="2"></circle>
+                  <circle cx="17" cy="17" r="2"></circle>
+                </svg>
+                버스 이용 시
+              </h3>
+              <p class="transit-desc">
+                <strong>양산부산대병원 정문</strong> 정류장 하차:<br>
+                일반 버스: 8번, 21번, 23번, 32번, 128-1번 등 노선 운행
+              </p>
+            </div>
+
+            <div class="transit-group">
+              <h3 class="transit-title">
+                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                자가용 및 주차
+              </h3>
+              <p class="transit-desc">
+                남양산 IC에서 나와 양산부산대병원 방면으로 진입하십시오.<br>
+                하우스 이용 환아 가족의 경우 병원 내 주차 요금 감면 및 주차 등록 혜택을 제공하므로, 입실 후 원무과 또는 하우스 사무국에 차량 정보를 등록해 주시기 바랍니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <!-- 푸터 공통 영역 인클루드 -->
@@ -30,5 +259,88 @@
   </div>
 
   <script type="module" src="/src/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. 단순 이미지 슬라이더 구동 스크립트
+      const slides = document.querySelectorAll('#house-image-slider .slide-item');
+      const dots = document.querySelectorAll('.slider-indicators .indicator-dot');
+      const btnPrev = document.getElementById('btn-slider-prev');
+      const btnNext = document.getElementById('btn-slider-next');
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
+        }
+
+        slides.forEach((slide, idx) => {
+          if (idx === currentSlide) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+
+        dots.forEach((dot, idx) => {
+          if (idx === currentSlide) {
+            dot.classList.add('active');
+            dot.setAttribute('aria-selected', 'true');
+          } else {
+            dot.classList.remove('active');
+            dot.setAttribute('aria-selected', 'false');
+          }
+        });
+      }
+
+      if (btnPrev && btnNext) {
+        btnPrev.addEventListener('click', () => {
+          showSlide(currentSlide - 1);
+        });
+
+        btnNext.addEventListener('click', () => {
+          showSlide(currentSlide + 1);
+        });
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+          const targetIndex = parseInt(e.currentTarget.getAttribute('data-target'), 10);
+          showSlide(targetIndex);
+        });
+      });
+
+      // 2. 주소 복사 스크립트
+      const btnCopy = document.getElementById('btn-copy-addr');
+      if (btnCopy) {
+        btnCopy.addEventListener('click', () => {
+          const addressText = "경상남도 양산시 물금읍 금오로 20";
+          navigator.clipboard.writeText(addressText).then(() => {
+            alert('하우스 주소가 클립보드에 복사되었습니다.');
+          }).catch(err => {
+            console.error('주소 복사 실패: ', err);
+            alert('주소 복사에 실패했습니다. 주소 영역을 직접 드래그하여 복사해 주세요.');
+          });
+        });
+      }
+
+      // 3. 아코디언 접근성 제어: 한 번에 하나만 열리게 할 경우 (선택)
+      const detailsElements = document.querySelectorAll('.accordion-item');
+      detailsElements.forEach(targetDetails => {
+        targetDetails.addEventListener('toggle', (e) => {
+          if (targetDetails.open) {
+            detailsElements.forEach(details => {
+              if (details !== targetDetails) {
+                details.removeAttribute('open');
+              }
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
