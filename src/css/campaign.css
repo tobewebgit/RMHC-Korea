@@ -1,0 +1,570 @@
+/* ==========================================================================
+   RMHC Korea 캠페인 전용 CSS (src/css/campaign.css)
+   ========================================================================== */
+
+/* 1. 캠페인 공통 레이아웃 & 유틸리티 */
+.campaign-detail-container {
+  width: 100%;
+  padding-bottom: var(--spacing-16);
+  background-color: var(--bg-secondary);
+}
+
+/* 히어로 섹션 (LCP 최적화 및 CLS 방지용 구조) */
+.campaign-hero {
+  position: relative;
+  width: 100%;
+  height: 56rem; /* 560px */
+  overflow: hidden;
+  background-color: var(--text-primary);
+}
+
+.campaign-hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.campaign-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55; /* 백그라운드 텍스트 대비 확보 */
+}
+
+.campaign-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(31, 41, 55, 0.4) 0%, rgba(31, 41, 55, 0.8) 100%);
+  z-index: 2;
+}
+
+.campaign-hero__content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #ffffff;
+}
+
+.campaign-hero__badge {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding: 0.6rem 1.6rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-4);
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(219, 0, 7, 0.3);
+}
+
+.campaign-hero__title {
+  font-family: var(--font-title);
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-4);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  word-break: keep-all;
+}
+
+.campaign-hero__desc {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  max-width: 68rem;
+  margin-bottom: var(--spacing-8);
+  color: rgba(255, 255, 255, 0.9);
+  word-break: keep-all;
+}
+
+.campaign-hero__actions {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.campaign-hero__actions .btn {
+  min-height: 4.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  padding: 0 var(--spacing-8);
+  font-size: var(--text-base);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+/* 캠페인 공통 섹션 */
+.campaign-section {
+  padding: var(--spacing-16) 0;
+}
+
+.campaign-section--white {
+  background-color: var(--bg-primary);
+}
+
+.campaign-section--ivory {
+  background-color: var(--bg-secondary);
+}
+
+.campaign-section__header {
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--spacing-4);
+}
+
+.campaign-section__subtitle {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin-bottom: var(--spacing-2);
+}
+
+.campaign-section__title {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: var(--spacing-4);
+  word-break: keep-all;
+}
+
+.campaign-section__desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* 그리드 & 카드 시스템 */
+.campaign-grid {
+  display: grid;
+  gap: var(--spacing-6);
+}
+
+.campaign-grid--2cols {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.campaign-grid--3cols {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.campaign-grid--4cols {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* 2. 캠페인 전용 스토리 카드 컴포넌트 */
+.story-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.story-card:hover {
+  transform: translateY(-0.8rem);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(219, 0, 7, 0.15);
+}
+
+.story-card__thumb {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  background-color: var(--bg-tertiary);
+}
+
+.story-card__thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.story-card:hover .story-card__thumb img {
+  transform: scale(1.05);
+}
+
+.story-card__body {
+  padding: var(--spacing-6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-card__tag {
+  align-self: flex-start;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--primary);
+  background-color: var(--primary-glow);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-3);
+}
+
+.story-card__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-2);
+  line-height: 1.4;
+}
+
+.story-card__excerpt {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-4);
+  flex: 1;
+  word-break: keep-all;
+}
+
+/* 통계 인포그래픽 카드 */
+.stat-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8) var(--spacing-6);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.stat-card__number {
+  font-family: var(--font-title);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.stat-card__label {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-1);
+}
+
+.stat-card__desc {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+/* 3. CTA 섹션 (Call to Action) */
+.cta-banner {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-10) var(--spacing-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 50rem;
+  height: 50rem;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.cta-banner__content {
+  max-width: 65%;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-banner__title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  margin-bottom: var(--spacing-2);
+  line-height: 1.3;
+}
+
+.cta-banner__desc {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.cta-banner__actions {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-banner__actions .btn--cta {
+  background-color: #ffffff;
+  color: var(--primary);
+  font-weight: 800;
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--text-base);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height: 4.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-banner__actions .btn--cta:hover {
+  background-color: var(--bg-secondary);
+  transform: translateY(-2px);
+}
+
+/* 4. 캠페인 전용 요강 테이블 및 아코디언 */
+.campaign-table-wrapper {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-top: var(--spacing-8);
+}
+
+.campaign-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.campaign-table th {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-weight: 700;
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: var(--text-base);
+  border-bottom: 1px solid var(--border-color);
+  width: 20%;
+  vertical-align: top;
+}
+
+.campaign-table td {
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  line-height: 1.6;
+}
+
+.campaign-table tr:last-child th,
+.campaign-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 5. 캠페인 개별 테마 컬러 재정의 (Theme classes) */
+
+/* 테마: 패밀리하우스 (기본 Red/Gold 중심) */
+.theme-family {
+  --primary: #db0007;
+  --primary-hover: #b80006;
+  --primary-glow: rgba(219, 0, 7, 0.1);
+}
+
+/* 테마: KCR (스포츠 액티브, 블루/테일 톤) */
+.theme-kcr {
+  --primary: #0066cc;
+  --primary-hover: #0052a3;
+  --primary-glow: rgba(0, 102, 204, 0.1);
+  --secondary: #ffcc00;
+}
+.theme-kcr .campaign-hero__badge {
+  background-color: #0066cc;
+  box-shadow: 0 4px 10px rgba(0, 102, 204, 0.3);
+}
+.theme-kcr .cta-banner {
+  background-color: #0066cc;
+}
+.theme-kcr .cta-banner__actions .btn--cta {
+  color: #0066cc;
+}
+.theme-kcr .campaign-section__subtitle {
+  color: #0066cc;
+}
+.theme-kcr .stat-card__number {
+  color: #0066cc;
+}
+.theme-kcr .story-card__tag {
+  color: #0066cc;
+  background-color: rgba(0, 102, 204, 0.1);
+}
+
+/* 테마: 갈라디너 (고급스러운 버건디/골드 톤) */
+.theme-gala {
+  --primary: #6b1124; /* 버건디 */
+  --primary-hover: #520c1a;
+  --primary-glow: rgba(107, 17, 36, 0.1);
+}
+.theme-gala .campaign-hero__badge {
+  background-color: #6b1124;
+  box-shadow: 0 4px 10px rgba(107, 17, 36, 0.3);
+}
+.theme-gala .cta-banner {
+  background-color: #6b1124;
+}
+.theme-gala .cta-banner__actions .btn--cta {
+  color: #6b1124;
+}
+.theme-gala .campaign-section__subtitle {
+  color: #6b1124;
+}
+.theme-gala .stat-card__number {
+  color: #6b1124;
+}
+.theme-gala .story-card__tag {
+  color: #6b1124;
+  background-color: rgba(107, 17, 36, 0.1);
+}
+
+/* 테마: 울림백일장 (따뜻한 그린/파스텔 오렌지) */
+.theme-writing {
+  --primary: #0f766e; /* 딥 틸/그린 */
+  --primary-hover: #115e59;
+  --primary-glow: rgba(15, 118, 110, 0.1);
+}
+.theme-writing .campaign-hero__badge {
+  background-color: #0f766e;
+  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.3);
+}
+.theme-writing .cta-banner {
+  background-color: #0f766e;
+}
+.theme-writing .cta-banner__actions .btn--cta {
+  color: #0f766e;
+}
+.theme-writing .campaign-section__subtitle {
+  color: #0f766e;
+}
+.theme-writing .stat-card__number {
+  color: #0f766e;
+}
+.theme-writing .story-card__tag {
+  color: #0f766e;
+  background-color: rgba(15, 118, 110, 0.1);
+}
+
+/* 6. 반응형 브레이크포인트 대응 */
+@media (max-width: 1024px) {
+  .campaign-hero {
+    height: 48rem;
+  }
+  .campaign-hero__title {
+    font-size: var(--text-4xl);
+  }
+  .campaign-grid--4cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .campaign-hero {
+    height: auto;
+    padding: var(--spacing-16) 0;
+  }
+  .campaign-hero__content {
+    align-items: center;
+    text-align: center;
+    padding: 0 var(--spacing-4);
+  }
+  .campaign-hero__desc {
+    font-size: var(--text-base);
+    margin-bottom: var(--spacing-6);
+  }
+  .campaign-hero__actions {
+    justify-content: center;
+    width: 100%;
+  }
+  .campaign-hero__actions .btn {
+    width: 100%;
+  }
+  
+  .campaign-section {
+    padding: var(--spacing-12) 0;
+  }
+  .campaign-section__header {
+    margin-bottom: var(--spacing-8);
+  }
+  .campaign-section__title {
+    font-size: var(--text-2xl);
+  }
+  
+  .campaign-grid--2cols,
+  .campaign-grid--3cols,
+  .campaign-grid--4cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  
+  .cta-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-6);
+    padding: var(--spacing-8) var(--spacing-4);
+  }
+  .cta-banner__content {
+    max-width: 100%;
+  }
+  .cta-banner__title {
+    font-size: var(--text-xl);
+  }
+  .cta-banner__actions {
+    width: 100%;
+  }
+  .cta-banner__actions .btn--cta {
+    width: 100%;
+  }
+  
+  .campaign-table-wrapper {
+    overflow-x: auto;
+  }
+  .campaign-table {
+    min-width: 600px;
+  }
+  .campaign-table th {
+    width: 25%;
+  }
+}
