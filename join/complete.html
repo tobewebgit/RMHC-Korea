@@ -3,26 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 회원가입완료 페이지입니다.">
-  <title>RMHC Korea - 회원가입완료</title>
+  <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 회원가입 완료 페이지입니다. 가입을 축하하며, 로그인하여 다양한 활동에 동참하세요.">
+  <title>가입완료 - 한국로날드맥도날드하우스</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/join.css">
 </head>
 <body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
   <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">JN_03 - 페이지</div>
-      <h1 class="hero-title">회원가입완료</h1>
-      <p class="hero-desc">
-        이 페이지는 회원가입완료 화면입니다.<br>
-        가입 완료 안내 및 CTA 제공
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
-      </div>
+    <main id="main-content" class="join-container">
+      
+      <!-- 상단 Step Indicator -->
+      <nav class="step-indicator" aria-label="회원가입 진행 단계" style="margin-top: var(--spacing-6);">
+        <div class="step-indicator__item completed">
+          <span class="step-indicator__badge">01</span>
+          <span class="step-indicator__label">본인인증</span>
+        </div>
+        <div class="step-indicator__item completed">
+          <span class="step-indicator__badge">02</span>
+          <span class="step-indicator__label">정보입력</span>
+        </div>
+        <div class="step-indicator__item active" aria-current="step">
+          <span class="step-indicator__badge">03</span>
+          <span class="step-indicator__label">가입완료</span>
+        </div>
+      </nav>
+
+      <!-- 완료 메시지 카드 -->
+      <section class="card complete-card">
+        <div class="complete-card__icon-wrap">
+          <!-- 완료 체크 아이콘 SVG -->
+          <svg class="complete-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h1 class="complete-card__title">회원가입이 완료되었습니다!</h1>
+        <p class="complete-card__desc">재단법인 한국로날드맥도날드하우스의 회원이 되신 것을 진심으로 환영합니다.<br>아이들과 가족들에게 따뜻한 하루를 선물하는 여정에 동참해 주셔서 감사합니다.</p>
+        
+        <!-- 가입 요약 정보 -->
+        <div class="complete-summary">
+          <div class="complete-summary__row">
+            <span class="complete-summary__label">아이디</span>
+            <span class="complete-summary__value" id="summaryId">user1234</span>
+          </div>
+          <div class="complete-summary__row">
+            <span class="complete-summary__label">가입일시</span>
+            <span class="complete-summary__value" id="summaryDate">2026.06.09</span>
+          </div>
+        </div>
+
+        <!-- 하우스 소개 배너 -->
+        <div class="complete-banner">
+          <div class="complete-banner__icon-wrap">
+            <!-- 하우스 심볼 아이콘 SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 9.5L12 3L21 9.5V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 21V12H15V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="complete-banner__content">
+            <h4 class="complete-banner__title">RMHC 패밀리하우스 알아보기</h4>
+            <p class="complete-banner__desc">소아암 등 중증 질환으로 입원 치료를 받는 환아와 그 가족들이 병원 근처에 머물며 안정적으로 치료에 전념할 수 있도록 돕는 쉼터입니다.</p>
+          </div>
+        </div>
+
+        <!-- CTA 버튼 -->
+        <div class="complete-actions">
+          <a href="/login.html" class="btn btn-primary">로그인하기</a>
+          <a href="/" class="btn btn-outline">홈으로 가기</a>
+        </div>
+      </section>
+
     </main>
 
     <!-- 푸터 공통 영역 인클루드 -->
@@ -30,5 +87,18 @@
   </div>
 
   <script type="module" src="/src/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 실시간 날짜 반영
+      const dateEl = document.getElementById('summaryDate');
+      if (dateEl) {
+        const now = new Date();
+        const yyyy = now.getFullYear();
+        const mm = String(now.getMonth() + 1).padStart(2, '0');
+        const dd = String(now.getDate()).padStart(2, '0');
+        dateEl.textContent = `${yyyy}.${mm}.${dd}`;
+      }
+    });
+  </script>
 </body>
 </html>

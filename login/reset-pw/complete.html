@@ -3,25 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 비밀번호변경완료 페이지입니다.">
-  <title>RMHC Korea - 비밀번호변경완료</title>
+  <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 비밀번호 변경 완료 페이지입니다.">
+  <title>비밀번호 변경 완료 - RMHC Korea</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/login.css">
 </head>
 <body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
   <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">LG_03_02 - 페이지</div>
-      <h1 class="hero-title">비밀번호변경완료</h1>
-      <p class="hero-desc">
-        이 페이지는 비밀번호변경완료 화면입니다.<br>
-        추후 기획서 내용에 맞춰 퍼블리싱 마크업이 조립될 예정입니다.
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
+    <main id="main-content" class="login-section">
+      <div class="login-card">
+        <!-- 체크 아이콘 비주얼 요소 (SVG 형태) -->
+        <div class="d-flex justify-center mb-6">
+          <div class="sns-btn sns-btn--naver" style="width: 6.4rem; height: 6.4rem; background-color: var(--accent); cursor: default;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="3.2rem" height="3.2rem">
+              <path d="M0 0h24v24H0z" fill="none"/>
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+          </div>
+        </div>
+
+        <h1 class="login-title">비밀번호 변경 완료</h1>
+        <p class="login-desc">비밀번호가 정상적으로 변경되었습니다.<br>새로운 비밀번호로 로그인해 주세요.</p>
+
+        <div class="d-flex gap-3 justify-center mt-8">
+          <a href="/login.html" class="btn btn-primary w-100 text-center font-bold" style="min-height: 4.8rem; display: flex; align-items: center; justify-content: center;">로그인 화면으로</a>
+        </div>
       </div>
     </main>
 

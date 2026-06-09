@@ -1,0 +1,626 @@
+/* ==========================================================================
+   join.css — 회원가입 프로세스 개별 스타일 (1:1 페이지 매칭)
+   ========================================================================== */
+
+/* 1. 회원가입 공통 컨테이너 */
+.join-container {
+  width: 100%;
+  max-width: 72rem; /* 720px - 가독성이 가장 뛰어난 폼 최대 너비 */
+  margin: 0 auto;
+  padding: var(--spacing-12) var(--spacing-4) var(--spacing-16);
+}
+
+.join-title-area {
+  text-align: center;
+  margin-bottom: var(--spacing-10);
+}
+
+.join-title {
+  font-family: var(--font-title);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-3);
+}
+
+.join-desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* 2. Step Indicator (단계 진행 표시기) */
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-12);
+  margin-bottom: var(--spacing-12);
+  position: relative;
+}
+
+.step-indicator::before {
+  content: "";
+  position: absolute;
+  top: 1.8rem;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+.step-indicator__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2);
+  z-index: 2;
+  flex: 1;
+}
+
+.step-indicator__badge {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  transition: var(--transition-smooth);
+}
+
+.step-indicator__label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+/* Step - Active State */
+.step-indicator__item.active .step-indicator__badge {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-glow);
+}
+
+.step-indicator__item.active .step-indicator__label {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Step - Completed State */
+.step-indicator__item.completed .step-indicator__badge {
+  background-color: var(--text-primary);
+  color: #ffffff;
+  border-color: var(--text-primary);
+}
+
+.step-indicator__item.completed .step-indicator__label {
+  color: var(--text-primary);
+}
+
+/* 3. 회원가입 메인 (join.html) */
+.join-type-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-12);
+}
+
+.join-type-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-10) var(--spacing-6);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  height: 100%;
+}
+
+.join-type-card__icon-wrap {
+  width: 8rem;
+  height: 8rem;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-6);
+  color: var(--primary);
+  transition: var(--transition-bounce);
+}
+
+.join-type-card:hover .join-type-card__icon-wrap {
+  background-color: var(--primary-glow);
+  transform: scale(1.1);
+}
+
+.join-type-card__title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.join-type-card__desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-8);
+  flex-grow: 1;
+}
+
+.join-type-card .btn {
+  width: 100%;
+}
+
+/* SNS 간편 회원가입 */
+.sns-join-section {
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--spacing-10);
+}
+
+.sns-join-title {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: var(--spacing-6);
+  position: relative;
+  display: inline-block;
+  padding: 0 var(--spacing-4);
+  background-color: #fffde9; /* body 배경색과 동일하게 맞춰서 구분선 가리기 */
+  z-index: 2;
+}
+
+.sns-join-section-wrap {
+  position: relative;
+}
+
+.sns-join-section-wrap::before {
+  content: "";
+  position: absolute;
+  top: 1.1rem;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+.sns-join-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+}
+
+.btn-sns {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-bounce);
+}
+
+.btn-sns:hover {
+  transform: translateY(-0.4rem) scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-sns--kakao {
+  background-color: #fee500;
+  color: #191919;
+}
+
+.btn-sns--naver {
+  background-color: #03c75a;
+  color: #ffffff;
+}
+
+.btn-sns--apple {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn-sns-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: currentColor;
+}
+
+/* 4. 본인인증 (join/auth.html) */
+.auth-method-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.auth-method-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-8) var(--spacing-6);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  height: 100%;
+}
+
+.auth-method-card__icon-wrap {
+  width: 7.2rem;
+  height: 7.2rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-4);
+  transition: var(--transition-bounce);
+}
+
+.auth-method-card:hover .auth-method-card__icon-wrap {
+  transform: translateY(-0.4rem);
+}
+
+.auth-method-card--pass .auth-method-card__icon-wrap {
+  background-color: var(--primary-glow);
+  color: var(--primary);
+}
+
+.auth-method-card--kakao .auth-method-card__icon-wrap {
+  background-color: rgba(254, 229, 0, 0.15);
+  color: #e6b800;
+}
+
+.auth-method-card__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.auth-method-card__desc {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-6);
+  flex-grow: 1;
+}
+
+/* 필수 고지 사항 안내 상자 */
+.auth-notice-box {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5) var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.auth-notice-box__title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-2);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.auth-notice-box__title-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--primary);
+}
+
+.auth-notice-box__text {
+  font-size: 1.3rem; /* 기획 사양 1.3rem */
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.auth-action-group {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-6);
+}
+
+/* 5. 정보 입력 (join/form.html) */
+/* 회원 유형 탭 */
+.join-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: var(--spacing-8);
+}
+
+.join-tabs__btn {
+  flex: 1;
+  text-align: center;
+  padding: var(--spacing-4) 0;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.join-tabs__btn:hover {
+  color: var(--primary);
+}
+
+.join-tabs__btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 700;
+}
+
+/* 폼 입력 부가 요소 */
+.form-group-row {
+  display: grid;
+  grid-template-columns: 1fr 12rem;
+  gap: var(--spacing-3);
+  align-items: flex-start;
+}
+
+.form-group-row .form-control {
+  margin-bottom: 0;
+}
+
+.form-group-row .btn {
+  height: 4.8rem;
+  min-height: 4.8rem;
+}
+
+/* 유효성 에러 텍스트 */
+.error-text {
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin-top: var(--spacing-1);
+  font-weight: 500;
+  display: block;
+}
+
+/* 약관 동의 영역 */
+.agreement-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--spacing-8);
+  margin-top: var(--spacing-10);
+  margin-bottom: var(--spacing-10);
+}
+
+.agreement-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-4);
+}
+
+.agreement-all {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4) var(--spacing-5);
+  margin-bottom: var(--spacing-4);
+}
+
+.agreement-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  padding: 0 var(--spacing-2);
+}
+
+.agreement-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.agreement-link {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-decoration: underline;
+  transition: var(--transition-fast);
+}
+
+.agreement-link:hover {
+  color: var(--primary);
+}
+
+/* 폼 제출 버튼 영역 */
+.form-actions {
+  display: flex;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-10);
+}
+
+.form-actions .btn {
+  flex: 1;
+}
+
+/* 6. 가입 완료 (join/complete.html) */
+.complete-card {
+  text-align: center;
+  padding: var(--spacing-12) var(--spacing-6);
+  margin-bottom: var(--spacing-10);
+}
+
+.complete-card__icon-wrap {
+  width: 9.6rem;
+  height: 9.6rem;
+  border-radius: var(--radius-full);
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-8);
+}
+
+.complete-card__icon {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.complete-card__title {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-3);
+}
+
+.complete-card__desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-8);
+}
+
+/* 가입 정보 요약 리스트 */
+.complete-summary {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-6) var(--spacing-8);
+  text-align: left;
+  max-width: 48rem;
+  margin: 0 auto var(--spacing-8);
+}
+
+.complete-summary__row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-2) 0;
+  font-size: var(--text-sm);
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.complete-summary__row:last-child {
+  border-bottom: none;
+}
+
+.complete-summary__label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.complete-summary__value {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* 하우스 소개 배너 */
+.complete-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  background-color: #fffde9;
+  border: 1px solid var(--secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-5) var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+  text-align: left;
+}
+
+.complete-banner__icon-wrap {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: var(--radius-full);
+  background-color: var(--secondary-glow);
+  color: var(--secondary-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.complete-banner__content {
+  flex-grow: 1;
+}
+
+.complete-banner__title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-1);
+}
+
+.complete-banner__desc {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.complete-actions {
+  display: flex;
+  gap: var(--spacing-4);
+  justify-content: center;
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.complete-actions .btn {
+  flex: 1;
+}
+
+/* ==========================================================================
+   Responsive Grid & Layout Adjustments
+   ========================================================================== */
+@media (max-width: 768px) {
+  .join-container {
+    padding: var(--spacing-8) var(--spacing-4) var(--spacing-12);
+  }
+  
+  .join-title-area {
+    margin-bottom: var(--spacing-8);
+  }
+  
+  .step-indicator {
+    gap: var(--spacing-6);
+    margin-bottom: var(--spacing-8);
+  }
+  
+  .step-indicator::before {
+    left: 20%;
+    right: 20%;
+  }
+
+  .join-type-group,
+  .auth-method-group {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+
+  .join-type-card {
+    padding: var(--spacing-8) var(--spacing-4);
+  }
+
+  .auth-method-card {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+  
+  .complete-actions {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+}

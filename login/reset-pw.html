@@ -3,25 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 비밀번호재설정 페이지입니다.">
-  <title>RMHC Korea - 비밀번호재설정</title>
+  <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 비밀번호 재설정 페이지입니다. 아이디 확인 및 본인인증을 통해 비밀번호를 재설정할 수 있습니다.">
+  <title>비밀번호 재설정 - RMHC Korea</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/login.css">
 </head>
 <body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
   <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">LG_03 - 페이지</div>
-      <h1 class="hero-title">비밀번호재설정</h1>
-      <p class="hero-desc">
-        이 페이지는 비밀번호재설정 화면입니다.<br>
-        휴대폰 본인인증
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
+    <main id="main-content" class="login-section">
+      <div class="login-card">
+        <h1 class="login-title">비밀번호 재설정</h1>
+        <p class="login-desc">비밀번호를 재설정할 아이디를 입력하고<br>본인인증을 완료해 주세요.</p>
+
+        <form action="#" method="POST" onsubmit="location.href='/login/reset-pw/new.html'; return false;">
+          <!-- 아이디 확인 -->
+          <div class="form-group">
+            <label for="find-pw-id" class="form-label">아이디</label>
+            <input type="text" id="find-pw-id" class="form-control" placeholder="아이디를 입력해 주세요." required maxlength="15">
+            <!-- 실시간 또는 확인 에러 텍스트 공간 -->
+            <!-- <p class="error-text">존재하지 않는 아이디입니다.</p> -->
+          </div>
+
+          <!-- 본인인증 수단 선택 -->
+          <div class="form-group mt-6">
+            <label class="form-label">본인인증 수단 선택</label>
+            <div class="auth-methods mt-2">
+              <button type="submit" class="auth-method-btn">
+                <div class="auth-method-icon">
+                  <img src="/src/images/common/icon_pass.svg" alt="PASS" width="24" height="24" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22red%22><rect width=%2224%22 height=%2224%22 rx=%224%22/><text x=%2250%25%22 y=%2265%25%22 font-size=%2210%22 fill=%22white%22 text-anchor=%22middle%22 font-weight=%22bold%22>PASS</text></svg>'">
+                </div>
+                <div class="auth-method-info">
+                  <div class="auth-method-name">PASS 인증</div>
+                  <div class="auth-method-desc">휴대폰에 등록된 PASS 앱을 통해 인증합니다.</div>
+                </div>
+              </button>
+
+              <button type="submit" class="auth-method-btn">
+                <div class="auth-method-icon">
+                  <img src="/src/images/common/instagram.svg" alt="카카오" width="24" height="24">
+                </div>
+                <div class="auth-method-info">
+                  <div class="auth-method-name">카카오 간편인증</div>
+                  <div class="auth-method-desc">카카오톡 앱으로 인증요청을 받아 인증합니다.</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- 본인인증 고지 안내 -->
+        <div class="info-notice-box">
+          본인인증을 위해 입력하신 개인정보는 본인인증 기관에서 수집하는 정보이며, 회원가입여부 확인 및 입력편의 제공, 본인인증 목적으로만 이용됩니다.
+        </div>
+
+        <div class="d-flex gap-3 justify-center">
+          <a href="/login.html" class="btn btn-outline w-100 text-center font-semibold" style="min-height: 4.8rem; display: flex; align-items: center; justify-content: center;">취소 및 로그인 화면으로</a>
+        </div>
       </div>
     </main>
 

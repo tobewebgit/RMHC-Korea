@@ -3,25 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 새비밀번호설정 페이지입니다.">
-  <title>RMHC Korea - 새비밀번호설정</title>
+  <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 새 비밀번호 설정 페이지입니다.">
+  <title>새 비밀번호 설정 - RMHC Korea</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/login.css">
 </head>
 <body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
   <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">LG_03_01 - 페이지</div>
-      <h1 class="hero-title">새비밀번호설정</h1>
-      <p class="hero-desc">
-        이 페이지는 새비밀번호설정 화면입니다.<br>
-        추후 기획서 내용에 맞춰 퍼블리싱 마크업이 조립될 예정입니다.
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
+    <main id="main-content" class="login-section">
+      <div class="login-card">
+        <h1 class="login-title">새 비밀번호 설정</h1>
+        <p class="login-desc">새로운 비밀번호를 입력하여<br>비밀번호 변경을 완료해 주세요.</p>
+
+        <form action="#" method="POST" onsubmit="location.href='/login/reset-pw/complete.html'; return false;" class="login-form">
+          <!-- 새 비밀번호 입력 -->
+          <div class="form-group">
+            <label for="new-pw" class="form-label">새 비밀번호</label>
+            <input type="password" id="new-pw" class="form-control" placeholder="비밀번호를 입력해 주세요." required maxlength="15">
+            <p class="form-helper">6~15자 영문(대소문자), 숫자, 특수문자를 포함해 주세요.</p>
+          </div>
+
+          <!-- 새 비밀번호 확인 입력 -->
+          <div class="form-group">
+            <label for="new-pw-confirm" class="form-label">비밀번호 확인</label>
+            <input type="password" id="new-pw-confirm" class="form-control" placeholder="비밀번호를 한 번 더 입력해 주세요." required maxlength="15">
+            <!-- 에러 텍스트 마크업 설계 (기본값 숨김, 스크립트 또는 상태 제어용) -->
+            <p class="error-text" id="pw-mismatch-error" style="display: none;">비밀번호가 서로 일치하지 않습니다.</p>
+          </div>
+
+          <!-- 변경 완료 버튼 -->
+          <button type="submit" class="btn btn-primary w-100 font-bold mt-4" style="min-height: 4.8rem;">비밀번호 변경 완료</button>
+        </form>
+
+        <!-- 자바스크립트를 이용해 비밀번호 재설정 실시간 비교 로직 시범 적용 -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const newPw = document.getElementById('new-pw');
+            const newPwConfirm = document.getElementById('new-pw-confirm');
+            const mismatchError = document.getElementById('pw-mismatch-error');
+
+            function checkPasswordMatch() {
+              if (newPwConfirm.value && newPw.value !== newPwConfirm.value) {
+                mismatchError.style.display = 'block';
+                newPwConfirm.style.borderColor = 'var(--primary)';
+              } else {
+                mismatchError.style.display = 'none';
+                newPwConfirm.style.borderColor = '';
+              }
+            }
+
+            newPw.addEventListener('input', checkPasswordMatch);
+            newPwConfirm.addEventListener('input', checkPasswordMatch);
+          });
+        </script>
       </div>
     </main>
 

@@ -3,26 +3,222 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 회원정보입력 페이지입니다.">
-  <title>RMHC Korea - 회원정보입력</title>
+  <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 회원정보 입력 단계입니다. 필요한 정보를 기입하고 가입을 완료하세요.">
+  <title>정보입력 - 한국로날드맥도날드하우스</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/join.css">
 </head>
 <body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
   <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">JN_02_01 - 페이지</div>
-      <h1 class="hero-title">회원정보입력</h1>
-      <p class="hero-desc">
-        이 페이지는 회원정보입력 화면입니다.<br>
-        기본정보 + 계정정보 + 약관동의, 회원 유형(개인/기업)에 따라 입력 항목 분기
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
+    <main id="main-content" class="join-container">
+      
+      <!-- 상단 타이틀 구역 -->
+      <section class="join-title-area">
+        <h1 class="join-title">회원가입</h1>
+        <p class="join-desc">회원정보를 정확하게 입력해 주세요.</p>
+      </section>
+
+      <!-- 상단 Step Indicator -->
+      <nav class="step-indicator" aria-label="회원가입 진행 단계">
+        <div class="step-indicator__item completed">
+          <span class="step-indicator__badge">01</span>
+          <span class="step-indicator__label">본인인증</span>
+        </div>
+        <div class="step-indicator__item active" aria-current="step">
+          <span class="step-indicator__badge">02</span>
+          <span class="step-indicator__label">정보입력</span>
+        </div>
+        <div class="step-indicator__item">
+          <span class="step-indicator__badge">03</span>
+          <span class="step-indicator__label">가입완료</span>
+        </div>
+      </nav>
+
+      <!-- 회원 유형 탭 버튼 -->
+      <div class="join-tabs" role="tablist">
+        <button type="button" class="join-tabs__btn active" id="tab-personal" role="tab" aria-selected="true" aria-controls="form-personal">개인회원</button>
+        <button type="button" class="join-tabs__btn" id="tab-corporate" role="tab" aria-selected="false" aria-controls="form-corporate">기업/단체회원</button>
       </div>
+
+      <!-- 회원 정보 입력 폼 -->
+      <form action="/join/complete.html" method="POST" id="joinForm">
+        
+        <!-- ==========================================
+             개인회원 입력 양식
+             ========================================== -->
+        <fieldset id="form-personal" role="tabpanel" aria-labelledby="tab-personal">
+          <legend style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">개인회원 정보 입력</legend>
+          
+          <!-- 아이디 -->
+          <div class="form-group">
+            <label for="personal-id" class="form-label">아이디 <span class="text-primary-color">*</span></label>
+            <div class="form-group-row">
+              <input type="text" id="personal-id" class="form-control" placeholder="영문 소문자/숫자, 4~12자" required>
+              <button type="button" class="btn btn-outline">중복확인</button>
+            </div>
+            <p class="error-text" id="personal-id-error">이미 사용 중이거나 올바르지 않은 형식입니다.</p>
+          </div>
+
+          <!-- 비밀번호 -->
+          <div class="form-group">
+            <label for="personal-pw" class="form-label">비밀번호 <span class="text-primary-color">*</span></label>
+            <input type="password" id="personal-pw" class="form-control" placeholder="영문, 숫자, 특수문자 조합 8~16자" required>
+            <p class="error-text" id="personal-pw-error">비밀번호는 영문, 숫자, 특수문자를 포함하여 8자 이상이어야 합니다.</p>
+          </div>
+
+          <!-- 비밀번호 확인 -->
+          <div class="form-group">
+            <label for="personal-pw-confirm" class="form-label">비밀번호 확인 <span class="text-primary-color">*</span></label>
+            <input type="password" id="personal-pw-confirm" class="form-control" placeholder="비밀번호를 한 번 더 입력해 주세요" required>
+            <p class="error-text" id="personal-pw-confirm-error">비밀번호가 일치하지 않습니다.</p>
+          </div>
+
+          <!-- 이름 -->
+          <div class="form-group">
+            <label for="personal-name" class="form-label">이름 <span class="text-primary-color">*</span></label>
+            <input type="text" id="personal-name" class="form-control" placeholder="이름을 입력해 주세요" required>
+          </div>
+
+          <!-- 이메일 -->
+          <div class="form-group">
+            <label for="personal-email" class="form-label">이메일 <span class="text-primary-color">*</span></label>
+            <input type="email" id="personal-email" class="form-control" placeholder="example@domain.com" required>
+            <p class="error-text" id="personal-email-error">올바른 이메일 형식이 아닙니다.</p>
+          </div>
+
+          <!-- 휴대폰 번호 -->
+          <div class="form-group">
+            <label for="personal-phone" class="form-label">휴대폰 번호 <span class="text-primary-color">*</span></label>
+            <input type="tel" id="personal-phone" class="form-control" placeholder="010-0000-0000" required>
+          </div>
+        </fieldset>
+
+        <!-- ==========================================
+             기업회원 입력 양식
+             ========================================== -->
+        <fieldset id="form-corporate" role="tabpanel" aria-labelledby="tab-corporate" style="display: none;">
+          <legend style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">기업/단체회원 정보 입력</legend>
+          
+          <!-- 기업/단체명 -->
+          <div class="form-group">
+            <label for="corp-name" class="form-label">기업/단체명 <span class="text-primary-color">*</span></label>
+            <input type="text" id="corp-name" class="form-control" placeholder="공식 기업/단체명을 입력해 주세요">
+          </div>
+
+          <!-- 사업자등록번호 -->
+          <div class="form-group">
+            <label for="corp-reg-number" class="form-label">사업자등록번호 <span class="text-primary-color">*</span></label>
+            <div class="form-group-row">
+              <input type="text" id="corp-reg-number" class="form-control" placeholder="숫자만 입력 (10자리)">
+              <button type="button" class="btn btn-outline">인증확인</button>
+            </div>
+            <p class="error-text" id="corp-reg-error">유효하지 않은 사업자번호입니다.</p>
+          </div>
+
+          <!-- 아이디 -->
+          <div class="form-group">
+            <label for="corp-id" class="form-label">아이디 <span class="text-primary-color">*</span></label>
+            <div class="form-group-row">
+              <input type="text" id="corp-id" class="form-control" placeholder="영문 소문자/숫자, 4~12자">
+              <button type="button" class="btn btn-outline">중복확인</button>
+            </div>
+          </div>
+
+          <!-- 비밀번호 -->
+          <div class="form-group">
+            <label for="corp-pw" class="form-label">비밀번호 <span class="text-primary-color">*</span></label>
+            <input type="password" id="corp-pw" class="form-control" placeholder="영문, 숫자, 특수문자 조합 8~16자">
+          </div>
+
+          <!-- 비밀번호 확인 -->
+          <div class="form-group">
+            <label for="corp-pw-confirm" class="form-label">비밀번호 확인 <span class="text-primary-color">*</span></label>
+            <input type="password" id="corp-pw-confirm" class="form-control" placeholder="비밀번호를 한 번 더 입력해 주세요">
+          </div>
+
+          <!-- 대표자명 -->
+          <div class="form-group">
+            <label for="corp-ceo" class="form-label">대표자명 <span class="text-primary-color">*</span></label>
+            <input type="text" id="corp-ceo" class="form-control" placeholder="대표자 성함을 입력해 주세요">
+          </div>
+
+          <!-- 담당자 이름 -->
+          <div class="form-group">
+            <label for="corp-manager" class="form-label">담당자 이름 <span class="text-primary-color">*</span></label>
+            <input type="text" id="corp-manager" class="form-control" placeholder="담당자 성함을 입력해 주세요">
+          </div>
+
+          <!-- 담당자 연락처 -->
+          <div class="form-group">
+            <label for="corp-manager-phone" class="form-label">담당자 연락처 <span class="text-primary-color">*</span></label>
+            <input type="tel" id="corp-manager-phone" class="form-control" placeholder="010-0000-0000">
+          </div>
+
+          <!-- 담당자 이메일 -->
+          <div class="form-group">
+            <label for="corp-manager-email" class="form-label">담당자 이메일 <span class="text-primary-color">*</span></label>
+            <input type="email" id="corp-manager-email" class="form-control" placeholder="manager@domain.com">
+          </div>
+        </fieldset>
+
+        <!-- ==========================================
+             약관 동의 영역
+             ========================================== -->
+        <section class="agreement-section">
+          <h2 class="agreement-title">약관 동의</h2>
+          
+          <!-- 전체 동의 -->
+          <div class="agreement-all">
+            <label class="custom-checkbox" for="agree-all">
+              <input type="checkbox" id="agree-all">
+              <span class="font-bold text-base">전체 약관에 동의합니다.</span>
+            </label>
+          </div>
+
+          <!-- 개별 약관 동의 목록 -->
+          <div class="agreement-list">
+            <!-- 약관 1 -->
+            <div class="agreement-item">
+              <label class="custom-checkbox" for="agree-terms">
+                <input type="checkbox" id="agree-terms" required>
+                <span>[필수] 홈페이지 이용약관 동의</span>
+              </label>
+              <a href="/policy/terms.html" target="_blank" class="agreement-link">내용보기</a>
+            </div>
+
+            <!-- 약관 2 -->
+            <div class="agreement-item">
+              <label class="custom-checkbox" for="agree-privacy">
+                <input type="checkbox" id="agree-privacy" required>
+                <span>[필수] 개인정보 수집 및 이용 동의</span>
+              </label>
+              <a href="/policy/privacy.html" target="_blank" class="agreement-link">내용보기</a>
+            </div>
+
+            <!-- 약관 3 (선택) -->
+            <div class="agreement-item">
+              <label class="custom-checkbox" for="agree-marketing">
+                <input type="checkbox" id="agree-marketing">
+                <span>[선택] 마케팅 정보 및 소식 수신 동의</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- 폼 액션 버튼 -->
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline" onclick="history.back()">이전 단계</button>
+          <button type="submit" class="btn btn-primary">회원가입 완료</button>
+        </div>
+
+      </form>
     </main>
 
     <!-- 푸터 공통 영역 인클루드 -->
@@ -30,5 +226,79 @@
   </div>
 
   <script type="module" src="/src/js/main.js"></script>
+
+  <!-- 개인/기업 폼 탭 제어를 위한 최소한의 스크립트 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabPersonal = document.getElementById('tab-personal');
+      const tabCorporate = document.getElementById('tab-corporate');
+      const formPersonal = document.getElementById('form-personal');
+      const formCorporate = document.getElementById('form-corporate');
+
+      // URL 파라미터 체크 (?type=corporate)
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('type') === 'corporate') {
+        activateCorporate();
+      }
+
+      tabPersonal.addEventListener('click', activatePersonal);
+      tabCorporate.addEventListener('click', activateCorporate);
+
+      function activatePersonal() {
+        tabPersonal.classList.add('active');
+        tabPersonal.setAttribute('aria-selected', 'true');
+        tabCorporate.classList.remove('active');
+        tabCorporate.setAttribute('aria-selected', 'false');
+
+        formPersonal.style.display = 'block';
+        formCorporate.style.display = 'none';
+
+        // 개인회원 입력 폼 활성화 및 필수 설정
+        toggleRequired(formPersonal, true);
+        toggleRequired(formCorporate, false);
+      }
+
+      function activateCorporate() {
+        tabCorporate.classList.add('active');
+        tabCorporate.setAttribute('aria-selected', 'true');
+        tabPersonal.classList.remove('active');
+        tabPersonal.setAttribute('aria-selected', 'false');
+
+        formCorporate.style.display = 'block';
+        formPersonal.style.display = 'none';
+
+        // 기업회원 입력 폼 활성화 및 필수 설정
+        toggleRequired(formCorporate, true);
+        toggleRequired(formPersonal, false);
+      }
+
+      function toggleRequired(parent, isRequired) {
+        const inputs = parent.querySelectorAll('input');
+        inputs.forEach(input => {
+          // 원래 required 속성이 있었던 요소 혹은 필수 요소들에 대해 셋업
+          if (isRequired) {
+            if (input.id !== 'corp-manager-email' && input.id !== 'corp-reg-number' && input.id !== 'corp-id') { // 예시 제외
+              input.setAttribute('required', 'required');
+            }
+          } else {
+            input.removeAttribute('required');
+          }
+        });
+      }
+
+      // 약관 전체동의 제어
+      const agreeAll = document.getElementById('agree-all');
+      const agreeTerms = document.getElementById('agree-terms');
+      const agreePrivacy = document.getElementById('agree-privacy');
+      const agreeMarketing = document.getElementById('agree-marketing');
+
+      agreeAll.addEventListener('change', function() {
+        const checked = this.checked;
+        agreeTerms.checked = checked;
+        agreePrivacy.checked = checked;
+        agreeMarketing.checked = checked;
+      });
+    });
+  </script>
 </body>
 </html>

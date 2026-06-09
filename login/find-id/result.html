@@ -3,25 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 아이디찾기결과 페이지입니다.">
-  <title>RMHC Korea - 아이디찾기결과</title>
+  <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 아이디 찾기 결과 페이지입니다.">
+  <title>아이디 찾기 결과 - RMHC Korea</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/login.css">
 </head>
 <body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
   <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">LG_02_01 - 페이지</div>
-      <h1 class="hero-title">아이디찾기결과</h1>
-      <p class="hero-desc">
-        이 페이지는 아이디찾기결과 화면입니다.<br>
-        아이디 마스킹 노출 (뒷자리 3자리 ***처리)
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
+    <main id="main-content" class="login-section">
+      <div class="login-card">
+        <h1 class="login-title">아이디 찾기 완료</h1>
+        <p class="login-desc">입력하신 본인인증 정보와 일치하는<br>회원님의 아이디를 찾았습니다.</p>
+
+        <!-- 아이디 찾기 결과 박스 -->
+        <div class="result-box">
+          <div class="result-box__title">회원님의 아이디</div>
+          <div class="result-box__value">rmhc***</div>
+          <div class="result-box__info">
+            가입일자: 2026.06.01
+          </div>
+        </div>
+
+        <div class="d-flex flex-col gap-3">
+          <a href="/login.html" class="btn btn-primary w-100 text-center font-bold" style="min-height: 4.8rem; display: flex; align-items: center; justify-content: center;">로그인하러 가기</a>
+          <a href="/login/reset-pw.html" class="btn btn-outline w-100 text-center font-semibold" style="min-height: 4.8rem; display: flex; align-items: center; justify-content: center;">비밀번호 재설정</a>
+        </div>
       </div>
     </main>
 
