@@ -61,6 +61,15 @@
   src: url("../fonts/Pretendard-ExtraBold.woff2") format("woff2");
 }
 
+/* NanumSquare Neo: 피그마 지정 타이틀 및 헤더 전용 (가변 웹폰트) */
+@font-face {
+  font-family: "NanumSquare Neo";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Brand Color Palette (RMHC Warm Light Theme — 피그마 기준) */
   --primary: #db0007; /* RMHC Red: 피그마 기준 브랜드 레드 */
