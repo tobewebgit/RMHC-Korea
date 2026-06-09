@@ -88,5 +88,6 @@
   - [x] 피그마 시안 폰트 크기 매핑(48px, 20px, 28px, 18px, 48px) 및 애니메이션 최종 컬러 절대 블랙(#000000) 동기화
   - [x] 48px 크기 폰트 스타일의 line-height: 130%(1.3) 상세 교정
   - [x] 글로벌 기본 sans-serif 폰트 변수(--font-sans)를 Pretendard에서 NanumSquare Neo로 전환 및 일괄 적용
+  - [x] NanumSquare Neo의 기본 넓은 자간 현상 해결을 위한 letter-spacing: -0.03em 음수 자간 적용
   - [x] HTML 린트 및 Vite 프로덕션 빌드 최종 검증 (dist 실행 시 무오류 보장)
 
