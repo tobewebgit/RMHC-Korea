@@ -371,14 +371,19 @@
 /* 텍스트 줄별 실시간 스크롤 리빌 */
 .reveal-line {
   display: block;
+  margin-bottom: 0.8rem;
+}
+
+/* 개별 글자 실시간 스크롤 리빌 */
+.reveal-char {
+  display: inline-block;
   color: #9e9e9e; /* 초기 그레이 */
   opacity: 0.25; /* 초기 불투명도 */
-  transform: translateY(2.5rem);
+  transform: translateY(2rem);
   will-change: transform, opacity, color;
-  margin-bottom: 0.8rem;
   transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1),
               opacity 0.2s cubic-bezier(0.25, 1, 0.5, 1),
-              color 0.2s cubic-bezier(0.25, 1, 0.5, 1); /* 스크롤 변화에 완충 효과 */
+              color 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* 텍스트 내 인라인 아이콘 */
