@@ -75,3 +75,9 @@
   - [x] 이용약관 (`policy/terms.html`)
   - [x] 개인정보 처리방침 (`policy/privacy.html`)
   - [x] 이메일 무단수집거부 (`policy/email.html`)
+
+- [x] **7단계: 메인 홈 하우스 소개 섹션 인터랙션 고도화**
+  - [x] 메인 홈 `index.html` 내 하우스 소개 섹션 마크업 추가
+  - [x] `index.css` 내 텍스트 마스킹(Highlight) 및 데코 일러스트(하트, 구름 등) 반응형 스타일링 구현
+  - [x] `main.js` 내 Intersection Observer 기반 순차 등장(Cascade) 및 스크롤 감동 인터랙션 추가
+  - [x] 4개 하우스 파스텔톤 버튼 카드 그리드 및 전체보기 버튼 마크업 및 모바일 반응형 완비
