@@ -3,26 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 후원현황 페이지입니다.">
-  <title>RMHC Korea - 후원현황</title>
+  <meta name="description" content="RMHC Korea - 비회원 후원 조회 페이지입니다. 안전한 휴대폰 본인 확인을 거쳐 후원 내역 조회가 가능합니다.">
+  <title>비회원 후원 조회 - RMHC Korea</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/nonmember.css">
 </head>
 <body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
   <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">ND_01 - 비회원</div>
-      <h1 class="hero-title">후원현황</h1>
-      <p class="hero-desc">
-        이 페이지는 후원현황 화면입니다.<br>
-        비회원 후원 현황 조회 / 정기후원 건수, 일시후원 건수, 누적 후원금액 제공
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
-      </div>
+    <main id="main-content" class="nonmember-wrapper">
+      
+      <!-- 상단 헤더 영역 -->
+      <section class="nonmember-header">
+        <span class="badge badge-primary">Non-Member Service</span>
+        <h1 class="nonmember-title">나의 후원 현황</h1>
+      </section>
+
+      <!-- 1. 비회원 본인인증 입력 카드 -->
+      <section class="nonmember-auth-card" id="nonmember-auth-section">
+        <h2 class="nonmember-auth-title">비회원 기부금 확인 및 영수증 정보 조회</h2>
+        <p class="nonmember-auth-desc">
+          비회원으로 후원하신 정보를 확인하시려면 아래 본인인증을 진행해 주세요.<br>
+          후원 당시 입력하신 이름과 휴대폰 번호를 정확히 입력해야 조회가 가능합니다.
+        </p>
+
+        <form id="nonmemberAuthForm">
+          <!-- 기부자 성명 -->
+          <div class="form-group">
+            <label for="nmName" class="form-label">기부자 성명</label>
+            <input type="text" id="nmName" class="form-control" placeholder="성명을 입력해주세요" required>
+          </div>
+
+          <!-- 휴대폰 번호 -->
+          <div class="form-group">
+            <label for="nmPhone" class="form-label">휴대폰 번호</label>
+            <div class="input-with-button">
+              <input type="tel" id="nmPhone" class="form-control" placeholder="숫자만 입력해주세요 (예: 01012345678)" required maxlength="11">
+              <button type="button" class="btn btn-secondary" id="btnSendCode">인증번호 발송</button>
+            </div>
+          </div>
+
+          <!-- 인증번호 (기본 숨김, 발송 버튼 클릭 시 노출) -->
+          <div class="form-group" id="codeGroup" style="display: none;">
+            <label for="nmAuthCode" class="form-label">인증번호 입력</label>
+            <div class="timer-input-wrapper">
+              <input type="text" id="nmAuthCode" class="form-control" placeholder="인증번호 6자리를 입력해주세요" maxlength="6" aria-describedby="authTimerLabel">
+              <span class="auth-timer" id="authTimerLabel" role="timer" aria-live="polite">03:00</span>
+            </div>
+            <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 0.8rem;">
+              인증번호가 도착하지 않았을 경우 재전송 버튼을 눌러주세요.
+            </p>
+          </div>
+
+          <!-- 조회하기 버튼 -->
+          <div style="margin-top: var(--spacing-8);">
+            <button type="submit" class="btn btn-primary w-full" id="btnSubmitAuth" disabled style="min-height: 4.8rem;">인증 및 후원 조회</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- 2. 비회원 후원 현황 결과 영역 (기본 숨김) -->
+      <section class="nonmember-result-container" id="nonmember-result-section">
+        
+        <!-- 대시보드 -->
+        <div class="nonmember-dashboard">
+          <div class="nonmember-dashboard-card">
+            <span class="nonmember-dashboard-label">비회원 후원 건수</span>
+            <span class="nonmember-dashboard-value"><strong class="highlight">2</strong> 건</span>
+          </div>
+          <div class="nonmember-dashboard-card">
+            <span class="nonmember-dashboard-label">누적 후원금액</span>
+            <span class="nonmember-dashboard-value"><strong class="highlight">50,000</strong> 원</span>
+          </div>
+        </div>
+
+        <!-- 후원 내역 리스트 -->
+        <div class="mypage-card" style="margin-bottom: var(--spacing-8);">
+          <h2 class="mypage-card-title">비회원 후원 내역</h2>
+          <div class="mypage-table-wrapper">
+            <table class="mypage-table">
+              <caption>비회원 후원 내역 목록 - 후원일자, 후원번호, 후원금액, 결제수단, 상태로 구성</caption>
+              <thead>
+                <tr>
+                  <th scope="col">후원일자</th>
+                  <th scope="col">후원번호</th>
+                  <th scope="col">후원금액</th>
+                  <th scope="col">결제수단</th>
+                  <th scope="col">상태</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2026-05-15</td>
+                  <td>N202605150022</td>
+                  <td class="font-bold">30,000원</td>
+                  <td>카카오페이</td>
+                  <td><span class="status-badge status-badge--success">완료</span></td>
+                </tr>
+                <tr>
+                  <td>2026-03-10</td>
+                  <td>N202603100004</td>
+                  <td class="font-bold">20,000원</td>
+                  <td>신용카드</td>
+                  <td><span class="status-badge status-badge--success">완료</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 기부금 영수증 등록 바로가기 알림 -->
+        <div class="donation-notice-box" style="margin-top: var(--spacing-4);">
+          <ul>
+            <li>비회원 기부금도 주민등록번호 등 식별정보가 등록되어야 국세청 연말정산 간소화 서비스에 반영됩니다.</li>
+            <li>기부금 영수증 발급 정보의 신규 등록/변경은 회원 가입 후 통합 마이페이지에서 안전하게 관리하실 수 있습니다.</li>
+          </ul>
+        </div>
+
+        <!-- 3. 회원가입 홍보 배너 (기획 사양 필수) -->
+        <div class="signup-promo-banner">
+          <div class="promo-text-group">
+            <h3 class="promo-title">지금 회원가입 하시면 기부 내역이 하나로 통합됩니다!</h3>
+            <p class="promo-desc">
+              회원으로 가입하시면 과거 비회원 후원 내역 연동, 기부금영수증 상시 조회 및 출력,<br>
+              정기후원 금액 및 결제수단 실시간 변경 등 더 편리한 개인화 마이페이지를 이용하실 수 있습니다.
+            </p>
+          </div>
+          <div>
+            <a href="/join.html" class="btn btn-primary" style="background-color: var(--text-primary); border-color: var(--text-primary);">간편 가입하기</a>
+          </div>
+        </div>
+
+      </section>
+
     </main>
 
     <!-- 푸터 공통 영역 인클루드 -->
@@ -30,5 +149,96 @@
   </div>
 
   <script type="module" src="/src/js/main.js"></script>
+
+  <!-- 비회원 조회용 전용 스크립트 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnSendCode = document.getElementById('btnSendCode');
+      const codeGroup = document.getElementById('codeGroup');
+      const timerLabel = document.getElementById('authTimerLabel');
+      const btnSubmitAuth = document.getElementById('btnSubmitAuth');
+      const authForm = document.getElementById('nonmemberAuthForm');
+      
+      const authSection = document.getElementById('nonmember-auth-section');
+      const resultSection = document.getElementById('nonmember-result-section');
+
+      let timerInterval = null;
+
+      // 1. 인증번호 발송 버튼 클릭 시
+      btnSendCode.addEventListener('click', () => {
+        const phone = document.getElementById('nmPhone').value;
+        const name = document.getElementById('nmName').value;
+
+        if (!name) {
+          alert('이름을 입력해 주세요.');
+          document.getElementById('nmName').focus();
+          return;
+        }
+        if (!phone || phone.length < 10) {
+          alert('올바른 휴대폰 번호를 입력해 주세요.');
+          document.getElementById('nmPhone').focus();
+          return;
+        }
+
+        // 인증번호 필드 노출 및 활성화
+        codeGroup.style.display = 'block';
+        btnSubmitAuth.removeAttribute('disabled');
+        btnSendCode.textContent = '재전송';
+        alert('입력하신 번호로 인증번호 6자리가 발송되었습니다. (인증번호: 123456)');
+        document.getElementById('nmAuthCode').focus();
+
+        // 타이머 구동
+        startTimer(180); // 3분
+      });
+
+      // 3분 타이머 구동 함수
+      function startTimer(durationSeconds) {
+        if (timerInterval) {
+          clearInterval(timerInterval);
+        }
+
+        let timeRemaining = durationSeconds;
+        updateTimerLabel(timeRemaining);
+
+        timerInterval = setInterval(() => {
+          timeRemaining--;
+          updateTimerLabel(timeRemaining);
+
+          if (timeRemaining <= 0) {
+            clearInterval(timerInterval);
+            alert('인증 시간이 만료되었습니다. 인증번호를 다시 요청해 주세요.');
+            btnSubmitAuth.setAttribute('disabled', 'true');
+          }
+        }, 1000);
+      }
+
+      function updateTimerLabel(seconds) {
+        const m = Math.floor(seconds / 60);
+        const s = seconds % 60;
+        const mStr = m.toString().padStart(2, '0');
+        const sStr = s.toString().padStart(2, '0');
+        timerLabel.textContent = `${mStr}:${sStr}`;
+      }
+
+      // 2. 인증 제출 및 결과 조회
+      authForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const codeInput = document.getElementById('nmAuthCode').value;
+
+        if (codeInput !== '123456') {
+          alert('인증번호가 올바르지 않습니다. 다시 확인해 주세요. (가상 인증번호: 123456)');
+          return;
+        }
+
+        clearInterval(timerInterval);
+        alert('본인 확인이 완료되었습니다.');
+        
+        // 화면 전환
+        authSection.style.display = 'none';
+        resultSection.classList.add('active'); // classList 사용으로 수정
+        resultSection.style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>

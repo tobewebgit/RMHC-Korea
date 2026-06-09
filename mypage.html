@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 마이페이지입니다. 회원님의 후원 현황 및 개인정보를 확인하실 수 있습니다.">
+  <title>마이페이지 홈 - RMHC Korea</title>
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/mypage.css">
+</head>
+<body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#mypage-main-content" class="skip-nav">본문 바로가기</a>
+
+  <!-- 헤더 공통 영역 인클루드 -->
+  <load ="src/includes/header.html" />
+
+  <div class="mypage-wrapper">
+    <!-- 마이페이지 히어로 타이틀 -->
+    <section class="mypage-hero" aria-labelledby="mypage-hero-title">
+      <div class="container">
+        <h1 class="mypage-hero__title" id="mypage-hero-title">마이페이지</h1>
+        <p class="mypage-hero__desc">중증 환아와 그 가족을 향한 따뜻한 마음에 항상 감사드립니다.</p>
+      </div>
+    </section>
+
+    <!-- 마이페이지 레이아웃 컨테이너 -->
+    <div class="mypage-container">
+      <div class="mypage-layout">
+        <!-- LNB 공통 영역 인클루드 -->
+        <load ="src/includes/mypage-lnb.html" />
+
+        <!-- 마이페이지 본문 콘텐츠 -->
+        <main class="mypage-content" id="mypage-main-content">
+          
+          <!-- 웰컴 카드 배너 -->
+          <section class="mypage-welcome" aria-label="회원 요약 정보">
+            <div class="mypage-welcome__info-box">
+              <h2 class="mypage-welcome__text">
+                <strong>홍길동</strong> 님은 RMHC Korea와 함께<br>
+                따뜻한 기적을 만들어가고 계십니다.
+              </h2>
+            </div>
+            <div class="mypage-welcome__details">
+              <div class="mypage-welcome__detail-item">
+                최초 후원일: <span>2021.03.12</span>
+              </div>
+              <div class="mypage-welcome__detail-item">
+                회원 가입일: <span>2021.03.10</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 후원 대시보드 통계 카드 -->
+          <section class="mypage-dashboard" aria-label="나의 후원 요약 통계">
+            <h2 class="sr-only">후원 통계</h2>
+            <div class="mypage-dashboard__card">
+              <div class="mypage-dashboard__icon-wrap" aria-hidden="true">
+                <svg class="mypage-dashboard__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </div>
+              <div class="mypage-dashboard__info">
+                <span class="mypage-dashboard__label">진행 중인 정기후원</span>
+                <span class="mypage-dashboard__value">1<span>건</span></span>
+              </div>
+            </div>
+
+            <div class="mypage-dashboard__card">
+              <div class="mypage-dashboard__icon-wrap" aria-hidden="true">
+                <svg class="mypage-dashboard__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <div class="mypage-dashboard__info">
+                <span class="mypage-dashboard__label">누적 후원금액</span>
+                <span class="mypage-dashboard__value">1,500,000<span>원</span></span>
+              </div>
+            </div>
+
+            <div class="mypage-dashboard__card">
+              <div class="mypage-dashboard__icon-wrap" aria-hidden="true">
+                <svg class="mypage-dashboard__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="mypage-dashboard__info">
+                <span class="mypage-dashboard__label">총 후원 횟수</span>
+                <span class="mypage-dashboard__value">30<span>회</span></span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 최근 후원 이력 (최대 3건 간이 테이블) -->
+          <section class="mypage-section" aria-labelledby="section-recent-donations">
+            <div class="mypage-list-header">
+              <h2 class="mypage-list-title" id="section-recent-donations">최근 후원 내역</h2>
+              <a href="/mypage/donations.html" class="btn btn-text text-sm">전체보기 &rarr;</a>
+            </div>
+            
+            <div class="mypage-table-container">
+              <table class="mypage-table">
+                <caption>최근 후원 내역 목록 표 - 기부일자, 후원구분, 결제수단, 후원금액, 상태 제공</caption>
+                <colgroup>
+                  <col style="width: 20%;">
+                  <col style="width: 20%;">
+                  <col style="width: 20%;">
+                  <col style="width: 20%;">
+                  <col style="width: 20%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">기부일자</th>
+                    <th scope="col">후원구분</th>
+                    <th scope="col">결제수단</th>
+                    <th scope="col">후원금액</th>
+                    <th scope="col">상태</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2026.06.05</td>
+                    <td>정기후원 (양산하우스 아동지원)</td>
+                    <td>신용카드</td>
+                    <td class="font-semibold text-primary-color">50,000원</td>
+                    <td><span class="donation-status donation-status--active">후원진행</span></td>
+                  </tr>
+                  <tr>
+                    <td>2026.05.05</td>
+                    <td>정기후원 (양산하우스 아동지원)</td>
+                    <td>신용카드</td>
+                    <td class="font-semibold text-primary-color">50,000원</td>
+                    <td><span class="donation-status donation-status--active">후원진행</span></td>
+                  </tr>
+                  <tr>
+                    <td>2026.04.10</td>
+                    <td>일시후원 (가정의 달 특별기부)</td>
+                    <td>계좌이체</td>
+                    <td class="font-semibold text-primary-color">100,000원</td>
+                    <td><span class="donation-status donation-status--completed">후원완료</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 마이페이지 퀵 서비스 -->
+          <section class="mypage-section" aria-labelledby="section-quick-services">
+            <div class="mypage-list-header">
+              <h2 class="mypage-list-title" id="section-quick-services">자주 찾는 서비스</h2>
+            </div>
+            <div class="mypage-quick-grid">
+              <a href="/mypage/donation-receipts.html" class="mypage-quick-card" aria-label="기부금 영수증 신청 및 조회 바로가기">
+                <div class="mypage-quick-card__icon-wrap" aria-hidden="true">
+                  <svg class="mypage-quick-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                </div>
+                <h3 class="mypage-quick-card__title">기부금 영수증</h3>
+                <p class="mypage-quick-card__desc">연말정산용 영수증 신청</p>
+              </a>
+
+              <a href="/mypage/verify-password.html" class="mypage-quick-card" aria-label="개인정보 수정 바로가기">
+                <div class="mypage-quick-card__icon-wrap" aria-hidden="true">
+                  <svg class="mypage-quick-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <h3 class="mypage-quick-card__title">정보 수정</h3>
+                <p class="mypage-quick-card__desc">비밀번호 및 연락처 변경</p>
+              </a>
+
+              <a href="/volunteer.html" class="mypage-quick-card" aria-label="자원봉사 신청 바로가기">
+                <div class="mypage-quick-card__icon-wrap" aria-hidden="true">
+                  <svg class="mypage-quick-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <h3 class="mypage-quick-card__title">자원봉사</h3>
+                <p class="mypage-quick-card__desc">아동 쉼터 활동 신청</p>
+              </a>
+
+              <a href="/faq.html" class="mypage-quick-card" aria-label="자주 묻는 질문 FAQ 바로가기">
+                <div class="mypage-quick-card__icon-wrap" aria-hidden="true">
+                  <svg class="mypage-quick-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </div>
+                <h3 class="mypage-quick-card__title">문의 / FAQ</h3>
+                <p class="mypage-quick-card__desc">자주 묻는 질문 해결</p>
+              </a>
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- 푸터 공통 영역 인클루드 -->
+  <load ="src/includes/footer.html" />
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

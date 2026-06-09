@@ -3,31 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 나의정보 페이지입니다.">
-  <title>RMHC Korea - 나의정보</title>
+  <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 마이페이지 회원정보 수정 페이지입니다. 회원님의 연락처, 주소, 비밀번호 정보를 변경하실 수 있습니다.">
+  <title>개인정보 수정 - RMHC Korea</title>
   <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/mypage.css">
 </head>
 <body>
+
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#mypage-main-content" class="skip-nav">본문 바로가기</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load ="src/includes/header.html" />
 
-  <div class="page-wrapper">
-    <main class="hero-section">
-      <div class="badge">MP_03 - 페이지</div>
-      <h1 class="hero-title">나의정보</h1>
-      <p class="hero-desc">
-        이 페이지는 나의정보 화면입니다.<br>
-        회원 정보 조회 및 수정 / 회원 탈퇴 화면 이동 제공
-      </p>
-      <div class="hero-buttons">
-        <a href="/" class="btn btn-primary">&larr; 홈으로 돌아가기</a>
+  <div class="mypage-wrapper">
+    <!-- 마이페이지 히어로 타이틀 -->
+    <section class="mypage-hero" aria-labelledby="mypage-hero-title">
+      <div class="container">
+        <h1 class="mypage-hero__title" id="mypage-hero-title">개인정보 수정</h1>
+        <p class="mypage-hero__desc">회원님의 소중한 개인정보를 안전하게 보관 및 관리합니다.</p>
       </div>
-    </main>
+    </section>
 
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="src/includes/footer.html" />
+    <!-- 마이페이지 레이아웃 컨테이너 -->
+    <div class="mypage-container">
+      <div class="mypage-layout">
+        <!-- LNB 공통 영역 인클루드 -->
+        <load ="src/includes/mypage-lnb.html" />
+
+        <!-- 마이페이지 본문 콘텐츠 -->
+        <main class="mypage-content" id="mypage-main-content">
+          <section class="mypage-section" aria-labelledby="section-profile-title">
+            <div class="mypage-section__title-wrap">
+              <h2 class="mypage-section__title" id="section-profile-title">기본 정보 수정</h2>
+              <span class="text-xs text-muted-color"><span class="text-primary-color">*</span> 표시는 필수 입력 항목입니다.</span>
+            </div>
+
+            <form action="/mypage.html" method="POST" class="profile-form" novalidate>
+              
+              <!-- 회원 구분 / 아이디 / 이름 / 생년월일 (수정 불가 영역) -->
+              <div class="d-grid grid-cols-12">
+                <div class="col-6 col-md-12 form-group">
+                  <label for="profileId" class="form-label">아이디</label>
+                  <input type="text" id="profileId" class="form-control info-readonly" value="rmhc_user" readonly tabindex="-1" aria-readonly="true">
+                </div>
+                <div class="col-6 col-md-12 form-group">
+                  <label for="profileName" class="form-label">이름</label>
+                  <input type="text" id="profileName" class="form-control info-readonly" value="홍길동" readonly tabindex="-1" aria-readonly="true">
+                </div>
+                <div class="col-6 col-md-12 form-group">
+                  <label for="profileBirth" class="form-label">생년월일</label>
+                  <input type="text" id="profileBirth" class="form-control info-readonly" value="1990.01.01" readonly tabindex="-1" aria-readonly="true">
+                </div>
+                <div class="col-6 col-md-12 form-group">
+                  <span class="form-label" id="labelGender">성별</span>
+                  <input type="text" id="profileGender" class="form-control info-readonly" value="남성" readonly tabindex="-1" aria-readonly="true" aria-labelledby="labelGender">
+                </div>
+              </div>
+
+              <div class="form-section-divider"></div>
+
+              <!-- 비밀번호 변경 영역 (선택 사항) -->
+              <h3 class="form-sub-title">비밀번호 변경</h3>
+              <div class="d-grid grid-cols-12">
+                <div class="col-12 form-group">
+                  <label for="currentPassword" class="form-label">현재 비밀번호</label>
+                  <input type="password" id="currentPassword" class="form-control" placeholder="현재 사용 중인 비밀번호를 입력해 주세요" autocomplete="current-password">
+                </div>
+                <div class="col-6 col-md-12 form-group">
+                  <label for="newPassword" class="form-label">새 비밀번호</label>
+                  <input type="password" id="newPassword" class="form-control" placeholder="영문, 숫자, 특수문자 조합 8~16자" autocomplete="new-password">
+                </div>
+                <div class="col-6 col-md-12 form-group">
+                  <label for="confirmNewPassword" class="form-label">새 비밀번호 확인</label>
+                  <input type="password" id="confirmNewPassword" class="form-control" placeholder="새 비밀번호를 한번 더 입력해 주세요" autocomplete="new-password">
+                </div>
+              </div>
+
+              <div class="form-section-divider"></div>
+
+              <!-- 연락처 정보 (수정 가능 영역) -->
+              <h3 class="form-sub-title">연락처 및 주소 정보</h3>
+              <div class="d-grid grid-cols-12">
+                <!-- 휴대폰 번호 -->
+                <div class="col-12 form-group">
+                  <span class="form-label" id="phoneLabel">휴대폰 번호 <span class="text-primary-color" aria-hidden="true">*</span></span>
+                  <div class="form-cell-phone" role="group" aria-labelledby="phoneLabel">
+                    <input type="tel" class="form-control" title="휴대폰 국번 입력" value="010" required aria-required="true" maxlength="3">
+                    <span>-</span>
+                    <input type="tel" class="form-control" title="휴대폰 중간번호 입력" value="1234" required aria-required="true" maxlength="4">
+                    <span>-</span>
+                    <input type="tel" class="form-control" title="휴대폰 뒷번호 입력" value="5678" required aria-required="true" maxlength="4">
+                  </div>
+                </div>
+
+                <!-- 이메일 주소 -->
+                <div class="col-12 form-group">
+                  <label for="emailId" class="form-label">이메일 주소 <span class="text-primary-color" aria-hidden="true">*</span></label>
+                  <div class="form-row">
+                    <input type="text" id="emailId" class="form-control" value="rmhc_user" required aria-required="true">
+                    <span class="text-muted-color">@</span>
+                    <input type="text" id="emailDomain" class="form-control" value="gmail.com" title="이메일 도메인 입력" required aria-required="true">
+                    <label for="emailDomainSelect" class="sr-only">이메일 도메인 선택</label>
+                    <select id="emailDomainSelect" class="form-control email-select">
+                      <option value="custom">직접입력</option>
+                      <option value="naver.com">naver.com</option>
+                      <option value="gmail.com" selected>gmail.com</option>
+                      <option value="daum.net">daum.net</option>
+                      <option value="hanmail.net">hanmail.net</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- 주소 정보 -->
+                <div class="col-12 form-group address-group">
+                  <label for="postcode" class="form-label">주소 <span class="text-primary-color" aria-hidden="true">*</span></label>
+                  <div class="form-row">
+                    <input type="text" id="postcode" class="form-control info-readonly" value="06500" readonly aria-required="true">
+                    <button type="button" class="btn btn-outline">우편번호 찾기</button>
+                  </div>
+                  <input type="text" id="addressBase" class="form-control info-readonly" value="서울특별시 서초구 신반포로" title="기본 주소" readonly aria-required="true">
+                  <input type="text" id="addressDetail" class="form-control" value="43길 43 102호" title="상세 주소 입력" required aria-required="true">
+                </div>
+              </div>
+
+              <div class="form-section-divider"></div>
+
+              <!-- 수신동의 정보 -->
+              <h3 class="form-sub-title">마케팅 및 알림 수신 동의</h3>
+              <div class="col-12 form-group">
+                <span class="form-label" id="agreementsLabel">정보 수신 동의 여부</span>
+                <div class="checkbox-grid" role="group" aria-labelledby="agreementsLabel">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" name="receiveSms" checked>
+                    <span>SMS (문자 수신)</span>
+                  </label>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" name="receiveEmail" checked>
+                    <span>이메일 수신</span>
+                  </label>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" name="receivePost">
+                    <span>DM (우편물 수신)</span>
+                  </label>
+                </div>
+                <p class="form-helper mt-2">후원 관련 법정 고지서(기부금 영수증 포함)는 수신 동의 여부와 무관하게 발송됩니다.</p>
+              </div>
+
+              <!-- 버튼 영역 -->
+              <div class="mypage-form-actions mt-10">
+                <a href="/mypage.html" class="btn btn-outline" role="button">취소</a>
+                <button type="submit" class="btn btn-primary">저장</button>
+              </div>
+
+            </form>
+          </section>
+        </main>
+      </div>
+    </div>
   </div>
+
+  <!-- 푸터 공통 영역 인클루드 -->
+  <load ="src/includes/footer.html" />
 
   <script type="module" src="/src/js/main.js"></script>
 </body>

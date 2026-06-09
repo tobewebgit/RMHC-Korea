@@ -1,0 +1,95 @@
+<aside class="mypage-lnb">
+  <!-- 사용자 프로필 요약 영역 -->
+  <div class="mypage-lnb__profile">
+    <div class="mypage-lnb__avatar">
+      <svg class="mypage-lnb__avatar-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="80" height="80">
+        <circle cx="40" cy="40" r="40" fill="#f3f0ea"/>
+        <path d="M40 44C30.0589 44 22 52.0589 22 62C22 62.5523 22.4477 63 23 63H57C57.5523 63 58 62.5523 58 62C58 52.0589 49.9411 44 40 44Z" fill="#8e959f"/>
+        <circle cx="40" cy="29" r="11" fill="#8e959f"/>
+      </svg>
+    </div>
+    <div class="mypage-lnb__user-info">
+      <p class="mypage-lnb__user-name"><strong class="font-bold">홍길동</strong> 회원님</p>
+      <span class="mypage-lnb__badge badge badge-primary">정기 후원회원</span>
+    </div>
+  </div>
+
+  <!-- LNB 네비게이션 메뉴 -->
+  <nav class="mypage-lnb__nav" aria-label="마이페이지 서브 메뉴">
+    <ul class="mypage-lnb__list">
+      <li class="mypage-lnb__item">
+        <a href="/mypage.html" class="mypage-lnb__link" data-menu="home">
+          <span class="mypage-lnb__link-text">마이페이지 홈</span>
+          <svg class="mypage-lnb__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </li>
+      <li class="mypage-lnb__item">
+        <a href="/mypage/donations.html" class="mypage-lnb__link" data-menu="donations">
+          <span class="mypage-lnb__link-text">나의 후원 현황</span>
+          <svg class="mypage-lnb__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </li>
+      <li class="mypage-lnb__item">
+        <a href="/mypage/donation-receipts.html" class="mypage-lnb__link" data-menu="receipts">
+          <span class="mypage-lnb__link-text">기부금 영수증 신청</span>
+          <svg class="mypage-lnb__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </li>
+      <li class="mypage-lnb__item">
+        <a href="/mypage/verify-password.html" class="mypage-lnb__link" data-menu="profile">
+          <span class="mypage-lnb__link-text">개인정보 수정</span>
+          <svg class="mypage-lnb__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </li>
+      <li class="mypage-lnb__item">
+        <a href="/mypage/withdraw.html" class="mypage-lnb__link" data-menu="withdraw">
+          <span class="mypage-lnb__link-text">회원 탈퇴</span>
+          <svg class="mypage-lnb__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+<script>
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      var path = window.location.pathname;
+      var links = document.querySelectorAll('.mypage-lnb__link');
+      
+      links.forEach(function(link) {
+        var href = link.getAttribute('href');
+        var isMatch = false;
+        
+        if (href === '/mypage.html' && (path === '/mypage.html' || path === '/mypage' || path === '/')) {
+          isMatch = true;
+        } else if (href !== '/mypage.html') {
+          var cleanPath = path.replace(/\/$/, "");
+          var cleanHref = href.replace(/\.html$/, "");
+          
+          if (cleanPath.indexOf(cleanHref) === 0) {
+            isMatch = true;
+          }
+          if (cleanHref.indexOf('verify-password') !== -1 && cleanPath.indexOf('profile') !== -1) {
+            isMatch = true;
+          }
+        }
+
+        if (isMatch) {
+          link.classList.add('is-active');
+          link.setAttribute('aria-current', 'page');
+        }
+      });
+    });
+  })();
+</script>

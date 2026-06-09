@@ -1,0 +1,186 @@
+/* ==========================================================================
+   nonmember.css — 비회원 후원조회 전용 스타일
+   ========================================================================== */
+
+.nonmember-wrapper {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: var(--spacing-10) var(--spacing-4) var(--spacing-16);
+}
+
+.nonmember-header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.nonmember-title {
+  font-family: var(--font-title);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: var(--spacing-2);
+}
+
+/* 1. 비회원 본인인증 카드 */
+.nonmember-auth-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-6);
+}
+
+@media (max-width: 576px) {
+  .nonmember-auth-card {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+}
+
+.nonmember-auth-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-2);
+  text-align: center;
+}
+
+.nonmember-auth-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-6);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* 인증번호 입력 타이머 및 레이아웃 */
+.input-with-button {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.input-with-button .form-control {
+  flex: 1;
+}
+
+.input-with-button .btn {
+  min-height: 4.8rem;
+  padding: 0 var(--spacing-4);
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+
+.timer-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.timer-input-wrapper .form-control {
+  padding-right: 7rem; /* 타이머 노출 공간 */
+}
+
+.auth-timer {
+  position: absolute;
+  right: 1.6rem;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--primary);
+  pointer-events: none;
+}
+
+/* 2. 비회원 후원조회 대시보드 결과 뷰 */
+.nonmember-result-container {
+  display: none; /* 기본 숨김, 인증 완료 시 노출 */
+}
+
+.nonmember-result-container.active {
+  display: block;
+}
+
+.nonmember-dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+}
+
+@media (max-width: 576px) {
+  .nonmember-dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nonmember-dashboard-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 11rem;
+}
+
+.nonmember-dashboard-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.nonmember-dashboard-value {
+  font-family: var(--font-title);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  align-self: flex-end;
+  margin-top: var(--spacing-2);
+}
+
+.nonmember-dashboard-value.highlight {
+  color: var(--primary);
+}
+
+/* 3. 회원가입 유도 홍보 배너 */
+.signup-promo-banner {
+  background-color: var(--primary-glow);
+  border: 1px solid rgba(219, 0, 7, 0.15);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6) var(--spacing-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-8);
+}
+
+@media (max-width: 768px) {
+  .signup-promo-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+}
+
+.promo-text-group {
+  flex: 1;
+}
+
+.promo-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-1);
+}
+
+.promo-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.signup-promo-banner .btn {
+  white-space: nowrap;
+}

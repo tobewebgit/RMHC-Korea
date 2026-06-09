@@ -413,9 +413,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/mypage.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "마이페이지 대시보드 및 서비스 이동 퀵 링크 연동 완료"
   },
   {
     "id": 39,
@@ -424,9 +424,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/mypage/verify-password.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "안전 정보 보호 비밀번호 재입력 폼 구현 완료"
   },
   {
     "id": 40,
@@ -435,9 +435,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/mypage/profile.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "신상 정보 수정 및 마케팅동의 그리드 폼 구현 완료"
   },
   {
     "id": 41,
@@ -446,9 +446,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/mypage/donations.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "정기/일시 탭 분기 목록 및 Empty State 토글 구현 완료"
   },
   {
     "id": 42,
@@ -457,9 +457,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/mypage/donations/detail.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "납부 내역 테이블 및 금액변경/해지 모달 구현 완료"
   },
   {
     "id": 43,
@@ -468,9 +468,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/mypage/donation-receipts.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "발급정보 요약 카드 및 연도별 전송 내역 테이블 구현 완료"
   },
   {
     "id": 44,
@@ -479,9 +479,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/mypage/donation-receipts/apply.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "본인인증 가상 팝업 및 기부 영수증 신청 폼 구현 완료"
   },
   {
     "id": 45,
@@ -490,9 +490,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/mypage/donation-receipts/status.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "귀속연도별 전송 결과 테이블 및 모의 인쇄 연동 완료"
   },
   {
     "id": 46,
@@ -501,9 +501,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/mypage/withdraw.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "안내 유의사항 카드 및 탈퇴 동의/설문 폼 구현 완료"
   },
   {
     "id": 47,
@@ -512,9 +512,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/nonmember/donations.html",
-    "status": "대기",
-    "lastModified": "-",
-    "memo": ""
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "인증번호 발송/타이머 및 결과 대시보드/배너 연동 완료"
   },
   {
     "id": 48,
