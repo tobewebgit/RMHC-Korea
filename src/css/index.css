@@ -383,7 +383,7 @@
 /* 개별 글자 실시간 스크롤 리빌 (투명도 없이 구동) */
 .reveal-char {
   display: inline-block;
-  color: #c8c8c8; /* 초기 그레이 */
+  color: #aaaaaa; /* 초기 회색 대기 상태 (#aaaaaa / color/gray/gray50) */
   transform: translateY(0.5rem);
   will-change: transform, color;
   letter-spacing: -0.03em; /* 음수 자간 강제 지정 */

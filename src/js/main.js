@@ -224,10 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const translateY = (1 - charProgress) * 0.5;
         char.style.transform = `translateY(${translateY}rem)`;
 
-        // 2) color: 연한 그레이 rgb(200,200,200) -> 완전 블랙 rgb(0,0,0) (피그마 기준)
-        const r = Math.round(200 - charProgress * 200);
-        const g = Math.round(200 - charProgress * 200);
-        const b = Math.round(200 - charProgress * 200);
+        // 2) color: 초기 회색 rgb(170,170,170) -> 완전 블랙 rgb(0,0,0) (피그마 기준)
+        const r = Math.round(170 - charProgress * 170);
+        const g = Math.round(170 - charProgress * 170);
+        const b = Math.round(170 - charProgress * 170);
         char.style.color = `rgb(${r}, ${g}, ${b})`;
 
         // reveal-highlight 밑줄 클래스 제어
