@@ -438,9 +438,9 @@
   position: relative;
   width: 120rem; /* 1200px (시안 스펙) */
   max-width: 100%;
-  aspect-ratio: 120 / 70; /* 1200:700 비율로 동기화 */
-  border: 1.2rem solid #c8bbf8; /* 보라색 액자 테두리 */
-  border-radius: 4rem; /* 둥근 액자 */
+  aspect-ratio: 1024 / 587; /* 실제 보더 포함 이미지 비율로 동기화 */
+  border-radius: 4rem; /* 둥근 액자 클리핑 */
+  overflow: hidden; /* 이미지 모퉁이 검은색 여백 커팅 */
   background-color: var(--bg-primary);
   box-shadow: var(--shadow-lg);
 
