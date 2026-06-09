@@ -332,3 +332,435 @@
     font-size: 1.8rem;
   }
 }
+
+/* ==========================================================================
+   하우스 소개 섹션 (House Intro Section)
+   ========================================================================== */
+.house-intro-section {
+  padding: 12rem 0;
+  background-color: #fffde9; /* 시안 미색 배경 */
+  overflow: hidden; /* 모바일 낙서 튀어남 방지 */
+}
+
+/* ── 텍스트 마스킹 / 리빌 ── */
+.house-intro__text-wrap {
+  text-align: center;
+  max-width: 100rem;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+}
+
+.house-intro__text {
+  font-family: "NanumSquare Neo", var(--font-sans);
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.6;
+  color: var(--text-primary);
+  word-break: keep-all;
+}
+
+.house-intro__text .inline-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.4rem;
+  transform: translateY(-0.2rem);
+}
+
+/* 텍스트 줄별 스크롤 리빌 애니메이션 */
+.reveal-line {
+  display: block;
+  opacity: 0.25;
+  filter: blur(4px);
+  transform: translateY(3rem);
+  transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
+              filter 1s cubic-bezier(0.215, 0.61, 0.355, 1),
+              transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  margin-bottom: 0.8rem;
+}
+
+/* 스크롤 진입 활성화 시 */
+.reveal-trigger.is-visible .reveal-line {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* 순차 딜레이 부여 */
+.reveal-trigger.is-visible .reveal-line:nth-child(1) { transition-delay: 0.1s; }
+.reveal-trigger.is-visible .reveal-line:nth-child(2) { transition-delay: 0.3s; }
+.reveal-trigger.is-visible .reveal-line:nth-child(3) { transition-delay: 0.5s; }
+.reveal-trigger.is-visible .reveal-line:nth-child(4) { transition-delay: 0.7s; }
+
+/* 텍스트 하이라이트 효과 */
+.reveal-highlight {
+  transition: color 0.8s ease;
+}
+
+.reveal-trigger.is-visible .reveal-highlight {
+  color: var(--text-primary);
+}
+
+
+/* ── 중앙 이미지 및 크레파스 낙서 일러스트 ── */
+.house-intro__visual-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8rem;
+}
+
+.house-intro__image-frame {
+  position: relative;
+  width: 76rem;
+  max-width: 100%;
+  aspect-ratio: 760 / 460;
+  border: 1.2rem solid #c8bbf8; /* 보라색 액자 테두리 */
+  border-radius: 4rem; /* 둥근 액자 */
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow-lg);
+  
+  /* 등장 애니메이션 초기 상태 */
+  opacity: 0;
+  transform: translateY(5rem);
+  transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
+              transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.house-intro__main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2.8rem; /* 액자 안쪽 둥글게 */
+}
+
+/* 이미지 프레임 활성화 시 */
+.cascade-trigger.is-visible .house-intro__image-frame {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 데코 낙서 공통 */
+.deco-doodle {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.6) rotate(-10deg);
+  transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 활성화 시 낙서 등장 */
+.cascade-trigger.is-visible .deco-doodle {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+/* 빨간 하트: 좌측 경계 */
+.deco-heart {
+  left: -9rem;
+  bottom: 6rem;
+  z-index: 1;
+  transition-delay: 0.4s;
+}
+
+/* 하늘색 구름: 우측 상단 */
+.deco-cloud {
+  right: -9rem;
+  top: -4rem;
+  z-index: -1;
+  transition-delay: 0.6s;
+}
+
+/* 연두색 화살표: 우측 하단 */
+.deco-arrow {
+  right: 12rem;
+  bottom: -4rem;
+  z-index: 2;
+  transition-delay: 0.8s;
+}
+
+/* 노란색 캡션 말풍선 */
+.deco-caption {
+  position: absolute;
+  right: -8rem;
+  bottom: -9rem;
+  width: 24rem;
+  height: 9rem;
+  z-index: 3;
+  background-image: url('/src/images/main/house_caption_bg.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 2.4rem 2rem 2.4rem; /* 텍스트 정렬 보정 */
+  
+  /* 초기 상태 */
+  opacity: 0;
+  transform: scale(0.6) translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: 1s;
+}
+
+.cascade-trigger.is-visible .deco-caption {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.deco-caption__text {
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+
+/* ── 하단 카드 그리드 및 안내 문구 ── */
+.house-intro__bottom-wrap {
+  text-align: center;
+}
+
+.house-intro__bottom-title {
+  font-family: "NanumSquare Neo", var(--font-sans);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin-bottom: 4.8rem;
+  word-break: keep-all;
+}
+
+.house-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem;
+  max-width: 90rem;
+  margin: 0 auto;
+  margin-bottom: 5.6rem;
+}
+
+.house-card {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 2.4rem 3.2rem;
+  border-radius: 2rem;
+  color: #ffffff;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  min-height: 8rem;
+}
+
+.house-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.house-card__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 1.2rem;
+}
+
+.house-card__icon-wrap img {
+  width: 2rem;
+  height: 2rem;
+  filter: brightness(0) invert(1);
+}
+
+.house-card__title {
+  font-family: var(--font-sans);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* 카드별 컬러 테마 */
+.house-card.theme-blue { background-color: #9ce3f6; color: #1f2937; }
+.house-card.theme-blue .house-card__icon-wrap img { filter: none; } /* 블루 테마에서는 아이콘 어둡게 */
+.house-card.theme-purple { background-color: #c8bbf8; }
+.house-card.theme-yellow { background-color: #ffc72c; color: #1f2937; }
+.house-card.theme-yellow .house-card__icon-wrap img { filter: none; }
+.house-card.theme-green { background-color: #8dc73f; }
+
+/* 하단 버튼 및 액션 */
+.house-intro__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.btn-round-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: #db0007;
+  color: #ffffff;
+  padding: 1.6rem 3.6rem;
+  border-radius: var(--radius-full);
+  font-size: 1.6rem;
+  font-weight: 700;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 0.8rem 1.6rem rgba(219, 0, 7, 0.15);
+}
+
+.btn-round-primary:hover {
+  background-color: #b80006;
+  transform: translateY(-2px);
+}
+
+.btn-round-primary svg {
+  transition: transform 0.25s ease;
+}
+
+.btn-round-primary:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* ==========================================================================
+   반응형: 태블릿 & 모바일 대응
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .house-intro-section {
+    padding: 8rem 0;
+  }
+
+  .house-intro__text {
+    font-size: 2.8rem;
+  }
+
+  .house-intro__image-frame {
+    width: 60rem;
+  }
+
+  .deco-heart {
+    left: -6rem;
+    width: 90px;
+    height: auto;
+  }
+
+  .deco-cloud {
+    right: -6rem;
+    width: 100px;
+    height: auto;
+  }
+
+  .deco-arrow {
+    right: 8rem;
+    bottom: -3rem;
+    width: 60px;
+    height: auto;
+  }
+
+  .deco-caption {
+    right: -5rem;
+    bottom: -7rem;
+    width: 20rem;
+    height: 7.5rem;
+  }
+  
+  .deco-caption__text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .house-intro-section {
+    padding: 6rem 0;
+  }
+
+  .house-intro__text-wrap {
+    margin-bottom: 5rem;
+    padding: 0 2rem;
+  }
+
+  .house-intro__text {
+    font-size: 2.2rem;
+    line-height: 1.7;
+  }
+  
+  .house-intro__text .inline-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .house-intro__visual-wrap {
+    margin-bottom: 12rem; /* 모바일 말풍선이 삐져나오는 여백 확보 */
+    padding: 0 4rem;
+  }
+
+  .house-intro__image-frame {
+    width: 100%;
+    border-width: 0.8rem;
+    border-radius: 2.4rem;
+  }
+  
+  .house-intro__main-img {
+    border-radius: 1.6rem;
+  }
+
+  /* 모바일 데코 레이아웃 최적화 (가로 스크롤 방지 및 시인성) */
+  .deco-heart {
+    left: -2rem;
+    bottom: -2rem;
+    width: 70px;
+  }
+
+  .deco-cloud {
+    right: -2rem;
+    top: -2rem;
+    width: 80px;
+  }
+
+  .deco-arrow {
+    right: 4rem;
+    bottom: -4rem;
+    width: 50px;
+  }
+
+  .deco-caption {
+    right: -2rem;
+    bottom: -9rem;
+    width: 18rem;
+    height: 7rem;
+    padding: 0.8rem 1.6rem 1.6rem 1.6rem;
+  }
+  
+  .deco-caption__text {
+    font-size: 1rem;
+  }
+
+  .house-intro__bottom-title {
+    font-size: 1.8rem;
+    padding: 0 2rem;
+  }
+
+  .house-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding: 0 2rem;
+  }
+
+  .house-card {
+    padding: 2rem 2.4rem;
+    min-height: 7rem;
+  }
+
+  .house-card__title {
+    font-size: 1.6rem;
+  }
+
+  .btn-round-primary {
+    width: calc(100% - 4rem);
+    justify-content: center;
+    padding: 1.6rem 0;
+  }
+}

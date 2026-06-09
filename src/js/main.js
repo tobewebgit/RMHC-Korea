@@ -102,10 +102,27 @@ document.addEventListener('DOMContentLoaded', () => {
         familySite.setAttribute('aria-expanded', 'false');
       }
     });
-  }
+  }  // --- 메인 홈 하우스 소개 섹션 Intersection Observer 인터랙션 ---
+  const revealTriggers = document.querySelectorAll('.reveal-trigger');
+  const cascadeTriggers = document.querySelectorAll('.cascade-trigger');
 
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15 // 요소가 15% 이상 보일 때 활성화
+  };
 
+  const scrollObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // 한 번 등장한 후에는 관찰 해제
+      }
+    });
+  }, observerOptions);
 
+  revealTriggers.forEach(trigger => scrollObserver.observe(trigger));
+  cascadeTriggers.forEach(trigger => scrollObserver.observe(trigger));
 
   console.log('RMHC Portal template initialized successfully.');
 });
