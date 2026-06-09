@@ -1,0 +1,75 @@
+/* ==========================================================================
+   button.css — 공통 버튼 컴포넌트 스타일 (style.css에서 모듈 분리)
+   ========================================================================== */
+
+/* Interactive Action Target - Min-Height 48px to prevent touch target warnings */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.8rem;
+  padding: 1.2rem var(--spacing-6);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1.52rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition-bounce);
+  user-select: none;
+}
+
+/* RMHC Red Button (Contrast: white on red = 5.34:1, PASSES AA) */
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-0.2rem);
+  box-shadow: 0 8px 20px rgba(209, 35, 42, 0.2);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* RMHC Yellow Button (Contrast: Dark Charcoal on Gold = 7.8:1, PASSES AA) */
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--text-primary); /* Compliant with WCAG AA 명도대비 */
+  box-shadow: 0 4px 12px var(--secondary-glow);
+}
+.btn-secondary:hover {
+  background-color: var(--secondary-hover);
+  transform: translateY(-0.2rem);
+  box-shadow: 0 8px 20px rgba(255, 199, 44, 0.35);
+}
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Outline Button */
+.btn-outline {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: transparent;
+}
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  transform: translateY(-0.2rem);
+  box-shadow: 0 6px 16px var(--primary-glow);
+}
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+/* Text-only Button */
+.btn-text {
+  min-height: auto;
+  padding: var(--spacing-2) var(--spacing-3);
+  color: var(--text-secondary);
+}
+.btn-text:hover {
+  color: var(--primary);
+}

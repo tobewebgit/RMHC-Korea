@@ -1,3 +1,6 @@
+@import "components/button.css";
+@import "components/form.css";
+
 /* ==========================================================================
    Web Fonts: 프로젝트 내 src/fonts/ 에서 직접 로드 (외부 의존 0)
    경로: d:\rmhc\front\src\fonts\
@@ -479,77 +482,7 @@ textarea {
 /* ==========================================================================
    Premium UI Components (Buttons & Cards)
    ========================================================================== */
-/* Interactive Action Target - Min-Height 48px to prevent touch target warnings */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 4.8rem;
-  padding: 1.2rem var(--spacing-6);
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  font-size: 1.52rem;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: var(--transition-bounce);
-  user-select: none;
-}
-
-/* RMHC Red Button (Contrast: white on red = 5.34:1, PASSES AA) */
-.btn-primary {
-  background-color: var(--primary);
-  color: #ffffff;
-  box-shadow: 0 4px 12px var(--primary-glow);
-}
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-0.2rem);
-  box-shadow: 0 8px 20px rgba(209, 35, 42, 0.2);
-}
-.btn-primary:active {
-  transform: translateY(0);
-}
-
-/* RMHC Yellow Button (Contrast: Dark Charcoal on Gold = 7.8:1, PASSES AA) */
-.btn-secondary {
-  background-color: var(--secondary);
-  color: var(--text-primary); /* Compliant with WCAG AA 명도대비 */
-  box-shadow: 0 4px 12px var(--secondary-glow);
-}
-.btn-secondary:hover {
-  background-color: var(--secondary-hover);
-  transform: translateY(-0.2rem);
-  box-shadow: 0 8px 20px rgba(255, 199, 44, 0.35);
-}
-.btn-secondary:active {
-  transform: translateY(0);
-}
-
-/* Outline Button */
-.btn-outline {
-  border-color: var(--primary);
-  color: var(--primary);
-  background-color: transparent;
-}
-.btn-outline:hover {
-  background-color: var(--primary);
-  color: #ffffff;
-  transform: translateY(-0.2rem);
-  box-shadow: 0 6px 16px var(--primary-glow);
-}
-.btn-outline:active {
-  transform: translateY(0);
-}
-
-/* Text-only Button */
-.btn-text {
-  min-height: auto;
-  padding: var(--spacing-2) var(--spacing-3);
-  color: var(--text-secondary);
-}
-.btn-text:hover {
-  color: var(--primary);
-}
+/* 공통 버튼 스타일: components/button.css 에서 로드됨 */
 
 /* Premium Card Components */
 .card {
@@ -583,99 +516,7 @@ textarea {
   color: var(--primary);
 }
 
-/* ==========================================================================
-   Form Controls (Safari Auto-zoom Fix)
-   ========================================================================== */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-2);
-  margin-bottom: var(--spacing-4);
-}
-
-.form-label {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-/* Inputs, Selects, Textareas - Min touch targets and Mobile 16px Font Zoom Fix */
-.form-control {
-  width: 100%;
-  min-height: 4.8rem;
-  padding: 1.2rem var(--spacing-4);
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  color: var(--text-primary);
-  font-size: 1.6rem; /* Forces minimum 16px to prevent iOS auto-zoom shift */
-  transition: var(--transition-fast);
-}
-.form-control::placeholder {
-  color: var(--text-muted);
-}
-.form-control:hover {
-  border-color: var(--border-hover);
-}
-.form-control:focus {
-  border-color: var(--border-focus);
-  outline: none;
-  box-shadow: 0 0 0 4px var(--primary-glow);
-}
-
-/* Custom Styled Checkboxes & Radio buttons */
-.custom-checkbox,
-.custom-radio {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-2);
-  cursor: pointer;
-  font-size: var(--text-sm);
-  user-select: none;
-}
-.custom-checkbox input[type="checkbox"],
-.custom-radio input[type="radio"] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 2rem;
-  height: 2rem;
-  border: 2px solid var(--border-color);
-  background-color: var(--bg-primary);
-  transition: var(--transition-fast);
-  cursor: pointer;
-}
-.custom-checkbox input[type="checkbox"] {
-  border-radius: 0.4rem;
-}
-.custom-radio input[type="radio"] {
-  border-radius: var(--radius-full);
-}
-.custom-checkbox input[type="checkbox"]:checked {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='1.8rem' height='1.8rem'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
-}
-.custom-radio input[type="radio"]:checked {
-  border-color: var(--primary);
-  background-color: var(--bg-primary);
-  display: grid;
-  place-content: center;
-}
-.custom-radio input[type="radio"]:checked::before {
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  border-radius: var(--radius-full);
-  background-color: var(--primary);
-}
-
-/* Mobile inputs force font size to 16px to prevent PageSpeed / iOS Auto Zoom warnings */
-@media (max-width: 768px) {
-  .form-control {
-    font-size: 1.6rem !important;
-  }
-}
+/* 공통 폼 컨트롤 스타일: components/form.css 에서 로드됨 */
 
 /* ==========================================================================
    Mobile Sliding Navigation Panel

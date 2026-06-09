@@ -1,0 +1,77 @@
+# RMHC Korea 퍼블리싱 고도화 작업 관리 (task.md)
+
+이 파일은 RMHC Korea 홈페이지 개편 퍼블리싱 프로젝트의 고도화 작업 및 마크업 수행 내역을 관리하는 태스크 리스트입니다.
+마일스톤 단계별 체크리스트를 기반으로 퍼블리싱 작업 상황을 추적합니다.
+
+---
+
+## 🛠️ 마일스톤별 퍼블리싱 작업 현황
+
+- [x] **0단계: 환경 및 정적 분석기 구축**
+  - [x] HTMLHint 정적 린터 구성 및 린팅 룰 세팅 완료
+  - [x] CSS 컴포넌트(button.css, form.css) 분리 및 style.css 연동 모듈화 완료
+  - [x] index.html 키비주얼 이미지 시범 최적화 이식 완료
+
+- [/] **1단계: 기초 정비 (공통 레이아웃 및 팝업 뼈대)**
+  - [/] 헤더(header.html), 푸터(footer.html) 공통 에셋 반응형 및 웹폰트 swap 점검
+  - [ ] 공통 팝업(VMS 안내 모달 등 4종) 마크업 리팩토링 및 주석 가독성 강화
+  - [ ] 탭/UI 제어용 최소화 스크립트 외 미사용 모션 요소 제거 확인
+
+- [ ] **2단계: 회원/로그인 (총 11개 페이지)**
+  - [ ] 로그인 메인 (`login.html`)
+  - [ ] 아이디 찾기 (`login/find-id.html`)
+  - [ ] 아이디 찾기 결과 (`login/find-id/result.html`)
+  - [ ] 비밀번호 재설정 (`login/reset-pw.html`)
+  - [ ] 비밀번호 재설정 입력 (`login/reset-pw/new.html`)
+  - [ ] 비밀번호 재설정 완료 (`login/reset-pw/complete.html`)
+  - [ ] SNS 계정 연동 (`login/link-sns.html`)
+  - [ ] 회원가입 메인 (`join.html`)
+  - [ ] 회원가입 본인 인증 (`join/auth.html`)
+  - [ ] 회원가입 정보 입력 (`join/form.html`)
+  - [ ] 회원가입 완료 (`join/complete.html`)
+
+- [ ] **3단계: 후원 및 자원봉사 (총 5개 페이지)**
+  - [ ] 정기후원 (`donate/regular.html`)
+  - [ ] 일시후원 (`donate/one-time.html`)
+  - [ ] 물품후원 (`donate/goods.html`)
+  - [ ] 후원완료 (`donate/complete.html`)
+  - [ ] 자원봉사 신청 (`volunteer.html`)
+
+- [ ] **4단계: 소개 및 하우스 (총 11개 페이지)**
+  - [ ] 소개 메인 (`about.html`)
+  - [ ] 비전 & 미션 (`about/vision.html`)
+  - [ ] 회장 인사말 (`about/greetings.html`)
+  - [ ] RMHC 이사회 (`about/board.html`)
+  - [ ] 재정 투명성 (`about/transparency.html`)
+  - [ ] 파트너사 소개 (`about/partner.html`)
+  - [ ] 양산 부산대 하우스 (`houses/yangsan.html`)
+  - [ ] 서초 성모 하우스 (`houses/seocho.html`)
+  - [ ] 연희 하우스 (`houses/yeonhui.html`)
+  - [ ] 강남 세브란스 하우스 (`houses/gangnam.html`)
+  - [ ] 인하대 하우스 (`houses/inha.html`)
+
+- [ ] **5단계: 마이페이지 & 비회원 서비스 (총 10개 페이지)**
+  - [ ] 마이페이지 메인 (`mypage.html`)
+  - [ ] 비밀번호 검증 (`mypage/verify-password.html`)
+  - [ ] 개인정보 수정 (`mypage/profile.html`)
+  - [ ] 후원 이력 목록 (`mypage/donations.html`)
+  - [ ] 후원 이력 상세 (`mypage/donations/detail.html`)
+  - [ ] 기부금영수증 내역 (`mypage/donation-receipts.html`)
+  - [ ] 기부금영수증 신청 (`mypage/donation-receipts/apply.html`)
+  - [ ] 기부금영수증 발급현황 (`mypage/donation-receipts/status.html`)
+  - [ ] 회원 탈퇴 (`mypage/withdraw.html`)
+  - [ ] 비회원 후원조회 (`nonmember/donations.html`)
+
+- [ ] **6단계: 캠페인 및 새소식 & 정책 (총 13개 페이지)**
+  - [ ] 패밀리하우스 캠페인 (`campaign/family.html`)
+  - [ ] KCR 캠페인 (`campaign/kcr.html`)
+  - [ ] 갈라 디너 캠페인 (`campaign/gala.html`)
+  - [ ] 백일장 캠페인 (`campaign/writing-contest.html`)
+  - [ ] 공지사항 목록 (`news/notice.html`)
+  - [ ] 공지사항 상세 (`news/notice/detail.html`)
+  - [ ] 활동소식 목록 (`news/activity.html`)
+  - [ ] 활동소식 상세 (`news/activity/detail.html`)
+  - [ ] FAQ 목록 (`faq.html`)
+  - [ ] 이용약관 (`policy/terms.html`)
+  - [ ] 개인정보 처리방침 (`policy/privacy.html`)
+  - [ ] 이메일 무단수집거부 (`policy/email.html`)
