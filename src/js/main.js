@@ -283,8 +283,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (scrollY > 5) {
       const rect = revealTrigger.getBoundingClientRect();
       const viewHeight = window.innerHeight;
-      const start = viewHeight * 0.90;
-      const end = viewHeight * 0.25;
+      const start = viewHeight * 0.85;
+      const end = viewHeight * -0.20; // 종료 지점을 화면 위로 넘어가도록 넓혀 스크롤 속도 대비 서서히 재생되도록 함
 
       progress = (start - rect.top) / (start - end);
       progress = Math.max(0, Math.min(1, progress));
@@ -309,8 +309,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (scrollY > 5) {
         const rect = revealTrigger.getBoundingClientRect();
         const viewHeight = window.innerHeight;
-        const start = viewHeight * 0.90;
-        const end = viewHeight * 0.25;
+        const start = viewHeight * 0.85;
+        const end = viewHeight * -0.20;
         progress = (start - rect.top) / (start - end);
         progress = Math.max(0, Math.min(1, progress));
       }
@@ -331,8 +331,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (scrollY > 5) {
         const rect = revealTrigger.getBoundingClientRect();
         const viewHeight = window.innerHeight;
-        const start = viewHeight * 0.90;
-        const end = viewHeight * 0.25;
+        const start = viewHeight * 0.85;
+        const end = viewHeight * -0.20;
         progress = (start - rect.top) / (start - end);
         progress = Math.max(0, Math.min(1, progress));
       }
