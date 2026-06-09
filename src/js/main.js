@@ -275,16 +275,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealTrigger = document.querySelector('.reveal-trigger');
     if (!revealTrigger) return;
 
-    const rect = revealTrigger.getBoundingClientRect();
-    const viewHeight = window.innerHeight;
+    // 페이지 전체 스크롤이 최상단(0) 근처일 때는 진행률을 강제로 0으로 고정하여 첫 글자조차 켜지지 않도록 함
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    let progress = 0;
+    
+    if (scrollY > 5) {
+      const rect = revealTrigger.getBoundingClientRect();
+      const viewHeight = window.innerHeight;
+      const start = viewHeight * 0.90;
+      const end = viewHeight * 0.25;
 
-    // 텍스트 영역 전체 기준 스크롤 경계선 설정 (화면 밑 90% ~ 화면 위 25% 범위)
-    const start = viewHeight * 0.90;
-    const end = viewHeight * 0.25;
-
-    // 전체 텍스트 박스 진행도 계산 (0 ~ 1)
-    let progress = (start - rect.top) / (start - end);
-    progress = Math.max(0, Math.min(1, progress));
+      progress = (start - rect.top) / (start - end);
+      progress = Math.max(0, Math.min(1, progress));
+    }
 
     targetProgress = progress;
 
@@ -296,15 +299,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // 스크롤 및 브라우저 크기 변경 시 이벤트 등록
   window.addEventListener('scroll', handleTextScrollReveal);
   window.addEventListener('resize', () => {
-    // 리사이즈 시에는 즉시 업데이트
+    // 리사이즈 시에도 스크롤 값 기준으로 즉시 상태 업데이트
     const revealTrigger = document.querySelector('.reveal-trigger');
     if (revealTrigger) {
-      const rect = revealTrigger.getBoundingClientRect();
-      const viewHeight = window.innerHeight;
-      const start = viewHeight * 0.90;
-      const end = viewHeight * 0.25;
-      let progress = (start - rect.top) / (start - end);
-      progress = Math.max(0, Math.min(1, progress));
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      let progress = 0;
+      
+      if (scrollY > 5) {
+        const rect = revealTrigger.getBoundingClientRect();
+        const viewHeight = window.innerHeight;
+        const start = viewHeight * 0.90;
+        const end = viewHeight * 0.25;
+        progress = (start - rect.top) / (start - end);
+        progress = Math.max(0, Math.min(1, progress));
+      }
+      
       targetProgress = progress;
       currentProgress = progress;
       updateTextReveal(progress);
@@ -315,12 +324,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const initTextReveal = () => {
     const revealTrigger = document.querySelector('.reveal-trigger');
     if (revealTrigger) {
-      const rect = revealTrigger.getBoundingClientRect();
-      const viewHeight = window.innerHeight;
-      const start = viewHeight * 0.90;
-      const end = viewHeight * 0.25;
-      let progress = (start - rect.top) / (start - end);
-      progress = Math.max(0, Math.min(1, progress));
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      let progress = 0;
+      
+      if (scrollY > 5) {
+        const rect = revealTrigger.getBoundingClientRect();
+        const viewHeight = window.innerHeight;
+        const start = viewHeight * 0.90;
+        const end = viewHeight * 0.25;
+        progress = (start - rect.top) / (start - end);
+        progress = Math.max(0, Math.min(1, progress));
+      }
+      
       targetProgress = progress;
       currentProgress = progress;
       updateTextReveal(progress);
