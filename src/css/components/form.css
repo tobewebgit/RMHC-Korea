@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2);
+  position: relative;
   margin-bottom: var(--spacing-4);
 }
 
@@ -18,14 +19,13 @@
 /* Inputs, Selects, Textareas - Min touch targets and Mobile 16px Font Zoom Fix */
 .form-control {
   width: 100%;
-  min-height: 4.8rem;
+  min-height: 5.2rem;
   padding: 1.2rem var(--spacing-4);
   background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   color: var(--text-primary);
-  font-size: 1.6rem; /* Forces minimum 16px to prevent iOS auto-zoom shift */
-  transition: var(--transition-fast);
+  font-size: var(--text-lg);
 }
 .form-control::placeholder {
   color: var(--text-muted);
@@ -38,6 +38,20 @@
   outline: none;
   box-shadow: 0 0 0 4px var(--primary-glow);
 }
+.form-control.password {
+  position: relative;
+  padding-right: 4rem;
+}
+.eye-btn {
+  position: absolute;
+  right: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url("../images/common/eye-off.png") no-repeat center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
 
 /* Custom Styled Checkboxes & Radio buttons */
 .custom-checkbox,
@@ -46,7 +60,7 @@
   align-items: center;
   gap: var(--spacing-2);
   cursor: pointer;
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
   user-select: none;
 }
 .custom-checkbox input[type="checkbox"],
@@ -57,7 +71,6 @@
   height: 2rem;
   border: 2px solid var(--border-color);
   background-color: var(--bg-primary);
-  transition: var(--transition-fast);
   cursor: pointer;
 }
 .custom-checkbox input[type="checkbox"] {

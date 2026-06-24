@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title>로그인 - RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/login.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
+
+    <div class="page-wrapper">
+      <main id="main-content" class="login-section">
+        <div class="login-card">
+          <h1 class="login-title">로그인</h1>
+          <p class="login-desc">
+            로그인은 후원 내역 및<br />기부금 영수증 확인을 위해 사용됩니다.
+          </p>
+
+          <!-- 소셜 로그인 -->
+          <div class="social-login">
+            <button type="button" class="btn-social btn-social-kakao">
+              <span class="icon icon-kakao"></span>
+              카카오로 시작하기
+            </button>
+            <button type="button" class="btn-social btn-social-naver">
+              <span class="icon icon-naver"></span>
+              네이버로 시작하기
+            </button>
+          </div>
+
+          <div class="line-box">
+            <span class="line-text">또는</span>
+          </div>
+
+          <!-- 로그인 폼 -->
+          <form action="#" method="POST" class="login-form">
+            <!-- 아이디 입력 그룹 -->
+            <div class="form-group">
+              <label for="user-id" class="form-label sr-only">아이디</label>
+              <input
+                type="text"
+                id="user-id"
+                class="form-control"
+                placeholder="아이디"
+                required
+                maxlength="15"
+              />
+            </div>
+
+            <!-- 비밀번호 입력 그룹 -->
+            <div class="form-group">
+              <label for="user-pw" class="form-label sr-only">비밀번호</label>
+              <input
+                type="password"
+                id="user-pw"
+                class="form-control"
+                placeholder="비밀번호"
+                required
+              />
+              <button
+                type="button"
+                class="eye-btn"
+                aria-label="비밀번호 보기"
+                aria-pressed="false"
+              ></button>
+            </div>
+
+            <!-- 로그인 옵션 및 찾기 링크 -->
+            <div class="login-options">
+              <label class="custom-checkbox">
+                <input type="checkbox" id="save-id" checked />
+                <span>아이디 저장</span>
+              </label>
+            </div>
+
+            <!-- 로그인 CTA 버튼 -->
+            <button type="submit" class="btn btn-primary">로그인</button>
+
+            <!-- 에러 메시지 예시 -->
+            <p class="error-text">아이디 또는 비밀번호가 올바르지 않습니다.</p>
+          </form>
+
+          <div class="login-guide">
+            <span>비회원으로 기부하셨나요?</span>
+            <a href="/login/guest-donation-search.html">기부 내역 조회하기</a>
+          </div>
+
+          <div class="line"></div>
+
+          <div class="login-links">
+            <a href="/login/reset-pw.html">비밀번호 재설정</a>
+            <a href="/login/find-id.html">아이디 찾기</a>
+            <a href="/join.html">회원가입</a>
+          </div>
+          <p class="login-info">
+            * 만 14세 미만은 보호자 명의로 후원해 주세요.
+          </p>
+        </div>
+      </main>
+
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
+
+    <!-- SNS 계정 연동 유도 팝업 (개발팀 연동용 마크업)
+       활성화 조건: .modal-overlay에 .active 클래스 추가 -->
+    <div class="modal-overlay" id="sns-link-modal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2 class="modal-title">SNS 계정 연동 안내</h2>
+          <button
+            type="button"
+            class="modal-close"
+            aria-label="닫기"
+            onclick="
+              document
+                .getElementById('sns-link-modal')
+                .classList.remove('active')
+            "
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            이미 가입된 계정이 있습니다.<br />SNS 계정을 기존 아이디와
+            연동하시겠습니까?
+          </p>
+          <p class="mt-3 text-muted-color text-xs">
+            연동 시 이후부터 SNS 로그인으로 간편하게 로그인할 수 있습니다.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-outline"
+            onclick="
+              document
+                .getElementById('sns-link-modal')
+                .classList.remove('active')
+            "
+          >
+            취소
+          </button>
+          <a href="/login/link-sns.html" class="btn btn-primary font-bold"
+            >계정 연동하기</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/js/common.js"></script>
+  </body>
+</html>

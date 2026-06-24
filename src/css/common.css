@@ -1,0 +1,165 @@
+@charset "utf-8";
+@import url("./base.css");
+@import url("./components/button.css");
+@import url("./components/form.css");
+
+/* ==========================================================================
+   Main Layout & Section Wrappers
+   ========================================================================== */
+.page-wrapper {
+  padding-top: 10rem;
+  min-height: calc(100vh - 8.4rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section {
+  flex: 1;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: var(--spacing-16) var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: var(--font-title);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-top: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+  max-width: 80rem;
+  color: var(--text-primary);
+}
+.hero-title span {
+  color: var(--primary);
+}
+
+.hero-desc {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  max-width: 65rem;
+  margin-bottom: var(--spacing-8);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Header GNB Styling (Fluid Scale)
+   ========================================================================== */
+.main .header {
+  background-color: var(--kv-bg);
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-sm);
+  position: fixed;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.header__left-group {
+  display: flex;
+  align-items: center;
+  gap: 9.2rem;
+}
+
+.header__logo {
+  display: block;
+  width: 11.6rem;
+  height: 6.3rem;
+}
+.header__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 6.4rem;
+  height: 10rem;
+}
+
+.header__nav-item {
+  font-family: "Pretendard", var(--font-sans);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 3.6rem;
+  height: 100%;
+}
+
+.header__util {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.header__util-link {
+  font-family: "Pretendard", var(--font-sans);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.header__util-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* 후원하기 버튼: 피그마 유기적 곡면 SVG shape 배경 + HTML 텍스트 */
+.header__donate-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  height: 5.2rem;
+  background: url("../images/common/btn_donate.svg") no-repeat center / contain;
+  border: none;
+  cursor: pointer;
+}
+.header__donate-btn-text {
+  font-family: "Pretendard", var(--font-sans);
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fffde9;
+}

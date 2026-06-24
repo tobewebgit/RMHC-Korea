@@ -1,510 +1,560 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RMHC Korea 퍼블리싱 검수 현황판 (IA Index)</title>
-  <link rel="stylesheet" href="./src/css/style.css">
-  <style>
-    /* Custom Harness Specific Styles - Isolated from standard style.css */
-    body {
-      background-color: #0f172a; /* Sleek Dark Slate Developer Theme */
-      color: #f1f5f9;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: 'Pretendard', sans-serif;
-      overflow: hidden;
-    }
-    
-    .harness-header {
-      background-color: #1e293b;
-      border-bottom: 1px solid #334155;
-      padding: 1rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 70px;
-    }
-    
-    .harness-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .harness-title span {
-      color: #ffc72c;
-      font-size: 0.85rem;
-      background-color: rgba(255, 199, 44, 0.1);
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      border: 1px solid rgba(255, 199, 44, 0.2);
-    }
-
-    .harness-metrics {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .metric-card {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.875rem;
-    }
-
-    .metric-value {
-      font-weight: 700;
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.1rem;
-    }
-
-    .metric-progress-outer {
-      width: 120px;
-      height: 12px;
-      background-color: #334155;
-      border-radius: 9999px;
-      overflow: hidden;
-      display: inline-block;
-    }
-
-    .metric-progress-inner {
-      height: 100%;
-      background: linear-gradient(90deg, #d1232a 0%, #ffc72c 100%);
-      width: 0%;
-      transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .harness-main {
-      flex: 1;
-      display: flex;
-      overflow: hidden;
-    }
-
-    /* Left Sidebar: IA Board */
-    .harness-sidebar {
-      width: 480px;
-      border-right: 1px solid #334155;
-      background-color: #0f172a;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .sidebar-filter {
-      padding: 1rem;
-      border-bottom: 1px solid #334155;
-      background-color: #1e293b;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .filter-input {
-      width: 100%;
-      height: 38px;
-      padding: 0.5rem 0.75rem;
-      background-color: #0f172a;
-      border: 1px solid #475569;
-      border-radius: 6px;
-      color: #ffffff;
-      font-size: 0.875rem;
-    }
-    .filter-input:focus {
-      outline: none;
-      border-color: #ffc72c;
-    }
-
-    .filter-tabs {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .filter-tab {
-      padding: 0.3rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      cursor: pointer;
-      background-color: #334155;
-      color: #94a3b8;
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    .filter-tab.active {
-      background-color: #ffc72c;
-      color: #0f172a;
-    }
-
-    .sidebar-list {
-      flex: 1;
-      overflow-y: auto;
-      padding: 0.5rem;
-    }
-
-    .sidebar-item {
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-bottom: 0.4rem;
-      border: 1px solid transparent;
-      transition: all 0.2s ease;
-    }
-    .sidebar-item:hover {
-      background-color: #1e293b;
-    }
-    .sidebar-item.active {
-      background-color: #1e293b;
-      border-color: rgba(255, 199, 44, 0.3);
-    }
-
-    .item-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.25rem;
-    }
-
-    .item-badge {
-      font-size: 0.7rem;
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
-      font-weight: 700;
-    }
-    .badge-ready { background-color: #475569; color: #cbd5e1; }
-    .badge-progress { background-color: #2563eb; color: #ffffff; }
-    .badge-done { background-color: #16a34a; color: #ffffff; }
-    .badge-edit { background-color: #d97706; color: #ffffff; }
-
-    .item-depth {
-      font-size: 0.75rem;
-      color: #94a3b8;
-    }
-
-    .item-title {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: #e2e8f0;
-    }
-    .sidebar-item.active .item-title {
-      color: #ffc72c;
-    }
-
-    .item-path {
-      font-family: monospace;
-      font-size: 0.75rem;
-      color: #64748b;
-      word-break: break-all;
-    }
-
-    /* Right Preview Area */
-    .harness-preview {
-      flex: 1;
-      background-color: #1e293b;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .preview-toolbar {
-      background-color: #0f172a;
-      border-bottom: 1px solid #334155;
-      padding: 0.5rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 50px;
-    }
-
-    .preview-info {
-      font-size: 0.85rem;
-      color: #94a3b8;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .preview-info a {
-      color: #38bdf8;
-      text-decoration: underline;
-    }
-
-    .viewport-controls {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .viewport-btn {
-      height: 32px;
-      padding: 0 0.75rem;
-      background-color: #1e293b;
-      border: 1px solid #475569;
-      border-radius: 4px;
-      color: #94a3b8;
-      font-size: 0.75rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: all 0.2s ease;
-    }
-    .viewport-btn:hover {
-      background-color: #334155;
-      color: #ffffff;
-    }
-    .viewport-btn.active {
-      background-color: #d1232a;
-      border-color: #d1232a;
-      color: #ffffff;
-    }
-
-    .iframe-wrapper {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      overflow: auto;
-      background: radial-gradient(circle, #334155 0%, #0f172a 100%);
-    }
-
-    .preview-iframe {
-      height: 100%;
-      background-color: #ffffff;
-      border: 4px solid #0f172a;
-      border-radius: 12px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Scrollbars for Sidebar */
-    .sidebar-list::-webkit-scrollbar {
-      width: 6px;
-    }
-    .sidebar-list::-webkit-scrollbar-track {
-      background: #0f172a;
-    }
-    .sidebar-list::-webkit-scrollbar-thumb {
-      background: #334155;
-      border-radius: 3px;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Harness Top Header -->
-  <header class="harness-header">
-    <div class="harness-title">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM17 11H7V9H17V11ZM17 15H7V13H17V15Z" fill="#ffc72c"/>
-      </svg>
-      RMHC Korea Publishing Index
-      <span>v0.1 IA Board</span>
-    </div>
-    
-    <div class="harness-metrics">
-      <div class="metric-card">
-        <span>완료율:</span>
-        <div class="metric-progress-outer">
-          <div class="metric-progress-inner" id="completionProgressBar"></div>
-        </div>
-        <span class="metric-value" id="completionRateText">0%</span>
-      </div>
-      <div class="metric-card" style="border-left: 1px solid #334155; padding-left: 1.5rem;">
-        <span>진척 상황:</span>
-        <span class="metric-value"><span id="doneCountText" style="color: #10b981;">0</span> / <span id="totalCountText">0</span> Page</span>
-      </div>
-    </div>
-  </header>
-
-  <!-- Harness Layout -->
-  <div class="harness-main">
-    
-    <!-- Sidebar: IA Directory table list -->
-    <aside class="harness-sidebar">
-      <div class="sidebar-filter">
-        <input type="text" class="filter-input" id="searchBar" placeholder="메뉴명 또는 파일 경로 검색...">
-        <div class="filter-tabs">
-          <div class="filter-tab active" data-filter="all">ALL</div>
-          <div class="filter-tab" data-filter="대기">대기</div>
-          <div class="filter-tab" data-filter="진행">진행</div>
-          <div class="filter-tab" data-filter="완료">완료</div>
-          <div class="filter-tab" data-filter="수정">수정</div>
-        </div>
-      </div>
-      <div class="sidebar-list" id="iaListContainer">
-        <!-- JS inserts rows here -->
-      </div>
-    </aside>
-
-    <!-- Preview Panel -->
-    <main class="harness-preview">
-      <div class="preview-toolbar">
-        <div class="preview-info">
-          <span>검수 대상:</span>
-          <strong id="activePageName" style="color: #ffffff;">메인 홈</strong>
-          <span id="activePagePathContainer" style="display: none;">
-            (<a href="#" id="activePageLink" target="_blank">새창열기 &nearr;</a>)
-          </span>
-        </div>
-        <div class="viewport-controls">
-          <button class="viewport-btn active" data-width="100%">
-            💻 PC (100%)
-          </button>
-          <button class="viewport-btn" data-width="1024px">
-            💻 Desktop (1024px)
-          </button>
-          <button class="viewport-btn" data-width="768px">
-            📟 Tablet (768px)
-          </button>
-          <button class="viewport-btn" data-width="375px">
-            📱 Mobile (375px)
-          </button>
-        </div>
-      </div>
-      <div class="iframe-wrapper">
-        <iframe src="/index.html" class="preview-iframe" id="previewIframe" width="100%"></iframe>
-      </div>
-    </main>
-
-  </div>
-
-  <script>
-    // State management
-    let iaItems = [];
-    let currentFilter = 'all';
-    let searchQuery = '';
-
-    const previewIframe = document.getElementById('previewIframe');
-    const activePageName = document.getElementById('activePageName');
-    const activePageLink = document.getElementById('activePageLink');
-    const activePagePathContainer = document.getElementById('activePagePathContainer');
-
-    // Load publishing IA from JSON
-    async function loadIAData() {
-      try {
-        const response = await fetch('./src/js/publishing-ia.json');
-        iaItems = await response.json();
-        
-        calculateMetrics();
-        renderList();
-        
-        // Load first item automatically
-        if (iaItems.length > 0) {
-          selectItem(iaItems[0]);
-        }
-      } catch (error) {
-        console.error('Failed to load publishing-ia.json', error);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RMHC Korea 퍼블리싱 검수 현황판 (IA Index)</title>
+    <link rel="stylesheet" href="./src/css/common.css" />
+    <style>
+      /* Custom Harness Specific Styles - Isolated from standard style.css */
+      body {
+        background-color: #0f172a; /* Sleek Dark Slate Developer Theme */
+        color: #f1f5f9;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: "Pretendard", sans-serif;
+        overflow: hidden;
       }
-    }
 
-    // Progress math
-    function calculateMetrics() {
-      const total = iaItems.length;
-      const done = iaItems.filter(item => item.status === '완료').length;
-      const rate = total > 0 ? Math.round((done / total) * 100) : 0;
+      .harness-header {
+        background-color: #1e293b;
+        border-bottom: 1px solid #334155;
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
 
-      document.getElementById('totalCountText').textContent = total;
-      document.getElementById('doneCountText').textContent = done;
-      document.getElementById('completionRateText').textContent = rate + '%';
-      document.getElementById('completionProgressBar').style.width = rate + '%';
-    }
+      .harness-title {
+        font-family: "Outfit", sans-serif;
+        /* font-size: 1.25rem; */
+        font-weight: 800;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
-    // Render left board
-    function renderList() {
-      const container = document.getElementById('iaListContainer');
-      container.innerHTML = '';
+      .harness-title span {
+        color: #ffc72c;
+        /* font-size: 0.85rem; */
+        background-color: rgba(255, 199, 44, 0.1);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        border: 1px solid rgba(255, 199, 44, 0.2);
+      }
 
-      const filtered = iaItems.filter(item => {
-        const matchesFilter = currentFilter === 'all' || item.status === currentFilter;
-        const query = searchQuery.toLowerCase();
-        const matchesSearch = 
-          item.depth1.toLowerCase().includes(query) ||
-          item.depth2.toLowerCase().includes(query) ||
-          item.depth3.toLowerCase().includes(query) ||
-          item.depth4.toLowerCase().includes(query) ||
-          item.path.toLowerCase().includes(query) ||
-          (item.memo && item.memo.toLowerCase().includes(query));
+      .harness-metrics {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
 
-        return matchesFilter && matchesSearch;
-      });
+      .metric-card {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        /* font-size: 0.875rem; */
+      }
 
-      filtered.forEach(item => {
-        const element = document.createElement('div');
-        element.className = 'sidebar-item';
-        element.id = `item-${item.id}`;
-        
-        let badgeClass = 'badge-ready';
-        if (item.status === '진행') badgeClass = 'badge-progress';
-        if (item.status === '완료') badgeClass = 'badge-done';
-        if (item.status === '수정') badgeClass = 'badge-edit';
+      .metric-value {
+        font-weight: 700;
+        font-family: "Outfit", sans-serif;
+        /* font-size: 1.1rem; */
+      }
 
-        const pathDisplay = item.depth1 + ' &gt; ' + item.depth2 + (item.depth3 ? ' &gt; ' + item.depth3 : '') + (item.depth4 ? ' &gt; ' + item.depth4 : '');
+      .metric-progress-outer {
+        width: 120px;
+        height: 12px;
+        background-color: #334155;
+        border-radius: 9999px;
+        overflow: hidden;
+        display: inline-block;
+      }
 
-        element.innerHTML = `
+      .metric-progress-inner {
+        height: 100%;
+        background: linear-gradient(90deg, #d1232a 0%, #ffc72c 100%);
+        width: 0%;
+        transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .harness-main {
+        flex: 1;
+        display: flex;
+        overflow: hidden;
+      }
+
+      /* Left Sidebar: IA Board */
+      .harness-sidebar {
+        width: 48rem;
+        border-right: 1px solid #334155;
+        background-color: #0f172a;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .sidebar-filter {
+        padding: 1rem;
+        border-bottom: 1px solid #334155;
+        background-color: #1e293b;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .filter-input {
+        width: 100%;
+        height: 38px;
+        padding: 0.5rem 0.75rem;
+        background-color: #0f172a;
+        border: 1px solid #475569;
+        border-radius: 6px;
+        color: #ffffff;
+        /* font-size: 0.875rem; */
+      }
+      .filter-input:focus {
+        outline: none;
+        border-color: #ffc72c;
+      }
+
+      .filter-tabs {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .filter-tab {
+        padding: 0.3rem 0.75rem;
+        border-radius: 9999px;
+        /* font-size: 0.75rem; */
+        cursor: pointer;
+        background-color: #334155;
+        color: #94a3b8;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+      .filter-tab.active {
+        background-color: #ffc72c;
+        color: #0f172a;
+      }
+
+      .sidebar-list {
+        flex: 1;
+        overflow-y: auto;
+        padding: 0.5rem;
+      }
+
+      .sidebar-item {
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 0.4rem;
+        border: 1px solid transparent;
+        transition: all 0.2s ease;
+      }
+      .sidebar-item:hover {
+        background-color: #1e293b;
+      }
+      .sidebar-item.active {
+        background-color: #1e293b;
+        border-color: rgba(255, 199, 44, 0.3);
+      }
+
+      .item-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.25rem;
+      }
+
+      .item-badge {
+        /* font-size: 0.7rem; */
+        padding: 0.15rem 0.45rem;
+        border-radius: 4px;
+        font-weight: 700;
+      }
+      .badge-ready {
+        background-color: #475569;
+        color: #cbd5e1;
+      }
+      .badge-progress {
+        background-color: #2563eb;
+        color: #ffffff;
+      }
+      .badge-done {
+        background-color: #16a34a;
+        color: #ffffff;
+      }
+      .badge-edit {
+        background-color: #d97706;
+        color: #ffffff;
+      }
+
+      .item-depth {
+        /* font-size: 0.75rem; */
+        color: #94a3b8;
+      }
+
+      .item-title {
+        font-weight: 600;
+        /* font-size: 0.9rem; */
+        color: #e2e8f0;
+      }
+      .sidebar-item.active .item-title {
+        color: #ffc72c;
+      }
+
+      .item-path {
+        font-family: monospace;
+        /* font-size: 0.75rem; */
+        color: #64748b;
+        word-break: break-all;
+      }
+
+      /* Right Preview Area */
+      .harness-preview {
+        flex: 1;
+        background-color: #1e293b;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .preview-toolbar {
+        background-color: #0f172a;
+        border-bottom: 1px solid #334155;
+        padding: 0.5rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+      }
+
+      .preview-info {
+        /* font-size: 0.85rem; */
+        color: #94a3b8;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .preview-info a {
+        color: #38bdf8;
+        text-decoration: underline;
+      }
+
+      .viewport-controls {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .viewport-btn {
+        height: 32px;
+        padding: 0 0.75rem;
+        background-color: #1e293b;
+        border: 1px solid #475569;
+        border-radius: 4px;
+        color: #94a3b8;
+        /* font-size: 0.75rem; */
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: all 0.2s ease;
+      }
+      .viewport-btn:hover {
+        background-color: #334155;
+        color: #ffffff;
+      }
+      .viewport-btn.active {
+        background-color: #d1232a;
+        border-color: #d1232a;
+        color: #ffffff;
+      }
+
+      .iframe-wrapper {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: auto;
+        background: radial-gradient(circle, #334155 0%, #0f172a 100%);
+      }
+
+      .preview-iframe {
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Scrollbars for Sidebar */
+      .sidebar-list::-webkit-scrollbar {
+        width: 6px;
+      }
+      .sidebar-list::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      .sidebar-list::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Harness Top Header -->
+    <header class="harness-header">
+      <div class="harness-title">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM17 11H7V9H17V11ZM17 15H7V13H17V15Z"
+            fill="#ffc72c"
+          />
+        </svg>
+        RMHC Korea Publishing Index
+        <span>v0.1 IA Board</span>
+      </div>
+
+      <div class="harness-metrics">
+        <div class="metric-card">
+          <span>완료율:</span>
+          <div class="metric-progress-outer">
+            <div class="metric-progress-inner" id="completionProgressBar"></div>
+          </div>
+          <span class="metric-value" id="completionRateText">0%</span>
+        </div>
+        <div
+          class="metric-card"
+          style="border-left: 1px solid #334155; padding-left: 1.5rem"
+        >
+          <span>진척 상황:</span>
+          <span class="metric-value"
+            ><span id="doneCountText" style="color: #10b981">0</span> /
+            <span id="totalCountText">0</span> Page</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Harness Layout -->
+    <div class="harness-main">
+      <!-- Sidebar: IA Directory table list -->
+      <aside class="harness-sidebar">
+        <div class="sidebar-filter">
+          <input
+            type="text"
+            class="filter-input"
+            id="searchBar"
+            placeholder="메뉴명 또는 파일 경로 검색..."
+          />
+          <div class="filter-tabs">
+            <div class="filter-tab active" data-filter="all">ALL</div>
+            <div class="filter-tab" data-filter="대기">대기</div>
+            <div class="filter-tab" data-filter="진행">진행</div>
+            <div class="filter-tab" data-filter="완료">완료</div>
+            <div class="filter-tab" data-filter="수정">수정</div>
+          </div>
+        </div>
+        <div class="sidebar-list" id="iaListContainer">
+          <!-- JS inserts rows here -->
+        </div>
+      </aside>
+
+      <!-- Preview Panel -->
+      <main class="harness-preview">
+        <div class="preview-toolbar">
+          <div class="preview-info">
+            <span>검수 대상:</span>
+            <strong id="activePageName" style="color: #ffffff">메인 홈</strong>
+            <span id="activePagePathContainer" style="display: none">
+              (<a href="#" id="activePageLink" target="_blank"
+                >새창열기 &nearr;</a
+              >)
+            </span>
+          </div>
+          <div class="viewport-controls">
+            <button class="viewport-btn active" data-width="100%">
+              💻 PC (100%)
+            </button>
+            <button class="viewport-btn" data-width="1024px">
+              💻 Desktop (1024px)
+            </button>
+            <button class="viewport-btn" data-width="768px">
+              📟 Tablet (768px)
+            </button>
+            <button class="viewport-btn" data-width="375px">
+              📱 Mobile (375px)
+            </button>
+          </div>
+        </div>
+        <div class="iframe-wrapper">
+          <iframe
+            src="/index.html"
+            class="preview-iframe"
+            id="previewIframe"
+            width="100%"
+          ></iframe>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // State management
+      let iaItems = [];
+      let currentFilter = "all";
+      let searchQuery = "";
+
+      const previewIframe = document.getElementById("previewIframe");
+      const activePageName = document.getElementById("activePageName");
+      const activePageLink = document.getElementById("activePageLink");
+      const activePagePathContainer = document.getElementById(
+        "activePagePathContainer",
+      );
+
+      // Load publishing IA from JSON
+      async function loadIAData() {
+        try {
+          const response = await fetch("./src/js/publishing-ia.json");
+          iaItems = await response.json();
+
+          calculateMetrics();
+          renderList();
+
+          // Load first item automatically
+          if (iaItems.length > 0) {
+            selectItem(iaItems[0]);
+          }
+        } catch (error) {
+          console.error("Failed to load publishing-ia.json", error);
+        }
+      }
+
+      // Progress math
+      function calculateMetrics() {
+        const total = iaItems.length;
+        const done = iaItems.filter((item) => item.status === "완료").length;
+        const rate = total > 0 ? Math.round((done / total) * 100) : 0;
+
+        document.getElementById("totalCountText").textContent = total;
+        document.getElementById("doneCountText").textContent = done;
+        document.getElementById("completionRateText").textContent = rate + "%";
+        document.getElementById("completionProgressBar").style.width =
+          rate + "%";
+      }
+
+      // Render left board
+      function renderList() {
+        const container = document.getElementById("iaListContainer");
+        container.innerHTML = "";
+
+        const filtered = iaItems.filter((item) => {
+          const matchesFilter =
+            currentFilter === "all" || item.status === currentFilter;
+          const query = searchQuery.toLowerCase();
+          const matchesSearch =
+            item.depth1.toLowerCase().includes(query) ||
+            item.depth2.toLowerCase().includes(query) ||
+            item.depth3.toLowerCase().includes(query) ||
+            item.depth4.toLowerCase().includes(query) ||
+            item.path.toLowerCase().includes(query) ||
+            (item.memo && item.memo.toLowerCase().includes(query));
+
+          return matchesFilter && matchesSearch;
+        });
+
+        filtered.forEach((item) => {
+          const element = document.createElement("div");
+          element.className = "sidebar-item";
+          element.id = `item-${item.id}`;
+
+          let badgeClass = "badge-ready";
+          if (item.status === "진행") badgeClass = "badge-progress";
+          if (item.status === "완료") badgeClass = "badge-done";
+          if (item.status === "수정") badgeClass = "badge-edit";
+
+          const pathDisplay =
+            item.depth1 +
+            " &gt; " +
+            item.depth2 +
+            (item.depth3 ? " &gt; " + item.depth3 : "") +
+            (item.depth4 ? " &gt; " + item.depth4 : "");
+
+          element.innerHTML = `
           <div class="item-meta">
             <span class="item-depth">${pathDisplay}</span>
             <span class="item-badge ${badgeClass}">${item.status}</span>
           </div>
           <div class="item-title">${item.depth2 || item.depth1}</div>
           <div class="item-path">${item.path}</div>
-          ${item.memo ? `<div style="font-size: 0.75rem; color: #eab308; margin-top: 0.25rem;">📝 ${item.memo}</div>` : ''}
+          ${item.memo ? `<div style="font-size: 0.75rem; color: #eab308; margin-top: 0.25rem;">📝 ${item.memo}</div>` : ""}
         `;
 
-        element.addEventListener('click', () => selectItem(item));
-        container.appendChild(element);
-      });
-    }
-
-    // Select row
-    function selectItem(item) {
-      // Remove active class from previous items
-      document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
-      
-      const element = document.getElementById(`item-${item.id}`);
-      if (element) {
-        element.classList.add('active');
+          element.addEventListener("click", () => selectItem(item));
+          container.appendChild(element);
+        });
       }
 
-      const displayName = `${item.depth1} &gt; ${item.depth2}` + (item.depth3 ? ` &gt; ${item.depth3}` : '');
-      activePageName.innerHTML = displayName;
-      activePageLink.href = item.path;
-      activePagePathContainer.style.display = 'inline';
-      
-      previewIframe.src = item.path;
-    }
+      // Select row
+      function selectItem(item) {
+        // Remove active class from previous items
+        document
+          .querySelectorAll(".sidebar-item")
+          .forEach((el) => el.classList.remove("active"));
 
-    // Wire up events
-    document.getElementById('searchBar').addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      renderList();
-    });
+        const element = document.getElementById(`item-${item.id}`);
+        if (element) {
+          element.classList.add("active");
+        }
 
-    document.querySelectorAll('.filter-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        currentFilter = tab.getAttribute('data-filter');
+        const displayName =
+          `${item.depth1} &gt; ${item.depth2}` +
+          (item.depth3 ? ` &gt; ${item.depth3}` : "");
+        activePageName.innerHTML = displayName;
+        activePageLink.href = item.path;
+        activePagePathContainer.style.display = "inline";
+
+        previewIframe.src = item.path;
+      }
+
+      // Wire up events
+      document.getElementById("searchBar").addEventListener("input", (e) => {
+        searchQuery = e.target.value;
         renderList();
       });
-    });
 
-    document.querySelectorAll('.viewport-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.viewport-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const width = btn.getAttribute('data-width');
-        previewIframe.style.width = width;
+      document.querySelectorAll(".filter-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document
+            .querySelectorAll(".filter-tab")
+            .forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          currentFilter = tab.getAttribute("data-filter");
+          renderList();
+        });
       });
-    });
 
-    // Start
-    loadIAData();
-  </script>
-</body>
+      document.querySelectorAll(".viewport-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".viewport-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const width = btn.getAttribute("data-width");
+          previewIframe.style.width = width;
+        });
+      });
+
+      // Start
+      loadIAData();
+    </script>
+  </body>
 </html>

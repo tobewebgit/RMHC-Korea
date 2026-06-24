@@ -1,0 +1,633 @@
+@charset "utf-8";
+@font-face {
+  font-family: "Outfit";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/outfit-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Outfit";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/outfit-latin-700-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Outfit";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/outfit-latin-800-normal.woff2") format("woff2");
+}
+
+/* Pretendard: 본문 전용 (사용 weight: 400, 500, 600, 700, 800) */
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Pretendard-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Pretendard-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/Pretendard-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Pretendard-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/Pretendard-ExtraBold.woff2") format("woff2");
+}
+
+:root {
+  /* Brand Color Palette (RMHC Warm Light Theme — 피그마 기준) */
+  --primary: #db0007;
+  --primary-hover: #b80006;
+  --primary-glow: rgba(219, 0, 7, 0.12);
+
+  --secondary: #ffc72c;
+  --secondary-hover: #e0ad20;
+  --secondary-glow: rgba(255, 199, 44, 0.2);
+
+  --accent: #10b981;
+  --accent-hover: #059669;
+
+  /* Background Color Tokens */
+  --bg-primary: #fffde9;
+  --bg-secondary: #faf8f5;
+  --bg-tertiary: #f3f0ea;
+
+  /* Text Color Tokens (Contrast Ratio Compliant) */
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-muted: #8e959f;
+  --text-gray80: #555555;
+  --text-gray60: #8f8f8f;
+
+  /* Border Colors */
+  --border-color: #bbbbbb;
+  --border-hover: #d1cbd0;
+  --border-focus: #db0007;
+
+  /* Typography Fonts */
+  --font-sans:
+    "NanumSquareNeo", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-title: "Outfit", var(--font-sans);
+
+  /* Typography Scale */
+  --text-xs: 1.2rem;
+  --text-sm: 1.4rem;
+  --text-base: 1.6rem;
+  --text-lg: 1.8rem;
+  --text-xl: 2rem;
+  --text-2xl: 2.4rem;
+  --text-3xl: 3rem;
+  --text-4xl: 3.8rem;
+  --text-5xl: 4.8rem;
+
+  /* Layout Breakpoints */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
+
+  /* Spacing Scale (rem-based) */
+  --spacing-1: 0.4rem;
+  --spacing-2: 0.8rem;
+  --spacing-3: 1.2rem;
+  --spacing-4: 1.6rem;
+  --spacing-5: 2rem;
+  --spacing-6: 2.4rem;
+  --spacing-8: 3.2rem;
+  --spacing-10: 4rem;
+  --spacing-12: 4.8rem;
+  --spacing-16: 6.4rem;
+  --spacing-80: 8rem;
+  --spacing-60: 6rem;
+  --spacing-100: 10rem;
+  --spacing-200: 20rem;
+
+  /* letter-spacing */
+  --letter-spacing-tight: -0.02rem;
+  --letter-spacing-normal: 0rem;
+  --letter-spacing-wide: 0.03rem;
+
+  /* Border Radii */
+  --radius-sm: 0.8rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.6rem;
+  --radius-full: 9999px;
+
+  /* Premium Shadow & Elevation Tokens */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 0.4rem 1rem -0.2rem rgba(93, 85, 75, 0.08),
+    0 0.2rem 0.6rem -0.2rem rgba(93, 85, 75, 0.04);
+  --shadow-lg: 0 0 3rem 0 rgba(0, 0, 0, 0.08);
+  --shadow-hover:
+    0 2rem 3.5rem -0.8rem rgba(219, 0, 7, 0.08),
+    0 1.2rem 2rem -0.8rem rgba(93, 85, 75, 0.04);
+
+  /* Micro-Transitions */
+  --transition-fast: all 0.15s ease;
+  --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Key Visual (피그마 팩트) */
+  --kv-bg: #d0c9ff;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+input,
+textarea,
+button,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-break: normal;
+  background: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  min-height: 100%;
+  font-size: 10px;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  width: 100%;
+  min-height: 100%;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  background-color: var(--bg-primary);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+}
+
+html * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "SamsungSans", Arial, sans-serif;
+  font-weight: 700;
+  word-break: normal;
+}
+ol,
+ul {
+  list-style: none;
+  word-break: normal;
+}
+dt,
+dd {
+  word-break: normal;
+}
+legend,
+caption,
+hr {
+  display: none;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th {
+  font-weight: normal;
+  word-break: normal;
+}
+td {
+  word-break: normal;
+}
+strong,
+b {
+  font-weight: normal;
+}
+em {
+  font-style: normal;
+}
+img {
+  vertical-align: top;
+}
+img[src=""],
+img:not([src]) {
+  opacity: 0;
+}
+embed,
+object,
+video {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+textarea {
+  border-radius: 0;
+}
+button {
+  cursor: pointer;
+  color: #000;
+}
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+  color: #000;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus,
+button:focus {
+  color: #000;
+  outline: 2px dotted #000;
+  border: 0;
+}
+header.head,
+.main-content {
+  opacity: 1;
+}
+#containerWrap,
+.container-wrap__inner {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+}
+.scrollbar-track-x {
+  display: none !important;
+}
+/* div::-webkit-scrollbar {
+  display: none;
+} */
+/* .scrollbar-track {
+  background: transparent;
+} */
+.scrollbar-track-y {
+  width: 0.3rem;
+}
+.scrollbar-thumb {
+  width: 0.3rem;
+  background: #8f8f8f;
+  border-radius: 0.2rem;
+}
+
+/* JS 미실행 환경(크롤러/SSR)에서만 적용 */
+html.clarity-bot [data-aos],
+html.analytics-bot [data-aos],
+html:not(.lenis) [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* sr-only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1460px) {
+  html {
+    font-size: 0.68493vw;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 2.5645vw; /* 390px :: iPhone 12 Pro */
+  }
+}
+figcaption {
+  display: none;
+}
+.no-scroll {
+  overflow: hidden;
+}
+.blind,
+.hidden,
+legend,
+table caption {
+  display: block;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  line-height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.win-mask {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #000;
+  -webkit-transition: opacity 0.3s 0.3s;
+  transition: opacity 0.3s 0.3s;
+}
+.win-mask.mask-is-open {
+  left: 0;
+  right: -100%;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
+.skip-nav {
+  position: absolute;
+  top: -10rem;
+  left: 0;
+  background: var(--primary);
+  color: #ffffff;
+  padding: var(--spacing-3) var(--spacing-6);
+  font-weight: 600;
+  z-index: 9999;
+  border-radius: 0 0 var(--radius-sm) 0;
+  transition: top 0.2s ease;
+}
+.skip-nav:focus {
+  top: 0;
+}
+
+.max-width {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.section-group .lay-wrap {
+  margin-top: 3rem;
+}
+.section-group .lay-wrap-lg {
+  margin-top: 6rem;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.flex {
+  display: flex !important;
+}
+.flex-column {
+  flex-direction: column !important;
+}
+.item-start {
+  align-items: flex-start !important;
+}
+.item-center {
+  align-items: center !important;
+}
+.justify-center {
+  justify-content: center !important;
+}
+.justify-between {
+  justify-content: space-between !important;
+}
+.border-radius-0 {
+  border-radius: 0;
+}
+.border-radius-2 {
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.border-radius-3 {
+  border-radius: 3rem;
+  overflow: hidden;
+}
+.border-radius-4 {
+  border-radius: 4rem;
+  overflow: hidden;
+}
+.gap-0 {
+  gap: 0;
+}
+.gap-1 {
+  gap: 1rem;
+}
+.gap-2 {
+  gap: 2rem;
+}
+.gap-3 {
+  gap: 3rem;
+}
+.g-black {
+  color: #000;
+}
+.g-white {
+  color: var(--text-white);
+}
+.h-auto {
+  height: auto !important;
+}
+
+@media screen and (min-width: 768px) {
+  .nowrap {
+    display: block;
+  }
+  .type-mo {
+    display: none !important;
+  }
+
+  .max-width {
+    max-width: 1488px;
+    padding: 0 2.4rem;
+  }
+  .lnb-inner__wrap.max-width,
+  .kv-default-wrap.max-width,
+  .kv-swiper-container.max-width {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  button {
+    cursor: pointer;
+    color: #000 !important;
+  }
+  .nowrap {
+    display: inline;
+  }
+  .type-pc {
+    display: none !important;
+  }
+  .border-radius-2 {
+    border-radius: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
+  .gnb__dimmed,
+  .gnb__dimmed.open {
+    display: none !important;
+  }
+}
+
+/* pc 1440 기준 (16 / 1440) * 100 = 1.1111vw */
+/* @media screen and (min-width: 768px) and (max-width:1440px) {
+  html { font-size: 1.1111vw } 
+} */
+/* @media screen and (min-width: 768px) and (max-width:1024px) {
+  html { font-size: 1.5625vw }
+} */
+/* 아이폰14 pro max 430 기준 (16 / 430) * 100 = 3.7209vw */
+/* @media all and (max-width: 767px) {
+  html { font-size: 3.7209vw } 
+} */

@@ -1,205 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="자전거 라이딩으로 국토를 종단하며 기부금을 모금하는 코리아채리티라이드(KCR) 캠페인입니다. 중증 환아와 가족들에게 쉼터를 선물하는 라이더의 도전에 함께해 주세요.">
-  <title>코리아채리티라이드(KCR) - RMHC Korea</title>
-  <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/css/campaign.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="자전거 라이딩으로 국토를 종단하며 기부금을 모금하는 코리아채리티라이드(KCR) 캠페인입니다. 중증 환아와 가족들에게 쉼터를 선물하는 라이더의 도전에 함께해 주세요."
+    />
+    <title>코리아채리티라이드(KCR) - RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/campaign.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load ="src/includes/header.html" />
-
-  <div class="page-wrapper">
-    <main id="main-content" class="campaign-detail-container theme-kcr">
-      
-      <!-- 1. 히어로 비주얼 영역 (LCP 최적화 및 CLS 방지) -->
-      <section class="campaign-hero" aria-label="코리아채리티라이드 캠페인 소개 비주얼">
-        <div class="campaign-hero__bg">
-          <img src="/src/images/campaign/kcr_hero.jpg" width="1920" height="560" fetchpriority="high" alt="아름다운 국토를 줄지어 힘차게 달리고 있는 코리아채리티라이드 자전거 기부 라이더들">
-        </div>
-        <div class="campaign-hero__overlay"></div>
-        <div class="campaign-hero__content">
-          <span class="campaign-hero__badge">KOREA CHARITY RIDE (KCR)</span>
-          <h1 class="campaign-hero__title">달리는 페달,<br>함께 그리는 희망의 기적</h1>
-          <p class="campaign-hero__desc">
-            코리아채리티라이드는 자전거 종단을 통해 자신의 한계에 도전하며,<br>
-            소아암 및 중증 환아와 그 가족을 위한 로날드맥도날드하우스 건립 기금을 모금하는 자선 캠페인입니다.
-          </p>
-          <div class="campaign-hero__actions">
-            <a href="#rules-section" class="btn btn-secondary text-primary-color font-bold">참여 방법 확인</a>
-            <a href="/donate/one-time.html" class="btn btn-primary">라이더 후원하기</a>
+    <div class="page-wrapper">
+      <main id="main-content" class="campaign-detail-container theme-kcr">
+        <!-- 1. 히어로 비주얼 영역 (LCP 최적화 및 CLS 방지) -->
+        <section
+          class="campaign-hero"
+          aria-label="코리아채리티라이드 캠페인 소개 비주얼"
+        >
+          <div class="campaign-hero__bg">
+            <img
+              src="/src/images/campaign/kcr_hero.jpg"
+              width="1920"
+              height="560"
+              fetchpriority="high"
+              alt="아름다운 국토를 줄지어 힘차게 달리고 있는 코리아채리티라이드 자전거 기부 라이더들"
+            />
           </div>
-        </div>
-      </section>
-
-      <!-- 2. 캠페인 취지 및 소구 스토리 -->
-      <section class="campaign-section campaign-section--white" aria-labelledby="intro-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">About Charity Ride</span>
-            <h2 id="intro-title" class="campaign-section__title">땀방울이 모여 아이들의 미소가 됩니다</h2>
-            <p class="campaign-section__desc">
-              도전 정신과 따뜻한 나눔의 문화를 결합한 KCR은 참가자 한 명 한 명이 단순한 스포츠 활동을 넘어, 장거리 치료에 지친 환아들과 가족들의 건강한 내일을 위해 페달을 밟는 사회 공헌 연대 프로젝트입니다.
+          <div class="campaign-hero__overlay"></div>
+          <div class="campaign-hero__content">
+            <span class="campaign-hero__badge">KOREA CHARITY RIDE (KCR)</span>
+            <h1 class="campaign-hero__title">
+              달리는 페달,<br />함께 그리는 희망의 기적
+            </h1>
+            <p class="campaign-hero__desc">
+              코리아채리티라이드는 자전거 종단을 통해 자신의 한계에 도전하며,<br />
+              소아암 및 중증 환아와 그 가족을 위한 로날드맥도날드하우스 건립
+              기금을 모금하는 자선 캠페인입니다.
             </p>
-          </div>
-
-          <div class="campaign-grid campaign-grid--3cols">
-            <!-- 스토리 카드 1 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/kcr_story1.jpg" width="380" height="214" loading="lazy" alt="라이더들이 완주 후 메달을 들고 환하게 웃는 단체 사진">
-              </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">스포츠 자선</span>
-                <h3 class="story-card__title">희망을 향한 위대한 페달</h3>
-                <p class="story-card__excerpt">
-                  라이더들은 자발적으로 챌린지 코스에 참가하며, 스스로 모금 개설자가 되어 주변 지인들에게 환아 지원의 필요성을 널리 알리고 후원을 받습니다.
-                </p>
-              </div>
-            </article>
-
-            <!-- 스토리 카드 2 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/kcr_story2.jpg" width="380" height="214" loading="lazy" alt="라이더들이 험난한 오르막길을 함께 오르며 격려하는 모습">
-              </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">연대와 동행</span>
-                <h3 class="story-card__title">혼자가 아닌 함께의 가치</h3>
-                <p class="story-card__excerpt">
-                  거친 바람과 가파른 고개를 넘을 수 있는 이유는 아픈 아이들의 고통에 공감하고, 그 고단함을 함께 나누겠다는 동료 라이더들과의 강력한 연대 덕분입니다.
-                </p>
-              </div>
-            </article>
-
-            <!-- 스토리 카드 3 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/kcr_story3.jpg" width="380" height="214" loading="lazy" alt="기부금이 패밀리하우스 건립 현장으로 전달되는 증정식 모습">
-              </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">건립 기금 매칭</span>
-                <h3 class="story-card__title">확실하고 투명한 기부의 열매</h3>
-                <p class="story-card__excerpt">
-                  참가 라이더들의 개인 기부금과 후원 기업의 매칭 펀드로 누적된 모금액 전액은 중증 환아와 가족을 위한 쉼터(패밀리하우스) 신축 기금으로 바로 사용됩니다.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. 운영 성과 지표 (임팩트) -->
-      <section class="campaign-section campaign-section--ivory" aria-labelledby="impact-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">KCR Track Record</span>
-            <h2 id="impact-title" class="campaign-section__title">페달로 증명해낸 사랑의 주행 거리</h2>
-            <p class="campaign-section__desc">
-              매년 전국 각지에서 모인 따뜻한 심장을 가진 라이더와 기업들이 일구어낸 놀라운 캠페인 결과입니다.
-            </p>
-          </div>
-
-          <div class="campaign-grid campaign-grid--3cols">
-            <!-- 지표 1 -->
-            <div class="stat-card">
-              <div class="stat-card__number">1,500+ 명</div>
-              <div class="stat-card__label">참가 라이더 및 크루</div>
-              <div class="stat-card__desc">도전과 헌신으로 국토를 함께 종단해 주신 고마운 분들</div>
-            </div>
-
-            <!-- 지표 2 -->
-            <div class="stat-card">
-              <div class="stat-card__number">530+ km</div>
-              <div class="stat-card__label">공식 챌린지 주행 거리</div>
-              <div class="stat-card__desc">환아 가족의 고통을 덜어주기 위해 페달로 이은 한반도 종단 코스</div>
-            </div>
-
-            <!-- 지표 3 -->
-            <div class="stat-card">
-              <div class="stat-card__number">4.8억 원</div>
-              <div class="stat-card__label">누적 기부 모금액</div>
-              <div class="stat-card__desc">수혜 환아 지원 및 쉼터 개설/관리를 위해 투명하게 전액 집행된 기부금</div>
+            <div class="campaign-hero__actions">
+              <a
+                href="#rules-section"
+                class="btn btn-secondary text-primary-color font-bold"
+                >참여 방법 확인</a
+              >
+              <a href="/donate/one-time.html" class="btn btn-primary"
+                >라이더 후원하기</a
+              >
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- 4. 상세 공모 및 요강 테이블 안내 -->
-      <section id="rules-section" class="campaign-section campaign-section--white" aria-labelledby="rules-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">Guide</span>
-            <h2 id="rules-title" class="campaign-section__title">올해의 캠페인 요강</h2>
-            <p class="campaign-section__desc">
-              자선 라이딩 참가 안내 및 서포터즈 모집 내용을 확인하시어, 다양한 방법으로 희망의 주행에 힘을 보태주십시오.
-            </p>
-          </div>
-
-          <div class="campaign-table-wrapper">
-            <table class="campaign-table">
-              <caption>코리아채리티라이드 캠페인 진행 기간, 장소, 모집 구분 및 신청 절차 안내</caption>
-              <tbody>
-                <tr>
-                  <th scope="row">대회 일정</th>
-                  <td>매년 10월 중순 (2박 3일간 진행, 별도 사전 공지 및 O.T 진행)</td>
-                </tr>
-                <tr>
-                  <th scope="row">주행 코스</th>
-                  <td>서울 광화문 광장 출발 &rarr; 대전 및 대구를 거쳐 &rarr; 부산 해운대 해변 광장 도착 (총 530km 완주 코스)</td>
-                </tr>
-                <tr>
-                  <th scope="row">라이더 참가 자격</th>
-                  <td>만 19세 이상 신체 건강한 남녀 자전거 동호인 (로드바이크 권장, 미니벨로/MTB 참여 가능, 개인 안전 장비 지참 필수)</td>
-                </tr>
-                <tr>
-                  <th scope="row">모집 분야</th>
-                  <td>
-                    <strong>1. 챌린지 라이더:</strong> 전 구간 주행 도전자 (팀 또는 개인)<br>
-                    <strong>2. 서포터즈 크루:</strong> 차량 에스코트, 메디컬 지원, 급수대 관리 및 주행 안내 보급 요원<br>
-                    <strong>3. 기업 매칭 스폰서:</strong> 라이더 주행 1km당 100원 이상 매칭 기부 기업
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">신청 기한 및 방법</th>
-                  <td>대회 시작 1개월 전까지 공식 접수처 온라인 신청서 등록 후 보증금/참가 서류 제출</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. 참여 유도 CTA 배너 -->
-      <section class="campaign-section campaign-section--ivory" aria-label="기부 및 참여">
-        <div class="container">
-          <div class="cta-banner">
-            <div class="cta-banner__content">
-              <h2 class="cta-banner__title">한 번의 페달링으로 만드는<br>기적의 레이스에 동참하세요!</h2>
-              <p class="cta-banner__desc">
-                직접 자전거를 타지 않아도, 땀 흘려 도전하는 라이더를 향한 따뜻한 후원의 마음으로 함께 달리실 수 있습니다.
+        <!-- 2. 캠페인 취지 및 소구 스토리 -->
+        <section
+          class="campaign-section campaign-section--white"
+          aria-labelledby="intro-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle">About Charity Ride</span>
+              <h2 id="intro-title" class="campaign-section__title">
+                땀방울이 모여 아이들의 미소가 됩니다
+              </h2>
+              <p class="campaign-section__desc">
+                도전 정신과 따뜻한 나눔의 문화를 결합한 KCR은 참가자 한 명 한
+                명이 단순한 스포츠 활동을 넘어, 장거리 치료에 지친 환아들과
+                가족들의 건강한 내일을 위해 페달을 밟는 사회 공헌 연대
+                프로젝트입니다.
               </p>
             </div>
-            <div class="cta-banner__actions">
-              <a href="/donate/one-time.html" class="btn btn--cta">달리는 라이더 후원하기</a>
+
+            <div class="campaign-grid campaign-grid--3cols">
+              <!-- 스토리 카드 1 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/kcr_story1.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="라이더들이 완주 후 메달을 들고 환하게 웃는 단체 사진"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">스포츠 자선</span>
+                  <h3 class="story-card__title">희망을 향한 위대한 페달</h3>
+                  <p class="story-card__excerpt">
+                    라이더들은 자발적으로 챌린지 코스에 참가하며, 스스로 모금
+                    개설자가 되어 주변 지인들에게 환아 지원의 필요성을 널리
+                    알리고 후원을 받습니다.
+                  </p>
+                </div>
+              </article>
+
+              <!-- 스토리 카드 2 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/kcr_story2.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="라이더들이 험난한 오르막길을 함께 오르며 격려하는 모습"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">연대와 동행</span>
+                  <h3 class="story-card__title">혼자가 아닌 함께의 가치</h3>
+                  <p class="story-card__excerpt">
+                    거친 바람과 가파른 고개를 넘을 수 있는 이유는 아픈 아이들의
+                    고통에 공감하고, 그 고단함을 함께 나누겠다는 동료
+                    라이더들과의 강력한 연대 덕분입니다.
+                  </p>
+                </div>
+              </article>
+
+              <!-- 스토리 카드 3 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/kcr_story3.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="기부금이 패밀리하우스 건립 현장으로 전달되는 증정식 모습"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">건립 기금 매칭</span>
+                  <h3 class="story-card__title">확실하고 투명한 기부의 열매</h3>
+                  <p class="story-card__excerpt">
+                    참가 라이더들의 개인 기부금과 후원 기업의 매칭 펀드로 누적된
+                    모금액 전액은 중증 환아와 가족을 위한 쉼터(패밀리하우스)
+                    신축 기금으로 바로 사용됩니다.
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-    </main>
+        <!-- 3. 운영 성과 지표 (임팩트) -->
+        <section
+          class="campaign-section campaign-section--ivory"
+          aria-labelledby="impact-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle">KCR Track Record</span>
+              <h2 id="impact-title" class="campaign-section__title">
+                페달로 증명해낸 사랑의 주행 거리
+              </h2>
+              <p class="campaign-section__desc">
+                매년 전국 각지에서 모인 따뜻한 심장을 가진 라이더와 기업들이
+                일구어낸 놀라운 캠페인 결과입니다.
+              </p>
+            </div>
 
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="src/includes/footer.html" />
-  </div>
+            <div class="campaign-grid campaign-grid--3cols">
+              <!-- 지표 1 -->
+              <div class="stat-card">
+                <div class="stat-card__number">1,500+ 명</div>
+                <div class="stat-card__label">참가 라이더 및 크루</div>
+                <div class="stat-card__desc">
+                  도전과 헌신으로 국토를 함께 종단해 주신 고마운 분들
+                </div>
+              </div>
 
-  <script type="module" src="/src/js/common.js"></script>
-</body>
+              <!-- 지표 2 -->
+              <div class="stat-card">
+                <div class="stat-card__number">530+ km</div>
+                <div class="stat-card__label">공식 챌린지 주행 거리</div>
+                <div class="stat-card__desc">
+                  환아 가족의 고통을 덜어주기 위해 페달로 이은 한반도 종단 코스
+                </div>
+              </div>
+
+              <!-- 지표 3 -->
+              <div class="stat-card">
+                <div class="stat-card__number">4.8억 원</div>
+                <div class="stat-card__label">누적 기부 모금액</div>
+                <div class="stat-card__desc">
+                  수혜 환아 지원 및 쉼터 개설/관리를 위해 투명하게 전액 집행된
+                  기부금
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 상세 공모 및 요강 테이블 안내 -->
+        <section
+          id="rules-section"
+          class="campaign-section campaign-section--white"
+          aria-labelledby="rules-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle">Guide</span>
+              <h2 id="rules-title" class="campaign-section__title">
+                올해의 캠페인 요강
+              </h2>
+              <p class="campaign-section__desc">
+                자선 라이딩 참가 안내 및 서포터즈 모집 내용을 확인하시어, 다양한
+                방법으로 희망의 주행에 힘을 보태주십시오.
+              </p>
+            </div>
+
+            <div class="campaign-table-wrapper">
+              <table class="campaign-table">
+                <caption>
+                  코리아채리티라이드 캠페인 진행 기간, 장소, 모집 구분 및 신청
+                  절차 안내
+                </caption>
+                <tbody>
+                  <tr>
+                    <th scope="row">대회 일정</th>
+                    <td>
+                      매년 10월 중순 (2박 3일간 진행, 별도 사전 공지 및 O.T
+                      진행)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">주행 코스</th>
+                    <td>
+                      서울 광화문 광장 출발 &rarr; 대전 및 대구를 거쳐 &rarr;
+                      부산 해운대 해변 광장 도착 (총 530km 완주 코스)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">라이더 참가 자격</th>
+                    <td>
+                      만 19세 이상 신체 건강한 남녀 자전거 동호인 (로드바이크
+                      권장, 미니벨로/MTB 참여 가능, 개인 안전 장비 지참 필수)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">모집 분야</th>
+                    <td>
+                      <strong>1. 챌린지 라이더:</strong> 전 구간 주행 도전자 (팀
+                      또는 개인)<br />
+                      <strong>2. 서포터즈 크루:</strong> 차량 에스코트, 메디컬
+                      지원, 급수대 관리 및 주행 안내 보급 요원<br />
+                      <strong>3. 기업 매칭 스폰서:</strong> 라이더 주행 1km당
+                      100원 이상 매칭 기부 기업
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">신청 기한 및 방법</th>
+                    <td>
+                      대회 시작 1개월 전까지 공식 접수처 온라인 신청서 등록 후
+                      보증금/참가 서류 제출
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. 참여 유도 CTA 배너 -->
+        <section
+          class="campaign-section campaign-section--ivory"
+          aria-label="기부 및 참여"
+        >
+          <div class="container">
+            <div class="cta-banner">
+              <div class="cta-banner__content">
+                <h2 class="cta-banner__title">
+                  한 번의 페달링으로 만드는<br />기적의 레이스에 동참하세요!
+                </h2>
+                <p class="cta-banner__desc">
+                  직접 자전거를 타지 않아도, 땀 흘려 도전하는 라이더를 향한
+                  따뜻한 후원의 마음으로 함께 달리실 수 있습니다.
+                </p>
+              </div>
+              <div class="cta-banner__actions">
+                <a href="/donate/one-time.html" class="btn btn--cta"
+                  >달리는 라이더 후원하기</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
+
+    <script type="module" src="/src/js/common.js"></script>
+  </body>
 </html>

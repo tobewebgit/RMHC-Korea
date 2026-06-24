@@ -1,202 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="장기 치료 중인 중증 환아와 가족들을 위한 보금자리, RMHC 패밀리하우스 건립 및 운영 지원 캠페인입니다. 여러분의 사랑으로 아이들의 곁을 지켜주세요.">
-  <title>패밀리하우스 캠페인 - RMHC Korea</title>
-  <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/css/campaign.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="장기 치료 중인 중증 환아와 가족들을 위한 보금자리, RMHC 패밀리하우스 건립 및 운영 지원 캠페인입니다. 여러분의 사랑으로 아이들의 곁을 지켜주세요."
+    />
+    <title>패밀리하우스 캠페인 - RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/campaign.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load ="src/includes/header.html" />
-
-  <div class="page-wrapper">
-    <main id="main-content" class="campaign-detail-container theme-family">
-      
-      <!-- 1. 히어로 비주얼 영역 (LCP 최적화 및 CLS 방지) -->
-      <section class="campaign-hero" aria-label="패밀리하우스 캠페인 소개 비주얼">
-        <div class="campaign-hero__bg">
-          <img src="/src/images/campaign/family_hero.jpg" width="1920" height="560" fetchpriority="high" alt="로날드맥도날드하우스 거실에서 환하게 웃고 있는 환아와 어머니">
-        </div>
-        <div class="campaign-hero__overlay"></div>
-        <div class="campaign-hero__content">
-          <span class="campaign-hero__badge">FAMILY HOUSE CAMPAIGN</span>
-          <h1 class="campaign-hero__title">함께 만드는 기적,<br>환아 가족의 따뜻한 보금자리</h1>
-          <p class="campaign-hero__desc">
-            장기 입원 치료로 집을 떠나 고단한 하루를 보내는 아픈 아이들과 가족들이<br>
-            서로의 손을 맞잡고 치료에만 전념할 수 있도록 보금자리를 선물해 주세요.
-          </p>
-          <div class="campaign-hero__actions">
-            <a href="/donate/regular.html" class="btn btn-primary">정기 후원하기</a>
-            <a href="/donate/one-time.html" class="btn btn-secondary text-primary-color font-bold">일시 후원하기</a>
+    <div class="page-wrapper">
+      <main id="main-content" class="campaign-detail-container theme-family">
+        <!-- 1. 히어로 비주얼 영역 (LCP 최적화 및 CLS 방지) -->
+        <section
+          class="campaign-hero"
+          aria-label="패밀리하우스 캠페인 소개 비주얼"
+        >
+          <div class="campaign-hero__bg">
+            <img
+              src="/src/images/campaign/family_hero.jpg"
+              width="1920"
+              height="560"
+              fetchpriority="high"
+              alt="로날드맥도날드하우스 거실에서 환하게 웃고 있는 환아와 어머니"
+            />
           </div>
-        </div>
-      </section>
-
-      <!-- 2. 캠페인 취지 및 소구 스토리 -->
-      <section class="campaign-section campaign-section--white" aria-labelledby="story-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">Why RMHC House?</span>
-            <h2 id="story-title" class="campaign-section__title">집보다 더 집 같은 곳이 필요합니다</h2>
-            <p class="campaign-section__desc">
-              중증 환아 가족들은 장거리 치료 과정에서 극심한 숙박비 부담과 심리적 불안, 그리고 가족 해체라는 위기에 직면합니다. RMHC 하우스는 이들이 내 집처럼 안전하게 머무르며 온기를 나누는 공간입니다.
+          <div class="campaign-hero__overlay"></div>
+          <div class="campaign-hero__content">
+            <span class="campaign-hero__badge">FAMILY HOUSE CAMPAIGN</span>
+            <h1 class="campaign-hero__title">
+              함께 만드는 기적,<br />환아 가족의 따뜻한 보금자리
+            </h1>
+            <p class="campaign-hero__desc">
+              장기 입원 치료로 집을 떠나 고단한 하루를 보내는 아픈 아이들과
+              가족들이<br />
+              서로의 손을 맞잡고 치료에만 전념할 수 있도록 보금자리를 선물해
+              주세요.
             </p>
+            <div class="campaign-hero__actions">
+              <a href="/donate/regular.html" class="btn btn-primary"
+                >정기 후원하기</a
+              >
+              <a
+                href="/donate/one-time.html"
+                class="btn btn-secondary text-primary-color font-bold"
+                >일시 후원하기</a
+              >
+            </div>
           </div>
+        </section>
 
-          <div class="campaign-grid campaign-grid--3cols">
-            <!-- 스토리 카드 1 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/family_story1.jpg" width="380" height="214" loading="lazy" alt="아이의 손을 따뜻하게 잡은 부모의 손">
+        <!-- 2. 캠페인 취지 및 소구 스토리 -->
+        <section
+          class="campaign-section campaign-section--white"
+          aria-labelledby="story-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle">Why RMHC House?</span>
+              <h2 id="story-title" class="campaign-section__title">
+                집보다 더 집 같은 곳이 필요합니다
+              </h2>
+              <p class="campaign-section__desc">
+                중증 환아 가족들은 장거리 치료 과정에서 극심한 숙박비 부담과
+                심리적 불안, 그리고 가족 해체라는 위기에 직면합니다. RMHC
+                하우스는 이들이 내 집처럼 안전하게 머무르며 온기를 나누는
+                공간입니다.
+              </p>
+            </div>
+
+            <div class="campaign-grid campaign-grid--3cols">
+              <!-- 스토리 카드 1 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/family_story1.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="아이의 손을 따뜻하게 잡은 부모의 손"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">정서적 안심</span>
+                  <h3 class="story-card__title">환아 곁을 지키는 힘</h3>
+                  <p class="story-card__excerpt">
+                    부모와 아이가 한 공간에 머무를 때 환아의 심리적 안정감은
+                    극대화되며, 이는 질병을 극복하는 가장 강력한 치유의 힘이
+                    됩니다.
+                  </p>
+                </div>
+              </article>
+
+              <!-- 스토리 카드 2 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/family_story2.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="하우스 식당에서 가족이 건강한 식사를 나누는 모습"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">경제적 지원</span>
+                  <h3 class="story-card__title">치료에만 전념할 수 있도록</h3>
+                  <p class="story-card__excerpt">
+                    무료 숙박과 공동 식사를 제공함으로써, 장기 통원 및 입원
+                    치료로 가중되는 가족들의 경제적 주거·숙식 부담을 실질적으로
+                    해결합니다.
+                  </p>
+                </div>
+              </article>
+
+              <!-- 스토리 카드 3 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/family_story3.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="자원봉사자들과 함께 웃는 아이"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">가족의 일상 회복</span>
+                  <h3 class="story-card__title">일상을 잃어버리지 않게</h3>
+                  <p class="story-card__excerpt">
+                    놀이방, 도서실 등 커뮤니티 시설을 통해 병원 생활 속에서도
+                    아이들이 배움을 이어가고 가족다운 일상을 지켜나갈 수 있게
+                    돕습니다.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. 운영 성과 지표 (임팩트) -->
+        <section
+          class="campaign-section campaign-section--ivory"
+          aria-labelledby="impact-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle">Our Impact</span>
+              <h2 id="impact-title" class="campaign-section__title">
+                함께 일구어낸 따뜻한 기적
+              </h2>
+              <p class="campaign-section__desc">
+                후원자님들의 소중한 관심과 사랑으로 RMHC 양산 부산대 하우스는
+                수많은 가족들의 지친 하루를 안아줄 수 있었습니다.
+              </p>
+            </div>
+
+            <div class="campaign-grid campaign-grid--3cols">
+              <!-- 지표 1 -->
+              <div class="stat-card">
+                <div class="stat-card__number">3,800+</div>
+                <div class="stat-card__label">수혜 가족 수</div>
+                <div class="stat-card__desc">
+                  하우스를 이용하며 따뜻한 밤을 보낸 누적 환아 및 보호자 수
+                </div>
               </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">정서적 안심</span>
-                <h3 class="story-card__title">환아 곁을 지키는 힘</h3>
-                <p class="story-card__excerpt">
-                  부모와 아이가 한 공간에 머무를 때 환아의 심리적 안정감은 극대화되며, 이는 질병을 극복하는 가장 강력한 치유의 힘이 됩니다.
+
+              <!-- 지표 2 -->
+              <div class="stat-card">
+                <div class="stat-card__number">16,200+</div>
+                <div class="stat-card__label">제공된 안심 숙박 일수</div>
+                <div class="stat-card__desc">
+                  가족들이 병원 밖 고된 대기 생활 대신 편히 쉰 총 일수
+                </div>
+              </div>
+
+              <!-- 지표 3 -->
+              <div class="stat-card">
+                <div class="stat-card__number">2.7억 원</div>
+                <div class="stat-card__label">경제적 부담 경감 효과</div>
+                <div class="stat-card__desc">
+                  수혜 가족들의 교통비, 숙박비 등을 절감하여 치료비 보탬 제공
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 기부 금액대별 지원 가치 -->
+        <section
+          class="campaign-section campaign-section--white"
+          aria-labelledby="value-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle"
+                >How Your Gift Helps</span
+              >
+              <h2 id="value-title" class="campaign-section__title">
+                후원금은 어떻게 사용되나요?
+              </h2>
+              <p class="campaign-section__desc">
+                단 한 번의 나눔도, 매월 이어지는 정성도 아픈 아이들에게는 커다란
+                희망의 불씨가 됩니다.
+              </p>
+            </div>
+
+            <div class="campaign-grid campaign-grid--3cols">
+              <!-- 1만원 -->
+              <div class="card card-hover text-center p-8">
+                <span class="badge badge-primary mb-4">월 10,000 원</span>
+                <h3 class="text-xl font-bold mb-3">안심 위생용품 키트</h3>
+                <p class="text-secondary-color text-sm">
+                  치료 기간 동안 면역력이 약한 환아와 가족들을 위해 청결하고
+                  안전한 친환경 생필품 및 위생 키트를 제공합니다.
                 </p>
               </div>
-            </article>
 
-            <!-- 스토리 카드 2 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/family_story2.jpg" width="380" height="214" loading="lazy" alt="하우스 식당에서 가족이 건강한 식사를 나누는 모습">
-              </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">경제적 지원</span>
-                <h3 class="story-card__title">치료에만 전념할 수 있도록</h3>
-                <p class="story-card__excerpt">
-                  무료 숙박과 공동 식사를 제공함으로써, 장기 통원 및 입원 치료로 가중되는 가족들의 경제적 주거·숙식 부담을 실질적으로 해결합니다.
+              <!-- 3만원 -->
+              <div class="card card-hover text-center p-8">
+                <span class="badge badge-primary mb-4">월 30,000 원</span>
+                <h3 class="text-xl font-bold mb-3">따뜻한 영양 집밥</h3>
+                <p class="text-secondary-color text-sm">
+                  항암 치료로 지친 아이들이 집밥의 온기로 기운을 낼 수 있도록
+                  신선한 친환경 유기농 식자재와 식사를 지원합니다.
                 </p>
               </div>
-            </article>
 
-            <!-- 스토리 카드 3 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/family_story3.jpg" width="380" height="214" loading="lazy" alt="자원봉사자들과 함께 웃는 아이">
-              </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">가족의 일상 회복</span>
-                <h3 class="story-card__title">일상을 잃어버리지 않게</h3>
-                <p class="story-card__excerpt">
-                  놀이방, 도서실 등 커뮤니티 시설을 통해 병원 생활 속에서도 아이들이 배움을 이어가고 가족다운 일상을 지켜나갈 수 있게 돕습니다.
+              <!-- 5만원 -->
+              <div class="card card-hover text-center p-8">
+                <span class="badge badge-primary mb-4">월 50,000 원</span>
+                <h3 class="text-xl font-bold mb-3">1일 안심 객실 운영</h3>
+                <p class="text-secondary-color text-sm">
+                  하우스 객실 1칸의 쾌적한 냉난방, 침구 세탁 및 방역을 전적으로
+                  조율하여 한 가족의 완벽한 1박 쉼터를 책임집니다.
                 </p>
               </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. 운영 성과 지표 (임팩트) -->
-      <section class="campaign-section campaign-section--ivory" aria-labelledby="impact-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">Our Impact</span>
-            <h2 id="impact-title" class="campaign-section__title">함께 일구어낸 따뜻한 기적</h2>
-            <p class="campaign-section__desc">
-              후원자님들의 소중한 관심과 사랑으로 RMHC 양산 부산대 하우스는 수많은 가족들의 지친 하루를 안아줄 수 있었습니다.
-            </p>
-          </div>
-
-          <div class="campaign-grid campaign-grid--3cols">
-            <!-- 지표 1 -->
-            <div class="stat-card">
-              <div class="stat-card__number">3,800+</div>
-              <div class="stat-card__label">수혜 가족 수</div>
-              <div class="stat-card__desc">하우스를 이용하며 따뜻한 밤을 보낸 누적 환아 및 보호자 수</div>
-            </div>
-
-            <!-- 지표 2 -->
-            <div class="stat-card">
-              <div class="stat-card__number">16,200+</div>
-              <div class="stat-card__label">제공된 안심 숙박 일수</div>
-              <div class="stat-card__desc">가족들이 병원 밖 고된 대기 생활 대신 편히 쉰 총 일수</div>
-            </div>
-
-            <!-- 지표 3 -->
-            <div class="stat-card">
-              <div class="stat-card__number">2.7억 원</div>
-              <div class="stat-card__label">경제적 부담 경감 효과</div>
-              <div class="stat-card__desc">수혜 가족들의 교통비, 숙박비 등을 절감하여 치료비 보탬 제공</div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- 4. 기부 금액대별 지원 가치 -->
-      <section class="campaign-section campaign-section--white" aria-labelledby="value-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">How Your Gift Helps</span>
-            <h2 id="value-title" class="campaign-section__title">후원금은 어떻게 사용되나요?</h2>
-            <p class="campaign-section__desc">
-              단 한 번의 나눔도, 매월 이어지는 정성도 아픈 아이들에게는 커다란 희망의 불씨가 됩니다.
-            </p>
-          </div>
-
-          <div class="campaign-grid campaign-grid--3cols">
-            <!-- 1만원 -->
-            <div class="card card-hover text-center p-8">
-              <span class="badge badge-primary mb-4">월 10,000 원</span>
-              <h3 class="text-xl font-bold mb-3">안심 위생용품 키트</h3>
-              <p class="text-secondary-color text-sm">
-                치료 기간 동안 면역력이 약한 환아와 가족들을 위해 청결하고 안전한 친환경 생필품 및 위생 키트를 제공합니다.
-              </p>
-            </div>
-
-            <!-- 3만원 -->
-            <div class="card card-hover text-center p-8">
-              <span class="badge badge-primary mb-4">월 30,000 원</span>
-              <h3 class="text-xl font-bold mb-3">따뜻한 영양 집밥</h3>
-              <p class="text-secondary-color text-sm">
-                항암 치료로 지친 아이들이 집밥의 온기로 기운을 낼 수 있도록 신선한 친환경 유기농 식자재와 식사를 지원합니다.
-              </p>
-            </div>
-
-            <!-- 5만원 -->
-            <div class="card card-hover text-center p-8">
-              <span class="badge badge-primary mb-4">월 50,000 원</span>
-              <h3 class="text-xl font-bold mb-3">1일 안심 객실 운영</h3>
-              <p class="text-secondary-color text-sm">
-                하우스 객실 1칸의 쾌적한 냉난방, 침구 세탁 및 방역을 전적으로 조율하여 한 가족의 완벽한 1박 쉼터를 책임집니다.
-              </p>
+        <!-- 5. 참여 유도 CTA 배너 -->
+        <section
+          class="campaign-section campaign-section--ivory"
+          aria-label="후원 참여 안내"
+        >
+          <div class="container">
+            <div class="cta-banner">
+              <div class="cta-banner__content">
+                <h2 class="cta-banner__title">
+                  아이들의 손을 놓치지 않도록,<br />가족의 울타리를 지켜주세요.
+                </h2>
+                <p class="cta-banner__desc">
+                  여러분의 정기적인 나눔은 제2, 제3의 로날드맥도날드하우스를
+                  건립하고 더 많은 환아들에게 쉼터를 선물하는 밑거름이 됩니다.
+                </p>
+              </div>
+              <div class="cta-banner__actions">
+                <a href="/donate/regular.html" class="btn btn--cta"
+                  >지금 따뜻함 전하기</a
+                >
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      <!-- 5. 참여 유도 CTA 배너 -->
-      <section class="campaign-section campaign-section--ivory" aria-label="후원 참여 안내">
-        <div class="container">
-          <div class="cta-banner">
-            <div class="cta-banner__content">
-              <h2 class="cta-banner__title">아이들의 손을 놓치지 않도록,<br>가족의 울타리를 지켜주세요.</h2>
-              <p class="cta-banner__desc">
-                여러분의 정기적인 나눔은 제2, 제3의 로날드맥도날드하우스를 건립하고 더 많은 환아들에게 쉼터를 선물하는 밑거름이 됩니다.
-              </p>
-            </div>
-            <div class="cta-banner__actions">
-              <a href="/donate/regular.html" class="btn btn--cta">지금 따뜻함 전하기</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
 
-    </main>
-
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="src/includes/footer.html" />
-  </div>
-
-  <script type="module" src="/src/js/common.js"></script>
-</body>
+    <script type="module" src="/src/js/common.js"></script>
+  </body>
 </html>

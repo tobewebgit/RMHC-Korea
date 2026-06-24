@@ -1,65 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 아이디 찾기 페이지입니다. 본인인증을 통해 안전하게 아이디를 찾으실 수 있습니다.">
-  <title>아이디 찾기 - RMHC Korea</title>
-  <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/css/login.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 아이디 찾기 페이지입니다. 본인인증을 통해 안전하게 아이디를 찾으실 수 있습니다."
+    />
+    <title>아이디 찾기 - RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/login.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load ="src/includes/header.html" />
+    <div class="page-wrapper">
+      <main id="main-content" class="login-section">
+        <div class="login-card">
+          <h1 class="login-title">아이디 찾기</h1>
+          <p class="login-desc">
+            회원 정보에 등록된 이름과 휴대폰 번호로<br />아이디를 확인하실 수
+            있습니다.
+          </p>
 
-  <div class="page-wrapper">
-    <main id="main-content" class="login-section">
-      <div class="login-card">
-        <h1 class="login-title">아이디 찾기</h1>
-        <p class="login-desc">가입 시 선택하신 본인인증 수단을 통해<br>아이디를 확인하실 수 있습니다.</p>
-
-        <!-- 본인인증 수단 선택 -->
-        <div class="auth-methods">
-          <button type="button" class="auth-method-btn" onclick="location.href='/login/find-id/result.html'">
-            <div class="auth-method-icon">
-              <img src="/src/images/common/icon_pass.svg" alt="PASS" width="24" height="24" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22red%22><rect width=%2224%22 height=%2224%22 rx=%224%22/><text x=%2250%25%22 y=%2265%25%22 font-size=%2210%22 fill=%22white%22 text-anchor=%22middle%22 font-weight=%22bold%22>PASS</text></svg>'">
+          <!-- 로그인 폼 -->
+          <form action="#" method="POST" class="login-form">
+            <div class="form-group">
+              <label for="user-id" class="form-label sr-only">이름</label>
+              <input
+                type="text"
+                id="user-id"
+                class="form-control"
+                placeholder="이름"
+                required
+                maxlength="15"
+              />
             </div>
-            <div class="auth-method-info">
-              <div class="auth-method-name">PASS 인증</div>
-              <div class="auth-method-desc">휴대폰에 등록된 PASS 앱을 통해 인증합니다.</div>
-            </div>
-          </button>
 
-          <button type="button" class="auth-method-btn" onclick="location.href='/login/find-id/result.html'">
-            <div class="auth-method-icon">
-              <img src="/src/images/common/instagram.svg" alt="카카오" width="24" height="24">
+            <div class="form-group">
+              <label for="user-pw" class="form-label sr-only">비밀번호</label>
+              <input
+                type="password"
+                id="user-pw"
+                class="form-control"
+                placeholder="휴대폰번호 (숫자만 입력)"
+                required
+              />
             </div>
-            <div class="auth-method-info">
-              <div class="auth-method-name">카카오 간편인증</div>
-              <div class="auth-method-desc">카카오톡 앱으로 인증요청을 받아 인증합니다.</div>
-            </div>
-          </button>
+
+            <!-- 로그인 CTA 버튼 -->
+            <button type="submit" class="btn btn-primary">아이디 확인</button>
+          </form>
+
+          <div class="line"></div>
+
+          <div class="login-links">
+            <a href="/login/reset-pw.html">비밀번호 재설정</a>
+            <a href="/join.html">회원가입</a>
+          </div>
         </div>
+      </main>
 
-        <!-- 본인인증 관련 개인정보 고지 안내 -->
-        <div class="info-notice-box">
-          본인인증을 위해 입력하신 개인정보는 본인인증 기관에서 수집하는 정보이며, 회원가입여부 확인 및 입력편의 제공, 본인인증 목적으로만 이용됩니다.
-        </div>
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
 
-        <div class="d-flex gap-3 justify-center">
-          <a href="/login.html" class="btn btn-outline w-100 text-center font-semibold" style="min-height: 4.8rem; display: flex; align-items: center; justify-content: center;">로그인 화면으로</a>
-        </div>
-      </div>
-    </main>
-
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="src/includes/footer.html" />
-  </div>
-
-  <script type="module" src="/src/js/common.js"></script>
-</body>
+    <script type="module" src="/src/js/common.js"></script>
+  </body>
 </html>

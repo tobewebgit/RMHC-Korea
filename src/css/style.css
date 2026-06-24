@@ -1,4 +1,4 @@
-@import url('https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css');
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css");
 @import "components/button.css";
 @import "components/form.css";
 
@@ -351,7 +351,7 @@ textarea {
 
 /* Responsive Helper Utilities */
 .hide-desktop {
-  display: none;
+  display: none !important;
 }
 @media (max-width: 768px) {
   .hide-mobile {
@@ -766,7 +766,7 @@ textarea {
 .header__left-group {
   display: flex;
   align-items: center;
-  gap: 12.8rem; /* 128px gap to menu */
+  gap: 9.2rem; /* 128px gap to menu */
 }
 
 .header__logo {
@@ -834,8 +834,7 @@ textarea {
   justify-content: center;
   width: 15rem; /* 150px */
   height: 5.2rem; /* 52px */
-  background: url("../images/common/btn_donate.svg") no-repeat center /
-    contain;
+  background: url("../images/common/btn_donate.svg") no-repeat center / contain;
   border: none;
   cursor: pointer;
 }
@@ -865,8 +864,8 @@ textarea {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../images/common/footer_bg.svg") no-repeat top center /
-    100% auto;
+  background: url("../images/common/footer_bg.svg") no-repeat top center / 100%
+    auto;
   pointer-events: none;
   z-index: 0;
 }
@@ -882,8 +881,8 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: url("../images/common/footer__top_bg.png") no-repeat center /
-    100% 100%;
+  background: url("../images/common/footer__top_bg.png") no-repeat center / 100%
+    100%;
   padding: 4rem 5rem;
   border-radius: 0.8rem;
 }
@@ -1090,12 +1089,12 @@ textarea {
    Responsive Adjustments (Fallback & Mobile Mobile scale reset)
    ========================================================================== */
 @media (max-width: 1024px) {
-  .header__left-group {
+  /* .header__left-group {
     gap: 6.4rem;
   }
   .header__nav {
     gap: 3.2rem;
-  }
+  } */
 }
 
 @media (max-width: 768px) {

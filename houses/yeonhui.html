@@ -1,332 +1,552 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="연세대학교 및 신촌 세브란스병원 인근 연희동에 건립 예정인 서울 최초의 로날드맥도날드하우스, 연희 하우스입니다.">
-  <title>연희 하우스 - 한국로날드맥도날드하우스</title>
-  <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/css/houses.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="연세대학교 및 신촌 세브란스병원 인근 연희동에 건립 예정인 서울 최초의 로날드맥도날드하우스, 연희 하우스입니다."
+    />
+    <title>연희 하우스 - 한국로날드맥도날드하우스</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/houses.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load ="src/includes/header.html" />
-
-  <div class="page-wrapper">
-    <main id="main-content" class="house-detail-container container">
-
-      <!-- 건립 준비 중 상태 안내 배너 -->
-      <section class="preparing-status-card" aria-label="건립 추진 현황 고지">
-        <svg class="preparing-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-        </svg>
-        <div>
-          <h2 class="preparing-title">서울 연희 하우스 건립 협약 및 추진 안내</h2>
-          <p class="preparing-desc">
-            본 하우스는 <strong>연세대학교</strong>와의 부지 제공 협약 및 <strong>신촌 세브란스병원</strong>과의 연계를 바탕으로 서울 연희동에 건립을 추진 중인 신규 하우스입니다.<br>
-            현재 설계 조율 및 행정 인허가 절차를 진행하고 있으며, 서울 내 중증 질환 환아 가족들을 지원할 예정입니다.
-          </p>
-        </div>
-      </section>
-
-      <!-- 1. 히어로 비주얼 슬라이더 영역 -->
-      <section class="house-visual-section" aria-label="연희 하우스 조감도 및 건립 계획 갤러리">
-        <div class="house-slider-wrapper">
-          <div class="house-slider" id="house-image-slider">
-            <div class="slide-item active" data-slide="0">
-              <img src="/src/images/houses/yeonhui_main.jpg" width="1200" height="600" fetchpriority="high" alt="서울 연희 하우스 건립 조감도 이미지">
-            </div>
-            <div class="slide-item" data-slide="1">
-              <img src="/src/images/houses/yeonhui_plan.jpg" width="1200" height="600" loading="lazy" alt="연희 하우스의 층별 친환경 가족 쉼터 내부 조감도">
-            </div>
-          </div>
-
-          <!-- 슬라이더 좌우 컨트롤 -->
-          <button type="button" class="slider-ctrl-btn btn-prev" id="btn-slider-prev" aria-label="이전 슬라이드 이미지 보기">
-            <span aria-hidden="true">&lt;</span>
-          </button>
-          <button type="button" class="slider-ctrl-btn btn-next" id="btn-slider-next" aria-label="다음 슬라이드 이미지 보기">
-            <span aria-hidden="true">&gt;</span>
-          </button>
-
-          <!-- 슬라이더 인디케이터 (도트) -->
-          <div class="slider-indicators" role="tablist" aria-label="슬라이드 선택">
-            <button type="button" class="indicator-dot active" role="tab" aria-selected="true" aria-controls="house-image-slider" data-target="0" aria-label="1번째 슬라이드"></button>
-            <button type="button" class="indicator-dot" role="tab" aria-selected="false" aria-controls="house-image-slider" data-target="1" aria-label="2번째 슬라이드"></button>
-          </div>
-
-          <!-- 비주얼 오버레이 캡션 박스 -->
-          <div class="house-caption-box">
-            <div class="caption-content">
-              <span class="caption-badge">건립 준비 중</span>
-              <h1 class="caption-title">연희 하우스</h1>
-              <p class="caption-desc">신촌 세브란스병원 등 서울 서북권 대형병원에서 투병 중인 아동들이 학업과 치료를 병행하며 따뜻하게 생활할 수 있는 교육 특화 하우스로 설계 중입니다.</p>
-            </div>
-            <div class="caption-actions">
-              <a href="#rules-section" class="btn btn-secondary text-primary-color font-bold">건립 개요</a>
-              <a href="/volunteer.html" class="btn btn-primary font-bold">자원봉사 신청</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2. 하우스 소개 및 층별 예정 안내 영역 -->
-      <section class="house-info-section" aria-label="하우스 건립 계획 및 예정 시설 안내">
-        <h2 class="house-section-title">건립 설계 개요</h2>
-        <p class="house-intro-text">
-          연희 하우스는 서울 도심 속에 지어지는 하우스인 만큼, 도심 속 녹색 공간을 조성하고 대학과 연계한 학습 보조 프로그램 등 교육 중심의 특화 서비스를 구상하고 있습니다.<br>
-          환아와 부모가 지친 병원 생활을 벗어나 잠시나마 휴식을 취하며 정서적 유대를 다질 수 있도록 최적으로 시공될 것입니다.
-        </p>
-
-        <!-- 층별 안내 아코디언 (details-summary 적용) -->
-        <div class="accordion-wrapper">
-          <!-- 3층 아코디언 -->
-          <details class="accordion-item" open>
-            <summary class="accordion-summary">
-              <span>지상 2~3층 (예정) - 스마트 힐링 룸</span>
-              <span class="accordion-summary-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="accordion-content">
-              <div class="accordion-text-wrapper">
-                <h3 class="accordion-text-title">장기 투병 중인 아동과 부모를 위한 스마트 힐링 공간</h3>
-                <ul class="accordion-list">
-                  <li class="accordion-list-item"><strong>환아 패밀리 전용 룸 (예정)</strong>: 거동이 불편한 환아의 휠체어 이동 동선이 배려된 무장애(Barrier-Free) 침실 설계.</li>
-                  <li class="accordion-list-item"><strong>개인 학습실 (예정)</strong>: 통원 및 치료로 인해 공교육 공백이 생기지 않도록 스마트 스터디 룸과 대학 멘토링 연계 예정.</li>
-                </ul>
-              </div>
-              <div class="accordion-thumb">
-                <img src="/src/images/houses/yeonhui_3f_plan.jpg" width="280" height="210" loading="lazy" alt="스마트 기기와 인공지능 공조기가 설치 예정인 환아 스터디 객실 내부">
-              </div>
-            </div>
-          </details>
-
-          <!-- 1층 아코디언 -->
-          <details class="accordion-item">
-            <summary class="accordion-summary">
-              <span>지상 1층 (예정) - 친환경 마당 및 커뮤니티 키친</span>
-              <span class="accordion-summary-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="accordion-content">
-              <div class="accordion-text-wrapper">
-                <h3 class="accordion-text-title">치유와 상생이 공존하는 정원 및 공용 구역</h3>
-                <ul class="accordion-list">
-                  <li class="accordion-list-item"><strong>숲속 다이닝 룸</strong>: 하우스 앞 정원을 조망하며 편안히 식사할 수 있는 대형 빌트인 부엌과 썬룸 다이닝.</li>
-                  <li class="accordion-list-item"><strong>힐링 테라피 룸</strong>: 정서 불안 완화를 위해 향기 치료 및 예술 치료 미술 치료가 진행될 놀이 교실 예정.</li>
-                  <li class="accordion-list-item"><strong>세탁기/건조기 통합 케어존</strong>: 단시간 내 살균 세탁이 가능한 친환경 스팀 런드리 공간 설계.</li>
-                </ul>
-              </div>
-              <div class="accordion-thumb">
-                <img src="/src/images/houses/yeonhui_1f_plan.jpg" width="280" height="210" loading="lazy" alt="하늘 정원과 연결되도록 설계 예정인 친환경 키친 룸 조감도">
-              </div>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <!-- 3. 이용 요금 및 신청 요건 안내 영역 (예정 사항 안내) -->
-      <section class="house-rules-section" id="rules-section" aria-label="이용 요금 및 신청 요건 예정 정보 안내">
-        <h2 class="house-section-title">이용 요금 및 신청 요건(예정)</h2>
-        <div class="table-responsive">
-          <table class="house-table">
-            <caption>연희 하우스 예정 이용 대상, 요금, 신청 방법 및 구비 서류 정보</caption>
-            <tbody>
-              <tr>
-                <th scope="row">이용 요금</th>
-                <td><strong>전액 무료 예정</strong> (수도, 광열비 및 internet, 하우스 내 기본 소모품 무료 제공)</td>
-              </tr>
-              <tr>
-                <th scope="row">이용 대상</th>
-                <td>신촌 세브란스병원 등 서울 주요 대형병원에서 외래 진료 또는 단기 입원을 앞둔 만 18세 이하의 중증 질환 환아 가족</td>
-              </tr>
-              <tr>
-                <th scope="row">이용 및 심사 요건</th>
-                <td>개원 준공 일정에 맞추어 세부 사항이 별도 고지되며, 지리적 원거리 요건 및 경제적 상황이 우선 순위로 반영될 예정입니다.</td>
-              </tr>
-              <tr>
-                <th scope="row">문의처</th>
-                <td>한국로날드맥도날드하우스 재단 사무국(대표번호)을 통해 건립 경과 및 지원 사업 문의가 가능합니다.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="table-helper-text">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <div class="page-wrapper">
+      <main id="main-content" class="house-detail-container container">
+        <!-- 건립 준비 중 상태 안내 배너 -->
+        <section class="preparing-status-card" aria-label="건립 추진 현황 고지">
+          <svg
+            class="preparing-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
             <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="16" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
           </svg>
-          상기 기재된 내용은 설계 조율 및 기금 집행 경과에 따라 변동될 수 있습니다.
-        </p>
-      </section>
+          <div>
+            <h2 class="preparing-title">
+              서울 연희 하우스 건립 협약 및 추진 안내
+            </h2>
+            <p class="preparing-desc">
+              본 하우스는 <strong>연세대학교</strong>와의 부지 제공 협약 및
+              <strong>신촌 세브란스병원</strong>과의 연계를 바탕으로 서울
+              연희동에 건립을 추진 중인 신규 하우스입니다.<br />
+              현재 설계 조율 및 행정 인허가 절차를 진행하고 있으며, 서울 내 중증
+              질환 환아 가족들을 지원할 예정입니다.
+            </p>
+          </div>
+        </section>
 
-      <!-- 4. 오시는 길 및 교통편 영역 -->
-      <section class="house-map-section" aria-label="하우스 예정지 및 교통편 안내">
-        <h2 class="house-section-title">오시는 길</h2>
-        <div class="map-layout">
-          <!-- 지도 영역 플레이스홀더 -->
-          <div class="map-container">
-            <div class="map-canvas" id="map-canvas">
-              <div class="map-placeholder-info">
-                <svg class="map-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <p>지도가 노출되는 영역입니다.<br>(신촌 세브란스병원 인근 연희동 건립 예정지 지도 API 연동 예정)</p>
+        <!-- 1. 히어로 비주얼 슬라이더 영역 -->
+        <section
+          class="house-visual-section"
+          aria-label="연희 하우스 조감도 및 건립 계획 갤러리"
+        >
+          <div class="house-slider-wrapper">
+            <div class="house-slider" id="house-image-slider">
+              <div class="slide-item active" data-slide="0">
+                <img
+                  src="/src/images/houses/yeonhui_main.jpg"
+                  width="1200"
+                  height="600"
+                  fetchpriority="high"
+                  alt="서울 연희 하우스 건립 조감도 이미지"
+                />
+              </div>
+              <div class="slide-item" data-slide="1">
+                <img
+                  src="/src/images/houses/yeonhui_plan.jpg"
+                  width="1200"
+                  height="600"
+                  loading="lazy"
+                  alt="연희 하우스의 층별 친환경 가족 쉼터 내부 조감도"
+                />
               </div>
             </div>
-            <div class="map-address-box">
-              <div class="map-address-text">
-                서울특별시 서대문구 연희동 인근
-                <span>(연세대학교 협약 부지 내 건립 추진지)</span>
+
+            <!-- 슬라이더 좌우 컨트롤 -->
+            <button
+              type="button"
+              class="slider-ctrl-btn btn-prev"
+              id="btn-slider-prev"
+              aria-label="이전 슬라이드 이미지 보기"
+            >
+              <span aria-hidden="true">&lt;</span>
+            </button>
+            <button
+              type="button"
+              class="slider-ctrl-btn btn-next"
+              id="btn-slider-next"
+              aria-label="다음 슬라이드 이미지 보기"
+            >
+              <span aria-hidden="true">&gt;</span>
+            </button>
+
+            <!-- 슬라이더 인디케이터 (도트) -->
+            <div
+              class="slider-indicators"
+              role="tablist"
+              aria-label="슬라이드 선택"
+            >
+              <button
+                type="button"
+                class="indicator-dot active"
+                role="tab"
+                aria-selected="true"
+                aria-controls="house-image-slider"
+                data-target="0"
+                aria-label="1번째 슬라이드"
+              ></button>
+              <button
+                type="button"
+                class="indicator-dot"
+                role="tab"
+                aria-selected="false"
+                aria-controls="house-image-slider"
+                data-target="1"
+                aria-label="2번째 슬라이드"
+              ></button>
+            </div>
+
+            <!-- 비주얼 오버레이 캡션 박스 -->
+            <div class="house-caption-box">
+              <div class="caption-content">
+                <span class="caption-badge">건립 준비 중</span>
+                <h1 class="caption-title">연희 하우스</h1>
+                <p class="caption-desc">
+                  신촌 세브란스병원 등 서울 서북권 대형병원에서 투병 중인
+                  아동들이 학업과 치료를 병행하며 따뜻하게 생활할 수 있는 교육
+                  특화 하우스로 설계 중입니다.
+                </p>
               </div>
-              <button type="button" class="btn-copy-address" id="btn-copy-addr">주소 복사</button>
+              <div class="caption-actions">
+                <a
+                  href="#rules-section"
+                  class="btn btn-secondary text-primary-color font-bold"
+                  >건립 개요</a
+                >
+                <a href="/volunteer.html" class="btn btn-primary font-bold"
+                  >자원봉사 신청</a
+                >
+              </div>
             </div>
           </div>
+        </section>
 
-          <!-- 교통 정보 리스트 -->
-          <div class="transit-details">
-            <div class="transit-group">
-              <h3 class="transit-title">
-                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect>
-                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                </svg>
-                지하철 이용 시
-              </h3>
-              <p class="transit-desc">
-                지하철 <strong>2호선 신촌역</strong> 1번 출구에서 하우스 예정지까지 신촌 세브란스병원 방향 셔틀버스 또는 시내버스로 약 10분 소요됩니다.<br>
-                경의중앙선 <strong>신촌역</strong> 2번 출구 이용 시 도보 약 15분이 소요됩니다.
-              </p>
-            </div>
-            
-            <div class="transit-group">
-              <h3 class="transit-title">
-                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
-                  <circle cx="7" cy="17" r="2"></circle>
-                  <circle cx="17" cy="17" r="2"></circle>
-                </svg>
-                버스 이용 시
-              </h3>
-              <p class="transit-desc">
-                <strong>세브란스병원 앞</strong> 정류장 하차:<br>
-                간선 버스: 272번, 470번, 707번, 750A번 등<br>
-                지하철역 순환 서대문03, 서대문04 마을버스 이용 가능
-              </p>
+        <!-- 2. 하우스 소개 및 층별 예정 안내 영역 -->
+        <section
+          class="house-info-section"
+          aria-label="하우스 건립 계획 및 예정 시설 안내"
+        >
+          <h2 class="house-section-title">건립 설계 개요</h2>
+          <p class="house-intro-text">
+            연희 하우스는 서울 도심 속에 지어지는 하우스인 만큼, 도심 속 녹색
+            공간을 조성하고 대학과 연계한 학습 보조 프로그램 등 교육 중심의 특화
+            서비스를 구상하고 있습니다.<br />
+            환아와 부모가 지친 병원 생활을 벗어나 잠시나마 휴식을 취하며 정서적
+            유대를 다질 수 있도록 최적으로 시공될 것입니다.
+          </p>
+
+          <!-- 층별 안내 아코디언 (details-summary 적용) -->
+          <div class="accordion-wrapper">
+            <!-- 3층 아코디언 -->
+            <details class="accordion-item" open>
+              <summary class="accordion-summary">
+                <span>지상 2~3층 (예정) - 스마트 힐링 룸</span>
+                <span class="accordion-summary-icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="accordion-content">
+                <div class="accordion-text-wrapper">
+                  <h3 class="accordion-text-title">
+                    장기 투병 중인 아동과 부모를 위한 스마트 힐링 공간
+                  </h3>
+                  <ul class="accordion-list">
+                    <li class="accordion-list-item">
+                      <strong>환아 패밀리 전용 룸 (예정)</strong>: 거동이 불편한
+                      환아의 휠체어 이동 동선이 배려된 무장애(Barrier-Free) 침실
+                      설계.
+                    </li>
+                    <li class="accordion-list-item">
+                      <strong>개인 학습실 (예정)</strong>: 통원 및 치료로 인해
+                      공교육 공백이 생기지 않도록 스마트 스터디 룸과 대학 멘토링
+                      연계 예정.
+                    </li>
+                  </ul>
+                </div>
+                <div class="accordion-thumb">
+                  <img
+                    src="/src/images/houses/yeonhui_3f_plan.jpg"
+                    width="280"
+                    height="210"
+                    loading="lazy"
+                    alt="스마트 기기와 인공지능 공조기가 설치 예정인 환아 스터디 객실 내부"
+                  />
+                </div>
+              </div>
+            </details>
+
+            <!-- 1층 아코디언 -->
+            <details class="accordion-item">
+              <summary class="accordion-summary">
+                <span>지상 1층 (예정) - 친환경 마당 및 커뮤니티 키친</span>
+                <span class="accordion-summary-icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="accordion-content">
+                <div class="accordion-text-wrapper">
+                  <h3 class="accordion-text-title">
+                    치유와 상생이 공존하는 정원 및 공용 구역
+                  </h3>
+                  <ul class="accordion-list">
+                    <li class="accordion-list-item">
+                      <strong>숲속 다이닝 룸</strong>: 하우스 앞 정원을 조망하며
+                      편안히 식사할 수 있는 대형 빌트인 부엌과 썬룸 다이닝.
+                    </li>
+                    <li class="accordion-list-item">
+                      <strong>힐링 테라피 룸</strong>: 정서 불안 완화를 위해
+                      향기 치료 및 예술 치료 미술 치료가 진행될 놀이 교실 예정.
+                    </li>
+                    <li class="accordion-list-item">
+                      <strong>세탁기/건조기 통합 케어존</strong>: 단시간 내 살균
+                      세탁이 가능한 친환경 스팀 런드리 공간 설계.
+                    </li>
+                  </ul>
+                </div>
+                <div class="accordion-thumb">
+                  <img
+                    src="/src/images/houses/yeonhui_1f_plan.jpg"
+                    width="280"
+                    height="210"
+                    loading="lazy"
+                    alt="하늘 정원과 연결되도록 설계 예정인 친환경 키친 룸 조감도"
+                  />
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 3. 이용 요금 및 신청 요건 안내 영역 (예정 사항 안내) -->
+        <section
+          class="house-rules-section"
+          id="rules-section"
+          aria-label="이용 요금 및 신청 요건 예정 정보 안내"
+        >
+          <h2 class="house-section-title">이용 요금 및 신청 요건(예정)</h2>
+          <div class="table-responsive">
+            <table class="house-table">
+              <caption>
+                연희 하우스 예정 이용 대상, 요금, 신청 방법 및 구비 서류 정보
+              </caption>
+              <tbody>
+                <tr>
+                  <th scope="row">이용 요금</th>
+                  <td>
+                    <strong>전액 무료 예정</strong> (수도, 광열비 및 internet,
+                    하우스 내 기본 소모품 무료 제공)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">이용 대상</th>
+                  <td>
+                    신촌 세브란스병원 등 서울 주요 대형병원에서 외래 진료 또는
+                    단기 입원을 앞둔 만 18세 이하의 중증 질환 환아 가족
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">이용 및 심사 요건</th>
+                  <td>
+                    개원 준공 일정에 맞추어 세부 사항이 별도 고지되며, 지리적
+                    원거리 요건 및 경제적 상황이 우선 순위로 반영될 예정입니다.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">문의처</th>
+                  <td>
+                    한국로날드맥도날드하우스 재단 사무국(대표번호)을 통해 건립
+                    경과 및 지원 사업 문의가 가능합니다.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-helper-text">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            상기 기재된 내용은 설계 조율 및 기금 집행 경과에 따라 변동될 수
+            있습니다.
+          </p>
+        </section>
+
+        <!-- 4. 오시는 길 및 교통편 영역 -->
+        <section
+          class="house-map-section"
+          aria-label="하우스 예정지 및 교통편 안내"
+        >
+          <h2 class="house-section-title">오시는 길</h2>
+          <div class="map-layout">
+            <!-- 지도 영역 플레이스홀더 -->
+            <div class="map-container">
+              <div class="map-canvas" id="map-canvas">
+                <div class="map-placeholder-info">
+                  <svg
+                    class="map-placeholder-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <p>
+                    지도가 노출되는 영역입니다.<br />(신촌 세브란스병원 인근
+                    연희동 건립 예정지 지도 API 연동 예정)
+                  </p>
+                </div>
+              </div>
+              <div class="map-address-box">
+                <div class="map-address-text">
+                  서울특별시 서대문구 연희동 인근
+                  <span>(연세대학교 협약 부지 내 건립 추진지)</span>
+                </div>
+                <button
+                  type="button"
+                  class="btn-copy-address"
+                  id="btn-copy-addr"
+                >
+                  주소 복사
+                </button>
+              </div>
             </div>
 
-            <div class="transit-group">
-              <h3 class="transit-title">
-                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                자가용 및 주차
-              </h3>
-              <p class="transit-desc">
-                성산로 및 세브란스 병원 정문 방향 사거리 진입 후 신촌 세브란스병원 맞은편 연희동 부지 진입.<br>
-                개원 후 패밀리 등록 차량에 대한 별도 운영 안내가 적용될 예정입니다.
-              </p>
+            <!-- 교통 정보 리스트 -->
+            <div class="transit-details">
+              <div class="transit-group">
+                <h3 class="transit-title">
+                  <svg
+                    class="transit-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="7"
+                      y="2"
+                      width="10"
+                      height="20"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                  지하철 이용 시
+                </h3>
+                <p class="transit-desc">
+                  지하철 <strong>2호선 신촌역</strong> 1번 출구에서 하우스
+                  예정지까지 신촌 세브란스병원 방향 셔틀버스 또는 시내버스로 약
+                  10분 소요됩니다.<br />
+                  경의중앙선 <strong>신촌역</strong> 2번 출구 이용 시 도보 약
+                  15분이 소요됩니다.
+                </p>
+              </div>
+
+              <div class="transit-group">
+                <h3 class="transit-title">
+                  <svg
+                    class="transit-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"
+                    ></path>
+                    <circle cx="7" cy="17" r="2"></circle>
+                    <circle cx="17" cy="17" r="2"></circle>
+                  </svg>
+                  버스 이용 시
+                </h3>
+                <p class="transit-desc">
+                  <strong>세브란스병원 앞</strong> 정류장 하차:<br />
+                  간선 버스: 272번, 470번, 707번, 750A번 등<br />
+                  지하철역 순환 서대문03, 서대문04 마을버스 이용 가능
+                </p>
+              </div>
+
+              <div class="transit-group">
+                <h3 class="transit-title">
+                  <svg
+                    class="transit-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="3"
+                      y="11"
+                      width="18"
+                      height="11"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  자가용 및 주차
+                </h3>
+                <p class="transit-desc">
+                  성산로 및 세브란스 병원 정문 방향 사거리 진입 후 신촌
+                  세브란스병원 맞은편 연희동 부지 진입.<br />
+                  개원 후 패밀리 등록 차량에 대한 별도 운영 안내가 적용될
+                  예정입니다.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-    </main>
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
 
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="src/includes/footer.html" />
-  </div>
+    <script type="module" src="/src/js/common.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. 단순 이미지 슬라이더 구동 스크립트
+        const slides = document.querySelectorAll(
+          "#house-image-slider .slide-item",
+        );
+        const dots = document.querySelectorAll(
+          ".slider-indicators .indicator-dot",
+        );
+        const btnPrev = document.getElementById("btn-slider-prev");
+        const btnNext = document.getElementById("btn-slider-next");
+        let currentSlide = 0;
 
-  <script type="module" src="/src/js/common.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. 단순 이미지 슬라이더 구동 스크립트
-      const slides = document.querySelectorAll('#house-image-slider .slide-item');
-      const dots = document.querySelectorAll('.slider-indicators .indicator-dot');
-      const btnPrev = document.getElementById('btn-slider-prev');
-      const btnNext = document.getElementById('btn-slider-next');
-      let currentSlide = 0;
+        function showSlide(index) {
+          if (index >= slides.length) {
+            currentSlide = 0;
+          } else if (index < 0) {
+            currentSlide = slides.length - 1;
+          } else {
+            currentSlide = index;
+          }
 
-      function showSlide(index) {
-        if (index >= slides.length) {
-          currentSlide = 0;
-        } else if (index < 0) {
-          currentSlide = slides.length - 1;
-        } else {
-          currentSlide = index;
+          slides.forEach((slide, idx) => {
+            if (idx === currentSlide) {
+              slide.classList.add("active");
+            } else {
+              slide.classList.remove("active");
+            }
+          });
+
+          dots.forEach((dot, idx) => {
+            if (idx === currentSlide) {
+              dot.classList.add("active");
+              dot.setAttribute("aria-selected", "true");
+            } else {
+              dot.classList.remove("active");
+              dot.setAttribute("aria-selected", "false");
+            }
+          });
         }
 
-        slides.forEach((slide, idx) => {
-          if (idx === currentSlide) {
-            slide.classList.add('active');
-          } else {
-            slide.classList.remove('active');
-          }
-        });
+        if (btnPrev && btnNext) {
+          btnPrev.addEventListener("click", () => {
+            showSlide(currentSlide - 1);
+          });
 
-        dots.forEach((dot, idx) => {
-          if (idx === currentSlide) {
-            dot.classList.add('active');
-            dot.setAttribute('aria-selected', 'true');
-          } else {
-            dot.classList.remove('active');
-            dot.setAttribute('aria-selected', 'false');
-          }
-        });
-      }
+          btnNext.addEventListener("click", () => {
+            showSlide(currentSlide + 1);
+          });
+        }
 
-      if (btnPrev && btnNext) {
-        btnPrev.addEventListener('click', () => {
-          showSlide(currentSlide - 1);
-        });
-
-        btnNext.addEventListener('click', () => {
-          showSlide(currentSlide + 1);
-        });
-      }
-
-      dots.forEach(dot => {
-        dot.addEventListener('click', (e) => {
-          const targetIndex = parseInt(e.currentTarget.getAttribute('data-target'), 10);
-          showSlide(targetIndex);
-        });
-      });
-
-      // 2. 주소 복사 스크립트
-      const btnCopy = document.getElementById('btn-copy-addr');
-      if (btnCopy) {
-        btnCopy.addEventListener('click', () => {
-          const addressText = "서울특별시 서대문구 연희동";
-          navigator.clipboard.writeText(addressText).then(() => {
-            alert('하우스 건립 예정지 주소가 클립보드에 복사되었습니다.');
-          }).catch(err => {
-            console.error('주소 복사 실패: ', err);
-            alert('주소 복사에 실패했습니다. 주소 영역을 직접 드래그하여 복사해 주세요.');
+        dots.forEach((dot) => {
+          dot.addEventListener("click", (e) => {
+            const targetIndex = parseInt(
+              e.currentTarget.getAttribute("data-target"),
+              10,
+            );
+            showSlide(targetIndex);
           });
         });
-      }
 
-      // 3. 아코디언 접근성 제어
-      const detailsElements = document.querySelectorAll('.accordion-item');
-      detailsElements.forEach(targetDetails => {
-        targetDetails.addEventListener('toggle', (e) => {
-          if (targetDetails.open) {
-            detailsElements.forEach(details => {
-              if (details !== targetDetails) {
-                details.removeAttribute('open');
-              }
-            });
-          }
+        // 2. 주소 복사 스크립트
+        const btnCopy = document.getElementById("btn-copy-addr");
+        if (btnCopy) {
+          btnCopy.addEventListener("click", () => {
+            const addressText = "서울특별시 서대문구 연희동";
+            navigator.clipboard
+              .writeText(addressText)
+              .then(() => {
+                alert("하우스 건립 예정지 주소가 클립보드에 복사되었습니다.");
+              })
+              .catch((err) => {
+                console.error("주소 복사 실패: ", err);
+                alert(
+                  "주소 복사에 실패했습니다. 주소 영역을 직접 드래그하여 복사해 주세요.",
+                );
+              });
+          });
+        }
+
+        // 3. 아코디언 접근성 제어
+        const detailsElements = document.querySelectorAll(".accordion-item");
+        detailsElements.forEach((targetDetails) => {
+          targetDetails.addEventListener("toggle", (e) => {
+            if (targetDetails.open) {
+              detailsElements.forEach((details) => {
+                if (details !== targetDetails) {
+                  details.removeAttribute("open");
+                }
+              });
+            }
+          });
         });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

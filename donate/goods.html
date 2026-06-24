@@ -1,439 +1,724 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 물품후원 페이지입니다. 환아와 가족들에게 꼭 필요한 물품으로 사랑을 전해주세요.">
-  <title>물품후원 - 한국로날드맥도날드하우스</title>
-  <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/css/donate.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 물품후원 페이지입니다. 환아와 가족들에게 꼭 필요한 물품으로 사랑을 전해주세요."
+    />
+    <title>물품후원 - 한국로날드맥도날드하우스</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/donate.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load ="src/includes/header.html" />
+    <div class="page-wrapper">
+      <main id="main-content" class="donate-wrapper">
+        <!-- 상단 헤더 영역 -->
+        <section class="donate-header">
+          <span class="badge badge-primary">Donation</span>
+          <h1 class="donate-title">후원하기</h1>
+        </section>
 
-  <div class="page-wrapper">
-    <main id="main-content" class="donate-wrapper">
-      
-      <!-- 상단 헤더 영역 -->
-      <section class="donate-header">
-        <span class="badge badge-primary">Donation</span>
-        <h1 class="donate-title">후원하기</h1>
-      </section>
-
-      <!-- 후원 구분 탭 GNB -->
-      <nav class="donate-tabs" aria-label="후원 유형 선택">
-        <div class="donate-tab-item">
-          <a href="/donate/regular.html" class="donate-tab-btn">정기후원</a>
-        </div>
-        <div class="donate-tab-item">
-          <a href="/donate/one-time.html" class="donate-tab-btn">일시후원</a>
-        </div>
-        <div class="donate-tab-item">
-          <a href="/donate/goods.html" class="donate-tab-btn active" aria-current="page">물품후원</a>
-        </div>
-      </nav>
-
-      <!-- 1. 물품후원 프로세스 안내 비주얼 스텝 카드 -->
-      <section class="goods-steps" aria-label="물품후원 진행 단계">
-        <div class="step-item">
-          <span class="step-num">01</span>
-          <h3 class="step-title">후원 신청</h3>
-          <p class="step-desc">홈페이지에서 물품 정보 및 정보 입력</p>
-        </div>
-        <div class="step-item">
-          <span class="step-num">02</span>
-          <h3 class="step-title">물품 발송</h3>
-          <p class="step-desc">택배 또는 직접 방문으로 물품 전달</p>
-        </div>
-        <div class="step-item">
-          <span class="step-num">03</span>
-          <h3 class="step-title">물품 검수</h3>
-          <p class="step-desc">하우스 담당자가 수량 및 상태 확인</p>
-        </div>
-        <div class="step-item">
-          <span class="step-num">04</span>
-          <h3 class="step-title">후원 완료</h3>
-          <p class="step-desc">기부금 영수증 발급 및 결과 안내</p>
-        </div>
-      </section>
-
-      <form id="donateForm" action="/donate/complete.html" method="GET" class="donate-form">
-        <!-- 2. 물품 정보 입력 카드 -->
-        <section class="donate-card">
-          <h2 class="donate-section-title">후원 물품 정보</h2>
-
-          <!-- 물품 카테고리 (8종 내외) -->
-          <div class="form-group">
-            <label for="goodsCategory" class="form-label">물품 카테고리</label>
-            <select id="goodsCategory" class="form-control" required>
-              <option value="" disabled selected>카테고리를 선택해주세요</option>
-              <option value="children">아동의류 및 잡화</option>
-              <option value="books">도서 및 아동교구</option>
-              <option value="hygiene">위생 및 위생용품 (기저귀, 물티슈 등)</option>
-              <option value="groceries">가공식품 및 식료품</option>
-              <option value="appliances">소형 가전 및 전자제품</option>
-              <option value="stationery">학용품 및 문구류</option>
-              <option value="necessities">생활필수품 (세제, 샴푸 등)</option>
-              <option value="medical">의료보조용품 (밴드, 연고 등)</option>
-            </select>
+        <!-- 후원 구분 탭 GNB -->
+        <nav class="donate-tabs" aria-label="후원 유형 선택">
+          <div class="donate-tab-item">
+            <a href="/donate/regular.html" class="donate-tab-btn">정기후원</a>
           </div>
-
-          <!-- 물품명 -->
-          <div class="form-group">
-            <label for="goodsName" class="form-label">물품명</label>
-            <input type="text" id="goodsName" class="form-control" placeholder="구체적인 물품명을 입력해주세요 (예: 락토핏 유산균 10박스)" required>
+          <div class="donate-tab-item">
+            <a href="/donate/one-time.html" class="donate-tab-btn">일시후원</a>
           </div>
-
-          <!-- 수량 및 단위 -->
-          <div class="form-group">
-            <span class="form-label">수량 및 단위</span>
-            <div style="display: flex; gap: var(--spacing-3);">
-              <div style="flex: 2;">
-                <input type="number" id="goodsQty" class="form-control" placeholder="수량" min="1" required>
-              </div>
-              <div style="flex: 1;">
-                <select id="goodsUnit" class="form-control" required>
-                  <option value="" disabled selected>단위</option>
-                  <option value="ea">개</option>
-                  <option value="box">박스</option>
-                  <option value="set">세트</option>
-                  <option value="pack">팩</option>
-                  <option value="kg">kg</option>
-                </select>
-              </div>
-            </div>
+          <div class="donate-tab-item">
+            <a
+              href="/donate/goods.html"
+              class="donate-tab-btn active"
+              aria-current="page"
+              >물품후원</a
+            >
           </div>
+        </nav>
 
-          <!-- 발송 방식 -->
-          <div class="form-group">
-            <span class="form-label">발송 방식</span>
-            <div class="chip-grid" id="deliveryChips" role="radiogroup" aria-label="발송 방식 선택">
-              <button type="button" class="chip-btn active" data-delivery="parcel" role="radio" aria-checked="true">택배 발송</button>
-              <button type="button" class="chip-btn" data-delivery="visit" role="radio" aria-checked="false">직접 방문</button>
-            </div>
+        <!-- 1. 물품후원 프로세스 안내 비주얼 스텝 카드 -->
+        <section class="goods-steps" aria-label="물품후원 진행 단계">
+          <div class="step-item">
+            <span class="step-num">01</span>
+            <h3 class="step-title">후원 신청</h3>
+            <p class="step-desc">홈페이지에서 물품 정보 및 정보 입력</p>
+          </div>
+          <div class="step-item">
+            <span class="step-num">02</span>
+            <h3 class="step-title">물품 발송</h3>
+            <p class="step-desc">택배 또는 직접 방문으로 물품 전달</p>
+          </div>
+          <div class="step-item">
+            <span class="step-num">03</span>
+            <h3 class="step-title">물품 검수</h3>
+            <p class="step-desc">하우스 담당자가 수량 및 상태 확인</p>
+          </div>
+          <div class="step-item">
+            <span class="step-num">04</span>
+            <h3 class="step-title">후원 완료</h3>
+            <p class="step-desc">기부금 영수증 발급 및 결과 안내</p>
           </div>
         </section>
 
-        <!-- 3. 후원자 정보 입력 카드 -->
-        <section class="donate-card">
-          <h2 class="donate-section-title">후원자 정보</h2>
-          
-          <!-- 후원자 구분 (개인 / 기업·단체) -->
-          <div class="form-group">
-            <span class="form-label">후원자 구분</span>
-            <div class="chip-grid" id="donorTypeChips" role="radiogroup" aria-label="후원자 구분 선택">
-              <button type="button" class="chip-btn active" data-type="individual" role="radio" aria-checked="true">개인 후원</button>
-              <button type="button" class="chip-btn" data-type="corporate" role="radio" aria-checked="false">기업·단체 후원</button>
-            </div>
-          </div>
+        <form
+          id="donateForm"
+          action="/donate/complete.html"
+          method="GET"
+          class="donate-form"
+        >
+          <!-- 2. 물품 정보 입력 카드 -->
+          <section class="donate-card">
+            <h2 class="donate-section-title">후원 물품 정보</h2>
 
-          <!-- 이름 / 기업명 -->
-          <div class="form-group">
-            <label for="donorName" class="form-label" id="nameLabel">후원자 이름</label>
-            <input type="text" id="donorName" class="form-control" placeholder="이름을 입력해주세요" required>
-          </div>
-
-          <!-- 연락처 -->
-          <div class="form-group">
-            <label for="donorPhone" class="form-label">휴대폰 번호</label>
-            <input type="tel" id="donorPhone" class="form-control" placeholder="숫자만 입력해주세요 (예: 01012345678)" required>
-          </div>
-
-          <!-- 이메일 -->
-          <div class="form-group">
-            <label for="donorEmail" class="form-label">이메일 주소</label>
-            <input type="email" id="donorEmail" class="form-control" placeholder="example@email.com" required>
-          </div>
-
-          <!-- 주소 입력 -->
-          <div class="form-group">
-            <span class="form-label">주소</span>
-            <div style="display: flex; gap: var(--spacing-2); margin-bottom: 0.8rem;">
-              <input type="text" id="postcode" class="form-control" placeholder="우편번호" style="flex: 1;" readonly required>
-              <button type="button" class="btn btn-secondary" style="min-height: 4.8rem; padding: 0 var(--spacing-4); font-size: 1.4rem;" onclick="sampleAddressSearch()">우편번호 검색</button>
-            </div>
-            <input type="text" id="address" class="form-control" placeholder="기본 주소" style="margin-bottom: 0.8rem;" readonly required>
-            <input type="text" id="detailAddress" class="form-control" placeholder="상세 주소를 입력해주세요" required>
-          </div>
-
-          <!-- 기부금 영수증 신청 여부 토글 -->
-          <div class="receipt-accordion">
+            <!-- 물품 카테고리 (8종 내외) -->
             <div class="form-group">
-              <span class="form-label">기부금 영수증 신청</span>
-              <div class="chip-grid" id="receiptChips" role="radiogroup" aria-label="기부금 영수증 신청 여부">
-                <button type="button" class="chip-btn" data-receipt="yes" role="radio" aria-checked="false">예 (신청함)</button>
-                <button type="button" class="chip-btn active" data-receipt="no" role="radio" aria-checked="true">아니오 (신청안함)</button>
+              <label for="goodsCategory" class="form-label"
+                >물품 카테고리</label
+              >
+              <select id="goodsCategory" class="form-control" required>
+                <option value="" disabled selected>
+                  카테고리를 선택해주세요
+                </option>
+                <option value="children">아동의류 및 잡화</option>
+                <option value="books">도서 및 아동교구</option>
+                <option value="hygiene">
+                  위생 및 위생용품 (기저귀, 물티슈 등)
+                </option>
+                <option value="groceries">가공식품 및 식료품</option>
+                <option value="appliances">소형 가전 및 전자제품</option>
+                <option value="stationery">학용품 및 문구류</option>
+                <option value="necessities">생활필수품 (세제, 샴푸 등)</option>
+                <option value="medical">의료보조용품 (밴드, 연고 등)</option>
+              </select>
+            </div>
+
+            <!-- 물품명 -->
+            <div class="form-group">
+              <label for="goodsName" class="form-label">물품명</label>
+              <input
+                type="text"
+                id="goodsName"
+                class="form-control"
+                placeholder="구체적인 물품명을 입력해주세요 (예: 락토핏 유산균 10박스)"
+                required
+              />
+            </div>
+
+            <!-- 수량 및 단위 -->
+            <div class="form-group">
+              <span class="form-label">수량 및 단위</span>
+              <div style="display: flex; gap: var(--spacing-3)">
+                <div style="flex: 2">
+                  <input
+                    type="number"
+                    id="goodsQty"
+                    class="form-control"
+                    placeholder="수량"
+                    min="1"
+                    required
+                  />
+                </div>
+                <div style="flex: 1">
+                  <select id="goodsUnit" class="form-control" required>
+                    <option value="" disabled selected>단위</option>
+                    <option value="ea">개</option>
+                    <option value="box">박스</option>
+                    <option value="set">세트</option>
+                    <option value="pack">팩</option>
+                    <option value="kg">kg</option>
+                  </select>
+                </div>
               </div>
             </div>
 
-            <!-- 아코디언 내용 영역 -->
-            <div class="accordion-content" id="receiptAccordionContent">
-              <!-- 개인/법인 탭 분기 -->
-              <div class="receipt-tabs" role="tablist">
-                <button type="button" class="receipt-tab-btn active" id="tabIndividual" role="tab" aria-selected="true" aria-controls="panelIndividual">개인(주민등록번호)</button>
-                <button type="button" class="receipt-tab-btn" id="tabCorporate" role="tab" aria-selected="false" aria-controls="panelCorporate">기업/단체(사업자번호)</button>
+            <!-- 발송 방식 -->
+            <div class="form-group">
+              <span class="form-label">발송 방식</span>
+              <div
+                class="chip-grid"
+                id="deliveryChips"
+                role="radiogroup"
+                aria-label="발송 방식 선택"
+              >
+                <button
+                  type="button"
+                  class="chip-btn active"
+                  data-delivery="parcel"
+                  role="radio"
+                  aria-checked="true"
+                >
+                  택배 발송
+                </button>
+                <button
+                  type="button"
+                  class="chip-btn"
+                  data-delivery="visit"
+                  role="radio"
+                  aria-checked="false"
+                >
+                  직접 방문
+                </button>
               </div>
+            </div>
+          </section>
 
-              <!-- 개인 패널 -->
-              <div class="receipt-panel active" id="panelIndividual" role="tabpanel" aria-labelledby="tabIndividual">
-                <div class="form-group">
-                  <label for="residentNo" class="form-label">주민등록번호 (13자리)</label>
-                  <input type="text" id="residentNo" class="form-control" placeholder="숫자만 입력해주세요 (예: 9001011234567)" maxlength="13">
-                </div>
+          <!-- 3. 후원자 정보 입력 카드 -->
+          <section class="donate-card">
+            <h2 class="donate-section-title">후원자 정보</h2>
+
+            <!-- 후원자 구분 (개인 / 기업·단체) -->
+            <div class="form-group">
+              <span class="form-label">후원자 구분</span>
+              <div
+                class="chip-grid"
+                id="donorTypeChips"
+                role="radiogroup"
+                aria-label="후원자 구분 선택"
+              >
+                <button
+                  type="button"
+                  class="chip-btn active"
+                  data-type="individual"
+                  role="radio"
+                  aria-checked="true"
+                >
+                  개인 후원
+                </button>
+                <button
+                  type="button"
+                  class="chip-btn"
+                  data-type="corporate"
+                  role="radio"
+                  aria-checked="false"
+                >
+                  기업·단체 후원
+                </button>
               </div>
+            </div>
 
-              <!-- 기업 패널 -->
-              <div class="receipt-panel" id="panelCorporate" role="tabpanel" aria-labelledby="tabCorporate">
-                <div class="form-group">
-                  <label for="businessNo" class="form-label">사업자등록번호 (10자리)</label>
-                  <input type="text" id="businessNo" class="form-control" placeholder="숫자만 입력해주세요 (예: 1234567890)" maxlength="10">
-                  <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 0.4rem;">
-                    입력하신 사업자등록번호로 기부금 영수증이 발급됩니다. 미입력 단체의 경우 담당자 정보 기준으로 발급됩니다.
-                  </p>
-                </div>
+            <!-- 이름 / 기업명 -->
+            <div class="form-group">
+              <label for="donorName" class="form-label" id="nameLabel"
+                >후원자 이름</label
+              >
+              <input
+                type="text"
+                id="donorName"
+                class="form-control"
+                placeholder="이름을 입력해주세요"
+                required
+              />
+            </div>
+
+            <!-- 연락처 -->
+            <div class="form-group">
+              <label for="donorPhone" class="form-label">휴대폰 번호</label>
+              <input
+                type="tel"
+                id="donorPhone"
+                class="form-control"
+                placeholder="숫자만 입력해주세요 (예: 01012345678)"
+                required
+              />
+            </div>
+
+            <!-- 이메일 -->
+            <div class="form-group">
+              <label for="donorEmail" class="form-label">이메일 주소</label>
+              <input
+                type="email"
+                id="donorEmail"
+                class="form-control"
+                placeholder="example@email.com"
+                required
+              />
+            </div>
+
+            <!-- 주소 입력 -->
+            <div class="form-group">
+              <span class="form-label">주소</span>
+              <div
+                style="
+                  display: flex;
+                  gap: var(--spacing-2);
+                  margin-bottom: 0.8rem;
+                "
+              >
+                <input
+                  type="text"
+                  id="postcode"
+                  class="form-control"
+                  placeholder="우편번호"
+                  style="flex: 1"
+                  readonly
+                  required
+                />
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  style="
+                    min-height: 4.8rem;
+                    padding: 0 var(--spacing-4);
+                    font-size: 1.4rem;
+                  "
+                  onclick="sampleAddressSearch()"
+                >
+                  우편번호 검색
+                </button>
               </div>
+              <input
+                type="text"
+                id="address"
+                class="form-control"
+                placeholder="기본 주소"
+                style="margin-bottom: 0.8rem"
+                readonly
+                required
+              />
+              <input
+                type="text"
+                id="detailAddress"
+                class="form-control"
+                placeholder="상세 주소를 입력해주세요"
+                required
+              />
+            </div>
 
-              <!-- 영수증 주소지 동일 선택 -->
-              <div class="form-group" style="margin-top: var(--spacing-4);">
-                <label class="custom-checkbox">
-                  <input type="checkbox" id="sameAddressCheckbox">
-                  <span>후원자 정보 주소와 동일</span>
-                </label>
-              </div>
-
-              <!-- 기부금 영수증 주소 입력 -->
+            <!-- 기부금 영수증 신청 여부 토글 -->
+            <div class="receipt-accordion">
               <div class="form-group">
-                <span class="form-label">기부금 영수증 주소</span>
-                <div style="display: flex; gap: var(--spacing-2); margin-bottom: 0.8rem;">
-                  <input type="text" id="receiptPostcode" class="form-control" placeholder="우편번호" style="flex: 1;" readonly>
-                  <button type="button" class="btn btn-secondary" style="min-height: 4.8rem; padding: 0 var(--spacing-4); font-size: 1.4rem;" onclick="sampleAddressSearch('receipt')">우편번호 검색</button>
+                <span class="form-label">기부금 영수증 신청</span>
+                <div
+                  class="chip-grid"
+                  id="receiptChips"
+                  role="radiogroup"
+                  aria-label="기부금 영수증 신청 여부"
+                >
+                  <button
+                    type="button"
+                    class="chip-btn"
+                    data-receipt="yes"
+                    role="radio"
+                    aria-checked="false"
+                  >
+                    예 (신청함)
+                  </button>
+                  <button
+                    type="button"
+                    class="chip-btn active"
+                    data-receipt="no"
+                    role="radio"
+                    aria-checked="true"
+                  >
+                    아니오 (신청안함)
+                  </button>
                 </div>
-                <input type="text" id="receiptAddress" class="form-control" placeholder="기본 주소" style="margin-bottom: 0.8rem;" readonly>
-                <input type="text" id="receiptDetailAddress" class="form-control" placeholder="상세 주소를 입력해주세요">
               </div>
 
-              <div class="legal-notice">
-                수집된 정보는 관련 법령에 따라 5년간 안전하게 보관됩니다. 기부금 영수증은 국세청 홈택스 간소화 서비스를 통해 상시 조회 가능합니다.
+              <!-- 아코디언 내용 영역 -->
+              <div class="accordion-content" id="receiptAccordionContent">
+                <!-- 개인/법인 탭 분기 -->
+                <div class="receipt-tabs" role="tablist">
+                  <button
+                    type="button"
+                    class="receipt-tab-btn active"
+                    id="tabIndividual"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="panelIndividual"
+                  >
+                    개인(주민등록번호)
+                  </button>
+                  <button
+                    type="button"
+                    class="receipt-tab-btn"
+                    id="tabCorporate"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="panelCorporate"
+                  >
+                    기업/단체(사업자번호)
+                  </button>
+                </div>
+
+                <!-- 개인 패널 -->
+                <div
+                  class="receipt-panel active"
+                  id="panelIndividual"
+                  role="tabpanel"
+                  aria-labelledby="tabIndividual"
+                >
+                  <div class="form-group">
+                    <label for="residentNo" class="form-label"
+                      >주민등록번호 (13자리)</label
+                    >
+                    <input
+                      type="text"
+                      id="residentNo"
+                      class="form-control"
+                      placeholder="숫자만 입력해주세요 (예: 9001011234567)"
+                      maxlength="13"
+                    />
+                  </div>
+                </div>
+
+                <!-- 기업 패널 -->
+                <div
+                  class="receipt-panel"
+                  id="panelCorporate"
+                  role="tabpanel"
+                  aria-labelledby="tabCorporate"
+                >
+                  <div class="form-group">
+                    <label for="businessNo" class="form-label"
+                      >사업자등록번호 (10자리)</label
+                    >
+                    <input
+                      type="text"
+                      id="businessNo"
+                      class="form-control"
+                      placeholder="숫자만 입력해주세요 (예: 1234567890)"
+                      maxlength="10"
+                    />
+                    <p
+                      style="
+                        font-size: 1.2rem;
+                        color: var(--text-muted);
+                        margin-top: 0.4rem;
+                      "
+                    >
+                      입력하신 사업자등록번호로 기부금 영수증이 발급됩니다.
+                      미입력 단체의 경우 담당자 정보 기준으로 발급됩니다.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 영수증 주소지 동일 선택 -->
+                <div class="form-group" style="margin-top: var(--spacing-4)">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" id="sameAddressCheckbox" />
+                    <span>후원자 정보 주소와 동일</span>
+                  </label>
+                </div>
+
+                <!-- 기부금 영수증 주소 입력 -->
+                <div class="form-group">
+                  <span class="form-label">기부금 영수증 주소</span>
+                  <div
+                    style="
+                      display: flex;
+                      gap: var(--spacing-2);
+                      margin-bottom: 0.8rem;
+                    "
+                  >
+                    <input
+                      type="text"
+                      id="receiptPostcode"
+                      class="form-control"
+                      placeholder="우편번호"
+                      style="flex: 1"
+                      readonly
+                    />
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      style="
+                        min-height: 4.8rem;
+                        padding: 0 var(--spacing-4);
+                        font-size: 1.4rem;
+                      "
+                      onclick="sampleAddressSearch('receipt')"
+                    >
+                      우편번호 검색
+                    </button>
+                  </div>
+                  <input
+                    type="text"
+                    id="receiptAddress"
+                    class="form-control"
+                    placeholder="기본 주소"
+                    style="margin-bottom: 0.8rem"
+                    readonly
+                  />
+                  <input
+                    type="text"
+                    id="receiptDetailAddress"
+                    class="form-control"
+                    placeholder="상세 주소를 입력해주세요"
+                  />
+                </div>
+
+                <div class="legal-notice">
+                  수집된 정보는 관련 법령에 따라 5년간 안전하게 보관됩니다.
+                  기부금 영수증은 국세청 홈택스 간소화 서비스를 통해 상시 조회
+                  가능합니다.
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <!-- 4. 약관 동의 및 신청 고지 -->
-        <section class="donate-card">
-          <h2 class="donate-section-title">약관 동의</h2>
+          <!-- 4. 약관 동의 및 신청 고지 -->
+          <section class="donate-card">
+            <h2 class="donate-section-title">약관 동의</h2>
 
-          <div class="donation-notice-box">
-            <ul>
-              <li>방문 후원 시 하우스 내 환아들의 면역력 보호를 위해 사전 조율된 품목만 기부 가능합니다.</li>
-              <li>중고 물품, 개봉된 식료품 등 일부 품목은 검수 과정에서 반려될 수 있습니다.</li>
-              <li>물품 기부 영수증은 물품 시가 기준(영수증 또는 공정가액)으로 환산하여 국세청에 신고됩니다.</li>
-            </ul>
-          </div>
+            <div class="donation-notice-box">
+              <ul>
+                <li>
+                  방문 후원 시 하우스 내 환아들의 면역력 보호를 위해 사전 조율된
+                  품목만 기부 가능합니다.
+                </li>
+                <li>
+                  중고 물품, 개봉된 식료품 등 일부 품목은 검수 과정에서 반려될
+                  수 있습니다.
+                </li>
+                <li>
+                  물품 기부 영수증은 물품 시가 기준(영수증 또는 공정가액)으로
+                  환산하여 국세청에 신고됩니다.
+                </li>
+              </ul>
+            </div>
 
-          <div class="agree-terms-container">
-            <div class="form-group">
-              <label class="custom-checkbox" style="font-weight: 700; font-size: 1.6rem; margin-bottom: var(--spacing-3);">
-                <input type="checkbox" id="agreeAll">
-                <span>전체 약관에 동의합니다.</span>
-              </label>
-              
-              <div class="agree-item">
-                <label class="custom-checkbox">
-                  <input type="checkbox" class="agree-sub" required>
-                  <span>[필수] 개인정보 수집 및 이용 동의</span>
+            <div class="agree-terms-container">
+              <div class="form-group">
+                <label
+                  class="custom-checkbox"
+                  style="
+                    font-weight: 700;
+                    font-size: 1.6rem;
+                    margin-bottom: var(--spacing-3);
+                  "
+                >
+                  <input type="checkbox" id="agreeAll" />
+                  <span>전체 약관에 동의합니다.</span>
                 </label>
-                <a href="#none" class="agree-link">내용보기</a>
+
+                <div class="agree-item">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" class="agree-sub" required />
+                    <span>[필수] 개인정보 수집 및 이용 동의</span>
+                  </label>
+                  <a href="#none" class="agree-link">내용보기</a>
+                </div>
               </div>
             </div>
+          </section>
+
+          <!-- 물품후원 신청 버튼 -->
+          <div style="margin-top: var(--spacing-8)">
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              style="min-height: 5.6rem; font-size: 1.8rem; font-weight: 700"
+            >
+              물품후원 신청하기
+            </button>
           </div>
-        </section>
+        </form>
+      </main>
 
-        <!-- 물품후원 신청 버튼 -->
-        <div style="margin-top: var(--spacing-8);">
-          <button type="submit" class="btn btn-primary w-100" style="min-height: 5.6rem; font-size: 1.8rem; font-weight: 700;">물품후원 신청하기</button>
-        </div>
-      </form>
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
 
-    </main>
+    <script type="module" src="/src/js/common.js"></script>
 
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="src/includes/footer.html" />
-  </div>
-
-  <script type="module" src="/src/js/common.js"></script>
-  
-  <!-- 인터랙션 제어 스크립트 -->
-  <script>
-    // 1. 발송 방식 칩 인터랙션
-    const deliveryChips = document.querySelectorAll('#deliveryChips .chip-btn');
-    deliveryChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        deliveryChips.forEach(c => {
-          c.classList.remove('active');
-          c.setAttribute('aria-checked', 'false');
+    <!-- 인터랙션 제어 스크립트 -->
+    <script>
+      // 1. 발송 방식 칩 인터랙션
+      const deliveryChips = document.querySelectorAll(
+        "#deliveryChips .chip-btn",
+      );
+      deliveryChips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          deliveryChips.forEach((c) => {
+            c.classList.remove("active");
+            c.setAttribute("aria-checked", "false");
+          });
+          chip.classList.add("active");
+          chip.setAttribute("aria-checked", "true");
         });
-        chip.classList.add('active');
-        chip.setAttribute('aria-checked', 'true');
       });
-    });
 
-    // 2. 후원자 구분 (개인 / 기업·단체) 칩 인터랙션
-    const donorTypeChips = document.querySelectorAll('#donorTypeChips .chip-btn');
-    const nameLabel = document.getElementById('nameLabel');
-    const donorName = document.getElementById('donorName');
+      // 2. 후원자 구분 (개인 / 기업·단체) 칩 인터랙션
+      const donorTypeChips = document.querySelectorAll(
+        "#donorTypeChips .chip-btn",
+      );
+      const nameLabel = document.getElementById("nameLabel");
+      const donorName = document.getElementById("donorName");
 
-    donorTypeChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        donorTypeChips.forEach(c => {
-          c.classList.remove('active');
-          c.setAttribute('aria-checked', 'false');
+      donorTypeChips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          donorTypeChips.forEach((c) => {
+            c.classList.remove("active");
+            c.setAttribute("aria-checked", "false");
+          });
+          chip.classList.add("active");
+          chip.setAttribute("aria-checked", "true");
+
+          if (chip.dataset.type === "corporate") {
+            nameLabel.textContent = "기업·단체명";
+            donorName.placeholder = "기업·단체명을 입력해주세요";
+            switchReceiptTab("corporate");
+          } else {
+            nameLabel.textContent = "후원자 이름";
+            donorName.placeholder = "이름을 입력해주세요";
+            switchReceiptTab("individual");
+          }
         });
-        chip.classList.add('active');
-        chip.setAttribute('aria-checked', 'true');
+      });
 
-        if (chip.dataset.type === 'corporate') {
-          nameLabel.textContent = '기업·단체명';
-          donorName.placeholder = '기업·단체명을 입력해주세요';
-          switchReceiptTab('corporate');
+      // 3. 기부금 영수증 신청 여부 아코디언 토글
+      const receiptChips = document.querySelectorAll("#receiptChips .chip-btn");
+      const receiptAccordionContent = document.getElementById(
+        "receiptAccordionContent",
+      );
+
+      receiptChips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          receiptChips.forEach((c) => {
+            c.classList.remove("active");
+            c.setAttribute("aria-checked", "false");
+          });
+          chip.classList.add("active");
+          chip.setAttribute("aria-checked", "true");
+
+          if (chip.dataset.receipt === "yes") {
+            receiptAccordionContent.classList.add("active");
+            setReceiptRequired(true);
+          } else {
+            receiptAccordionContent.classList.remove("active");
+            setReceiptRequired(false);
+          }
+        });
+      });
+
+      function setReceiptRequired(required) {
+        const residentNo = document.getElementById("residentNo");
+        const businessNo = document.getElementById("businessNo");
+        const receiptPostcode = document.getElementById("receiptPostcode");
+        const receiptAddress = document.getElementById("receiptAddress");
+        const receiptDetailAddress = document.getElementById(
+          "receiptDetailAddress",
+        );
+
+        if (required) {
+          const isIndividual = document
+            .getElementById("tabIndividual")
+            .classList.contains("active");
+          if (isIndividual) {
+            residentNo.setAttribute("required", "true");
+            businessNo.removeAttribute("required");
+          } else {
+            businessNo.setAttribute("required", "true");
+            residentNo.removeAttribute("required");
+          }
+          receiptPostcode.setAttribute("required", "true");
+          receiptAddress.setAttribute("required", "true");
+          receiptDetailAddress.setAttribute("required", "true");
         } else {
-          nameLabel.textContent = '후원자 이름';
-          donorName.placeholder = '이름을 입력해주세요';
-          switchReceiptTab('individual');
+          residentNo.removeAttribute("required");
+          businessNo.removeAttribute("required");
+          receiptPostcode.removeAttribute("required");
+          receiptAddress.removeAttribute("required");
+          receiptDetailAddress.removeAttribute("required");
         }
-      });
-    });
+      }
 
-    // 3. 기부금 영수증 신청 여부 아코디언 토글
-    const receiptChips = document.querySelectorAll('#receiptChips .chip-btn');
-    const receiptAccordionContent = document.getElementById('receiptAccordionContent');
+      // 기부금 영수증 탭 전환 함수
+      const tabIndividual = document.getElementById("tabIndividual");
+      const tabCorporate = document.getElementById("tabCorporate");
+      const panelIndividual = document.getElementById("panelIndividual");
+      const panelCorporate = document.getElementById("panelCorporate");
 
-    receiptChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        receiptChips.forEach(c => {
-          c.classList.remove('active');
-          c.setAttribute('aria-checked', 'false');
-        });
-        chip.classList.add('active');
-        chip.setAttribute('aria-checked', 'true');
-
-        if (chip.dataset.receipt === 'yes') {
-          receiptAccordionContent.classList.add('active');
+      function switchReceiptTab(type) {
+        if (type === "individual") {
+          tabIndividual.classList.add("active");
+          tabIndividual.setAttribute("aria-selected", "true");
+          tabCorporate.classList.remove("active");
+          tabCorporate.setAttribute("aria-selected", "false");
+          panelIndividual.classList.add("active");
+          panelCorporate.classList.remove("active");
+        } else {
+          tabCorporate.classList.add("active");
+          tabCorporate.setAttribute("aria-selected", "true");
+          tabIndividual.classList.remove("active");
+          tabIndividual.setAttribute("aria-selected", "false");
+          panelCorporate.classList.add("active");
+          panelIndividual.classList.remove("active");
+        }
+        const isReceiptYes = document
+          .querySelector('#receiptChips .chip-btn[data-receipt="yes"]')
+          .classList.contains("active");
+        if (isReceiptYes) {
           setReceiptRequired(true);
+        }
+      }
+
+      tabIndividual.addEventListener("click", () =>
+        switchReceiptTab("individual"),
+      );
+      tabCorporate.addEventListener("click", () =>
+        switchReceiptTab("corporate"),
+      );
+
+      // 4. 후원자 주소 동일 체크박스 로직
+      const sameAddressCheckbox = document.getElementById(
+        "sameAddressCheckbox",
+      );
+      sameAddressCheckbox.addEventListener("change", () => {
+        if (sameAddressCheckbox.checked) {
+          document.getElementById("receiptPostcode").value =
+            document.getElementById("postcode").value;
+          document.getElementById("receiptAddress").value =
+            document.getElementById("address").value;
+          document.getElementById("receiptDetailAddress").value =
+            document.getElementById("detailAddress").value;
         } else {
-          receiptAccordionContent.classList.remove('active');
-          setReceiptRequired(false);
+          document.getElementById("receiptPostcode").value = "";
+          document.getElementById("receiptAddress").value = "";
+          document.getElementById("receiptDetailAddress").value = "";
         }
       });
-    });
 
-    function setReceiptRequired(required) {
-      const residentNo = document.getElementById('residentNo');
-      const businessNo = document.getElementById('businessNo');
-      const receiptPostcode = document.getElementById('receiptPostcode');
-      const receiptAddress = document.getElementById('receiptAddress');
-      const receiptDetailAddress = document.getElementById('receiptDetailAddress');
+      // 5. 약관동의 전체선택 토글
+      const agreeAll = document.getElementById("agreeAll");
+      const agreeSubs = document.querySelectorAll(".agree-sub");
 
-      if (required) {
-        const isIndividual = document.getElementById('tabIndividual').classList.contains('active');
-        if (isIndividual) {
-          residentNo.setAttribute('required', 'true');
-          businessNo.removeAttribute('required');
+      agreeAll.addEventListener("change", () => {
+        agreeSubs.forEach((sub) => {
+          sub.checked = agreeAll.checked;
+        });
+      });
+
+      agreeSubs.forEach((sub) => {
+        sub.addEventListener("change", () => {
+          const allChecked = Array.from(agreeSubs).every((s) => s.checked);
+          agreeAll.checked = allChecked;
+        });
+      });
+
+      // 6. 가상의 우편번호 검색 팝업 함수
+      function sampleAddressSearch(type) {
+        if (type === "receipt") {
+          document.getElementById("receiptPostcode").value = "06132";
+          document.getElementById("receiptAddress").value =
+            "서울특별시 강남구 테헤란로 152";
+          document.getElementById("receiptDetailAddress").focus();
         } else {
-          businessNo.setAttribute('required', 'true');
-          residentNo.removeAttribute('required');
+          document.getElementById("postcode").value = "06132";
+          document.getElementById("address").value =
+            "서울특별시 강남구 테헤란로 152";
+          document.getElementById("detailAddress").focus();
         }
-        receiptPostcode.setAttribute('required', 'true');
-        receiptAddress.setAttribute('required', 'true');
-        receiptDetailAddress.setAttribute('required', 'true');
-      } else {
-        residentNo.removeAttribute('required');
-        businessNo.removeAttribute('required');
-        receiptPostcode.removeAttribute('required');
-        receiptAddress.removeAttribute('required');
-        receiptDetailAddress.removeAttribute('required');
       }
-    }
-
-    // 기부금 영수증 탭 전환 함수
-    const tabIndividual = document.getElementById('tabIndividual');
-    const tabCorporate = document.getElementById('tabCorporate');
-    const panelIndividual = document.getElementById('panelIndividual');
-    const panelCorporate = document.getElementById('panelCorporate');
-
-    function switchReceiptTab(type) {
-      if (type === 'individual') {
-        tabIndividual.classList.add('active');
-        tabIndividual.setAttribute('aria-selected', 'true');
-        tabCorporate.classList.remove('active');
-        tabCorporate.setAttribute('aria-selected', 'false');
-        panelIndividual.classList.add('active');
-        panelCorporate.classList.remove('active');
-      } else {
-        tabCorporate.classList.add('active');
-        tabCorporate.setAttribute('aria-selected', 'true');
-        tabIndividual.classList.remove('active');
-        tabIndividual.setAttribute('aria-selected', 'false');
-        panelCorporate.classList.add('active');
-        panelIndividual.classList.remove('active');
-      }
-      const isReceiptYes = document.querySelector('#receiptChips .chip-btn[data-receipt="yes"]').classList.contains('active');
-      if (isReceiptYes) {
-        setReceiptRequired(true);
-      }
-    }
-
-    tabIndividual.addEventListener('click', () => switchReceiptTab('individual'));
-    tabCorporate.addEventListener('click', () => switchReceiptTab('corporate'));
-
-    // 4. 후원자 주소 동일 체크박스 로직
-    const sameAddressCheckbox = document.getElementById('sameAddressCheckbox');
-    sameAddressCheckbox.addEventListener('change', () => {
-      if (sameAddressCheckbox.checked) {
-        document.getElementById('receiptPostcode').value = document.getElementById('postcode').value;
-        document.getElementById('receiptAddress').value = document.getElementById('address').value;
-        document.getElementById('receiptDetailAddress').value = document.getElementById('detailAddress').value;
-      } else {
-        document.getElementById('receiptPostcode').value = '';
-        document.getElementById('receiptAddress').value = '';
-        document.getElementById('receiptDetailAddress').value = '';
-      }
-    });
-
-    // 5. 약관동의 전체선택 토글
-    const agreeAll = document.getElementById('agreeAll');
-    const agreeSubs = document.querySelectorAll('.agree-sub');
-
-    agreeAll.addEventListener('change', () => {
-      agreeSubs.forEach(sub => {
-        sub.checked = agreeAll.checked;
-      });
-    });
-
-    agreeSubs.forEach(sub => {
-      sub.addEventListener('change', () => {
-        const allChecked = Array.from(agreeSubs).every(s => s.checked);
-        agreeAll.checked = allChecked;
-      });
-    });
-
-    // 6. 가상의 우편번호 검색 팝업 함수
-    function sampleAddressSearch(type) {
-      if (type === 'receipt') {
-        document.getElementById('receiptPostcode').value = '06132';
-        document.getElementById('receiptAddress').value = '서울특별시 강남구 테헤란로 152';
-        document.getElementById('receiptDetailAddress').focus();
-      } else {
-        document.getElementById('postcode').value = '06132';
-        document.getElementById('address').value = '서울특별시 강남구 테헤란로 152';
-        document.getElementById('detailAddress').focus();
-      }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>

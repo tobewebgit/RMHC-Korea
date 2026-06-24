@@ -1,5 +1,0 @@
-<svg width="240" height="90" viewBox="0 0 240 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- 둥글고 러프한 말풍선 찌그러진 사각형 패스 -->
-  <path d="M10 40C10 20 20 10 40 10H200C220 10 230 20 230 40V50C230 70 220 80 200 80H120L100 90L105 80H40C20 80 10 70 10 50V40Z" fill="#ffc72c" fill-opacity="0.9" stroke="#ffc72c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 3"/>
-  <path d="M13 38C13 22 22 13 38 13H202C218 13 227 22 227 38V52C227 68 218 77 202 77H118L104 84L108 77H38C22 77 13 68 13 52V38Z" stroke="white" stroke-width="1.5" stroke-dasharray="6 6"/>
-</svg>

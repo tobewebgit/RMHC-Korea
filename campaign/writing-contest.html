@@ -1,214 +1,310 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="환아와 가족, 그리고 이들을 응원하는 시민들이 함께 마음의 글을 나누는 RMHC Korea 울림백일장 캠페인입니다. 따뜻한 이야기로 서로에게 큰 위안을 나누어 주세요.">
-  <title>울림백일장 - RMHC Korea</title>
-  <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/css/campaign.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="환아와 가족, 그리고 이들을 응원하는 시민들이 함께 마음의 글을 나누는 RMHC Korea 울림백일장 캠페인입니다. 따뜻한 이야기로 서로에게 큰 위안을 나누어 주세요."
+    />
+    <title>울림백일장 - RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/campaign.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load ="src/includes/header.html" />
-
-  <div class="page-wrapper">
-    <main id="main-content" class="campaign-detail-container theme-writing">
-      
-      <!-- 1. 히어로 비주얼 영역 (LCP 최적화 및 CLS 방지) -->
-      <section class="campaign-hero" aria-label="울림백일장 캠페인 소개 비주얼">
-        <div class="campaign-hero__bg">
-          <img src="/src/images/campaign/writing_hero.jpg" width="1920" height="560" fetchpriority="high" alt="알록달록한 크레파스와 연필로 스케치북 위에 정성스럽게 글과 그림을 그리고 있는 아이의 손">
-        </div>
-        <div class="campaign-hero__overlay"></div>
-        <div class="campaign-hero__content">
-          <span class="campaign-hero__badge">RMHC WRITING CONTEST</span>
-          <h1 class="campaign-hero__title">글로 전하는 위로,<br>함께 나누는 마음 - 울림백일장</h1>
-          <p class="campaign-hero__desc">
-            울림백일장은 장기 투병으로 몸과 마음이 지친 환아들과 가족들, 그리고 이들을 지지하는 이웃들이<br>
-            자신의 내면을 들여다보고 글과 그림을 통해 마음의 연대와 치유를 경험하는 특별한 문화 예술 캠페인입니다.
-          </p>
-          <div class="campaign-hero__actions">
-            <a href="#rules-section" class="btn btn-secondary text-primary-color font-bold">공모 요강 요약</a>
-            <a href="/join/form.html" class="btn btn-primary">백일장 작품 접수하기</a>
+    <div class="page-wrapper">
+      <main id="main-content" class="campaign-detail-container theme-writing">
+        <!-- 1. 히어로 비주얼 영역 (LCP 최적화 및 CLS 방지) -->
+        <section
+          class="campaign-hero"
+          aria-label="울림백일장 캠페인 소개 비주얼"
+        >
+          <div class="campaign-hero__bg">
+            <img
+              src="/src/images/campaign/writing_hero.jpg"
+              width="1920"
+              height="560"
+              fetchpriority="high"
+              alt="알록달록한 크레파스와 연필로 스케치북 위에 정성스럽게 글과 그림을 그리고 있는 아이의 손"
+            />
           </div>
-        </div>
-      </section>
-
-      <!-- 2. 캠페인 취지 및 소구 스토리 -->
-      <section class="campaign-section campaign-section--white" aria-labelledby="intro-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">Contest Intention</span>
-            <h2 id="intro-title" class="campaign-section__title">마음의 글귀가 희망의 메아리가 됩니다</h2>
-            <p class="campaign-section__desc">
-              오랜 병원 생활 동안 마음에 쌓여 있던 슬픔, 불안, 소망 등의 다양한 감정을 종이 위에 끄집어내는 과정은 정서적 정화와 자아 존중감을 드높이는 치유 과정(Creative Therapy)이 됩니다.
+          <div class="campaign-hero__overlay"></div>
+          <div class="campaign-hero__content">
+            <span class="campaign-hero__badge">RMHC WRITING CONTEST</span>
+            <h1 class="campaign-hero__title">
+              글로 전하는 위로,<br />함께 나누는 마음 - 울림백일장
+            </h1>
+            <p class="campaign-hero__desc">
+              울림백일장은 장기 투병으로 몸과 마음이 지친 환아들과 가족들,
+              그리고 이들을 지지하는 이웃들이<br />
+              자신의 내면을 들여다보고 글과 그림을 통해 마음의 연대와 치유를
+              경험하는 특별한 문화 예술 캠페인입니다.
             </p>
-          </div>
-
-          <div class="campaign-grid campaign-grid--3cols">
-            <!-- 스토리 카드 1 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/writing_story1.jpg" width="380" height="214" loading="lazy" alt="환아가 병상 위에 엎드려 알록달록하게 그림일기를 그리고 있는 모습">
-              </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">정서적 치유</span>
-                <h3 class="story-card__title">종이 위에 펼치는 내면 치료</h3>
-                <p class="story-card__excerpt">
-                  병마와 싸우는 환아들이 언어로 다 표현하지 못했던 아픔과 희망을 예술적 글쓰기와 그림을 통해 끄집어내어 정신적인 평안을 되찾을 수 있게 돕습니다.
-                </p>
-              </div>
-            </article>
-
-            <!-- 스토리 카드 2 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/writing_story2.jpg" width="380" height="214" loading="lazy" alt="가족들이 거실 테이블에 옹기종기 모여 앉아 서로의 편지를 공유하며 미소 짓는 모습">
-              </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">가족 간의 소통</span>
-                <h3 class="story-card__title">말하지 못했던 진심의 교류</h3>
-                <p class="story-card__excerpt">
-                  환아의 형제자매, 보호자들도 함께 공모전에 응모하며 그동안 간병 생활 속에서 서로 털어놓지 못했던 애틋함과 미안함을 전하는 연결 다리가 됩니다.
-                </p>
-              </div>
-            </article>
-
-            <!-- 스토리 카드 3 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/writing_story3.jpg" width="380" height="214" loading="lazy" alt="울림백일장 수상작들을 엮어 출판한 정갈한 에세이 도서 모습">
-              </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">사회적 울림</span>
-                <h3 class="story-card__title">희망을 증명하는 수상 도서 출판</h3>
-                <p class="story-card__excerpt">
-                  수상작들은 예쁘게 다듬어져 매년 작품집 도서로 정식 출판되며, 후원자와 일반 시민들에게 나누어져 중증 환아들의 생명력과 위대한 용기를 널리 알립니다.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. 운영 성과 지표 (임팩트) -->
-      <section class="campaign-section campaign-section--ivory" aria-labelledby="impact-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">Contest Records</span>
-            <h2 id="impact-title" class="campaign-section__title">마음에서 마음으로 퍼져 나간 울림</h2>
-            <p class="campaign-section__desc">
-              매 공모전마다 쏟아지는 뜨거운 이야기들과 예술적 위로의 물결은 우리 사회의 나눔 정신을 일깨우는 귀한 자산이 되었습니다.
-            </p>
-          </div>
-
-          <div class="campaign-grid campaign-grid--3cols">
-            <!-- 지표 1 -->
-            <div class="stat-card">
-              <div class="stat-card__number">6회 개최</div>
-              <div class="stat-card__label">백일장 개최 주기</div>
-              <div class="stat-card__desc">해마다 성장을 거듭하여 아이들의 목소리를 담아 온 축제</div>
-            </div>
-
-            <!-- 지표 2 -->
-            <div class="stat-card">
-              <div class="stat-card__number">1,950+ 편</div>
-              <div class="stat-card__label">누적 접수 작품 수</div>
-              <div class="stat-card__desc">전국에서 환아, 가족, 일반 시민들이 보내온 진심 서린 글과 그림</div>
-            </div>
-
-            <!-- 지표 3 -->
-            <div class="stat-card">
-              <div class="stat-card__number">96 명</div>
-              <div class="stat-card__label">누적 수상자 및 장학생</div>
-              <div class="stat-card__desc">우수한 감동을 선사한 수상자들에게 전달된 격려 장학금 수혜자 수</div>
+            <div class="campaign-hero__actions">
+              <a
+                href="#rules-section"
+                class="btn btn-secondary text-primary-color font-bold"
+                >공모 요강 요약</a
+              >
+              <a href="/join/form.html" class="btn btn-primary"
+                >백일장 작품 접수하기</a
+              >
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- 4. 상세 공모 및 요강 테이블 안내 -->
-      <section id="rules-section" class="campaign-section campaign-section--white" aria-labelledby="rules-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">Contest Guide</span>
-            <h2 id="rules-title" class="campaign-section__title">올해 울림백일장 공모 요강</h2>
-            <p class="campaign-section__desc">
-              아래 공모 주제 및 접수 규격을 확인하시어 아픔을 위로하고 세상을 밝히는 아름다운 이야기에 참여해 주시기 바랍니다.
-            </p>
-          </div>
-
-          <div class="campaign-table-wrapper">
-            <table class="campaign-table">
-              <caption>올해 울림백일장 공모 주제, 대상, 접수 형식, 기한 및 시상 내용 안내</caption>
-              <tbody>
-                <tr>
-                  <th scope="row">공모 주제</th>
-                  <td>
-                    <strong>1. 하우스와 나의 가족:</strong> RMHC 패밀리하우스에서의 추억이나 따뜻한 가족 이야기<br>
-                    <strong>2. 희망의 속삭임:</strong> 치료 중인 소아 환아와 가족을 위로하고 응원하는 편지 및 에세이
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">응모 자격</th>
-                  <td>
-                    <strong>1. 환아 및 가족 부문:</strong> 전국 주요 병원에서 장기 치료 중인 소아 환아 및 부모, 형제자매<br>
-                    <strong>2. 일반 시민 부문:</strong> 환아와 가족을 따뜻하게 지지하고 응원하고자 하는 초등생 이상 누구나
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">응모 분야 및 규격</th>
-                  <td>
-                    <strong>1. 글짓기 (시/수필):</strong> 줄글 형태의 에세이(A4 2매 이내) 또는 자유 분량의 시 (hwp, docx, pdf 양식)<br>
-                    <strong>2. 그림일기:</strong> 8절 도화지 단면 (그림과 함께 150자 내외의 글이 포함된 형식, 고화질 스캔본 제출)
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">접수 기간 및 방법</th>
-                  <td>2026년 7월 1일 ~ 8월 31일 18:00까지 홈페이지 온라인 접수(로그인 불필요) 또는 우편 접수</td>
-                </tr>
-                <tr>
-                  <th scope="row">시상 내역</th>
-                  <td>
-                    <strong>대상 (보건복지부 장관상, 1명):</strong> 상장 및 장학금 200만 원<br>
-                    <strong>최우수상 (RMHC 이사장상, 부문별 1명씩):</strong> 상장 및 장학금 각 100만 원<br>
-                    <strong>우수상 및 장려상 (각 10명 내외):</strong> 상장 및 기념 문화상품권 / 수상작 도서 증정
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. 참여 유도 CTA 배너 -->
-      <section class="campaign-section campaign-section--ivory" aria-label="백일장 참여">
-        <div class="container">
-          <div class="cta-banner">
-            <div class="cta-banner__content">
-              <h2 class="cta-banner__title">마음의 문을 열어 들려주시는<br>여러분의 따뜻한 이야기를 기다립니다.</h2>
-              <p class="cta-banner__desc">
-                보내주신 모든 원고와 그림은 RMHC의 심사를 거쳐 정성껏 수상작 모음 도서로 출판될 예정입니다.
+        <!-- 2. 캠페인 취지 및 소구 스토리 -->
+        <section
+          class="campaign-section campaign-section--white"
+          aria-labelledby="intro-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle">Contest Intention</span>
+              <h2 id="intro-title" class="campaign-section__title">
+                마음의 글귀가 희망의 메아리가 됩니다
+              </h2>
+              <p class="campaign-section__desc">
+                오랜 병원 생활 동안 마음에 쌓여 있던 슬픔, 불안, 소망 등의
+                다양한 감정을 종이 위에 끄집어내는 과정은 정서적 정화와 자아
+                존중감을 드높이는 치유 과정(Creative Therapy)이 됩니다.
               </p>
             </div>
-            <div class="cta-banner__actions">
-              <a href="/join/form.html" class="btn btn--cta">백일장 온라인 응모 접수</a>
+
+            <div class="campaign-grid campaign-grid--3cols">
+              <!-- 스토리 카드 1 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/writing_story1.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="환아가 병상 위에 엎드려 알록달록하게 그림일기를 그리고 있는 모습"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">정서적 치유</span>
+                  <h3 class="story-card__title">종이 위에 펼치는 내면 치료</h3>
+                  <p class="story-card__excerpt">
+                    병마와 싸우는 환아들이 언어로 다 표현하지 못했던 아픔과
+                    희망을 예술적 글쓰기와 그림을 통해 끄집어내어 정신적인
+                    평안을 되찾을 수 있게 돕습니다.
+                  </p>
+                </div>
+              </article>
+
+              <!-- 스토리 카드 2 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/writing_story2.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="가족들이 거실 테이블에 옹기종기 모여 앉아 서로의 편지를 공유하며 미소 짓는 모습"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">가족 간의 소통</span>
+                  <h3 class="story-card__title">말하지 못했던 진심의 교류</h3>
+                  <p class="story-card__excerpt">
+                    환아의 형제자매, 보호자들도 함께 공모전에 응모하며 그동안
+                    간병 생활 속에서 서로 털어놓지 못했던 애틋함과 미안함을
+                    전하는 연결 다리가 됩니다.
+                  </p>
+                </div>
+              </article>
+
+              <!-- 스토리 카드 3 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/writing_story3.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="울림백일장 수상작들을 엮어 출판한 정갈한 에세이 도서 모습"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">사회적 울림</span>
+                  <h3 class="story-card__title">
+                    희망을 증명하는 수상 도서 출판
+                  </h3>
+                  <p class="story-card__excerpt">
+                    수상작들은 예쁘게 다듬어져 매년 작품집 도서로 정식 출판되며,
+                    후원자와 일반 시민들에게 나누어져 중증 환아들의 생명력과
+                    위대한 용기를 널리 알립니다.
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-    </main>
+        <!-- 3. 운영 성과 지표 (임팩트) -->
+        <section
+          class="campaign-section campaign-section--ivory"
+          aria-labelledby="impact-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle">Contest Records</span>
+              <h2 id="impact-title" class="campaign-section__title">
+                마음에서 마음으로 퍼져 나간 울림
+              </h2>
+              <p class="campaign-section__desc">
+                매 공모전마다 쏟아지는 뜨거운 이야기들과 예술적 위로의 물결은
+                우리 사회의 나눔 정신을 일깨우는 귀한 자산이 되었습니다.
+              </p>
+            </div>
 
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="src/includes/footer.html" />
-  </div>
+            <div class="campaign-grid campaign-grid--3cols">
+              <!-- 지표 1 -->
+              <div class="stat-card">
+                <div class="stat-card__number">6회 개최</div>
+                <div class="stat-card__label">백일장 개최 주기</div>
+                <div class="stat-card__desc">
+                  해마다 성장을 거듭하여 아이들의 목소리를 담아 온 축제
+                </div>
+              </div>
 
-  <script type="module" src="/src/js/common.js"></script>
-</body>
+              <!-- 지표 2 -->
+              <div class="stat-card">
+                <div class="stat-card__number">1,950+ 편</div>
+                <div class="stat-card__label">누적 접수 작품 수</div>
+                <div class="stat-card__desc">
+                  전국에서 환아, 가족, 일반 시민들이 보내온 진심 서린 글과 그림
+                </div>
+              </div>
+
+              <!-- 지표 3 -->
+              <div class="stat-card">
+                <div class="stat-card__number">96 명</div>
+                <div class="stat-card__label">누적 수상자 및 장학생</div>
+                <div class="stat-card__desc">
+                  우수한 감동을 선사한 수상자들에게 전달된 격려 장학금 수혜자 수
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 상세 공모 및 요강 테이블 안내 -->
+        <section
+          id="rules-section"
+          class="campaign-section campaign-section--white"
+          aria-labelledby="rules-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle">Contest Guide</span>
+              <h2 id="rules-title" class="campaign-section__title">
+                올해 울림백일장 공모 요강
+              </h2>
+              <p class="campaign-section__desc">
+                아래 공모 주제 및 접수 규격을 확인하시어 아픔을 위로하고 세상을
+                밝히는 아름다운 이야기에 참여해 주시기 바랍니다.
+              </p>
+            </div>
+
+            <div class="campaign-table-wrapper">
+              <table class="campaign-table">
+                <caption>
+                  올해 울림백일장 공모 주제, 대상, 접수 형식, 기한 및 시상 내용
+                  안내
+                </caption>
+                <tbody>
+                  <tr>
+                    <th scope="row">공모 주제</th>
+                    <td>
+                      <strong>1. 하우스와 나의 가족:</strong> RMHC
+                      패밀리하우스에서의 추억이나 따뜻한 가족 이야기<br />
+                      <strong>2. 희망의 속삭임:</strong> 치료 중인 소아 환아와
+                      가족을 위로하고 응원하는 편지 및 에세이
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">응모 자격</th>
+                    <td>
+                      <strong>1. 환아 및 가족 부문:</strong> 전국 주요 병원에서
+                      장기 치료 중인 소아 환아 및 부모, 형제자매<br />
+                      <strong>2. 일반 시민 부문:</strong> 환아와 가족을 따뜻하게
+                      지지하고 응원하고자 하는 초등생 이상 누구나
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">응모 분야 및 규격</th>
+                    <td>
+                      <strong>1. 글짓기 (시/수필):</strong> 줄글 형태의
+                      에세이(A4 2매 이내) 또는 자유 분량의 시 (hwp, docx, pdf
+                      양식)<br />
+                      <strong>2. 그림일기:</strong> 8절 도화지 단면 (그림과 함께
+                      150자 내외의 글이 포함된 형식, 고화질 스캔본 제출)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">접수 기간 및 방법</th>
+                    <td>
+                      2026년 7월 1일 ~ 8월 31일 18:00까지 홈페이지 온라인
+                      접수(로그인 불필요) 또는 우편 접수
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">시상 내역</th>
+                    <td>
+                      <strong>대상 (보건복지부 장관상, 1명):</strong> 상장 및
+                      장학금 200만 원<br />
+                      <strong>최우수상 (RMHC 이사장상, 부문별 1명씩):</strong>
+                      상장 및 장학금 각 100만 원<br />
+                      <strong>우수상 및 장려상 (각 10명 내외):</strong> 상장 및
+                      기념 문화상품권 / 수상작 도서 증정
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. 참여 유도 CTA 배너 -->
+        <section
+          class="campaign-section campaign-section--ivory"
+          aria-label="백일장 참여"
+        >
+          <div class="container">
+            <div class="cta-banner">
+              <div class="cta-banner__content">
+                <h2 class="cta-banner__title">
+                  마음의 문을 열어 들려주시는<br />여러분의 따뜻한 이야기를
+                  기다립니다.
+                </h2>
+                <p class="cta-banner__desc">
+                  보내주신 모든 원고와 그림은 RMHC의 심사를 거쳐 정성껏 수상작
+                  모음 도서로 출판될 예정입니다.
+                </p>
+              </div>
+              <div class="cta-banner__actions">
+                <a href="/join/form.html" class="btn btn--cta"
+                  >백일장 온라인 응모 접수</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
+
+    <script type="module" src="/src/js/common.js"></script>
+  </body>
 </html>

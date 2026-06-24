@@ -1,144 +1,183 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RMHC Korea - 기부금영수증 관리 페이지입니다. 기부금영수증 신청 및 연도별 발급 내역 조회가 가능합니다.">
-  <title>기부금영수증 관리 - RMHC Korea</title>
-  <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/css/mypage.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="RMHC Korea - 기부금영수증 관리 페이지입니다. 기부금영수증 신청 및 연도별 발급 내역 조회가 가능합니다."
+    />
+    <title>기부금영수증 관리 - RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/mypage.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load ="src/includes/header.html" />
+    <div class="page-wrapper">
+      <main id="main-content" class="mypage-wrapper">
+        <!-- 상단 헤더 영역 -->
+        <section class="mypage-header">
+          <span class="badge badge-primary">My Page</span>
+          <h1 class="mypage-title">마이페이지</h1>
+        </section>
 
-  <div class="page-wrapper">
-    <main id="main-content" class="mypage-wrapper">
-      
-      <!-- 상단 헤더 영역 -->
-      <section class="mypage-header">
-        <span class="badge badge-primary">My Page</span>
-        <h1 class="mypage-title">마이페이지</h1>
-      </section>
+        <div class="mypage-layout">
+          <!-- 좌측 LNB 인클루드 -->
+          <load ="/includes/mypage-lnb.html" />
 
-      <div class="mypage-layout">
-        <!-- 좌측 LNB 인클루드 -->
-        <load ="src/includes/mypage-lnb.html" />
-
-        <!-- 우측 콘텐츠 영역 -->
-        <div class="mypage-content">
-          
-          <!-- 기부금영수증 발급 정보 카드 -->
-          <section class="mypage-card">
-            <div class="mypage-card-title">
-              <span>기부금영수증 발급 정보</span>
-              <span class="status-badge status-badge--active">신청완료</span>
-            </div>
-
-            <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--spacing-5);">
-              등록하신 발급 정보로 매년 1월 국세청 연말정산 간소화 서비스에 기부금 내역이 자동으로 등록됩니다.<br>
-              정보가 변경되었거나 신규로 등록하시려면 아래 변경 버튼을 눌러주세요.
-            </p>
-
-            <!-- 정보 요약 블록 -->
-            <div class="detail-info-block" style="margin-bottom: var(--spacing-6);">
-              <div class="detail-info-row">
-                <span class="detail-info-label">구분</span>
-                <span class="detail-info-value">개인후원자</span>
+          <!-- 우측 콘텐츠 영역 -->
+          <div class="mypage-content">
+            <!-- 기부금영수증 발급 정보 카드 -->
+            <section class="mypage-card">
+              <div class="mypage-card-title">
+                <span>기부금영수증 발급 정보</span>
+                <span class="status-badge status-badge--active">신청완료</span>
               </div>
-              <div class="detail-info-row">
-                <span class="detail-info-label">주민등록번호</span>
-                <span class="detail-info-value">900101-2******</span>
+
+              <p
+                style="
+                  font-size: var(--text-sm);
+                  color: var(--text-secondary);
+                  line-height: 1.6;
+                  margin-bottom: var(--spacing-5);
+                "
+              >
+                등록하신 발급 정보로 매년 1월 국세청 연말정산 간소화 서비스에
+                기부금 내역이 자동으로 등록됩니다.<br />
+                정보가 변경되었거나 신규로 등록하시려면 아래 변경 버튼을
+                눌러주세요.
+              </p>
+
+              <!-- 정보 요약 블록 -->
+              <div
+                class="detail-info-block"
+                style="margin-bottom: var(--spacing-6)"
+              >
+                <div class="detail-info-row">
+                  <span class="detail-info-label">구분</span>
+                  <span class="detail-info-value">개인후원자</span>
+                </div>
+                <div class="detail-info-row">
+                  <span class="detail-info-label">주민등록번호</span>
+                  <span class="detail-info-value">900101-2******</span>
+                </div>
+                <div class="detail-info-row">
+                  <span class="detail-info-label">발급자명</span>
+                  <span class="detail-info-value">홍길동</span>
+                </div>
+                <div class="detail-info-row">
+                  <span class="detail-info-label">영수증 주소지</span>
+                  <span class="detail-info-value"
+                    >(06132) 서울특별시 강남구 테헤란로 152, 10층</span
+                  >
+                </div>
               </div>
-              <div class="detail-info-row">
-                <span class="detail-info-label">발급자명</span>
-                <span class="detail-info-value">홍길동</span>
+
+              <div class="d-flex" style="justify-content: flex-end">
+                <a
+                  href="/mypage/donation-receipts/apply.html"
+                  class="btn btn-secondary"
+                  >신청 정보 변경</a
+                >
               </div>
-              <div class="detail-info-row">
-                <span class="detail-info-label">영수증 주소지</span>
-                <span class="detail-info-value">(06132) 서울특별시 강남구 테헤란로 152, 10층</span>
+            </section>
+
+            <!-- 기부금 영수증 발급 연도 목록 카드 -->
+            <section class="mypage-card">
+              <div class="mypage-card-title">
+                <span>연도별 기부금 및 국세청 전송 내역</span>
+                <a
+                  href="/mypage/donation-receipts/status.html"
+                  class="btn btn-text"
+                  style="font-size: var(--text-sm)"
+                  >상세 현황 보기 &rarr;</a
+                >
               </div>
-            </div>
 
-            <div class="d-flex" style="justify-content: flex-end;">
-              <a href="/mypage/donation-receipts/apply.html" class="btn btn-secondary">신청 정보 변경</a>
-            </div>
-          </section>
+              <div class="mypage-table-wrapper">
+                <table class="mypage-table">
+                  <caption>
+                    연도별 기부금 영수증 전송 내역 목록 - 귀속연도, 기부처,
+                    기부자명, 연간 기부금액, 국세청 전송 상태로 구성
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">귀속연도</th>
+                      <th scope="col">기부처</th>
+                      <th scope="col">기부자명</th>
+                      <th scope="col">연간 기부금액</th>
+                      <th scope="col">국세청 전송 상태</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2025년</td>
+                      <td>재단법인 한국로날드맥도날드하우스</td>
+                      <td>홍길동</td>
+                      <td class="font-bold">180,000원</td>
+                      <td>
+                        <span class="status-badge status-badge--success"
+                          >전송완료</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2024년</td>
+                      <td>재단법인 한국로날드맥도날드하우스</td>
+                      <td>홍길동</td>
+                      <td class="font-bold">360,000원</td>
+                      <td>
+                        <span class="status-badge status-badge--success"
+                          >전송완료</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2023년</td>
+                      <td>재단법인 한국로날드맥도날드하우스</td>
+                      <td>홍길동</td>
+                      <td class="font-bold">120,000원</td>
+                      <td>
+                        <span class="status-badge status-badge--success"
+                          >전송완료</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
-          <!-- 기부금 영수증 발급 연도 목록 카드 -->
-          <section class="mypage-card">
-            <div class="mypage-card-title">
-              <span>연도별 기부금 및 국세청 전송 내역</span>
-              <a href="/mypage/donation-receipts/status.html" class="btn btn-text" style="font-size: var(--text-sm);">상세 현황 보기 &rarr;</a>
-            </div>
-
-            <div class="mypage-table-wrapper">
-              <table class="mypage-table">
-                <caption>연도별 기부금 영수증 전송 내역 목록 - 귀속연도, 기부처, 기부자명, 연간 기부금액, 국세청 전송 상태로 구성</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">귀속연도</th>
-                    <th scope="col">기부처</th>
-                    <th scope="col">기부자명</th>
-                    <th scope="col">연간 기부금액</th>
-                    <th scope="col">국세청 전송 상태</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>2025년</td>
-                    <td>재단법인 한국로날드맥도날드하우스</td>
-                    <td>홍길동</td>
-                    <td class="font-bold">180,000원</td>
-                    <td><span class="status-badge status-badge--success">전송완료</span></td>
-                  </tr>
-                  <tr>
-                    <td>2024년</td>
-                    <td>재단법인 한국로날드맥도날드하우스</td>
-                    <td>홍길동</td>
-                    <td class="font-bold">360,000원</td>
-                    <td><span class="status-badge status-badge--success">전송완료</span></td>
-                  </tr>
-                  <tr>
-                    <td>2023년</td>
-                    <td>재단법인 한국로날드맥도날드하우스</td>
-                    <td>홍길동</td>
-                    <td class="font-bold">120,000원</td>
-                    <td><span class="status-badge status-badge--success">전송완료</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="legal-notice" style="margin-top: var(--spacing-6);">
-              수집된 기부자 개인정보는 관련 법령에 따라 안전하게 암호화되어 관리됩니다. 기부금 영수증은 매년 1월 중 국세청 홈택스(간소화 서비스)를 통해 기부처명을 한국로날드맥도날드하우스로 하여 바로 조회 및 출력이 가능합니다.
-            </div>
-          </section>
-
+              <div class="legal-notice" style="margin-top: var(--spacing-6)">
+                수집된 기부자 개인정보는 관련 법령에 따라 안전하게 암호화되어
+                관리됩니다. 기부금 영수증은 매년 1월 중 국세청 홈택스(간소화
+                서비스)를 통해 기부처명을 한국로날드맥도날드하우스로 하여 바로
+                조회 및 출력이 가능합니다.
+              </div>
+            </section>
+          </div>
         </div>
-      </div>
+      </main>
 
-    </main>
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
 
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="src/includes/footer.html" />
-  </div>
+    <script type="module" src="/src/js/common.js"></script>
 
-  <script type="module" src="/src/js/common.js"></script>
-
-  <!-- 상세 페이지 전용 스크립트 -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // LNB 활성화 처리
-      const menuReceipts = document.getElementById('menu-receipts');
-      if (menuReceipts) {
-        menuReceipts.classList.add('active');
-      }
-    });
-  </script>
-</body>
+    <!-- 상세 페이지 전용 스크립트 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // LNB 활성화 처리
+        const menuReceipts = document.getElementById("menu-receipts");
+        if (menuReceipts) {
+          menuReceipts.classList.add("active");
+        }
+      });
+    </script>
+  </body>
 </html>

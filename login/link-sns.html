@@ -1,60 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) SNS 계정 연동 안내 페이지입니다.">
-  <title>SNS 계정 연동 - RMHC Korea</title>
-  <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/css/login.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 간편로그인 안내 페이지입니다."
+    />
+    <title>SNS 계정 연동 - RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/login.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load ="src/includes/header.html" />
+    <div class="page-wrapper">
+      <main id="main-content" class="login-section">
+        <div class="login-card">
+          <h1 class="login-title">간편로그인 안내</h1>
+          <p class="login-desc">
+            이미 가입된 계정이 있습니다.
+            <br />
+            SNS 계정을 기존 아이디와 연동하시겠습니까?
+            <br />
+            <br />
+            연동 시 이후부터 SNS 로그인으로<br />간편하게 로그인할 수 있습니다.
+          </p>
 
-  <div class="page-wrapper">
-    <main id="main-content" class="login-section">
-      <div class="login-card">
-        <h1 class="login-title">SNS 계정 연동</h1>
-        <p class="login-desc">이미 가입된 계정이 존재합니다.<br>기존 아이디와 연동을 진행해 주세요.</p>
-
-        <!-- 기존 계정 & SNS 매칭 정보 박스 -->
-        <div class="result-box">
-          <div class="d-flex align-center justify-between p-2">
-            <span class="text-sm font-semibold">기존 계정 아이디</span>
-            <span class="text-base font-bold text-primary-color">rmhc***</span>
+          <div class="result-box">
+            <div class="result-box__value">donal***</div>
           </div>
-          <div class="d-flex align-center justify-between p-2 mt-2" style="border-top: 1px dashed var(--border-color);">
-            <span class="text-sm font-semibold">연동 대상 SNS</span>
-            <div class="d-flex align-center gap-2">
-              <span class="sns-btn sns-btn--kakao" style="width: 2.8rem; height: 2.8rem; cursor: default; box-shadow: none;">
-                <img src="/src/images/common/instagram.svg" alt="카카오" width="14" height="14">
-              </span>
-              <span class="text-sm font-bold">카카오 간편 로그인</span>
-            </div>
+
+          <div class="d-flex flex-col gap-3">
+            <button type="submit" class="btn btn-primary">
+              카카오로 연동하기
+            </button>
+          </div>
+
+          <div class="line"></div>
+
+          <div class="login-links">
+            <a href="/login/find-id.html">기존 ID로 로그인하기</a>
           </div>
         </div>
+      </main>
 
-        <!-- 계정 연동 안내 메시지 고지 박스 -->
-        <div class="info-notice-box" style="border-left: 3px solid var(--primary); background-color: var(--primary-glow);">
-          SNS 계정을 기존 아이디와 연동하시겠습니까? 연동 시 이후부터 SNS 로그인으로 간편하게 로그인할 수 있습니다.
-        </div>
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
 
-        <div class="d-flex flex-col gap-3">
-          <button type="button" class="btn btn-primary w-100 font-bold" style="min-height: 4.8rem;" onclick="alert('SNS 계정 연동이 완료되었습니다.'); location.href='/login.html';">계정 연동하기</button>
-          <a href="/login.html" class="btn btn-outline w-100 text-center font-semibold" style="min-height: 4.8rem; display: flex; align-items: center; justify-content: center;">연동 취소 및 돌아가기</a>
-        </div>
-      </div>
-    </main>
-
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="src/includes/footer.html" />
-  </div>
-
-  <script type="module" src="/src/js/common.js"></script>
-</body>
+    <script type="module" src="/src/js/common.js"></script>
+  </body>
 </html>

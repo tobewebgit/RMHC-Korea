@@ -1,331 +1,550 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="가톨릭대학교 서울성모병원 인근에 건립 예정인 서초 성모 하우스입니다. 수도권 통원 치료를 받는 중증 환아와 가족을 위한 무료 쉼터로 준비 중입니다.">
-  <title>서초 성모 하우스 - 한국로날드맥도날드하우스</title>
-  <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/css/houses.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="가톨릭대학교 서울성모병원 인근에 건립 예정인 서초 성모 하우스입니다. 수도권 통원 치료를 받는 중증 환아와 가족을 위한 무료 쉼터로 준비 중입니다."
+    />
+    <title>서초 성모 하우스 - 한국로날드맥도날드하우스</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/houses.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load ="src/includes/header.html" />
-
-  <div class="page-wrapper">
-    <main id="main-content" class="house-detail-container container">
-
-      <!-- 건립 준비 중 상태 안내 배너 -->
-      <section class="preparing-status-card" aria-label="건립 추진 현황 고지">
-        <svg class="preparing-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-        </svg>
-        <div>
-          <h2 class="preparing-title">서초 성모 하우스 건립 추진 안내</h2>
-          <p class="preparing-desc">
-            본 하우스는 <strong>가톨릭대학교 서울성모병원</strong> 인근에 건립을 목표로 준비 중인 신규 하우스입니다.<br>
-            현재 사업 계획 승인 및 건립 설계 단계를 밟아가고 있으며, 세부 시설 구성 및 운영 정책은 준공 시점에 맞추어 확정될 예정입니다.
-          </p>
-        </div>
-      </section>
-
-      <!-- 1. 히어로 비주얼 슬라이더 영역 -->
-      <section class="house-visual-section" aria-label="서초 하우스 조감도 및 건립 계획 갤러리">
-        <div class="house-slider-wrapper">
-          <div class="house-slider" id="house-image-slider">
-            <div class="slide-item active" data-slide="0">
-              <img src="/src/images/houses/seocho_main.jpg" width="1200" height="600" fetchpriority="high" alt="서초 성모 하우스 건립 조감도 이미지">
-            </div>
-            <div class="slide-item" data-slide="1">
-              <img src="/src/images/houses/seocho_plan.jpg" width="1200" height="600" loading="lazy" alt="환아 가족을 위한 맞춤형 인테리어 설계 도면">
-            </div>
-          </div>
-
-          <!-- 슬라이더 좌우 컨트롤 -->
-          <button type="button" class="slider-ctrl-btn btn-prev" id="btn-slider-prev" aria-label="이전 슬라이드 이미지 보기">
-            <span aria-hidden="true">&lt;</span>
-          </button>
-          <button type="button" class="slider-ctrl-btn btn-next" id="btn-slider-next" aria-label="다음 슬라이드 이미지 보기">
-            <span aria-hidden="true">&gt;</span>
-          </button>
-
-          <!-- 슬라이더 인디케이터 (도트) -->
-          <div class="slider-indicators" role="tablist" aria-label="슬라이드 선택">
-            <button type="button" class="indicator-dot active" role="tab" aria-selected="true" aria-controls="house-image-slider" data-target="0" aria-label="1번째 슬라이드"></button>
-            <button type="button" class="indicator-dot" role="tab" aria-selected="false" aria-controls="house-image-slider" data-target="1" aria-label="2번째 슬라이드"></button>
-          </div>
-
-          <!-- 비주얼 오버레이 캡션 박스 -->
-          <div class="house-caption-box">
-            <div class="caption-content">
-              <span class="caption-badge">건립 준비 중</span>
-              <h1 class="caption-title">서초 성모 하우스</h1>
-              <p class="caption-desc">서울성모병원 인근에 건립 예정인 서초 성모 하우스는 지방에서 수도권으로 힘겨운 통원 치료를 다니는 중증 환아와 가족을 위한 아늑한 안식처가 될 것입니다.</p>
-            </div>
-            <div class="caption-actions">
-              <a href="#rules-section" class="btn btn-secondary text-primary-color font-bold">건립 개요</a>
-              <a href="/volunteer.html" class="btn btn-primary font-bold">자원봉사 신청</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2. 하우스 소개 및 층별 예정 안내 영역 -->
-      <section class="house-info-section" aria-label="하우스 건립 계획 및 예정 시설 안내">
-        <h2 class="house-section-title">건립 설계 개요</h2>
-        <p class="house-intro-text">
-          서초 성모 하우스는 서울성모병원에서 중증 치료를 이어가는 어린이 환아와 보호자들의 고충을 덜기 위해 설립됩니다.<br>
-          설계 단계부터 오랜 병원 생활로 지친 아이들의 눈높이에 맞는 쾌적한 쉼터 환경과 가족 간 교류가 가능한 다양한 커뮤니티 공간을 중점 배치하였습니다.
-        </p>
-
-        <!-- 층별 안내 아코디언 (details-summary 적용) -->
-        <div class="accordion-wrapper">
-          <!-- 2층 아코디언 -->
-          <details class="accordion-item" open>
-            <summary class="accordion-summary">
-              <span>지상 2층 이상 (예정) - 개별 패밀리 룸</span>
-              <span class="accordion-summary-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="accordion-content">
-              <div class="accordion-text-wrapper">
-                <h3 class="accordion-text-title">환아와 보호자가 안심하고 쉴 수 있는 개인 객실</h3>
-                <ul class="accordion-list">
-                  <li class="accordion-list-item"><strong>패밀리 스위트 룸 (예정)</strong>: 중증 질환 환아 가족의 장기 체류에 최적화된 독립형 욕실 및 개별 제어 난방 시스템 완비.</li>
-                  <li class="accordion-list-item"><strong>야외 하늘정원 (예정)</strong>: 도심 속에서 계절의 변화를 느끼며 정서적 안정을 기할 수 있는 친환경 치유 정원 조성 계획.</li>
-                </ul>
-              </div>
-              <div class="accordion-thumb">
-                <img src="/src/images/houses/seocho_2f_plan.jpg" width="280" height="210" loading="lazy" alt="환아 가족의 휴식을 돕기 위해 친환경 자재로 설계 예정인 아늑한 개별 객실 조감도">
-              </div>
-            </div>
-          </details>
-
-          <!-- 1층 아코디언 -->
-          <details class="accordion-item">
-            <summary class="accordion-summary">
-              <span>지상 1층 (예정) - 패밀리 라이브러리 및 공용 키친</span>
-              <span class="accordion-summary-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="accordion-content">
-              <div class="accordion-text-wrapper">
-                <h3 class="accordion-text-title">따뜻한 교류와 배움이 지속되는 중심 공간</h3>
-                <ul class="accordion-list">
-                  <li class="accordion-list-item"><strong>오픈형 다이닝룸 및 주방</strong>: 가족들이 영양가 있는 집밥을 직접 조리할 수 있도록 가전 및 식기를 구비한 개방형 조리실 예정.</li>
-                  <li class="accordion-list-item"><strong>북카페 및 학습 놀이방</strong>: 병원 밖에서도 공부와 놀이가 끊기지 않도록 양질의 도서와 장난감을 배치할 에듀케이션 센터 예정.</li>
-                  <li class="accordion-list-item"><strong>통합 사무실 및 봉사 대기실</strong>: 하우스 매니저 상주 공간 및 프로그램 지원용 자원봉사자 대기실 설계.</li>
-                </ul>
-              </div>
-              <div class="accordion-thumb">
-                <img src="/src/images/houses/seocho_1f_plan.jpg" width="280" height="210" loading="lazy" alt="식사를 공유하고 소통을 나눌 수 있도록 설계 예정인 개방형 공용 식당 조감도">
-              </div>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <!-- 3. 이용 요금 및 신청 요건 안내 영역 (예정 사항 안내) -->
-      <section class="house-rules-section" id="rules-section" aria-label="이용 요금 및 신청 요건 예정 정보 안내">
-        <h2 class="house-section-title">이용 요금 및 신청 요건(예정)</h2>
-        <div class="table-responsive">
-          <table class="house-table">
-            <caption>서초 성모 하우스 예정 이용 대상, 요금, 신청 방법 및 구비 서류 정보</caption>
-            <tbody>
-              <tr>
-                <th scope="row">이용 요금</th>
-                <td><strong>전액 무료 예정</strong> (숙박 및 기본 세면도구, 편의 설비 무상 지원)</td>
-              </tr>
-              <tr>
-                <th scope="row">이용 대상</th>
-                <td>가톨릭대학교 서울성모병원 등 인근 대형 병원에서 장기 치료 중인 만 18세 이하의 중증 질환 환아 및 보호자 가족</td>
-              </tr>
-              <tr>
-                <th scope="row">신청 방법 및 심사</th>
-                <td>개원 준공 일정 확정 후 별도의 이용 프로세스를 고지할 예정입니다. (양산 하우스와 유사하게 중증도, 통원 거리 등을 종합 심사하여 선정)</td>
-              </tr>
-              <tr>
-                <th scope="row">비고 및 문의</th>
-                <td>건립 및 후원 관련 문의는 한국로날드맥도날드하우스 재단 사무국(대표번호)을 이용해 주시기 바랍니다.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="table-helper-text">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <div class="page-wrapper">
+      <main id="main-content" class="house-detail-container container">
+        <!-- 건립 준비 중 상태 안내 배너 -->
+        <section class="preparing-status-card" aria-label="건립 추진 현황 고지">
+          <svg
+            class="preparing-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
             <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="16" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
           </svg>
-          상기 요건 및 운영 방침은 건립 설계 및 병원 협의 단계에 따라 변동될 수 있습니다.
-        </p>
-      </section>
+          <div>
+            <h2 class="preparing-title">서초 성모 하우스 건립 추진 안내</h2>
+            <p class="preparing-desc">
+              본 하우스는 <strong>가톨릭대학교 서울성모병원</strong> 인근에
+              건립을 목표로 준비 중인 신규 하우스입니다.<br />
+              현재 사업 계획 승인 및 건립 설계 단계를 밟아가고 있으며, 세부 시설
+              구성 및 운영 정책은 준공 시점에 맞추어 확정될 예정입니다.
+            </p>
+          </div>
+        </section>
 
-      <!-- 4. 오시는 길 및 교통편 영역 -->
-      <section class="house-map-section" aria-label="하우스 예정지 및 교통편 안내">
-        <h2 class="house-section-title">오시는 길</h2>
-        <div class="map-layout">
-          <!-- 지도 영역 플레이스홀더 -->
-          <div class="map-container">
-            <div class="map-canvas" id="map-canvas">
-              <div class="map-placeholder-info">
-                <svg class="map-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <p>지도가 노출되는 영역입니다.<br>(서울성모병원 인근 건립 예정지 지도 API 연동 예정)</p>
+        <!-- 1. 히어로 비주얼 슬라이더 영역 -->
+        <section
+          class="house-visual-section"
+          aria-label="서초 하우스 조감도 및 건립 계획 갤러리"
+        >
+          <div class="house-slider-wrapper">
+            <div class="house-slider" id="house-image-slider">
+              <div class="slide-item active" data-slide="0">
+                <img
+                  src="/src/images/houses/seocho_main.jpg"
+                  width="1200"
+                  height="600"
+                  fetchpriority="high"
+                  alt="서초 성모 하우스 건립 조감도 이미지"
+                />
+              </div>
+              <div class="slide-item" data-slide="1">
+                <img
+                  src="/src/images/houses/seocho_plan.jpg"
+                  width="1200"
+                  height="600"
+                  loading="lazy"
+                  alt="환아 가족을 위한 맞춤형 인테리어 설계 도면"
+                />
               </div>
             </div>
-            <div class="map-address-box">
-              <div class="map-address-text">
-                서울특별시 서초구 반포대로 222 인근
-                <span>(가톨릭대학교 서울성모병원 주변 건립 추진지)</span>
+
+            <!-- 슬라이더 좌우 컨트롤 -->
+            <button
+              type="button"
+              class="slider-ctrl-btn btn-prev"
+              id="btn-slider-prev"
+              aria-label="이전 슬라이드 이미지 보기"
+            >
+              <span aria-hidden="true">&lt;</span>
+            </button>
+            <button
+              type="button"
+              class="slider-ctrl-btn btn-next"
+              id="btn-slider-next"
+              aria-label="다음 슬라이드 이미지 보기"
+            >
+              <span aria-hidden="true">&gt;</span>
+            </button>
+
+            <!-- 슬라이더 인디케이터 (도트) -->
+            <div
+              class="slider-indicators"
+              role="tablist"
+              aria-label="슬라이드 선택"
+            >
+              <button
+                type="button"
+                class="indicator-dot active"
+                role="tab"
+                aria-selected="true"
+                aria-controls="house-image-slider"
+                data-target="0"
+                aria-label="1번째 슬라이드"
+              ></button>
+              <button
+                type="button"
+                class="indicator-dot"
+                role="tab"
+                aria-selected="false"
+                aria-controls="house-image-slider"
+                data-target="1"
+                aria-label="2번째 슬라이드"
+              ></button>
+            </div>
+
+            <!-- 비주얼 오버레이 캡션 박스 -->
+            <div class="house-caption-box">
+              <div class="caption-content">
+                <span class="caption-badge">건립 준비 중</span>
+                <h1 class="caption-title">서초 성모 하우스</h1>
+                <p class="caption-desc">
+                  서울성모병원 인근에 건립 예정인 서초 성모 하우스는 지방에서
+                  수도권으로 힘겨운 통원 치료를 다니는 중증 환아와 가족을 위한
+                  아늑한 안식처가 될 것입니다.
+                </p>
               </div>
-              <button type="button" class="btn-copy-address" id="btn-copy-addr">주소 복사</button>
+              <div class="caption-actions">
+                <a
+                  href="#rules-section"
+                  class="btn btn-secondary text-primary-color font-bold"
+                  >건립 개요</a
+                >
+                <a href="/volunteer.html" class="btn btn-primary font-bold"
+                  >자원봉사 신청</a
+                >
+              </div>
             </div>
           </div>
+        </section>
 
-          <!-- 교통 정보 리스트 -->
-          <div class="transit-details">
-            <div class="transit-group">
-              <h3 class="transit-title">
-                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="7" y="2" width="10" height="20" rx="2" ry="2"></rect>
-                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                </svg>
-                지하철 이용 시
-              </h3>
-              <p class="transit-desc">
-                지하철 <strong>3호선, 7호선, 9호선 고속터미널역</strong> 4번 출구에서 하우스 예정지까지 도보로 약 10분 소요됩니다.
-              </p>
-            </div>
-            
-            <div class="transit-group">
-              <h3 class="transit-title">
-                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
-                  <circle cx="7" cy="17" r="2"></circle>
-                  <circle cx="17" cy="17" r="2"></circle>
-                </svg>
-                버스 이용 시
-              </h3>
-              <p class="transit-desc">
-                <strong>서울성모병원 정문</strong> 정류장 하차:<br>
-                간선 버스: 540번, 740번 등<br>
-                지선 버스: 3012번, 5413번 등 다수 노선 운행
-              </p>
+        <!-- 2. 하우스 소개 및 층별 예정 안내 영역 -->
+        <section
+          class="house-info-section"
+          aria-label="하우스 건립 계획 및 예정 시설 안내"
+        >
+          <h2 class="house-section-title">건립 설계 개요</h2>
+          <p class="house-intro-text">
+            서초 성모 하우스는 서울성모병원에서 중증 치료를 이어가는 어린이
+            환아와 보호자들의 고충을 덜기 위해 설립됩니다.<br />
+            설계 단계부터 오랜 병원 생활로 지친 아이들의 눈높이에 맞는 쾌적한
+            쉼터 환경과 가족 간 교류가 가능한 다양한 커뮤니티 공간을 중점
+            배치하였습니다.
+          </p>
+
+          <!-- 층별 안내 아코디언 (details-summary 적용) -->
+          <div class="accordion-wrapper">
+            <!-- 2층 아코디언 -->
+            <details class="accordion-item" open>
+              <summary class="accordion-summary">
+                <span>지상 2층 이상 (예정) - 개별 패밀리 룸</span>
+                <span class="accordion-summary-icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="accordion-content">
+                <div class="accordion-text-wrapper">
+                  <h3 class="accordion-text-title">
+                    환아와 보호자가 안심하고 쉴 수 있는 개인 객실
+                  </h3>
+                  <ul class="accordion-list">
+                    <li class="accordion-list-item">
+                      <strong>패밀리 스위트 룸 (예정)</strong>: 중증 질환 환아
+                      가족의 장기 체류에 최적화된 독립형 욕실 및 개별 제어 난방
+                      시스템 완비.
+                    </li>
+                    <li class="accordion-list-item">
+                      <strong>야외 하늘정원 (예정)</strong>: 도심 속에서 계절의
+                      변화를 느끼며 정서적 안정을 기할 수 있는 친환경 치유 정원
+                      조성 계획.
+                    </li>
+                  </ul>
+                </div>
+                <div class="accordion-thumb">
+                  <img
+                    src="/src/images/houses/seocho_2f_plan.jpg"
+                    width="280"
+                    height="210"
+                    loading="lazy"
+                    alt="환아 가족의 휴식을 돕기 위해 친환경 자재로 설계 예정인 아늑한 개별 객실 조감도"
+                  />
+                </div>
+              </div>
+            </details>
+
+            <!-- 1층 아코디언 -->
+            <details class="accordion-item">
+              <summary class="accordion-summary">
+                <span>지상 1층 (예정) - 패밀리 라이브러리 및 공용 키친</span>
+                <span class="accordion-summary-icon" aria-hidden="true">+</span>
+              </summary>
+              <div class="accordion-content">
+                <div class="accordion-text-wrapper">
+                  <h3 class="accordion-text-title">
+                    따뜻한 교류와 배움이 지속되는 중심 공간
+                  </h3>
+                  <ul class="accordion-list">
+                    <li class="accordion-list-item">
+                      <strong>오픈형 다이닝룸 및 주방</strong>: 가족들이 영양가
+                      있는 집밥을 직접 조리할 수 있도록 가전 및 식기를 구비한
+                      개방형 조리실 예정.
+                    </li>
+                    <li class="accordion-list-item">
+                      <strong>북카페 및 학습 놀이방</strong>: 병원 밖에서도
+                      공부와 놀이가 끊기지 않도록 양질의 도서와 장난감을 배치할
+                      에듀케이션 센터 예정.
+                    </li>
+                    <li class="accordion-list-item">
+                      <strong>통합 사무실 및 봉사 대기실</strong>: 하우스 매니저
+                      상주 공간 및 프로그램 지원용 자원봉사자 대기실 설계.
+                    </li>
+                  </ul>
+                </div>
+                <div class="accordion-thumb">
+                  <img
+                    src="/src/images/houses/seocho_1f_plan.jpg"
+                    width="280"
+                    height="210"
+                    loading="lazy"
+                    alt="식사를 공유하고 소통을 나눌 수 있도록 설계 예정인 개방형 공용 식당 조감도"
+                  />
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 3. 이용 요금 및 신청 요건 안내 영역 (예정 사항 안내) -->
+        <section
+          class="house-rules-section"
+          id="rules-section"
+          aria-label="이용 요금 및 신청 요건 예정 정보 안내"
+        >
+          <h2 class="house-section-title">이용 요금 및 신청 요건(예정)</h2>
+          <div class="table-responsive">
+            <table class="house-table">
+              <caption>
+                서초 성모 하우스 예정 이용 대상, 요금, 신청 방법 및 구비 서류
+                정보
+              </caption>
+              <tbody>
+                <tr>
+                  <th scope="row">이용 요금</th>
+                  <td>
+                    <strong>전액 무료 예정</strong> (숙박 및 기본 세면도구, 편의
+                    설비 무상 지원)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">이용 대상</th>
+                  <td>
+                    가톨릭대학교 서울성모병원 등 인근 대형 병원에서 장기 치료
+                    중인 만 18세 이하의 중증 질환 환아 및 보호자 가족
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">신청 방법 및 심사</th>
+                  <td>
+                    개원 준공 일정 확정 후 별도의 이용 프로세스를 고지할
+                    예정입니다. (양산 하우스와 유사하게 중증도, 통원 거리 등을
+                    종합 심사하여 선정)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">비고 및 문의</th>
+                  <td>
+                    건립 및 후원 관련 문의는 한국로날드맥도날드하우스 재단
+                    사무국(대표번호)을 이용해 주시기 바랍니다.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-helper-text">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            상기 요건 및 운영 방침은 건립 설계 및 병원 협의 단계에 따라 변동될
+            수 있습니다.
+          </p>
+        </section>
+
+        <!-- 4. 오시는 길 및 교통편 영역 -->
+        <section
+          class="house-map-section"
+          aria-label="하우스 예정지 및 교통편 안내"
+        >
+          <h2 class="house-section-title">오시는 길</h2>
+          <div class="map-layout">
+            <!-- 지도 영역 플레이스홀더 -->
+            <div class="map-container">
+              <div class="map-canvas" id="map-canvas">
+                <div class="map-placeholder-info">
+                  <svg
+                    class="map-placeholder-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <p>
+                    지도가 노출되는 영역입니다.<br />(서울성모병원 인근 건립
+                    예정지 지도 API 연동 예정)
+                  </p>
+                </div>
+              </div>
+              <div class="map-address-box">
+                <div class="map-address-text">
+                  서울특별시 서초구 반포대로 222 인근
+                  <span>(가톨릭대학교 서울성모병원 주변 건립 추진지)</span>
+                </div>
+                <button
+                  type="button"
+                  class="btn-copy-address"
+                  id="btn-copy-addr"
+                >
+                  주소 복사
+                </button>
+              </div>
             </div>
 
-            <div class="transit-group">
-              <h3 class="transit-title">
-                <svg class="transit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                자가용 및 주차
-              </h3>
-              <p class="transit-desc">
-                올림픽대로 또는 사평대로 진출 후 반포 사거리에서 서울성모병원 방면으로 진입하십시오.<br>
-                개원 후 하우스 공식 차량 및 환아 보호자용 주차 공간 운영 방침이 세부 공지될 예정입니다.
-              </p>
+            <!-- 교통 정보 리스트 -->
+            <div class="transit-details">
+              <div class="transit-group">
+                <h3 class="transit-title">
+                  <svg
+                    class="transit-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="7"
+                      y="2"
+                      width="10"
+                      height="20"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                  지하철 이용 시
+                </h3>
+                <p class="transit-desc">
+                  지하철 <strong>3호선, 7호선, 9호선 고속터미널역</strong> 4번
+                  출구에서 하우스 예정지까지 도보로 약 10분 소요됩니다.
+                </p>
+              </div>
+
+              <div class="transit-group">
+                <h3 class="transit-title">
+                  <svg
+                    class="transit-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"
+                    ></path>
+                    <circle cx="7" cy="17" r="2"></circle>
+                    <circle cx="17" cy="17" r="2"></circle>
+                  </svg>
+                  버스 이용 시
+                </h3>
+                <p class="transit-desc">
+                  <strong>서울성모병원 정문</strong> 정류장 하차:<br />
+                  간선 버스: 540번, 740번 등<br />
+                  지선 버스: 3012번, 5413번 등 다수 노선 운행
+                </p>
+              </div>
+
+              <div class="transit-group">
+                <h3 class="transit-title">
+                  <svg
+                    class="transit-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="3"
+                      y="11"
+                      width="18"
+                      height="11"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  자가용 및 주차
+                </h3>
+                <p class="transit-desc">
+                  올림픽대로 또는 사평대로 진출 후 반포 사거리에서 서울성모병원
+                  방면으로 진입하십시오.<br />
+                  개원 후 하우스 공식 차량 및 환아 보호자용 주차 공간 운영
+                  방침이 세부 공지될 예정입니다.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-    </main>
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
 
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="src/includes/footer.html" />
-  </div>
+    <script type="module" src="/src/js/common.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. 단순 이미지 슬라이더 구동 스크립트
+        const slides = document.querySelectorAll(
+          "#house-image-slider .slide-item",
+        );
+        const dots = document.querySelectorAll(
+          ".slider-indicators .indicator-dot",
+        );
+        const btnPrev = document.getElementById("btn-slider-prev");
+        const btnNext = document.getElementById("btn-slider-next");
+        let currentSlide = 0;
 
-  <script type="module" src="/src/js/common.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. 단순 이미지 슬라이더 구동 스크립트
-      const slides = document.querySelectorAll('#house-image-slider .slide-item');
-      const dots = document.querySelectorAll('.slider-indicators .indicator-dot');
-      const btnPrev = document.getElementById('btn-slider-prev');
-      const btnNext = document.getElementById('btn-slider-next');
-      let currentSlide = 0;
+        function showSlide(index) {
+          if (index >= slides.length) {
+            currentSlide = 0;
+          } else if (index < 0) {
+            currentSlide = slides.length - 1;
+          } else {
+            currentSlide = index;
+          }
 
-      function showSlide(index) {
-        if (index >= slides.length) {
-          currentSlide = 0;
-        } else if (index < 0) {
-          currentSlide = slides.length - 1;
-        } else {
-          currentSlide = index;
+          slides.forEach((slide, idx) => {
+            if (idx === currentSlide) {
+              slide.classList.add("active");
+            } else {
+              slide.classList.remove("active");
+            }
+          });
+
+          dots.forEach((dot, idx) => {
+            if (idx === currentSlide) {
+              dot.classList.add("active");
+              dot.setAttribute("aria-selected", "true");
+            } else {
+              dot.classList.remove("active");
+              dot.setAttribute("aria-selected", "false");
+            }
+          });
         }
 
-        slides.forEach((slide, idx) => {
-          if (idx === currentSlide) {
-            slide.classList.add('active');
-          } else {
-            slide.classList.remove('active');
-          }
-        });
+        if (btnPrev && btnNext) {
+          btnPrev.addEventListener("click", () => {
+            showSlide(currentSlide - 1);
+          });
 
-        dots.forEach((dot, idx) => {
-          if (idx === currentSlide) {
-            dot.classList.add('active');
-            dot.setAttribute('aria-selected', 'true');
-          } else {
-            dot.classList.remove('active');
-            dot.setAttribute('aria-selected', 'false');
-          }
-        });
-      }
+          btnNext.addEventListener("click", () => {
+            showSlide(currentSlide + 1);
+          });
+        }
 
-      if (btnPrev && btnNext) {
-        btnPrev.addEventListener('click', () => {
-          showSlide(currentSlide - 1);
-        });
-
-        btnNext.addEventListener('click', () => {
-          showSlide(currentSlide + 1);
-        });
-      }
-
-      dots.forEach(dot => {
-        dot.addEventListener('click', (e) => {
-          const targetIndex = parseInt(e.currentTarget.getAttribute('data-target'), 10);
-          showSlide(targetIndex);
-        });
-      });
-
-      // 2. 주소 복사 스크립트
-      const btnCopy = document.getElementById('btn-copy-addr');
-      if (btnCopy) {
-        btnCopy.addEventListener('click', () => {
-          const addressText = "서울특별시 서초구 반포대로 222";
-          navigator.clipboard.writeText(addressText).then(() => {
-            alert('하우스 건립 예정지 주소가 클립보드에 복사되었습니다.');
-          }).catch(err => {
-            console.error('주소 복사 실패: ', err);
-            alert('주소 복사에 실패했습니다. 주소 영역을 직접 드래그하여 복사해 주세요.');
+        dots.forEach((dot) => {
+          dot.addEventListener("click", (e) => {
+            const targetIndex = parseInt(
+              e.currentTarget.getAttribute("data-target"),
+              10,
+            );
+            showSlide(targetIndex);
           });
         });
-      }
 
-      // 3. 아코디언 접근성 제어
-      const detailsElements = document.querySelectorAll('.accordion-item');
-      detailsElements.forEach(targetDetails => {
-        targetDetails.addEventListener('toggle', (e) => {
-          if (targetDetails.open) {
-            detailsElements.forEach(details => {
-              if (details !== targetDetails) {
-                details.removeAttribute('open');
-              }
-            });
-          }
+        // 2. 주소 복사 스크립트
+        const btnCopy = document.getElementById("btn-copy-addr");
+        if (btnCopy) {
+          btnCopy.addEventListener("click", () => {
+            const addressText = "서울특별시 서초구 반포대로 222";
+            navigator.clipboard
+              .writeText(addressText)
+              .then(() => {
+                alert("하우스 건립 예정지 주소가 클립보드에 복사되었습니다.");
+              })
+              .catch((err) => {
+                console.error("주소 복사 실패: ", err);
+                alert(
+                  "주소 복사에 실패했습니다. 주소 영역을 직접 드래그하여 복사해 주세요.",
+                );
+              });
+          });
+        }
+
+        // 3. 아코디언 접근성 제어
+        const detailsElements = document.querySelectorAll(".accordion-item");
+        detailsElements.forEach((targetDetails) => {
+          targetDetails.addEventListener("toggle", (e) => {
+            if (targetDetails.open) {
+              detailsElements.forEach((details) => {
+                if (details !== targetDetails) {
+                  details.removeAttribute("open");
+                }
+              });
+            }
+          });
         });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

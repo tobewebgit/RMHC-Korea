@@ -1,205 +1,307 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="매년 따뜻한 예술과 만찬이 함께하는 RMHC Korea 자선 갈라 디너입니다. 아픈 아이들의 방을 짓는 품격 있는 기부 행사에 여러분의 자리를 채워주세요.">
-  <title>RMHC 갈라 디너 - RMHC Korea</title>
-  <link rel="stylesheet" href="/src/css/style.css">
-  <link rel="stylesheet" href="/src/css/campaign.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="매년 따뜻한 예술과 만찬이 함께하는 RMHC Korea 자선 갈라 디너입니다. 아픈 아이들의 방을 짓는 품격 있는 기부 행사에 여러분의 자리를 채워주세요."
+    />
+    <title>RMHC 갈라 디너 - RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/campaign.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load ="src/includes/header.html" />
-
-  <div class="page-wrapper">
-    <main id="main-content" class="campaign-detail-container theme-gala">
-      
-      <!-- 1. 히어로 비주얼 영역 (LCP 최적화 및 CLS 방지) -->
-      <section class="campaign-hero" aria-label="RMHC 자선 갈라 디너 캠페인 소개 비주얼">
-        <div class="campaign-hero__bg">
-          <img src="/src/images/campaign/gala_hero.jpg" width="1920" height="560" fetchpriority="high" alt="은은한 조명과 화려한 촛대로 장식된 따뜻한 분위기의 자선 갈라 디너 메인 홀 내부">
-        </div>
-        <div class="campaign-hero__overlay"></div>
-        <div class="campaign-hero__content">
-          <span class="campaign-hero__badge">RMHC CHARITY GALA DINNER</span>
-          <h1 class="campaign-hero__title">따뜻한 동행,<br>희망을 밝히는 RMHC 갈라 디너</h1>
-          <p class="campaign-hero__desc">
-            매년 겨울, 헌신적인 후원자 및 기업 파트너들이 한자리에 모여 마음을 나누고,<br>
-            소아암 및 중증 질환 환아 가족의 소중한 내일을 위해 치료 및 주거 지원 기금을 마련하는 RMHC 대표 자선 문화 행사입니다.
-          </p>
-          <div class="campaign-hero__actions">
-            <a href="#booking-section" class="btn btn-secondary text-primary-color font-bold">티켓 및 후원 신청</a>
-            <a href="/donate/one-time.html" class="btn btn-primary">자선 기부 동참하기</a>
+    <div class="page-wrapper">
+      <main id="main-content" class="campaign-detail-container theme-gala">
+        <!-- 1. 히어로 비주얼 영역 (LCP 최적화 및 CLS 방지) -->
+        <section
+          class="campaign-hero"
+          aria-label="RMHC 자선 갈라 디너 캠페인 소개 비주얼"
+        >
+          <div class="campaign-hero__bg">
+            <img
+              src="/src/images/campaign/gala_hero.jpg"
+              width="1920"
+              height="560"
+              fetchpriority="high"
+              alt="은은한 조명과 화려한 촛대로 장식된 따뜻한 분위기의 자선 갈라 디너 메인 홀 내부"
+            />
           </div>
-        </div>
-      </section>
-
-      <!-- 2. 캠페인 취지 및 소구 스토리 -->
-      <section class="campaign-section campaign-section--white" aria-labelledby="intro-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">Gala Highlight</span>
-            <h2 id="intro-title" class="campaign-section__title">나눔과 감동이 흐르는 특별한 밤</h2>
-            <p class="campaign-section__desc">
-              단순히 후원금을 전달하는 것을 넘어 예술 작품 자선 경매, 국내 정상급 뮤지션들의 헌신적인 재능 기부 공연, 그리고 지원을 통해 미소를 되찾은 어린이들의 스토리를 공유하는 감동의 장을 선사합니다.
+          <div class="campaign-hero__overlay"></div>
+          <div class="campaign-hero__content">
+            <span class="campaign-hero__badge">RMHC CHARITY GALA DINNER</span>
+            <h1 class="campaign-hero__title">
+              따뜻한 동행,<br />희망을 밝히는 RMHC 갈라 디너
+            </h1>
+            <p class="campaign-hero__desc">
+              매년 겨울, 헌신적인 후원자 및 기업 파트너들이 한자리에 모여 마음을
+              나누고,<br />
+              소아암 및 중증 질환 환아 가족의 소중한 내일을 위해 치료 및 주거
+              지원 기금을 마련하는 RMHC 대표 자선 문화 행사입니다.
             </p>
-          </div>
-
-          <div class="campaign-grid campaign-grid--3cols">
-            <!-- 스토리 카드 1 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/gala_story1.jpg" width="380" height="214" loading="lazy" alt="갈라 디너 무대 위에서 자선 경매가 화기애애하게 진행되는 모습">
-              </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">자선 경매</span>
-                <h3 class="story-card__title">사랑을 낙찰받는 자선 옥션</h3>
-                <p class="story-card__excerpt">
-                  유명 아티스트들의 기증 작품과 기업의 특별 소장품을 소장함과 동시에 낙찰금의 100%가 중증 소아 환아들의 쉼터 운영 기금으로 기부되는 뜻깊은 코너입니다.
-                </p>
-              </div>
-            </article>
-
-            <!-- 스토리 카드 2 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/gala_story2.jpg" width="380" height="214" loading="lazy" alt="재능 기부 가수가 감미로운 노래를 선사하여 감동을 주는 무대 전경">
-              </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">문화 공연</span>
-                <h3 class="story-card__title">선율로 전하는 위로와 응원</h3>
-                <p class="story-card__excerpt">
-                  클래식 연주자, 뮤지컬 배우 등 기꺼이 선한 영향력에 동참한 대중 예술인들이 아름다운 하모니를 빚어내어 축제의 밤을 더욱 찬란하게 만듭니다.
-                </p>
-              </div>
-            </article>
-
-            <!-- 스토리 카드 3 -->
-            <article class="story-card">
-              <div class="story-card__thumb">
-                <img src="/src/images/campaign/gala_story3.jpg" width="380" height="214" loading="lazy" alt="후원자들과 환아 가족 대표가 무대에서 따뜻하게 포옹하는 장면">
-              </div>
-              <div class="story-card__body">
-                <span class="story-card__tag">감동 스토리</span>
-                <h3 class="story-card__title">기적이 현실이 된 가족들의 고백</h3>
-                <p class="story-card__excerpt">
-                  RMHC 하우스에서 치료 기간을 버티어 완치에 이른 환아와 그 가족들의 목소리로, 우리의 나눔이 어떤 기적을 일으켰는지 증명하는 가장 숭고한 순간입니다.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. 운영 성과 지표 (임팩트) -->
-      <section class="campaign-section campaign-section--ivory" aria-labelledby="impact-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">Gala History</span>
-            <h2 id="impact-title" class="campaign-section__title">나눔의 동반자들이 만든 위대한 기록</h2>
-            <p class="campaign-section__desc">
-              한 해의 마무리와 함께 진행되는 갈라 디너를 거쳐 쌓아 올린 따뜻한 성원과 정성어린 결실입니다.
-            </p>
-          </div>
-
-          <div class="campaign-grid campaign-grid--3cols">
-            <!-- 지표 1 -->
-            <div class="stat-card">
-              <div class="stat-card__number">9회 개최</div>
-              <div class="stat-card__label">자선 갈라 디너 역사</div>
-              <div class="stat-card__desc">해마다 깊이를 더해가며 나눔의 밤을 이어온 정성의 역사</div>
-            </div>
-
-            <!-- 지표 2 -->
-            <div class="stat-card">
-              <div class="stat-card__number">140+ 개사</div>
-              <div class="stat-card__label">누적 참여 후원 파트너사</div>
-              <div class="stat-card__desc">함께 테이블을 밝히고 지속적으로 동참해 준 후원 기업 및 단체</div>
-            </div>
-
-            <!-- 지표 3 -->
-            <div class="stat-card">
-              <div class="stat-card__number">6.2억 원</div>
-              <div class="stat-card__label">갈라 디너 누적 모금액</div>
-              <div class="stat-card__desc">경매 낙찰금 및 좌석 기부로 적립되어 하우스 건립에 귀중히 쓰인 총액</div>
+            <div class="campaign-hero__actions">
+              <a
+                href="#booking-section"
+                class="btn btn-secondary text-primary-color font-bold"
+                >티켓 및 후원 신청</a
+              >
+              <a href="/donate/one-time.html" class="btn btn-primary"
+                >자선 기부 동참하기</a
+              >
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- 4. 상세 공모 및 요강 테이블 안내 -->
-      <section id="booking-section" class="campaign-section campaign-section--white" aria-labelledby="booking-title">
-        <div class="container">
-          <div class="campaign-section__header">
-            <span class="campaign-section__subtitle">Seat Ticket Info</span>
-            <h2 id="booking-title" class="campaign-section__title">올해 갈라 디너 참가 안내</h2>
-            <p class="campaign-section__desc">
-              좌석 및 단체 테이블 신청을 확인하시어, 한 해의 마지막을 뜻깊은 자선 축제로 채우고 아이들의 든든한 방이 되어 주십시오.
-            </p>
-          </div>
-
-          <div class="campaign-table-wrapper">
-            <table class="campaign-table">
-              <caption>올해 RMHC 갈라 디너 개최 일시, 장소, 티켓 구분 및 포함 혜택 안내</caption>
-              <tbody>
-                <tr>
-                  <th scope="row">행사 일시</th>
-                  <td>2026년 12월 4일 (금요일) 오후 6:00 (웰컴 리셉션은 오후 5:00부터 개장)</td>
-                </tr>
-                <tr>
-                  <th scope="row">개최 장소</th>
-                  <td>그랜드 하얏트 서울 1층 그랜드볼룸 (무료 주차 혜택 및 발레 파킹 쿠폰 제공)</td>
-                </tr>
-                <tr>
-                  <th scope="row">드레스 코드</th>
-                  <td>블랙 타이 / 이브닝 수트 &amp; 드레스 (단정하고 격식 있는 칵테일 웨어)</td>
-                </tr>
-                <tr>
-                  <th scope="row">티켓 구분</th>
-                  <td>
-                    <strong>1. 개인 1석 티켓:</strong> 300,000 원 (최고급 안심 코스 요리, 와인 및 하프 리스트, 기념 리미티드 굿즈)<br>
-                    <strong>2. 실버 테이블 (8인석):</strong> 2,500,000 원 (단독 테이블 배정, 스페셜 셀렉티드 와인 2병 추가, 감사 장 기재)<br>
-                    <strong>3. 골드 VIP 스폰서십 (8인석):</strong> 6,000,000 원 (행사장 메인 월 및 팜플렛 사명 등재, 무대 LED 스크린 로고 송출, VIP 의전 배정)
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">신청 방법</th>
-                  <td>행사 2주 전까지 공식 온라인 신청서를 제출하시거나 RMHC 사무국 유선 전화를 통해 잔여 좌석 확인 및 예약</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. 참여 유도 CTA 배너 -->
-      <section class="campaign-section campaign-section--ivory" aria-label="갈라 디너 참여">
-        <div class="container">
-          <div class="cta-banner">
-            <div class="cta-banner__content">
-              <h2 class="cta-banner__title">여러분이 앉으시는 단 한 석의 자리가<br>아픈 아이가 묵을 따뜻한 방이 됩니다.</h2>
-              <p class="cta-banner__desc">
-                티켓 구매 및 후원금 전액은 법정 기부금에 해당하여 세액공제 기부금 영수증 발행이 가능합니다.
+        <!-- 2. 캠페인 취지 및 소구 스토리 -->
+        <section
+          class="campaign-section campaign-section--white"
+          aria-labelledby="intro-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle">Gala Highlight</span>
+              <h2 id="intro-title" class="campaign-section__title">
+                나눔과 감동이 흐르는 특별한 밤
+              </h2>
+              <p class="campaign-section__desc">
+                단순히 후원금을 전달하는 것을 넘어 예술 작품 자선 경매, 국내
+                정상급 뮤지션들의 헌신적인 재능 기부 공연, 그리고 지원을 통해
+                미소를 되찾은 어린이들의 스토리를 공유하는 감동의 장을
+                선사합니다.
               </p>
             </div>
-            <div class="cta-banner__actions">
-              <a href="/donate/one-time.html" class="btn btn--cta">갈라 디너 참가 예약하기</a>
+
+            <div class="campaign-grid campaign-grid--3cols">
+              <!-- 스토리 카드 1 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/gala_story1.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="갈라 디너 무대 위에서 자선 경매가 화기애애하게 진행되는 모습"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">자선 경매</span>
+                  <h3 class="story-card__title">사랑을 낙찰받는 자선 옥션</h3>
+                  <p class="story-card__excerpt">
+                    유명 아티스트들의 기증 작품과 기업의 특별 소장품을 소장함과
+                    동시에 낙찰금의 100%가 중증 소아 환아들의 쉼터 운영 기금으로
+                    기부되는 뜻깊은 코너입니다.
+                  </p>
+                </div>
+              </article>
+
+              <!-- 스토리 카드 2 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/gala_story2.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="재능 기부 가수가 감미로운 노래를 선사하여 감동을 주는 무대 전경"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">문화 공연</span>
+                  <h3 class="story-card__title">선율로 전하는 위로와 응원</h3>
+                  <p class="story-card__excerpt">
+                    클래식 연주자, 뮤지컬 배우 등 기꺼이 선한 영향력에 동참한
+                    대중 예술인들이 아름다운 하모니를 빚어내어 축제의 밤을 더욱
+                    찬란하게 만듭니다.
+                  </p>
+                </div>
+              </article>
+
+              <!-- 스토리 카드 3 -->
+              <article class="story-card">
+                <div class="story-card__thumb">
+                  <img
+                    src="/src/images/campaign/gala_story3.jpg"
+                    width="380"
+                    height="214"
+                    loading="lazy"
+                    alt="후원자들과 환아 가족 대표가 무대에서 따뜻하게 포옹하는 장면"
+                  />
+                </div>
+                <div class="story-card__body">
+                  <span class="story-card__tag">감동 스토리</span>
+                  <h3 class="story-card__title">
+                    기적이 현실이 된 가족들의 고백
+                  </h3>
+                  <p class="story-card__excerpt">
+                    RMHC 하우스에서 치료 기간을 버티어 완치에 이른 환아와 그
+                    가족들의 목소리로, 우리의 나눔이 어떤 기적을 일으켰는지
+                    증명하는 가장 숭고한 순간입니다.
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-    </main>
+        <!-- 3. 운영 성과 지표 (임팩트) -->
+        <section
+          class="campaign-section campaign-section--ivory"
+          aria-labelledby="impact-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle">Gala History</span>
+              <h2 id="impact-title" class="campaign-section__title">
+                나눔의 동반자들이 만든 위대한 기록
+              </h2>
+              <p class="campaign-section__desc">
+                한 해의 마무리와 함께 진행되는 갈라 디너를 거쳐 쌓아 올린 따뜻한
+                성원과 정성어린 결실입니다.
+              </p>
+            </div>
 
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="src/includes/footer.html" />
-  </div>
+            <div class="campaign-grid campaign-grid--3cols">
+              <!-- 지표 1 -->
+              <div class="stat-card">
+                <div class="stat-card__number">9회 개최</div>
+                <div class="stat-card__label">자선 갈라 디너 역사</div>
+                <div class="stat-card__desc">
+                  해마다 깊이를 더해가며 나눔의 밤을 이어온 정성의 역사
+                </div>
+              </div>
 
-  <script type="module" src="/src/js/common.js"></script>
-</body>
+              <!-- 지표 2 -->
+              <div class="stat-card">
+                <div class="stat-card__number">140+ 개사</div>
+                <div class="stat-card__label">누적 참여 후원 파트너사</div>
+                <div class="stat-card__desc">
+                  함께 테이블을 밝히고 지속적으로 동참해 준 후원 기업 및 단체
+                </div>
+              </div>
+
+              <!-- 지표 3 -->
+              <div class="stat-card">
+                <div class="stat-card__number">6.2억 원</div>
+                <div class="stat-card__label">갈라 디너 누적 모금액</div>
+                <div class="stat-card__desc">
+                  경매 낙찰금 및 좌석 기부로 적립되어 하우스 건립에 귀중히 쓰인
+                  총액
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 상세 공모 및 요강 테이블 안내 -->
+        <section
+          id="booking-section"
+          class="campaign-section campaign-section--white"
+          aria-labelledby="booking-title"
+        >
+          <div class="container">
+            <div class="campaign-section__header">
+              <span class="campaign-section__subtitle">Seat Ticket Info</span>
+              <h2 id="booking-title" class="campaign-section__title">
+                올해 갈라 디너 참가 안내
+              </h2>
+              <p class="campaign-section__desc">
+                좌석 및 단체 테이블 신청을 확인하시어, 한 해의 마지막을 뜻깊은
+                자선 축제로 채우고 아이들의 든든한 방이 되어 주십시오.
+              </p>
+            </div>
+
+            <div class="campaign-table-wrapper">
+              <table class="campaign-table">
+                <caption>
+                  올해 RMHC 갈라 디너 개최 일시, 장소, 티켓 구분 및 포함 혜택
+                  안내
+                </caption>
+                <tbody>
+                  <tr>
+                    <th scope="row">행사 일시</th>
+                    <td>
+                      2026년 12월 4일 (금요일) 오후 6:00 (웰컴 리셉션은 오후
+                      5:00부터 개장)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">개최 장소</th>
+                    <td>
+                      그랜드 하얏트 서울 1층 그랜드볼룸 (무료 주차 혜택 및 발레
+                      파킹 쿠폰 제공)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">드레스 코드</th>
+                    <td>
+                      블랙 타이 / 이브닝 수트 &amp; 드레스 (단정하고 격식 있는
+                      칵테일 웨어)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">티켓 구분</th>
+                    <td>
+                      <strong>1. 개인 1석 티켓:</strong> 300,000 원 (최고급 안심
+                      코스 요리, 와인 및 하프 리스트, 기념 리미티드 굿즈)<br />
+                      <strong>2. 실버 테이블 (8인석):</strong> 2,500,000 원
+                      (단독 테이블 배정, 스페셜 셀렉티드 와인 2병 추가, 감사 장
+                      기재)<br />
+                      <strong>3. 골드 VIP 스폰서십 (8인석):</strong> 6,000,000
+                      원 (행사장 메인 월 및 팜플렛 사명 등재, 무대 LED 스크린
+                      로고 송출, VIP 의전 배정)
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">신청 방법</th>
+                    <td>
+                      행사 2주 전까지 공식 온라인 신청서를 제출하시거나 RMHC
+                      사무국 유선 전화를 통해 잔여 좌석 확인 및 예약
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. 참여 유도 CTA 배너 -->
+        <section
+          class="campaign-section campaign-section--ivory"
+          aria-label="갈라 디너 참여"
+        >
+          <div class="container">
+            <div class="cta-banner">
+              <div class="cta-banner__content">
+                <h2 class="cta-banner__title">
+                  여러분이 앉으시는 단 한 석의 자리가<br />아픈 아이가 묵을
+                  따뜻한 방이 됩니다.
+                </h2>
+                <p class="cta-banner__desc">
+                  티켓 구매 및 후원금 전액은 법정 기부금에 해당하여 세액공제
+                  기부금 영수증 발행이 가능합니다.
+                </p>
+              </div>
+              <div class="cta-banner__actions">
+                <a href="/donate/one-time.html" class="btn btn--cta"
+                  >갈라 디너 참가 예약하기</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
+
+    <script type="module" src="/src/js/common.js"></script>
+  </body>
 </html>

@@ -2,7 +2,7 @@
   <div class="header__container">
     <div class="header__left-group">
       <a href="/" class="header__logo" aria-label="RMHC Korea 홈">
-        <img src="/src/images/common/logo.svg" alt="RMHC Korea Logo">
+        <img src="/src/images/common/logo.svg" alt="RMHC Korea Logo" />
       </a>
       <nav class="header__nav" aria-label="주 메뉴">
         <a href="/about.html" class="header__nav-item">소개</a>
@@ -12,48 +12,72 @@
         <a href="/news/notice.html" class="header__nav-item">소식</a>
       </nav>
     </div>
-    
+
     <div class="header__right">
       <div class="header__util">
         <a href="/login.html" class="header__util-link">로그인</a>
         <a href="/join.html" class="header__util-link">회원가입</a>
-        <a href="/nonmember/donations.html" class="header__util-link">기부금 영수증 확인</a>
+        <a href="/nonmember/donations.html" class="header__util-link"
+          >기부금 영수증 확인</a
+        >
         <a href="#" class="header__util-link" aria-label="언어 선택">
-          <svg class="header__util-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+          <svg
+            class="header__util-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+            ></path>
           </svg>
           KO
         </a>
       </div>
       <!-- 후원하기 버튼: SVG shape 배경 + HTML 텍스트 -->
-      <a href="/donate/regular.html" class="header__donate-btn" aria-label="후원하기">
+      <a
+        href="/donate/regular.html"
+        class="header__donate-btn"
+        aria-label="후원하기"
+      >
         <span class="header__donate-btn-text">후원하기</span>
       </a>
-      
+
       <!-- 모바일 햄버거 토글 버튼 (접근성 및 제어 속성 추가) -->
-      <button type="button" class="mobile-nav-toggle hide-desktop" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenuPanel">
+      <!-- <button type="button" class="mobile-nav-toggle hide-desktop" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenuPanel">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
-      </button>
+      </button> -->
     </div>
   </div>
 </header>
 
 <!-- 모바일 메뉴 슬라이딩 패널 (접근성 aria 속성 포함) -->
-<div class="mobile-menu-panel hide-desktop" id="mobileMenuPanel" aria-hidden="true">
+<div class="mobile-menu-panel type-mo" id="mobileMenuPanel" aria-hidden="true">
   <div class="mobile-panel-header">
     <a href="/" class="logo-link">
-      <img src="/src/images/common/logo.svg" alt="RMHC Korea Logo" class="logo-img">
+      <img
+        src="/src/images/common/logo.svg"
+        alt="RMHC Korea Logo"
+        class="logo-img"
+      />
     </a>
-    <button type="button" class="mobile-menu-close" aria-label="메뉴 닫기">&times;</button>
+    <button type="button" class="mobile-menu-close" aria-label="메뉴 닫기">
+      &times;
+    </button>
   </div>
-  
+
   <div class="mobile-utility">
     <a href="/login.html" class="btn btn-outline">로그인</a>
     <a href="/join.html" class="btn btn-primary">회원가입</a>
   </div>
 
+  <!-- mobile nav -->
   <nav class="mobile-nav" aria-label="모바일 주 메뉴">
     <ul class="m-gnb-depth1">
       <li class="m-gnb-item">
@@ -109,11 +133,17 @@
       </li>
     </ul>
   </nav>
-  
+  <!-- //mobile nav -->
+
   <div class="mobile-panel-footer">
-    <a href="/nonmember/donations.html" class="btn btn-text" style="width: 100%; text-align: center; display: block;">비회원 후원조회</a>
+    <a
+      href="/nonmember/donations.html"
+      class="btn btn-text"
+      style="width: 100%; text-align: center; display: block"
+      >비회원 후원조회</a
+    >
   </div>
 </div>
 
 <!-- 모바일 메뉴 딤드 오버레이 -->
-<div class="mobile-menu-overlay hide-desktop"></div>
+<div class="mobile-menu-overlay type-mo"></div>

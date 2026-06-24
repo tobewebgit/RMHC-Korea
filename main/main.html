@@ -8,15 +8,15 @@
       content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 공식 홈페이지입니다. 중증 환아와 가족을 위한 사랑의 쉼터 패밀리하우스 건립 및 아동 복지 지원에 함께해주세요."
     />
     <title>한국로날드맥도날드하우스 - RMHC Korea</title>
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/main.css" />
   </head>
-  <body>
+  <body class="main">
     <!-- 웹 접근성 스킵 네비게이션 -->
     <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
     <!-- 헤더 공통 영역 인클루드 -->
-    <load ="src/includes/header.html" />
+    <load ="/includes/header.html" />
 
     <div class="page-wrapper">
       <main id="main-content">
@@ -40,7 +40,7 @@
             <!-- 우: 하트 이미지 영역 (CSS mask-image + img 태그 분리 제어) -->
             <div class="kv-section__heart-wrap">
               <img
-                src="./src/images/main/kv_image.jpg"
+                src="/src/images/main/kv_image.jpg"
                 class="kv-section__heart-img"
                 alt="아이와 엄마"
                 fetchpriority="high"
@@ -58,28 +58,15 @@
           <div class="quick-bar__inner">
             <div class="quick-bar__title-wrap">
               <div class="quick-bar__symbol-bg">
-                <svg
+                <img
+                  src="/src/images/main/ico-quick-bar__symbol.svg"
                   class="quick-bar__symbol"
-                  width="44"
-                  height="52"
-                  viewBox="0 0 44 52"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M43.9769 49.8916C43.9245 51.0872 43.5056 51.5027 42.1952 51.5027C38.683 51.5027 30.6114 50.9301 21.9637 50.9301C12.634 50.9301 5.6096 51.6065 1.94163 51.5027C0.788346 51.4507 0.224457 50.9834 0.212374 50.0474C0.192235 48.5574 0.429874 44.808 0.429874 36.4397C0.429874 30.5652 0.00158691 22.0305 0.00158691 19.4315C0.00158691 18.5474 0.211031 18.1839 0.945429 17.6646C5.8177 14.232 14.6238 6.79843 20.7567 0.665666C21.6482 -0.166505 22.3289 -0.218433 23.4298 0.509883C28.3571 3.88916 38.4722 12.2055 42.7189 16.4157C43.5056 17.144 43.7151 17.7152 43.7151 18.7551C44.2387 30.0353 44.291 40.1705 43.9769 49.8916Z"
-                    fill="#DB0007"
-                  />
-                  <path
-                    d="M7.02307 29.4106C7.02307 25.5121 9.69617 22.913 13.6796 22.913C16.5098 22.913 19.3924 24.2126 21.856 26.6039C22.1702 26.9154 22.4844 26.9154 22.9046 26.5C27.8319 21.6135 31.8677 19.0664 34.6456 19.0664C36.638 19.0664 37.7376 20.314 37.7376 22.5495C37.7376 27.7476 31.7093 36.7404 22.8522 44.7452C22.2239 45.3177 21.6989 45.3177 20.7551 44.8491C12.2632 40.6389 7.02307 34.7645 7.02307 29.4106Z"
-                    fill="#FFFDE9"
-                  />
-                </svg>
+                  alt=""
+                />
+                <h2 class="quick-bar__title">
+                  지금 아이들에게 전하고 싶은<br />마음은 무엇인가요?
+                </h2>
               </div>
-              <h2 class="quick-bar__title">
-                지금 아이들에게 전하고 싶은<br />마음은 무엇인가요?
-              </h2>
             </div>
             <div class="quick-bar__menu">
               <a href="/donate/" class="quick-bar__btn">
@@ -193,7 +180,7 @@
                   >가족의
                   <img
                     class="inline-icon"
-                    src="./src/images/main/icon_people_heart.svg"
+                    src="/src/images/main/icon_people_heart.svg"
                     alt=""
                     width="24"
                     height="24"
@@ -209,7 +196,7 @@
                     >머물 수 있는 보금자리를
                     <img
                       class="inline-icon"
-                      src="./src/images/main/icon_house_rmhc.svg"
+                      src="/src/images/main/icon_house_rmhc.svg"
                       alt=""
                       width="24"
                       height="24"
@@ -222,7 +209,7 @@
                     >마련하여 아이들의 건강한 회복을
                     <img
                       class="inline-icon"
-                      src="./src/images/main/icon_hands_heart.svg"
+                      src="/src/images/main/icon_hands_heart.svg"
                       alt=""
                       width="24"
                       height="24"
@@ -237,7 +224,7 @@
               <div class="house-intro__image-frame">
                 <img
                   class="house-intro__main-img"
-                  src="./src/images/main/house_main.png"
+                  src="/src/images/main/house_main.png"
                   alt="하우스 안에서 보호자와 아이가 함께 책을 읽고 있는 모습"
                   width="1024"
                   height="587"
@@ -246,7 +233,7 @@
                 <!-- 데코 낙서 일러스트 -->
                 <img
                   class="deco-doodle deco-heart"
-                  src="./src/images/main/house_heart.svg"
+                  src="/src/images/main/house_heart.svg"
                   alt=""
                   width="120"
                   height="110"
@@ -254,7 +241,7 @@
                 />
                 <img
                   class="deco-doodle deco-cloud"
-                  src="./src/images/main/house_cloud.svg"
+                  src="/src/images/main/house_cloud.svg"
                   alt=""
                   width="140"
                   height="90"
@@ -262,7 +249,7 @@
                 />
                 <img
                   class="deco-doodle deco-arrow"
-                  src="./src/images/main/house_arrow.svg"
+                  src="/src/images/main/house_arrow.svg"
                   alt=""
                   width="80"
                   height="60"
@@ -293,7 +280,7 @@
                 <a href="/houses/gangnam.html" class="house-card theme-blue">
                   <div class="house-card__icon-wrap">
                     <img
-                      src="./src/images/main/icon_house_rmhc.svg"
+                      src="/src/images/main/icon_house_rmhc.svg"
                       alt=""
                       width="20"
                       height="20"
@@ -308,7 +295,7 @@
                 <a href="/houses/inha.html" class="house-card theme-purple">
                   <div class="house-card__icon-wrap">
                     <img
-                      src="./src/images/main/icon_house_rmhc.svg"
+                      src="/src/images/main/icon_house_rmhc.svg"
                       alt=""
                       width="20"
                       height="20"
@@ -323,7 +310,7 @@
                 <a href="/houses/seocho.html" class="house-card theme-yellow">
                   <div class="house-card__icon-wrap">
                     <img
-                      src="./src/images/main/icon_house_rmhc.svg"
+                      src="/src/images/main/icon_house_rmhc.svg"
                       alt=""
                       width="20"
                       height="20"
@@ -338,7 +325,7 @@
                 <a href="/houses/yeonhui.html" class="house-card theme-green">
                   <div class="house-card__icon-wrap">
                     <img
-                      src="./src/images/main/icon_house_rmhc.svg"
+                      src="/src/images/main/icon_house_rmhc.svg"
                       alt=""
                       width="20"
                       height="20"
@@ -377,10 +364,10 @@
       </main>
 
       <!-- 푸터 공통 영역 인클루드 -->
-      <load ="src/includes/footer.html" />
+      <load ="/includes/footer.html" />
     </div>
 
-    <script type="module" src="./src/js/common.js"></script>
-    <script type="module" src="./src/js/pages/index-reveal.js"></script>
+    <script type="module" src="/src/js/common.js"></script>
+    <script type="module" src="/src/js/pages/index-reveal.js"></script>
   </body>
 </html>
