@@ -51,7 +51,7 @@
    Header GNB Styling (Fluid Scale)
    ========================================================================== */
 .main .header {
-  background-color: var(--kv-bg);
+  background-color: var(--bg-kv);
 }
 
 .header {

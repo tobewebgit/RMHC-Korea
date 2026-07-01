@@ -8,6 +8,9 @@
   justify-content: center;
   padding: var(--spacing-100) var(--spacing-100);
 }
+.login-section.w-lg {
+  padding-top: 4rem;
+}
 
 .login-card {
   width: 100%;
@@ -31,9 +34,14 @@
 .login-title {
   margin-bottom: var(--spacing-2);
   font-size: var(--text-4xl);
-  font-weight: 700;
   text-align: center;
   letter-spacing: var(--letter-spacing-tight);
+}
+.login-title.text-lg {
+  font-size: var(--text-5xl);
+}
+.login-title.text-lg.mt100 {
+  margin-top: var(--spacing-100);
 }
 
 .login-desc {
@@ -90,7 +98,7 @@
   gap: var(--spacing-3);
   margin-top: var(--spacing-10);
   margin-bottom: var(--spacing-10);
-  color: #bbbbbb;
+  color: var(--text-gray60);
 }
 
 .line-box::before {
@@ -106,12 +114,15 @@
   height: 1px;
   background-color: var(--border-color);
 }
+.line-box .line-text {
+  font-size: 1.8rem;
+}
 
 /* 폼 헬퍼 및 에러 텍스트 */
 .form-helper {
-  font-size: var(--text-xs);
-  color: var(--text-muted);
   margin-top: 0.6rem;
+  color: var(--text-muted);
+  font-family: var(--font-pretendard);
   line-height: 1.4;
 }
 
@@ -124,8 +135,11 @@
 
 .login-guide {
   margin-top: var(--spacing-4);
-  color: #555555;
+  color: var(--text-gray80);
   text-align: center;
+}
+.login-guide a {
+  color: var(--text-gray80);
 }
 
 /* 로그인 옵션 (아이디 저장 & 계정 찾기/가입) */
@@ -143,7 +157,7 @@
   position: relative;
   height: 0.1rem;
   width: 100%;
-  margin: var(--spacing-6) 0;
+  margin: var(--spacing-5) 0;
   background-color: var(--border-color);
 }
 
@@ -152,7 +166,6 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-3);
-  font-size: var(--text-base);
 }
 
 .login-links a {
@@ -177,7 +190,6 @@
 
 .login-info {
   margin-top: var(--spacing-10);
-  font-size: var(--text-sm);
   color: var(--text-gray60);
   text-align: center;
 }
@@ -274,7 +286,6 @@
 
 .result-box__value {
   font-size: 2.8rem;
-  font-weight: 600;
 }
 
 .result-box__info {
@@ -285,174 +296,797 @@
   padding-top: var(--spacing-3);
 }
 
-/* 본인인증 카드 목록 */
-.auth-methods {
+.icon-top {
+  margin-bottom: var(--spacing-4);
+  text-align: center;
+}
+
+/* 회원가입 */
+.join-section {
+  padding: var(--spacing-100) var(--spacing-100);
+}
+
+.join-title {
+  font-size: var(--text-5xl);
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.join-form {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-3);
-  margin-bottom: var(--spacing-6);
+  gap: var(--spacing-6);
 }
 
-.auth-method-btn {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-4);
+.join-card {
   width: 100%;
-  padding: var(--spacing-4);
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  text-align: left;
+  max-width: 80rem;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-80) var(--spacing-60);
+  box-shadow: var(--shadow-lg);
 }
 
-.auth-method-btn:hover {
-  border-color: var(--primary);
-  background-color: var(--bg-secondary);
-  box-shadow: var(--shadow-md);
+.join-card__title {
+  font-size: 2.8rem;
+  margin-bottom: var(--spacing-10);
+  padding-bottom: var(--spacing-10);
+  border-bottom: 1px solid var(--border-gray40);
 }
 
-.auth-method-icon {
+.join-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.join-banner-section {
+  display: flex;
+  width: 100%;
+  max-width: 80rem;
+  height: 12rem;
+  margin-top: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-kv);
+  background-image: url(../images/login/bg_join_bottom.png);
+  background-repeat: no-repeat;
+}
+.join-banner-section h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: var(--radius-sm);
-  background-color: var(--bg-secondary);
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 56rem;
+  color: var(--text-white);
+  text-align: center;
 }
 
-.auth-method-icon img {
-  width: 2.4rem;
-  height: 2.4rem;
-  object-fit: contain;
+.form-address-wrap {
+  gap: 0.8rem;
 }
 
-.auth-method-info {
-  flex: 1;
+/* 기부금 영수증 영역 */
+.receipt-helper {
+  line-height: 1.5;
+  color: var(--text-gray60);
+  font-family: var(--font-pretendard);
 }
-
-.auth-method-name {
-  font-weight: 600;
-  font-size: var(--text-base);
-  color: var(--text-primary);
-}
-
-.auth-method-desc {
-  font-size: var(--text-xs);
-  color: var(--text-muted);
+.receipt-helper__secondary {
   margin-top: 0.2rem;
 }
 
-/* 개인정보 처리동의 박스 */
-.info-notice-box {
-  background-color: var(--bg-secondary);
-  border-radius: var(--radius-sm);
-  padding: var(--spacing-4);
-  font-size: var(--text-xs);
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: var(--spacing-6);
-  border-left: 3px solid var(--border-color);
-}
-
-/* 레이어 팝업 / 모달 구조 */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(31, 41, 55, 0.5);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition-smooth);
-}
-
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-container {
-  width: 90%;
-  max-width: 44rem;
-  background-color: var(--bg-primary);
+.receipt-resident-panel {
+  margin-left: 16rem;
+  padding: var(--spacing-8) var(--spacing-6);
+  background-color: rgba(208, 201, 255, 0.2);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  transform: translateY(2rem);
-  transition: var(--transition-smooth);
+  border: 1px solid var(--border-gray50);
 }
 
-.modal-overlay.active .modal-container {
-  transform: translateY(0);
+.resident-label {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  margin-bottom: var(--spacing-4);
 }
 
-.modal-header {
-  padding: var(--spacing-5) var(--spacing-6);
-  border-bottom: 1px solid var(--border-color);
+.resident-input-group {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.resident-input-group .form-control {
+  min-width: 14.5rem;
+  background-color: var(--bg-primary);
+}
+
+.resident-divider {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.resident-pw-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
   align-items: center;
 }
 
-.modal-title {
-  font-size: var(--text-lg);
-  font-weight: 700;
+.resident-pw-wrap .form-control {
+  padding-right: 4.5rem;
+}
+
+.resident-pw-wrap .eye-btn {
+  position: absolute;
+  right: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  background-size: contain;
+}
+
+.receipt-warning-list {
+  margin-top: var(--spacing-6);
+  padding-left: var(--spacing-4);
+}
+.receipt-warning-list li {
+  list-style-type: disc;
+  font-family: var(--font-pretendard);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* 이용약관 */
+.agreement-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 2.8rem;
+}
+
+.agreement-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.agreement-item + .agreement-item {
+  margin-top: 1.6rem !important;
+}
+
+a.agreement-link {
+  color: var(--text-gray60);
+  font-family: var(--font-pretendard);
+  white-space: nowrap;
+  transition: var(--transition-fast);
+}
+.agreement-link:hover {
   color: var(--text-primary);
 }
 
-.modal-close {
-  font-size: 2.4rem;
-  cursor: pointer;
-  color: var(--text-muted);
-  line-height: 1;
+/* 하단 액션 버튼 */
+.join-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-5);
+  margin-bottom: var(--spacing-16);
+}
+.join-actions .btn {
+  max-width: 15.4rem;
+  margin: 0 auto;
+}
+.join-actions .error-text {
+  color: var(--primary);
+  text-align: center;
+}
+.join-actions .error-text span {
+  position: relative;
+  padding-left: 2rem;
+  background: url(../images/common/icon_error.png) left 0 top 50% no-repeat;
+}
+
+/* ==========================================================================
+   공통 사용 요소 (탭, 테이블, 페이징 등 - 구 nonmember.css)
+   ========================================================================== */
+
+/* 1. 레이아웃 및 컨테이너 */
+.nonmember-wrapper {
+  padding-bottom: 12rem;
+}
+
+.nonmember-wrapper .inner-container {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: var(--spacing-100) 0 0;
+}
+
+.page-title {
+  font-family: var(--font-title);
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: var(--spacing-60);
+}
+.page-title.mypage {
+  font-size: var(--text-6xl);
+  font-weight: 900;
+}
+
+/* 2. 탭 네비게이션 */
+.tab-menu {
+  margin-bottom: var(--spacing-10);
+}
+
+.tab-list {
+  display: flex;
+  gap: var(--spacing-10);
+}
+
+.tab-item {
+  display: block;
+}
+
+.tab-btn {
+  display: block;
+  padding: var(--spacing-5) var(--spacing-3);
+  font-size: 3.2rem;
+  font-weight: 600;
   background: none;
   border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+/* 3. 탭 콘텐츠 영역 (Figma 데이터 반영) */
+.content-card {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-60);
+}
+
+.card-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-10);
+}
+
+.card-title-wrap .card-title {
+  font-family: var(--font-title);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: #000000;
+}
+
+/* 4. 요약 박스 */
+.summary-box {
+  display: flex;
+  height: 14rem;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(208, 201, 255, 0.2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-80);
+}
+
+.summary-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+}
+
+.summary-label {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #000000;
+}
+
+.summary-value {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-1);
+}
+
+.summary-value .number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #000000;
+}
+
+.summary-value .unit {
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #000000;
+}
+
+.divider {
+  width: 1px;
+  height: var(--spacing-60);
+  background-color: var(--border-color);
+}
+
+/* 5. 데이터 테이블 */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.donation-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.donation-table th {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: #000000;
+  padding: var(--spacing-8) 0;
+  border-top: 2px solid #000000;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.donation-table td {
+  font-family: var(--font-pretendard);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: #000000;
+  padding: var(--spacing-8) 0;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* 컬럼 너비 지정 */
+.donation-table .col-no {
+  width: 9rem;
+}
+.donation-table .col-type {
+  width: 12rem;
+}
+.donation-table .col-camp {
+  width: 18rem;
+}
+
+/* 6. 페이지네이션 */
+.pagination {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-80);
+}
+
+.page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: #000000;
   transition: var(--transition-fast);
 }
 
-.modal-close:hover {
+.page-arrow {
+  border: 1px solid var(--border-color);
+}
+
+.page-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.page-btn.active {
+  background-color: var(--primary);
+  color: var(--text-white);
+  border: none;
+}
+
+.page-btn:not(.active):not(.page-arrow):hover {
+  text-decoration: underline;
+}
+
+/* 화살표 아이콘 배경 (추후 SVG/이미지로 교체 가능) */
+.page-arrow.page-first {
+  background: url("../images/common/icon_arrow_first.svg") no-repeat center;
+  background-size: 1.6rem;
+}
+.page-arrow.page-prev {
+  background: url("../images/common/icon_arrow_prev.svg") no-repeat center;
+  background-size: 1.6rem;
+}
+.page-arrow.page-next {
+  background: url("../images/common/icon_arrow_next.svg") no-repeat center;
+  background-size: 1.6rem;
+}
+.page-arrow.page-last {
+  background: url("../images/common/icon_arrow_last.svg") no-repeat center;
+  background-size: 1.6rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-100) 0;
+  font-size: var(--text-xl);
+  color: var(--text-muted);
+}
+
+/* 기부금 영수증 확인 탭 */
+.receipt-card {
+  /* .content-card 기본 속성 유지 */
+}
+
+.receipt-notice {
+  font-family: var(--font-pretendard);
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: var(--spacing-10);
+  word-break: keep-all;
+}
+
+.receipt-box {
+  background-color: #f4f2ee;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-100) var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.receipt-icon {
+  margin-bottom: var(--spacing-6);
+}
+
+.receipt-title {
+  font-family: var(--font-title);
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: var(--spacing-4);
+  word-break: keep-all;
+}
+
+.receipt-desc {
+  font-family: var(--font-pretendard);
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: var(--spacing-10);
+  word-break: keep-all;
+  line-height: 1.5;
+}
+
+.receipt-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-family: var(--font-pretendard);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: var(--spacing-2);
+}
+
+.status-dot {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+}
+.status-dot.yellow {
+  background-color: #ffc72c;
+}
+.status-dot.green {
+  background-color: #7cb342;
+}
+.status-dot.red {
+  background-color: #e00000;
+}
+
+.desc-note {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--text-gray60);
+  margin-top: var(--spacing-2);
+}
+
+/* ==========================================================================
+   마이페이지 나의 정보 탭 (tab-info) 스타일
+   ========================================================================== */
+
+/* 1. 나의 정보 레이아웃 */
+.mypage-info-title-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.mypage-info-title {
+  font-family: var(--font-title);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: #000000;
+}
+
+.mypage-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-6);
+  width: 100%;
+}
+
+/* 2. 카드 박스 */
+.info-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 4rem 3.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.info-card-title {
+  font-family: var(--font-bold);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.info-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  flex: 1;
+}
+
+/* 3. 폼 컨트롤 확장 */
+.info-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: relative;
+}
+
+.info-form-group.flex-row-layout {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 5.2rem;
+  margin-top: auto; /* 계정 정보 카드에서 알림 수신동의를 하단 배치하기 위함 */
+}
+
+.info-label {
+  font-family: var(--font-pretendard);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: #000000;
+}
+
+.info-label.required::before {
+  content: "* ";
+  color: #000000; /* 시안 상 검은색 별표 */
+  margin-right: 0.2rem;
+}
+
+/* 수정 가능 필드 배경색 (크림색) */
+.form-control.editable {
+  background-color: var(--bg-primary); /* #fffde9 */
+}
+
+.form-control.editable:focus {
+  background-color: var(--bg-white);
+}
+
+.info-input-desc {
+  font-family: var(--font-pretendard);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-top: 0.2rem;
+}
+
+.info-input-desc.font-sm {
+  font-size: 1.4rem;
+}
+
+.info-action-btn-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.4rem;
+}
+
+.info-action-btn {
+  max-width: 15rem;
+}
+
+/* 4. 비밀번호 변경 박스 */
+.pw-change-box {
+  background-color: rgba(208, 201, 255, 0.15); /* 연보랏빛 회색 배경 */
+  border-radius: var(--radius-sm);
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  border: 1px solid rgba(208, 201, 255, 0.3);
+}
+
+.pw-change-title {
+  font-family: var(--font-bold);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.4rem;
+}
+
+.pw-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.pw-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.pw-input-wrapper .form-control {
+  padding-right: 5rem;
+}
+
+/* 눈 아이콘 토글 처리 */
+.pw-input-wrapper .eye-btn.visible {
+  opacity: 0.4; /* 눈이 켜지면 투명하게 하여 상태 변화 표시 */
+}
+
+/* 5. 알림 수신동의 체크박스 색상 커스텀 */
+.info-form-group .custom-checkbox {
+  font-size: var(--text-lg);
+  color: #000000;
+}
+
+/* 6. 기부금 영수증 신청 여부 카드 */
+.receipt-consent-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-top: var(--spacing-6);
+  padding: 3.2rem;
+}
+
+.receipt-consent-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.receipt-consent-title {
+  font-family: var(--font-bold);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #000000;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.receipt-consent-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-6);
+}
+
+.receipt-consent-desc {
+  font-family: var(--font-pretendard);
+  font-size: var(--text-lg);
+  color: #000000;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.receipt-consent-btn {
+  max-width: 22rem;
+  flex-shrink: 0;
+}
+
+/* 7. 하단 액션 버튼 */
+.info-action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  margin-top: 4rem;
+}
+
+.info-action-buttons .btn {
+  max-width: 16rem;
+}
+
+/* 8. 회원 탈퇴 링크 */
+.withdraw-link-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4rem;
+}
+
+.withdraw-link {
+  font-family: var(--font-bold);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 2px solid var(--primary); /* 빨간색 밑줄 */
+  padding-bottom: 0.2rem;
+  display: inline-block;
+}
+
+.withdraw-link:hover {
   color: var(--primary);
 }
 
-.modal-body {
-  padding: var(--spacing-6);
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.modal-footer {
-  padding: var(--spacing-4) var(--spacing-6) var(--spacing-6);
-  display: flex;
-  gap: var(--spacing-3);
-  justify-content: flex-end;
-}
-
-.modal-footer .btn {
-  flex: 1;
-  min-height: 4.4rem;
-}
-
-/* 반응형 스타일 조정 */
-@media (max-width: 576px) {
-  .login-card {
-    padding: var(--spacing-8) var(--spacing-5);
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-  }
-
-  .login-section {
-    background-color: var(--bg-primary);
-    padding: var(--spacing-6) 0;
+/* 9. 반응형 미디어 쿼리 */
+@media screen and (max-width: 1024px) {
+  .mypage-info-grid {
+    grid-template-columns: 1fr;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .info-card {
+    padding: 3rem 2rem;
+  }
+  
+  .receipt-consent-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.6rem;
+  }
+  
+  .receipt-consent-btn {
+    max-width: 100%;
+  }
+
+  .info-action-buttons {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .info-action-buttons .btn {
+    flex: 1;
+    max-width: none;
+  }
+}
+

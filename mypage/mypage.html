@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="RMHC Korea - 마이페이지"
+    />
+    <title>마이페이지 - RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/login.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
+
+    <div class="page-wrapper">
+      <main id="main-content" class="nonmember-wrapper">
+        <div class="inner-container">
+          <h2 class="page-title mypage">마이페이지</h2>
+
+          <!-- 탭 메뉴 -->
+          <nav class="tab-menu" aria-label="후원 현황 탭">
+            <ul class="tab-list">
+              <li class="tab-item">
+                <button
+                  type="button"
+                  class="tab-btn active"
+                  data-tab-target="tab-status"
+                >
+                  나의 후원 현황
+                </button>
+              </li>
+              <li class="tab-item">
+                <button
+                  type="button"
+                  class="tab-btn"
+                  data-tab-target="tab-receipt"
+                >
+                  기부금 영수증 확인
+                </button>
+              </li>
+              <li class="tab-item">
+                <button
+                  type="button"
+                  class="tab-btn"
+                  data-tab-target="tab-info"
+                >
+                  나의 정보
+                </button>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- 탭 콘텐츠 영역 -->
+          <div class="tab-content-container">
+            <!-- 1. 나의 후원 현황 탭 -->
+            <div id="tab-status" class="tab-content active">
+              <section class="content-card">
+                <div class="card-title-wrap">
+                  <h3 class="card-title">나의 후원 현황</h3>
+                </div>
+
+                <div class="summary-box">
+                  <div class="summary-item">
+                    <span class="summary-label">정기 후원</span>
+                    <div class="summary-value">
+                      <span class="number">4</span><span class="unit">건</span>
+                    </div>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="summary-item">
+                    <span class="summary-label">일시 후원</span>
+                    <div class="summary-value">
+                      <span class="number">2</span><span class="unit">건</span>
+                    </div>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="summary-item">
+                    <span class="summary-label">누적 후원 금액</span>
+                    <div class="summary-value">
+                      <span class="number">620,000</span
+                      ><span class="unit">원</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <!-- 2. 기부금 영수증 확인 탭 -->
+            <div id="tab-receipt" class="tab-content" style="display: none">
+              <section class="content-card receipt-card">
+                <div class="card-title-wrap">
+                  <h3 class="card-title">기부금 영수증 확인</h3>
+                </div>
+                <p class="receipt-notice">기부금 영수증은 국세청 홈택스를 통해 확인하실 수 있습니다. 개인정보 제공 동의 후 연말정산 간소화 서비스에 반영됩니다.</p>
+                
+                <!-- [개발참고] 상태별 영수증 확인 UI 분기 (총 4가지 상태) -->
+                
+                <!-- TYPE 1: 기부금 영수증 신청 전 -->
+                <div class="receipt-box" style="margin-bottom: 2rem;">
+                  <div class="receipt-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <rect x="8" y="4" width="48" height="56" rx="4" fill="#E00000"/>
+                      <path d="M18 20L22 24L30 16" stroke="#A4E328" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M18 32L22 36L30 28" stroke="#A4E328" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M18 44L22 48L30 40" stroke="#A4E328" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <rect x="36" y="18" width="12" height="4" rx="2" fill="white"/>
+                      <rect x="36" y="30" width="12" height="4" rx="2" fill="white"/>
+                      <rect x="36" y="42" width="12" height="4" rx="2" fill="white"/>
+                    </svg>
+                  </div>
+                  <h4 class="receipt-title">아직 기부금 영수증 신청이 완료되지 않았습니다.</h4>
+                  <p class="receipt-desc">동의 후 국세청 홈택스 연말정산 간소화 서비스에서 기부 내역을 확인하실 수 있습니다.</p>
+                  <button type="button" class="btn btn-primary w-auto">기부금 영수증 신청하기</button>
+                </div>
+
+                <!-- TYPE 2: 접수 완료 (국세청 등록 진행 중) -->
+                <div class="receipt-box" style="margin-bottom: 2rem;">
+                  <div class="receipt-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <rect x="6" y="12" width="52" height="34" rx="2" stroke="#E00000" stroke-width="4" fill="#E8E4FF"/>
+                      <rect x="28" y="46" width="8" height="8" fill="#E00000"/>
+                      <rect x="20" y="54" width="24" height="4" rx="2" fill="#E00000"/>
+                      <!-- cursor -->
+                      <path d="M32 22L38 34L33 32L30 38L27 36L30 30L26 30L32 22Z" fill="#E00000"/>
+                      <!-- tiny heart -->
+                      <path d="M14 18C14 16 17 16 18 18C19 16 22 16 22 18C22 21 18 24 18 24C18 24 14 21 14 18Z" fill="#FFC72C"/>
+                    </svg>
+                  </div>
+                  <div class="receipt-status">
+                    <span class="status-dot yellow"></span> 접수 완료 (국세청 등록 진행 중)
+                  </div>
+                  <h4 class="receipt-title">기부금 영수증 신청이 접수되었습니다.</h4>
+                  <p class="receipt-desc">
+                    기부금 영수증은 순차적으로 국세청에 등록되며, 반영까지 약 1~2주 정도 소요될 수 있습니다.<br>
+                    등록 완료 후 국세청 홈택스에서 확인하실 수 있습니다.
+                  </p>
+                </div>
+
+                <!-- TYPE 3: 국세청 등록 완료 -->
+                <div class="receipt-box" style="margin-bottom: 2rem;">
+                  <div class="receipt-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <rect x="14" y="8" width="36" height="48" rx="2" fill="#E00000"/>
+                      <rect x="20" y="16" width="24" height="4" fill="white"/>
+                      <rect x="20" y="26" width="16" height="4" fill="white"/>
+                      <rect x="20" y="36" width="24" height="4" fill="white"/>
+                      <rect x="20" y="46" width="12" height="4" fill="white"/>
+                      <path d="M46 16C46 14 49 14 50 16C51 14 54 14 54 16C54 19 50 22 50 22C50 22 46 19 46 16Z" fill="#87CEEB"/>
+                    </svg>
+                  </div>
+                  <div class="receipt-status">
+                    <span class="status-dot green"></span> 국세청 등록 완료
+                  </div>
+                  <h4 class="receipt-title">기부금 영수증이 국세청에 정상 등록되었습니다.</h4>
+                  <p class="receipt-desc">
+                    국세청 홈택스 연말정산 간소화 서비스에서 기부금 내역을 확인하실 수 있습니다.<br>
+                    <span class="desc-note">※ 반영 시점에 따라 조회까지 시간이 소요될 수 있습니다.</span>
+                  </p>
+                  <button type="button" class="btn btn-primary w-auto">홈택스 바로가기</button>
+                </div>
+              </section>
+            </div>
+
+            <!-- 3. 나의 정보 탭 -->
+            <div id="tab-info" class="tab-content" style="display: none">
+              <div class="content-card">
+                <div class="mypage-info-title-wrap">
+                  <h3 class="mypage-info-title">나의 정보</h3>
+                </div>
+
+                <form action="/mypage.html" method="POST" class="mypage-info-form" novalidate>
+                  <div class="mypage-info-grid">
+                    <!-- 기본 정보 카드 -->
+                    <section class="info-card">
+                      <div class="info-card-header">
+                        <h4 class="info-card-title">기본 정보</h4>
+                      </div>
+                      <div class="info-card-body">
+                        <!-- 아이디 -->
+                        <div class="info-form-group">
+                          <label for="infoId" class="info-label required">아이디</label>
+                          <input
+                            type="text"
+                            id="infoId"
+                            class="form-control disabled"
+                            value="donald04"
+                            disabled
+                            readonly
+                          />
+                        </div>
+                        
+                        <!-- 이름 -->
+                        <div class="info-form-group">
+                          <label for="infoName" class="info-label required">이름</label>
+                          <input
+                            type="text"
+                            id="infoName"
+                            class="form-control disabled"
+                            value="로날드"
+                            disabled
+                            readonly
+                          />
+                        </div>
+                        
+                        <!-- 생년월일 -->
+                        <div class="info-form-group">
+                          <label for="infoBirth" class="info-label required">생년월일</label>
+                          <input
+                            type="text"
+                            id="infoBirth"
+                            class="form-control disabled"
+                            value="19880101"
+                            disabled
+                            readonly
+                          />
+                        </div>
+                        
+                        <!-- 성별 -->
+                        <div class="info-form-group">
+                          <label for="infoGender" class="info-label required">성별</label>
+                          <input
+                            type="text"
+                            id="infoGender"
+                            class="form-control disabled"
+                            value="남성"
+                            disabled
+                            readonly
+                          />
+                        </div>
+                        
+                        <!-- 휴대폰 번호 -->
+                        <div class="info-form-group">
+                          <label for="infoPhone" class="info-label required">휴대폰 번호</label>
+                          <input
+                            type="tel"
+                            id="infoPhone"
+                            class="form-control editable"
+                            value="010-1234-5678"
+                          />
+                          <p class="info-input-desc">휴대폰 번호 변경은 본인명의의 휴대폰 본인인증 후 변경이 가능합니다.</p>
+                          <div class="info-action-btn-wrap">
+                            <button type="button" class="btn btn-primary info-action-btn">휴대폰 번호 변경</button>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    <!-- 계정 정보 카드 -->
+                    <section class="info-card">
+                      <div class="info-card-header">
+                        <h4 class="info-card-title">계정 정보</h4>
+                      </div>
+                      <div class="info-card-body">
+                        <!-- 비밀번호 변경 박스 -->
+                        <div class="pw-change-box">
+                          <h5 class="pw-change-title">비밀번호 변경</h5>
+                          
+                          <!-- 새 비밀번호 -->
+                          <div class="pw-form-group">
+                            <label for="newPw" class="info-label required">새 비밀번호</label>
+                            <div class="pw-input-wrapper">
+                              <input
+                                type="password"
+                                id="newPw"
+                                class="form-control password editable"
+                                placeholder=""
+                              />
+                              <button type="button" class="eye-btn" aria-label="비밀번호 표시 토글"></button>
+                            </div>
+                          </div>
+                          
+                          <!-- 새 비밀번호 확인 -->
+                          <div class="pw-form-group">
+                            <label for="confirmNewPw" class="info-label required">새 비밀번호 확인</label>
+                            <div class="pw-input-wrapper">
+                              <input
+                                type="password"
+                                id="confirmNewPw"
+                                class="form-control password editable"
+                                placeholder=""
+                              />
+                              <button type="button" class="eye-btn" aria-label="비밀번호 확인 표시 토글"></button>
+                            </div>
+                          </div>
+                          
+                          <p class="info-input-desc font-sm">6~15자 영문(대소문자), 숫자, 특수문자를 포함해 주세요.</p>
+                        </div>
+
+                        <!-- 이메일 -->
+                        <div class="info-form-group">
+                          <label for="infoEmail" class="info-label required">이메일</label>
+                          <input
+                            type="email"
+                            id="infoEmail"
+                            class="form-control editable"
+                            value="donald04@gmail.com"
+                          />
+                          <p class="info-input-desc">입력하신 이메일로 본인 확인과 후원 관련 안내를 보내드립니다.</p>
+                        </div>
+
+                        <!-- 주소 -->
+                        <div class="info-form-group">
+                          <label for="postcode" class="info-label required">주소</label>
+                          <div class="form-control-with-btn">
+                            <input
+                              type="text"
+                              id="postcode"
+                              class="form-control disabled"
+                              value="우편번호"
+                              disabled
+                              readonly
+                            />
+                            <button type="button" class="btn btn-primary btn-input-action">주소 검색</button>
+                          </div>
+                          <input
+                            type="text"
+                            id="addressBase"
+                            class="form-control disabled mt-2"
+                            value="주소"
+                            disabled
+                            readonly
+                          />
+                          <input
+                            type="text"
+                            id="addressDetail"
+                            class="form-control editable mt-2"
+                            placeholder="상세주소"
+                          />
+                        </div>
+
+                        <!-- 알림 수신동의 -->
+                        <div class="info-form-group flex-row-layout">
+                          <span class="info-label">알림 수신동의</span>
+                          <label class="custom-checkbox">
+                            <input type="checkbox" id="agreeNewsletter" name="agreeNewsletter" checked />
+                            <span>소식지 및 활동 알림 수신 동의</span>
+                          </label>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+
+                  <!-- 기부금 영수증 신청 여부 카드 -->
+                  <section class="receipt-consent-card">
+                    <div class="receipt-consent-body">
+                      <h4 class="receipt-consent-title">기부금 영수증 신청 여부</h4>
+                      <div class="receipt-consent-content">
+                        <p class="receipt-consent-desc">
+                          기부금 영수증 발급을 위해 개인정보 제공 동의가 필요합니다. 신청 후 국세청 홈택스에서 기부 내역을 확인하실 수 있습니다.
+                        </p>
+                        <button type="button" class="btn btn-primary receipt-consent-btn">기부금 영수증 신청하기</button>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- 하단 액션 버튼 -->
+                  <div class="info-action-buttons">
+                    <button type="button" class="btn btn-outline primary">취소하기</button>
+                    <button type="submit" class="btn btn-primary">수정하기</button>
+                  </div>
+                </form>
+
+                <!-- 회원 탈퇴 링크 -->
+                <div class="withdraw-link-container">
+                  <a href="/mypage/withdraw.html" class="withdraw-link">회원 탈퇴</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- 탭 기능 스크립트 (모션 없음) -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const tabBtns = document.querySelectorAll(".tab-btn");
+          const tabContents = document.querySelectorAll(".tab-content");
+
+          tabBtns.forEach((btn) => {
+            btn.addEventListener("click", function () {
+              const targetId = this.getAttribute("data-tab-target");
+
+              // 모든 탭 버튼 비활성화
+              tabBtns.forEach((b) => b.classList.remove("active"));
+              // 클릭한 탭 버튼 활성화
+              this.classList.add("active");
+
+              // 모든 탭 콘텐츠 숨김
+              tabContents.forEach((content) => {
+                content.classList.remove("active");
+                content.style.display = "none"; // 강제 숨김 처리
+              });
+
+              // 타겟 탭 콘텐츠만 노출
+              const targetContent = document.getElementById(targetId);
+              if (targetContent) {
+                targetContent.classList.add("active");
+                targetContent.style.display = "block";
+              }
+            });
+          });
+
+          // 비밀번호 눈 아이콘 토글 기능
+          const eyeButtons = document.querySelectorAll(".pw-input-wrapper .eye-btn");
+          eyeButtons.forEach((btn) => {
+            btn.addEventListener("click", function () {
+              const input = this.previousElementSibling;
+              if (input && (input.type === "password" || input.type === "text")) {
+                if (input.type === "password") {
+                  input.type = "text";
+                  this.classList.add("visible");
+                } else {
+                  input.type = "password";
+                  this.classList.remove("visible");
+                }
+              }
+            });
+          });
+        });
+      </script>
+
+      <!-- 푸터 공통 영역 인클루드 -->
+      <load ="/includes/footer.html" />
+    </div>
+
+    <script type="module" src="/src/js/common.js"></script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 @charset "utf-8";
-@font-face {
+/* @font-face {
   font-family: "Outfit";
   font-weight: 600;
   font-style: normal;
@@ -19,7 +19,7 @@
   font-style: normal;
   font-display: swap;
   src: url("../fonts/outfit-latin-800-normal.woff2") format("woff2");
-}
+} */
 
 /* Pretendard: 본문 전용 (사용 weight: 400, 500, 600, 700, 800) */
 @font-face {
@@ -28,6 +28,7 @@
   font-display: swap;
   src: url("../fonts/Pretendard-Regular.woff2") format("woff2");
 }
+/*
 @font-face {
   font-family: "Pretendard";
   font-weight: 500;
@@ -51,7 +52,79 @@
   font-weight: 800;
   font-display: swap;
   src: url("../fonts/Pretendard-ExtraBold.woff2") format("woff2");
+} */
+
+@font-face {
+  font-family: "NanumSquareNeoLight";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
+  src:
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.ttf)
+      format("truetype");
 }
+
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+  src:
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareNeoBold";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+  src:
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareNeoExtraBold";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+  src:
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumSquareNeoHeavy";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot);
+  src:
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.ttf)
+      format("truetype");
+}
+
+/* @font-face {
+  font-family: "NanumSquareNeoVariable";
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot);
+  src:
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.woff)
+      format("woff"),
+    url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.ttf)
+      format("truetype");
+} */
 
 :root {
   /* Brand Color Palette (RMHC Warm Light Theme — 피그마 기준) */
@@ -59,8 +132,8 @@
   --primary-hover: #b80006;
   --primary-glow: rgba(219, 0, 7, 0.12);
 
-  --secondary: #ffc72c;
-  --secondary-hover: #e0ad20;
+  --secondary: #ffffff;
+  --secondary-hover: #ffffff;
   --secondary-glow: rgba(255, 199, 44, 0.2);
 
   --accent: #10b981;
@@ -70,23 +143,45 @@
   --bg-primary: #fffde9;
   --bg-secondary: #faf8f5;
   --bg-tertiary: #f3f0ea;
+  --bg-white: #ffffff;
+  --bg-kv: #d0c9ff;
 
   /* Text Color Tokens (Contrast Ratio Compliant) */
+  --text-white: #ffffff;
   --text-primary: #1f2937;
   --text-secondary: #4b5563;
   --text-muted: #8e959f;
+  --text-gray90: #3d3d3d;
   --text-gray80: #555555;
   --text-gray60: #8f8f8f;
+  --text-gray40: #bbbbbb;
 
   /* Border Colors */
+  --border-gray80: #555555;
+  --border-gray60: #8f8f8f;
+  --border-gray50: #aaaaaa;
+  --border-gray40: #bbbbbb;
   --border-color: #bbbbbb;
   --border-hover: #d1cbd0;
   --border-focus: #db0007;
 
   /* Typography Fonts */
+  --font-pretendard:
+    "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-light:
+    "NanumSquareNeoLight", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
   --font-sans:
     "NanumSquareNeo", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  --font-title: "Outfit", var(--font-sans);
+  --font-bold:
+    "NanumSquareNeoBold", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  --font-extrabold:
+    "NanumSquareNeoExtraBold", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  --font-heavy:
+    "NanumSquareNeoHeavy", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
 
   /* Typography Scale */
   --text-xs: 1.2rem;
@@ -98,6 +193,7 @@
   --text-3xl: 3rem;
   --text-4xl: 3.8rem;
   --text-5xl: 4.8rem;
+  --text-6xl: 5.8rem;
 
   /* Layout Breakpoints */
   --breakpoint-sm: 576px;
@@ -146,9 +242,6 @@
   --transition-fast: all 0.15s ease;
   --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  /* Key Visual (피그마 팩트) */
-  --kv-bg: #d0c9ff;
 }
 
 html,
@@ -278,7 +371,6 @@ body {
   font-size: 1.6rem;
   line-height: 1.3;
   font-family: var(--font-sans);
-  font-weight: 400;
   background-color: var(--bg-primary);
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -297,8 +389,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "SamsungSans", Arial, sans-serif;
-  font-weight: 700;
+  font-family: var(--font-extrabold);
   word-break: normal;
 }
 ol,
@@ -439,6 +530,157 @@ html:not(.lenis) [data-aos] {
   border-width: 0;
 }
 
+/* ==========================================================================
+   Typography Helpers
+   ========================================================================== */
+.text-white {
+  color: var(--text-white);
+}
+.text-primary {
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
+}
+.text-muted {
+  color: var(--text-muted);
+}
+.text-gray90 {
+  color: var(--text-gray90);
+}
+.text-gray80 {
+  color: var(--text-gray80);
+}
+.text-gray60 {
+  color: var(--text-gray60);
+}
+.text-gray40 {
+  color: var(--text-gray40);
+}
+
+.color-primary {
+  color: var(--primary);
+}
+.font-title {
+  font-family: var(--font-title);
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-medium {
+  font-weight: 500;
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+}
+.text-sm {
+  font-size: var(--text-sm);
+}
+.text-base {
+  font-size: var(--text-base);
+}
+.text-lg {
+  font-size: var(--text-lg);
+}
+.text-xl {
+  font-size: var(--text-xl);
+}
+.text-2xl {
+  font-size: var(--text-2xl);
+}
+.text-3xl {
+  font-size: var(--text-3xl);
+}
+.text-4xl {
+  font-size: var(--text-4xl);
+}
+.text-5xl {
+  font-size: var(--text-5xl);
+}
+.text-6xl {
+  font-size: var(--text-6xl);
+}
+
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-primary-color {
+  color: var(--primary);
+}
+.text-secondary-color {
+  color: var(--text-secondary);
+}
+.text-muted-color {
+  color: var(--text-muted);
+}
+
+/* Spacing Helpers */
+.m-0 {
+  margin: 0;
+}
+.mt-1 {
+  margin-top: var(--spacing-1);
+}
+.mt-2 {
+  margin-top: var(--spacing-2);
+}
+.mt-3 {
+  margin-top: var(--spacing-3);
+}
+.mt-4 {
+  margin-top: var(--spacing-4);
+}
+.mt-6 {
+  margin-top: var(--spacing-6);
+}
+.mt-8 {
+  margin-top: var(--spacing-8);
+}
+.mb-1 {
+  margin-bottom: var(--spacing-1);
+}
+.mb-2 {
+  margin-bottom: var(--spacing-2);
+}
+.mb-3 {
+  margin-bottom: var(--spacing-3);
+}
+.mb-4 {
+  margin-bottom: var(--spacing-4);
+}
+.mb-6 {
+  margin-bottom: var(--spacing-6);
+}
+.mb-8 {
+  margin-bottom: var(--spacing-8);
+}
+
+.p-0 {
+  padding: 0;
+}
+.p-2 {
+  padding: var(--spacing-2);
+}
+.p-3 {
+  padding: var(--spacing-3);
+}
+.p-4 {
+  padding: var(--spacing-4);
+}
+.p-6 {
+  padding: var(--spacing-6);
+}
+.p-8 {
+  padding: var(--spacing-8);
+}
+
 @media screen and (min-width: 769px) and (max-width: 1460px) {
   html {
     font-size: 0.68493vw;
@@ -492,7 +734,6 @@ table caption {
   background: var(--primary);
   color: #ffffff;
   padding: var(--spacing-3) var(--spacing-6);
-  font-weight: 600;
   z-index: 9999;
   border-radius: 0 0 var(--radius-sm) 0;
   transition: top 0.2s ease;
@@ -503,7 +744,7 @@ table caption {
 
 .max-width {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1460px;
   margin: 0 auto;
 }
 .section-group .lay-wrap {

@@ -7,13 +7,39 @@
   flex-direction: column;
   gap: var(--spacing-2);
   position: relative;
-  margin-bottom: var(--spacing-4);
+}
+
+.form-group.form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+  /* margin-bottom: var(--spacing-4); */
+  width: 100%;
 }
 
 .form-label {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--text-primary);
+  width: 16rem; /* 라벨 고정 가로 폭 (좌측 배치) */
+  min-height: 5.2rem;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-pretendard);
+  font-size: var(--text-lg);
+  flex-shrink: 0;
+}
+
+/* 필수값 기호 (*) 표시 자동 처리 */
+.form-label.required::before {
+  content: "*";
+  margin-right: 0.2rem;
+  font-size: var(--text-lg);
+}
+
+/* 우측 폼 필드 래퍼 */
+.form-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Inputs, Selects, Textareas - Min touch targets and Mobile 16px Font Zoom Fix */
@@ -21,11 +47,13 @@
   width: 100%;
   min-height: 5.2rem;
   padding: 1.2rem var(--spacing-4);
-  background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-pretendard);
   font-size: var(--text-lg);
+}
+.form-control.disabled {
+  background: rgba(208, 201, 255, 0.2);
 }
 .form-control::placeholder {
   color: var(--text-muted);
@@ -53,6 +81,30 @@
   cursor: pointer;
 }
 
+/* 폼 필드 가로 배열 (라디오 등) */
+.form-control-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  min-height: 5.2rem;
+  width: 100%;
+}
+
+/* 우측 버튼 포함형 인풋 래퍼 */
+.form-control-with-btn {
+  display: flex;
+  gap: var(--spacing-2);
+  width: 100%;
+}
+.form-control-with-btn .form-control {
+  flex: 1;
+}
+
+/* 폼 인풋 우측 기능성 소형 버튼 (중복확인, 주소검색, 실명확인 등) */
+.btn-input-action {
+  width: 15rem;
+}
+
 /* Custom Styled Checkboxes & Radio buttons */
 .custom-checkbox,
 .custom-radio {
@@ -60,6 +112,7 @@
   align-items: center;
   gap: var(--spacing-2);
   cursor: pointer;
+  font-family: var(--font-pretendard);
   font-size: var(--text-lg);
   user-select: none;
 }
@@ -69,15 +122,26 @@
   -webkit-appearance: none;
   width: 2rem;
   height: 2rem;
-  border: 2px solid var(--border-color);
+  border: 1px solid var(--border-gray60);
   background-color: var(--bg-primary);
   cursor: pointer;
 }
 .custom-checkbox input[type="checkbox"] {
   border-radius: 0.4rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23bbbbbb' width='1.8rem' height='1.8rem'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
 }
 .custom-radio input[type="radio"] {
   border-radius: var(--radius-full);
+  display: grid;
+  place-content: center;
+}
+.custom-radio input[type="radio"]::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--radius-full);
+  background-color: var(--border-color);
 }
 .custom-checkbox input[type="checkbox"]:checked {
   background-color: var(--primary);
@@ -87,15 +151,8 @@
 }
 .custom-radio input[type="radio"]:checked {
   border-color: var(--primary);
-  background-color: var(--bg-primary);
-  display: grid;
-  place-content: center;
 }
 .custom-radio input[type="radio"]:checked::before {
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  border-radius: var(--radius-full);
   background-color: var(--primary);
 }
 

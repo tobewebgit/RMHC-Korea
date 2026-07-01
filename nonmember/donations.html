@@ -8,8 +8,8 @@
       content="RMHC Korea - 비회원 후원 조회 페이지입니다. 안전한 휴대폰 본인 확인을 거쳐 후원 내역 조회가 가능합니다."
     />
     <title>비회원 후원 조회 - RMHC Korea</title>
-    <link rel="stylesheet" href="/src/css/style.css" />
-    <link rel="stylesheet" href="/src/css/nonmember.css" />
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/login.css" />
   </head>
   <body>
     <!-- 웹 접근성 스킵 네비게이션 -->
@@ -20,317 +20,320 @@
 
     <div class="page-wrapper">
       <main id="main-content" class="nonmember-wrapper">
-        <!-- 상단 헤더 영역 -->
-        <section class="nonmember-header">
-          <span class="badge badge-primary">Non-Member Service</span>
-          <h1 class="nonmember-title">나의 후원 현황</h1>
-        </section>
+        <div class="inner-container">
+          <h2 class="page-title mypage">후원 현황 및 영수증 확인</h2>
 
-        <!-- 1. 비회원 본인인증 입력 카드 -->
-        <section class="nonmember-auth-card" id="nonmember-auth-section">
-          <h2 class="nonmember-auth-title">
-            비회원 기부금 확인 및 영수증 정보 조회
-          </h2>
-          <p class="nonmember-auth-desc">
-            비회원으로 후원하신 정보를 확인하시려면 아래 본인인증을 진행해
-            주세요.<br />
-            후원 당시 입력하신 이름과 휴대폰 번호를 정확히 입력해야 조회가
-            가능합니다.
-          </p>
-
-          <form id="nonmemberAuthForm">
-            <!-- 기부자 성명 -->
-            <div class="form-group">
-              <label for="nmName" class="form-label">기부자 성명</label>
-              <input
-                type="text"
-                id="nmName"
-                class="form-control"
-                placeholder="성명을 입력해주세요"
-                required
-              />
-            </div>
-
-            <!-- 휴대폰 번호 -->
-            <div class="form-group">
-              <label for="nmPhone" class="form-label">휴대폰 번호</label>
-              <div class="input-with-button">
-                <input
-                  type="tel"
-                  id="nmPhone"
-                  class="form-control"
-                  placeholder="숫자만 입력해주세요 (예: 01012345678)"
-                  required
-                  maxlength="11"
-                />
+          <!-- 탭 메뉴 -->
+          <nav class="tab-menu" aria-label="후원 현황 탭">
+            <ul class="tab-list">
+              <li class="tab-item">
                 <button
                   type="button"
-                  class="btn btn-secondary"
-                  id="btnSendCode"
+                  class="tab-btn active"
+                  data-tab-target="tab-status"
                 >
-                  인증번호 발송
+                  나의 후원 현황
                 </button>
-              </div>
-            </div>
-
-            <!-- 인증번호 (기본 숨김, 발송 버튼 클릭 시 노출) -->
-            <div class="form-group" id="codeGroup" style="display: none">
-              <label for="nmAuthCode" class="form-label">인증번호 입력</label>
-              <div class="timer-input-wrapper">
-                <input
-                  type="text"
-                  id="nmAuthCode"
-                  class="form-control"
-                  placeholder="인증번호 6자리를 입력해주세요"
-                  maxlength="6"
-                  aria-describedby="authTimerLabel"
-                />
-                <span
-                  class="auth-timer"
-                  id="authTimerLabel"
-                  role="timer"
-                  aria-live="polite"
-                  >03:00</span
-                >
-              </div>
-              <p
-                style="
-                  font-size: 1.2rem;
-                  color: var(--text-muted);
-                  margin-top: 0.8rem;
-                "
-              >
-                인증번호가 도착하지 않았을 경우 재전송 버튼을 눌러주세요.
-              </p>
-            </div>
-
-            <!-- 조회하기 버튼 -->
-            <div style="margin-top: var(--spacing-8)">
-              <button
-                type="submit"
-                class="btn btn-primary w-full"
-                id="btnSubmitAuth"
-                disabled
-                style="min-height: 4.8rem"
-              >
-                인증 및 후원 조회
-              </button>
-            </div>
-          </form>
-        </section>
-
-        <!-- 2. 비회원 후원 현황 결과 영역 (기본 숨김) -->
-        <section
-          class="nonmember-result-container"
-          id="nonmember-result-section"
-        >
-          <!-- 대시보드 -->
-          <div class="nonmember-dashboard">
-            <div class="nonmember-dashboard-card">
-              <span class="nonmember-dashboard-label">비회원 후원 건수</span>
-              <span class="nonmember-dashboard-value"
-                ><strong class="highlight">2</strong> 건</span
-              >
-            </div>
-            <div class="nonmember-dashboard-card">
-              <span class="nonmember-dashboard-label">누적 후원금액</span>
-              <span class="nonmember-dashboard-value"
-                ><strong class="highlight">50,000</strong> 원</span
-              >
-            </div>
-          </div>
-
-          <!-- 후원 내역 리스트 -->
-          <div class="mypage-card" style="margin-bottom: var(--spacing-8)">
-            <h2 class="mypage-card-title">비회원 후원 내역</h2>
-            <div class="mypage-table-wrapper">
-              <table class="mypage-table">
-                <caption>
-                  비회원 후원 내역 목록 - 후원일자, 후원번호, 후원금액,
-                  결제수단, 상태로 구성
-                </caption>
-                <thead>
-                  <tr>
-                    <th scope="col">후원일자</th>
-                    <th scope="col">후원번호</th>
-                    <th scope="col">후원금액</th>
-                    <th scope="col">결제수단</th>
-                    <th scope="col">상태</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>2026-05-15</td>
-                    <td>N202605150022</td>
-                    <td class="font-bold">30,000원</td>
-                    <td>카카오페이</td>
-                    <td>
-                      <span class="status-badge status-badge--success"
-                        >완료</span
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2026-03-10</td>
-                    <td>N202603100004</td>
-                    <td class="font-bold">20,000원</td>
-                    <td>신용카드</td>
-                    <td>
-                      <span class="status-badge status-badge--success"
-                        >완료</span
-                      >
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- 기부금 영수증 등록 바로가기 알림 -->
-          <div class="donation-notice-box" style="margin-top: var(--spacing-4)">
-            <ul>
-              <li>
-                비회원 기부금도 주민등록번호 등 식별정보가 등록되어야 국세청
-                연말정산 간소화 서비스에 반영됩니다.
               </li>
-              <li>
-                기부금 영수증 발급 정보의 신규 등록/변경은 회원 가입 후 통합
-                마이페이지에서 안전하게 관리하실 수 있습니다.
+              <li class="tab-item">
+                <button
+                  type="button"
+                  class="tab-btn"
+                  data-tab-target="tab-receipt"
+                >
+                  기부금 영수증 확인
+                </button>
               </li>
             </ul>
-          </div>
+          </nav>
 
-          <!-- 3. 회원가입 홍보 배너 (기획 사양 필수) -->
-          <div class="signup-promo-banner">
-            <div class="promo-text-group">
-              <h3 class="promo-title">
-                지금 회원가입 하시면 기부 내역이 하나로 통합됩니다!
-              </h3>
-              <p class="promo-desc">
-                회원으로 가입하시면 과거 비회원 후원 내역 연동, 기부금영수증
-                상시 조회 및 출력,<br />
-                정기후원 금액 및 결제수단 실시간 변경 등 더 편리한 개인화
-                마이페이지를 이용하실 수 있습니다.
-              </p>
+          <!-- 탭 콘텐츠 영역 -->
+          <div class="tab-content-container">
+            <!-- 1. 나의 후원 현황 탭 -->
+            <div id="tab-status" class="tab-content active">
+              <section class="content-card">
+                <div class="card-title-wrap">
+                  <h3 class="card-title">나의 후원 현황</h3>
+                </div>
+
+                <div class="summary-box">
+                  <div class="summary-item">
+                    <span class="summary-label">정기 후원</span>
+                    <div class="summary-value">
+                      <span class="number">4</span><span class="unit">건</span>
+                    </div>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="summary-item">
+                    <span class="summary-label">일시 후원</span>
+                    <div class="summary-value">
+                      <span class="number">2</span><span class="unit">건</span>
+                    </div>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="summary-item">
+                    <span class="summary-label">누적 후원 금액</span>
+                    <div class="summary-value">
+                      <span class="number">620,000</span
+                      ><span class="unit">원</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-wrap">
+                  <table class="donation-table">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="col-no">No</th>
+                        <th scope="col" class="col-type">구분</th>
+                        <th scope="col" class="col-camp">캠페인</th>
+                        <th scope="col" class="col-pay">결제방법</th>
+                        <th scope="col" class="col-amount">금액</th>
+                        <th scope="col" class="col-date">기부일</th>
+                        <th scope="col" class="col-end">기부종료일</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>6</td>
+                        <td>정기</td>
+                        <td>&nbsp;</td>
+                        <td>신용카드(하나/1234)</td>
+                        <td>50,000원</td>
+                        <td>2026.03.18</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>정기</td>
+                        <td>&nbsp;</td>
+                        <td>신용카드(하나/1234)</td>
+                        <td>50,000원</td>
+                        <td>2026.02.18</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>정기</td>
+                        <td>&nbsp;</td>
+                        <td>신용카드(하나/1234)</td>
+                        <td>50,000원</td>
+                        <td>2026.01.18</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>일시</td>
+                        <td>&nbsp;</td>
+                        <td>카카오Pay</td>
+                        <td>50,000원</td>
+                        <td>2026.02.03</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>일시</td>
+                        <td>갈라 디너</td>
+                        <td>신용카드(하나/1234)</td>
+                        <td>500,000원</td>
+                        <td>2025.12.15</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>정기</td>
+                        <td>&nbsp;</td>
+                        <td>실시간계좌이체(국민/5678)</td>
+                        <td>20,000원</td>
+                        <td>2024.01.18</td>
+                        <td>2025.04.02</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- 페이지네이션 -->
+                <nav class="pagination" aria-label="페이지 이동">
+                  <a
+                    href="#"
+                    class="page-btn page-arrow page-first"
+                    aria-label="첫 페이지"
+                    title="첫 페이지"
+                  >
+                    <span class="sr-only">&laquo;&laquo;</span>
+                  </a>
+                  <a
+                    href="#"
+                    class="page-btn page-arrow page-prev"
+                    aria-label="이전 페이지"
+                    title="이전 페이지"
+                  >
+                    <span class="sr-only">&laquo;</span>
+                  </a>
+                  <a href="#" class="page-btn active" aria-current="page">1</a>
+                  <a href="#" class="page-btn">2</a>
+                  <a href="#" class="page-btn">3</a>
+                  <a href="#" class="page-btn">4</a>
+                  <a href="#" class="page-btn">5</a>
+                  <a
+                    href="#"
+                    class="page-btn page-arrow page-next"
+                    aria-label="다음 페이지"
+                    title="다음 페이지"
+                  >
+                    <span class="sr-only">&raquo;</span>
+                  </a>
+                  <a
+                    href="#"
+                    class="page-btn page-arrow page-last"
+                    aria-label="마지막 페이지"
+                    title="마지막 페이지"
+                  >
+                    <span class="sr-only">&raquo;&raquo;</span>
+                  </a>
+                </nav>
+              </section>
             </div>
-            <div>
-              <a
-                href="/join.html"
-                class="btn btn-primary"
-                style="
-                  background-color: var(--text-primary);
-                  border-color: var(--text-primary);
-                "
-                >간편 가입하기</a
-              >
+
+            <!-- 2. 기부금 영수증 확인 탭 -->
+            <div id="tab-receipt" class="tab-content" style="display: none">
+              <section class="content-card receipt-card">
+                <div class="card-title-wrap">
+                  <h3 class="card-title">기부금 영수증 확인</h3>
+                </div>
+                <p class="receipt-notice">기부금 영수증은 국세청 홈택스를 통해 확인하실 수 있습니다. 개인정보 제공 동의 후 연말정산 간소화 서비스에 반영됩니다.</p>
+                
+                <!-- [개발참고] 상태별 영수증 확인 UI 분기 (총 4가지 상태) -->
+                
+                <!-- TYPE 1: 기부금 영수증 신청 전 -->
+                <div class="receipt-box" style="margin-bottom: 2rem;">
+                  <div class="receipt-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <rect x="8" y="4" width="48" height="56" rx="4" fill="#E00000"/>
+                      <path d="M18 20L22 24L30 16" stroke="#A4E328" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M18 32L22 36L30 28" stroke="#A4E328" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M18 44L22 48L30 40" stroke="#A4E328" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                      <rect x="36" y="18" width="12" height="4" rx="2" fill="white"/>
+                      <rect x="36" y="30" width="12" height="4" rx="2" fill="white"/>
+                      <rect x="36" y="42" width="12" height="4" rx="2" fill="white"/>
+                    </svg>
+                  </div>
+                  <h4 class="receipt-title">아직 기부금 영수증 신청이 완료되지 않았습니다.</h4>
+                  <p class="receipt-desc">동의 후 국세청 홈택스 연말정산 간소화 서비스에서 기부 내역을 확인하실 수 있습니다.</p>
+                  <button type="button" class="btn btn-primary w-auto">기부금 영수증 신청하기</button>
+                </div>
+
+                <!-- TYPE 2: 접수 완료 (국세청 등록 진행 중) -->
+                <div class="receipt-box" style="margin-bottom: 2rem;">
+                  <div class="receipt-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <rect x="6" y="12" width="52" height="34" rx="2" stroke="#E00000" stroke-width="4" fill="#E8E4FF"/>
+                      <rect x="28" y="46" width="8" height="8" fill="#E00000"/>
+                      <rect x="20" y="54" width="24" height="4" rx="2" fill="#E00000"/>
+                      <!-- cursor -->
+                      <path d="M32 22L38 34L33 32L30 38L27 36L30 30L26 30L32 22Z" fill="#E00000"/>
+                      <!-- tiny heart -->
+                      <path d="M14 18C14 16 17 16 18 18C19 16 22 16 22 18C22 21 18 24 18 24C18 24 14 21 14 18Z" fill="#FFC72C"/>
+                    </svg>
+                  </div>
+                  <div class="receipt-status">
+                    <span class="status-dot yellow"></span> 접수 완료 (국세청 등록 진행 중)
+                  </div>
+                  <h4 class="receipt-title">기부금 영수증 신청이 접수되었습니다.</h4>
+                  <p class="receipt-desc">
+                    기부금 영수증은 순차적으로 국세청에 등록되며, 반영까지 약 1~2주 정도 소요될 수 있습니다.<br>
+                    등록 완료 후 국세청 홈택스에서 확인하실 수 있습니다.
+                  </p>
+                </div>
+
+                <!-- TYPE 3: 국세청 등록 완료 -->
+                <div class="receipt-box" style="margin-bottom: 2rem;">
+                  <div class="receipt-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <rect x="14" y="8" width="36" height="48" rx="2" fill="#E00000"/>
+                      <rect x="20" y="16" width="24" height="4" fill="white"/>
+                      <rect x="20" y="26" width="16" height="4" fill="white"/>
+                      <rect x="20" y="36" width="24" height="4" fill="white"/>
+                      <rect x="20" y="46" width="12" height="4" fill="white"/>
+                      <path d="M46 16C46 14 49 14 50 16C51 14 54 14 54 16C54 19 50 22 50 22C50 22 46 19 46 16Z" fill="#87CEEB"/>
+                    </svg>
+                  </div>
+                  <div class="receipt-status">
+                    <span class="status-dot green"></span> 국세청 등록 완료
+                  </div>
+                  <h4 class="receipt-title">기부금 영수증이 국세청에 정상 등록되었습니다.</h4>
+                  <p class="receipt-desc">
+                    국세청 홈택스 연말정산 간소화 서비스에서 기부금 내역을 확인하실 수 있습니다.<br>
+                    <span class="desc-note">※ 반영 시점에 따라 조회까지 시간이 소요될 수 있습니다.</span>
+                  </p>
+                  <button type="button" class="btn btn-primary w-auto">홈택스 바로가기</button>
+                </div>
+
+                <!-- TYPE 4: 신청 반려 -->
+                <div class="receipt-box">
+                  <div class="receipt-icon">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <!-- tools -->
+                      <path d="M14 14L46 46" stroke="#87CEEB" stroke-width="6" stroke-linecap="round"/>
+                      <path d="M46 14L14 46" stroke="#87CEEB" stroke-width="6" stroke-linecap="round"/>
+                      <!-- red box -->
+                      <rect x="20" y="24" width="24" height="24" rx="2" fill="#E00000"/>
+                      <!-- heart -->
+                      <path d="M26 30C26 27 29 27 32 30C35 27 38 27 38 30C38 34 32 38 32 38C32 38 26 34 26 30Z" fill="white"/>
+                    </svg>
+                  </div>
+                  <div class="receipt-status">
+                    <span class="status-dot red"></span> 신청 반려
+                  </div>
+                  <h4 class="receipt-title">기부금 영수증 신청이 반려되었습니다.</h4>
+                  <p class="receipt-desc">
+                    입력하신 정보가 국세청 확인 과정에서 일치하지 않아 기부금 영수증 등록이 완료되지 않았습니다.<br>
+                    신청 시 입력하신 주민등록번호 및 성명 등 개인정보를 다시 확인해 주시기 바라며,<br>
+                    수정이 필요한 경우 한국로날드맥도날드하우스(메일주소 예정)로 문의해 주시기 바랍니다
+                  </p>
+                </div>
+              </section>
             </div>
           </div>
-        </section>
+        </div>
       </main>
+
+      <!-- 탭 기능 스크립트 (모션 없음) -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const tabBtns = document.querySelectorAll(".tab-btn");
+          const tabContents = document.querySelectorAll(".tab-content");
+
+          tabBtns.forEach((btn) => {
+            btn.addEventListener("click", function () {
+              const targetId = this.getAttribute("data-tab-target");
+
+              // 모든 탭 버튼 비활성화
+              tabBtns.forEach((b) => b.classList.remove("active"));
+              // 클릭한 탭 버튼 활성화
+              this.classList.add("active");
+
+              // 모든 탭 콘텐츠 숨김
+              tabContents.forEach((content) => {
+                content.classList.remove("active");
+                content.style.display = "none"; // 강제 숨김 처리
+              });
+
+              // 타겟 탭 콘텐츠만 노출
+              const targetContent = document.getElementById(targetId);
+              if (targetContent) {
+                targetContent.classList.add("active");
+                targetContent.style.display = "block";
+              }
+            });
+          });
+        });
+      </script>
 
       <!-- 푸터 공통 영역 인클루드 -->
       <load ="/includes/footer.html" />
     </div>
 
     <script type="module" src="/src/js/common.js"></script>
-
-    <!-- 비회원 조회용 전용 스크립트 -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btnSendCode = document.getElementById("btnSendCode");
-        const codeGroup = document.getElementById("codeGroup");
-        const timerLabel = document.getElementById("authTimerLabel");
-        const btnSubmitAuth = document.getElementById("btnSubmitAuth");
-        const authForm = document.getElementById("nonmemberAuthForm");
-
-        const authSection = document.getElementById("nonmember-auth-section");
-        const resultSection = document.getElementById(
-          "nonmember-result-section",
-        );
-
-        let timerInterval = null;
-
-        // 1. 인증번호 발송 버튼 클릭 시
-        btnSendCode.addEventListener("click", () => {
-          const phone = document.getElementById("nmPhone").value;
-          const name = document.getElementById("nmName").value;
-
-          if (!name) {
-            alert("이름을 입력해 주세요.");
-            document.getElementById("nmName").focus();
-            return;
-          }
-          if (!phone || phone.length < 10) {
-            alert("올바른 휴대폰 번호를 입력해 주세요.");
-            document.getElementById("nmPhone").focus();
-            return;
-          }
-
-          // 인증번호 필드 노출 및 활성화
-          codeGroup.style.display = "block";
-          btnSubmitAuth.removeAttribute("disabled");
-          btnSendCode.textContent = "재전송";
-          alert(
-            "입력하신 번호로 인증번호 6자리가 발송되었습니다. (인증번호: 123456)",
-          );
-          document.getElementById("nmAuthCode").focus();
-
-          // 타이머 구동
-          startTimer(180); // 3분
-        });
-
-        // 3분 타이머 구동 함수
-        function startTimer(durationSeconds) {
-          if (timerInterval) {
-            clearInterval(timerInterval);
-          }
-
-          let timeRemaining = durationSeconds;
-          updateTimerLabel(timeRemaining);
-
-          timerInterval = setInterval(() => {
-            timeRemaining--;
-            updateTimerLabel(timeRemaining);
-
-            if (timeRemaining <= 0) {
-              clearInterval(timerInterval);
-              alert(
-                "인증 시간이 만료되었습니다. 인증번호를 다시 요청해 주세요.",
-              );
-              btnSubmitAuth.setAttribute("disabled", "true");
-            }
-          }, 1000);
-        }
-
-        function updateTimerLabel(seconds) {
-          const m = Math.floor(seconds / 60);
-          const s = seconds % 60;
-          const mStr = m.toString().padStart(2, "0");
-          const sStr = s.toString().padStart(2, "0");
-          timerLabel.textContent = `${mStr}:${sStr}`;
-        }
-
-        // 2. 인증 제출 및 결과 조회
-        authForm.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const codeInput = document.getElementById("nmAuthCode").value;
-
-          if (codeInput !== "123456") {
-            alert(
-              "인증번호가 올바르지 않습니다. 다시 확인해 주세요. (가상 인증번호: 123456)",
-            );
-            return;
-          }
-
-          clearInterval(timerInterval);
-          alert("본인 확인이 완료되었습니다.");
-
-          // 화면 전환
-          authSection.style.display = "none";
-          resultSection.classList.add("active"); // classList 사용으로 수정
-          resultSection.style.display = "block";
-        });
-      });
-    </script>
   </body>
 </html>
