@@ -97,3 +97,44 @@
 .btn-text:hover {
   color: var(--primary);
 }
+
+/* Table Specific Small Button (Height 36px) */
+.btn-table {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.6rem;
+  min-height: auto;
+  padding: 0 1.6rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-pretendard);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.btn-table.btn-outline {
+  border: 1px solid var(--border-gray60);
+  color: var(--text-gray90);
+}
+
+.btn-table.btn-outline.primary {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-table.btn-outline.primary:hover {
+  background-color: rgba(224, 0, 0, 0.05);
+}
+
+.btn-table.btn-outline.secondary {
+  border-color: var(--border-gray60);
+  color: var(--text-gray90);
+}
+
+.btn-table.btn-outline.secondary:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}

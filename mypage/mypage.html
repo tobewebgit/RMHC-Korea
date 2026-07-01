@@ -104,96 +104,6 @@
                       </div>
                     </div>
                   </div>
-
-                  <!-- 기부 내역 테이블 -->
-                  <div class="table-wrap">
-                    <table class="donation-table">
-                      <thead>
-                        <tr>
-                          <th class="col-no">No</th>
-                          <th class="col-type">구분</th>
-                          <th>결제방법</th>
-                          <th>금액</th>
-                          <th>기부일</th>
-                          <th>기부 종료일</th>
-                          <th>결제수단 변경</th>
-                          <th>후원금 변경</th>
-                          <th>상세보기</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>4</td>
-                          <td>정기</td>
-                          <td>신용카드(하나/1234)</td>
-                          <td>50,000원</td>
-                          <td>2026.01.18</td>
-                          <td>-</td>
-                          <td>
-                            <button type="button" class="btn btn-outline primary btn-xs">결제 변경</button>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-outline primary btn-xs">금액 변경</button>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-outline secondary btn-xs">보기</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>일시</td>
-                          <td>신용카드</td>
-                          <td>300,000원</td>
-                          <td>2025.12.25</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>
-                            <button type="button" class="btn btn-outline secondary btn-xs">보기</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>정기</td>
-                          <td>실시간계좌이체(국민/5678)</td>
-                          <td>20,000원</td>
-                          <td>2026.01.18</td>
-                          <td>2025.04.02</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>
-                            <button type="button" class="btn btn-outline secondary btn-xs">보기</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>일시</td>
-                          <td>가상계좌</td>
-                          <td>190,000원</td>
-                          <td>2025.11.11</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>
-                            <button type="button" class="btn btn-outline secondary btn-xs">보기</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <!-- 페이징 -->
-                  <div class="pagination">
-                    <button type="button" class="page-btn page-arrow page-first" aria-label="처음 페이지"></button>
-                    <button type="button" class="page-btn page-arrow page-prev" aria-label="이전 페이지"></button>
-                    <button type="button" class="page-btn active">1</button>
-                    <button type="button" class="page-btn">2</button>
-                    <button type="button" class="page-btn">3</button>
-                    <button type="button" class="page-btn">4</button>
-                    <button type="button" class="page-btn">5</button>
-                    <button type="button" class="page-btn page-arrow page-next" aria-label="다음 페이지"></button>
-                    <button type="button" class="page-btn page-arrow page-last" aria-label="마지막 페이지"></button>
-                  </div>
                 </div>
 
                 <!-- 2) 정기 후원 탭 뷰 -->
@@ -239,13 +149,13 @@
                           <td>2026.01.18</td>
                           <td>-</td>
                           <td>
-                            <button type="button" class="btn btn-outline primary btn-xs">결제 변경</button>
+                            <button type="button" class="btn-table btn-outline primary">결제 변경</button>
                           </td>
                           <td>
-                            <button type="button" class="btn btn-outline primary btn-xs">금액 변경</button>
+                            <button type="button" class="btn-table btn-outline primary">금액 변경</button>
                           </td>
                           <td>
-                            <button type="button" class="btn btn-outline secondary btn-xs">보기</button>
+                            <button type="button" class="btn-table btn-outline secondary">보기</button>
                           </td>
                         </tr>
                         <tr>
@@ -258,24 +168,30 @@
                           <td>-</td>
                           <td>-</td>
                           <td>
-                            <button type="button" class="btn btn-outline secondary btn-xs">보기</button>
+                            <button type="button" class="btn-table btn-outline secondary">보기</button>
                           </td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
 
-                  <!-- 페이징 -->
+                  <!-- 페이징 (그룹화 적용) -->
                   <div class="pagination">
-                    <button type="button" class="page-btn page-arrow page-first" aria-label="처음 페이지"></button>
-                    <button type="button" class="page-btn page-arrow page-prev" aria-label="이전 페이지"></button>
-                    <button type="button" class="page-btn active">1</button>
-                    <button type="button" class="page-btn">2</button>
-                    <button type="button" class="page-btn">3</button>
-                    <button type="button" class="page-btn">4</button>
-                    <button type="button" class="page-btn">5</button>
-                    <button type="button" class="page-btn page-arrow page-next" aria-label="다음 페이지"></button>
-                    <button type="button" class="page-btn page-arrow page-last" aria-label="마지막 페이지"></button>
+                    <div class="page-group-arrow">
+                      <button type="button" class="page-btn page-arrow page-first" aria-label="처음 페이지"></button>
+                      <button type="button" class="page-btn page-arrow page-prev" aria-label="이전 페이지"></button>
+                    </div>
+                    <div class="page-group-numbers">
+                      <button type="button" class="page-btn active">1</button>
+                      <button type="button" class="page-btn">2</button>
+                      <button type="button" class="page-btn">3</button>
+                      <button type="button" class="page-btn">4</button>
+                      <button type="button" class="page-btn">5</button>
+                    </div>
+                    <div class="page-group-arrow">
+                      <button type="button" class="page-btn page-arrow page-next" aria-label="다음 페이지"></button>
+                      <button type="button" class="page-btn page-arrow page-last" aria-label="마지막 페이지"></button>
+                    </div>
                   </div>
                 </div>
 
@@ -292,7 +208,7 @@
                     <div class="summary-item">
                       <span class="summary-label">누적 후원 금액</span>
                       <div class="summary-value">
-                        <span class="number">490,000</span><span class="unit">원</span>
+                        <span class="number">550,000</span><span class="unit">원</span>
                       </div>
                     </div>
                   </div>
@@ -304,44 +220,50 @@
                         <tr>
                           <th class="col-no">No</th>
                           <th class="col-type">구분</th>
+                          <th>캠페인</th>
                           <th>결제방법</th>
                           <th>금액</th>
                           <th>기부일</th>
-                          <th>상세보기</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <td>2</td>
                           <td>일시</td>
-                          <td>신용카드</td>
-                          <td>300,000원</td>
-                          <td>2025.12.25</td>
-                          <td>
-                            <button type="button" class="btn btn-outline secondary btn-xs">보기</button>
-                          </td>
+                          <td>B 캠페인</td>
+                          <td>카카오pay</td>
+                          <td>50,000원</td>
+                          <td>2026.01.18</td>
                         </tr>
                         <tr>
                           <td>1</td>
                           <td>일시</td>
-                          <td>가상계좌</td>
-                          <td>190,000원</td>
-                          <td>2025.11.11</td>
-                          <td>
-                            <button type="button" class="btn btn-outline secondary btn-xs">보기</button>
-                          </td>
+                          <td>갈라디너</td>
+                          <td>신용카드(하나/1234)</td>
+                          <td>20,000원</td>
+                          <td>2026.01.18</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
 
-                  <!-- 페이징 -->
+                  <!-- 페이징 (그룹화 적용) -->
                   <div class="pagination">
-                    <button type="button" class="page-btn page-arrow page-first" aria-label="처음 페이지"></button>
-                    <button type="button" class="page-btn page-arrow page-prev" aria-label="이전 페이지"></button>
-                    <button type="button" class="page-btn active">1</button>
-                    <button type="button" class="page-btn page-arrow page-next" aria-label="다음 페이지"></button>
-                    <button type="button" class="page-btn page-arrow page-last" aria-label="마지막 페이지"></button>
+                    <div class="page-group-arrow">
+                      <button type="button" class="page-btn page-arrow page-first" aria-label="처음 페이지"></button>
+                      <button type="button" class="page-btn page-arrow page-prev" aria-label="이전 페이지"></button>
+                    </div>
+                    <div class="page-group-numbers">
+                      <button type="button" class="page-btn active">1</button>
+                      <button type="button" class="page-btn">2</button>
+                      <button type="button" class="page-btn">3</button>
+                      <button type="button" class="page-btn">4</button>
+                      <button type="button" class="page-btn">5</button>
+                    </div>
+                    <div class="page-group-arrow">
+                      <button type="button" class="page-btn page-arrow page-next" aria-label="다음 페이지"></button>
+                      <button type="button" class="page-btn page-arrow page-last" aria-label="마지막 페이지"></button>
+                    </div>
                   </div>
                 </div>
               </section>

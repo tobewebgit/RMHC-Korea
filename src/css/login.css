@@ -696,7 +696,8 @@ a.agreement-link {
 }
 
 .donation-table th {
-  font-size: 1.8rem;
+  font-family: var(--font-extrabold);
+  font-size: 2.0rem;
   font-weight: 800;
   color: #000000;
   padding: var(--spacing-8) 0;
@@ -708,7 +709,7 @@ a.agreement-link {
 
 .donation-table td {
   font-family: var(--font-pretendard);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color: #000000;
   padding: var(--spacing-8) 0;
@@ -731,10 +732,16 @@ a.agreement-link {
 /* 6. 페이지네이션 */
 .pagination {
   display: flex;
-  gap: var(--spacing-2);
   align-items: center;
   justify-content: center;
-  margin-top: var(--spacing-80);
+  gap: 5rem; /* 그룹 간 격리 배치용 넓은 간격 (피그마 50px) */
+  margin-top: 6rem;
+}
+
+.page-group-arrow,
+.page-group-numbers {
+  display: flex;
+  gap: 1.2rem; /* 그룹 내 버튼 간 간격 (피그마 12px) */
 }
 
 .page-btn {
@@ -744,14 +751,12 @@ a.agreement-link {
   width: 4.8rem;
   height: 4.8rem;
   border-radius: var(--radius-sm);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 600;
   color: #000000;
+  border: 1px solid var(--border-color); /* 모든 페이지 버튼 기본 보더 */
+  background-color: transparent; /* 비활성 버튼 투명 배경 (피그마 Fills 없음) */
   transition: var(--transition-fast);
-}
-
-.page-arrow {
-  border: 1px solid var(--border-color);
 }
 
 .page-arrow:hover {
@@ -761,25 +766,26 @@ a.agreement-link {
 .page-btn.active {
   background-color: var(--primary);
   color: var(--text-white);
-  border: none;
+  border-color: var(--primary);
 }
 
 .page-btn:not(.active):not(.page-arrow):hover {
   text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* 화살표 아이콘 배경 (실제 PNG 에셋 매핑) */
+/* 화살표 아이콘 배경 (실제 PNG 에셋 매핑 및 크기 차등) */
 .page-arrow.page-first {
   background: url("../images/common/icon_left_last.png") no-repeat center;
   background-size: 1.6rem;
 }
 .page-arrow.page-prev {
   background: url("../images/common/icon_left.png") no-repeat center;
-  background-size: 1.6rem;
+  background-size: 2.4rem; /* 이전 화살표 크기 키움 */
 }
 .page-arrow.page-next {
   background: url("../images/common/icon_right.png") no-repeat center;
-  background-size: 1.6rem;
+  background-size: 2.4rem; /* 다음 화살표 크기 키움 */
 }
 .page-arrow.page-last {
   background: url("../images/common/icon_right_last.png") no-repeat center;
@@ -1305,5 +1311,80 @@ a.agreement-link {
     flex: 1;
     max-width: none;
   }
+}
+
+/* 후원 상세 정보 요약 표 */
+.detail-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid #000000;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 4rem;
+}
+
+.detail-info-table + .detail-info-table {
+  margin-top: 2rem; /* 테이블 분할 여백 */
+}
+
+.detail-info-table th {
+  width: 18%;
+  background-color: #f8f9fa;
+  font-family: var(--font-extrabold);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #000000;
+  text-align: center;
+  padding: 3rem 2.4rem;
+  height: 8.6rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.detail-info-table td {
+  width: 32%;
+  font-family: var(--font-pretendard);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #000000;
+  text-align: left;
+  padding: 3rem 2.4rem;
+  height: 8.6rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.detail-info-table td .btn-table {
+  margin: 0;
+}
+
+/* 후원상세 타이틀 및 요약 박스 피그마 폰트 스케일 정밀 연동 */
+.donation-detail-section .card-title {
+  font-family: var(--font-extrabold) !important;
+  font-size: 3.8rem !important;
+  font-weight: 800 !important;
+  color: #000000 !important;
+}
+
+.donation-detail-section .summary-box .summary-label {
+  font-family: var(--font-extrabold) !important;
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  color: #000000 !important;
+}
+
+.donation-detail-section .summary-box .summary-value .number {
+  font-family: var(--font-extrabold) !important;
+  font-size: 2.8rem !important;
+  font-weight: 800 !important;
+  color: #000000 !important;
+}
+
+.donation-detail-section .summary-box .summary-value .unit {
+  font-family: var(--font-pretendard) !important;
+  font-size: 2.2rem !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
 }
 
