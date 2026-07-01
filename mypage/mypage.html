@@ -65,6 +65,21 @@
                   <h3 class="card-title">나의 후원 현황</h3>
                 </div>
 
+                <!-- 내부 서브 탭 -->
+                <div class="sub-tab-menu">
+                  <ul class="sub-tab-list">
+                    <li class="sub-tab-item">
+                      <button type="button" class="sub-tab-btn active" data-sub-tab="all">전체</button>
+                    </li>
+                    <li class="sub-tab-item">
+                      <button type="button" class="sub-tab-btn" data-sub-tab="regular">정기 후원</button>
+                    </li>
+                    <li class="sub-tab-item">
+                      <button type="button" class="sub-tab-btn" data-sub-tab="one-time">일시 후원</button>
+                    </li>
+                  </ul>
+                </div>
+
                 <div class="summary-box">
                   <div class="summary-item">
                     <span class="summary-label">정기 후원</span>
@@ -568,6 +583,15 @@
                 targetContent.classList.add("active");
                 targetContent.style.display = "block";
               }
+            });
+          });
+
+          // 내부 서브 탭 토글 기능
+          const subTabBtns = document.querySelectorAll(".sub-tab-btn");
+          subTabBtns.forEach((btn) => {
+            btn.addEventListener("click", function () {
+              subTabBtns.forEach((b) => b.classList.remove("active"));
+              this.classList.add("active");
             });
           });
 
