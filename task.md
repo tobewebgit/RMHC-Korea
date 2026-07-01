@@ -150,3 +150,10 @@
   - [x] `login.css` 내 페이지네이션 그룹 간 간격(5.0rem) 및 번호 간 간격(1.2rem) 보정
   - [x] `login.css` 내 비활성 페이지네이션 버튼의 배경을 투명(transparent)으로 수정
   - [x] HTML 린트 (`npm run lint:html`) 및 Vite 프로덕션 빌드 검증 완료
+
+- [x] **17단계: 마이페이지 결제수단 변경 팝업 구현 및 팝업 스타일 공통화**
+  - [x] 모달 팝업 내부 컨테이너 클래스명을 `.modal-container` 로 전격 통일 및 `style.css` 에 공통 팝업 뼈대 정의
+  - [x] `detail.html` 하단에 결제수단 변경 팝업 마크업 조각 파일 `/includes/popups/mp_p_03.html` 신설 및 로드
+  - [x] 피그마 실측 규격(팝업폭 672px, 현재 수단 카드 패딩, 5종 결제 탭, 결제 정보 폼 여백, 2분할 하단 버튼) 반영
+  - [x] `detail.html` 내 결제 변경 버튼 클릭 시 팝업을 열고 닫을 수 있는 공통 모달 온/오프 JS 인터랙션 바인딩
+  - [x] HTML 린트 (`npm run lint:html`) 및 Vite 프로덕션 빌드 검증 완료

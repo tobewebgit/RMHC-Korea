@@ -55,7 +55,7 @@
                     <td>50,000원</td>
                     <th>정기후원 해지</th>
                     <td>
-                      <button type="button" class="btn-table btn-outline secondary">금액 변경</button>
+                      <button type="button" class="btn-table btn-outline secondary btn-open-popup" data-popup="modal-mp_p_01">금액 변경</button>
                     </td>
                   </tr>
                   <tr>
@@ -63,7 +63,7 @@
                     <td>신용카드(하나/1234) / 매월 25일</td>
                     <th>기부 종료일</th>
                     <td>
-                      <button type="button" class="btn-table btn-outline secondary">결제 변경</button>
+                      <button type="button" class="btn-table btn-outline secondary btn-open-popup" data-popup="modal-mp_p_03">결제 변경</button>
                     </td>
                   </tr>
                 </tbody>
@@ -242,8 +242,80 @@
               }
             });
           });
+
+          // 공통 모달 팝업 작동 스크립트
+          const openPopupBtns = document.querySelectorAll(".btn-open-popup");
+          const closePopupBtns = document.querySelectorAll(".modal-close-btn, .modal-close, .btn-popup-cancel");
+          const modalOverlays = document.querySelectorAll(".modal-overlay");
+
+          // 모달 열기
+          openPopupBtns.forEach(btn => {
+            btn.addEventListener("click", function() {
+              const targetPopupId = this.getAttribute("data-popup");
+              const popup = document.getElementById(targetPopupId);
+              if (popup) {
+                popup.classList.add("active");
+                document.body.style.overflow = "hidden"; // 배경 스크롤 방지
+              }
+            });
+          });
+
+          // 모달 닫기
+          const closeAllModals = (modal) => {
+            modal.classList.remove("active");
+            document.body.style.overflow = "";
+          };
+
+          closePopupBtns.forEach(btn => {
+            btn.addEventListener("click", function() {
+              const modal = this.closest(".modal-overlay");
+              if (modal) {
+                closeAllModals(modal);
+              }
+            });
+          });
+
+          modalOverlays.forEach(overlay => {
+            overlay.addEventListener("click", function(e) {
+              if (e.target === this) {
+                closeAllModals(this);
+              }
+            });
+          });
+
+          // 결제수단 변경 팝업 전용 내부 탭 토글
+          const paymentTabBtns = document.querySelectorAll(".payment-tab-btn");
+          const paymentTabContents = document.querySelectorAll(".payment-tab-content");
+
+          paymentTabBtns.forEach(btn => {
+            btn.addEventListener("click", function() {
+              const targetTabId = this.getAttribute("data-tab");
+
+              // 모든 결제수단 탭 버튼 비활성화
+              paymentTabBtns.forEach(b => b.classList.remove("active"));
+              // 현재 탭 버튼 활성화
+              this.classList.add("active");
+
+              // 모든 탭 컨텐츠 숨김
+              paymentTabContents.forEach(content => {
+                content.classList.remove("active");
+                content.style.display = "none";
+              });
+
+              // 선택된 탭 컨텐츠만 표시
+              const activeContent = document.getElementById(targetTabId);
+              if (activeContent) {
+                activeContent.classList.add("active");
+                activeContent.style.display = "block";
+              }
+            });
+          });
         });
       </script>
+
+      <!-- 모달 팝업 공통 로드 영역 -->
+      <load ="/includes/popups/mp_p_01.html" />
+      <load ="/includes/popups/mp_p_03.html" />
 
       <!-- 푸터 공통 영역 인클루드 -->
       <load ="/includes/footer.html" />

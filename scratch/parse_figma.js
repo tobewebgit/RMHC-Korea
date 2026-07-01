@@ -25,7 +25,7 @@ function traverse(node) {
 }
 
 // Figma nodes response is nested under nodes[nodeId].document
-const nodeId = '2405:82827';
+const nodeId = '2405:84131';
 const rootDocument = data.nodes[nodeId]?.document;
 traverse(rootDocument);
 

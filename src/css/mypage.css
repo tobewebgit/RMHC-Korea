@@ -756,7 +756,7 @@
   visibility: visible;
 }
 
-.modal-window {
+.modal-container {
   background-color: var(--bg-primary);
   border-radius: var(--radius-lg);
   width: 100%;
@@ -767,7 +767,11 @@
   transition: var(--transition-bounce);
 }
 
-.modal-overlay.active .modal-window {
+.modal-container--payment {
+  max-width: 67.2rem; /* 결제 팝업 피그마 폭 672px */
+}
+
+.modal-overlay.active .modal-container {
   transform: scale(1);
 }
 
@@ -814,6 +818,8 @@
   gap: var(--spacing-3);
   background-color: var(--bg-secondary);
 }
+
+
 
 .modal-footer .btn {
   min-height: 4.4rem;
