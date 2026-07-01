@@ -696,7 +696,7 @@ a.agreement-link {
 }
 
 .donation-table th {
-  font-size: var(--text-xl);
+  font-size: 1.8rem;
   font-weight: 800;
   color: #000000;
   padding: var(--spacing-8) 0;
@@ -708,7 +708,7 @@ a.agreement-link {
 
 .donation-table td {
   font-family: var(--font-pretendard);
-  font-size: var(--text-lg);
+  font-size: 1.6rem;
   font-weight: 400;
   color: #000000;
   padding: var(--spacing-8) 0;
@@ -744,7 +744,7 @@ a.agreement-link {
   width: 4.8rem;
   height: 4.8rem;
   border-radius: var(--radius-sm);
-  font-size: var(--text-lg);
+  font-size: 1.6rem;
   font-weight: 600;
   color: #000000;
   transition: var(--transition-fast);
@@ -768,21 +768,21 @@ a.agreement-link {
   text-decoration: underline;
 }
 
-/* 화살표 아이콘 배경 (추후 SVG/이미지로 교체 가능) */
+/* 화살표 아이콘 배경 (실제 PNG 에셋 매핑) */
 .page-arrow.page-first {
-  background: url("../images/common/icon_arrow_first.svg") no-repeat center;
+  background: url("../images/common/icon_left_last.png") no-repeat center;
   background-size: 1.6rem;
 }
 .page-arrow.page-prev {
-  background: url("../images/common/icon_arrow_prev.svg") no-repeat center;
+  background: url("../images/common/icon_left.png") no-repeat center;
   background-size: 1.6rem;
 }
 .page-arrow.page-next {
-  background: url("../images/common/icon_arrow_next.svg") no-repeat center;
+  background: url("../images/common/icon_right.png") no-repeat center;
   background-size: 1.6rem;
 }
 .page-arrow.page-last {
-  background: url("../images/common/icon_arrow_last.svg") no-repeat center;
+  background: url("../images/common/icon_right_last.png") no-repeat center;
   background-size: 1.6rem;
 }
 
