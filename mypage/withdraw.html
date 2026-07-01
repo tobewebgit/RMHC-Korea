@@ -5,187 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 마이페이지 회원 탈퇴 페이지입니다. 탈퇴 전 안내 사항 및 주의 사항을 확인해 주십시오."
+      content="RMHC Korea - 회원 탈퇴"
     />
     <title>회원 탈퇴 - RMHC Korea</title>
-    <link rel="stylesheet" href="/src/css/style.css" />
-    <link rel="stylesheet" href="/src/css/mypage.css" />
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/login.css" />
   </head>
   <body>
     <!-- 웹 접근성 스킵 네비게이션 -->
-    <a href="#mypage-main-content" class="skip-nav">본문 바로가기</a>
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
     <!-- 헤더 공통 영역 인클루드 -->
     <load ="/includes/header.html" />
 
-    <div class="mypage-wrapper">
-      <!-- 마이페이지 히어로 타이틀 -->
-      <section class="mypage-hero" aria-labelledby="mypage-hero-title">
-        <div class="container">
-          <h1 class="mypage-hero__title" id="mypage-hero-title">회원 탈퇴</h1>
-          <p class="mypage-hero__desc">
-            회원 탈퇴 전 안내 및 동의 확인 단계입니다.
-          </p>
-        </div>
-      </section>
+    <div class="page-wrapper">
+      <main id="main-content" class="main-content">
+        <h1 class="join-title">회원 탈퇴</h1>
 
-      <!-- 마이페이지 레이아웃 컨테이너 -->
-      <div class="mypage-container">
-        <div class="mypage-layout">
-          <!-- LNB 공통 영역 인클루드 -->
-          <load ="/includes/mypage-lnb.html" />
+        <section class="withdraw-section">
+        <!-- 회원 탈퇴 안내 섹션 -->
+        <div class="content-card">
+          <h2 class="withdraw-title">회원탈퇴 시 아래의 내용을 반드시 확인해주세요.</h2>
+          
+          <div class="withdraw-notice-desc">
+            <p>후원회원이 아닌 경우, <strong>홈페이지 탈퇴 후 1주일간 개인정보를 보유</strong>하며 이후 탈퇴 회원의 별도 원복 요청이 없는 경우 홈페이지 회원정보는 모두 파기됩니다.</p>
+            <p>홈페이지 회원이면서 후원회원인 경우, 홈페이지 탈퇴와 후원 종료를 요청하더라도 개인정보는 추후 각종 증명서 발급 또는 회원관리 업무를 위해 재단법인 한국로날드맥도날드하우스에서 계속 보유할 수 있습니다.</p>
+            <p>단, 홈페이지 회원 또는 후원자가 개인정보 삭제를 별도로 요청할 경우 등록된 개인정보는 즉시 파기되며, 이후에는 각종 증명서 발급 또는 회원관리 업무를 지원하지 않습니다.</p>
+            <p class="warning-highlight">회원 탈퇴는 한국로날드맥도날드하우스 홈페이지 회원 탈퇴를 의미합니다. 회원 탈퇴만으로는 진행 중인 후원 또는 참여가 자동 종료되지 않습니다.</p>
+            <p>후원 종료를 원하시는 경우 회원 탈퇴 전에 마이페이지 &gt; 후원현황에서 해지해 주시기 바라며, 추가 문의는 문의전화(02-723-2013) 또는 이메일(rmhc@rmhc.or.kr)로 연락해 주시기 바랍니다.</p>
+          </div>
 
-          <!-- 마이페이지 본문 콘텐츠 -->
-          <main class="mypage-content" id="mypage-main-content">
-            <section
-              class="mypage-section"
-              aria-labelledby="section-withdraw-title"
-            >
-              <div class="mypage-section__title-wrap">
-                <h2 class="mypage-section__title" id="section-withdraw-title">
-                  탈퇴 안내 및 사유 작성
-                </h2>
+          <!-- 구분선 -->
+          <hr class="withdraw-divider" />
+
+          <!-- 동의 체크박스 -->
+          <div class="withdraw-agree-wrap">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="agreeCheck" name="agreeCheck" required />
+              <span class="checkbox-txt"><span class="required-badge">[필수]</span> 위 내용은 모두 확인 했습니다.</span>
+            </label>
+          </div>
+
+          <!-- 정보 확인 카드 상자 -->
+          <div class="withdraw-confirm-card">
+            <h3 class="card-section-title">정보 확인</h3>
+            
+            <div class="withdraw-form-grid">
+              <!-- 아이디 -->
+              <div class="form-group-col">
+                <label for="infoId" class="form-label required min-h-auto">아이디</label>
+                <input
+                  type="text"
+                  id="infoId"
+                  class="form-control info-readonly"
+                  value="donald04"
+                  disabled
+                  readonly
+                />
               </div>
 
-              <!-- 탈퇴 경고 및 정책 고지 -->
-              <div
-                class="withdraw-warning-box"
-                role="region"
-                aria-label="회원 탈퇴 시 주의사항"
-              >
-                <h3 class="withdraw-warning-box__title">
-                  ⚠️ 탈퇴 전 반드시 확인해 주세요!
-                </h3>
-                <ul class="withdraw-warning-box__list">
-                  <li class="withdraw-warning-box__item">
-                    회원 탈퇴 시 웹사이트 로그인 계정 정보는 즉시 파기되며
-                    복구가 불가능합니다.
-                  </li>
-                  <li class="withdraw-warning-box__item">
-                    단, 소득세법 및 법정 보존 기간(5년)에 따라 기부금 결제 및
-                    영수증 증빙을 위한 실명 기부 정보와 후원 내역 데이터는 법적
-                    의무에 의해 안전하게 보관됩니다.
-                  </li>
-                  <li class="withdraw-warning-box__item">
-                    현재 유지 중인
-                    <strong
-                      >정기 후원 결제 건은 회원 탈퇴를 진행하셔도 자동으로
-                      해지되지 않습니다.</strong
-                    >
-                    정기 후원 기부의 중단을 원하시면 먼저 정기 후원 결제 해지를
-                    수행하신 후 탈퇴를 진행하셔야 합니다. (전화 문의:
-                    02-723-2013)
-                  </li>
-                </ul>
+              <!-- 이름 -->
+              <div class="form-group-col">
+                <label for="infoName" class="form-label required min-h-auto">이름</label>
+                <input
+                  type="text"
+                  id="infoName"
+                  class="form-control info-readonly"
+                  value="로날드"
+                  disabled
+                  readonly
+                />
               </div>
 
-              <form action="/" method="POST" class="withdraw-form" novalidate>
-                <!-- 탈퇴 사유 설문 -->
-                <h3 class="form-sub-title">
-                  1. 탈퇴 사유를 선택해 주세요 (중복 선택 가능)
-                </h3>
-                <div class="withdraw-survey">
-                  <div
-                    class="withdraw-survey__list"
-                    role="group"
-                    aria-label="탈퇴 사유"
-                  >
-                    <label class="custom-checkbox">
-                      <input type="checkbox" name="reason" value="1" />
-                      <span>후원금 기부 중단 / 경제적 이유</span>
-                    </label>
-                    <label class="custom-checkbox">
-                      <input type="checkbox" name="reason" value="2" />
-                      <span>홈페이지 이용 불편 및 잦은 오류</span>
-                    </label>
-                    <label class="custom-checkbox">
-                      <input type="checkbox" name="reason" value="3" />
-                      <span>개인정보 보완 및 보안 유출 걱정</span>
-                    </label>
-                    <label class="custom-checkbox">
-                      <input type="checkbox" name="reason" value="4" />
-                      <span>재가입 및 아이디 변경 목적</span>
-                    </label>
-                    <label class="custom-checkbox">
-                      <input type="checkbox" name="reason" value="5" />
-                      <span>기부금 사용 투명성에 대한 의문</span>
-                    </label>
-                    <label class="custom-checkbox">
-                      <input type="checkbox" name="reason" value="6" />
-                      <span>기타</span>
-                    </label>
-                  </div>
-
-                  <div class="form-group mt-4">
-                    <label for="otherReasonText" class="form-label"
-                      >기타 의견 작성 (선택사항)</label
-                    >
-                    <textarea
-                      id="otherReasonText"
-                      class="textarea-control"
-                      placeholder="RMHC Korea 서비스 개선을 위한 소중한 의견을 작성해 주세요."
-                    ></textarea>
-                  </div>
+              <!-- 비밀번호 -->
+              <div class="form-group-col">
+                <label for="infoPw" class="form-label required min-h-auto">비밀번호</label>
+                <div class="pw-input-wrapper">
+                  <input
+                    type="password"
+                    id="infoPw"
+                    class="form-control password editable"
+                    placeholder=""
+                  />
+                  <button type="button" class="eye-btn" aria-label="비밀번호 표시 토글"></button>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <!-- 본인 확인을 위한 비밀번호 입력 -->
-                <h3 class="form-sub-title">2. 본인 확인 및 동의</h3>
-                <div class="d-grid grid-cols-12 mb-6">
-                  <div class="col-12 form-group">
-                    <label for="withdrawPassword" class="form-label"
-                      >비밀번호 확인
-                      <span class="text-primary-color" aria-hidden="true"
-                        >*</span
-                      ></label
-                    >
-                    <input
-                      type="password"
-                      id="withdrawPassword"
-                      class="form-control"
-                      placeholder="현재 비밀번호를 입력하세요"
-                      required
-                      aria-required="true"
-                      autocomplete="current-password"
-                    />
-                  </div>
-                </div>
+          <!-- 하단 버튼 영역 -->
+          <div class="withdraw-actions">
+            <a href="/mypage.html" class="btn btn-outline primary">취소하기</a>
+            <button type="submit" id="btnSubmit" class="btn btn-primary" disabled>탈퇴하기</button>
+          </div>
+          </div>
+        </section>
+      </main>
 
-                <!-- 최종 동의 체크박스 -->
-                <div class="withdraw-agree">
-                  <label class="custom-checkbox">
-                    <input
-                      type="checkbox"
-                      id="agreeWithdraw"
-                      required
-                      aria-required="true"
-                    />
-                    <span class="font-semibold text-primary-color"
-                      >위 탈퇴 안내 사항을 모두 확인하였으며, 이에 동의합니다.
-                      <span class="text-primary-color" aria-hidden="true"
-                        >*</span
-                      ></span
-                    >
-                  </label>
-                </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // 비밀번호 눈 토글
+          const eyeBtn = document.querySelector(".pw-input-wrapper .eye-btn");
+          if (eyeBtn) {
+            eyeBtn.addEventListener("click", function () {
+              const input = this.previousElementSibling;
+              if (input && input.type === "password") {
+                input.type = "text";
+                this.classList.add("visible");
+              } else if (input) {
+                input.type = "password";
+                this.classList.remove("visible");
+              }
+            });
+          }
 
-                <!-- 버튼 영역 -->
-                <div class="mypage-form-actions mt-10">
-                  <a href="/mypage.html" class="btn btn-outline" role="button"
-                    >탈퇴 취소</a
-                  >
-                  <button
-                    type="submit"
-                    class="btn btn-primary"
-                    style="background-color: #db0007"
-                  >
-                    탈퇴 신청
-                  </button>
-                </div>
-              </form>
-            </section>
-          </main>
-        </div>
-      </div>
+          // 동의 체크박스 상태에 따른 버튼 제어
+          const agreeCheck = document.getElementById("agreeCheck");
+          const btnSubmit = document.getElementById("btnSubmit");
+          if (agreeCheck && btnSubmit) {
+            // 초기 비활성화 클래스 명시
+            btnSubmit.classList.add("btn-disabled");
+            agreeCheck.addEventListener("change", function () {
+              if (this.checked) {
+                btnSubmit.disabled = false;
+                btnSubmit.classList.remove("btn-disabled");
+              } else {
+                btnSubmit.disabled = true;
+                btnSubmit.classList.add("btn-disabled");
+              }
+            });
+          }
+        });
+      </script>
     </div>
 
     <!-- 푸터 공통 영역 인클루드 -->

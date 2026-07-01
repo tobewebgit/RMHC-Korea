@@ -145,6 +145,10 @@
   --bg-tertiary: #f3f0ea;
   --bg-white: #ffffff;
   --bg-kv: #d0c9ff;
+  --bg-gray90: #3d3d3d;
+  --bg-gray80: #555555;
+  --bg-gray60: #8f8f8f;
+  --bg-gray40: #bbbbbb;
 
   /* Text Color Tokens (Contrast Ratio Compliant) */
   --text-white: #ffffff;

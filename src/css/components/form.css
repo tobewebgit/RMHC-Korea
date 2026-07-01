@@ -9,6 +9,12 @@
   position: relative;
 }
 
+.form-group + .form-group,
+.form-group + button,
+.form-group + .button-wrap {
+  margin-top: var(--spacing-4);
+}
+
 .form-group.form {
   display: flex;
   flex-direction: row;
@@ -16,6 +22,10 @@
   gap: 0;
   /* margin-bottom: var(--spacing-4); */
   width: 100%;
+}
+
+.form-group + .helper-text {
+  margin-top: var(--spacing-2);
 }
 
 .form-label {
@@ -26,6 +36,10 @@
   font-family: var(--font-pretendard);
   font-size: var(--text-lg);
   flex-shrink: 0;
+}
+
+.form-label.min-h-auto {
+  min-height: auto;
 }
 
 /* 필수값 기호 (*) 표시 자동 처리 */

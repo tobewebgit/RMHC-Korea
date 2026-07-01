@@ -46,6 +46,7 @@
 
 .login-desc {
   margin-bottom: var(--spacing-10);
+  font-family: var(--font-pretendard);
   font-size: var(--text-xl);
   text-align: center;
   line-height: 1.5;
@@ -307,7 +308,7 @@
 }
 
 .join-title {
-  font-size: var(--text-5xl);
+  font-size: var(--text-6xl);
   text-align: center;
   margin-bottom: var(--spacing-8);
   letter-spacing: var(--letter-spacing-tight);
@@ -501,7 +502,7 @@ a.agreement-link {
   padding-bottom: 12rem;
 }
 
-.nonmember-wrapper .inner-container {
+.main-content, .inner-container {
   max-width: 144rem;
   margin: 0 auto;
   padding: var(--spacing-100) 0 0;
@@ -566,11 +567,11 @@ a.agreement-link {
   display: flex;
   align-items: center;
   gap: var(--spacing-4);
-  margin-bottom: var(--spacing-10);
+  margin-bottom: var(--spacing-6);
 }
 
 .card-title-wrap .card-title {
-  font-family: var(--font-title);
+  font-family: var(--font-extrabold);
   font-size: var(--text-4xl);
   font-weight: 800;
   color: #000000;
@@ -765,9 +766,8 @@ a.agreement-link {
 }
 
 .receipt-title {
-  font-family: var(--font-title);
+  font-family: var(--font-extrabold);
   font-size: 3.8rem;
-  font-weight: 800;
   color: #000000;
   margin-bottom: var(--spacing-4);
   word-break: keep-all;
@@ -776,7 +776,6 @@ a.agreement-link {
 .receipt-desc {
   font-family: var(--font-pretendard);
   font-size: 2rem;
-  color: #000000;
   margin-bottom: var(--spacing-10);
   word-break: keep-all;
   line-height: 1.5;
@@ -787,10 +786,8 @@ a.agreement-link {
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  font-family: var(--font-pretendard);
-  font-size: 2rem;
-  font-weight: 700;
-  color: #000000;
+  font-family: var(--font-extrabold);
+  font-size: 2.2rem;
   margin-bottom: var(--spacing-2);
 }
 
@@ -843,24 +840,23 @@ a.agreement-link {
 
 /* 2. 카드 박스 */
 .info-card {
-  background-color: var(--bg-white);
-  border: 1px solid var(--border-color);
+  background-color: rgba(208, 201, 255, 0.20);
+  border: 1px solid var(--border-gray40);
   border-radius: var(--radius-lg);
-  padding: 4rem 3.2rem;
+  padding: 6rem;
   display: flex;
   flex-direction: column;
 }
 
 .info-card-header {
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 1.6rem;
-  margin-bottom: 2.4rem;
+  padding-bottom: 3rem;
+  margin-bottom: 3.2rem;
 }
 
 .info-card-title {
-  font-family: var(--font-bold);
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #000000;
 }
 
@@ -890,7 +886,6 @@ a.agreement-link {
 .info-label {
   font-family: var(--font-pretendard);
   font-size: var(--text-lg);
-  font-weight: 600;
   color: #000000;
 }
 
@@ -911,14 +906,9 @@ a.agreement-link {
 
 .info-input-desc {
   font-family: var(--font-pretendard);
-  font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: var(--text-gray60);
   line-height: 1.4;
   margin-top: 0.2rem;
-}
-
-.info-input-desc.font-sm {
-  font-size: 1.4rem;
 }
 
 .info-action-btn-wrap {
@@ -928,18 +918,18 @@ a.agreement-link {
 }
 
 .info-action-btn {
-  max-width: 15rem;
+  max-width: 16.6rem;
 }
 
 /* 4. 비밀번호 변경 박스 */
 .pw-change-box {
-  background-color: rgba(208, 201, 255, 0.15); /* 연보랏빛 회색 배경 */
+  background-color: rgba(208, 201, 255, 0.20);
+  border: 1px solid var(--border-gray40);
   border-radius: var(--radius-sm);
   padding: 2.4rem;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  border: 1px solid rgba(208, 201, 255, 0.3);
 }
 
 .pw-change-title {
@@ -947,7 +937,7 @@ a.agreement-link {
   font-size: 1.8rem;
   font-weight: 700;
   color: #000000;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
 }
 
 .pw-form-group {
@@ -980,11 +970,11 @@ a.agreement-link {
 
 /* 6. 기부금 영수증 신청 여부 카드 */
 .receipt-consent-card {
-  background-color: var(--bg-white);
+  background-color: rgba(208, 201, 255, 0.20);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   margin-top: var(--spacing-6);
-  padding: 3.2rem;
+  padding: 6rem;
 }
 
 .receipt-consent-body {
@@ -994,9 +984,9 @@ a.agreement-link {
 }
 
 .receipt-consent-title {
-  font-family: var(--font-bold);
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-family: var(--font-extrabold);
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #000000;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 1.6rem;
@@ -1085,6 +1075,176 @@ a.agreement-link {
   }
 
   .info-action-buttons .btn {
+    flex: 1;
+    max-width: none;
+  }
+}
+
+/* ==========================================================================
+   마이페이지 회원탈퇴 (withdraw.html) 스타일
+   ========================================================================== */
+
+.withdraw-section {
+  margin: 0 auto;
+  padding: 4rem var(--spacing-4) var(--spacing-16);
+}
+
+.withdraw-title {
+  font-family: var(--font-extrabold);
+  font-size: var(--text-4xl);
+  margin-bottom: var(--spacing-8);
+  text-align: left;
+}
+
+.withdraw-notice-desc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-10);
+}
+
+.withdraw-notice-desc p {
+  font-family: var(--font-pretendard);
+  font-size: 2rem;
+  color: var(--text-gray90);
+  line-height: 1.7;
+}
+
+.withdraw-notice-desc p strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.withdraw-notice-desc p.warning-highlight {
+  color: #db0007;
+  font-weight: 600;
+}
+
+.withdraw-divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: var(--spacing-10) 0;
+  display: block;
+}
+
+.withdraw-agree-wrap {
+  margin-bottom: var(--spacing-10);
+  display: flex;
+  align-items: center;
+}
+
+.withdraw-agree-wrap .custom-checkbox {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.withdraw-agree-wrap .required-badge {
+  color: #db0007; /* 빨간색 필수 표시 */
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.withdraw-agree-wrap .checkbox-txt {
+  font-family: var(--font-pretendard);
+}
+
+/* 정보 확인 카드 상자 */
+.withdraw-confirm-card {
+  background-color: rgba(208, 201, 255, 0.15); /* 연보랏빛/연회색빛 배경 */
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-60);
+  margin-bottom: var(--spacing-10);
+}
+
+.withdraw-confirm-card .card-section-title {
+  font-size: 2.2rem;
+  color: var(--text-black);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-6);
+}
+
+.withdraw-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+  width: 100%;
+}
+
+.form-group-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form-group-col .form-label {
+  font-family: var(--font-pretendard);
+  font-size: var(--text-lg);;
+}
+
+.form-group-col .form-label.required::before {
+  content: "* ";
+  margin-right: 0.2rem;
+}
+
+.form-group-col .pw-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-group-col .pw-input-wrapper .form-control {
+  padding-right: 5rem;
+}
+
+.form-group-col .pw-input-wrapper .eye-btn.visible {
+  opacity: 0.4;
+}
+
+/* 하단 액션 버튼 */
+.withdraw-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-10);
+}
+
+.withdraw-actions .btn {
+  max-width: 16rem;
+}
+
+/* 비활성화 버튼 디자인 (체크 전 핑크 톤) */
+.btn-primary.btn-disabled,
+.btn-primary.btn-disabled:hover,
+.btn-primary:disabled {
+  background-color: #f39c9c !important; /* 핑크 톤 */
+  color: #ffffff !important;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 1024px) {
+  .withdraw-form-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .withdraw-confirm-card {
+    padding: 3rem var(--spacing-4);
+  }
+  
+  .withdraw-actions {
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .withdraw-actions .btn {
     flex: 1;
     max-width: none;
   }
