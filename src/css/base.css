@@ -374,7 +374,7 @@ body {
   min-height: 100%;
   font-size: 1.6rem;
   line-height: 1.3;
-  font-family: var(--font-sans);
+  font-family: var(--font-pretendard);
   background-color: var(--bg-primary);
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -688,12 +688,13 @@ html:not(.lenis) [data-aos] {
   padding: var(--spacing-8);
 }
 
-@media screen and (min-width: 769px) and (max-width: 1460px) {
+
+@media screen and (min-width: 769px) and (max-width: 1472px) {
   html {
     font-size: 0.68493vw;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   html {
     font-size: 2.5645vw; /* 390px :: iPhone 12 Pro */
   }

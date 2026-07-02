@@ -11,6 +11,10 @@
   display: flex;
   flex-direction: column;
 }
+.page-wrapper img {
+  width: 100%;
+  max-width: inherit;
+}
 
 .hero-section {
   flex: 1;
@@ -52,6 +56,10 @@
   margin: 0 auto;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
+}
+
+.page-container {
+  margin-top: var(--spacing-200) !important;
 }
 
 /* ==========================================================================
@@ -189,8 +197,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../images/common/footer_bg.svg") no-repeat top center / 100%
-    auto;
+  background: url("../images/common/footer_bg.svg") no-repeat 50% top / auto
+    49.2rem;
   pointer-events: none;
   z-index: 0;
 }
@@ -230,9 +238,8 @@
 }
 
 .footer__slogan-text {
-  font-family: "NanumSquareNeo", sans-serif;
+  font-family: var(--font-extrabold);
   font-size: 2.4rem;
-  font-weight: 800;
   
 }
 
@@ -246,7 +253,7 @@
   position: relative;
   width: 37rem;
   height: 5.2rem;
-  border: 1px solid #bbbbbb;
+  border: 1px solid var(--border-gray40);
   border-radius: 0.8rem;
   display: flex;
   align-items: center;
@@ -256,7 +263,7 @@
 
 .footer__newsletter-input {
   width: 100%;
-  height: 100%;
+  height: 5.2rem;
   font-size: 1.8rem;
   color: var(--text-primary);
   border: none;
@@ -264,22 +271,12 @@
   background: none;
 }
 .footer__newsletter-input::placeholder {
-  color: #555555;
+  color: var(--text-gray80);
 }
 
 .footer__newsletter-btn {
   width: 15rem;
   height: 5.2rem;
-  background-color: var(--primary);
-  color: #fffde9;
-  border-radius: 0.8rem;
-  font-size: 1.8rem;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: none;
 }
 
 /* ── footer__middle: 링크(좌) + SNS(우) ── */
@@ -288,7 +285,6 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 7rem;
-  font-family: var(--font-pretendard);
 }
 
 .footer__links {
@@ -299,11 +295,9 @@
 
 .footer__link-item {
   font-size: 1.6rem;
-  font-weight: 400;
-  color: #1f2937; /* 시안: 어두운 차콜 */
 }
-.footer__link-item--bold {
-  font-weight: 700;
+.footer__link-item:hover {
+  font-weight: 600;
 }
 
 .footer__sns {
@@ -611,10 +605,8 @@
   border-radius: var(--radius-sm);
   font-size: 1.8rem;
   font-weight: 600;
-  
-  border: 1px solid var(--border-color); /* 모든 페이지 버튼 기본 보더 */
-  background-color: transparent; /* 비활성 버튼 투명 배경 (피그마 Fills 없음) */
-  transition: var(--transition-fast);
+  border: 1px solid var(--border-color);
+  background-color: transparent;
 }
 
 .page-arrow:hover {
@@ -628,14 +620,13 @@
 }
 
 .page-btn:not(.active):not(.page-arrow):hover {
-  text-decoration: underline;
   background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* 화살표 아이콘 배경 (실제 PNG 에셋 매핑 및 크기 차등) */
 .page-arrow.page-first {
   background: url("../images/common/icon_left_last.png") no-repeat center;
-  background-size: 1.6rem;
+  background-size: 1.8rem;
 }
 .page-arrow.page-prev {
   background: url("../images/common/icon_left.png") no-repeat center;
@@ -647,5 +638,5 @@
 }
 .page-arrow.page-last {
   background: url("../images/common/icon_right_last.png") no-repeat center;
-  background-size: 1.6rem;
+  background-size: 1.8rem;
 }

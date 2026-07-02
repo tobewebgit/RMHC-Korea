@@ -24,7 +24,7 @@
         <div class="inner-container">
           <!-- KV 영역 -->
           <section class="news-kv">
-            <img src="/src/images/news/img_activity_kv.png" alt="" class="kv-img" width="1848" height="500" />
+            <div class="kv-img-wrap"><img src="/src/images/news/img_activity_kv.png" alt="" class="kv-img" /></div>
             <div class="kv-text-wrap">
               <h1 class="kv-title">활동 소식</h1>
               <p class="kv-desc">아이들의 미소를 지켜온 RMHC의 발걸음과&#10;따뜻한 변화의 기록들을 전해드립니다.</p>
@@ -32,10 +32,10 @@
           </section>
 
           <!-- 활동소식 상세 컨테이너 -->
-          <div class="news-detail-container activity-detail-page">
+          <div class="news-detail-container activity-detail-page page-container">
             <header class="detail-header">
               <div class="detail-title-row">
-                <span class="detail-badge">New</span>
+                <div class="detail-badge"><img src="/src/images/common/icon_badge_new.png" alt="New" class="notice-new-badge" /></div>
                 <h2 class="detail-title">[RMHC 소식]양산하우스 1월 핸드크래프트 클래스</h2>
               </div>
               <p class="detail-date">2026.02.02</p>
@@ -43,12 +43,12 @@
 
             <!-- 상세 내용 -->
             <div class="detail-contents">
-              <p class="detail-text">
-                RMHC 양산하우스에서 진행된 1월 핸드크래프트 클래스 소식을 전해드립니다. 알록달록한 꽃과 흙이 어우러진 1월, 가족들과 함께 하루를 포근하게 채우는 시간을 보냈습니다. 더 많은 이야기는 RMHC Korea 공식 인스타그램에서 확인해보세요.
-              </p>
               <div class="detail-img-wrap">
                 <img src="/src/images/news/img_activity_view.png" alt="양산하우스 핸드크래프트 클래스 진행 사진" width="800" height="808" loading="lazy" />
               </div>
+              <p class="detail-text">
+                RMHC 양산하우스에서 진행된 1월 핸드크래프트 클래스 소식을 전해드립니다. 알록달록한 꽃과 흙이 어우러진 1월, 가족들과 함께 하루를 포근하게 채우는 시간을 보냈습니다. 더 많은 이야기는 RMHC Korea 공식 인스타그램에서 확인해보세요.
+              </p>
             </div>
 
             <!-- 첨부파일 영역 -->
@@ -69,7 +69,9 @@
                   <img src="/src/images/common/icon_arrow_right.png" alt="다음 글" width="22" height="16" />
                 </a>
               </div>
-              <a href="/news/activity.html" class="list-go-btn">목록</a>
+              <div class="btn-wrap">
+                <a href="/news/activity.html" class="btn btn-primary">목록</a>
+              </div>
             </div>
           </div>
         </div>

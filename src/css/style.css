@@ -168,9 +168,9 @@ html {
   font-size: 10px; /* Base size: 1460px 이상 (1rem = 10px) */
 }
 
-@media (max-width: 1460px) and (min-width: 769px) {
+@media (max-width: 1440px) and (min-width: 769px) {
   html {
-    font-size: 0.68493vw; /* 1460px일 때 정확히 10px이 되며, 가로비율에 따라 부드럽게 축소 */
+    font-size: 0.69444vw; /* 1440px일 때 정확히 10px이 되며, 가로비율에 따라 부드럽게 축소 */
   }
 }
 
@@ -865,7 +865,7 @@ textarea {
   width: 100%;
   height: 100%;
   background: url("../images/common/footer_bg.svg") no-repeat top center / 100%
-    auto;
+    100%;
   pointer-events: none;
   z-index: 0;
 }

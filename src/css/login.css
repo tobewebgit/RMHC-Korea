@@ -46,7 +46,6 @@
 
 .login-desc {
   margin-bottom: var(--spacing-10);
-  font-family: var(--font-pretendard);
   font-size: var(--text-xl);
   text-align: center;
   line-height: 1.5;
@@ -123,7 +122,6 @@
 .form-helper {
   margin-top: 0.6rem;
   color: var(--text-muted);
-  font-family: var(--font-pretendard);
   line-height: 1.4;
 }
 
@@ -372,7 +370,6 @@
 .receipt-helper {
   line-height: 1.5;
   color: var(--text-gray60);
-  font-family: var(--font-pretendard);
 }
 .receipt-helper__secondary {
   margin-top: 0.2rem;
@@ -439,7 +436,6 @@
 }
 .receipt-warning-list li {
   list-style-type: disc;
-  font-family: var(--font-pretendard);
   font-size: var(--text-sm);
   line-height: 1.6;
 }
@@ -463,7 +459,6 @@
 
 a.agreement-link {
   color: var(--text-gray60);
-  font-family: var(--font-pretendard);
   white-space: nowrap;
   transition: var(--transition-fast);
 }
@@ -671,7 +666,6 @@ a.agreement-link {
 }
 
 .summary-value .unit {
-  font-family: var(--font-pretendard);
   font-size: 1.8rem;
   font-weight: 400;
   color: #000000;
@@ -695,11 +689,10 @@ a.agreement-link {
 
 /* 기부금 영수증 확인 탭 */
 .receipt-card {
-  /* .content-card 기본 속성 유지 */
+
 }
 
 .receipt-notice {
-  font-family: var(--font-pretendard);
   font-size: 2rem;
   color: #000000;
   margin-bottom: var(--spacing-10);
@@ -731,7 +724,6 @@ a.agreement-link {
 }
 
 .receipt-desc {
-  font-family: var(--font-pretendard);
   font-size: 2rem;
   margin-bottom: var(--spacing-10);
   word-break: keep-all;
@@ -841,7 +833,6 @@ a.agreement-link {
 }
 
 .info-label {
-  font-family: var(--font-pretendard);
   font-size: var(--text-lg);
   color: #000000;
 }
@@ -862,7 +853,6 @@ a.agreement-link {
 }
 
 .info-input-desc {
-  font-family: var(--font-pretendard);
   color: var(--text-gray60);
   line-height: 1.4;
   margin-top: 0.2rem;
@@ -958,7 +948,6 @@ a.agreement-link {
 }
 
 .receipt-consent-desc {
-  font-family: var(--font-pretendard);
   font-size: var(--text-lg);
   color: #000000;
   line-height: 1.5;
@@ -1061,7 +1050,6 @@ a.agreement-link {
 }
 
 .withdraw-notice-desc p {
-  font-family: var(--font-pretendard);
   font-size: 2rem;
   color: var(--text-gray90);
   line-height: 1.7;
@@ -1104,7 +1092,6 @@ a.agreement-link {
 }
 
 .withdraw-agree-wrap .checkbox-txt {
-  font-family: var(--font-pretendard);
 }
 
 /* 정보 확인 카드 상자 */
@@ -1138,7 +1125,6 @@ a.agreement-link {
 }
 
 .form-group-col .form-label {
-  font-family: var(--font-pretendard);
   font-size: var(--text-lg);;
 }
 
@@ -1285,36 +1271,33 @@ a.agreement-link {
   transform: scale(1);
 }
 
-/* 헤더: 전용 배경색 및 구분선 제거 (피그마 단일 베이지 통일 스타일 적용) */
 .modal-header {
-  padding: 6rem 2.4rem 2rem 2.4rem; /* 피그마 여백 적용 */
+  padding: 6rem 2.4rem 2rem 2.4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent !important; /* 배경 투명 */
-  border-bottom: none !important; /* 구분선 없음 */
+  background-color: transparent !important;
+  border-bottom: none !important;
 }
 
 .modal-title {
   font-family: var(--font-extrabold) !important;
-  font-size: 2.8rem !important; /* 피그마 헤더 28px */
+  font-size: 2.8rem !important;
   font-weight: 800 !important;
   color: #000000 !important;
   line-height: 1.3;
 }
 
-/* 피그마의 깔끔한 X 닫기 버튼 스타일 구현 */
 .modal-close-btn {
   position: absolute;
   top: 3.2rem;
   right: 3.2rem;
   width: 2.4rem;
   height: 2.4rem;
-  background: transparent !important; /* 배경 없음 */
-  color: #000000 !important; /* 검은색 X */
+  background: transparent !important;
+  color: #000000 !important;
   border: none;
-  font-size: 3.2rem; /* 크기 확대 */
-  font-family: var(--font-pretendard);
+  font-size: 3.2rem;
   font-weight: 300;
   line-height: 1;
   display: inline-flex;
@@ -1338,13 +1321,12 @@ a.agreement-link {
 /* 푸터: 전용 배경색 및 구분선 제거 (피그마 단일 베이지 통일 스타일 적용) */
 .modal-footer {
   padding: 2.4rem 2.4rem 4rem 2.4rem; /* 피그마 하단 여백 적용 */
-  border-top: none !important; /* 구분선 없음 */
+  border-top: none !important;
   display: flex;
   justify-content: flex-end;
-  background-color: transparent !important; /* 배경 투명 */
+  background-color: transparent !important;
 }
 
-/* 💳 결제수단 변경 팝업 세부 스타일 (피그마 API 실측치 100% 매핑) */
 .current-payment-card {
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-color);
@@ -1364,7 +1346,6 @@ a.agreement-link {
 }
 
 .current-payment-value {
-  font-family: var(--font-pretendard);
   font-size: 1.8rem;
   font-weight: 400;
   color: var(--text-secondary);
@@ -1388,7 +1369,6 @@ a.agreement-link {
   height: 5.2rem;
   border: none !important; /* 보더선 없음 */
   border-radius: var(--radius-sm);
-  font-family: var(--font-pretendard);
   font-size: 1.8rem;
   font-weight: 400;
   background-color: transparent !important; /* 비활성 탭 투명 배경 (피그마 Fills: []) */
@@ -1447,7 +1427,6 @@ a.agreement-link {
 .payment-form-label {
   width: 12rem;
   flex-shrink: 0;
-  font-family: var(--font-pretendard);
   font-size: 1.8rem;
   font-weight: 400;
   color: var(--text-primary);
@@ -1466,7 +1445,6 @@ a.agreement-link {
   padding: 0 1.6rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  font-family: var(--font-pretendard);
   font-size: 1.8rem;
   background-color: var(--bg-primary) !important; /* 연노랑 배경 */
   box-sizing: border-box;
@@ -1495,7 +1473,6 @@ a.agreement-link {
 }
 
 .form-helper-note {
-  font-family: var(--font-pretendard);
   font-size: 1.6rem;
   font-weight: 400;
   color: var(--text-secondary);
@@ -1503,7 +1480,6 @@ a.agreement-link {
 
 /* 안내문구 위쪽에 보더 구분선(라인) 추가 */
 .payment-apply-notice {
-  font-family: var(--font-pretendard);
   font-size: 1.6rem;
   font-weight: 400;
   color: var(--text-muted);
