@@ -221,3 +221,8 @@
     font-size: 2.8rem;
   }
 }
+
+/* 갈라디너 자선 모금 버튼 영역 (피그마 Spacing 가이드) */
+.campaign-container .button-wrap {
+  margin-top: 8rem; /* 이미지 카드 아래 마진 80px */
+}

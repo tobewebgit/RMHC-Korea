@@ -136,3 +136,41 @@
 .btn-table.btn-outline.secondary:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
+
+/* 화살표 아이콘이 포함된 버튼 (피그마 수치 12x8px, 간격 4px 적용) */
+.btn.btn-arrow {
+  gap: 0.8rem;
+  padding: 0 1.6rem 0 2.4rem;
+}
+
+.btn.btn-arrow::after {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("/src/images/common/icon_arrow_right_white.png") no-repeat center/contain;
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn.btn-arrow:hover::after {
+  transform: translateX(0.2rem); /* 호버 시 우측으로 2px 부드럽게 감속 이동 */
+}
+
+/* 다운로드 아이콘이 포함된 버튼 (피그마 가이드 24px 아이콘 반영) */
+.btn.btn-down {
+  gap: 0.8rem;
+  padding: 0 1.6rem 0 2.4rem;
+}
+
+.btn.btn-down::after {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("/src/images/common/icon_download.png") no-repeat center/contain;
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn.btn-down:hover::after {
+  transform: translateY(0.2rem);
+}
