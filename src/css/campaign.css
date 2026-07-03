@@ -4,7 +4,11 @@
 
 .campaign-container {
   padding-top: 15rem;
-  }
+}
+
+.campaign-container .page-title {
+  margin-bottom: 2.4rem;
+}
 
 .campaign-container .page-header-wrap {
   max-width: 120rem;
