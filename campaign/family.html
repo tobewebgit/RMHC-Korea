@@ -10,6 +10,10 @@
     <title>패밀리하우스 캠페인 - RMHC Korea</title>
     <link rel="stylesheet" href="/src/css/common.css" />
     <link rel="stylesheet" href="/src/css/campaign.css" />
+
+    <!-- GSAP & ScrollTrigger CDN 연동 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <!-- 웹 접근성 스킵 네비게이션 -->
@@ -26,24 +30,256 @@
             <p class="">맥도날드 해피워크는 가족이 함께 걸으며 환아 가족에게 따뜻한 응원을 전하는 참여형 캠페인입니다. 참여자 한 사람 한 사람의 걸음이 모여 치료 중인 아이와 가족이 함께 머물고 회복할 수 있는 공간을 만들어갑니다. 함께 걷는 모든 순간은 환아 가족의 일상을 지키는 든든한 힘이 됩니다.</p>
           </div>
 
-          <div class="img-top-wrap">
-            <div class="img-item"><img src="/src/images/campaign/img_top.png" alt=""></div>
-            <button type="button" class="btn-play">
-              <img src="/src/images/common/btn_play.png" alt="재생">
+          <div class="img-top-wrap video-embed-wrap" id="campaign-video-trigger" data-video-id="kmEtUuZkO6I">
+            <div class="img-item">
+              <img src="/src/images/campaign/img_top.png" alt="맥도날드 해피워크 캠페인 대표 이미지">
+            </div>
+            <button type="button" class="btn-play" aria-label="캠페인 동영상 재생">
+              <img src="/src/images/common/btn_play.png" alt="재생 아이콘">
             </button>
-            <!-- https://youtu.be/kmEtUuZkO6I?si=EewtugqcPxKj-mv6 -->
           </div>
         
           <div class="line-path-wrap">
             <h2 class="sub-title">함께 걷는 걸음마다<br class="type-pc">환아 가족을 향한 응원이 이어집니다.</h2>
             
-            <!-- line path motion -->
+            <div class="campaign-timeline">
+              <!-- 중앙 실측 그라데이션 SVG 라인 (viewBox 801x1821) -->
+              <div class="campaign-svg-line-wrap" aria-hidden="true">
+                <svg class="campaign-svg-line" viewBox="0 0 801 1821" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="svg-path" d="M345.961 5C341.128 48 304.861 129.5 198.461 111.5C155.461 103 141.961 51 174.961 42.5C207.961 34 265.981 123.724 65.4622 208C-134.474 292.032 189.381 601.004 627.462 627.5C945.168 646.715 781.963 932.5 400.963 1086C19.963 1239.5 -101.548 1227.86 108.831 1553C339.827 1910 549.598 1801.16 486.83 1695C456.381 1643.5 400.963 1750 506.33 1802C569.33 1836 633.963 1796.5 649.963 1785" stroke="url(#paint0_linear_2405_106457)" stroke-width="10" stroke-linecap="round"/>
+                  <defs>
+                    <linearGradient id="paint0_linear_2405_106457" x1="397.014" y1="5" x2="397.014" y2="1812.76" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#8EE7F8"/>
+                      <stop offset="0.278846" stop-color="#90E6E9"/>
+                      <stop offset="0.427462" stop-color="#9CD83E"/>
+                      <stop offset="0.615385" stop-color="#9CD83E"/>
+                      <stop offset="0.7358" stop-color="#FFBC0D"/>
+                      <stop offset="1" stop-color="#FFBC0D"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <!-- 하단 하트 마크를 SVG 래퍼의 우측 하단 절대 좌표 자식으로 이동 배치 (RMHC 시그니처 비대칭 하트 적용) -->
+                <div class="timeline-heart-marker">
+                  <svg class="heart-svg" width="90" height="94" viewBox="0 0 90 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2405_106470)">
+                      <path d="M23.7198 75.9261C24.0377 77.0144 25.0675 77.7435 26.1977 77.6519C41.6923 76.396 73.565 61.3995 81.3459 44.9734C87.8364 31.2715 76.7872 21.862 69.4737 21.573C63.8569 21.351 59.6274 23.6182 57.6007 24.9299C57.091 25.2598 56.4214 24.8797 56.4421 24.2731C56.5374 21.4897 56.5065 15.7171 53.6825 12.1355C49.3832 6.6829 40.0597 5.88482 31.9251 14.8647C17.675 30.5958 19.6092 61.8551 23.7198 75.9261Z" fill="#DB0007"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2405_106470">
+                        <rect width="58.3438" height="73.2157" fill="white" transform="translate(42.0675) rotate(35.0695)"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- 타임라인 1행: 좌측 이미지(680x488) / 우측 텍스트 -->
+              <div class="timeline-row type-left">
+                <div class="timeline-col img-col">
+                  <div class="timeline-img-card">
+                    <img src="/src/images/campaign/img_middle_1.png" alt="맥도날드 해피워크 걷기 대회 참가 가족들의 모습">
+                  </div>
+                </div>
+                <div class="timeline-col text-col">
+                  <h3 class="timeline-title">함께 모인 소중한 순간이<br>환아 가족을 위한 희망으로 이어집니다.</h3>
+                </div>
+              </div>
+
+              <!-- 타임라인 2행: 좌측 텍스트 / 우측 이미지(680x488) -->
+              <div class="timeline-row type-right">
+                <div class="timeline-col text-col">
+                  <h3 class="timeline-title">함께 걷고 함께 웃는 시간이<br>나눔의 특별한 추억으로 남습니다.</h3>
+                </div>
+                <div class="timeline-col img-col">
+                  <div class="timeline-img-card">
+                    <img src="/src/images/campaign/img_middle_2.png" alt="로날드 맥도날드 하우스 포토부스에서 기념촬영 중인 가족">
+                  </div>
+                </div>
+              </div>
+
+              <!-- 타임라인 3행: 좌측 이미지(680x488) / 우측 텍스트 -->
+              <div class="timeline-row type-left">
+                <div class="timeline-col img-col">
+                  <div class="timeline-img-card">
+                    <img src="/src/images/campaign/img_middle_3.png" alt="대회 참가 번호표를 부착하고 환하게 미소 짓는 참가자들">
+                  </div>
+                </div>
+                <div class="timeline-col text-col">
+                  <h3 class="timeline-title">한 걸음 한 걸음의 응원이 모여<br>환아 가족에게 큰 힘이 됩니다.</h3>
+                </div>
+              </div>
+              
+
+            </div>
           </div>
         </div>
     </div>
     
     <!-- 푸터 공통 영역 인클루드 -->
     <load ="/includes/footer.html" />
+
+    <!-- GSAP & ScrollTrigger CDN 연동 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- 캠페인 스크롤 모션 스크립트 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const path = document.querySelector(".campaign-svg-line .svg-path");
+        const heart = document.querySelector(".timeline-heart-marker");
+        const rows = document.querySelectorAll(".timeline-row");
+        if (!path || !heart || rows.length < 3) return;
+
+        const pathLength = path.getTotalLength();
+        
+        // [수정 가이드] stroke-linecap="round"로 인해 선 시작 전에 둥근 점이 노출되는 현상을 오프셋 보정(+20px)으로 완전히 가립니다.
+        const offsetAdjustment = 20;
+
+        // 1. 초기 상태 설정 (선 숨김, 투명도 0, 하트 축소, 각 컬럼 초기 투명도 및 오프셋)
+        gsap.set(path, {
+          strokeDasharray: pathLength + offsetAdjustment,
+          strokeDashoffset: pathLength + offsetAdjustment,
+          opacity: 0 // 시작 전에 둥근 꼭지점 점이 보이지 않도록 완전히 투명 처리
+        });
+        gsap.set(heart, {
+          scale: 0,
+          transformOrigin: "center center"
+        });
+        rows.forEach(row => {
+          const cols = row.querySelectorAll(".timeline-col");
+          gsap.set(cols, { opacity: 0, y: 50 });
+        });
+
+        // [수정 가이드] 모션 시작/종료 지점 뷰포트 비율 (종료 비율을 90%로 수정하여 스크롤을 끝까지 내렸을 때 물결선이 누락 없이 100% 다 그려지도록 동기화합니다.)
+        const startViewportRatio = "80%"; 
+        const endViewportRatio = "70%";
+
+        // 2. [통합] 물결선 드로잉 + 하트 스케일업 단일 스크롤 트리거 타임라인 (선이 다 그려지는 연속선상에서 하트가 순차 기동)
+        const tlLine = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".campaign-timeline",
+            start: `top ${startViewportRatio}`,
+            end: `bottom ${endViewportRatio}`,
+            scrub: 2, // 휠 관성 제어
+            markers: false,
+            // 스크롤 진입 시 선을 투명에서 불투명으로, 완전 역스크롤 시 둥근 점을 다시 가림
+            onEnter: () => gsap.to(path, { opacity: 1, duration: 0.2 }),
+            onLeaveBack: () => gsap.to(path, { opacity: 0, duration: 0.2 })
+          }
+        });
+
+        // 2-1. 선 그리기 트윈 (전체 스크롤 구간의 95% 비중을 차지하여 정속도로 천천히 그려지도록 보정)
+        tlLine.to(path, {
+          strokeDashoffset: 0,
+          duration: 9.5,
+          ease: "none"
+        })
+        // 2-2. 선 드로잉 종료 시 하트 스케일 업 등장 (마지막 남은 5%의 찰나 스크롤 구간에서 뿅 커짐)
+        .to(heart, {
+          scale: 1,
+          duration: 0.5,
+          ease: "back.out(1.7)"
+        });
+
+        // 3. [단독] 각 타임라인 행(카드 세트)별 개별 리빌 트리거 (화면에 30%가 나타났을 때 개별 격발)
+        rows.forEach(row => {
+          const cols = row.querySelectorAll(".timeline-col");
+          gsap.set(cols, { opacity: 0, y: 50 }); // 최초 상태
+
+          gsap.to(cols, {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: row,
+              start: "top 70%", // 뷰포트 아래에서 30% 올라왔을 때 (30% 보일 때)
+              toggleActions: "play none none reverse", // 휠 내릴 때 순차 리빌, 위로 올리면 다시 투명화
+              markers: false
+            }
+          });
+        });
+
+        // 5. [단독] 상단 비디오 커버 클릭 시 유튜브 iframe 동적 자동재생 주입 및 종료 시 커버 복원
+        const videoWrap = document.getElementById("campaign-video-trigger");
+        if (videoWrap) {
+          // YouTube Iframe Player API 스크립트 로드
+          if (!window.YT) {
+            const tag = document.createElement("script");
+            tag.src = "https://www.youtube.com/iframe_api";
+            const firstScriptTag = document.getElementsByTagName("script")[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+          }
+
+          const originalMarkup = videoWrap.innerHTML; // 원본 커버 이미지 마크업 캐싱
+          let player = null;
+
+          // 재생 실행 함수
+          function playVideo() {
+            const videoId = videoWrap.getAttribute("data-video-id");
+            if (!videoId) return;
+
+            // 비디오 노드 비우고 iframe 용 타겟 div 주입
+            videoWrap.innerHTML = '<div id="youtube-player-target" style="width:100%; height:100%;"></div>';
+            videoWrap.classList.add("is-playing");
+
+            if (window.YT && window.YT.Player) {
+              player = new YT.Player("youtube-player-target", {
+                width: "100%",
+                height: "100%",
+                videoId: videoId,
+                playerVars: {
+                  autoplay: 1,
+                  rel: 0,
+                  modestbranding: 1,
+                  controls: 1
+                },
+                events: {
+                  onStateChange: (event) => {
+                    // YT.PlayerState.ENDED (0) 감지 시 이미지 복원
+                    if (event.data === 0) {
+                      restoreCover();
+                    }
+                  }
+                }
+              });
+            } else {
+              // API가 미처 준비 안 되었을 때 재시도 콜백 등록
+              window.onYouTubeIframeAPIReady = () => playVideo();
+            }
+          }
+
+          // 커버 상태 복원 함수
+          function restoreCover() {
+            if (player) {
+              player.destroy();
+              player = null;
+            }
+            videoWrap.innerHTML = originalMarkup;
+            videoWrap.classList.remove("is-playing");
+            bindPlayEvent(); // 복원된 버튼에 이벤트 재바인딩
+          }
+
+          // 클릭 재생 이벤트 바인딩
+          function bindPlayEvent() {
+            const btnPlay = videoWrap.querySelector(".btn-play");
+            if (btnPlay) {
+              btnPlay.addEventListener("click", (e) => {
+                e.stopPropagation();
+                playVideo();
+              }, { once: true });
+            }
+            videoWrap.addEventListener("click", playVideo, { once: true });
+          }
+
+          // 초기 실행
+          bindPlayEvent();
+        }
+      });
+    </script>
     <script type="module" src="/src/js/common.js"></script>
   </body>
 </html>
