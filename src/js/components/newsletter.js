@@ -7,6 +7,7 @@ export function initNewsletter() {
   const footerSubmitBtn = document.getElementById('btn-footer-newsletter');
   
   const modal = document.getElementById('modal-newsletter');
+  const modalContainer = document.getElementById('newsletter-modal-container');
   const modalCloseBtn = document.getElementById('btn-newsletter-close');
   const agreementChk = document.getElementById('chk-newsletter-agreement');
   const submitBtn = document.getElementById('btn-newsletter-submit');
@@ -15,7 +16,7 @@ export function initNewsletter() {
   const step1 = document.getElementById('newsletter-step-1');
   const step2 = document.getElementById('newsletter-step-2');
 
-  if (!footerEmailInput || !footerSubmitBtn || !modal) {
+  if (!footerEmailInput || !footerSubmitBtn || !modal || !modalContainer) {
     return;
   }
 
@@ -49,6 +50,10 @@ export function initNewsletter() {
     // step 1 활성화, step 2 비활성화
     if (step1) step1.classList.add('active');
     if (step2) step2.classList.remove('active');
+
+    // 높이 제어 클래스: Step 1 활성화
+    modalContainer.classList.add('step-1-active');
+    modalContainer.classList.remove('step-2-active');
   }
 
   // 1. 푸터 '소식받기' 버튼 클릭 시 이벤트
@@ -96,6 +101,10 @@ export function initNewsletter() {
       // Step 1 감추고 Step 2 표시
       if (step1) step1.classList.remove('active');
       if (step2) step2.classList.add('active');
+
+      // 높이 제어 클래스: Step 2 완료 화면 높이로 스위칭
+      modalContainer.classList.remove('step-1-active');
+      modalContainer.classList.add('step-2-active');
     });
   }
 

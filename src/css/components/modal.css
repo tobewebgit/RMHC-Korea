@@ -2,8 +2,8 @@
    RMHC Portal - Newsletter Subscription Modal (components/modal.css)
    ========================================================================== */
 
-/* 1. 모달 오버레이 (기본 숨김 및 활성화 제어) */
-.modal-overlay--newsletter {
+/* 1. 모달 오버레이 (뉴스레터 전용 고유 클래스) */
+.newsletter-modal-overlay {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,31 +12,41 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* 오버레이 배경 투명도 */
+  background-color: rgba(0, 0, 0, 0.5); /* 딤드 배경 */
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.modal-overlay--newsletter.active {
+.newsletter-modal-overlay.active {
   opacity: 1;
   visibility: visible;
 }
 
-/* 2. 모달 컨테이너 (피그마 정밀 실측 기준) */
-.modal-container--newsletter {
-  width: 73rem; /* 피그마 가로 730px */
+/* 2. 모달 컨테이너 (피그마 정밀 실측 반영) */
+.newsletter-modal-container {
+  width: 73rem; /* 피그마 가로 730px 고정 */
   background-color: #fffde9; /* 피그마 fills #fffde9 */
   border-radius: 1.6rem; /* 피그마 radius 16px */
   padding: 4rem; /* 피그마 padding T:40 R:40 B:40 L:40 */
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   transform: translateY(2rem);
-  transition: transform 0.3s ease;
+  transition: height 0.3s ease, transform 0.3s ease;
 }
 
-.modal-overlay--newsletter.active .modal-container--newsletter {
+/* Step 1 활성화 상태 높이: 545px */
+.newsletter-modal-container.step-1-active {
+  height: 54.5rem;
+}
+
+/* Step 2 활성화 상태 높이: 538px */
+.newsletter-modal-container.step-2-active {
+  height: 53.8rem;
+}
+
+.newsletter-modal-overlay.active .newsletter-modal-container {
   transform: translateY(0);
 }
 
@@ -44,6 +54,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.6rem; /* 피그마 gap 16px */
+  height: 100%;
 }
 
 /* 3. 닫기 버튼 영역 */
@@ -51,6 +62,7 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  height: 2.4rem; /* 피그마 btn_close 세로 24px */
 }
 
 .newsletter-modal__close-btn {
@@ -59,7 +71,7 @@
   justify-content: center;
   width: 2.4rem; /* 24px */
   height: 2.4rem; /* 24px */
-  background-color: #000000; /* 피그마 fills #000000 */
+  background-color: rgba(0, 0, 0, 0.6); /* 피그마 fills #000000 + Opacity: 0.6 */
   border-radius: 1.2rem; /* radius 12px (원형) */
   border: none;
   padding: 0;
@@ -67,7 +79,7 @@
   position: relative;
 }
 
-/* X자 닫기 아이콘 피그마 사양 구현 (Vector 6, Vector 7) */
+/* X자 닫기 아이콘 피그마 사양 (Vector 6, Vector 7) */
 .newsletter-modal__close-btn .close-icon {
   position: relative;
   width: 1rem; /* 피그마 X자 size 10px */
@@ -98,6 +110,7 @@
 /* 4. 단계(Step) 제어 */
 .newsletter-modal__step {
   display: none;
+  height: 100%;
 }
 
 .newsletter-modal__step.active {
@@ -138,6 +151,8 @@
 
 /* 6. 약관 동의 박스 (Figma 주민등록번호 프레임 대응) */
 .newsletter-modal__agreement-box {
+  width: 65rem; /* 피그마 가로 650px 고정 */
+  height: 19.6rem; /* 피그마 세로 196px 고정 */
   background-color: rgba(208, 201, 255, 0.2); /* 피그마 #d0c9ff + 20% opacity */
   border: 1px solid #aaaaaa; /* 피그마 strokes #aaaaaa 1px */
   border-radius: 0.8rem; /* 피그마 radius 8px */
@@ -280,9 +295,13 @@
 
 /* 반응형 모바일 사양 적용 (768px 이하) */
 @media (max-width: 768px) {
-  .modal-container--newsletter {
+  .newsletter-modal-container {
     width: 90%; /* 모바일 화면에 맞춰 축소 */
     padding: 3rem 2rem;
+  }
+  .newsletter-modal-container.step-1-active,
+  .newsletter-modal-container.step-2-active {
+    height: auto; /* 모바일에서는 컨텐츠 양에 맞춤 */
   }
   .newsletter-modal__title {
     font-size: 2rem;
@@ -296,6 +315,8 @@
     line-height: 2.4rem;
   }
   .newsletter-modal__agreement-box {
+    width: 100%;
+    height: auto;
     padding: 2rem 1.6rem;
   }
   .newsletter-modal__cta-btn {
