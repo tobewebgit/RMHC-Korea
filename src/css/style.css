@@ -1,6 +1,7 @@
 @import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css");
 @import "components/button.css";
 @import "components/form.css";
+@import "components/modal.css";
 
 /* ==========================================================================
    Web Fonts: 프로젝트 내 src/fonts/ 에서 직접 로드 (외부 의존 0)

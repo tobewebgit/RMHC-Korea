@@ -1,0 +1,304 @@
+/* ==========================================================================
+   RMHC Portal - Newsletter Subscription Modal (components/modal.css)
+   ========================================================================== */
+
+/* 1. 모달 오버레이 (기본 숨김 및 활성화 제어) */
+.modal-overlay--newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 오버레이 배경 투명도 */
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay--newsletter.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 2. 모달 컨테이너 (피그마 정밀 실측 기준) */
+.modal-container--newsletter {
+  width: 73rem; /* 피그마 가로 730px */
+  background-color: #fffde9; /* 피그마 fills #fffde9 */
+  border-radius: 1.6rem; /* 피그마 radius 16px */
+  padding: 4rem; /* 피그마 padding T:40 R:40 B:40 L:40 */
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  transform: translateY(2rem);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay--newsletter.active .modal-container--newsletter {
+  transform: translateY(0);
+}
+
+.newsletter-modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem; /* 피그마 gap 16px */
+}
+
+/* 3. 닫기 버튼 영역 */
+.newsletter-modal__close-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.newsletter-modal__close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem; /* 24px */
+  height: 2.4rem; /* 24px */
+  background-color: #000000; /* 피그마 fills #000000 */
+  border-radius: 1.2rem; /* radius 12px (원형) */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+/* X자 닫기 아이콘 피그마 사양 구현 (Vector 6, Vector 7) */
+.newsletter-modal__close-btn .close-icon {
+  position: relative;
+  width: 1rem; /* 피그마 X자 size 10px */
+  height: 1rem;
+  display: block;
+}
+
+.newsletter-modal__close-btn .close-icon::before,
+.newsletter-modal__close-btn .close-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.2rem;
+  height: 2px; /* 피그마 strokes width 2px */
+  background-color: #fffde9; /* 피그마 strokes #fffde9 */
+  border-radius: 1px;
+}
+
+.newsletter-modal__close-btn .close-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.newsletter-modal__close-btn .close-icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* 4. 단계(Step) 제어 */
+.newsletter-modal__step {
+  display: none;
+}
+
+.newsletter-modal__step.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 5. 본문 및 텍스트 (Title & Desc) */
+.newsletter-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem; /* 피그마 gap 24px */
+}
+
+.newsletter-modal__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem; /* 피그마 gap 24px */
+}
+
+.newsletter-modal__title {
+  font-family: "NanumSquareNeo", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 2.4rem; /* 24px */
+  font-weight: 800; /* ExtraBold */
+  line-height: 3.1rem; /* 31px */
+  color: #21272a; /* 피그마 color #21272a */
+  margin: 0;
+}
+
+.newsletter-modal__desc {
+  font-family: var(--font-pretendard), sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400; /* Regular */
+  line-height: 2.7rem; /* 27px */
+  color: #21272a; /* 피그마 color #21272a */
+  margin: 0;
+}
+
+/* 6. 약관 동의 박스 (Figma 주민등록번호 프레임 대응) */
+.newsletter-modal__agreement-box {
+  background-color: rgba(208, 201, 255, 0.2); /* 피그마 #d0c9ff + 20% opacity */
+  border: 1px solid #aaaaaa; /* 피그마 strokes #aaaaaa 1px */
+  border-radius: 0.8rem; /* 피그마 radius 8px */
+  padding: 3.2rem 2.4rem; /* 피그마 padding T:32 R:24 B:32 L:24 */
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem; /* 피그마 gap 24px */
+  box-sizing: border-box;
+}
+
+.newsletter-modal__agreement-text {
+  font-family: var(--font-pretendard), sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400; /* Regular */
+  line-height: 2.7rem; /* 27px */
+  color: #000000; /* 피그마 color #000000 */
+  margin: 0;
+}
+
+/* 7. 커스텀 체크박스 (Figma checkbox 대응) */
+.newsletter-modal__checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-modal__checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem; /* 피그마 gap 8px */
+  cursor: pointer;
+  user-select: none;
+}
+
+.newsletter-modal__checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.newsletter-modal__checkbox-custom {
+  width: 2rem; /* 피그마 20px */
+  height: 2rem; /* 피그마 20px */
+  border: 1px solid #8f8f8f; /* 피그마 strokes #8f8f8f 1px */
+  border-radius: 0.4rem; /* 피그마 radius 4px */
+  background-color: #ffffff;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+/* 체크되었을 때 스타일 */
+.newsletter-modal__checkbox:checked + .newsletter-modal__checkbox-custom::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.2rem;
+  width: 0.7rem; /* 피그마 Vector 5 크기 대응 9x6 */
+  height: 0.4rem;
+  border-left: 2px solid #8f8f8f; /* 피그마 strokes #8f8f8f width 2px */
+  border-bottom: 2px solid #8f8f8f;
+  transform: rotate(-45deg);
+}
+
+.newsletter-modal__checkbox-text {
+  font-family: var(--font-pretendard), sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400; /* Regular */
+  line-height: 2.7rem; /* 27px */
+  color: #000000; /* 피그마 color #000000 */
+}
+
+/* 8. 모달 푸터 및 CTA 버튼 */
+.newsletter-modal__footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem; /* 피그마 CTA padding T:40 */
+}
+
+.newsletter-modal__cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem; /* 피그마 gap 4px */
+  width: 15rem; /* 피그마 size 150px */
+  height: 5.2rem; /* 피그마 size 52px */
+  background-color: var(--primary); /* 피그마 fills #db0007 (공통변수 사용) */
+  border-radius: 0.8rem; /* 피그마 radius 8px */
+  border: none;
+  cursor: pointer;
+  padding: 0 2.4rem; /* 피그마 padding L:24 R:24 */
+}
+
+.newsletter-modal__cta-btn span {
+  font-family: var(--font-pretendard), sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400; /* Regular */
+  line-height: 2.7rem; /* 27px */
+  color: #fffde9; /* 피그마 color #fffde9 */
+}
+
+/* 화살표 아이콘 (Figma Vector 크기 12x8 대응) */
+.newsletter-modal__cta-icon {
+  width: 2.4rem; /* 24px */
+  height: 2.4rem; /* 24px */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.newsletter-modal__cta-icon::after {
+  content: "";
+  display: block;
+  width: 0.8rem; /* 가로 8px */
+  height: 0.8rem; /* 세로 8px */
+  border-top: 2px solid #fffde9; /* 피그마 Vector Fills #fffde9 */
+  border-right: 2px solid #fffde9;
+  transform: rotate(45deg);
+  margin-left: -0.2rem;
+}
+
+/* CTA 버튼 비활성화 상태 (동의 체크 안 한 상태) */
+.newsletter-modal__cta-btn:disabled {
+  background-color: var(--border-color); /* 공통 비활성화 컬러 토큰 적용 */
+  cursor: not-allowed;
+}
+
+.newsletter-modal__cta-btn:disabled span {
+  color: var(--text-muted); /* 공통 뮤트 텍스트 컬러 토큰 적용 */
+}
+
+.newsletter-modal__cta-btn:disabled .newsletter-modal__cta-icon::after {
+  border-color: var(--text-muted);
+}
+
+/* 반응형 모바일 사양 적용 (768px 이하) */
+@media (max-width: 768px) {
+  .modal-container--newsletter {
+    width: 90%; /* 모바일 화면에 맞춰 축소 */
+    padding: 3rem 2rem;
+  }
+  .newsletter-modal__title {
+    font-size: 2rem;
+    line-height: 2.6rem;
+  }
+  .newsletter-modal__desc,
+  .newsletter-modal__agreement-text,
+  .newsletter-modal__checkbox-text,
+  .newsletter-modal__cta-btn span {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .newsletter-modal__agreement-box {
+    padding: 2rem 1.6rem;
+  }
+  .newsletter-modal__cta-btn {
+    width: 100%; /* 모바일에서는 가로 꽉 차게 변경 */
+  }
+}

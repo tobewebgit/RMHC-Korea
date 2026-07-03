@@ -1,0 +1,74 @@
+<!-- S: 뉴스레터 구독 모달 팝업 -->
+<div class="modal-overlay modal-overlay--newsletter" id="modal-newsletter" aria-hidden="true">
+  <div class="modal-container modal-container--newsletter">
+    <div class="newsletter-modal__content">
+      
+      <!-- S: 닫기 버튼 -->
+      <div class="newsletter-modal__close-wrapper">
+        <button type="button" class="newsletter-modal__close-btn" id="btn-newsletter-close" aria-label="닫기">
+          <span class="close-icon"></span>
+        </button>
+      </div>
+      <!-- E: 닫기 버튼 -->
+
+      <!-- S: Step 1 (구독 동의 단계) -->
+      <div class="newsletter-modal__step newsletter-modal__step--1 active" id="newsletter-step-1">
+        <div class="newsletter-modal__body">
+          <div class="newsletter-modal__text-group">
+            <h3 class="newsletter-modal__title">따뜻한 나눔의 기적,<br>뉴스레터로 먼저 만나보세요!</h3>
+            <p class="newsletter-modal__desc">아래의 개인정보 수집 및 이용에 동의해 주세요.</p>
+          </div>
+          
+          <div class="newsletter-modal__agreement-box">
+            <div class="newsletter-modal__agreement-content">
+              <p class="newsletter-modal__agreement-text">
+                수집 항목: 이메일 주소<br>
+                수집 목적: 뉴스레터 발송 및 활동 소식 전달<br>
+                보유 및 이용 기간: 구독 해지 시 즉시 파기
+              </p>
+            </div>
+            <div class="newsletter-modal__checkbox-group">
+              <label class="newsletter-modal__checkbox-label">
+                <input type="checkbox" id="chk-newsletter-agreement" class="newsletter-modal__checkbox">
+                <span class="newsletter-modal__checkbox-custom"></span>
+                <span class="newsletter-modal__checkbox-text">[필수] 개인정보 수집 및 이용에 동의합니다.</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="newsletter-modal__footer">
+          <button type="button" class="newsletter-modal__cta-btn" id="btn-newsletter-submit" disabled>
+            <span>구독 완료하기</span>
+            <span class="newsletter-modal__cta-icon"></span>
+          </button>
+        </div>
+      </div>
+      <!-- E: Step 1 (구독 동의 단계) -->
+
+      <!-- S: Step 2 (구독 완료 단계) -->
+      <div class="newsletter-modal__step newsletter-modal__step--2" id="newsletter-step-2">
+        <div class="newsletter-modal__body">
+          <div class="newsletter-modal__text-group">
+            <h3 class="newsletter-modal__title">신청이 완료되었습니다!</h3>
+            <p class="newsletter-modal__desc">
+              감사합니다.<br>
+              한국로날드맥도날드하우스와 함께하는 따뜻한 순간들을<br>
+              가장 먼저 만나보실 수 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="newsletter-modal__footer">
+          <button type="button" class="newsletter-modal__cta-btn" id="btn-newsletter-confirm">
+            <span>확인</span>
+            <span class="newsletter-modal__cta-icon"></span>
+          </button>
+        </div>
+      </div>
+      <!-- E: Step 2 (구독 완료 단계) -->
+
+    </div>
+  </div>
+</div>
+<!-- E: 뉴스레터 구독 모달 팝업 -->
