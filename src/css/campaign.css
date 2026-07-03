@@ -226,3 +226,131 @@
 .campaign-container .button-wrap {
   margin-top: 8rem; /* 이미지 카드 아래 마진 80px */
 }
+
+/* ==========================================================================
+   울림백일장 수상작 Swiper 슬라이드 및 4x2 그리드 스타일 (피그마 정밀 실측 반영)
+   ========================================================================== */
+.award-section {
+  margin-top: 15rem;
+  margin-bottom: 22rem; /* 하단으로 100px 밀어낸 페이지네이션 대비 안전한 여백 공간 확보 */
+}
+
+.award-section-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.award-section-header .sub-title {
+  font-size: 3.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.award-desc {
+  font-size: 1.8rem;
+  color: var(--text-gray70);
+}
+
+.award-slide-wrap {
+  position: relative;
+  /* overflow: hidden 은 Swiper 기본 스타일에 의해 자동 작동 */
+  padding-top: 1.0rem; /* 호버 솟아오름 시 마진 잘림 예방용 쿠션 */
+  margin-top: -1.0rem; /* 쿠션 보정 마진 */
+  padding-bottom: 0; /* 내부 패딩 공간 제거 */
+}
+
+/* 4열 그리드 (피그마 갭 2.4rem 적용) */
+.award-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+  width: 100%;
+}
+
+.award-item {
+  border-radius: 0.8rem; /* 피그마 실측 cornerRadius: 8px */
+  overflow: hidden;
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+.award-item:hover {
+  transform: translateY(-0.6rem); /* 호버 시 약간 솟아오름 */
+  box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, 0.1);
+}
+
+.award-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 342/420; /* 피그마 342 x 420 렌더 바운드 비율 */
+}
+
+/* 웜 페이지네이션 도트 커스텀 (슬라이더 외곽 독립 배치 구조) */
+.award-swiper-pagination {
+  position: relative !important; /* Swiper 기본 absolute 속성 강제 파괴 */
+  bottom: auto !important; /* bottom 위치값 초기화 */
+  left: auto !important;
+  transform: none !important;
+  margin-top: 10.0rem !important; /* 슬라이더 바닥 기준 아래로 100px 완전히 이동 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem; /* 피그마 Spacing 4px 반영 */
+  width: 100%;
+}
+
+.award-swiper-pagination .swiper-pagination-bullet {
+  background-color: #dddddd; /* 피그마 회색 */
+  opacity: 1; /* 투명도 불투명 고정 */
+  width: 1.0rem; /* 피그마 10px */
+  height: 1.0rem; /* 피그마 10px */
+  margin: 0 !important; /* Swiper 기본 마진 제거 */
+  border-radius: 0.5rem; /* 보더 래디우스 5px */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.award-swiper-pagination .swiper-pagination-bullet-active {
+  position: relative; /* 가상 요소 absolute 조율용 부모 배치 */
+  background-color: #dddddd; /* 회색 긴 배경 */
+  width: 5.0rem; /* 피그마 50px */
+  height: 1.0rem; /* 피그마 10px */
+  border-radius: 0.5rem; /* 보더 래디우스 5px */
+}
+
+.award-swiper-pagination .swiper-pagination-bullet-active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0; /* 긴 회색 배경의 좌측에 안착 */
+  width: 1.0rem; /* 피그마 10px */
+  height: 1.0rem; /* 피그마 10px */
+  border-radius: 0.5rem; /* 둥근 원형 */
+  background-color: var(--primary); /* 브랜드 레드 */
+  transition: left 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 모바일 2열 전환 미디어 쿼리 */
+@media (max-width: 1024px) {
+  .award-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+  }
+  
+  .award-section {
+    margin-top: 8rem;
+    margin-bottom: 18rem;
+  }
+  
+  .award-section-header {
+    margin-bottom: 4rem;
+  }
+  
+  .award-section-header .sub-title {
+    font-size: 2.8rem;
+  }
+  
+  .award-desc {
+    font-size: 1.6rem;
+  }
+}

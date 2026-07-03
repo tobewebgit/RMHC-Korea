@@ -10,6 +10,8 @@
     <title>울림백일장 - RMHC Korea</title>
     <link rel="stylesheet" href="/src/css/common.css" />
     <link rel="stylesheet" href="/src/css/campaign.css" />
+    <!-- Swiper CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body>
     <!-- 웹 접근성 스킵 네비게이션 -->
@@ -36,14 +38,90 @@
             </div>
           </section>
 
-          <section class="">
-            <h2 class="">작년 수상작 알아보기</h2>
-            <p class="">함께 만드는 따뜻한 이야기를 만나보세요.</p>
-            
-            <!-- 슬라이드 -->
-            <div class="award-slide-wrap">
-              <div class="award-slide-item"></div>
+          <section class="award-section">
+            <div class="award-section-header">
+              <h2 class="sub-title">작년 수상작 알아보기</h2>
+              <p class="award-desc">함께 만드는 따뜻한 이야기를 만나보세요.</p>
             </div>
+            
+            <!-- 슬라이드 컨테이너 -->
+            <div class="award-slide-wrap swiper award-slide-container">
+              <div class="swiper-wrapper">
+                
+                <!-- 슬라이드 1 (1~8번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_1.png" alt="울림백일장 수상작 1">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_2.png" alt="울림백일장 수상작 2">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_3.png" alt="울림백일장 수상작 3">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_4.png" alt="울림백일장 수상작 4">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_5.png" alt="울림백일장 수상작 5">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_6.png" alt="울림백일장 수상작 6">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_7.png" alt="울림백일장 수상작 7">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_8.png" alt="울림백일장 수상작 8">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 슬라이드 2 (9~16번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_9.png" alt="울림백일장 수상작 9">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_10.png" alt="울림백일장 수상작 10">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_11.png" alt="울림백일장 수상작 11">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_12.png" alt="울림백일장 수상작 12">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_13.png" alt="울림백일장 수상작 13">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_14.png" alt="울림백일장 수상작 14">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_15.png" alt="울림백일장 수상작 15">
+                    </div>
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_16.png" alt="울림백일장 수상작 16">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 슬라이드 3 (17번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item">
+                      <img src="/src/images/campaign/img_contest_slide_17.png" alt="울림백일장 수상작 17">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            
+            <!-- 페이지네이션 도트 (슬라이더 영역 밖으로 독립 외곽 배치) -->
+            <div class="award-swiper-pagination swiper-pagination"></div>
           </section>
         </div>
       </main>
@@ -52,6 +130,21 @@
     <!-- 푸터 공통 영역 인클루드 -->
     <load ="/includes/footer.html" />
 
+    <!-- Swiper JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const awardSwiper = new Swiper(".award-slide-container", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: false,
+          pagination: {
+            el: ".award-swiper-pagination",
+            clickable: true,
+          },
+        });
+      });
+    </script>
     <script type="module" src="/src/js/common.js"></script>
   </body>
 </html>
