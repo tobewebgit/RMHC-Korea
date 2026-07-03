@@ -2,6 +2,7 @@
 @import url("./base.css");
 @import url("./components/button.css");
 @import url("./components/form.css");
+@import url("./components/modal.css");
 
 /* ==========================================================================
    Main Layout & Section Wrappers
@@ -651,9 +652,7 @@
 }
 
 .main-content, .inner-container {
-  max-width: 144rem;
   margin: 0 auto;
-  padding: var(--spacing-100) 0 0;
 }
 
 .page-title {
@@ -665,6 +664,10 @@
 .page-title.mypage,
 .page-title.type01 {
   font-size: var(--text-6xl);
+}
+
+.sub-title {
+  font-size: var(--text-5xl);
 }
 
 /* 2. 탭 네비게이션 */

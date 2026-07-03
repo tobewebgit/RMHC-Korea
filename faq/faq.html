@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="faq"
+      content="RMHC Korea 자주 묻는 질문(FAQ) 페이지입니다. 하우스 이용, 기부금영수증 발급, 후원 안내 등 다양한 궁금증을 확인해 보세요."
     />
-    <title>faq | RMHC Korea</title>
+    <title>자주 묻는 질문(FAQ) | RMHC Korea</title>
     <link rel="stylesheet" href="/src/css/common.css" />
     <link rel="stylesheet" href="/src/css/faq.css" />
   </head>
@@ -26,8 +26,124 @@
             <div class="faq-content">
               <h1 class="page-title type01">자주 묻는 질문(FAQ)</h1>
 
-              <div class="faq-box">
+              <!-- 공통 탭 메뉴 -->
+              <nav class="tab-menu faq-tab-menu" aria-label="FAQ 카테고리 탭">
+                <ul class="tab-list">
+                  <li class="tab-item">
+                    <button
+                      type="button"
+                      class="tab-btn active"
+                      data-tab-target="faq-yangsan"
+                    >
+                      로날드 맥도날드 하우스 양산
+                    </button>
+                  </li>
+                  <li class="tab-item">
+                    <button
+                      type="button"
+                      class="tab-btn"
+                      data-tab-target="faq-receipt"
+                    >
+                      기부금영수증
+                    </button>
+                  </li>
+                  <li class="tab-item">
+                    <button
+                      type="button"
+                      class="tab-btn"
+                      data-tab-target="faq-donate"
+                    >
+                      후원관련
+                    </button>
+                  </li>
+                </ul>
+              </nav>
 
+              <!-- 탭 콘텐츠 영역 -->
+              <div class="tab-content-container">
+                <!-- 탭 1: 로날드 맥도날드 하우스 양산 -->
+                <div id="faq-yangsan" class="tab-content faq-tab-content active">
+                  <ul class="faq-list">
+                    <li class="faq-item">
+                      <button type="button" class="faq-q">
+                        <span class="faq-q-text">하우스 이용 대상은 어떻게 되나요?</span>
+                        <span class="faq-toggle-btn" aria-hidden="true"></span>
+                      </button>
+                      <div class="faq-a" style="display: none;">
+                        <div class="faq-a-inner">
+                          <p class="faq-a-text">로날드 맥도날드 하우스 양산은 양산부산대학교병원에서 치료를 받고 있는 만 19세 이하 환아와 그 가족을 위한 공간입니다. 입실 여부는 환아의 치료 일정과 객실 운영 상황을 고려하여 안내해 드리고 있습니다.</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="faq-item">
+                      <button type="button" class="faq-q">
+                        <span class="faq-q-text">하우스 이용은 최대 몇 명까지 가능한가요?</span>
+                        <span class="faq-toggle-btn" aria-hidden="true"></span>
+                      </button>
+                      <div class="faq-a" style="display: none;">
+                        <div class="faq-a-inner">
+                          <p class="faq-a-text">양산부산대학교병원에서 치료 중인 만 19세 이하 환아와 그 가족이라면 누구나 신청 가능합니다. (상세 기준은 운영 사무국 문의)</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="faq-item">
+                      <button type="button" class="faq-q">
+                        <span class="faq-q-text">숙박 없이도 하우스를 이용할 수 있나요?</span>
+                        <span class="faq-toggle-btn" aria-hidden="true"></span>
+                      </button>
+                      <div class="faq-a" style="display: none;">
+                        <div class="faq-a-inner">
+                          <p class="faq-a-text">양산부산대학교병원에서 치료 중인 만 19세 이하 환아와 그 가족이라면 누구나 신청 가능합니다. (상세 기준은 운영 사무국 문의)</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="faq-item">
+                      <button type="button" class="faq-q">
+                        <span class="faq-q-text">하우스 내에는 어떤 시설과 지원활동이 있나요?</span>
+                        <span class="faq-toggle-btn" aria-hidden="true"></span>
+                      </button>
+                      <div class="faq-a" style="display: none;">
+                        <div class="faq-a-inner">
+                          <p class="faq-a-text">양산부산대학교병원에서 치료 중인 만 19세 이하 환아와 그 가족이라면 누구나 신청 가능합니다. (상세 기준은 운영 사무국 문의)</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- 탭 2: 기부금영수증 -->
+                <div id="faq-receipt" class="tab-content faq-tab-content" style="display: none;">
+                  <ul class="faq-list">
+                    <li class="faq-item">
+                      <button type="button" class="faq-q">
+                        <span class="faq-q-text">기부금영수증 발급은 어떻게 신청하나요?</span>
+                        <span class="faq-toggle-btn" aria-hidden="true"></span>
+                      </button>
+                      <div class="faq-a" style="display: none;">
+                        <div class="faq-a-inner">
+                          <p class="faq-a-text">마이페이지 > 기부금영수증 내역에서 신청 및 조회가 가능하며, 국세청 연말정산 간소화 서비스를 통해서도 편리하게 발급받으실 수 있습니다.</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- 탭 3: 후원관련 -->
+                <div id="faq-donate" class="tab-content faq-tab-content" style="display: none;">
+                  <ul class="faq-list">
+                    <li class="faq-item">
+                      <button type="button" class="faq-q">
+                        <span class="faq-q-text">후원금은 어떻게 투명하게 사용되나요?</span>
+                        <span class="faq-toggle-btn" aria-hidden="true"></span>
+                      </button>
+                      <div class="faq-a" style="display: none;">
+                        <div class="faq-a-inner">
+                          <p class="faq-a-text">RMHC Korea는 매년 삼일회계법인을 통해 외부 감사를 수감하며, 홈페이지의 '재정 투명성' 메뉴를 통해 연차보고서 및 기부금 모금/사용 내역을 공시하고 있습니다.</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -35,7 +151,42 @@
       </main>
     </div>
 
+    <!-- 푸터 공통 영역 인클루드 -->
     <load ="/includes/footer.html" />
+
     <script type="module" src="/src/js/common.js"></script>
+
+    <!-- FAQ 전용 아코디언 스크립트 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqQs = document.querySelectorAll(".faq-q");
+        faqQs.forEach((q) => {
+          q.addEventListener("click", function () {
+            const item = this.closest(".faq-item");
+            const answer = item.querySelector(".faq-a");
+            const isOpened = answer.style.display === "block";
+
+            // 클릭한 항목 이외의 다른 열려있는 항목 닫기
+            const allItems = this.closest(".faq-list").querySelectorAll(".faq-item");
+            allItems.forEach((i) => {
+              if (i !== item) {
+                const a = i.querySelector(".faq-a");
+                a.style.display = "none";
+                i.querySelector(".faq-q").classList.remove("active");
+              }
+            });
+
+            // 현재 항목 토글
+            if (!isOpened) {
+              answer.style.display = "block";
+              this.classList.add("active");
+            } else {
+              answer.style.display = "none";
+              this.classList.remove("active");
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

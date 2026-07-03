@@ -176,3 +176,10 @@
   - [x] Vite 빌드 검증 (`npm run build`)
   - [x] 임시 분석용 텍스트 파일들 삭제
 
+- [x] **21단계: 공통 탭 스크립트 모듈화 및 FAQ 퍼블리싱**
+  - [x] 공통 탭 스크립트 모듈 (`src/js/components/tab.js`) 신설
+  - [x] 메인 공통 엔트리 (`src/js/common.js`)에 탭 모듈 연동
+  - [x] 결제수단 변경 팝업 (`includes/popups/mp_p_03.html`) 데이터 속성 교정
+  - [x] 마이페이지 (`mypage/mypage.html`) 인라인 탭 스크립트 제거 및 마크업 보정
+  - [x] FAQ 화면 (`faq/faq.html`) 카테고리 탭 및 아코디언 마크업 구현
+  - [x] FAQ 전용 스타일 (`src/css/faq.css`) 피그마 명세 동기화 구현

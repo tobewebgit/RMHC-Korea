@@ -16,7 +16,7 @@
   justify-content: center;
   width: 100%;
   min-height: 5.2rem;
-  padding: 1.2rem var(--spacing-6);
+  padding: 1.2rem var(--spacing-4);
   border-radius: var(--radius-sm);
   font-size: var(--text-lg);
   line-height: 1;

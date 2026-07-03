@@ -69,13 +69,13 @@
                 <div class="sub-tab-menu">
                   <ul class="sub-tab-list">
                     <li class="sub-tab-item">
-                      <button type="button" class="sub-tab-btn active" data-sub-tab="all">전체</button>
+                      <button type="button" class="sub-tab-btn active" data-tab-target="sub-tab-content-all">전체</button>
                     </li>
                     <li class="sub-tab-item">
-                      <button type="button" class="sub-tab-btn" data-sub-tab="regular">정기 후원</button>
+                      <button type="button" class="sub-tab-btn" data-tab-target="sub-tab-content-regular">정기 후원</button>
                     </li>
                     <li class="sub-tab-item">
-                      <button type="button" class="sub-tab-btn" data-sub-tab="one-time">일시 후원</button>
+                      <button type="button" class="sub-tab-btn" data-tab-target="sub-tab-content-one-time">일시 후원</button>
                     </li>
                   </ul>
                 </div>
@@ -719,60 +719,9 @@
         </div>
       </main>
 
-      <!-- 탭 기능 스크립트 (모션 없음) -->
+      <!-- 마이페이지 전용 인터랙션 스크립트 (모션 없음) -->
       <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const tabBtns = document.querySelectorAll(".tab-btn");
-          const tabContents = document.querySelectorAll(".tab-content");
-
-          tabBtns.forEach((btn) => {
-            btn.addEventListener("click", function () {
-              const targetId = this.getAttribute("data-tab-target");
-
-              // 모든 탭 버튼 비활성화
-              tabBtns.forEach((b) => b.classList.remove("active"));
-              // 클릭한 탭 버튼 활성화
-              this.classList.add("active");
-
-              // 모든 탭 콘텐츠 숨김
-              tabContents.forEach((content) => {
-                content.classList.remove("active");
-                content.style.display = "none"; // 강제 숨김 처리
-              });
-
-              // 타겟 탭 콘텐츠만 노출
-              const targetContent = document.getElementById(targetId);
-              if (targetContent) {
-                targetContent.classList.add("active");
-                targetContent.style.display = "block";
-              }
-            });
-          });
-
-          // 내부 서브 탭 토글 기능
-          const subTabBtns = document.querySelectorAll(".sub-tab-btn");
-          const subTabContents = document.querySelectorAll(".sub-tab-content");
-          subTabBtns.forEach((btn) => {
-            btn.addEventListener("click", function () {
-              const subTabType = this.getAttribute("data-sub-tab");
-
-              // 모든 서브 탭 비활성화 및 클릭한 탭 활성화
-              subTabBtns.forEach((b) => b.classList.remove("active"));
-              this.classList.add("active");
-
-              // 모든 서브 탭 콘텐츠 숨김
-              subTabContents.forEach((content) => {
-                content.style.display = "none";
-              });
-
-              // 타겟 서브 탭 콘텐츠만 노출
-              const activeContent = document.getElementById(`sub-tab-content-${subTabType}`);
-              if (activeContent) {
-                activeContent.style.display = "block";
-              }
-            });
-          });
-
           // 비밀번호 눈 아이콘 토글 기능
           const eyeButtons = document.querySelectorAll(".pw-input-wrapper .eye-btn");
           eyeButtons.forEach((btn) => {
@@ -826,34 +775,6 @@
             overlay.addEventListener("click", function(e) {
               if (e.target === this) {
                 closeAllModals(this);
-              }
-            });
-          });
-
-          // 결제수단 변경 팝업 전용 내부 탭 토글
-          const paymentTabBtns = document.querySelectorAll(".payment-tab-btn");
-          const paymentTabContents = document.querySelectorAll(".payment-tab-content");
-
-          paymentTabBtns.forEach(btn => {
-            btn.addEventListener("click", function() {
-              const targetTabId = this.getAttribute("data-tab");
-
-              // 모든 결제수단 탭 버튼 비활성화
-              paymentTabBtns.forEach(b => b.classList.remove("active"));
-              // 현재 탭 버튼 활성화
-              this.classList.add("active");
-
-              // 모든 탭 컨텐츠 숨김
-              paymentTabContents.forEach(content => {
-                content.classList.remove("active");
-                content.style.display = "none";
-              });
-
-              // 선택된 탭 컨텐츠만 표시
-              const activeContent = document.getElementById(targetTabId);
-              if (activeContent) {
-                activeContent.classList.add("active");
-                activeContent.style.display = "block";
               }
             });
           });

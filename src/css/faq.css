@@ -3,3 +3,220 @@
 /* ==========================================================================
    RMHC Korea FAQ 전용 스타일 (faq.css)
    ========================================================================== */
+
+.faq-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 15rem 0;
+}
+
+.faq-container .page-title {
+  margin: 0 0 10rem 0;
+}
+
+/* 1. FAQ 탭 메뉴 커스텀 스타일 (Figma 28px 실측 반영) */
+.faq-tab-menu {
+  margin-bottom: 4rem;     
+}
+
+.faq-tab-menu .tab-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.faq-tab-menu .tab-btn {
+  display: block;
+  height: 6.8rem; /* 68px */
+  padding: 1.6rem 3.2rem; /* T:16 B:16, L:32 R:32 */
+  font-family: var(--font-extrabold);
+  font-size: 2.8rem; /* 28px */
+  font-weight: 800;
+  line-height: 1.3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-tab-menu .tab-btn:hover {
+  color: #000000;
+}
+
+.faq-tab-menu .tab-btn.active {
+  color: #000000;
+}
+
+/* common.css 내 활성 탭 인디케이터 라인 스타일 보완 */
+.faq-tab-menu .tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+/* 2. FAQ 아코디언 리스트 스타일 */
+.faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faq-item {
+  
+}
+
+/* 질문 (Question) 버튼 영역 */
+.faq-q {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2.4rem; /* L:24 T:24 R:24 B:24 */
+  background: none;
+  border-bottom: 1px solid var(--border-black);
+  cursor: pointer;
+  text-align: left;
+  gap: 1.6rem; /* Spacing 16px */
+  transition: background-color 0.2s ease;
+}
+
+/* Q 아이콘 */
+.faq-q-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  background-color: var(--primary);
+  color: #000000; /* 브랜드 골드 위에 절대 블랙 */
+  font-family: var(--font-extrabold);
+  font-size: 2rem;
+  font-weight: 800;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* 질문 텍스트 */
+.faq-q-text {
+  font-family: var(--font-extrabold);
+  font-size: 2.8rem; /* 28px */
+  font-weight: 800;
+  line-height: 1.3; /* line-height: 36.4px */
+  color: #000000; /* 절대 블랙 */
+}
+
+/* New 뱃지 */
+.faq-badge-new {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.9rem; /* 49px */
+  height: 2.1rem; /* 21px */
+  padding: 0 0.4rem;
+  background-color: #db0007; /* 로날드 레드 */
+  color: #fffde9; /* 화이트/옐로우 계열 */
+  font-family: var(--font-semibold);
+  font-size: 1.6rem; /* 16px */
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 0.3rem;
+  flex-shrink: 0;
+}
+
+/* 우측 정보 묶음 (날짜 & 화살표) */
+.faq-q-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem; /* Spacing 48px */
+  flex-shrink: 0;
+}
+
+.faq-date {
+  font-family: var(--font-pretendard);
+  font-size: 1.6rem; /* 16px */
+  font-weight: 400;
+  color: #3d3d3d; /* 다크 그레이 */
+}
+
+/* 아코디언 토글 (+, -) 아이콘 */
+.faq-toggle-btn {
+  display: block;
+  width: 3.2rem; /* 32px */
+  height: 3.2rem; /* 32px */
+  margin-left: auto;
+  flex-shrink: 0;
+  background-image: url("../images/common/icon_faq_plus.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.4rem;
+}
+
+/* 질문 활성화 시 마이너스 기호로 변경 */
+.faq-q.active {
+  border-bottom: 1px solid transparent;
+}
+.faq-q.active .faq-toggle-btn {
+  background-image: url("../images/common/icon_faq_minus.png");
+}
+
+/* 답변 (Answer) 본문 영역 */
+.faq-a {
+  border-top: 1px solid var(--border-black);
+}
+
+.faq-a-inner {
+  padding: 2.4rem; /* L:24 T:24 B:24 */
+  display: flex;
+  gap: 2.4rem;
+}
+
+.faq-a-text {
+  font-family: var(--font-pretendard);
+  font-size: 2.2rem; /* 22px */
+  font-weight: 400;
+  line-height: 1.3; /* line-height: 28.6px */
+  color: #000000; /* 절대 블랙 */
+  margin: 0;
+}
+
+/* 반응형 모바일 대응 */
+@media (max-width: 1024px) {
+  .faq-container {
+    padding: 4rem 2rem;
+  }
+  
+  .faq-tab-menu .tab-btn {
+    font-size: 2.2rem;
+    padding: 1.2rem 2rem;
+    height: auto;
+  }
+  
+  .faq-q {
+    padding: 1.8rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .faq-q-text {
+    font-size: 2.2rem;
+    width: calc(100% - 6rem);
+  }
+  
+  .faq-q-right {
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .faq-a-inner {
+    padding: 1.8rem;
+  }
+  
+  .faq-a-text {
+    font-size: 1.8rem;
+  }
+}
