@@ -9,9 +9,11 @@
 .campaign-container .page-title {
   margin-bottom: 2.4rem;
 }
+.campaign-container .page-title + p {
+  font-size: 2.2rem;
+}
 
 .campaign-container .page-header-wrap {
-  max-width: 120rem;
   margin: 0 auto;  
   font-size: 2.2rem;
   text-align: center;
@@ -685,5 +687,80 @@
 @media (max-width: 1500px) and (min-width: 769px) {
   html:has(.apply-page) {
     font-size: 0.66667vw !important;
+  }
+}
+
+/* ==========================================================================
+   KCR 캠페인 카드 그리드 및 카드 스타일 (100% 원본 사양 상속)
+   ========================================================================== */
+.kcr-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin: 6rem auto 0;
+  padding: 0 2rem;
+}
+
+.kcr-card {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  padding: 8rem 4rem 0 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 46.4rem;
+  height: 39.2rem;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.kcr-card--cheer {
+  background-image: url('/src/images/campaign/bg_kcr_1.png');
+}
+
+.kcr-card--hope {
+  background-image: url('/src/images/campaign/bg_kcr_2.png');
+}
+
+.kcr-card--change {
+  background-image: url('/src/images/campaign/bg_kcr_3.png');
+}
+
+.kcr-card-icon {
+  height: 6rem;
+  margin-bottom: 2.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.kcr-card-icon img {
+  height: 100%;
+  width: auto !important; /* 전역 img width 100% 침범 방어 */
+  object-fit: contain;
+}
+
+.kcr-card-title {
+  font-size: 2.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.kcr-card-desc {
+  font-size: 2.2rem;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* KCR 모바일 반응형 처리 */
+@media (max-width: 1024px) {
+  .kcr-card-grid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+    max-width: 50rem;
+  }
+  
+  .kcr-card {
+    min-height: auto;
+    padding: 5rem 3.6rem;
   }
 }
