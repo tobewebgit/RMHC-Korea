@@ -254,6 +254,9 @@
 /* ==========================================================================
    agreement-terms — 프로젝트 공통 약관동의 영역 컴포넌트 (100% 원본 상속)
    ========================================================================== */
+.agree-terms-content {
+  
+}
 .agreement-all {
   background-color: transparent;
   border: none;
@@ -267,6 +270,10 @@
   padding: 0 var(--spacing-4); /* 원본의 깔끔한 들여쓰기 16px 상속 */
 }
 
+.agreement-all + .agreement-list {
+  margin-top: var(--spacing-4);
+}
+
 .agreement-item {
   display: flex;
   align-items: center;
@@ -274,12 +281,35 @@
 }
 
 .agreement-link {
-  font-size: var(--text-sm);
-  color: var(--text-muted);
-  text-decoration: underline;
+  color: var(--text-gray60) !important;
+  text-decoration: underline !important;
   transition: var(--transition-fast);
 }
 
 .agreement-link:hover {
   color: var(--primary);
 }
+
+/* ==========================================================================
+   inner-form-group — 프로젝트 공통 내부 폼 스타일
+   ========================================================================== */
+.inner-form-group {
+
+}
+.inner-form-group .inner-form-box {
+  background-color: rgba(208, 201, 255, 0.20);
+  border: 1px solid var(--border-gray40);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-10) var(--spacing-6);
+  margin-top: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+}
+.inner-form-group .inner-form-box label {
+  font-weight: 400;
+  font-size: var(--text-lg);
+}
+.inner-form-group .inner-form-box .form-field input {
+  background-color: #FFFDE9;
+}
+  

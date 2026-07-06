@@ -333,7 +333,6 @@
 .auth-action-group {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-4);
   margin-top: var(--spacing-6);
 }
 

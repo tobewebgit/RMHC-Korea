@@ -48,15 +48,19 @@
           <form id="paymentMethodForm" class="payment-info-form-box">
             <!-- 카드사명 -->
             <div class="payment-form-row">
-              <label for="pm_card_company" class="payment-form-label">*card_company</label>
+              <label for="pm_card_company" class="payment-form-label">*카드사</label>
               <div class="payment-form-field">
-                <select id="pm_card_company" class="form-control selectbox" required>
-                  <option value="" disabled selected>카드사를 선택해 주세요.</option>
-                  <option value="국민">국민카드</option>
-                  <option value="하나">하나카드</option>
-                  <option value="신한">신한카드</option>
-                  <option value="삼성">삼성카드</option>
-                </select>
+                <div class="custom-select selectbox" id="cardCompanySelect" role="combobox" aria-label="카드사 선택" aria-expanded="false" tabindex="0">
+                  <span class="custom-select-label" id="cardCompanySelectLabel">카드사를 선택해 주세요.</span>
+                  <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
+                  <ul class="custom-select-list" role="listbox">
+                    <li role="option" data-value="국민">국민카드</li>
+                    <li role="option" data-value="하나">하나카드</li>
+                    <li role="option" data-value="신한">신한카드</li>
+                    <li role="option" data-value="삼성">삼성카드</li>
+                  </ul>
+                  <input type="hidden" name="cardCompany" id="pm_card_company" value="" required />
+                </div>
               </div>
             </div>
 
@@ -72,34 +76,42 @@
             <div class="payment-form-row">
               <label class="payment-form-label">*카드 유효기간</label>
               <div class="payment-form-field double-select">
-                <select id="pm_exp_month" class="form-control selectbox" aria-label="유효기간 월" required>
-                  <option value="" disabled selected>월</option>
-                  <option value="01">01</option>
-                  <option value="02">02</option>
-                  <option value="03">03</option>
-                  <option value="04">04</option>
-                  <option value="05">05</option>
-                  <option value="06">06</option>
-                  <option value="07">07</option>
-                  <option value="08">08</option>
-                  <option value="09">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>
-                <select id="pm_exp_year" class="form-control selectbox" aria-label="유효기간 년" required>
-                  <option value="" disabled selected>년</option>
-                  <option value="26">2026</option>
-                  <option value="27">2027</option>
-                  <option value="28">2028</option>
-                  <option value="29">2029</option>
-                  <option value="30">2030</option>
-                  <option value="31">2031</option>
-                  <option value="32">2032</option>
-                  <option value="33">2033</option>
-                  <option value="34">2034</option>
-                  <option value="35">2035</option>
-                </select>
+                <div class="custom-select selectbox" id="expMonthSelect" role="combobox" aria-label="유효기간 월" aria-expanded="false" tabindex="0">
+                  <span class="custom-select-label" id="expMonthSelectLabel">월</span>
+                  <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
+                  <ul class="custom-select-list" role="listbox">
+                    <li role="option" data-value="01">01</li>
+                    <li role="option" data-value="02">02</li>
+                    <li role="option" data-value="03">03</li>
+                    <li role="option" data-value="04">04</li>
+                    <li role="option" data-value="05">05</li>
+                    <li role="option" data-value="06">06</li>
+                    <li role="option" data-value="07">07</li>
+                    <li role="option" data-value="08">08</li>
+                    <li role="option" data-value="09">09</li>
+                    <li role="option" data-value="10">10</li>
+                    <li role="option" data-value="11">11</li>
+                    <li role="option" data-value="12">12</li>
+                  </ul>
+                  <input type="hidden" name="expMonth" id="pm_exp_month" value="" required />
+                </div>
+                <div class="custom-select selectbox" id="expYearSelect" role="combobox" aria-label="유효기간 년" aria-expanded="false" tabindex="0">
+                  <span class="custom-select-label" id="expYearSelectLabel">년</span>
+                  <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
+                  <ul class="custom-select-list" role="listbox">
+                    <li role="option" data-value="26">2026</li>
+                    <li role="option" data-value="27">2027</li>
+                    <li role="option" data-value="28">2028</li>
+                    <li role="option" data-value="29">2029</li>
+                    <li role="option" data-value="30">2030</li>
+                    <li role="option" data-value="31">2031</li>
+                    <li role="option" data-value="32">2032</li>
+                    <li role="option" data-value="33">2033</li>
+                    <li role="option" data-value="34">2034</li>
+                    <li role="option" data-value="35">2035</li>
+                  </ul>
+                  <input type="hidden" name="expYear" id="pm_exp_year" value="" required />
+                </div>
               </div>
             </div>
 
@@ -141,14 +153,18 @@
             <div class="payment-form-row">
               <label class="payment-form-label">*은행명</label>
               <div class="payment-form-field">
-                <select class="form-control selectbox">
-                  <option value="" disabled selected>은행을 선택해 주세요.</option>
-                  <option value="국민">KB국민은행</option>
-                  <option value="신한">신한은행</option>
-                  <option value="하나">하나은행</option>
-                  <option value="우리">우리은행</option>
-                  <option value="농협">NH농협은행</option>
-                </select>
+                <div class="custom-select selectbox" id="cmsBankSelect" role="combobox" aria-label="은행 선택" aria-expanded="false" tabindex="0">
+                  <span class="custom-select-label" id="cmsBankSelectLabel">은행을 선택해 주세요.</span>
+                  <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
+                  <ul class="custom-select-list" role="listbox">
+                    <li role="option" data-value="국민">KB국민은행</li>
+                    <li role="option" data-value="신한">신한은행</li>
+                    <li role="option" data-value="하나">하나은행</li>
+                    <li role="option" data-value="우리">우리은행</li>
+                    <li role="option" data-value="농협">NH농협은행</li>
+                  </ul>
+                  <input type="hidden" name="cmsBank" id="pm_cms_bank" value="" required />
+                </div>
               </div>
             </div>
 

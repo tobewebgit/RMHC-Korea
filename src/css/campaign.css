@@ -308,7 +308,7 @@
 .award-badge {
   display: inline-block;
   padding: 0.56rem 1.36rem;
-  border-radius: 9999px;
+  border-radius: 0.4rem;
   font-weight: 600;
   line-height: 1;
 }
@@ -487,6 +487,10 @@
   border-bottom: 1px solid var(--border-gray40);
 }
 
+.apply-page .payment-intro {
+  font-size: 2.2rem;
+}
+
 .apply-page .donate-section-title {
   font-size: 2.8rem; /* 피그마 실측 타이틀 폰트 크기 28px 반영 */
   line-height: 1.2;
@@ -497,44 +501,6 @@
 .apply-page .inner-wrap{
   padding: 4rem 0;
 }
-
-
-
-
-.inner-form-group {
-
-}
-.inner-form-group .inner-form-box {
-  background-color: rgba(208, 201, 255, 0.20);
-  border: 1px solid var(--border-gray40);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-10) var(--spacing-6);
-  margin-top: var(--spacing-6);
-  display: flex;
-  flex-direction: column;
-}
-.inner-form-group .inner-form-box label {
-  font-weight: 400;
-  font-size: var(--text-lg);
-}
-.inner-form-group .inner-form-box .form-field input {
-  background-color: #FFFDE9;
-}
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* 구분선 */
 .apply-page .sep-line {
@@ -547,7 +513,7 @@
 .apply-page .form-subtitle {
   font-size: 2.2rem;
   font-weight: 600;
-  margin-bottom: var(--spacing-1);
+  margin-bottom: var(--spacing-6);
 }
 
 /* 총 결제 금액 스타일 */
@@ -590,14 +556,11 @@
   font-weight: 600;
 }
 
-
-
-
 /* 결제수단 칩 그리드 전용 스타일 */
 .apply-page .chip-grid {
   display: grid;
   gap: var(--spacing-3);
-  margin-top: var(--spacing-3);
+  margin-top: var(--spacing-6);
 }
 
 .apply-page .chip-grid.cols-2 {
@@ -630,9 +593,6 @@
 
 /* 활성화 상태 공통 */
 .apply-page .chip-btn.active {
-  border-color: var(--primary);
-  background-color: var(--primary-glow);
-  color: var(--primary);
 }
 
 /* 후원자 유형 전용 (빨간색 배경/흰색 폰트) */
@@ -644,6 +604,7 @@
 
 /* 결제수단 로고 이미지 크기 및 간격 */
 .apply-page .payment-logo {
+  width: auto !important; /* 전역 img width 100% 침범 방지 */
   height: 2.2rem;
   margin-right: 0.8rem;
   object-fit: contain;

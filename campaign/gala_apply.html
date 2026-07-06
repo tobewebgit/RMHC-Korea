@@ -90,7 +90,7 @@
                         <!-- 전송 및 제어용 Hidden Input -->
                         <input type="hidden" name="attendeeCount" id="attendeeCount" value="2" />
                       </div>
-                      <p class="helper-text">• 최대 10명까지 선택 가능합니다.</p>
+                      <p class="helper-text" id="attendeeHelperText">• 최대 10명까지 선택 가능합니다.</p>
                     </div>
                   </div>
 
@@ -121,7 +121,8 @@
                           <button
                             type="button"
                             class="chip-btn"
-                            data-type="individual"
+                            data-toggle-chip="galaDonorType"
+                            data-chip-value="individual"
                             role="radio"
                             aria-checked="false"
                           >
@@ -130,13 +131,15 @@
                           <button
                             type="button"
                             class="chip-btn active"
-                            data-type="corporate"
+                            data-toggle-chip="galaDonorType"
+                            data-chip-value="corporate"
                             role="radio"
                             aria-checked="true"
                           >
                             기업 / 단체
                           </button>
                         </div>
+                        <input type="hidden" name="donorType" id="galaDonorType" value="corporate" />
                       </div>
                     </div>
 
@@ -219,7 +222,7 @@
                     <!-- 이용약관 및 수신 동의 -->
                     <div class="agree-terms-container" style="margin-top: 5.2rem;">
                       <h3 class="form-subtitle">이용약관, 개인정보 수집 및 이용 활동 안내 수신동의</h3>
-                      <div style="margin-top: 2.4rem;">
+                      <div class="agree-terms-content">
                         <load ="/includes/components/agree_terms.html" />
                       </div>
                     </div>
@@ -230,7 +233,6 @@
                 <section class="common-card">
                   <div class="card-title-wrap">
                     <h2 class="donate-section-title font-nanum">결제수단</h2>
-                    <span class="sub-notice type-pc">일시 후원  30,000원</span>
                   </div>
 
                   <div class="payment-intro">
@@ -246,7 +248,8 @@
                         <button
                           type="button"
                           class="chip-btn active"
-                          data-payment="kakaopay"
+                          data-toggle-chip="galaPaymentMethod"
+                          data-chip-value="kakaopay"
                           role="radio"
                           aria-checked="true"
                         >
@@ -256,7 +259,8 @@
                         <button
                           type="button"
                           class="chip-btn"
-                          data-payment="naverpay"
+                          data-toggle-chip="galaPaymentMethod"
+                          data-chip-value="naverpay"
                           role="radio"
                           aria-checked="false"
                         >
@@ -266,7 +270,8 @@
                         <button
                           type="button"
                           class="chip-btn"
-                          data-payment="toss"
+                          data-toggle-chip="galaPaymentMethod"
+                          data-chip-value="toss"
                           role="radio"
                           aria-checked="false"
                         >
@@ -276,7 +281,8 @@
                         <button
                           type="button"
                           class="chip-btn"
-                          data-payment="card"
+                          data-toggle-chip="galaPaymentMethod"
+                          data-chip-value="card"
                           role="radio"
                           aria-checked="false"
                         >
@@ -285,13 +291,15 @@
                         <button
                           type="button"
                           class="chip-btn"
-                          data-payment="transfer"
+                          data-toggle-chip="galaPaymentMethod"
+                          data-chip-value="transfer"
                           role="radio"
                           aria-checked="false"
                         >
                           <span>계좌이체</span>
                         </button>
                       </div>
+                      <input type="hidden" name="paymentMethod" id="galaPaymentMethod" value="kakaopay" />
 
                       <!-- CTA 신청 완료 버튼 -->
                       <div class="button-wrap apply-btn-wrap">
@@ -325,125 +333,76 @@
         const attendeeCountSelect = document.getElementById("attendeeCount");
         const totalAmount = document.getElementById("totalAmount");
         const amountDetail = document.getElementById("amountDetail");
+        const attendeeSelect = document.getElementById("attendeeSelect");
+        const attendeeSelectLabel = document.getElementById("attendeeSelectLabel");
+        const attendeeHelperText = document.getElementById("attendeeHelperText");
 
         function updatePrice() {
           const activeApplyType = document.querySelector("input[name='applyType']:checked").value;
+          const count = parseInt(attendeeCountSelect.value, 10) || 1;
           if (activeApplyType === "individual") {
-            const count = parseInt(attendeeCountSelect.value, 10);
             const price = count * 500000;
             totalAmount.textContent = price.toLocaleString() + "원";
             amountDetail.textContent = `(${count}명 X 500,000원)`;
           } else {
-            // 테이블 신청 시 기본 10인 기준 5,000,000원 적용
-            totalAmount.textContent = "5,000,000원";
-            amountDetail.textContent = "(1테이블 X 5,000,000원)";
+            // 테이블 신청 시 기본 10인 기준 5,000,000원에서 500,000원 할인된 4,500,000원 적용
+            const price = count * 4500000;
+            totalAmount.textContent = price.toLocaleString() + "원";
+            amountDetail.textContent = `(${count}테이블 X 4,500,000원)`;
           }
         }
 
         applyRadios.forEach((radio) => {
           radio.addEventListener("change", () => {
+            const listItems = attendeeSelect.querySelectorAll(".custom-select-list li");
             if (radio.value === "individual") {
-              attendeeCountGroup.style.display = "flex";
+              // 셀렉트 목록 텍스트를 '명' 단위로 변환
+              listItems.forEach((li) => {
+                const val = li.getAttribute("data-value");
+                li.textContent = `${val}명`;
+              });
+              // 라벨 및 값 초기화 (인원별 기본 2명)
+              attendeeSelectLabel.textContent = "2명";
+              attendeeCountSelect.value = "2";
+              // 헬퍼 텍스트 변경
+              attendeeHelperText.textContent = "• 최대 10명까지 선택 가능합니다.";
             } else {
-              attendeeCountGroup.style.display = "none";
+              // 셀렉트 목록 텍스트를 '테이블' 단위로 변환
+              listItems.forEach((li) => {
+                const val = li.getAttribute("data-value");
+                li.textContent = `${val}테이블`;
+              });
+              // 라벨 및 값 초기화 (테이블 기본 1테이블)
+              attendeeSelectLabel.textContent = "1테이블";
+              attendeeCountSelect.value = "1";
+              // 헬퍼 텍스트 변경
+              attendeeHelperText.innerHTML = "• 1테이블 기준 : 10명입니다.<br>• 1테이블 신청 시 500,000원 할인이 적용됩니다.";
             }
             updatePrice();
           });
         });
 
-        // 커스텀 셀렉트박스 제어 인터랙션 (푸터 패밀리 사이트와 동일 설계)
-        const attendeeSelect = document.getElementById("attendeeSelect");
-        const attendeeSelectLabel = document.getElementById("attendeeSelectLabel");
+        // 커스텀 셀렉트박스 변경 감지 시 결제 금액 실시간 업데이트
         const attendeeCountInput = document.getElementById("attendeeCount");
-        const selectOptions = attendeeSelect.querySelectorAll(".custom-select-list li");
+        attendeeCountInput.addEventListener("change", updatePrice);
 
-        attendeeSelect.addEventListener("click", (e) => {
-          if (e.target.closest(".custom-select-list")) return; // 옵션 선택 클릭은 제외
-          const isOpen = attendeeSelect.getAttribute("aria-expanded") === "true";
-          attendeeSelect.setAttribute("aria-expanded", !isOpen);
-        });
-
-        selectOptions.forEach((option) => {
-          option.addEventListener("click", () => {
-            const val = option.dataset.value;
-            const text = option.textContent;
-
-            attendeeSelectLabel.textContent = text;
-            attendeeCountInput.value = val;
-
-            // 단가 및 총 결제 금액 계산 업데이트
-            updatePrice();
-
-            attendeeSelect.setAttribute("aria-expanded", "false");
-          });
-        });
-
-        // 외부 클릭 시 드롭다운 닫기
-        document.addEventListener("click", (e) => {
-          if (!attendeeSelect.contains(e.target)) {
-            attendeeSelect.setAttribute("aria-expanded", "false");
-          }
-        });
-
-        // 2. 후원자 유형 토글 인터랙션 (개인 / 기업·단체)
-        const donorChips = document.querySelectorAll("#donorTypeChips .chip-btn");
+        // 2. 후원자 유형 변경 감지 시 기본 정보 폼 필드 제어
+        const galaDonorTypeInput = document.getElementById("galaDonorType");
         const groupCorporateName = document.getElementById("groupCorporateName");
         const groupBusinessNo = document.getElementById("groupBusinessNo");
         const corporateInput = document.getElementById("corporateName");
 
-        donorChips.forEach((chip) => {
-          chip.addEventListener("click", () => {
-            donorChips.forEach((c) => {
-              c.classList.remove("active");
-              c.setAttribute("aria-checked", "false");
-            });
-            chip.classList.add("active");
-            chip.setAttribute("aria-checked", "true");
-
-            if (chip.dataset.type === "individual") {
-              groupCorporateName.style.display = "none";
-              groupBusinessNo.style.display = "none";
-              corporateInput.removeAttribute("required");
-            } else {
-              groupCorporateName.style.display = "flex";
-              groupBusinessNo.style.display = "flex";
-              corporateInput.setAttribute("required", "");
-            }
-          });
-        });
-
-        // 3. 약관동의 전체선택 처리 (join/form.html과 스크립트 동일화)
-        const agreeAll = document.getElementById("agree-all");
-        const agreeTerms = document.getElementById("agree-terms");
-        const agreePrivacy = document.getElementById("agree-privacy");
-        const agreeMarketing = document.getElementById("agree-marketing");
-        const childAgreements = [agreeTerms, agreePrivacy, agreeMarketing];
-
-        agreeAll.addEventListener("change", function () {
-          const checked = this.checked;
-          childAgreements.forEach((checkbox) => {
-            checkbox.checked = checked;
-          });
-        });
-
-        childAgreements.forEach((checkbox) => {
-          checkbox.addEventListener("change", function () {
-            const allChecked = childAgreements.every((cb) => cb.checked);
-            agreeAll.checked = allChecked;
-          });
-        });
-
-        // 4. 결제수단 칩 토글 인터랙션
-        const paymentChips = document.querySelectorAll("#paymentChips .chip-btn");
-        paymentChips.forEach((chip) => {
-          chip.addEventListener("click", () => {
-            paymentChips.forEach((c) => {
-              c.classList.remove("active");
-              c.setAttribute("aria-checked", "false");
-            });
-            chip.classList.add("active");
-            chip.setAttribute("aria-checked", "true");
-          });
+        galaDonorTypeInput.addEventListener("change", function () {
+          const type = this.value;
+          if (type === "individual") {
+            groupCorporateName.style.display = "none";
+            groupBusinessNo.style.display = "none";
+            corporateInput.removeAttribute("required");
+          } else {
+            groupCorporateName.style.display = "flex";
+            groupBusinessNo.style.display = "flex";
+            corporateInput.setAttribute("required", "");
+          }
         });
       });
     </script>

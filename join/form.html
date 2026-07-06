@@ -536,27 +536,6 @@
           });
         });
 
-        // 2. 약관 전체동의 제어
-        const agreeAll = document.getElementById("agree-all");
-        const agreeTerms = document.getElementById("agree-terms");
-        const agreePrivacy = document.getElementById("agree-privacy");
-        const agreeMarketing = document.getElementById("agree-marketing");
-        const childAgreements = [agreeTerms, agreePrivacy, agreeMarketing];
-
-        agreeAll.addEventListener("change", function () {
-          const checked = this.checked;
-          childAgreements.forEach((checkbox) => {
-            checkbox.checked = checked;
-          });
-        });
-
-        childAgreements.forEach((checkbox) => {
-          checkbox.addEventListener("change", function () {
-            const allChecked = childAgreements.every((cb) => cb.checked);
-            agreeAll.checked = allChecked;
-          });
-        });
-
         // 3. 비밀번호 보이기/숨기기 토글
         const eyeButtons = document.querySelectorAll(".eye-btn");
         eyeButtons.forEach((btn) => {
