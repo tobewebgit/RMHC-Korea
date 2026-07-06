@@ -365,8 +365,7 @@ dd {
   word-break: normal;
 }
 legend,
-caption,
-hr {
+caption{
   display: none;
   width: 0;
   height: 0;

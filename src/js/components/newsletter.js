@@ -1,6 +1,7 @@
 /**
  * RMHC Portal - Newsletter Subscription Modal Interaction (js/components/newsletter.js)
  */
+import { openModal, closeModal } from './modal.js';
 
 export function initNewsletter() {
   const footerEmailInput = document.getElementById('input-footer-email');
@@ -26,22 +27,6 @@ export function initNewsletter() {
     return regex.test(email.trim());
   }
 
-  // 모달 열기 함수
-  function openModal() {
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-    resetModalState();
-  }
-
-  // 모달 닫기 함수
-  function closeModal() {
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    // 입력 필드 초기화
-    footerEmailInput.value = '';
-    resetModalState();
-  }
-
   // 모달 내부 상태 초기화 함수
   function resetModalState() {
     if (agreementChk) agreementChk.checked = false;
@@ -55,6 +40,12 @@ export function initNewsletter() {
     modalContainer.classList.add('step-1-active');
     modalContainer.classList.remove('step-2-active');
   }
+
+  // 공통 모달 닫기 시 뉴스레터 폼 상태 리셋 연동 콜백
+  modal.addEventListener('modalclose', () => {
+    footerEmailInput.value = '';
+    resetModalState();
+  });
 
   // 1. 푸터 '소식받기' 버튼 클릭 시 이벤트
   footerSubmitBtn.addEventListener('click', (e) => {
@@ -74,7 +65,8 @@ export function initNewsletter() {
     }
 
     // 이메일 검증 성공 시 모달 오픈
-    openModal();
+    openModal(modal);
+    resetModalState();
   });
 
   // 엔터 키 입력 시에도 작동하도록 처리
@@ -112,7 +104,7 @@ export function initNewsletter() {
   if (confirmBtn) {
     confirmBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      closeModal();
+      closeModal(modal);
     });
   }
 
@@ -120,14 +112,7 @@ export function initNewsletter() {
   if (modalCloseBtn) {
     modalCloseBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      closeModal();
+      closeModal(modal);
     });
   }
-
-  // 6. 모달 바깥 영역 클릭 시 모달 닫기
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
 }

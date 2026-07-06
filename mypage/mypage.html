@@ -738,46 +738,6 @@
               }
             });
           });
-
-          // 공통 모달 팝업 작동 스크립트
-          const openPopupBtns = document.querySelectorAll(".btn-open-popup");
-          const closePopupBtns = document.querySelectorAll(".modal-close-btn, .modal-close, .btn-popup-cancel");
-          const modalOverlays = document.querySelectorAll(".modal-overlay");
-
-          // 모달 열기
-          openPopupBtns.forEach(btn => {
-            btn.addEventListener("click", function() {
-              const targetPopupId = this.getAttribute("data-popup");
-              const popup = document.getElementById(targetPopupId);
-              if (popup) {
-                popup.classList.add("active");
-                document.body.style.overflow = "hidden"; // 배경 스크롤 방지
-              }
-            });
-          });
-
-          // 모달 닫기
-          const closeAllModals = (modal) => {
-            modal.classList.remove("active");
-            document.body.style.overflow = "";
-          };
-
-          closePopupBtns.forEach(btn => {
-            btn.addEventListener("click", function() {
-              const modal = this.closest(".modal-overlay");
-              if (modal) {
-                closeAllModals(modal);
-              }
-            });
-          });
-
-          modalOverlays.forEach(overlay => {
-            overlay.addEventListener("click", function(e) {
-              if (e.target === this) {
-                closeAllModals(this);
-              }
-            });
-          });
         });
       </script>
 

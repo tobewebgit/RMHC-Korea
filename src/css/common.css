@@ -63,6 +63,12 @@
   margin-top: var(--spacing-200) !important;
 }
 
+.common-card {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
 /* ==========================================================================
    Header GNB Styling (Fluid Scale)
    ========================================================================== */
@@ -656,7 +662,7 @@
 }
 
 .page-title {
-  font-size: var(--text-5xl);
+  font-size: var(--text-6xl);
   text-align: center;
 }
 .page-title.mypage,

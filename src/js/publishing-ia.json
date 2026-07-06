@@ -89,6 +89,17 @@
   },
   {
     "id": 9,
+    "depth1": "마이페이지 & 비회원 서비스",
+    "depth2": "비회원 후원조회",
+    "depth3": "",
+    "depth4": "",
+    "path": "/nonmember/donations.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "인증번호 발송/타이머 및 결과 대시보드/배너 연동 완료"
+  },
+  {
+    "id": 10,
     "depth1": "회원가입",
     "depth2": "회원가입 메인",
     "depth3": "",
@@ -99,7 +110,7 @@
     "memo": "일반/기관 회원가입 선택 및 약관 동의 퍼블리싱 완료"
   },
   {
-    "id": 10,
+    "id": 11,
     "depth1": "회원가입",
     "depth2": "회원가입 본인 인증",
     "depth3": "",
@@ -110,7 +121,7 @@
     "memo": "본인 인증 수단 선택 화면 퍼블리싱 완료"
   },
   {
-    "id": 11,
+    "id": 12,
     "depth1": "회원가입",
     "depth2": "회원가입 정보 입력",
     "depth3": "",
@@ -121,7 +132,7 @@
     "memo": "상세 개인정보 입력 폼 및 우편번호 찾기 연동 완료"
   },
   {
-    "id": 12,
+    "id": 13,
     "depth1": "회원가입",
     "depth2": "회원가입 완료",
     "depth3": "",
@@ -132,183 +143,7 @@
     "memo": "가입 완료 축하 메시지 및 메인 이동 링크 연동 완료"
   },
   {
-    "id": 13,
-    "depth1": "후원 및 자원봉사",
-    "depth2": "정기후원",
-    "depth3": "",
-    "depth4": "",
-    "path": "/donate/regular.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "정기후원 폼 고도화, 기부금 영수증 신청 토글 및 분기 폼 연동"
-  },
-  {
     "id": 14,
-    "depth1": "후원 및 자원봉사",
-    "depth2": "일시후원",
-    "depth3": "",
-    "depth4": "",
-    "path": "/donate/one-time.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "일시후원 폼 고도화, 결제 수단 그리드 칩 탑재"
-  },
-  {
-    "id": 15,
-    "depth1": "후원 및 자원봉사",
-    "depth2": "물품후원",
-    "depth3": "",
-    "depth4": "",
-    "path": "/donate/goods.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "물품후원 프로세스 가이드 및 카테고리별 폼 고도화"
-  },
-  {
-    "id": 16,
-    "depth1": "후원 및 자원봉사",
-    "depth2": "후원완료",
-    "depth3": "",
-    "depth4": "",
-    "path": "/donate/complete.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "후원 완료 내역 테이블 및 비회원 조회 바로가기 연동"
-  },
-  {
-    "id": 17,
-    "depth1": "후원 및 자원봉사",
-    "depth2": "자원봉사 신청",
-    "depth3": "",
-    "depth4": "",
-    "path": "/volunteer.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "자원봉사 신청 페이지 신규 구축, 개인/단체 탭 및 달력 마크업"
-  },
-  {
-    "id": 18,
-    "depth1": "소개",
-    "depth2": "소개 메인",
-    "depth3": "",
-    "depth4": "",
-    "path": "/about.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "재단 소개 메인 퍼블리싱 고도화 완료"
-  },
-  {
-    "id": 19,
-    "depth1": "소개",
-    "depth2": "비전 & 미션",
-    "depth3": "",
-    "depth4": "",
-    "path": "/about/vision.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "비전 및 미션 페이지 퍼블리싱 고도화 완료"
-  },
-  {
-    "id": 20,
-    "depth1": "소개",
-    "depth2": "회장 인사말",
-    "depth3": "",
-    "depth4": "",
-    "path": "/about/greetings.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "회장 인사말 페이지 퍼블리싱 고도화 완료"
-  },
-  {
-    "id": 21,
-    "depth1": "소개",
-    "depth2": "RMHC 이사회",
-    "depth3": "",
-    "depth4": "",
-    "path": "/about/board.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "이사회 리스트 그리드 및 퍼블리싱 고도화 완료"
-  },
-  {
-    "id": 22,
-    "depth1": "소개",
-    "depth2": "재정 투명성",
-    "depth3": "",
-    "depth4": "",
-    "path": "/about/transparency.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "재정 보고 및 투명성 내역 테이블 퍼블리싱 고도화 완료"
-  },
-  {
-    "id": 23,
-    "depth1": "소개",
-    "depth2": "파트너사 소개",
-    "depth3": "",
-    "depth4": "",
-    "path": "/about/partner.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "파트너사 로고 그리드 퍼블리싱 고도화 완료"
-  },
-  {
-    "id": 24,
-    "depth1": "하우스",
-    "depth2": "양산 부산대 하우스",
-    "depth3": "",
-    "depth4": "",
-    "path": "/houses/yangsan.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "양산 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
-  },
-  {
-    "id": 25,
-    "depth1": "하우스",
-    "depth2": "서초 성모 하우스",
-    "depth3": "",
-    "depth4": "",
-    "path": "/houses/seocho.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "서초 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
-  },
-  {
-    "id": 26,
-    "depth1": "하우스",
-    "depth2": "연희 하우스",
-    "depth3": "",
-    "depth4": "",
-    "path": "/houses/yeonhui.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "연희 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
-  },
-  {
-    "id": 27,
-    "depth1": "하우스",
-    "depth2": "강남 세브란스 하우스",
-    "depth3": "",
-    "depth4": "",
-    "path": "/houses/gangnam.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "강남 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
-  },
-  {
-    "id": 28,
-    "depth1": "하우스",
-    "depth2": "인하대 하우스",
-    "depth3": "",
-    "depth4": "",
-    "path": "/houses/inha.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "인하대 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
-  },
-  {
-    "id": 29,
     "depth1": "마이페이지 & 비회원 서비스",
     "depth2": "마이페이지 메인",
     "depth3": "",
@@ -319,29 +154,7 @@
     "memo": "마이페이지 대시보드 및 서비스 이동 퀵 링크 연동 완료"
   },
   {
-    "id": 30,
-    "depth1": "마이페이지 & 비회원 서비스",
-    "depth2": "비밀번호 검증",
-    "depth3": "",
-    "depth4": "",
-    "path": "/mypage/verify-password.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "안전 정보 보호 비밀번호 재입력 폼 구현 완료"
-  },
-  {
-    "id": 31,
-    "depth1": "마이페이지 & 비회원 서비스",
-    "depth2": "개인정보 수정",
-    "depth3": "",
-    "depth4": "",
-    "path": "/mypage/profile.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "신상 정보 수정 및 마케팅동의 그리드 폼 구현 완료"
-  },
-  {
-    "id": 32,
+    "id": 15,
     "depth1": "마이페이지 & 비회원 서비스",
     "depth2": "후원 이력 목록",
     "depth3": "",
@@ -352,7 +165,7 @@
     "memo": "정기/일시 탭 분기 목록 및 Empty State 토글 구현 완료"
   },
   {
-    "id": 33,
+    "id": 16,
     "depth1": "마이페이지 & 비회원 서비스",
     "depth2": "후원 이력 상세",
     "depth3": "",
@@ -363,7 +176,29 @@
     "memo": "납부 내역 테이블 및 금액변경/해지 모달 구현 완료"
   },
   {
-    "id": 34,
+    "id": 17,
+    "depth1": "마이페이지 & 비회원 서비스",
+    "depth2": "비밀번호 검증",
+    "depth3": "",
+    "depth4": "",
+    "path": "/mypage/verify-password.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "안전 정보 보호 비밀번호 재입력 폼 구현 완료"
+  },
+  {
+    "id": 18,
+    "depth1": "마이페이지 & 비회원 서비스",
+    "depth2": "개인정보 수정",
+    "depth3": "",
+    "depth4": "",
+    "path": "/mypage/profile.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "신상 정보 수정 및 마케팅동의 그리드 폼 구현 완료"
+  },
+  {
+    "id": 19,
     "depth1": "마이페이지 & 비회원 서비스",
     "depth2": "기부금영수증 내역",
     "depth3": "",
@@ -374,7 +209,7 @@
     "memo": "발급정보 요약 카드 및 연도별 전송 내역 테이블 구현 완료"
   },
   {
-    "id": 35,
+    "id": 20,
     "depth1": "마이페이지 & 비회원 서비스",
     "depth2": "기부금영수증 신청",
     "depth3": "",
@@ -385,7 +220,7 @@
     "memo": "본인인증 가상 팝업 및 기부 영수증 신청 폼 구현 완료"
   },
   {
-    "id": 36,
+    "id": 21,
     "depth1": "마이페이지 & 비회원 서비스",
     "depth2": "기부금영수증 발급현황",
     "depth3": "",
@@ -396,7 +231,7 @@
     "memo": "귀속연도별 전송 결과 테이블 및 모의 인쇄 연동 완료"
   },
   {
-    "id": 37,
+    "id": 22,
     "depth1": "마이페이지 & 비회원 서비스",
     "depth2": "회원 탈퇴",
     "depth3": "",
@@ -407,15 +242,180 @@
     "memo": "안내 유의사항 카드 및 탈퇴 동의/설문 폼 구현 완료"
   },
   {
-    "id": 38,
-    "depth1": "마이페이지 & 비회원 서비스",
-    "depth2": "비회원 후원조회",
+    "id": 23,
+    "depth1": "소개",
+    "depth2": "소개 메인",
     "depth3": "",
     "depth4": "",
-    "path": "/nonmember/donations.html",
+    "path": "/about.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "인증번호 발송/타이머 및 결과 대시보드/배너 연동 완료"
+    "memo": "재단 소개 메인 퍼블리싱 고도화 완료"
+  },
+  {
+    "id": 24,
+    "depth1": "소개",
+    "depth2": "비전 & 미션",
+    "depth3": "",
+    "depth4": "",
+    "path": "/about/vision.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "비전 및 미션 페이지 퍼블리싱 고도화 완료"
+  },
+  {
+    "id": 25,
+    "depth1": "소개",
+    "depth2": "회장 인사말",
+    "depth3": "",
+    "depth4": "",
+    "path": "/about/greetings.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "회장 인사말 페이지 퍼블리싱 고도화 완료"
+  },
+  {
+    "id": 26,
+    "depth1": "소개",
+    "depth2": "RMHC 이사회",
+    "depth3": "",
+    "depth4": "",
+    "path": "/about/board.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "이사회 리스트 그리드 및 퍼블리싱 고도화 완료"
+  },
+  {
+    "id": 27,
+    "depth1": "소개",
+    "depth2": "파트너사 소개",
+    "depth3": "",
+    "depth4": "",
+    "path": "/about/partner.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "파트너사 로고 그리드 퍼블리싱 고도화 완료"
+  },
+  {
+    "id": 28,
+    "depth1": "소개",
+    "depth2": "재정 투명성",
+    "depth3": "",
+    "depth4": "",
+    "path": "/about/transparency.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "재정 보고 및 투명성 내역 테이블 퍼블리싱 고도화 완료"
+  },
+  {
+    "id": 29,
+    "depth1": "하우스",
+    "depth2": "양산 부산대 하우스",
+    "depth3": "",
+    "depth4": "",
+    "path": "/houses/yangsan.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "양산 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
+  },
+  {
+    "id": 30,
+    "depth1": "하우스",
+    "depth2": "강남 세브란스 하우스",
+    "depth3": "",
+    "depth4": "",
+    "path": "/houses/gangnam.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "강남 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
+  },
+  {
+    "id": 31,
+    "depth1": "하우스",
+    "depth2": "인하대 하우스",
+    "depth3": "",
+    "depth4": "",
+    "path": "/houses/inha.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "인하대 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
+  },
+  {
+    "id": 32,
+    "depth1": "하우스",
+    "depth2": "서초 성모 하우스",
+    "depth3": "",
+    "depth4": "",
+    "path": "/houses/seocho.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "서초 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
+  },
+  {
+    "id": 33,
+    "depth1": "하우스",
+    "depth2": "연희 하우스",
+    "depth3": "",
+    "depth4": "",
+    "path": "/houses/yeonhui.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "연희 하우스 안내 정보 및 테이블 퍼블리싱 고도화 완료"
+  },
+  {
+    "id": 34,
+    "depth1": "후원 및 자원봉사",
+    "depth2": "일시후원",
+    "depth3": "",
+    "depth4": "",
+    "path": "/donate/one-time.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "일시후원 폼 고도화, 결제 수단 그리드 칩 탑재"
+  },
+  {
+    "id": 35,
+    "depth1": "후원 및 자원봉사",
+    "depth2": "정기후원",
+    "depth3": "",
+    "depth4": "",
+    "path": "/donate/regular.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "정기후원 폼 고도화, 기부금 영수증 신청 토글 및 분기 폼 연동"
+  },
+  {
+    "id": 36,
+    "depth1": "후원 및 자원봉사",
+    "depth2": "물품후원",
+    "depth3": "",
+    "depth4": "",
+    "path": "/donate/goods.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "물품후원 프로세스 가이드 및 카테고리별 폼 고도화"
+  },
+  {
+    "id": 37,
+    "depth1": "후원 및 자원봉사",
+    "depth2": "자원봉사 신청",
+    "depth3": "",
+    "depth4": "",
+    "path": "/volunteer.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "자원봉사 신청 페이지 신규 구축, 개인/단체 탭 및 달력 마크업"
+  },
+  {
+    "id": 38,
+    "depth1": "후원 및 자원봉사",
+    "depth2": "후원완료",
+    "depth3": "",
+    "depth4": "",
+    "path": "/donate/complete.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "후원 완료 내역 테이블 및 비회원 조회 바로가기 연동"
   },
   {
     "id": 39,
@@ -431,17 +431,6 @@
   {
     "id": 40,
     "depth1": "캠페인",
-    "depth2": "KCR 캠페인",
-    "depth3": "",
-    "depth4": "",
-    "path": "/campaign/kcr.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "KCR 캠페인 역사 및 성과 지표 구현 완료"
-  },
-  {
-    "id": 41,
-    "depth1": "캠페인",
     "depth2": "갈라 디너 캠페인",
     "depth3": "",
     "depth4": "",
@@ -451,7 +440,7 @@
     "memo": "갈라 디너 캠페인 연혁 및 티켓/후원 신청 영역 구현 완료"
   },
   {
-    "id": 42,
+    "id": 41,
     "depth1": "캠페인",
     "depth2": "백일장 캠페인",
     "depth3": "",
@@ -460,6 +449,17 @@
     "status": "완료",
     "lastModified": "2026-06-09",
     "memo": "울림백일장 공모 요강 테이블 및 접수 바로가기 구현 완료"
+  },
+  {
+    "id": 42,
+    "depth1": "캠페인",
+    "depth2": "KCR 캠페인",
+    "depth3": "",
+    "depth4": "",
+    "path": "/campaign/kcr.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "KCR 캠페인 역사 및 성과 지표 구현 완료"
   },
   {
     "id": 43,
@@ -506,7 +506,7 @@
     "memo": "활동소식 이벤트 상세 및 사진 보도 본문 구현 완료"
   },
   {
-    "id": 48,
+    "id": 47,
     "depth1": "약관 및 정책",
     "depth2": "이용약관",
     "depth3": "",
@@ -517,7 +517,7 @@
     "memo": "이용약관 조/항 구조화 및 정책 탭 연동 완료"
   },
   {
-    "id": 49,
+    "id": 48,
     "depth1": "약관 및 정책",
     "depth2": "개인정보 처리방침",
     "depth3": "",
@@ -528,7 +528,7 @@
     "memo": "개인정보 수집 목적 및 보유 기간 테이블 표기 및 처리방침 완성"
   },
   {
-    "id": 50,
+    "id": 49,
     "depth1": "약관 및 정책",
     "depth2": "이메일 무단수집거부",
     "depth3": "",

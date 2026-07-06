@@ -183,3 +183,15 @@
   - [x] 마이페이지 (`mypage/mypage.html`) 인라인 탭 스크립트 제거 및 마크업 보정
   - [x] FAQ 화면 (`faq/faq.html`) 카테고리 탭 및 아코디언 마크업 구현
   - [x] FAQ 전용 스타일 (`src/css/faq.css`) 피그마 명세 동기화 구현
+
+- [x] **22단계: 수상작 팝업 구현 및 모달 공통화 (Generic Modal) 리팩토링**
+  - [x] CSS 컴포넌트 스타일 완전 통합 (`modal.css`, `mypage.css`, `login.css` 리팩토링)
+  - [x] 글로벌 공통 모달 스크립트 작성 (`src/js/components/modal.js` 신설)
+  - [x] 뉴스레터 모달 스크립트 연동 리팩토링 및 폼 초기화 콜백 연결 (`newsletter.js`, `newsletter.html`)
+  - [x] 공통 모달 초기화 등록 (`src/js/common.js` 연동)
+  - [x] 백일장 수상작 상세 팝업 마크업 생성 (`includes/popups/award-detail.html`)
+  - [x] 백일장 수상작 페이지 마크업 및 핸들러 연동 (`writing-contest.html`)
+  - [x] 마이페이지 개별 HTML 파일 파편화 제거 (`mypage.html`, `detail.html` 인라인 스크립트 삭제)
+  - [x] HTML 린트 및 번들 빌드 검증 (`npm run lint:html`, `npm run build` 실행)
+  - [x] walkthrough.md 작성 및 최종 보고
+

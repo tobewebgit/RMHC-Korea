@@ -176,3 +176,110 @@
     font-size: 1.6rem !important;
   }
 }
+
+/* ==========================================================================
+   custom-select — 프로젝트 공통 커스텀 셀렉트박스 컴포넌트
+   ========================================================================== */
+.custom-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 5.2rem;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid var(--border-gray40);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-primary);
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-pretendard);
+  font-size: var(--text-lg);
+  outline: none;
+}
+
+.custom-select:focus-visible {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-glow);
+}
+
+.custom-select-label {
+  color: var(--text-primary);
+}
+
+.custom-select .custom-select-arrow {
+  width: 1.3rem;
+  height: 0.8rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.custom-select[aria-expanded="true"] .custom-select-arrow {
+  transform: rotate(180deg);
+}
+
+.custom-select-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  margin-top: 0.4rem;
+  max-height: 25rem;
+  overflow-y: auto;
+  list-style: none;
+  z-index: 10;
+  box-shadow: var(--shadow-md);
+}
+
+.custom-select[aria-expanded="true"] .custom-select-list {
+  display: block;
+}
+
+.custom-select-list li {
+  padding: 1.2rem 1.6rem;
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.custom-select-list li:hover {
+  background-color: #f5f3ef;
+}
+
+/* ==========================================================================
+   agreement-terms — 프로젝트 공통 약관동의 영역 컴포넌트 (100% 원본 상속)
+   ========================================================================== */
+.agreement-all {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.agreement-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: 0 var(--spacing-4); /* 원본의 깔끔한 들여쓰기 16px 상속 */
+}
+
+.agreement-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.agreement-link {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-decoration: underline;
+  transition: var(--transition-fast);
+}
+
+.agreement-link:hover {
+  color: var(--primary);
+}

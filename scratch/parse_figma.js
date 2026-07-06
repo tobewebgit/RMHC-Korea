@@ -23,7 +23,8 @@ function extractTextNodes(node, list = []) {
 const targetNodes = {
   privacy: '2405:104632',
   terms: '2405:105067',
-  email: '2405:105259'
+  email: '2405:105259',
+  gala_apply: '2531:43001'
 };
 
 Object.entries(targetNodes).forEach(([key, nodeId]) => {
