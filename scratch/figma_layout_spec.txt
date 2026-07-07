@@ -1,299 +1,601 @@
-[FRAME] name: "Frame 1010107147" (id: 2531:43001) [Box: x=24159, y=67195, w=1500, h=2328]
-  [FRAME] name: "Frame 1010107144" (id: 2531:43002) [Box: x=24159, y=67195, w=706, h=1465]
-    [FRAME] name: "text" (id: 2531:43003) [Box: x=24159, y=67195, w=706, h=382]
-      [FRAME] name: "Frame 10" (id: 2531:43004) [Box: x=24159, y=67195, w=707, h=382]
-        [TEXT] name: "2026 한국로날드맥도날드하우스 Gala Dinner에 초대합니다." (id: 2531:43005) [Box: x=24159, y=67195, w=707, h=300] -> text: "2026\n한국로날드맥도날드하우스\nGala Dinner에\n초대합니다." (Font: NanumSquare Neo, Size: 58px, Weight: 800, LineHeight: 75px)
-        [TEXT] name: "Gala Dinner는 치료 중인 아이와 가족이 함께 머물 수 있는 로날드 맥도날드 하우스의 설립과 운영을 지원하는 대표 자선 모금 행사입니다." (id: 2531:43006) [Box: x=24159, y=67519, w=707, h=58] -> text: "Gala Dinner는 치료 중인 아이와 가족이 함께 머물 수 있는\n로날드 맥도날드 하우스의 설립과 운영을 지원하는 대표 자선 모금 행사입니다." (Font: Pretendard, Size: 22px, Weight: 400, LineHeight: 29px)
-    [RECTANGLE] name: "image 5342" (id: 2531:43007) [Box: x=24159, y=67617, w=706, h=1043]
-  [FRAME] name: "Frame 1010106905" (id: 2531:43008) [Box: x=24955, y=67195, w=704, h=2328]
-    [FRAME] name: "form" (id: 2531:43009) [Box: x=24955, y=67195, w=704, h=2328]
-      [FRAME] name: "form" (id: 2531:43010) [Box: x=24955, y=67195, w=704, h=566]
-        [FRAME] name: "참석신청" (id: 2531:43011) [Box: x=24955, y=67195, w=704, h=566]
-          [FRAME] name: "title" (id: 2531:43012) [Box: x=24955, y=67195, w=704, h=100]
-            [TEXT] name: "참석 신청" (id: 2531:43013) [Box: x=24995, y=67227, w=114, h=36] -> text: "참석 신청" (Font: NanumSquare Neo, Size: 28px, Weight: 800, LineHeight: 36px)
-            [TEXT] name: "일시 후원 30,000원" (id: 2531:43014) [Box: x=25467, y=67232, w=152, h=27] -> text: "일시 후원  30,000원" (Font: Pretendard, Size: 18px, Weight: 600, LineHeight: 27px)
-          [FRAME] name: "form" (id: 2531:43015) [Box: x=24955, y=67295, w=704, h=466]
-            [FRAME] name: "후원금액" (id: 2531:43016) [Box: x=24995, y=67335, w=624, h=52]
-              [FRAME] name: "신청방식" (id: 2531:43020) [Box: x=24995, y=67335, w=624, h=52]
-                [FRAME] name: "form" (id: 2531:43021) [Box: x=24995, y=67335, w=624, h=52]
-                  [FRAME] name: "title" (id: 2531:43022) [Box: x=24995, y=67335, w=160, h=52]
-                    [TEXT] name: "신청 방식" (id: 2531:43023) [Box: x=24995, y=67347, w=82, h=29] -> text: "신청 방식" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
-                  [FRAME] name: "radio btn" (id: 2531:43024) [Box: x=25195, y=67348, w=424, h=27]
-                    [FRAME] name: "예" (id: 2531:43025) [Box: x=25195, y=67348, w=111, h=27]
-                      [FRAME] name: "all" (id: 2531:43026) [Box: x=25195, y=67348, w=111, h=27]
-                        [TEXT] name: "인원별 신청" (id: 2531:43028) [Box: x=25223, y=67348, w=83, h=27] -> text: "인원별 신청" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                        [INSTANCE] name: "radio-btn" (id: 2531:43027) [Box: x=25195, y=67351, w=20, h=20]
-                          [GROUP] name: "Group 30" (id: I2531:43027;1219:25702) [Box: x=25195, y=67351, w=20, h=20]
-                            [RECTANGLE] name: "Rectangle 59" (id: I2531:43027;1219:25703) [Box: x=25195, y=67351, w=20, h=20]
-                            [RECTANGLE] name: "Rectangle 60" (id: I2531:43027;1219:25704) [Box: x=25200, y=67356, w=10, h=10]
-                    [FRAME] name: "아니오" (id: 2531:43029) [Box: x=25338, y=67348, w=111, h=27]
-                      [FRAME] name: "all" (id: 2531:43030) [Box: x=25338, y=67348, w=111, h=27]
-                        [TEXT] name: "테이블 신청" (id: 2531:43032) [Box: x=25366, y=67348, w=83, h=27] -> text: "테이블 신청" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                        [INSTANCE] name: "radio-btn" (id: 2531:43031) [Box: x=25338, y=67351, w=20, h=20]
-                          [GROUP] name: "Group 30" (id: I2531:43031;1219:25708) [Box: x=25338, y=67351, w=20, h=20]
-                            [RECTANGLE] name: "Rectangle 59" (id: I2531:43031;1219:25709) [Box: x=25338, y=67351, w=20, h=20]
-                            [RECTANGLE] name: "Rectangle 60" (id: I2531:43031;1219:25710) [Box: x=25343, y=67356, w=10, h=10]
-              [FRAME] name: "Frame 1010107153" (id: 2531:43017) [Box: x=24995, y=67512, w=316, h=21]
-                [TEXT] name: "최소 후원 금액은 10,000원 이상 입력해 주세요." (id: 2531:43019) [Box: x=25013, y=67512, w=298, h=21] -> text: "최소 후원 금액은 10,000원 이상 입력해 주세요." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
-                [VECTOR] name: "Vector" (id: 2531:43018) [Box: x=24995, y=67516, w=14, h=14]
-            [FRAME] name: "참석인원" (id: 2531:43033) [Box: x=24995, y=67439, w=624, h=89]
-              [FRAME] name: "Frame 1010107100" (id: 2531:43034) [Box: x=24995, y=67439, w=160, h=52]
-                [TEXT] name: "참석인원" (id: 2531:43035) [Box: x=24995, y=67451, w=77, h=29] -> text: "참석인원" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
-              [FRAME] name: "Frame 1010107181" (id: 2531:43036) [Box: x=25195, y=67439, w=424, h=89]
-                [INSTANCE] name: "selectbox" (id: 2531:43037) [Box: x=25195, y=67439, w=424, h=52]
-                  [FRAME] name: "selectbox" (id: I2531:43037;1120:22676) [Box: x=25195, y=67439, w=424, h=52]
-                    [FRAME] name: "Frame 1010106972" (id: I2531:43037;1120:22678) [Box: x=25579, y=67453, w=24, h=24]
-                      [INSTANCE] name: "icon" (id: I2531:43037;1120:22679) [Box: x=25579, y=67453, w=24, h=24]
-                        [FRAME] name: "Frame 1010107087" (id: I2531:43037;1120:22679;1120:22555) [Box: x=25579, y=67453, w=24, h=24]
-                          [VECTOR] name: "Vector 20 (Stroke)" (id: I2531:43037;1120:22679;1120:22556) [Box: x=25584, y=67457, w=14, h=14]
-                    [TEXT] name: "연도 선택" (id: I2531:43037;1120:22677) [Box: x=25211, y=67454, w=27, h=22] -> text: "2명" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                  [FRAME] name: "selectbox_dropdown" (id: I2531:43037;1137:24614) [Box: x=25195, y=67491, w=320, h=416]
-                    [INSTANCE] name: "Selectbox_list_hover" (id: I2531:43037;1137:24555) [Box: x=25195, y=67491, w=320, h=52]
-                      [INSTANCE] name: "icon" (id: I2531:43037;1137:24555;1137:24481) [Box: x=25475, y=67505, w=24, h=24]
-                        [VECTOR] name: "Vector" (id: I2531:43037;1137:24555;1137:24481;1120:22600) [Box: x=25483, y=67509, w=8, h=12]
-                        [VECTOR] name: "Rectangle 83" (id: I2531:43037;1137:24555;1137:24481;1120:22602) [Box: x=25480, y=67523, w=14, h=2]
-                      [TEXT] name: "2024 재정보고서" (id: I2531:43037;1137:24555;1137:24480) [Box: x=25211, y=67506, w=127, h=22] -> text: "2024 재정보고서" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                    [INSTANCE] name: "Selectbox_list_hover" (id: I2531:43037;1137:24566) [Box: x=25195, y=67543, w=320, h=52]
-                      [INSTANCE] name: "icon" (id: I2531:43037;1137:24566;1137:24481) [Box: x=25475, y=67557, w=24, h=24]
-                        [VECTOR] name: "Vector" (id: I2531:43037;1137:24566;1137:24481;1120:22600) [Box: x=25483, y=67561, w=8, h=12]
-                        [VECTOR] name: "Rectangle 83" (id: I2531:43037;1137:24566;1137:24481;1120:22602) [Box: x=25480, y=67575, w=14, h=2]
-                      [TEXT] name: "2024 재정보고서" (id: I2531:43037;1137:24566;1137:24480) [Box: x=25211, y=67558, w=127, h=22] -> text: "2023 재정보고서" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                    [INSTANCE] name: "Selectbox_list_hover" (id: I2531:43037;1137:24572) [Box: x=25195, y=67595, w=320, h=52]
-                      [INSTANCE] name: "icon" (id: I2531:43037;1137:24572;1137:24481) [Box: x=25475, y=67609, w=24, h=24]
-                        [VECTOR] name: "Vector" (id: I2531:43037;1137:24572;1137:24481;1120:22600) [Box: x=25483, y=67613, w=8, h=12]
-                        [VECTOR] name: "Rectangle 83" (id: I2531:43037;1137:24572;1137:24481;1120:22602) [Box: x=25480, y=67627, w=14, h=2]
-                      [TEXT] name: "2024 재정보고서" (id: I2531:43037;1137:24572;1137:24480) [Box: x=25211, y=67610, w=127, h=22] -> text: "2022 재정보고서" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                    [INSTANCE] name: "Selectbox_list_hover" (id: I2531:43037;1137:24578) [Box: x=25195, y=67647, w=320, h=52]
-                      [INSTANCE] name: "icon" (id: I2531:43037;1137:24578;1137:24481) [Box: x=25475, y=67661, w=24, h=24]
-                        [VECTOR] name: "Vector" (id: I2531:43037;1137:24578;1137:24481;1120:22600) [Box: x=25483, y=67665, w=8, h=12]
-                        [VECTOR] name: "Rectangle 83" (id: I2531:43037;1137:24578;1137:24481;1120:22602) [Box: x=25480, y=67679, w=14, h=2]
-                      [TEXT] name: "2024 재정보고서" (id: I2531:43037;1137:24578;1137:24480) [Box: x=25211, y=67662, w=122, h=22] -> text: "2021 재정보고서" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                    [INSTANCE] name: "Selectbox_list_hover" (id: I2531:43037;1137:24584) [Box: x=25195, y=67699, w=320, h=52]
-                      [INSTANCE] name: "icon" (id: I2531:43037;1137:24584;1137:24481) [Box: x=25475, y=67713, w=24, h=24]
-                        [VECTOR] name: "Vector" (id: I2531:43037;1137:24584;1137:24481;1120:22600) [Box: x=25483, y=67717, w=8, h=12]
-                        [VECTOR] name: "Rectangle 83" (id: I2531:43037;1137:24584;1137:24481;1120:22602) [Box: x=25480, y=67731, w=14, h=2]
-                      [TEXT] name: "2024 재정보고서" (id: I2531:43037;1137:24584;1137:24480) [Box: x=25211, y=67714, w=127, h=22] -> text: "2020 재정보고서" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                    [INSTANCE] name: "Selectbox_list_hover" (id: I2531:43037;1137:24590) [Box: x=25195, y=67751, w=320, h=52]
-                      [INSTANCE] name: "icon" (id: I2531:43037;1137:24590;1137:24481) [Box: x=25475, y=67765, w=24, h=24]
-                        [VECTOR] name: "Vector" (id: I2531:43037;1137:24590;1137:24481;1120:22600) [Box: x=25483, y=67769, w=8, h=12]
-                        [VECTOR] name: "Rectangle 83" (id: I2531:43037;1137:24590;1137:24481;1120:22602) [Box: x=25480, y=67783, w=14, h=2]
-                      [TEXT] name: "2024 재정보고서" (id: I2531:43037;1137:24590;1137:24480) [Box: x=25211, y=67766, w=123, h=22] -> text: "2019 재정보고서" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                    [INSTANCE] name: "Selectbox_list_hover" (id: I2531:43037;1137:24596) [Box: x=25195, y=67803, w=320, h=52]
-                      [INSTANCE] name: "icon" (id: I2531:43037;1137:24596;1137:24481) [Box: x=25475, y=67817, w=24, h=24]
-                        [VECTOR] name: "Vector" (id: I2531:43037;1137:24596;1137:24481;1120:22600) [Box: x=25483, y=67821, w=8, h=12]
-                        [VECTOR] name: "Rectangle 83" (id: I2531:43037;1137:24596;1137:24481;1120:22602) [Box: x=25480, y=67835, w=14, h=2]
-                      [TEXT] name: "2024 재정보고서" (id: I2531:43037;1137:24596;1137:24480) [Box: x=25211, y=67818, w=123, h=22] -> text: "2018 재정보고서" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                    [INSTANCE] name: "Selectbox_list_hover" (id: I2531:43037;1137:24602) [Box: x=25195, y=67855, w=320, h=52]
-                      [INSTANCE] name: "icon" (id: I2531:43037;1137:24602;1137:24481) [Box: x=25475, y=67869, w=24, h=24]
-                        [VECTOR] name: "Vector" (id: I2531:43037;1137:24602;1137:24481;1120:22600) [Box: x=25483, y=67873, w=8, h=12]
-                        [VECTOR] name: "Rectangle 83" (id: I2531:43037;1137:24602;1137:24481;1120:22602) [Box: x=25480, y=67887, w=14, h=2]
-                      [TEXT] name: "2024 재정보고서" (id: I2531:43037;1137:24602;1137:24480) [Box: x=25211, y=67870, w=121, h=22] -> text: "2017 재정보고서" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                [TEXT] name: "최대 10명까지 선택 가능합니다." (id: 2531:43038) [Box: x=25195, y=67507, w=424, h=21] -> text: "최대 10명까지 선택 가능합니다." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
-            [LINE] name: "Sep" (id: 2531:43039) [Box: x=24995, y=67580, w=624, h=0]
-            [FRAME] name: "총 결제" (id: 2531:43040) [Box: x=24995, y=67632, w=624, h=89]
-              [FRAME] name: "기부금영수증" (id: 2531:43044) [Box: x=24995, y=67632, w=624, h=89]
-                [FRAME] name: "Frame 1010107160" (id: 2531:43045) [Box: x=24995, y=67632, w=624, h=89]
-                  [FRAME] name: "Frame 1010107100" (id: 2531:43046) [Box: x=24995, y=67632, w=160, h=52]
-                    [TEXT] name: "총 결제 금액" (id: 2531:43047) [Box: x=24995, y=67644, w=106, h=29] -> text: "총 결제 금액" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
-                  [FRAME] name: "Frame 1010107105" (id: 2531:43048) [Box: x=25195, y=67632, w=424, h=89]
-                    [FRAME] name: "Frame 1010107298" (id: 2531:43049) [Box: x=25195, y=67632, w=424, h=52]
-                      [TEXT] name: "1,000,000원" (id: 2531:43050) [Box: x=25195, y=67640, w=424, h=36] -> text: "1,000,000원" (Font: NanumSquare Neo, Size: 28px, Weight: 800, LineHeight: 36px)
-                    [TEXT] name: "(1명 X 500,000원)" (id: 2531:43051) [Box: x=25495, y=67700, w=124, h=21] -> text: "(1명 X 500,000원)" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
-              [FRAME] name: "Frame 1010107153" (id: 2531:43041) [Box: x=24995, y=67809, w=316, h=21]
-                [TEXT] name: "최소 후원 금액은 10,000원 이상 입력해 주세요." (id: 2531:43043) [Box: x=25013, y=67809, w=298, h=21] -> text: "최소 후원 금액은 10,000원 이상 입력해 주세요." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
-                [VECTOR] name: "Vector" (id: 2531:43042) [Box: x=24995, y=67813, w=14, h=14]
-      [FRAME] name: "form" (id: 2531:43052) [Box: x=24955, y=67781, w=704, h=1269]
-        [FRAME] name: "후원자 정보입력 및 약관동의" (id: 2531:43053) [Box: x=24955, y=67781, w=704, h=1269]
-          [FRAME] name: "title" (id: 2531:43054) [Box: x=24955, y=67781, w=704, h=100]
-            [TEXT] name: "후원자 정보입력 및 약관동의" (id: 2531:43055) [Box: x=24995, y=67813, w=340, h=36] -> text: "후원자 정보입력 및 약관동의" (Font: NanumSquare Neo, Size: 28px, Weight: 800, LineHeight: 36px)
-            [TEXT] name: "개인 - 로날드" (id: 2531:43056) [Box: x=25524, y=67818, w=95, h=27] -> text: "개인 - 로날드" (Font: Pretendard, Size: 18px, Weight: 600, LineHeight: 27px)
-          [FRAME] name: "form" (id: 2531:43057) [Box: x=24955, y=67881, w=704, h=1169]
-            [FRAME] name: "form" (id: 2531:43058) [Box: x=24995, y=67921, w=624, h=1089]
-              [FRAME] name: "후원자유형" (id: 2531:43059) [Box: x=24995, y=67961, w=624, h=105]
-                [FRAME] name: "후원자 유형" (id: 2531:43060) [Box: x=24995, y=67961, w=624, h=105]
-                  [FRAME] name: "Frame 1010106889" (id: 2531:43061) [Box: x=24995, y=67961, w=624, h=105]
-                    [TEXT] name: "후원자 유형을 선택해 주세요." (id: 2531:43062) [Box: x=24995, y=67961, w=624, h=29] -> text: "후원자 유형을 선택해 주세요." (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
-                    [FRAME] name: "btn" (id: 2531:43063) [Box: x=24995, y=68014, w=624, h=52]
-                      [FRAME] name: "Frame 1010106889" (id: 2531:43064) [Box: x=24995, y=68014, w=624, h=52]
-                        [FRAME] name: "Frame 1010106885" (id: 2531:43065) [Box: x=24995, y=68014, w=306, h=52]
-                          [TEXT] name: "개인" (id: 2531:43066) [Box: x=25132, y=68027, w=32, h=27] -> text: "개인" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                        [FRAME] name: "Frame 1010106889" (id: 2531:43067) [Box: x=25313, y=68014, w=306, h=52]
-                          [TEXT] name: "기업 / 단체" (id: 2531:43068) [Box: x=25427, y=68027, w=78, h=27] -> text: "기업 / 단체" (Font: Pretendard, Size: 18px, Weight: 700, LineHeight: 27px)
-              [LINE] name: "Sep" (id: 2531:43069) [Box: x=24995, y=68118, w=624, h=0]
-              [FRAME] name: "form" (id: 2531:43070) [Box: x=24995, y=68170, w=624, h=800]
-                [FRAME] name: "form" (id: 2531:43071) [Box: x=24995, y=68170, w=624, h=800]
-                  [FRAME] name: "후원자 기본 정보" (id: 2531:43072) [Box: x=24995, y=68170, w=624, h=507]
-                    [FRAME] name: "Frame 1010107159" (id: 2531:43073) [Box: x=24995, y=68170, w=624, h=507]
-                      [FRAME] name: "Frame 1010107155" (id: 2531:43074) [Box: x=24995, y=68170, w=624, h=29]
-                        [TEXT] name: "후원자 기본 정보" (id: 2531:43075) [Box: x=24995, y=68170, w=624, h=29] -> text: "후원자 기본 정보" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
-                        [TEXT] name: "정보를 확인한 후 결제를 진행해 주세요." (id: 2531:43076) [Box: x=24995, y=68215, w=624, h=27] -> text: "정보를 확인한 후 결제를 진행해 주세요." (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                      [FRAME] name: "form" (id: 2531:43077) [Box: x=24995, y=68223, w=624, h=454]
-                        [FRAME] name: "기업/단체명" (id: 2531:43078) [Box: x=25019, y=68263, w=576, h=52]
-                          [FRAME] name: "title" (id: 2531:43079) [Box: x=25019, y=68263, w=120, h=52]
-                            [TEXT] name: "*기업/단체명" (id: 2531:43080) [Box: x=25019, y=68276, w=93, h=27] -> text: "*기업/단체명" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                          [INSTANCE] name: "TextField" (id: 2531:43081) [Box: x=25179, y=68263, w=416, h=52]
-                            [FRAME] name: "text" (id: I2531:43081;1581:45591) [Box: x=25179, y=68263, w=416, h=52]
-                              [TEXT] name: "Placeholder" (id: I2531:43081;1581:45592) [Box: x=25195, y=68276, w=352, h=27] -> text: "Placeholder" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                              [INSTANCE] name: "icon" (id: I2531:43081;1581:45593) [Box: x=25555, y=68277, w=24, h=24]
-                                [FRAME] name: "icon" (id: I2531:43081;1581:45593;1203:24244) [Box: x=25555, y=68277, w=24, h=24]
-                                  [FRAME] name: "eye-off" (id: I2531:43081;1581:45593;1203:24245) [Box: x=25557, y=68279, w=20, h=20]
-                                    [VECTOR] name: "Vector" (id: I2531:43081;1581:45593;1203:24246) [Box: x=25560, y=68282, w=15, h=15]
-                                    [VECTOR] name: "Vector" (id: I2531:43081;1581:45593;1203:24249) [Box: x=25567, y=68284, w=8, h=6]
-                                    [VECTOR] name: "Vector" (id: I2531:43081;1581:45593;1203:24248) [Box: x=25560, y=68285, w=11, h=9]
-                                    [VECTOR] name: "Vector" (id: I2531:43081;1581:45593;1203:24247) [Box: x=25565, y=68288, w=3, h=3]
-                            [FRAME] name: "helper text" (id: I2531:43081;1581:45594) [Box: x=25179, y=68323, w=239, h=19]
-                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:43081;1581:45595) [Box: x=25179, y=68323, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
-                            [FRAME] name: "error text" (id: I2531:43081;1581:45596) [Box: x=25179, y=68323, w=239, h=19]
-                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:43081;1581:45597) [Box: x=25179, y=68323, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
-                        [FRAME] name: "사업자등록번호" (id: 2531:43082) [Box: x=25019, y=68331, w=576, h=52]
-                          [FRAME] name: "title" (id: 2531:43083) [Box: x=25019, y=68331, w=120, h=52]
-                            [TEXT] name: "사업자등록번호" (id: 2531:43084) [Box: x=25019, y=68344, w=109, h=27] -> text: "사업자등록번호" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                          [INSTANCE] name: "TextField" (id: 2531:43085) [Box: x=25179, y=68331, w=416, h=52]
-                            [FRAME] name: "text" (id: I2531:43085;1581:45591) [Box: x=25179, y=68331, w=416, h=52]
-                              [TEXT] name: "Placeholder" (id: I2531:43085;1581:45592) [Box: x=25195, y=68344, w=352, h=27] -> text: "사업자번호 10자리 (숫자만 입력)" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                              [INSTANCE] name: "icon" (id: I2531:43085;1581:45593) [Box: x=25555, y=68345, w=24, h=24]
-                                [FRAME] name: "icon" (id: I2531:43085;1581:45593;1203:24244) [Box: x=25555, y=68345, w=24, h=24]
-                                  [FRAME] name: "eye-off" (id: I2531:43085;1581:45593;1203:24245) [Box: x=25557, y=68347, w=20, h=20]
-                                    [VECTOR] name: "Vector" (id: I2531:43085;1581:45593;1203:24246) [Box: x=25560, y=68350, w=15, h=15]
-                                    [VECTOR] name: "Vector" (id: I2531:43085;1581:45593;1203:24249) [Box: x=25567, y=68352, w=8, h=6]
-                                    [VECTOR] name: "Vector" (id: I2531:43085;1581:45593;1203:24248) [Box: x=25560, y=68353, w=11, h=9]
-                                    [VECTOR] name: "Vector" (id: I2531:43085;1581:45593;1203:24247) [Box: x=25565, y=68356, w=3, h=3]
-                            [FRAME] name: "helper text" (id: I2531:43085;1581:45594) [Box: x=25179, y=68391, w=239, h=19]
-                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:43085;1581:45595) [Box: x=25179, y=68391, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
-                            [FRAME] name: "error text" (id: I2531:43085;1581:45596) [Box: x=25179, y=68391, w=239, h=19]
-                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:43085;1581:45597) [Box: x=25179, y=68391, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
-                        [FRAME] name: "담당자명" (id: 2531:43086) [Box: x=25019, y=68399, w=576, h=52]
-                          [FRAME] name: "title" (id: 2531:43087) [Box: x=25019, y=68399, w=120, h=52]
-                            [TEXT] name: "*담당자명" (id: 2531:43088) [Box: x=25019, y=68412, w=71, h=27] -> text: "*담당자명" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                          [INSTANCE] name: "TextField" (id: 2531:43089) [Box: x=25179, y=68399, w=416, h=52]
-                            [FRAME] name: "text" (id: I2531:43089;1581:45591) [Box: x=25179, y=68399, w=416, h=52]
-                              [TEXT] name: "Placeholder" (id: I2531:43089;1581:45592) [Box: x=25195, y=68412, w=352, h=27] -> text: "사업자번호 10자리 (숫자만 입력)" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                              [INSTANCE] name: "icon" (id: I2531:43089;1581:45593) [Box: x=25555, y=68413, w=24, h=24]
-                                [FRAME] name: "icon" (id: I2531:43089;1581:45593;1203:24244) [Box: x=25555, y=68413, w=24, h=24]
-                                  [FRAME] name: "eye-off" (id: I2531:43089;1581:45593;1203:24245) [Box: x=25557, y=68415, w=20, h=20]
-                                    [VECTOR] name: "Vector" (id: I2531:43089;1581:45593;1203:24246) [Box: x=25560, y=68418, w=15, h=15]
-                                    [VECTOR] name: "Vector" (id: I2531:43089;1581:45593;1203:24249) [Box: x=25567, y=68420, w=8, h=6]
-                                    [VECTOR] name: "Vector" (id: I2531:43089;1581:45593;1203:24248) [Box: x=25560, y=68421, w=11, h=9]
-                                    [VECTOR] name: "Vector" (id: I2531:43089;1581:45593;1203:24247) [Box: x=25565, y=68424, w=3, h=3]
-                            [FRAME] name: "helper text" (id: I2531:43089;1581:45594) [Box: x=25179, y=68459, w=239, h=19]
-                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:43089;1581:45595) [Box: x=25179, y=68459, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
-                            [FRAME] name: "error text" (id: I2531:43089;1581:45596) [Box: x=25179, y=68459, w=239, h=19]
-                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:43089;1581:45597) [Box: x=25179, y=68459, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
-                        [FRAME] name: "담당자 연락처" (id: 2531:43090) [Box: x=25019, y=68467, w=576, h=52]
-                          [FRAME] name: "title" (id: 2531:43091) [Box: x=25019, y=68467, w=120, h=52]
-                            [TEXT] name: "*담당자 연락처" (id: 2531:43092) [Box: x=25019, y=68480, w=107, h=27] -> text: "*담당자 연락처" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                          [INSTANCE] name: "TextField" (id: 2531:43093) [Box: x=25179, y=68467, w=416, h=52]
-                            [FRAME] name: "text" (id: I2531:43093;1581:45591) [Box: x=25179, y=68467, w=416, h=52]
-                              [TEXT] name: "Placeholder" (id: I2531:43093;1581:45592) [Box: x=25195, y=68480, w=352, h=27] -> text: "연락처 (숫자만 입력)" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                              [INSTANCE] name: "icon" (id: I2531:43093;1581:45593) [Box: x=25555, y=68481, w=24, h=24]
-                                [FRAME] name: "icon" (id: I2531:43093;1581:45593;1203:24244) [Box: x=25555, y=68481, w=24, h=24]
-                                  [FRAME] name: "eye-off" (id: I2531:43093;1581:45593;1203:24245) [Box: x=25557, y=68483, w=20, h=20]
-                                    [VECTOR] name: "Vector" (id: I2531:43093;1581:45593;1203:24246) [Box: x=25560, y=68486, w=15, h=15]
-                                    [VECTOR] name: "Vector" (id: I2531:43093;1581:45593;1203:24249) [Box: x=25567, y=68488, w=8, h=6]
-                                    [VECTOR] name: "Vector" (id: I2531:43093;1581:45593;1203:24248) [Box: x=25560, y=68489, w=11, h=9]
-                                    [VECTOR] name: "Vector" (id: I2531:43093;1581:45593;1203:24247) [Box: x=25565, y=68492, w=3, h=3]
-                            [FRAME] name: "helper text" (id: I2531:43093;1581:45594) [Box: x=25179, y=68527, w=239, h=19]
-                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:43093;1581:45595) [Box: x=25179, y=68527, w=239, h=19] -> text: "후원 관련 안내를 받을 이메일을 입력해 주세요." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
-                            [FRAME] name: "error text" (id: I2531:43093;1581:45596) [Box: x=25179, y=68527, w=239, h=19]
-                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:43093;1581:45597) [Box: x=25179, y=68527, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
-                        [FRAME] name: "담담자 이메일" (id: 2531:43094) [Box: x=25019, y=68535, w=576, h=102]
-                          [FRAME] name: "title" (id: 2531:43095) [Box: x=25019, y=68535, w=120, h=52]
-                            [TEXT] name: "*담당자 이메일" (id: 2531:43096) [Box: x=25019, y=68548, w=107, h=27] -> text: "*담당자 이메일" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                          [INSTANCE] name: "TextField" (id: 2531:43097) [Box: x=25179, y=68535, w=416, h=102]
-                            [FRAME] name: "text" (id: I2531:43097;1581:45940) [Box: x=25179, y=68535, w=416, h=52]
-                              [TEXT] name: "Placeholder" (id: I2531:43097;1581:45941) [Box: x=25195, y=68548, w=352, h=27] -> text: "Placeholder" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                              [INSTANCE] name: "icon" (id: I2531:43097;1581:45942) [Box: x=25555, y=68549, w=24, h=24]
-                                [FRAME] name: "icon" (id: I2531:43097;1581:45942;1203:24244) [Box: x=25555, y=68549, w=24, h=24]
-                                  [FRAME] name: "eye-off" (id: I2531:43097;1581:45942;1203:24245) [Box: x=25557, y=68551, w=20, h=20]
-                                    [VECTOR] name: "Vector" (id: I2531:43097;1581:45942;1203:24246) [Box: x=25560, y=68554, w=15, h=15]
-                                    [VECTOR] name: "Vector" (id: I2531:43097;1581:45942;1203:24249) [Box: x=25567, y=68556, w=8, h=6]
-                                    [VECTOR] name: "Vector" (id: I2531:43097;1581:45942;1203:24248) [Box: x=25560, y=68557, w=11, h=9]
-                                    [VECTOR] name: "Vector" (id: I2531:43097;1581:45942;1203:24247) [Box: x=25565, y=68560, w=3, h=3]
-                            [FRAME] name: "helper text" (id: I2531:43097;1581:45943) [Box: x=25179, y=68595, w=416, h=42]
-                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:43097;1581:45944) [Box: x=25179, y=68595, w=416, h=42] -> text: "입력하신 사업자등록번호로 기부금 영수증이 발급됩니다.\n정확히 입력해 주세요." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
-                            [FRAME] name: "error text" (id: I2531:43097;1581:45945) [Box: x=25179, y=68595, w=239, h=19]
-                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:43097;1581:45946) [Box: x=25179, y=68595, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
-                  [LINE] name: "Sep" (id: 2531:43098) [Box: x=24995, y=68729, w=624, h=0]
-                  [FRAME] name: "수신동의" (id: 2531:43099) [Box: x=24995, y=68781, w=624, h=189]
-                    [FRAME] name: "Frame 1010107156" (id: 2531:43100) [Box: x=24995, y=68781, w=624, h=29]
-                      [TEXT] name: "이용약관, 개인정보 수집 및 이용 활동 안내 수신동의" (id: 2531:43101) [Box: x=24995, y=68781, w=624, h=29] -> text: "이용약관, 개인정보 수집 및 이용 활동 안내 수신동의" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
-                    [FRAME] name: "Frame 1010106901" (id: 2531:43102) [Box: x=24995, y=68834, w=624, h=136]
-                      [FRAME] name: "all" (id: 2531:43103) [Box: x=24995, y=68834, w=152, h=22]
-                        [TEXT] name: "모두 동의합니다." (id: 2531:43105) [Box: x=25023, y=68834, w=124, h=22] -> text: "모두 동의합니다." (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                        [INSTANCE] name: "checkbox" (id: 2531:43104) [Box: x=24995, y=68835, w=20, h=20]
-                          [RECTANGLE] name: "Rectangle 59" (id: I2531:43104;1193:26415) [Box: x=24995, y=68835, w=20, h=20]
-                          [VECTOR] name: "Vector 5" (id: I2531:43104;1193:26416) [Box: x=25001, y=68842, w=9, h=6]
-                      [FRAME] name: "line" (id: 2531:43106) [Box: x=24995, y=68872, w=680, h=0]
-                        [LINE] name: "Sep" (id: 2531:43107) [Box: x=24995, y=68872, w=680, h=0]
-                      [FRAME] name: "Frame 1010107107" (id: 2531:43108) [Box: x=24995, y=68872, w=624, h=22]
-                        [FRAME] name: "all" (id: 2531:43109) [Box: x=25011, y=68872, w=144, h=22]
-                          [TEXT] name: "[필수] 이용약관" (id: 2531:43111) [Box: x=25039, y=68872, w=116, h=22] -> text: "[필수] 이용약관" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                          [INSTANCE] name: "checkbox" (id: 2531:43110) [Box: x=25011, y=68873, w=20, h=20]
-                            [RECTANGLE] name: "Rectangle 59" (id: I2531:43110;1193:26418) [Box: x=25011, y=68873, w=20, h=20]
-                            [VECTOR] name: "Vector 5" (id: I2531:43110;1193:26419) [Box: x=25017, y=68880, w=9, h=6]
-                        [TEXT] name: "자세히 보기" (id: 2531:43112) [Box: x=25529, y=68873, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
-                      [FRAME] name: "Frame 1010107108" (id: 2531:43113) [Box: x=24995, y=68910, w=624, h=22]
-                        [FRAME] name: "all" (id: 2531:43114) [Box: x=25011, y=68910, w=238, h=22]
-                          [TEXT] name: "[필수] 개인정보 수집 및 이용" (id: 2531:43116) [Box: x=25039, y=68910, w=210, h=22] -> text: "[필수] 개인정보 수집 및 이용" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                          [INSTANCE] name: "checkbox" (id: 2531:43115) [Box: x=25011, y=68911, w=20, h=20]
-                            [RECTANGLE] name: "Rectangle 59" (id: I2531:43115;1193:26418) [Box: x=25011, y=68911, w=20, h=20]
-                            [VECTOR] name: "Vector 5" (id: I2531:43115;1193:26419) [Box: x=25017, y=68918, w=9, h=6]
-                        [TEXT] name: "자세히 보기" (id: 2531:43117) [Box: x=25529, y=68911, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
-                      [FRAME] name: "Frame 1010107109" (id: 2531:43118) [Box: x=24995, y=68948, w=624, h=22]
-                        [FRAME] name: "all" (id: 2531:43119) [Box: x=25011, y=68948, w=295, h=22]
-                          [TEXT] name: "[선택] 소식지 및 활동 알림 수신 동의" (id: 2531:43121) [Box: x=25039, y=68948, w=267, h=22] -> text: "[선택] 소식지 및 활동 알림 수신 동의" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
-                          [INSTANCE] name: "checkbox" (id: 2531:43120) [Box: x=25011, y=68949, w=20, h=20]
-                            [RECTANGLE] name: "Rectangle 59" (id: I2531:43120;1193:26418) [Box: x=25011, y=68949, w=20, h=20]
-                            [VECTOR] name: "Vector 5" (id: I2531:43120;1193:26419) [Box: x=25017, y=68956, w=9, h=6]
-                        [TEXT] name: "자세히 보기" (id: 2531:43122) [Box: x=25529, y=68949, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
-      [FRAME] name: "form" (id: 2531:43123) [Box: x=24955, y=69070, w=704, h=453]
-        [FRAME] name: "결제수단" (id: 2531:43124) [Box: x=24955, y=69070, w=704, h=453]
-          [FRAME] name: "title" (id: 2531:43125) [Box: x=24955, y=69070, w=704, h=100]
-            [TEXT] name: "결제수단" (id: 2531:43126) [Box: x=24995, y=69102, w=107, h=36] -> text: "결제수단" (Font: NanumSquare Neo, Size: 28px, Weight: 800, LineHeight: 36px)
-            [TEXT] name: "일시 후원 30,000원" (id: 2531:43127) [Box: x=25467, y=69107, w=152, h=27] -> text: "일시 후원  30,000원" (Font: Pretendard, Size: 18px, Weight: 600, LineHeight: 27px)
-          [FRAME] name: "form" (id: 2531:43128) [Box: x=24955, y=69170, w=704, h=353]
-            [FRAME] name: "결제수단" (id: 2531:43129) [Box: x=24995, y=69210, w=624, h=169]
-              [FRAME] name: "contents" (id: 2531:43130) [Box: x=24995, y=69210, w=624, h=169]
-                [FRAME] name: "contents" (id: 2531:43131) [Box: x=24995, y=69210, w=624, h=169]
-                  [TEXT] name: "후원금은 환아와 가족들을 위한 하우스 운영에 투명하게 사용됩니다." (id: 2531:43132) [Box: x=24995, y=69210, w=624, h=29] -> text: "후원금은 환아와 가족들을 위한 하우스 운영에 투명하게 사용됩니다." (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
-                  [FRAME] name: "결제수단" (id: 2531:43133) [Box: x=24995, y=69263, w=624, h=116]
-                    [FRAME] name: "1(컬러)" (id: 2531:43134) [Box: x=24995, y=69263, w=624, h=52]
-                      [FRAME] name: "결제수단" (id: 2531:43135) [Box: x=24995, y=69263, w=624, h=52]
-                        [FRAME] name: "카카오페이" (id: 2531:43136) [Box: x=24995, y=69263, w=200, h=52]
-                          [FRAME] name: "카카오로 시작하기" (id: 2531:43137) [Box: x=24995, y=69263, w=200, h=52]
-                            [TEXT] name: "카카오페이" (id: 2531:43139) [Box: x=25073, y=69276, w=78, h=27] -> text: "카카오페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                            [RECTANGLE] name: "Rectangle 77" (id: 2531:43138) [Box: x=25039, y=69277, w=24, h=24]
-                        [FRAME] name: "네이버페이" (id: 2531:43140) [Box: x=25207, y=69263, w=200, h=52]
-                          [TEXT] name: "네이버 페이" (id: 2531:43143) [Box: x=25283, y=69276, w=83, h=27] -> text: "네이버 페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                          [FRAME] name: "icon" (id: 2531:43141) [Box: x=25249, y=69277, w=24, h=24]
-                            [RECTANGLE] name: "kakao_login_large_narrow 1" (id: 2531:43142) [Box: x=25249, y=69277, w=23, h=24]
-                        [FRAME] name: "토스페이" (id: 2531:43144) [Box: x=25419, y=69263, w=200, h=52]
-                          [TEXT] name: "토스페이" (id: 2531:43147) [Box: x=25505, y=69276, w=63, h=27] -> text: "토스페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                          [FRAME] name: "icon" (id: 2531:43145) [Box: x=25471, y=69277, w=24, h=24]
-                            [RECTANGLE] name: "kakao_login_large_narrow 1" (id: 2531:43146) [Box: x=25471, y=69277, w=24, h=24]
-                    [FRAME] name: "1" (id: 2531:43148) [Box: x=24995, y=69263, w=624, h=52]
-                      [FRAME] name: "결제수단" (id: 2531:43149) [Box: x=24995, y=69263, w=624, h=52]
-                        [FRAME] name: "form_btn" (id: 2531:43150) [Box: x=24995, y=69263, w=200, h=52]
-                          [TEXT] name: "카카오페이" (id: 2531:43152) [Box: x=25073, y=69276, w=78, h=27] -> text: "카카오페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                          [RECTANGLE] name: "Rectangle 77" (id: 2531:43151) [Box: x=25039, y=69277, w=24, h=24]
-                        [FRAME] name: "form_btn" (id: 2531:43153) [Box: x=25207, y=69263, w=200, h=52]
-                          [TEXT] name: "네이버페이" (id: 2531:43155) [Box: x=25285, y=69276, w=78, h=27] -> text: "네이버페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                          [VECTOR] name: "Vector" (id: 2531:43154) [Box: x=25251, y=69277, w=24, h=24]
-                        [FRAME] name: "form_btn" (id: 2531:43156) [Box: x=25419, y=69263, w=200, h=52]
-                          [TEXT] name: "토스페이" (id: 2531:43159) [Box: x=25505, y=69276, w=63, h=27] -> text: "토스페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                          [FRAME] name: "icon" (id: 2531:43157) [Box: x=25471, y=69277, w=24, h=24]
-                            [RECTANGLE] name: "kakao_login_large_narrow 1" (id: 2531:43158) [Box: x=25471, y=69277, w=24, h=24]
-                    [FRAME] name: "2" (id: 2531:43160) [Box: x=24995, y=69327, w=624, h=52]
-                      [FRAME] name: "결제수단" (id: 2531:43161) [Box: x=24995, y=69327, w=624, h=52]
-                        [INSTANCE] name: "form_btn" (id: 2531:43162) [Box: x=24995, y=69327, w=200, h=52]
-                          [TEXT] name: "20,000원" (id: I2531:43162;1662:87315) [Box: x=25064, y=69340, w=63, h=27] -> text: "신용카드" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                        [INSTANCE] name: "form_btn" (id: 2531:43163) [Box: x=25207, y=69327, w=200, h=52]
-                          [TEXT] name: "20,000원" (id: I2531:43163;1662:87315) [Box: x=25276, y=69340, w=63, h=27] -> text: "계좌이체" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-                        [INSTANCE] name: "form_btn" (id: 2531:43164) [Box: x=25419, y=69327, w=200, h=52]
-                          [TEXT] name: "20,000원" (id: I2531:43164;1662:87315) [Box: x=25482, y=69340, w=74, h=27] -> text: "30,000원" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
-              [FRAME] name: "Frame 1010107153" (id: 2531:43165) [Box: x=24995, y=69387, w=316, h=21]
-                [TEXT] name: "최소 후원 금액은 10,000원 이상 입력해 주세요." (id: 2531:43167) [Box: x=25013, y=69387, w=298, h=21] -> text: "최소 후원 금액은 10,000원 이상 입력해 주세요." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
-                [VECTOR] name: "Vector" (id: 2531:43166) [Box: x=24995, y=69391, w=14, h=14]
-            [FRAME] name: "CTA" (id: 2531:43168) [Box: x=24995, y=69431, w=624, h=52]
-              [FRAME] name: "후원 하기" (id: 2531:43169) [Box: x=24995, y=69431, w=624, h=52]
-                [TEXT] name: "갈라 디너 신청하기" (id: 2531:43170) [Box: x=25241, y=69444, w=133, h=27] -> text: "갈라 디너 신청하기" (Font: Pretendard, Size: 18px, Weight: 700, LineHeight: 27px)
+[FRAME] name: "Frame 1010107147" (id: 2531:44497) [Box: x=19252, y=49827, w=1500, h=1664]
+  [FRAME] name: "Frame 1010107144" (id: 2531:44498) [Box: x=19252, y=49827, w=706, h=792]
+    [FRAME] name: "text" (id: 2531:44499) [Box: x=19252, y=49827, w=706, h=203]
+      [FRAME] name: "Frame 10" (id: 2531:44500) [Box: x=19252, y=49827, w=718, h=203]
+        [TEXT] name: "당신의 후원이 환아 가족에게 '함께하는 밤'을 선물합니다." (id: 2531:44501) [Box: x=19252, y=49827, w=718, h=150] -> text: "당신의 후원이 환아 가족에게 \n'함께하는 밤'을 선물합니다." (Font: NanumSquare Neo, Size: 58px, Weight: 800, LineHeight: 75px)
+        [TEXT] name: "집보다 더 따뜻한 집, 로날드 맥도날드 하우스의 가족이 되어주세요." (id: 2531:44502) [Box: x=19252, y=50001, w=718, h=29] -> text: "집보다 더 따뜻한 집, 로날드 맥도날드 하우스의 가족이 되어주세요." (Font: Pretendard, Size: 22px, Weight: 400, LineHeight: 29px)
+    [FRAME] name: "box8to11 1" (id: 2531:44503) [Box: x=19252, y=50070, w=706, h=549]
+      [VECTOR] name: "Vector" (id: 2531:44504) [Box: x=19252, y=50070, w=706, h=549]
+  [FRAME] name: "Frame 1010106905" (id: 2531:44505) [Box: x=20048, y=49827, w=704, h=1664]
+    [FRAME] name: "form" (id: 2531:44506) [Box: x=20048, y=49827, w=704, h=1664]
+      [FRAME] name: "해외카드 banner" (id: 2531:44507) [Box: x=20048, y=49827, w=704, h=80]
+        [FRAME] name: "Money-Dollar_icon-RGB 1" (id: 2531:44508) [Box: x=20088, y=49851, w=32, h=32]
+          [GROUP] name: "Group" (id: 2531:44509) [Box: x=20090, y=49853, w=29, h=23]
+            [VECTOR] name: "Vector" (id: 2531:44510) [Box: x=20090, y=49853, w=29, h=23]
+            [VECTOR] name: "Vector" (id: 2531:44511) [Box: x=20093, y=49856, w=24, h=17]
+            [VECTOR] name: "Vector" (id: 2531:44512) [Box: x=20101, y=49860, w=8, h=9]
+            [VECTOR] name: "Vector" (id: 2531:44514) [Box: x=20111, y=49860, w=3, h=3]
+            [VECTOR] name: "Vector" (id: 2531:44513) [Box: x=20096, y=49866, w=3, h=3]
+          [VECTOR] name: "Vector" (id: 2531:44515) [Box: x=20088, y=49863, w=31, h=17]
+          [VECTOR] name: "Vector" (id: 2531:44516) [Box: x=20090, y=49865, w=27, h=13]
+          [VECTOR] name: "Vector" (id: 2531:44517) [Box: x=20099, y=49866, w=11, h=12]
+          [VECTOR] name: "Vector" (id: 2531:44520) [Box: x=20101, y=49867, w=6, h=8]
+          [VECTOR] name: "Vector" (id: 2531:44518) [Box: x=20093, y=49870, w=3, h=3]
+          [VECTOR] name: "Vector" (id: 2531:44519) [Box: x=20111, y=49870, w=3, h=3]
+        [FRAME] name: "Frame 1010107352" (id: 2531:44521) [Box: x=20136, y=49854, w=576, h=27]
+          [FRAME] name: "Frame 1010107353" (id: 2531:44523) [Box: x=20491, y=49854, w=221, h=27]
+            [TEXT] name: "Foreign Card Donation" (id: 2531:44524) [Box: x=20491, y=49854, w=187, h=27] -> text: "Foreign Card Donation" (Font: Pretendard, Size: 18px, Weight: 600, LineHeight: 27px)
+            [INSTANCE] name: "icon" (id: 2531:44525) [Box: x=20688, y=49855, w=24, h=24]
+              [VECTOR] name: "Vector" (id: I2531:44525;263:7059) [Box: x=20694, y=49863, w=12, h=8]
+          [TEXT] name: "해외 발급카드를 이용하시나요?" (id: 2531:44522) [Box: x=20136, y=49857, w=355, h=21] -> text: "해외 발급카드를 이용하시나요?" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+      [FRAME] name: "Tab" (id: 2531:44526) [Box: x=20048, y=49927, w=704, h=51]
+        [INSTANCE] name: "Tab" (id: 2531:44527) [Box: x=20048, y=49927, w=346, h=52]
+          [TEXT] name: "Tab name" (id: I2531:44527;1506:39256) [Box: x=20189, y=49939, w=67, h=27] -> text: "정기 후원" (Font: Pretendard, Size: 18px, Weight: 700, LineHeight: 27px)
+        [INSTANCE] name: "Tab" (id: 2531:44528) [Box: x=20406, y=49927, w=346, h=52]
+          [TEXT] name: "Tab name" (id: I2531:44528;1506:39254) [Box: x=20547, y=49939, w=67, h=27] -> text: "일시 후원" (Font: Pretendard, Size: 18px, Weight: 700, LineHeight: 27px)
+      [FRAME] name: "form" (id: 2531:44529) [Box: x=20048, y=49998, w=704, h=481]
+        [FRAME] name: "후원금액" (id: 2531:44530) [Box: x=20048, y=49998, w=704, h=481]
+          [FRAME] name: "title" (id: 2531:44531) [Box: x=20048, y=49998, w=704, h=100]
+            [TEXT] name: "후원 금액" (id: 2531:44532) [Box: x=20088, y=50030, w=114, h=36] -> text: "후원 금액" (Font: NanumSquare Neo, Size: 28px, Weight: 800, LineHeight: 36px)
+            [TEXT] name: "일시 후원 30,000원" (id: 2531:44533) [Box: x=20560, y=50035, w=152, h=27] -> text: "일시 후원  30,000원" (Font: Pretendard, Size: 18px, Weight: 600, LineHeight: 27px)
+          [FRAME] name: "form" (id: 2531:44534) [Box: x=20048, y=50098, w=704, h=381]
+            [FRAME] name: "후원금액" (id: 2531:44535) [Box: x=20088, y=50138, w=624, h=169]
+              [FRAME] name: "Frame 1010107146" (id: 2531:44536) [Box: x=20088, y=50138, w=624, h=169]
+                [FRAME] name: "Frame 1010106889" (id: 2531:44537) [Box: x=20088, y=50138, w=624, h=169]
+                  [TEXT] name: "나눔의 크기를 선택해 주세요." (id: 2531:44538) [Box: x=20088, y=50138, w=624, h=29] -> text: "나눔의 크기를 선택해 주세요." (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                  [FRAME] name: "btn" (id: 2531:44539) [Box: x=20088, y=50191, w=624, h=116]
+                    [FRAME] name: "1" (id: 2531:44540) [Box: x=20088, y=50191, w=624, h=52]
+                      [INSTANCE] name: "form_btn" (id: 2531:44541) [Box: x=20088, y=50191, w=200, h=52]
+                        [TEXT] name: "20,000원" (id: I2531:44541;1662:87315) [Box: x=20153, y=50204, w=71, h=27] -> text: "10,000원" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                      [INSTANCE] name: "form_btn" (id: 2531:44542) [Box: x=20300, y=50191, w=200, h=52]
+                        [TEXT] name: "20,000원" (id: I2531:44542;1662:87315) [Box: x=20364, y=50204, w=73, h=27] -> text: "20,000원" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                      [INSTANCE] name: "form_btn" (id: 2531:44543) [Box: x=20512, y=50191, w=200, h=52]
+                        [TEXT] name: "10,000원" (id: I2531:44543;1662:87319) [Box: x=20575, y=50204, w=74, h=27] -> text: "30,000원" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                    [FRAME] name: "3" (id: 2531:44544) [Box: x=20088, y=50255, w=624, h=52]
+                      [INSTANCE] name: "form_btn" (id: 2531:44545) [Box: x=20088, y=50255, w=200, h=52]
+                        [TEXT] name: "20,000원" (id: I2531:44545;1662:87315) [Box: x=20152, y=50268, w=73, h=27] -> text: "50,000원" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                      [INSTANCE] name: "form_btn" (id: 2531:44546) [Box: x=20300, y=50255, w=200, h=52]
+                        [TEXT] name: "20,000원" (id: I2531:44546;1662:87315) [Box: x=20360, y=50268, w=81, h=27] -> text: "100,000원" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                      [INSTANCE] name: "form_btn" (id: 2531:44547) [Box: x=20512, y=50255, w=200, h=52]
+                        [TEXT] name: "20,000원" (id: I2531:44547;1662:87315) [Box: x=20579, y=50268, w=67, h=27] -> text: "직접 입력" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+              [FRAME] name: "Frame 1010107153" (id: 2531:44548) [Box: x=20088, y=50315, w=316, h=21]
+                [TEXT] name: "최소 후원 금액은 10,000원 이상 입력해 주세요." (id: 2531:44550) [Box: x=20106, y=50315, w=298, h=21] -> text: "최소 후원 금액은 10,000원 이상 입력해 주세요." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                [VECTOR] name: "Vector" (id: 2531:44549) [Box: x=20088, y=50319, w=14, h=14]
+            [FRAME] name: "Frame 1010107145" (id: 2531:44551) [Box: x=20088, y=50359, w=624, h=80]
+              [RECTANGLE] name: "Rectangle 74" (id: 2531:44552) [Box: x=20128, y=50383, w=32, h=32]
+              [TEXT] name: "환아 가족의 편안한 쉼을 지원합니다." (id: 2531:44553) [Box: x=20176, y=50389, w=496, h=21] -> text: "환아 가족의 편안한 쉼을 지원합니다." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+      [FRAME] name: "form" (id: 2531:44554) [Box: x=20048, y=50499, w=704, h=519]
+        [FRAME] name: "후원자 정보입력 및 약관동의" (id: 2531:44555) [Box: x=20048, y=50499, w=704, h=519]
+          [FRAME] name: "title" (id: 2531:44556) [Box: x=20048, y=50499, w=704, h=100]
+            [TEXT] name: "후원자 정보입력 및 약관동의" (id: 2531:44557) [Box: x=20088, y=50531, w=340, h=36] -> text: "후원자 정보입력 및 약관동의" (Font: NanumSquare Neo, Size: 28px, Weight: 800, LineHeight: 36px)
+            [TEXT] name: "개인 - 로날드" (id: 2531:44558) [Box: x=20617, y=50536, w=95, h=27] -> text: "개인 - 로날드" (Font: Pretendard, Size: 18px, Weight: 600, LineHeight: 27px)
+          [FRAME] name: "form" (id: 2531:44559) [Box: x=20048, y=50599, w=704, h=419]
+            [FRAME] name: "후원자유형" (id: 2531:44560) [Box: x=20088, y=50639, w=624, h=105]
+              [FRAME] name: "후원자 유형" (id: 2531:44561) [Box: x=20088, y=50639, w=624, h=105]
+                [FRAME] name: "Frame 1010106889" (id: 2531:44562) [Box: x=20088, y=50639, w=624, h=105]
+                  [TEXT] name: "후원자 유형을 선택해 주세요." (id: 2531:44563) [Box: x=20088, y=50639, w=624, h=29] -> text: "후원자 유형을 선택해 주세요." (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                  [FRAME] name: "btn" (id: 2531:44564) [Box: x=20088, y=50692, w=624, h=52]
+                    [FRAME] name: "Frame 1010106889" (id: 2531:44565) [Box: x=20088, y=50692, w=624, h=52]
+                      [FRAME] name: "Frame 1010106889" (id: 2531:44566) [Box: x=20088, y=50692, w=306, h=52]
+                        [TEXT] name: "개인" (id: 2531:44567) [Box: x=20225, y=50705, w=32, h=27] -> text: "개인" (Font: Pretendard, Size: 18px, Weight: 700, LineHeight: 27px)
+                      [FRAME] name: "Frame 1010106885" (id: 2531:44568) [Box: x=20406, y=50692, w=306, h=52]
+                        [TEXT] name: "기업 / 단체" (id: 2531:44569) [Box: x=20520, y=50705, w=78, h=27] -> text: "기업 / 단체" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+            [LINE] name: "Sep" (id: 2531:44570) [Box: x=20088, y=50796, w=624, h=0]
+            [FRAME] name: "간편인증" (id: 2531:44571) [Box: x=20088, y=50848, w=624, h=130]
+              [FRAME] name: "간편인증완료" (id: 2531:44572) [Box: x=20088, y=50848, w=624, h=130]
+                [FRAME] name: "간편인증" (id: 2531:44573) [Box: x=20088, y=50848, w=624, h=130]
+                  [TEXT] name: "번거로운 회원가입 대신 간편인증으로 빠르게 시작하세요. * 만 14세 미만은 보호자 명의로 후원해 주세요." (id: 2531:44574) [Box: x=20088, y=50848, w=624, h=54] -> text: "번거로운 회원가입 대신 간편인증으로 빠르게 시작하세요. * 만 14세 미만은 보호자 명의로 후원해 주세요." (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                  [FRAME] name: "btn" (id: 2531:44575) [Box: x=20088, y=50926, w=624, h=52]
+                    [FRAME] name: "Frame 1010106889" (id: 2531:44576) [Box: x=20088, y=50926, w=624, h=52]
+                      [FRAME] name: "카카오로 시작하기" (id: 2531:44577) [Box: x=20088, y=50926, w=306, h=52]
+                        [TEXT] name: "카카오로 빠르게 시작하기" (id: 2531:44579) [Box: x=20168, y=50939, w=181, h=27] -> text: "카카오로 빠르게 시작하기" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                        [RECTANGLE] name: "Rectangle 77" (id: 2531:44578) [Box: x=20134, y=50940, w=24, h=24]
+                      [FRAME] name: "휴대폰으로 본인인증 (PASS)" (id: 2531:44580) [Box: x=20406, y=50926, w=306, h=52]
+                        [TEXT] name: "휴대폰으로 본인인증 (PASS)" (id: 2531:44582) [Box: x=20457, y=50939, w=205, h=27] -> text: "휴대폰으로 본인인증 (PASS)" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                        [VECTOR] name: "Vector" (id: 2531:44581) [Box: x=20441, y=50942, w=21, h=21]
+                [GROUP] name: "Group 66" (id: 2531:44583) [Box: x=20088, y=51026, w=624, h=1022]
+                  [LINE] name: "Sep" (id: 2531:44584) [Box: x=20088, y=51026, w=624, h=0]
+                  [FRAME] name: "후원자 기본 정보" (id: 2531:44585) [Box: x=20088, y=51078, w=624, h=461]
+                    [FRAME] name: "Frame 1010107159" (id: 2531:44586) [Box: x=20088, y=51078, w=624, h=461]
+                      [FRAME] name: "Frame 1010107155" (id: 2531:44587) [Box: x=20088, y=51078, w=624, h=72]
+                        [TEXT] name: "후원자 기본 정보 (인증 정보)" (id: 2531:44588) [Box: x=20088, y=51078, w=624, h=29] -> text: "후원자 기본 정보 (인증 정보)" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                        [TEXT] name: "정보를 확인한 후 결제를 진행해 주세요." (id: 2531:44589) [Box: x=20088, y=51123, w=624, h=27] -> text: "정보를 확인한 후 결제를 진행해 주세요." (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                      [FRAME] name: "form" (id: 2531:44590) [Box: x=20088, y=51174, w=624, h=365]
+                        [FRAME] name: "이름" (id: 2531:44591) [Box: x=20112, y=51214, w=576, h=52]
+                          [FRAME] name: "title" (id: 2531:44592) [Box: x=20112, y=51214, w=120, h=52]
+                            [TEXT] name: "*이름" (id: 2531:44593) [Box: x=20112, y=51229, w=40, h=22] -> text: "*이름" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                          [INSTANCE] name: "TextField" (id: 2531:44594) [Box: x=20272, y=51214, w=416, h=52]
+                            [FRAME] name: "text" (id: I2531:44594;1581:45631) [Box: x=20272, y=51214, w=416, h=52]
+                              [TEXT] name: "Readonly Text" (id: I2531:44594;1581:45632) [Box: x=20288, y=51227, w=352, h=27] -> text: "로날드" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                              [INSTANCE] name: "icon" (id: I2531:44594;1581:45633) [Box: x=20648, y=51228, w=24, h=24]
+                                [FRAME] name: "icon" (id: I2531:44594;1581:45633;1203:24244) [Box: x=20648, y=51228, w=24, h=24]
+                                  [FRAME] name: "eye-off" (id: I2531:44594;1581:45633;1203:24245) [Box: x=20650, y=51230, w=20, h=20]
+                                    [VECTOR] name: "Vector" (id: I2531:44594;1581:45633;1203:24246) [Box: x=20653, y=51233, w=15, h=15]
+                                    [VECTOR] name: "Vector" (id: I2531:44594;1581:45633;1203:24249) [Box: x=20660, y=51235, w=8, h=6]
+                                    [VECTOR] name: "Vector" (id: I2531:44594;1581:45633;1203:24248) [Box: x=20653, y=51236, w=11, h=9]
+                                    [VECTOR] name: "Vector" (id: I2531:44594;1581:45633;1203:24247) [Box: x=20658, y=51239, w=3, h=3]
+                            [FRAME] name: "helper text" (id: I2531:44594;1581:45634) [Box: x=20272, y=51274, w=239, h=19]
+                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44594;1581:45635) [Box: x=20272, y=51274, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                            [FRAME] name: "error text" (id: I2531:44594;1581:45636) [Box: x=20272, y=51274, w=239, h=19]
+                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44594;1581:45637) [Box: x=20272, y=51274, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                        [FRAME] name: "생년월일" (id: 2531:44595) [Box: x=20112, y=51282, w=576, h=52]
+                          [FRAME] name: "title" (id: 2531:44596) [Box: x=20112, y=51282, w=120, h=52]
+                            [TEXT] name: "*생년월일" (id: 2531:44597) [Box: x=20112, y=51297, w=73, h=22] -> text: "*생년월일" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                          [INSTANCE] name: "TextField" (id: 2531:44598) [Box: x=20272, y=51282, w=416, h=52]
+                            [FRAME] name: "text" (id: I2531:44598;1581:45631) [Box: x=20272, y=51282, w=416, h=52]
+                              [TEXT] name: "Readonly Text" (id: I2531:44598;1581:45632) [Box: x=20288, y=51295, w=352, h=27] -> text: "19880101" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                              [INSTANCE] name: "icon" (id: I2531:44598;1581:45633) [Box: x=20648, y=51296, w=24, h=24]
+                                [FRAME] name: "icon" (id: I2531:44598;1581:45633;1203:24244) [Box: x=20648, y=51296, w=24, h=24]
+                                  [FRAME] name: "eye-off" (id: I2531:44598;1581:45633;1203:24245) [Box: x=20650, y=51298, w=20, h=20]
+                                    [VECTOR] name: "Vector" (id: I2531:44598;1581:45633;1203:24246) [Box: x=20653, y=51301, w=15, h=15]
+                                    [VECTOR] name: "Vector" (id: I2531:44598;1581:45633;1203:24249) [Box: x=20660, y=51303, w=8, h=6]
+                                    [VECTOR] name: "Vector" (id: I2531:44598;1581:45633;1203:24248) [Box: x=20653, y=51304, w=11, h=9]
+                                    [VECTOR] name: "Vector" (id: I2531:44598;1581:45633;1203:24247) [Box: x=20658, y=51307, w=3, h=3]
+                            [FRAME] name: "helper text" (id: I2531:44598;1581:45634) [Box: x=20272, y=51342, w=239, h=19]
+                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44598;1581:45635) [Box: x=20272, y=51342, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                            [FRAME] name: "error text" (id: I2531:44598;1581:45636) [Box: x=20272, y=51342, w=239, h=19]
+                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44598;1581:45637) [Box: x=20272, y=51342, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                        [FRAME] name: "성별" (id: 2531:44599) [Box: x=20112, y=51350, w=576, h=52]
+                          [FRAME] name: "Frame 1010107100" (id: 2531:44600) [Box: x=20112, y=51350, w=120, h=52]
+                            [TEXT] name: "*성별" (id: 2531:44601) [Box: x=20112, y=51365, w=40, h=22] -> text: "*성별" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                          [FRAME] name: "Frame 1010107105" (id: 2531:44602) [Box: x=20272, y=51365, w=416, h=22]
+                            [FRAME] name: "남성" (id: 2531:44603) [Box: x=20272, y=51365, w=62, h=22]
+                              [FRAME] name: "all" (id: 2531:44604) [Box: x=20272, y=51365, w=62, h=22]
+                                [TEXT] name: "남성" (id: 2531:44606) [Box: x=20300, y=51365, w=34, h=22] -> text: "남성" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                                [INSTANCE] name: "radio-btn" (id: 2531:44605) [Box: x=20272, y=51366, w=20, h=20]
+                                  [GROUP] name: "Group 30" (id: I2531:44605;1219:25702) [Box: x=20272, y=51366, w=20, h=20]
+                                    [RECTANGLE] name: "Rectangle 59" (id: I2531:44605;1219:25703) [Box: x=20272, y=51366, w=20, h=20]
+                                    [RECTANGLE] name: "Rectangle 60" (id: I2531:44605;1219:25704) [Box: x=20277, y=51371, w=10, h=10]
+                            [FRAME] name: "여성" (id: 2531:44607) [Box: x=20272, y=51365, w=34, h=22]
+                              [FRAME] name: "all" (id: 2531:44608) [Box: x=20272, y=51365, w=34, h=22]
+                                [TEXT] name: "여성" (id: 2531:44610) [Box: x=20272, y=51365, w=34, h=22] -> text: "여성" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                                [INSTANCE] name: "radio-btn" (id: 2531:44609) [Box: x=20272, y=51366, w=20, h=20]
+                                  [GROUP] name: "Group 30" (id: I2531:44609;1219:25708) [Box: x=20272, y=51366, w=20, h=20]
+                                    [RECTANGLE] name: "Rectangle 59" (id: I2531:44609;1219:25709) [Box: x=20272, y=51366, w=20, h=20]
+                                    [RECTANGLE] name: "Rectangle 60" (id: I2531:44609;1219:25710) [Box: x=20277, y=51371, w=10, h=10]
+                        [FRAME] name: "휴대폰번호" (id: 2531:44611) [Box: x=20112, y=51418, w=576, h=81]
+                          [FRAME] name: "title" (id: 2531:44612) [Box: x=20112, y=51418, w=120, h=52]
+                            [TEXT] name: "*이메일" (id: 2531:44613) [Box: x=20112, y=51433, w=56, h=22] -> text: "*이메일" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                          [INSTANCE] name: "TextField" (id: 2531:44614) [Box: x=20272, y=51418, w=416, h=81]
+                            [FRAME] name: "text" (id: I2531:44614;1582:46219) [Box: x=20272, y=51418, w=416, h=52]
+                              [TEXT] name: "Input Text" (id: I2531:44614;1582:46220) [Box: x=20288, y=51431, w=352, h=27] -> text: "rmhc@gmail.com" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                              [INSTANCE] name: "icon" (id: I2531:44614;1582:46221) [Box: x=20648, y=51432, w=24, h=24]
+                                [FRAME] name: "icon" (id: I2531:44614;1582:46221;1203:24244) [Box: x=20648, y=51432, w=24, h=24]
+                                  [FRAME] name: "eye-off" (id: I2531:44614;1582:46221;1203:24245) [Box: x=20650, y=51434, w=20, h=20]
+                                    [VECTOR] name: "Vector" (id: I2531:44614;1582:46221;1203:24246) [Box: x=20653, y=51437, w=15, h=15]
+                                    [VECTOR] name: "Vector" (id: I2531:44614;1582:46221;1203:24249) [Box: x=20660, y=51439, w=8, h=6]
+                                    [VECTOR] name: "Vector" (id: I2531:44614;1582:46221;1203:24248) [Box: x=20653, y=51440, w=11, h=9]
+                                    [VECTOR] name: "Vector" (id: I2531:44614;1582:46221;1203:24247) [Box: x=20658, y=51443, w=3, h=3]
+                            [FRAME] name: "helper text" (id: I2531:44614;1582:46222) [Box: x=20272, y=51478, w=369, h=21]
+                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44614;1582:46223) [Box: x=20272, y=51478, w=369, h=21] -> text: "카카오 계정에 등록된 이메일입니다. 필요 시 수정해 주세요." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                            [FRAME] name: "error text" (id: I2531:44614;1582:46224) [Box: x=20272, y=51478, w=239, h=19]
+                              [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44614;1582:46225) [Box: x=20272, y=51478, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                  [LINE] name: "Sep" (id: 2531:44615) [Box: x=20088, y=51591, w=624, h=0]
+                  [FRAME] name: "기부금영수증" (id: 2531:44616) [Box: x=20088, y=51643, w=624, h=112]
+                    [FRAME] name: "Frame 1010107160" (id: 2531:44617) [Box: x=20088, y=51643, w=624, h=52]
+                      [FRAME] name: "Frame 1010107100" (id: 2531:44618) [Box: x=20088, y=51643, w=160, h=52]
+                        [TEXT] name: "*기부금 영수증" (id: 2531:44619) [Box: x=20088, y=51655, w=131, h=29] -> text: "*기부금 영수증" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                      [FRAME] name: "Frame 1010107105" (id: 2531:44620) [Box: x=20288, y=51658, w=424, h=22]
+                        [FRAME] name: "남성" (id: 2531:44621) [Box: x=20288, y=51658, w=45, h=22]
+                          [FRAME] name: "all" (id: 2531:44622) [Box: x=20288, y=51658, w=45, h=22]
+                            [TEXT] name: "예" (id: 2531:44624) [Box: x=20316, y=51658, w=17, h=22] -> text: "예" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                            [INSTANCE] name: "radio-btn" (id: 2531:44623) [Box: x=20288, y=51659, w=20, h=20]
+                              [GROUP] name: "Group 30" (id: I2531:44623;1219:25708) [Box: x=20288, y=51659, w=20, h=20]
+                                [RECTANGLE] name: "Rectangle 59" (id: I2531:44623;1219:25709) [Box: x=20288, y=51659, w=20, h=20]
+                                [RECTANGLE] name: "Rectangle 60" (id: I2531:44623;1219:25710) [Box: x=20293, y=51664, w=10, h=10]
+                        [FRAME] name: "남성" (id: 2531:44625) [Box: x=20365, y=51658, w=78, h=22]
+                          [FRAME] name: "all" (id: 2531:44626) [Box: x=20365, y=51658, w=78, h=22]
+                            [TEXT] name: "아니오" (id: 2531:44628) [Box: x=20393, y=51658, w=50, h=22] -> text: "아니오" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                            [INSTANCE] name: "radio-btn" (id: 2531:44627) [Box: x=20365, y=51659, w=20, h=20]
+                              [GROUP] name: "Group 30" (id: I2531:44627;1219:25708) [Box: x=20365, y=51659, w=20, h=20]
+                                [RECTANGLE] name: "Rectangle 59" (id: I2531:44627;1219:25709) [Box: x=20365, y=51659, w=20, h=20]
+                                [RECTANGLE] name: "Rectangle 60" (id: I2531:44627;1219:25710) [Box: x=20370, y=51664, w=10, h=10]
+                    [FRAME] name: "Frame 1010107155" (id: 2531:44629) [Box: x=20088, y=51711, w=624, h=44]
+                      [TEXT] name: "기부금 영수증 발급을 위한 필수 정보입니다. 입력하신 개인정보는 기부금영수증 발급 목적으로만 수집·사용됩니다." (id: 2531:44630) [Box: x=20088, y=51711, w=624, h=44] -> text: "기부금 영수증 발급을 위한 필수 정보입니다.\n입력하신 개인정보는 기부금영수증 발급 목적으로만 수집·사용됩니다. " (Font: Roboto, Size: 16px, Weight: 400, LineHeight: 22px)
+                  [LINE] name: "Sep" (id: 2531:44631) [Box: x=20088, y=51807, w=624, h=0]
+                  [FRAME] name: "수신동의" (id: 2531:44632) [Box: x=20088, y=51859, w=624, h=189]
+                    [FRAME] name: "Frame 1010107156" (id: 2531:44633) [Box: x=20088, y=51859, w=624, h=29]
+                      [TEXT] name: "이용약관, 개인정보 수집 및 이용 활동 안내 수신동의" (id: 2531:44634) [Box: x=20088, y=51859, w=624, h=29] -> text: "이용약관, 개인정보 수집 및 이용 활동 안내 수신동의" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                    [FRAME] name: "Frame 1010106901" (id: 2531:44635) [Box: x=20088, y=51912, w=624, h=136]
+                      [FRAME] name: "all" (id: 2531:44636) [Box: x=20088, y=51912, w=152, h=22]
+                        [TEXT] name: "모두 동의합니다." (id: 2531:44638) [Box: x=20116, y=51912, w=124, h=22] -> text: "모두 동의합니다." (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                        [INSTANCE] name: "checkbox" (id: 2531:44637) [Box: x=20088, y=51913, w=20, h=20]
+                          [RECTANGLE] name: "Rectangle 59" (id: I2531:44637;1193:26415) [Box: x=20088, y=51913, w=20, h=20]
+                          [VECTOR] name: "Vector 5" (id: I2531:44637;1193:26416) [Box: x=20094, y=51920, w=9, h=6]
+                      [FRAME] name: "line" (id: 2531:44639) [Box: x=20088, y=51950, w=680, h=0]
+                        [LINE] name: "Sep" (id: 2531:44640) [Box: x=20088, y=51950, w=680, h=0]
+                      [FRAME] name: "Frame 1010107107" (id: 2531:44641) [Box: x=20088, y=51950, w=624, h=22]
+                        [FRAME] name: "all" (id: 2531:44642) [Box: x=20104, y=51950, w=144, h=22]
+                          [TEXT] name: "[필수] 이용약관" (id: 2531:44644) [Box: x=20132, y=51950, w=116, h=22] -> text: "[필수] 이용약관" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                          [INSTANCE] name: "checkbox" (id: 2531:44643) [Box: x=20104, y=51951, w=20, h=20]
+                            [RECTANGLE] name: "Rectangle 59" (id: I2531:44643;1193:26418) [Box: x=20104, y=51951, w=20, h=20]
+                            [VECTOR] name: "Vector 5" (id: I2531:44643;1193:26419) [Box: x=20110, y=51958, w=9, h=6]
+                        [TEXT] name: "자세히 보기" (id: 2531:44645) [Box: x=20622, y=51951, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                      [FRAME] name: "Frame 1010107108" (id: 2531:44646) [Box: x=20088, y=51988, w=624, h=22]
+                        [FRAME] name: "all" (id: 2531:44647) [Box: x=20104, y=51988, w=238, h=22]
+                          [TEXT] name: "[필수] 개인정보 수집 및 이용" (id: 2531:44649) [Box: x=20132, y=51988, w=210, h=22] -> text: "[필수] 개인정보 수집 및 이용" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                          [INSTANCE] name: "checkbox" (id: 2531:44648) [Box: x=20104, y=51989, w=20, h=20]
+                            [RECTANGLE] name: "Rectangle 59" (id: I2531:44648;1193:26418) [Box: x=20104, y=51989, w=20, h=20]
+                            [VECTOR] name: "Vector 5" (id: I2531:44648;1193:26419) [Box: x=20110, y=51996, w=9, h=6]
+                        [TEXT] name: "자세히 보기" (id: 2531:44650) [Box: x=20622, y=51989, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                      [FRAME] name: "Frame 1010107109" (id: 2531:44651) [Box: x=20088, y=52026, w=624, h=22]
+                        [FRAME] name: "all" (id: 2531:44652) [Box: x=20104, y=52026, w=295, h=22]
+                          [TEXT] name: "[선택] 소식지 및 활동 알림 수신 동의" (id: 2531:44654) [Box: x=20132, y=52026, w=267, h=22] -> text: "[선택] 소식지 및 활동 알림 수신 동의" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                          [INSTANCE] name: "checkbox" (id: 2531:44653) [Box: x=20104, y=52027, w=20, h=20]
+                            [RECTANGLE] name: "Rectangle 59" (id: I2531:44653;1193:26418) [Box: x=20104, y=52027, w=20, h=20]
+                            [VECTOR] name: "Vector 5" (id: I2531:44653;1193:26419) [Box: x=20110, y=52034, w=9, h=6]
+                        [TEXT] name: "자세히 보기" (id: 2531:44655) [Box: x=20622, y=52027, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+            [FRAME] name: "PASS 인증완료" (id: 2531:44738) [Box: x=20088, y=50848, w=624, h=1461]
+              [FRAME] name: "간편인증완료" (id: 2531:44739) [Box: x=20088, y=50848, w=624, h=1461]
+                [FRAME] name: "간편인증" (id: 2531:44740) [Box: x=20088, y=50848, w=624, h=126]
+                  [TEXT] name: "번거로운 회원가입 대신 간편인증으로 빠르게 시작하세요. * 만 14세 미만은 보호자 명의로 후원해 주세요." (id: 2531:44741) [Box: x=20088, y=50848, w=624, h=50] -> text: "번거로운 회원가입 대신 간편인증으로 빠르게 시작하세요. * 만 14세 미만은 보호자 명의로 후원해 주세요." (Font: Roboto, Size: 18px, Weight: 400, LineHeight: 25px)
+                  [FRAME] name: "btn" (id: 2531:44742) [Box: x=20088, y=50922, w=624, h=52]
+                    [FRAME] name: "Frame 1010106889" (id: 2531:44743) [Box: x=20088, y=50922, w=624, h=52]
+                      [FRAME] name: "카카오로 빠르게 시작하기" (id: 2531:44744) [Box: x=20088, y=50922, w=306, h=52]
+                        [RECTANGLE] name: "kakao_icon" (id: 2531:44745) [Box: x=20142, y=50934, w=27, h=28]
+                        [TEXT] name: "카카오로 빠르게 시작하기" (id: 2531:44746) [Box: x=20179, y=50938, w=161, h=21] -> text: "카카오로 빠르게 시작하기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                      [FRAME] name: "Frame 1010106886" (id: 2531:44747) [Box: x=20406, y=50922, w=306, h=52]
+                        [TEXT] name: "휴대폰 본인인증 완료" (id: 2531:44749) [Box: x=20500, y=50935, w=150, h=27] -> text: "휴대폰 본인인증 완료" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                        [VECTOR] name: "Vector" (id: 2531:44748) [Box: x=20469, y=50938, w=21, h=21]
+                [LINE] name: "Sep" (id: 2531:44750) [Box: x=20088, y=51026, w=624, h=0]
+                [FRAME] name: "후원자 기본 정보" (id: 2531:44751) [Box: x=20088, y=51078, w=624, h=461]
+                  [FRAME] name: "Frame 1010107159" (id: 2531:44752) [Box: x=20088, y=51078, w=624, h=461]
+                    [FRAME] name: "Frame 1010107155" (id: 2531:44753) [Box: x=20088, y=51078, w=624, h=72]
+                      [TEXT] name: "후원자 기본 정보 (인증 정보)" (id: 2531:44754) [Box: x=20088, y=51078, w=624, h=29] -> text: "후원자 기본 정보 (인증 정보)" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                      [TEXT] name: "정보를 확인한 후 결제를 진행해 주세요." (id: 2531:44755) [Box: x=20088, y=51123, w=624, h=27] -> text: "정보를 확인한 후 결제를 진행해 주세요." (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                    [FRAME] name: "form" (id: 2531:44756) [Box: x=20088, y=51174, w=624, h=365]
+                      [FRAME] name: "이름" (id: 2531:44757) [Box: x=20112, y=51214, w=576, h=52]
+                        [FRAME] name: "title" (id: 2531:44758) [Box: x=20112, y=51214, w=120, h=52]
+                          [TEXT] name: "*이름" (id: 2531:44759) [Box: x=20112, y=51229, w=40, h=22] -> text: "*이름" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                        [INSTANCE] name: "TextField" (id: 2531:44760) [Box: x=20272, y=51214, w=416, h=52]
+                          [FRAME] name: "text" (id: I2531:44760;1581:45631) [Box: x=20272, y=51214, w=480, h=52]
+                            [TEXT] name: "Readonly Text" (id: I2531:44760;1581:45632) [Box: x=20288, y=51227, w=416, h=27] -> text: "로날드" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                            [INSTANCE] name: "icon" (id: I2531:44760;1581:45633) [Box: x=20712, y=51228, w=24, h=24]
+                              [FRAME] name: "icon" (id: I2531:44760;1581:45633;1203:24244) [Box: x=20712, y=51228, w=24, h=24]
+                                [FRAME] name: "eye-off" (id: I2531:44760;1581:45633;1203:24245) [Box: x=20714, y=51230, w=20, h=20]
+                                  [VECTOR] name: "Vector" (id: I2531:44760;1581:45633;1203:24246) [Box: x=20717, y=51233, w=15, h=15]
+                                  [VECTOR] name: "Vector" (id: I2531:44760;1581:45633;1203:24249) [Box: x=20724, y=51235, w=8, h=6]
+                                  [VECTOR] name: "Vector" (id: I2531:44760;1581:45633;1203:24248) [Box: x=20717, y=51236, w=11, h=9]
+                                  [VECTOR] name: "Vector" (id: I2531:44760;1581:45633;1203:24247) [Box: x=20722, y=51239, w=3, h=3]
+                          [FRAME] name: "helper text" (id: I2531:44760;1581:45634) [Box: x=20272, y=51274, w=239, h=19]
+                            [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44760;1581:45635) [Box: x=20272, y=51274, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                          [FRAME] name: "error text" (id: I2531:44760;1581:45636) [Box: x=20272, y=51274, w=239, h=19]
+                            [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44760;1581:45637) [Box: x=20272, y=51274, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                      [FRAME] name: "생년월일" (id: 2531:44761) [Box: x=20112, y=51282, w=576, h=52]
+                        [FRAME] name: "title" (id: 2531:44762) [Box: x=20112, y=51282, w=120, h=52]
+                          [TEXT] name: "*생년월일" (id: 2531:44763) [Box: x=20112, y=51297, w=73, h=22] -> text: "*생년월일" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                        [INSTANCE] name: "TextField" (id: 2531:44764) [Box: x=20272, y=51282, w=416, h=52]
+                          [FRAME] name: "text" (id: I2531:44764;1581:45631) [Box: x=20272, y=51282, w=480, h=52]
+                            [TEXT] name: "Readonly Text" (id: I2531:44764;1581:45632) [Box: x=20288, y=51295, w=416, h=27] -> text: "19880101" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                            [INSTANCE] name: "icon" (id: I2531:44764;1581:45633) [Box: x=20712, y=51296, w=24, h=24]
+                              [FRAME] name: "icon" (id: I2531:44764;1581:45633;1203:24244) [Box: x=20712, y=51296, w=24, h=24]
+                                [FRAME] name: "eye-off" (id: I2531:44764;1581:45633;1203:24245) [Box: x=20714, y=51298, w=20, h=20]
+                                  [VECTOR] name: "Vector" (id: I2531:44764;1581:45633;1203:24246) [Box: x=20717, y=51301, w=15, h=15]
+                                  [VECTOR] name: "Vector" (id: I2531:44764;1581:45633;1203:24249) [Box: x=20724, y=51303, w=8, h=6]
+                                  [VECTOR] name: "Vector" (id: I2531:44764;1581:45633;1203:24248) [Box: x=20717, y=51304, w=11, h=9]
+                                  [VECTOR] name: "Vector" (id: I2531:44764;1581:45633;1203:24247) [Box: x=20722, y=51307, w=3, h=3]
+                          [FRAME] name: "helper text" (id: I2531:44764;1581:45634) [Box: x=20272, y=51342, w=239, h=19]
+                            [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44764;1581:45635) [Box: x=20272, y=51342, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                          [FRAME] name: "error text" (id: I2531:44764;1581:45636) [Box: x=20272, y=51342, w=239, h=19]
+                            [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44764;1581:45637) [Box: x=20272, y=51342, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                      [FRAME] name: "성별" (id: 2531:44765) [Box: x=20112, y=51350, w=576, h=52]
+                        [FRAME] name: "Frame 1010107100" (id: 2531:44766) [Box: x=20112, y=51350, w=120, h=52]
+                          [TEXT] name: "*성별" (id: 2531:44767) [Box: x=20112, y=51365, w=40, h=22] -> text: "*성별" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                        [FRAME] name: "Frame 1010107105" (id: 2531:44768) [Box: x=20272, y=51365, w=416, h=22]
+                          [FRAME] name: "남성" (id: 2531:44769) [Box: x=20272, y=51365, w=62, h=22]
+                            [FRAME] name: "all" (id: 2531:44770) [Box: x=20272, y=51365, w=62, h=22]
+                              [TEXT] name: "남성" (id: 2531:44772) [Box: x=20300, y=51365, w=34, h=22] -> text: "남성" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                              [INSTANCE] name: "radio-btn" (id: 2531:44771) [Box: x=20272, y=51366, w=20, h=20]
+                                [GROUP] name: "Group 30" (id: I2531:44771;1219:25702) [Box: x=20272, y=51366, w=20, h=20]
+                                  [RECTANGLE] name: "Rectangle 59" (id: I2531:44771;1219:25703) [Box: x=20272, y=51366, w=20, h=20]
+                                  [RECTANGLE] name: "Rectangle 60" (id: I2531:44771;1219:25704) [Box: x=20277, y=51371, w=10, h=10]
+                          [FRAME] name: "여성" (id: 2531:44773) [Box: x=20272, y=51365, w=34, h=22]
+                            [FRAME] name: "all" (id: 2531:44774) [Box: x=20272, y=51365, w=34, h=22]
+                              [TEXT] name: "여성" (id: 2531:44776) [Box: x=20272, y=51365, w=34, h=22] -> text: "여성" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                              [INSTANCE] name: "radio-btn" (id: 2531:44775) [Box: x=20272, y=51366, w=20, h=20]
+                                [GROUP] name: "Group 30" (id: I2531:44775;1219:25708) [Box: x=20272, y=51366, w=20, h=20]
+                                  [RECTANGLE] name: "Rectangle 59" (id: I2531:44775;1219:25709) [Box: x=20272, y=51366, w=20, h=20]
+                                  [RECTANGLE] name: "Rectangle 60" (id: I2531:44775;1219:25710) [Box: x=20277, y=51371, w=10, h=10]
+                      [FRAME] name: "휴대폰번호" (id: 2531:44777) [Box: x=20112, y=51418, w=576, h=81]
+                        [FRAME] name: "title" (id: 2531:44778) [Box: x=20112, y=51418, w=120, h=52]
+                          [TEXT] name: "*이메일" (id: 2531:44779) [Box: x=20112, y=51433, w=56, h=22] -> text: "*이메일" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                        [INSTANCE] name: "TextField" (id: 2531:44780) [Box: x=20272, y=51418, w=416, h=81]
+                          [FRAME] name: "text" (id: I2531:44780;1582:46219) [Box: x=20272, y=51418, w=480, h=52]
+                            [TEXT] name: "Input Text" (id: I2531:44780;1582:46220) [Box: x=20288, y=51431, w=416, h=27] -> text: "rmhc@gmail.com" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                            [INSTANCE] name: "icon" (id: I2531:44780;1582:46221) [Box: x=20712, y=51432, w=24, h=24]
+                              [FRAME] name: "icon" (id: I2531:44780;1582:46221;1203:24244) [Box: x=20712, y=51432, w=24, h=24]
+                                [FRAME] name: "eye-off" (id: I2531:44780;1582:46221;1203:24245) [Box: x=20714, y=51434, w=20, h=20]
+                                  [VECTOR] name: "Vector" (id: I2531:44780;1582:46221;1203:24246) [Box: x=20717, y=51437, w=15, h=15]
+                                  [VECTOR] name: "Vector" (id: I2531:44780;1582:46221;1203:24249) [Box: x=20724, y=51439, w=8, h=6]
+                                  [VECTOR] name: "Vector" (id: I2531:44780;1582:46221;1203:24248) [Box: x=20717, y=51440, w=11, h=9]
+                                  [VECTOR] name: "Vector" (id: I2531:44780;1582:46221;1203:24247) [Box: x=20722, y=51443, w=3, h=3]
+                          [FRAME] name: "helper text" (id: I2531:44780;1582:46222) [Box: x=20272, y=51478, w=227, h=21]
+                            [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44780;1582:46223) [Box: x=20272, y=51478, w=227, h=21] -> text: "카카오 계정에 등록된 이메일입니다. 필요 시 수정해 주세요." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                          [FRAME] name: "error text" (id: I2531:44780;1582:46224) [Box: x=20272, y=51478, w=239, h=19]
+                            [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44780;1582:46225) [Box: x=20272, y=51478, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                [LINE] name: "Sep" (id: 2531:44781) [Box: x=20088, y=51591, w=624, h=0]
+                [FRAME] name: "기부금영수증" (id: 2531:44782) [Box: x=20088, y=51643, w=624, h=373]
+                  [FRAME] name: "Frame 1010107160" (id: 2531:44783) [Box: x=20088, y=51643, w=624, h=52]
+                    [FRAME] name: "Frame 1010107100" (id: 2531:44784) [Box: x=20088, y=51643, w=160, h=52]
+                      [TEXT] name: "*기부금 영수증" (id: 2531:44785) [Box: x=20088, y=51655, w=131, h=29] -> text: "*기부금 영수증" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                    [FRAME] name: "Frame 1010107105" (id: 2531:44786) [Box: x=20288, y=51658, w=424, h=22]
+                      [FRAME] name: "남성" (id: 2531:44787) [Box: x=20288, y=51658, w=45, h=22]
+                        [FRAME] name: "all" (id: 2531:44788) [Box: x=20288, y=51658, w=45, h=22]
+                          [TEXT] name: "예" (id: 2531:44790) [Box: x=20316, y=51658, w=17, h=22] -> text: "예" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                          [INSTANCE] name: "radio-btn" (id: 2531:44789) [Box: x=20288, y=51659, w=20, h=20]
+                            [GROUP] name: "Group 30" (id: I2531:44789;1219:25702) [Box: x=20288, y=51659, w=20, h=20]
+                              [RECTANGLE] name: "Rectangle 59" (id: I2531:44789;1219:25703) [Box: x=20288, y=51659, w=20, h=20]
+                              [RECTANGLE] name: "Rectangle 60" (id: I2531:44789;1219:25704) [Box: x=20293, y=51664, w=10, h=10]
+                      [FRAME] name: "남성" (id: 2531:44791) [Box: x=20365, y=51658, w=78, h=22]
+                        [FRAME] name: "all" (id: 2531:44792) [Box: x=20365, y=51658, w=78, h=22]
+                          [TEXT] name: "아니오" (id: 2531:44794) [Box: x=20393, y=51658, w=50, h=22] -> text: "아니오" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                          [INSTANCE] name: "radio-btn" (id: 2531:44793) [Box: x=20365, y=51659, w=20, h=20]
+                            [GROUP] name: "Group 30" (id: I2531:44793;1219:25708) [Box: x=20365, y=51659, w=20, h=20]
+                              [RECTANGLE] name: "Rectangle 59" (id: I2531:44793;1219:25709) [Box: x=20365, y=51659, w=20, h=20]
+                              [RECTANGLE] name: "Rectangle 60" (id: I2531:44793;1219:25710) [Box: x=20370, y=51664, w=10, h=10]
+                  [FRAME] name: "Frame 1010107155" (id: 2531:44795) [Box: x=20088, y=51711, w=624, h=44]
+                    [TEXT] name: "기부금 영수증 발급을 위한 필수 정보입니다. 입력하신 개인정보는 기부금영수증 발급 목적으로만 수집·사용됩니다." (id: 2531:44796) [Box: x=20088, y=51711, w=624, h=44] -> text: "기부금 영수증 발급을 위한 필수 정보입니다.\n입력하신 개인정보는 기부금영수증 발급 목적으로만 수집·사용됩니다. " (Font: Roboto, Size: 16px, Weight: 400, LineHeight: 22px)
+                  [FRAME] name: "주민등록번호" (id: 2531:44797) [Box: x=20088, y=51771, w=624, h=245]
+                    [FRAME] name: "후원금액" (id: 2531:44798) [Box: x=20112, y=51803, w=576, h=181]
+                      [FRAME] name: "title" (id: 2531:44799) [Box: x=20112, y=51803, w=94, h=27]
+                        [TEXT] name: "주민등록번호" (id: 2531:44800) [Box: x=20112, y=51803, w=94, h=27] -> text: "주민등록번호" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                      [FRAME] name: "form" (id: 2531:44801) [Box: x=20112, y=51854, w=576, h=52]
+                        [INSTANCE] name: "TextField" (id: 2531:44802) [Box: x=20112, y=51854, w=276, h=52]
+                          [FRAME] name: "text" (id: I2531:44802;1581:45717) [Box: x=20112, y=51854, w=480, h=52]
+                            [TEXT] name: "Readonly Text" (id: I2531:44802;1581:45718) [Box: x=20128, y=51867, w=416, h=27] -> text: "198801010" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                            [INSTANCE] name: "icon" (id: I2531:44802;1581:45719) [Box: x=20552, y=51868, w=24, h=24]
+                              [FRAME] name: "icon" (id: I2531:44802;1581:45719;1203:24244) [Box: x=20552, y=51868, w=24, h=24]
+                                [FRAME] name: "eye-off" (id: I2531:44802;1581:45719;1203:24245) [Box: x=20554, y=51870, w=20, h=20]
+                                  [VECTOR] name: "Vector" (id: I2531:44802;1581:45719;1203:24246) [Box: x=20557, y=51873, w=15, h=15]
+                                  [VECTOR] name: "Vector" (id: I2531:44802;1581:45719;1203:24249) [Box: x=20564, y=51875, w=8, h=6]
+                                  [VECTOR] name: "Vector" (id: I2531:44802;1581:45719;1203:24248) [Box: x=20557, y=51876, w=11, h=9]
+                                  [VECTOR] name: "Vector" (id: I2531:44802;1581:45719;1203:24247) [Box: x=20562, y=51879, w=3, h=3]
+                          [FRAME] name: "helper text" (id: I2531:44802;1581:45720) [Box: x=20112, y=51914, w=239, h=19]
+                            [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44802;1581:45721) [Box: x=20112, y=51914, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                          [FRAME] name: "error text" (id: I2531:44802;1581:45722) [Box: x=20112, y=51914, w=239, h=19]
+                            [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44802;1581:45723) [Box: x=20112, y=51914, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                        [INSTANCE] name: "TextField" (id: 2531:44804) [Box: x=20412, y=51854, w=276, h=52]
+                          [FRAME] name: "text" (id: I2531:44804;1581:45717) [Box: x=20412, y=51854, w=480, h=52]
+                            [TEXT] name: "Readonly Text" (id: I2531:44804;1581:45718) [Box: x=20428, y=51867, w=416, h=27] -> text: "*******" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                            [INSTANCE] name: "icon" (id: I2531:44804;1581:45719) [Box: x=20852, y=51868, w=24, h=24]
+                              [FRAME] name: "icon" (id: I2531:44804;1581:45719;1203:24244) [Box: x=20852, y=51868, w=24, h=24]
+                                [FRAME] name: "eye-off" (id: I2531:44804;1581:45719;1203:24245) [Box: x=20854, y=51870, w=20, h=20]
+                                  [VECTOR] name: "Vector" (id: I2531:44804;1581:45719;1203:24246) [Box: x=20857, y=51873, w=15, h=15]
+                                  [VECTOR] name: "Vector" (id: I2531:44804;1581:45719;1203:24249) [Box: x=20864, y=51875, w=8, h=6]
+                                  [VECTOR] name: "Vector" (id: I2531:44804;1581:45719;1203:24248) [Box: x=20857, y=51876, w=11, h=9]
+                                  [VECTOR] name: "Vector" (id: I2531:44804;1581:45719;1203:24247) [Box: x=20862, y=51879, w=3, h=3]
+                          [FRAME] name: "helper text" (id: I2531:44804;1581:45720) [Box: x=20412, y=51914, w=239, h=19]
+                            [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44804;1581:45721) [Box: x=20412, y=51914, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                          [FRAME] name: "error text" (id: I2531:44804;1581:45722) [Box: x=20412, y=51914, w=239, h=19]
+                            [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44804;1581:45723) [Box: x=20412, y=51914, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                        [VECTOR] name: "Vector 8" (id: 2531:44803) [Box: x=20396, y=51880, w=8, h=0]
+                      [FRAME] name: "Frame 1010106897" (id: 2531:44805) [Box: x=20112, y=51930, w=576, h=54]
+                        [FRAME] name: "Frame 245" (id: 2531:44806) [Box: x=20112, y=51930, w=576, h=54]
+                          [TEXT] name: "연말정산 간소화 서비스 등록을 위해 주민등록번호와 주소를 정확히 입력해 주세요. 기부금 영수증은 국세청 홈택스 '간소화 서비스'를 통해 상시 조회 가능합니다. 수집된 정보는 관련 법령에 따라 5년간 안전하게 보관됩니다." (id: 2531:44807) [Box: x=20112, y=51930, w=576, h=54] -> text: "연말정산 간소화 서비스 등록을 위해 주민등록번호와 주소를 정확히 입력해 주세요. \n기부금 영수증은 국세청 홈택스 '간소화 서비스'를 통해 상시 조회 가능합니다. 수집된 정보는 관련 법령에 따라 5년간 안전하게 보관됩니다." (Font: Pretendard, Size: 14px, Weight: 400, LineHeight: 18px)
+                [LINE] name: "Sep" (id: 2531:44808) [Box: x=20088, y=52068, w=624, h=0]
+                [FRAME] name: "수신동의" (id: 2531:44809) [Box: x=20088, y=52120, w=624, h=189]
+                  [FRAME] name: "Frame 1010107156" (id: 2531:44810) [Box: x=20088, y=52120, w=624, h=29]
+                    [TEXT] name: "이용약관, 개인정보 수집 및 이용 활동 안내 수신동의" (id: 2531:44811) [Box: x=20088, y=52120, w=624, h=29] -> text: "이용약관, 개인정보 수집 및 이용 활동 안내 수신동의" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                  [FRAME] name: "Frame 1010106901" (id: 2531:44812) [Box: x=20088, y=52173, w=624, h=136]
+                    [FRAME] name: "all" (id: 2531:44813) [Box: x=20088, y=52173, w=152, h=22]
+                      [TEXT] name: "모두 동의합니다." (id: 2531:44815) [Box: x=20116, y=52173, w=124, h=22] -> text: "모두 동의합니다." (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                      [INSTANCE] name: "checkbox" (id: 2531:44814) [Box: x=20088, y=52174, w=20, h=20]
+                        [RECTANGLE] name: "Rectangle 59" (id: I2531:44814;1193:26415) [Box: x=20088, y=52174, w=20, h=20]
+                        [VECTOR] name: "Vector 5" (id: I2531:44814;1193:26416) [Box: x=20094, y=52181, w=9, h=6]
+                    [FRAME] name: "line" (id: 2531:44816) [Box: x=20088, y=52211, w=680, h=0]
+                      [LINE] name: "Sep" (id: 2531:44817) [Box: x=20088, y=52211, w=680, h=0]
+                    [FRAME] name: "Frame 1010107107" (id: 2531:44818) [Box: x=20088, y=52211, w=624, h=22]
+                      [FRAME] name: "all" (id: 2531:44819) [Box: x=20104, y=52211, w=144, h=22]
+                        [TEXT] name: "[필수] 이용약관" (id: 2531:44821) [Box: x=20132, y=52211, w=116, h=22] -> text: "[필수] 이용약관" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                        [INSTANCE] name: "checkbox" (id: 2531:44820) [Box: x=20104, y=52212, w=20, h=20]
+                          [RECTANGLE] name: "Rectangle 59" (id: I2531:44820;1193:26418) [Box: x=20104, y=52212, w=20, h=20]
+                          [VECTOR] name: "Vector 5" (id: I2531:44820;1193:26419) [Box: x=20110, y=52219, w=9, h=6]
+                      [TEXT] name: "자세히 보기" (id: 2531:44822) [Box: x=20622, y=52212, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                    [FRAME] name: "Frame 1010107108" (id: 2531:44823) [Box: x=20088, y=52249, w=624, h=22]
+                      [FRAME] name: "all" (id: 2531:44824) [Box: x=20104, y=52249, w=238, h=22]
+                        [TEXT] name: "[필수] 개인정보 수집 및 이용" (id: 2531:44826) [Box: x=20132, y=52249, w=210, h=22] -> text: "[필수] 개인정보 수집 및 이용" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                        [INSTANCE] name: "checkbox" (id: 2531:44825) [Box: x=20104, y=52250, w=20, h=20]
+                          [RECTANGLE] name: "Rectangle 59" (id: I2531:44825;1193:26418) [Box: x=20104, y=52250, w=20, h=20]
+                          [VECTOR] name: "Vector 5" (id: I2531:44825;1193:26419) [Box: x=20110, y=52257, w=9, h=6]
+                      [TEXT] name: "자세히 보기" (id: 2531:44827) [Box: x=20622, y=52250, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                    [FRAME] name: "Frame 1010107109" (id: 2531:44828) [Box: x=20088, y=52287, w=624, h=22]
+                      [FRAME] name: "all" (id: 2531:44829) [Box: x=20104, y=52287, w=295, h=22]
+                        [TEXT] name: "[선택] 소식지 및 활동 알림 수신 동의" (id: 2531:44831) [Box: x=20132, y=52287, w=267, h=22] -> text: "[선택] 소식지 및 활동 알림 수신 동의" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                        [INSTANCE] name: "checkbox" (id: 2531:44830) [Box: x=20104, y=52288, w=20, h=20]
+                          [RECTANGLE] name: "Rectangle 59" (id: I2531:44830;1193:26418) [Box: x=20104, y=52288, w=20, h=20]
+                          [VECTOR] name: "Vector 5" (id: I2531:44830;1193:26419) [Box: x=20110, y=52295, w=9, h=6]
+                      [TEXT] name: "자세히 보기" (id: 2531:44832) [Box: x=20622, y=52288, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+            [FRAME] name: "카카오 인증완료" (id: 2531:44656) [Box: x=20088, y=51026, w=624, h=1140]
+              [FRAME] name: "간편인증" (id: 2531:44657) [Box: x=20088, y=51026, w=624, h=126]
+                [TEXT] name: "번거로운 회원가입 대신 간편인증으로 빠르게 시작하세요. * 만 14세 미만은 보호자 명의로 후원해 주세요." (id: 2531:44658) [Box: x=20088, y=51026, w=624, h=50] -> text: "번거로운 회원가입 대신 간편인증으로 빠르게 시작하세요. * 만 14세 미만은 보호자 명의로 후원해 주세요." (Font: Roboto, Size: 18px, Weight: 400, LineHeight: 25px)
+                [FRAME] name: "btn" (id: 2531:44659) [Box: x=20088, y=51100, w=624, h=52]
+                  [FRAME] name: "Frame 1010106889" (id: 2531:44660) [Box: x=20088, y=51100, w=624, h=52]
+                    [FRAME] name: "카카오로 인증 완료" (id: 2531:44661) [Box: x=20088, y=51100, w=306, h=52]
+                      [FRAME] name: "lets-icons:check-fill" (id: 2531:44662) [Box: x=20165, y=51114, w=24, h=24]
+                        [VECTOR] name: "Vector" (id: 2531:44663) [Box: x=20166, y=51116, w=21, h=21]
+                      [TEXT] name: "카카오로 인증 완료" (id: 2531:44664) [Box: x=20199, y=51116, w=119, h=21] -> text: "카카오로 인증 완료" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                    [FRAME] name: "휴대폰으로 본인인증 (PASS)" (id: 2531:44665) [Box: x=20406, y=51100, w=306, h=52]
+                      [TEXT] name: "휴대폰으로 본인인증 (PASS)" (id: 2531:44667) [Box: x=20457, y=51113, w=205, h=27] -> text: "휴대폰으로 본인인증 (PASS)" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                      [VECTOR] name: "Vector" (id: 2531:44666) [Box: x=20441, y=51116, w=21, h=21]
+              [LINE] name: "Sep" (id: 2531:44668) [Box: x=20088, y=51204, w=624, h=0]
+              [FRAME] name: "후원자 기본 정보" (id: 2531:44669) [Box: x=20088, y=51256, w=624, h=461]
+                [FRAME] name: "Frame 1010107159" (id: 2531:44670) [Box: x=20088, y=51256, w=624, h=461]
+                  [FRAME] name: "Frame 1010107155" (id: 2531:44671) [Box: x=20088, y=51256, w=624, h=72]
+                    [TEXT] name: "후원자 기본 정보 (인증 정보)" (id: 2531:44672) [Box: x=20088, y=51256, w=624, h=29] -> text: "후원자 기본 정보 (인증 정보)" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                    [TEXT] name: "정보를 확인한 후 결제를 진행해 주세요." (id: 2531:44673) [Box: x=20088, y=51301, w=624, h=27] -> text: "정보를 확인한 후 결제를 진행해 주세요." (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                  [FRAME] name: "form" (id: 2531:44674) [Box: x=20088, y=51352, w=624, h=365]
+                    [FRAME] name: "이름" (id: 2531:44675) [Box: x=20112, y=51392, w=576, h=52]
+                      [FRAME] name: "title" (id: 2531:44676) [Box: x=20112, y=51392, w=120, h=52]
+                        [TEXT] name: "*이름" (id: 2531:44677) [Box: x=20112, y=51407, w=40, h=22] -> text: "*이름" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                      [INSTANCE] name: "TextField" (id: 2531:44678) [Box: x=20272, y=51392, w=416, h=52]
+                        [FRAME] name: "text" (id: I2531:44678;1581:45631) [Box: x=20272, y=51392, w=480, h=52]
+                          [TEXT] name: "Readonly Text" (id: I2531:44678;1581:45632) [Box: x=20288, y=51405, w=416, h=27] -> text: "로날드" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                          [INSTANCE] name: "icon" (id: I2531:44678;1581:45633) [Box: x=20712, y=51406, w=24, h=24]
+                            [FRAME] name: "icon" (id: I2531:44678;1581:45633;1203:24244) [Box: x=20712, y=51406, w=24, h=24]
+                              [FRAME] name: "eye-off" (id: I2531:44678;1581:45633;1203:24245) [Box: x=20714, y=51408, w=20, h=20]
+                                [VECTOR] name: "Vector" (id: I2531:44678;1581:45633;1203:24246) [Box: x=20717, y=51411, w=15, h=15]
+                                [VECTOR] name: "Vector" (id: I2531:44678;1581:45633;1203:24249) [Box: x=20724, y=51413, w=8, h=6]
+                                [VECTOR] name: "Vector" (id: I2531:44678;1581:45633;1203:24248) [Box: x=20717, y=51414, w=11, h=9]
+                                [VECTOR] name: "Vector" (id: I2531:44678;1581:45633;1203:24247) [Box: x=20722, y=51417, w=3, h=3]
+                        [FRAME] name: "helper text" (id: I2531:44678;1581:45634) [Box: x=20272, y=51452, w=239, h=19]
+                          [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44678;1581:45635) [Box: x=20272, y=51452, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                        [FRAME] name: "error text" (id: I2531:44678;1581:45636) [Box: x=20272, y=51452, w=239, h=19]
+                          [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44678;1581:45637) [Box: x=20272, y=51452, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                    [FRAME] name: "생년월일" (id: 2531:44679) [Box: x=20112, y=51460, w=576, h=52]
+                      [FRAME] name: "title" (id: 2531:44680) [Box: x=20112, y=51460, w=120, h=52]
+                        [TEXT] name: "*생년월일" (id: 2531:44681) [Box: x=20112, y=51475, w=73, h=22] -> text: "*생년월일" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                      [INSTANCE] name: "TextField" (id: 2531:44682) [Box: x=20272, y=51460, w=416, h=52]
+                        [FRAME] name: "text" (id: I2531:44682;1581:45631) [Box: x=20272, y=51460, w=480, h=52]
+                          [TEXT] name: "Readonly Text" (id: I2531:44682;1581:45632) [Box: x=20288, y=51473, w=416, h=27] -> text: "19880101" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                          [INSTANCE] name: "icon" (id: I2531:44682;1581:45633) [Box: x=20712, y=51474, w=24, h=24]
+                            [FRAME] name: "icon" (id: I2531:44682;1581:45633;1203:24244) [Box: x=20712, y=51474, w=24, h=24]
+                              [FRAME] name: "eye-off" (id: I2531:44682;1581:45633;1203:24245) [Box: x=20714, y=51476, w=20, h=20]
+                                [VECTOR] name: "Vector" (id: I2531:44682;1581:45633;1203:24246) [Box: x=20717, y=51479, w=15, h=15]
+                                [VECTOR] name: "Vector" (id: I2531:44682;1581:45633;1203:24249) [Box: x=20724, y=51481, w=8, h=6]
+                                [VECTOR] name: "Vector" (id: I2531:44682;1581:45633;1203:24248) [Box: x=20717, y=51482, w=11, h=9]
+                                [VECTOR] name: "Vector" (id: I2531:44682;1581:45633;1203:24247) [Box: x=20722, y=51485, w=3, h=3]
+                        [FRAME] name: "helper text" (id: I2531:44682;1581:45634) [Box: x=20272, y=51520, w=239, h=19]
+                          [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44682;1581:45635) [Box: x=20272, y=51520, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                        [FRAME] name: "error text" (id: I2531:44682;1581:45636) [Box: x=20272, y=51520, w=239, h=19]
+                          [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44682;1581:45637) [Box: x=20272, y=51520, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+                    [FRAME] name: "성별" (id: 2531:44683) [Box: x=20112, y=51528, w=576, h=52]
+                      [FRAME] name: "Frame 1010107100" (id: 2531:44684) [Box: x=20112, y=51528, w=120, h=52]
+                        [TEXT] name: "*성별" (id: 2531:44685) [Box: x=20112, y=51543, w=40, h=22] -> text: "*성별" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                      [FRAME] name: "Frame 1010107105" (id: 2531:44686) [Box: x=20272, y=51543, w=416, h=22]
+                        [FRAME] name: "남성" (id: 2531:44687) [Box: x=20272, y=51543, w=62, h=22]
+                          [FRAME] name: "all" (id: 2531:44688) [Box: x=20272, y=51543, w=62, h=22]
+                            [TEXT] name: "남성" (id: 2531:44690) [Box: x=20300, y=51543, w=34, h=22] -> text: "남성" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                            [INSTANCE] name: "radio-btn" (id: 2531:44689) [Box: x=20272, y=51544, w=20, h=20]
+                              [GROUP] name: "Group 30" (id: I2531:44689;1219:25702) [Box: x=20272, y=51544, w=20, h=20]
+                                [RECTANGLE] name: "Rectangle 59" (id: I2531:44689;1219:25703) [Box: x=20272, y=51544, w=20, h=20]
+                                [RECTANGLE] name: "Rectangle 60" (id: I2531:44689;1219:25704) [Box: x=20277, y=51549, w=10, h=10]
+                        [FRAME] name: "여성" (id: 2531:44691) [Box: x=20272, y=51543, w=34, h=22]
+                          [FRAME] name: "all" (id: 2531:44692) [Box: x=20272, y=51543, w=34, h=22]
+                            [TEXT] name: "여성" (id: 2531:44694) [Box: x=20272, y=51543, w=34, h=22] -> text: "여성" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                            [INSTANCE] name: "radio-btn" (id: 2531:44693) [Box: x=20272, y=51544, w=20, h=20]
+                              [GROUP] name: "Group 30" (id: I2531:44693;1219:25708) [Box: x=20272, y=51544, w=20, h=20]
+                                [RECTANGLE] name: "Rectangle 59" (id: I2531:44693;1219:25709) [Box: x=20272, y=51544, w=20, h=20]
+                                [RECTANGLE] name: "Rectangle 60" (id: I2531:44693;1219:25710) [Box: x=20277, y=51549, w=10, h=10]
+                    [FRAME] name: "휴대폰번호" (id: 2531:44695) [Box: x=20112, y=51596, w=576, h=81]
+                      [FRAME] name: "title" (id: 2531:44696) [Box: x=20112, y=51596, w=120, h=52]
+                        [TEXT] name: "*이메일" (id: 2531:44697) [Box: x=20112, y=51611, w=56, h=22] -> text: "*이메일" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                      [INSTANCE] name: "TextField" (id: 2531:44698) [Box: x=20272, y=51596, w=416, h=81]
+                        [FRAME] name: "text" (id: I2531:44698;1582:46219) [Box: x=20272, y=51596, w=480, h=52]
+                          [TEXT] name: "Input Text" (id: I2531:44698;1582:46220) [Box: x=20288, y=51609, w=416, h=27] -> text: "rmhc@gmail.com" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                          [INSTANCE] name: "icon" (id: I2531:44698;1582:46221) [Box: x=20712, y=51610, w=24, h=24]
+                            [FRAME] name: "icon" (id: I2531:44698;1582:46221;1203:24244) [Box: x=20712, y=51610, w=24, h=24]
+                              [FRAME] name: "eye-off" (id: I2531:44698;1582:46221;1203:24245) [Box: x=20714, y=51612, w=20, h=20]
+                                [VECTOR] name: "Vector" (id: I2531:44698;1582:46221;1203:24246) [Box: x=20717, y=51615, w=15, h=15]
+                                [VECTOR] name: "Vector" (id: I2531:44698;1582:46221;1203:24249) [Box: x=20724, y=51617, w=8, h=6]
+                                [VECTOR] name: "Vector" (id: I2531:44698;1582:46221;1203:24248) [Box: x=20717, y=51618, w=11, h=9]
+                                [VECTOR] name: "Vector" (id: I2531:44698;1582:46221;1203:24247) [Box: x=20722, y=51621, w=3, h=3]
+                        [FRAME] name: "helper text" (id: I2531:44698;1582:46222) [Box: x=20272, y=51656, w=227, h=21]
+                          [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44698;1582:46223) [Box: x=20272, y=51656, w=227, h=21] -> text: "카카오 계정에 등록된 이메일입니다. 필요 시 수정해 주세요." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                        [FRAME] name: "error text" (id: I2531:44698;1582:46224) [Box: x=20272, y=51656, w=239, h=19]
+                          [TEXT] name: "6~15자 영문, 숫자를 포함해 주세요." (id: I2531:44698;1582:46225) [Box: x=20272, y=51656, w=239, h=19] -> text: "6~15자 영문, 숫자를 포함해 주세요." (Font: Roboto, Size: 16px, Weight: 500, LineHeight: 19px)
+              [LINE] name: "Sep" (id: 2531:44699) [Box: x=20088, y=51769, w=624, h=0]
+              [FRAME] name: "기부금영수증" (id: 2531:44700) [Box: x=20088, y=51821, w=624, h=52]
+                [FRAME] name: "Frame 1010107160" (id: 2531:44701) [Box: x=20088, y=51821, w=624, h=52]
+                  [FRAME] name: "Frame 1010107100" (id: 2531:44702) [Box: x=20088, y=51821, w=160, h=52]
+                    [TEXT] name: "*기부금 영수증" (id: 2531:44703) [Box: x=20088, y=51833, w=131, h=29] -> text: "*기부금 영수증" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                  [FRAME] name: "Frame 1010107105" (id: 2531:44704) [Box: x=20288, y=51836, w=424, h=22]
+                    [FRAME] name: "남성" (id: 2531:44705) [Box: x=20288, y=51836, w=45, h=22]
+                      [FRAME] name: "all" (id: 2531:44706) [Box: x=20288, y=51836, w=45, h=22]
+                        [TEXT] name: "예" (id: 2531:44708) [Box: x=20316, y=51836, w=17, h=22] -> text: "예" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                        [INSTANCE] name: "radio-btn" (id: 2531:44707) [Box: x=20288, y=51837, w=20, h=20]
+                          [GROUP] name: "Group 30" (id: I2531:44707;1219:25708) [Box: x=20288, y=51837, w=20, h=20]
+                            [RECTANGLE] name: "Rectangle 59" (id: I2531:44707;1219:25709) [Box: x=20288, y=51837, w=20, h=20]
+                            [RECTANGLE] name: "Rectangle 60" (id: I2531:44707;1219:25710) [Box: x=20293, y=51842, w=10, h=10]
+                    [FRAME] name: "남성" (id: 2531:44709) [Box: x=20365, y=51836, w=78, h=22]
+                      [FRAME] name: "all" (id: 2531:44710) [Box: x=20365, y=51836, w=78, h=22]
+                        [TEXT] name: "아니오" (id: 2531:44712) [Box: x=20393, y=51836, w=50, h=22] -> text: "아니오" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                        [INSTANCE] name: "radio-btn" (id: 2531:44711) [Box: x=20365, y=51837, w=20, h=20]
+                          [GROUP] name: "Group 30" (id: I2531:44711;1219:25708) [Box: x=20365, y=51837, w=20, h=20]
+                            [RECTANGLE] name: "Rectangle 59" (id: I2531:44711;1219:25709) [Box: x=20365, y=51837, w=20, h=20]
+                            [RECTANGLE] name: "Rectangle 60" (id: I2531:44711;1219:25710) [Box: x=20370, y=51842, w=10, h=10]
+              [LINE] name: "Sep" (id: 2531:44713) [Box: x=20088, y=51925, w=624, h=0]
+              [FRAME] name: "수신동의" (id: 2531:44714) [Box: x=20088, y=51977, w=624, h=189]
+                [FRAME] name: "Frame 1010107156" (id: 2531:44715) [Box: x=20088, y=51977, w=624, h=29]
+                  [TEXT] name: "이용약관, 개인정보 수집 및 이용 활동 안내 수신동의" (id: 2531:44716) [Box: x=20088, y=51977, w=624, h=29] -> text: "이용약관, 개인정보 수집 및 이용 활동 안내 수신동의" (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                [FRAME] name: "Frame 1010106901" (id: 2531:44717) [Box: x=20088, y=52030, w=624, h=136]
+                  [FRAME] name: "all" (id: 2531:44718) [Box: x=20088, y=52030, w=152, h=22]
+                    [TEXT] name: "모두 동의합니다." (id: 2531:44720) [Box: x=20116, y=52030, w=124, h=22] -> text: "모두 동의합니다." (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                    [INSTANCE] name: "checkbox" (id: 2531:44719) [Box: x=20088, y=52031, w=20, h=20]
+                      [RECTANGLE] name: "Rectangle 59" (id: I2531:44719;1193:26415) [Box: x=20088, y=52031, w=20, h=20]
+                      [VECTOR] name: "Vector 5" (id: I2531:44719;1193:26416) [Box: x=20094, y=52038, w=9, h=6]
+                  [FRAME] name: "line" (id: 2531:44721) [Box: x=20088, y=52068, w=680, h=0]
+                    [LINE] name: "Sep" (id: 2531:44722) [Box: x=20088, y=52068, w=680, h=0]
+                  [FRAME] name: "Frame 1010107107" (id: 2531:44723) [Box: x=20088, y=52068, w=624, h=22]
+                    [FRAME] name: "all" (id: 2531:44724) [Box: x=20104, y=52068, w=144, h=22]
+                      [TEXT] name: "[필수] 이용약관" (id: 2531:44726) [Box: x=20132, y=52068, w=116, h=22] -> text: "[필수] 이용약관" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                      [INSTANCE] name: "checkbox" (id: 2531:44725) [Box: x=20104, y=52069, w=20, h=20]
+                        [RECTANGLE] name: "Rectangle 59" (id: I2531:44725;1193:26418) [Box: x=20104, y=52069, w=20, h=20]
+                        [VECTOR] name: "Vector 5" (id: I2531:44725;1193:26419) [Box: x=20110, y=52076, w=9, h=6]
+                    [TEXT] name: "자세히 보기" (id: 2531:44727) [Box: x=20622, y=52069, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                  [FRAME] name: "Frame 1010107108" (id: 2531:44728) [Box: x=20088, y=52106, w=624, h=22]
+                    [FRAME] name: "all" (id: 2531:44729) [Box: x=20104, y=52106, w=238, h=22]
+                      [TEXT] name: "[필수] 개인정보 수집 및 이용" (id: 2531:44731) [Box: x=20132, y=52106, w=210, h=22] -> text: "[필수] 개인정보 수집 및 이용" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                      [INSTANCE] name: "checkbox" (id: 2531:44730) [Box: x=20104, y=52107, w=20, h=20]
+                        [RECTANGLE] name: "Rectangle 59" (id: I2531:44730;1193:26418) [Box: x=20104, y=52107, w=20, h=20]
+                        [VECTOR] name: "Vector 5" (id: I2531:44730;1193:26419) [Box: x=20110, y=52114, w=9, h=6]
+                    [TEXT] name: "자세히 보기" (id: 2531:44732) [Box: x=20622, y=52107, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                  [FRAME] name: "Frame 1010107109" (id: 2531:44733) [Box: x=20088, y=52144, w=624, h=22]
+                    [FRAME] name: "all" (id: 2531:44734) [Box: x=20104, y=52144, w=295, h=22]
+                      [TEXT] name: "[선택] 소식지 및 활동 알림 수신 동의" (id: 2531:44736) [Box: x=20132, y=52144, w=267, h=22] -> text: "[선택] 소식지 및 활동 알림 수신 동의" (Font: Audrey Text, Size: 18px, Weight: 400, LineHeight: 22px)
+                      [INSTANCE] name: "checkbox" (id: 2531:44735) [Box: x=20104, y=52145, w=20, h=20]
+                        [RECTANGLE] name: "Rectangle 59" (id: I2531:44735;1193:26418) [Box: x=20104, y=52145, w=20, h=20]
+                        [VECTOR] name: "Vector 5" (id: I2531:44735;1193:26419) [Box: x=20110, y=52152, w=9, h=6]
+                    [TEXT] name: "자세히 보기" (id: 2531:44737) [Box: x=20622, y=52145, w=74, h=21] -> text: "자세히 보기" (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+      [FRAME] name: "form" (id: 2531:44833) [Box: x=20048, y=51038, w=704, h=453]
+        [FRAME] name: "결제수단" (id: 2531:44834) [Box: x=20048, y=51038, w=704, h=453]
+          [FRAME] name: "title" (id: 2531:44835) [Box: x=20048, y=51038, w=704, h=100]
+            [TEXT] name: "결제수단" (id: 2531:44836) [Box: x=20088, y=51070, w=107, h=36] -> text: "결제수단" (Font: NanumSquare Neo, Size: 28px, Weight: 800, LineHeight: 36px)
+            [TEXT] name: "일시 후원 30,000원" (id: 2531:44837) [Box: x=20560, y=51075, w=152, h=27] -> text: "일시 후원  30,000원" (Font: Pretendard, Size: 18px, Weight: 600, LineHeight: 27px)
+          [FRAME] name: "form" (id: 2531:44838) [Box: x=20048, y=51138, w=704, h=353]
+            [FRAME] name: "결제수단" (id: 2531:44839) [Box: x=20088, y=51178, w=624, h=169]
+              [FRAME] name: "contents" (id: 2531:44840) [Box: x=20088, y=51178, w=624, h=169]
+                [FRAME] name: "contents" (id: 2531:44841) [Box: x=20088, y=51178, w=624, h=169]
+                  [TEXT] name: "후원금은 환아와 가족들을 위한 하우스 운영에 투명하게 사용됩니다." (id: 2531:44842) [Box: x=20088, y=51178, w=624, h=29] -> text: "후원금은 환아와 가족들을 위한 하우스 운영에 투명하게 사용됩니다." (Font: Pretendard, Size: 22px, Weight: 600, LineHeight: 29px)
+                  [FRAME] name: "결제수단" (id: 2531:44843) [Box: x=20088, y=51231, w=624, h=116]
+                    [FRAME] name: "1(컬러)" (id: 2531:44844) [Box: x=20088, y=51231, w=624, h=52]
+                      [FRAME] name: "결제수단" (id: 2531:44845) [Box: x=20088, y=51231, w=624, h=52]
+                        [FRAME] name: "카카오페이" (id: 2531:44846) [Box: x=20088, y=51231, w=200, h=52]
+                          [FRAME] name: "카카오로 시작하기" (id: 2531:44847) [Box: x=20088, y=51231, w=200, h=52]
+                            [TEXT] name: "카카오페이" (id: 2531:44849) [Box: x=20166, y=51244, w=78, h=27] -> text: "카카오페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                            [RECTANGLE] name: "Rectangle 77" (id: 2531:44848) [Box: x=20132, y=51245, w=24, h=24]
+                        [FRAME] name: "네이버페이" (id: 2531:44850) [Box: x=20300, y=51231, w=200, h=52]
+                          [TEXT] name: "네이버 페이" (id: 2531:44853) [Box: x=20376, y=51244, w=83, h=27] -> text: "네이버 페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                          [FRAME] name: "icon" (id: 2531:44851) [Box: x=20342, y=51245, w=24, h=24]
+                            [RECTANGLE] name: "kakao_login_large_narrow 1" (id: 2531:44852) [Box: x=20342, y=51245, w=23, h=24]
+                        [FRAME] name: "토스페이" (id: 2531:44854) [Box: x=20512, y=51231, w=200, h=52]
+                          [TEXT] name: "토스페이" (id: 2531:44857) [Box: x=20598, y=51244, w=63, h=27] -> text: "토스페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                          [FRAME] name: "icon" (id: 2531:44855) [Box: x=20564, y=51245, w=24, h=24]
+                            [RECTANGLE] name: "kakao_login_large_narrow 1" (id: 2531:44856) [Box: x=20564, y=51245, w=24, h=24]
+                    [FRAME] name: "1" (id: 2531:44858) [Box: x=20088, y=51231, w=624, h=52]
+                      [FRAME] name: "결제수단" (id: 2531:44859) [Box: x=20088, y=51231, w=624, h=52]
+                        [FRAME] name: "form_btn" (id: 2531:44860) [Box: x=20088, y=51231, w=200, h=52]
+                          [TEXT] name: "카카오페이" (id: 2531:44862) [Box: x=20166, y=51244, w=78, h=27] -> text: "카카오페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                          [RECTANGLE] name: "Rectangle 77" (id: 2531:44861) [Box: x=20132, y=51245, w=24, h=24]
+                        [FRAME] name: "form_btn" (id: 2531:44863) [Box: x=20300, y=51231, w=200, h=52]
+                          [TEXT] name: "네이버페이" (id: 2531:44865) [Box: x=20378, y=51244, w=78, h=27] -> text: "네이버페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                          [VECTOR] name: "Vector" (id: 2531:44864) [Box: x=20344, y=51245, w=24, h=24]
+                        [FRAME] name: "form_btn" (id: 2531:44866) [Box: x=20512, y=51231, w=200, h=52]
+                          [TEXT] name: "토스페이" (id: 2531:44869) [Box: x=20598, y=51244, w=63, h=27] -> text: "토스페이" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                          [FRAME] name: "icon" (id: 2531:44867) [Box: x=20564, y=51245, w=24, h=24]
+                            [RECTANGLE] name: "kakao_login_large_narrow 1" (id: 2531:44868) [Box: x=20564, y=51245, w=24, h=24]
+                    [FRAME] name: "2" (id: 2531:44870) [Box: x=20088, y=51295, w=624, h=52]
+                      [FRAME] name: "결제수단" (id: 2531:44871) [Box: x=20088, y=51295, w=624, h=52]
+                        [INSTANCE] name: "form_btn" (id: 2531:44872) [Box: x=20088, y=51295, w=200, h=52]
+                          [TEXT] name: "20,000원" (id: I2531:44872;1662:87315) [Box: x=20157, y=51308, w=63, h=27] -> text: "신용카드" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                        [INSTANCE] name: "form_btn" (id: 2531:44873) [Box: x=20300, y=51295, w=200, h=52]
+                          [TEXT] name: "20,000원" (id: I2531:44873;1662:87315) [Box: x=20369, y=51308, w=63, h=27] -> text: "계좌이체" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+                        [INSTANCE] name: "form_btn" (id: 2531:44874) [Box: x=20512, y=51295, w=200, h=52]
+                          [TEXT] name: "20,000원" (id: I2531:44874;1662:87315) [Box: x=20575, y=51308, w=74, h=27] -> text: "30,000원" (Font: Pretendard, Size: 18px, Weight: 400, LineHeight: 27px)
+              [FRAME] name: "Frame 1010107153" (id: 2531:44875) [Box: x=20088, y=51355, w=316, h=21]
+                [TEXT] name: "최소 후원 금액은 10,000원 이상 입력해 주세요." (id: 2531:44877) [Box: x=20106, y=51355, w=298, h=21] -> text: "최소 후원 금액은 10,000원 이상 입력해 주세요." (Font: Pretendard, Size: 16px, Weight: 400, LineHeight: 21px)
+                [VECTOR] name: "Vector" (id: 2531:44876) [Box: x=20088, y=51359, w=14, h=14]
+            [FRAME] name: "CTA" (id: 2531:44878) [Box: x=20088, y=51399, w=624, h=52]
+              [FRAME] name: "이전" (id: 2531:44879) [Box: x=20088, y=51399, w=308, h=52]
+                [TEXT] name: "이전" (id: 2531:44880) [Box: x=20226, y=51412, w=32, h=27] -> text: "이전" (Font: Pretendard, Size: 18px, Weight: 700, LineHeight: 27px)
+              [FRAME] name: "후원 하기" (id: 2531:44881) [Box: x=20404, y=51399, w=308, h=52]
+                [TEXT] name: "후원 하기" (id: 2531:44882) [Box: x=20525, y=51412, w=67, h=27] -> text: "후원 하기" (Font: Pretendard, Size: 18px, Weight: 700, LineHeight: 27px)
