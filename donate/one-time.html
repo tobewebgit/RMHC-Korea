@@ -50,7 +50,7 @@
 
             <!-- 정기/일시 후원 구분 탭 버튼 -->
             <div class="donate-type-tabs">
-              <button type="button" class="btn-tab disabled" onclick="location.href='regular.html'">정기 후원</button>
+              <button type="button" class="btn-tab disabled">정기 후원</button>
               <button type="button" class="btn-tab">일시 후원</button>
             </div>
 
@@ -257,7 +257,7 @@
 
                     <!-- 기부금 영수증 신청 여부 (대분류 독립 노출) -->
                     <div class="form-group form receipt-toggle-group">
-                      <span class="form-label required font-bold">*기부금 영수증</span>
+                      <span class="form-label required font-bold">기부금 영수증</span>
                       <div class="form-field">
                         <div class="form-control-row gap-4">
                           <label class="custom-radio">
@@ -399,9 +399,204 @@
                     <button type="button" class="btn btn-outline payment-tab-btn" data-pay="card">
                       <span>신용카드</span>
                     </button>
-                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="bank">
-                      <span>계좌이체</span>
+                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="cms">
+                      <span>CMS 자동이체</span>
                     </button>
+                  </div>
+
+                  <!-- 출금일 선택 영역 (정기 후원 시 노출) -->
+                  <div id="withdrawDayArea" class="withdraw-day-box" style="display: none;">
+                    <hr class="sep-line" />
+                    <div class="form-group form">
+                      <label class="form-label required font-bold">출금일 선택</label>
+                      <div class="form-field">
+                        <div class="custom-select selectbox" id="withdrawDaySelect" role="combobox" aria-label="출금일 선택" aria-expanded="false" tabindex="0">
+                          <span class="custom-select-label" id="withdrawDaySelectLabel">출금일 선택</span>
+                          <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
+                          <ul class="custom-select-list" role="listbox">
+                            <li role="option" data-value="05">매월 5일</li>
+                            <li role="option" data-value="15">매월 15일</li>
+                            <li role="option" data-value="25">매월 25일</li>
+                          </ul>
+                          <input type="hidden" name="withdrawDay" id="withdrawDay" value="" />
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="receipt-warning-list" style="margin-top: 1.2rem; margin-bottom: 2.4rem; padding-left: 0;">
+                      <li style="list-style: none; font-size: 1.4rem; color: var(--text-gray60);">• 매월 선택한 날짜에 자동으로 결제가 진행됩니다.</li>
+                      <li style="list-style: none; font-size: 1.4rem; color: var(--text-gray60);">• 정기후원은 마이페이지에서 언제든지 변경 및 해지하실 수 있습니다.</li>
+                    </ul>
+                  </div>
+
+                  <!-- 결제 정보 세부 입력 영역 (신용카드, CMS 자동이체 선택 시 노출) -->
+                  <div id="paymentDetailFormArea" style="display: none;">
+                    <hr class="sep-line" />
+                    <div class="payment-detail-header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+                      <h3 class="form-subtitle" style="margin: 0; font-size: 1.8rem; font-weight: bold; font-family: var(--font-pretendard);">결제정보를 입력해주세요.</h3>
+                      <label class="custom-checkbox" id="sameAsDonorCheckboxLabel">
+                        <input type="checkbox" id="sameAsDonor" />
+                        <span class="font-bold">후원자와 동일</span>
+                      </label>
+                    </div>
+
+                    <!-- 신용카드 정보 입력 폼 -->
+                    <div id="cardPaymentForm" class="payment-info-form-box" style="display: none;">
+                      <!-- 카드사명 -->
+                      <div class="payment-form-row">
+                        <label class="payment-form-label">*카드사명</label>
+                        <div class="payment-form-field">
+                          <div class="custom-select selectbox" id="cardCompanySelect" role="combobox" aria-label="카드사 선택" aria-expanded="false" tabindex="0">
+                            <span class="custom-select-label" id="cardCompanySelectLabel">카드사를 선택해 주세요.</span>
+                            <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
+                            <ul class="custom-select-list" role="listbox">
+                              <li role="option" data-value="국민">KB국민카드</li>
+                              <li role="option" data-value="하나">하나카드</li>
+                              <li role="option" data-value="신한">신한카드</li>
+                              <li role="option" data-value="삼성">삼성카드</li>
+                              <li role="option" data-value="현대">현대카드</li>
+                              <li role="option" data-value="롯데">롯데카드</li>
+                            </ul>
+                            <input type="hidden" name="cardCompany" id="pm_card_company" value="" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- 카드번호 -->
+                      <div class="payment-form-row">
+                        <label for="pm_card_number" class="payment-form-label">*카드번호</label>
+                        <div class="payment-form-field">
+                          <input type="text" id="pm_card_number" class="form-control" placeholder="카드번호 (숫자만 입력)" maxlength="16" />
+                        </div>
+                      </div>
+
+                      <!-- 카드 유효기간 -->
+                      <div class="payment-form-row">
+                        <label class="payment-form-label">*카드 유효기간</label>
+                        <div class="payment-form-field double-select">
+                          <div class="custom-select selectbox" id="expMonthSelect" role="combobox" aria-label="유효기간 월" aria-expanded="false" tabindex="0">
+                            <span class="custom-select-label" id="expMonthSelectLabel">월</span>
+                            <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
+                            <ul class="custom-select-list" role="listbox">
+                              <li role="option" data-value="01">01</li>
+                              <li role="option" data-value="02">02</li>
+                              <li role="option" data-value="03">03</li>
+                              <li role="option" data-value="04">04</li>
+                              <li role="option" data-value="05">05</li>
+                              <li role="option" data-value="06">06</li>
+                              <li role="option" data-value="07">07</li>
+                              <li role="option" data-value="08">08</li>
+                              <li role="option" data-value="09">09</li>
+                              <li role="option" data-value="10">10</li>
+                              <li role="option" data-value="11">11</li>
+                              <li role="option" data-value="12">12</li>
+                            </ul>
+                            <input type="hidden" name="expMonth" id="pm_exp_month" value="" />
+                          </div>
+                          <div class="custom-select selectbox" id="expYearSelect" role="combobox" aria-label="유효기간 년" aria-expanded="false" tabindex="0">
+                            <span class="custom-select-label" id="expYearSelectLabel">년</span>
+                            <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
+                            <ul class="custom-select-list" role="listbox">
+                              <li role="option" data-value="26">2026</li>
+                              <li role="option" data-value="27">2027</li>
+                              <li role="option" data-value="28">2028</li>
+                              <li role="option" data-value="29">2029</li>
+                              <li role="option" data-value="30">2030</li>
+                              <li role="option" data-value="31">2031</li>
+                              <li role="option" data-value="32">2032</li>
+                              <li role="option" data-value="33">2033</li>
+                              <li role="option" data-value="34">2034</li>
+                              <li role="option" data-value="35">2035</li>
+                            </ul>
+                            <input type="hidden" name="expYear" id="pm_exp_year" value="" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- 카드소유자명 -->
+                      <div class="payment-form-row">
+                        <label for="pm_owner_name" class="payment-form-label">*카드소유자명</label>
+                        <div class="payment-form-field">
+                          <input type="text" id="pm_owner_name" class="form-control" placeholder="이름을 입력해 주세요." />
+                        </div>
+                      </div>
+
+                      <!-- 카드소유자 생년월일 -->
+                      <div class="payment-form-row align-start">
+                        <label for="pm_owner_birth" class="payment-form-label">*카드소유자<br>생년월일</label>
+                        <div class="payment-form-field">
+                          <input type="text" id="pm_owner_birth" class="form-control" placeholder="예)19880101 (숫자만 입력)" maxlength="8" />
+                          <p class="form-helper-note mt-2" style="font-size: 1.4rem; color: var(--text-muted); margin-top: 0.8rem;">카드 소유자 확인을 위해 사용됩니다.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- CMS 자동이체 정보 입력 폼 -->
+                    <div id="cmsPaymentForm" class="payment-info-form-box" style="display: none;">
+                      <!-- 은행명 -->
+                      <div class="payment-form-row">
+                        <label class="payment-form-label">*은행명</label>
+                        <div class="payment-form-field">
+                          <div class="custom-select selectbox" id="cmsBankSelect" role="combobox" aria-label="은행 선택" aria-expanded="false" tabindex="0">
+                            <span class="custom-select-label" id="cmsBankSelectLabel">은행을 선택해 주세요.</span>
+                            <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
+                            <ul class="custom-select-list" role="listbox">
+                              <li role="option" data-value="국민">KB국민은행</li>
+                              <li role="option" data-value="신한">신한은행</li>
+                              <li role="option" data-value="하나">하나은행</li>
+                              <li role="option" data-value="우리">우리은행</li>
+                              <li role="option" data-value="농협">NH농협은행</li>
+                            </ul>
+                            <input type="hidden" name="cmsBank" id="pm_cms_bank" value="" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- 계좌번호 -->
+                      <div class="payment-form-row">
+                        <label for="pm_cms_account" class="payment-form-label">*계좌번호</label>
+                        <div class="payment-form-field">
+                          <input type="text" id="pm_cms_account" class="form-control" placeholder="계좌번호 (숫자만 입력)" />
+                        </div>
+                      </div>
+
+                      <!-- 예금주명 -->
+                      <div class="payment-form-row">
+                        <label for="pm_cms_owner" class="payment-form-label">*예금주명</label>
+                        <div class="payment-form-field">
+                          <input type="text" id="pm_cms_owner" class="form-control" placeholder="예금주명을 입력해 주세요." />
+                        </div>
+                      </div>
+
+                      <!-- 생년월일 -->
+                      <div class="payment-form-row">
+                        <label for="pm_cms_birth" class="payment-form-label">*생년월일</label>
+                        <div class="payment-form-field">
+                          <input type="text" id="pm_cms_birth" class="form-control" placeholder="예)19880101 (숫자만 입력)" maxlength="8" />
+                        </div>
+                      </div>
+
+                      <!-- 출금동의 서명 -->
+                      <div class="payment-form-row align-start">
+                        <label class="payment-form-label">*출금동의 서명</label>
+                        <div class="payment-form-field">
+                          <p class="form-helper-note" style="font-size: 1.4rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.2rem; margin-top: 0;">
+                            자동이체를 위해 출금 동의가 필요합니다.<br>
+                            아래 서명을 진행해 주세요.<br>
+                            마우스를 올린 후 클릭한 상태에서 서명해 주세요.
+                          </p>
+                          <!-- 서명 패드 캔버스 보드 (H: 12rem) -->
+                          <div class="signature-pad-wrapper" style="position: relative; width: 100%;">
+                            <canvas id="signatureCanvas" style="width: 100%; height: 12rem; background-color: #ffffff; border: 1px solid var(--border-gray60); border-radius: var(--radius-sm); box-sizing: border-box; cursor: crosshair; display: block;"></canvas>
+                            <div style="text-align: right; margin-top: 0.8rem;">
+                              <button type="button" id="btnSignatureClear" style="background: none; border: none; font-family: var(--font-pretendard); font-size: 1.4rem; color: var(--text-gray60); text-decoration: underline; cursor: pointer;">다시 서명하기</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- CMS 정기 결제용 여백 보완용 구분선 -->
+                    <div style="margin-top: 4rem;"></div>
                   </div>
 
                   <!-- 이전 / 후원하기 최종 액션 버튼 (좌우 50% 분할 칩 그리드 구성) -->

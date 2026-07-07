@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- DOM Elements ---
   const form = document.getElementById('oneTimeDonateForm');
   
+  // 최상위 정기/일시 후원 구분 탭 버튼
+  const donateTypeTabs = document.querySelector('.donate-type-tabs') ? document.querySelector('.donate-type-tabs').querySelectorAll('.btn-tab') : [];
+
   // 아코디언 카드 노드
   const step1Card = document.getElementById('step1Card');
   const step2Card = document.getElementById('step2Card');
@@ -52,18 +55,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const agreeAll = document.getElementById('agreeAll');
   const agreeItems = document.getElementsByName('agreeItem');
   
-  // 3단계: 결제수단
+  // 3단계: 결제수단 및 상세 정보 폼
   const paymentChips = step3Card.querySelectorAll('.payment-tabs-grid .payment-tab-btn');
+  const withdrawDayArea = document.getElementById('withdrawDayArea');
+  const withdrawDayInput = document.getElementById('withdrawDay');
+  const paymentDetailFormArea = document.getElementById('paymentDetailFormArea');
+  const cardPaymentForm = document.getElementById('cardPaymentForm');
+  const cmsPaymentForm = document.getElementById('cmsPaymentForm');
+  const sameAsDonor = document.getElementById('sameAsDonor');
+  
+  const pmCardCompany = document.getElementById('pm_card_company');
+  const pmCardNumber = document.getElementById('pm_card_number');
+  const pmExpMonth = document.getElementById('pm_exp_month');
+  const pmExpYear = document.getElementById('pm_exp_year');
+  const pmOwnerName = document.getElementById('pm_owner_name');
+  const pmOwnerBirth = document.getElementById('pm_owner_birth');
+  
+  const pmCmsBank = document.getElementById('pm_cms_bank');
+  const pmCmsAccount = document.getElementById('pm_cms_account');
+  const pmCmsOwner = document.getElementById('pm_cms_owner');
+  const pmCmsBirth = document.getElementById('pm_cms_birth');
+  
+  const signatureCanvas = document.getElementById('signatureCanvas');
+  const btnSignatureClear = document.getElementById('btnSignatureClear');
+  
   const btnPrevStep = document.getElementById('btnPrevStep');
   const btnSubmitDonate = document.getElementById('btnSubmitDonate');
 
   // --- State Variables ---
+  let activeDonateTab = '일시'; // '정기' | '일시'
   let selectedAmount = ''; // 초기 미선택
   let isAmountValid = false;
   let selectedDonorType = '개인';
   let isAuthenticated = false;
-  let selectedPayment = '';
+  let selectedPayment = ''; // 'kakaopay' | 'naverpay' | 'tosspay' | 'card' | 'cms'
   let isDirectMode = false; // 직접 입력 인풋 모드 여부
+  let signatureDrawn = false; // 서명 여부
 
   // --- 아코디언 타이틀 우측 가이드/요약 초기 텍스트 설정 (임의 가이드 제거, 빈 칸 복원) ---
   step1Summary.textContent = ''; 
@@ -100,9 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (summaryElement) {
       summaryElement.style.opacity = '0';
-      setTimeout(() => {
-        summaryElement.textContent = '';
-      }, 150);
+      summaryElement.textContent = '';
     }
     
     const body = card.querySelector('.card-body');
@@ -142,19 +167,18 @@ document.addEventListener('DOMContentLoaded', () => {
       closeCard(closeCardNode, closeSummaryElement, closeSummaryText);
     }
     if (activeCardNode) {
-      setTimeout(() => {
-        openCard(activeCardNode, activeSummaryElement, activeGuideText);
-      }, 50);
+      // 강제 렌더링 동기화
+      activeCardNode.offsetHeight;
+      openCard(activeCardNode, activeSummaryElement, activeGuideText);
     }
   }
 
-  // 초기 렌더링 시 첫 번째 카드의 maxHeight 강제 동적 설정 (모션 오류 예방)
-  setTimeout(() => {
-    const firstBody = step1Card.querySelector('.card-body');
-    if (firstBody) {
-      firstBody.style.maxHeight = firstBody.scrollHeight + 'px';
-    }
-  }, 100);
+  // 초기 렌더링 시 첫 번째 카드의 maxHeight 강제 동적 설정 (지연 없이 즉시 반영)
+  const firstBody = step1Card.querySelector('.card-body');
+  if (firstBody) {
+    firstBody.offsetHeight;
+    firstBody.style.maxHeight = firstBody.scrollHeight + 'px';
+  }
 
   // --- 1단계: 후원 금액 설정 로직 ---
   
@@ -245,126 +269,389 @@ document.addEventListener('DOMContentLoaded', () => {
         step2Card, 
         step1Card, 
         step1Summary, 
-        `일시 후원 ${selectedAmount}원`,
+        `${activeDonateTab} 후원 ${selectedAmount}원`,
         step2Summary,
         ''
       );
     }
   });
 
-  // --- 2단계: 후원자 정보입력 및 본인인증 로직 (상태 기반 렌더링 파이프라인) ---
-
-  // 2단계 UI 상태 통합 업데이트 함수 (단일 진입점)
-  function updateStep2UI() {
+  // --- 전체 폼 상태 초기화 함수 (최상위 탭 전환 시 호출) ---
+  function resetAllSteps() {
     try {
-      const body = step2Card.querySelector('.card-body');
+      console.log("[resetAllSteps] Resetting entire donate flow...");
+
+      // 1. 모든 상태 변수 초기화
+      selectedAmount = '';
+      isAmountValid = false;
+      isAuthenticated = false;
+      selectedPayment = '';
+      signatureDrawn = false;
+
+      // 2. 1단계 금액 초기화
+      amountChips.forEach(c => {
+        c.classList.remove('btn-primary');
+        c.classList.add('btn-outline');
+      });
+      if (directInputChip) directInputChip.classList.remove('active');
+      if (directAmountInput) directAmountInput.value = '';
+      if (amountWarningText) amountWarningText.style.display = 'none';
+      if (step1NextWrap) step1NextWrap.style.display = 'none';
+      helperBoxes.forEach(box => box.style.display = 'none');
+
+      // 3. 2단계 후원자 정보 초기화
+      selectedDonorType = '개인';
+      donorTypeChips.forEach(c => {
+        if (c.getAttribute('data-type') === 'individual') {
+          c.classList.remove('btn-outline');
+          c.classList.add('btn-primary');
+        } else {
+          c.classList.remove('btn-primary');
+          c.classList.add('btn-outline');
+        }
+      });
+      [groupName, groupBizNum, groupManager, groupPhone, groupEmail, residentNum1, residentNum2].forEach(input => {
+        if (input) input.value = '';
+      });
+      if (residentNum1) residentNum1.removeAttribute('required');
+      if (residentNum2) residentNum2.removeAttribute('required');
       
-      // 1. 기부금 영수증 선택 값 추출
+      receiptRadios.forEach(radio => {
+        radio.checked = false;
+      });
+      if (agreeAll) agreeAll.checked = false;
+      agreeItems.forEach(item => {
+        item.checked = false;
+      });
+
+      // 4. 3단계 결제 정보 초기화
+      paymentChips.forEach(chip => {
+        chip.classList.remove('btn-primary');
+        chip.classList.add('btn-outline');
+      });
+      if (sameAsDonor) sameAsDonor.checked = false;
+      toggleSameAsDonor(false);
+
+      [pmCardNumber, pmOwnerName, pmOwnerBirth, pmCmsAccount, pmCmsOwner, pmCmsBirth].forEach(input => {
+        if (input) {
+          input.value = '';
+          input.removeAttribute('disabled');
+        }
+      });
+
+      // 셀렉트박스 텍스트 복원
+      const cardLabel = document.getElementById('cardCompanySelectLabel');
+      if (cardLabel) cardLabel.textContent = '카드사를 선택해 주세요.';
+      const pmCardCompanyInput = document.getElementById('pm_card_company');
+      if (pmCardCompanyInput) pmCardCompanyInput.value = '';
+
+      const bankLabel = document.getElementById('cmsBankSelectLabel');
+      if (bankLabel) bankLabel.textContent = '은행을 선택해 주세요.';
+      const pmCmsBankInput = document.getElementById('pm_cms_bank');
+      if (pmCmsBankInput) pmCmsBankInput.value = '';
+
+      const withdrawLabel = document.getElementById('withdrawDaySelectLabel');
+      if (withdrawLabel) withdrawLabel.textContent = '출금일 선택';
+      if (withdrawDayInput) withdrawDayInput.value = '';
+
+      const expMonthLabel = document.getElementById('expMonthSelectLabel');
+      if (expMonthLabel) expMonthLabel.textContent = '월';
+      const pmExpMonthInput = document.getElementById('pm_exp_month');
+      if (pmExpMonthInput) pmExpMonthInput.value = '';
+
+      const expYearLabel = document.getElementById('expYearSelectLabel');
+      if (expYearLabel) expYearLabel.textContent = '년';
+      const pmExpYearInput = document.getElementById('pm_exp_year');
+      if (pmExpYearInput) pmExpYearInput.value = '';
+
+      if (ctx && signatureCanvas) {
+        ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+      }
+
+      // 5. 아코디언 상태 초기화 (1단계 오픈, 2/3단계 비활성 및 닫힘)
+      closeCard(step2Card, step2Summary, '');
+      closeCard(step3Card, step3Summary, '');
+      step2Card.classList.add('is-disabled');
+      step3Card.classList.add('is-disabled');
+
+      step1Summary.textContent = '';
+      step2Summary.textContent = '';
+      step3Summary.textContent = '';
+
+      openCard(step1Card, step1Summary, '');
+      // 탭 전환 동기화 시점에 비주얼 리렌더링 연동
+      updateDonateFlowUI();
+
+
+    } catch (err) {
+      console.error("[resetAllSteps] Reset Exception:", err);
+    }
+  }
+
+  // --- 2단계 & 3단계 & 탭 통합 상태 기반 렌더링 파이프라인 (Single Source of Truth) ---
+
+  // 전체 기부 플로우 상태 기반 통합 렌더링 함수
+  function updateDonateFlowUI() {
+    try {
+      const step2Body = step2Card.querySelector('.card-body');
+      const step3Body = step3Card.querySelector('.card-body');
+      
+      // 1. 최상위 정기/일시 탭 버튼 비주얼 클래스 동기화
+      donateTypeTabs.forEach(tab => {
+        const isReg = tab.textContent.trim().includes('정기');
+        if (activeDonateTab === '정기') {
+          if (isReg) {
+            tab.classList.remove('disabled');
+          } else {
+            tab.classList.add('disabled');
+          }
+        } else {
+          if (isReg) {
+            tab.classList.add('disabled');
+          } else {
+            tab.classList.remove('disabled');
+          }
+        }
+      });
+
+      // 2. 1단계 아코디언 헤더 요약 텍스트 업데이트
+      if (selectedAmount) {
+        step1Summary.textContent = `${activeDonateTab} 후원 ${selectedAmount}원`;
+      } else {
+        step1Summary.textContent = '';
+      }
+
+      // 3. 2단계 아코디언 헤더 요약 텍스트 업데이트
+      if (isAuthenticated) {
+        step2Summary.textContent = `${selectedDonorType}(인증 완료)`;
+      } else {
+        step2Summary.textContent = '';
+      }
+
+      // 4. 2단계 후원자 유형별 (개인 / 기업) UI 가시성 및 인증 영역 제어
+      if (selectedDonorType === '개인') {
+        if (authRequestArea) authRequestArea.style.display = 'block'; // 본인인증 영역 항상 보임
+        if (authInfoArea) authInfoArea.style.display = isAuthenticated ? 'block' : 'none'; // 인증 정보 폼
+        if (groupInfoArea) groupInfoArea.style.display = 'none'; // 기업용 폼 가림
+        if (step2CommonArea) step2CommonArea.style.display = isAuthenticated ? 'block' : 'none'; // 약관동의 공통 영역
+      } else {
+        if (authRequestArea) authRequestArea.style.display = 'block'; // 기업도 인증 전에는 요청 영역 노출
+        if (authInfoArea) authInfoArea.style.display = 'none';
+        if (groupInfoArea) groupInfoArea.style.display = isAuthenticated ? 'block' : 'none'; // 기업용 정보 폼
+        if (step2CommonArea) step2CommonArea.style.display = isAuthenticated ? 'block' : 'none'; // 약관동의 공통 영역
+      }
+
+      // 2단계 기부금 영수증 영역 제어
       const receiptRadioChecked = form ? form.querySelector('input[name="receiptRequest"]:checked') : null;
       const receiptReq = receiptRadioChecked ? receiptRadioChecked.value : '';
 
-      // 2. 후원자 유형별 (개인 / 기업) UI 가시성 스위칭
-      if (selectedDonorType === '개인') {
-        // [개인 후원]
-        if (authRequestArea) authRequestArea.style.display = 'block'; // 본인인증 요청 버튼 영역 (유지)
-        if (authInfoArea) authInfoArea.style.display = isAuthenticated ? 'block' : 'none'; // 인증 정보 입력 폼
-        if (groupInfoArea) groupInfoArea.style.display = 'none'; // 기업용 폼 가림
-        if (step2CommonArea) step2CommonArea.style.display = isAuthenticated ? 'block' : 'none'; // 약관동의 공통 영역
-        
-        // 기부금 영수증 세부 영역 스위칭
-        if (isAuthenticated && receiptReq === 'Y') {
-          if (receiptDetailArea) receiptDetailArea.style.display = 'block';
+      if (isAuthenticated && receiptReq === 'Y') {
+        if (receiptDetailArea) receiptDetailArea.style.display = 'block';
+        if (selectedDonorType === '개인') {
           if (receiptResidentNumArea) receiptResidentNumArea.style.display = 'block';
           if (receiptBizHelperArea) receiptBizHelperArea.style.display = 'none';
           if (residentNum1) residentNum1.setAttribute('required', 'true');
           if (residentNum2) residentNum2.setAttribute('required', 'true');
         } else {
-          if (receiptDetailArea) receiptDetailArea.style.display = 'none';
-          if (residentNum1) residentNum1.removeAttribute('required');
-          if (residentNum2) residentNum2.removeAttribute('required');
-        }
-      } else {
-        // [기업 / 단체 후원]
-        if (authRequestArea) authRequestArea.style.display = 'block'; // 기업/단체도 인증 필수이므로 항상 유지
-        if (authInfoArea) authInfoArea.style.display = 'none'; // 개인용 폼 가림
-        if (groupInfoArea) groupInfoArea.style.display = isAuthenticated ? 'block' : 'none'; // 인증 성공 시에만 기업용 폼 노출
-        if (step2CommonArea) step2CommonArea.style.display = isAuthenticated ? 'block' : 'none'; // 인증 성공 시에만 약관동의 노출
-        
-        // 기부금 영수증 세부 영역 스위칭
-        if (isAuthenticated && receiptReq === 'Y') {
-          if (receiptDetailArea) receiptDetailArea.style.display = 'block';
           if (receiptResidentNumArea) receiptResidentNumArea.style.display = 'none';
           if (receiptBizHelperArea) receiptBizHelperArea.style.display = 'block';
           if (residentNum1) residentNum1.removeAttribute('required');
           if (residentNum2) residentNum2.removeAttribute('required');
-        } else {
-          if (receiptDetailArea) receiptDetailArea.style.display = 'none';
         }
+      } else {
+        if (receiptDetailArea) receiptDetailArea.style.display = 'none';
+        if (residentNum1) residentNum1.removeAttribute('required');
+        if (residentNum2) residentNum2.removeAttribute('required');
       }
 
-      // 3. 아코디언 높이 갱신
-      if (body) {
-        body.style.maxHeight = body.scrollHeight + 'px';
-      }
-
-      // 4. 필수 약관 동의 체크
+      // 2단계 필수 약관 동의 체크
       const requiredAgreed = Array.from(agreeItems || [])
         .filter(i => i && i.classList && i.classList.contains('required-agree'))
         .every(i => i.checked);
 
-      // 5. 후원 정보 유효성 검사
-      let formFieldsValid = false;
+      // 2단계 정보 폼 및 유효성 판단
+      let step2FieldsValid = false;
       let residentNumValid = true;
 
       if (selectedDonorType === '개인') {
-        if (!isAuthenticated) {
-          if (btnStep2Next) btnStep2Next.setAttribute('disabled', 'true');
-          return;
-        }
-        formFieldsValid = true;
-
-        if (receiptReq === 'Y') {
-          const frontVal = residentNum1 ? residentNum1.value.trim() : '';
-          const backVal = residentNum2 ? residentNum2.value.trim() : '';
-          residentNumValid = (frontVal.length === 6) && (backVal.length === 7);
-        } else if (receiptReq === 'N') {
-          residentNumValid = true;
-        } else {
-          residentNumValid = false; // 영수증 예/아니오 미선택
+        if (isAuthenticated) {
+          step2FieldsValid = true;
+          if (receiptReq === 'Y') {
+            const frontVal = residentNum1 ? residentNum1.value.trim() : '';
+            const backVal = residentNum2 ? residentNum2.value.trim() : '';
+            residentNumValid = (frontVal.length === 6) && (backVal.length === 7);
+          } else if (receiptReq === 'N') {
+            residentNumValid = true;
+          } else {
+            residentNumValid = false;
+          }
         }
       } else {
-        if (!isAuthenticated) {
-          if (btnStep2Next) btnStep2Next.setAttribute('disabled', 'true');
-          return;
-        }
-        const nameVal = groupName ? groupName.value.trim() : '';
-        const managerVal = groupManager ? groupManager.value.trim() : '';
-        const phoneVal = groupPhone ? groupPhone.value.trim() : '';
-        const emailVal = groupEmail ? groupEmail.value.trim() : '';
-
-        formFieldsValid = (nameVal !== '') && (managerVal !== '') && (phoneVal !== '') && (emailVal !== '');
-
-        if (receiptReq === 'Y' || receiptReq === 'N') {
-          residentNumValid = true;
-        } else {
-          residentNumValid = false; // 영수증 예/아니오 미선택
+        if (isAuthenticated) {
+          const nameVal = groupName ? groupName.value.trim() : '';
+          const managerVal = groupManager ? groupManager.value.trim() : '';
+          const phoneVal = groupPhone ? groupPhone.value.trim() : '';
+          const emailVal = groupEmail ? groupEmail.value.trim() : '';
+          step2FieldsValid = (nameVal !== '') && (managerVal !== '') && (phoneVal !== '') && (emailVal !== '');
+          
+          if (receiptReq === 'Y' || receiptReq === 'N') {
+            residentNumValid = true;
+          } else {
+            residentNumValid = false;
+          }
         }
       }
 
-      // 6. 다음 버튼 활성화 처리
+      // 2단계 다음 버튼 제어
       if (btnStep2Next) {
-        if (requiredAgreed && formFieldsValid && residentNumValid) {
+        if (requiredAgreed && step2FieldsValid && residentNumValid) {
           btnStep2Next.removeAttribute('disabled');
         } else {
           btnStep2Next.setAttribute('disabled', 'true');
         }
       }
+
+      // 5. 3단계 결제 수단 가시성 및 칩 제어
+      paymentChips.forEach(chip => {
+        const payVal = chip.getAttribute('data-pay');
+        
+        // 정기/일시 관계없이 모든 결제수단 탭 활성화 (정기일 때 간편결제를 비활성화하던 코드 완전 삭제!)
+        chip.classList.remove('disabled');
+        chip.removeAttribute('disabled');
+
+        // 활성 수단 비주얼 처리
+        if (selectedPayment === payVal) {
+          chip.classList.remove('btn-outline');
+          chip.classList.add('btn-primary');
+        } else {
+          chip.classList.remove('btn-primary');
+          chip.classList.add('btn-outline');
+        }
+      });
+
+      // [파이프라인 분리 핵심] 일시 후원 vs 정기 후원 UI 제어
+      if (activeDonateTab === '일시') {
+        // [일시 후원 파이프라인] - 출금일 및 카드/CMS 상세 정보 입력 박스는 아예 숨김 처리
+        if (withdrawDayArea) withdrawDayArea.style.display = 'none';
+        if (paymentDetailFormArea) paymentDetailFormArea.style.display = 'none';
+      } else {
+        // [정기 후원 파이프라인] - 출금일 영역 항상 노출
+        if (withdrawDayArea) withdrawDayArea.style.display = 'block';
+
+        const showDetailForm = ['card', 'cms'].includes(selectedPayment);
+        if (paymentDetailFormArea) {
+          paymentDetailFormArea.style.display = showDetailForm ? 'block' : 'none';
+        }
+        if (cardPaymentForm) {
+          cardPaymentForm.style.display = (selectedPayment === 'card') ? 'block' : 'none';
+        }
+        if (cmsPaymentForm) {
+          cmsPaymentForm.style.display = (selectedPayment === 'cms') ? 'block' : 'none';
+        }
+      }
+
+      // 후원자와 동일 체크박스 노출 여부 (기업/단체 후원이면 이 기능 차단 및 가림)
+      const sameAsDonorCheckboxLabel = document.getElementById('sameAsDonorCheckboxLabel');
+      if (sameAsDonorCheckboxLabel && sameAsDonor) {
+        if (selectedDonorType === '기업 / 단체') {
+          sameAsDonorCheckboxLabel.style.display = 'none';
+          sameAsDonor.checked = false;
+          toggleSameAsDonor(false);
+        } else {
+          sameAsDonorCheckboxLabel.style.display = 'flex';
+        }
+      }
+
+      // 6. 3단계 결제 유효성 검사 및 최종 후원하기 버튼 제어
+      let isPaymentValid = false;
+      let withdrawDayValid = true;
+
+      if (activeDonateTab === '일시') {
+        // 일시 후원은 결제 수단만 선택되면 바로 '후원하기' 활성화 (PG 처리 대상)
+        isPaymentValid = (selectedPayment !== '');
+        withdrawDayValid = true;
+      } else {
+        // 정기 후원은 출금일 필수 선택
+        const withdrawDayVal = withdrawDayInput ? withdrawDayInput.value : '';
+        withdrawDayValid = (withdrawDayVal !== '');
+
+        if (selectedPayment) {
+          if (selectedPayment === 'card') {
+            const companyVal = pmCardCompany ? pmCardCompany.value : '';
+            const cardNumVal = pmCardNumber ? pmCardNumber.value.trim() : '';
+            const expMonthVal = pmExpMonth ? pmExpMonth.value : '';
+            const expYearVal = pmExpYear ? pmExpYear.value : '';
+            const ownerNameVal = pmOwnerName ? pmOwnerName.value.trim() : '';
+            const ownerBirthVal = pmOwnerBirth ? pmOwnerBirth.value.trim() : '';
+
+            isPaymentValid = (companyVal !== '') && (cardNumVal.length >= 15) && 
+                             (expMonthVal !== '') && (expYearVal !== '') && 
+                             (ownerNameVal !== '') && (ownerBirthVal.length === 8);
+          } else if (selectedPayment === 'cms') {
+            const bankVal = pmCmsBank ? pmCmsBank.value : '';
+            const accountVal = pmCmsAccount ? pmCmsAccount.value.trim() : '';
+            const ownerVal = pmCmsOwner ? pmCmsOwner.value.trim() : '';
+            const birthVal = pmCmsBirth ? pmCmsBirth.value.trim() : '';
+
+            isPaymentValid = (bankVal !== '') && (accountVal !== '') && 
+                             (ownerVal !== '') && (birthVal.length === 8) && 
+                             signatureDrawn;
+          } else {
+            // 정기 후원이라도 간편결제(카카오, 네이버, 토스)는 PG 연동 방식이므로 바로 유효
+            isPaymentValid = true;
+          }
+        }
+      }
+
+      // 3단계 헤더 요약 텍스트 업데이트
+      if (selectedPayment) {
+        const payNameMap = {
+          kakaopay: '카카오페이',
+          naverpay: '네이버페이',
+          tosspay: '토스페이',
+          card: '신용카드',
+          cms: 'CMS 자동이체'
+        };
+        step3Summary.textContent = payNameMap[selectedPayment] || '';
+      } else {
+        step3Summary.textContent = '';
+      }
+
+      if (btnSubmitDonate) {
+        if (isPaymentValid && withdrawDayValid) {
+          btnSubmitDonate.removeAttribute('disabled');
+        } else {
+          btnSubmitDonate.setAttribute('disabled', 'true');
+        }
+      }
+
+      // 7. 아코디언 패널 실시간 높이 동적 리사이징
+      if (step2Body && step2Card.classList.contains('is-active')) {
+        step2Body.style.maxHeight = step2Body.scrollHeight + 'px';
+      }
+      if (step3Body && step3Card.classList.contains('is-active')) {
+        step3Body.style.maxHeight = step3Body.scrollHeight + 'px';
+      }
+
     } catch (err) {
-      console.error("[updateStep2UI] Exception occurred:", err);
+      console.error("[updateDonateFlowUI] Render Exception:", err);
     }
   }
 
-  // 후원자 유형 탭 클릭 리스너
+  // --- 이벤트 리스너 리액티브 바인딩 ---
+
+  // 최상위 탭 전환 리스너
+  donateTypeTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const isReg = tab.textContent.trim().includes('정기');
+      activeDonateTab = isReg ? '정기' : '일시';
+
+      // 탭 전환 시 전체 상태 및 폼 필드 초기화 (지정 1번 요구사항 완벽 해결)
+      resetAllSteps();
+    });
+  });
+
+  // 2단계 후원자 유형 탭 클릭 리스너
   donorTypeChips.forEach(chip => {
     chip.addEventListener('click', () => {
       donorTypeChips.forEach(c => {
@@ -377,14 +664,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const type = chip.getAttribute('data-type');
       selectedDonorType = type === 'individual' ? '개인' : '기업 / 단체';
 
-      updateStep2UI();
+      updateDonateFlowUI();
     });
   });
 
   // 본인인증 성공 시뮬레이션
   function handleAuthSuccess(providerName) {
     isAuthenticated = true;
-    updateStep2UI();
+    updateDonateFlowUI();
   }
 
   if (btnKakaoAuth) {
@@ -402,7 +689,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 기부금 영수증 신청 여부 라디오 분기 처리
   receiptRadios.forEach(radio => {
     radio.addEventListener('change', () => {
-      updateStep2UI();
+      updateDonateFlowUI();
     });
   });
 
@@ -414,7 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (val.length === 6 && residentNum2) {
         residentNum2.focus();
       }
-      updateStep2UI();
+      updateDonateFlowUI();
     });
   }
 
@@ -423,7 +710,7 @@ document.addEventListener('DOMContentLoaded', () => {
     residentNum2.addEventListener('input', (e) => {
       let val = e.target.value.replace(/[^0-9]/g, '');
       e.target.value = val;
-      updateStep2UI();
+      updateDonateFlowUI();
     });
   }
 
@@ -448,7 +735,7 @@ document.addEventListener('DOMContentLoaded', () => {
   [groupName, groupManager, groupEmail].forEach(input => {
     if (input) {
       input.addEventListener('input', () => {
-        updateStep2UI();
+        updateDonateFlowUI();
       });
     }
   });
@@ -457,7 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (groupBizNum) {
     groupBizNum.addEventListener('input', (e) => {
       e.target.value = e.target.value.replace(/[^0-9]/g, '');
-      updateStep2UI();
+      updateDonateFlowUI();
     });
   }
 
@@ -465,7 +752,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (groupPhone) {
     groupPhone.addEventListener('input', (e) => {
       e.target.value = e.target.value.replace(/[^0-9]/g, '');
-      updateStep2UI();
+      updateDonateFlowUI();
     });
   }
 
@@ -476,7 +763,7 @@ document.addEventListener('DOMContentLoaded', () => {
       agreeItems.forEach(item => {
         item.checked = isChecked;
       });
-      updateStep2UI();
+      updateDonateFlowUI();
     });
   }
 
@@ -487,7 +774,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (agreeAll) {
         agreeAll.checked = allChecked;
       }
-      updateStep2UI();
+      updateDonateFlowUI();
     });
   });
 
@@ -510,32 +797,192 @@ document.addEventListener('DOMContentLoaded', () => {
         step3Card, 
         step2Card, 
         step2Summary, 
-        selectedDonorType,
+        `${selectedDonorType}(인증 완료)`,
         step3Summary,
         ''
       );
+      // 3단계 카드 열릴 때 캔버스 렌더링 동기화
+      initSignatureCanvas();
     }
   });
 
-  // --- 3단계: 결제 수단 로직 ---
-  
+  // --- 3단계 전용 제어 및 서명 드로잉 엔진 ---
+
+  // 결제 탭 클릭 리스너
   paymentChips.forEach(chip => {
     chip.addEventListener('click', () => {
-      paymentChips.forEach(c => {
-        c.classList.remove('btn-primary');
-        c.classList.add('btn-outline');
-      });
-      chip.classList.remove('btn-outline');
-      chip.classList.add('btn-primary');
-      
-      let payName = chip.querySelector('span') ? chip.querySelector('span').textContent : '기타결제';
-      
-      selectedPayment = payName;
-      step3Summary.textContent = selectedPayment;
-      
-      btnSubmitDonate.removeAttribute('disabled');
+      if (chip.hasAttribute('disabled')) return;
+
+      const payVal = chip.getAttribute('data-pay');
+      selectedPayment = payVal;
+
+      updateDonateFlowUI();
+      if (selectedPayment === 'cms') {
+        initSignatureCanvas();
+      }
     });
   });
+
+  // '후원자와 동일' 체크 기능
+  if (sameAsDonor) {
+    sameAsDonor.addEventListener('change', (e) => {
+      toggleSameAsDonor(e.target.checked);
+      updateDonateFlowUI();
+    });
+  }
+
+  function toggleSameAsDonor(isSame) {
+    if (isSame) {
+      // 본인인증으로 획득한 기본 정보 자동 매핑 (로날드, 19880101)
+      if (pmOwnerName) {
+        pmOwnerName.value = '로날드';
+        pmOwnerName.setAttribute('disabled', 'true');
+      }
+      if (pmOwnerBirth) {
+        pmOwnerBirth.value = '19880101';
+        pmOwnerBirth.setAttribute('disabled', 'true');
+      }
+      if (pmCmsOwner) {
+        pmCmsOwner.value = '로날드';
+        pmCmsOwner.setAttribute('disabled', 'true');
+      }
+      if (pmCmsBirth) {
+        pmCmsBirth.value = '19880101';
+        pmCmsBirth.setAttribute('disabled', 'true');
+      }
+    } else {
+      if (pmOwnerName) {
+        pmOwnerName.value = '';
+        pmOwnerName.removeAttribute('disabled');
+      }
+      if (pmOwnerBirth) {
+        pmOwnerBirth.value = '';
+        pmOwnerBirth.removeAttribute('disabled');
+      }
+      if (pmCmsOwner) {
+        pmCmsOwner.value = '';
+        pmCmsOwner.removeAttribute('disabled');
+      }
+      if (pmCmsBirth) {
+        pmCmsBirth.value = '';
+        pmCmsBirth.removeAttribute('disabled');
+      }
+    }
+  }
+
+  // 3단계 입력 폼 실시간 유효성 체크
+  [pmCardNumber, pmOwnerName, pmOwnerBirth, pmCmsAccount, pmCmsOwner, pmCmsBirth].forEach(input => {
+    if (input) {
+      input.addEventListener('input', () => {
+        updateDonateFlowUI();
+      });
+    }
+  });
+
+  // 카드번호/소유자생년월일/계좌번호/생년월일 숫자만 입력
+  [pmCardNumber, pmOwnerBirth, pmCmsAccount, pmCmsBirth].forEach(input => {
+    if (input) {
+      input.addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+      });
+    }
+  });
+
+  // 서명 캔버스 드로잉 엔진
+  let isDrawing = false;
+  const ctx = signatureCanvas ? signatureCanvas.getContext('2d') : null;
+
+  function initSignatureCanvas() {
+    if (!signatureCanvas || !ctx) return;
+
+    // 캔버스 크기를 렌더링된 크기와 강제 동기화
+    const rect = signatureCanvas.getBoundingClientRect();
+    if (rect.width === 0) return; // 미노출 상태 방지
+    
+    signatureCanvas.width = rect.width;
+    signatureCanvas.height = rect.height;
+
+    ctx.strokeStyle = '#1f2937';
+    ctx.lineWidth = 3;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+
+    // 마우스 드로잉
+    signatureCanvas.addEventListener('mousedown', startDrawing);
+    signatureCanvas.addEventListener('mousemove', draw);
+    signatureCanvas.addEventListener('mouseup', stopDrawing);
+    signatureCanvas.addEventListener('mouseleave', stopDrawing);
+
+    // 모바일 터치 드로잉
+    signatureCanvas.addEventListener('touchstart', startDrawingTouch, { passive: false });
+    signatureCanvas.addEventListener('touchmove', drawTouch, { passive: false });
+    signatureCanvas.addEventListener('touchend', stopDrawing);
+  }
+
+  function getMousePos(e) {
+    const rect = signatureCanvas.getBoundingClientRect();
+    return {
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    };
+  }
+
+  function getTouchPos(e) {
+    const rect = signatureCanvas.getBoundingClientRect();
+    if (e.touches.length === 0) return { x: 0, y: 0 };
+    return {
+      x: e.touches[0].clientX - rect.left,
+      y: e.touches[0].clientY - rect.top
+    };
+  }
+
+  function startDrawing(e) {
+    isDrawing = true;
+    const pos = getMousePos(e);
+    ctx.beginPath();
+    ctx.moveTo(pos.x, pos.y);
+  }
+
+  function startDrawingTouch(e) {
+    e.preventDefault();
+    isDrawing = true;
+    const pos = getTouchPos(e);
+    ctx.beginPath();
+    ctx.moveTo(pos.x, pos.y);
+  }
+
+  function draw(e) {
+    if (!isDrawing) return;
+    const pos = getMousePos(e);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+    signatureDrawn = true;
+    updateDonateFlowUI();
+  }
+
+  function drawTouch(e) {
+    e.preventDefault();
+    if (!isDrawing) return;
+    const pos = getTouchPos(e);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+    signatureDrawn = true;
+    updateDonateFlowUI();
+  }
+
+  function stopDrawing() {
+    isDrawing = false;
+  }
+
+  if (btnSignatureClear) {
+    btnSignatureClear.addEventListener('click', () => {
+      if (ctx && signatureCanvas) {
+        ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+        signatureDrawn = false;
+        updateDonateFlowUI();
+      }
+    });
+  }
 
   // 이전 버튼 클릭 시 2단계로 크로스 슬라이딩 회귀
   btnPrevStep.addEventListener('click', () => {
@@ -558,21 +1005,24 @@ document.addEventListener('DOMContentLoaded', () => {
       if (card.classList.contains('is-disabled')) return;
       
       if (card.classList.contains('is-active')) {
-        if (card === step1Card) closeCard(card, step1Summary, selectedAmount ? `일시 후원 ${selectedAmount}원` : '');
-        else if (card === step2Card) closeCard(card, step2Summary, isAuthenticated ? selectedDonorType : '');
+        if (card === step1Card) closeCard(card, step1Summary, selectedAmount ? `${activeDonateTab} 후원 ${selectedAmount}원` : '');
+        else if (card === step2Card) closeCard(card, step2Summary, isAuthenticated ? `${selectedDonorType}(인증 완료)` : '');
         else if (card === step3Card) closeCard(card, step3Summary, selectedPayment || '');
       } else {
         [step1Card, step2Card, step3Card].forEach(c => {
           if (c !== card && c.classList.contains('is-active')) {
-            if (c === step1Card) closeCard(c, step1Summary, selectedAmount ? `일시 후원 ${selectedAmount}원` : '');
-            else if (c === step2Card) closeCard(c, step2Summary, isAuthenticated ? selectedDonorType : '');
+            if (c === step1Card) closeCard(c, step1Summary, selectedAmount ? `${activeDonateTab} 후원 ${selectedAmount}원` : '');
+            else if (c === step2Card) closeCard(c, step2Summary, isAuthenticated ? `${selectedDonorType}(인증 완료)` : '');
             else if (c === step3Card) closeCard(c, step3Summary, selectedPayment || '');
           }
         });
         
         if (card === step1Card) openCard(card, step1Summary, '');
         else if (card === step2Card) openCard(card, step2Summary, '');
-        else if (card === step3Card) openCard(card, step3Summary, '');
+        else if (card === step3Card) {
+          openCard(card, step3Summary, '');
+          initSignatureCanvas();
+        }
       }
     });
   });
@@ -596,8 +1046,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     
-    const finalResidentVal = receiptRadios[0].checked ? `${residentNum1.value}-${residentNum2.value}` : '';
-    alert(`성공적으로 일시 후원이 완료되었습니다.\n후원 금액: ${selectedAmount}원\n결제 수단: ${selectedPayment}`);
+    alert(`성공적으로 후원이 완료되었습니다.\n후원 구분: ${activeDonateTab} 후원\n후원 금액: ${selectedAmount}원\n결제 수단: ${selectedPayment}`);
     location.href = '/donate/complete.html';
   });
 });

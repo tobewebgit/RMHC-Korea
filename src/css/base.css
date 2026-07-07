@@ -423,7 +423,6 @@ textarea {
 }
 button {
   cursor: pointer;
-  color: #000;
 }
 a:link,
 a:visited,
@@ -432,14 +431,12 @@ a:active,
 a:focus {
   text-decoration: none;
   color: inherit;
-  color: #000;
 }
 a:hover {
   text-decoration: none;
 }
 a:focus,
 button:focus {
-  color: #000;
   outline: 2px dotted #000;
   border: 0;
 }
