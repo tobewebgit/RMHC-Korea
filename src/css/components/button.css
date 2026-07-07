@@ -31,12 +31,16 @@
 
 /* Disabled State */
 .btn:disabled,
-.btn.disabled,
-.btn-tab:disabled,
-.btn-tab.disabled {
+.btn.disabled {
   opacity: 0.4;
   cursor: not-allowed;
   pointer-events: none;
+}
+.btn-tab:disabled,
+.btn-tab.disabled {
+  opacity: 0.4;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 /* RMHC Red Button (Contrast: white on red = 5.34:1, PASSES AA) */
@@ -67,14 +71,9 @@
 
 /* Outline Button */
 .btn-outline {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
   color: var(--text-gray90);
   text-align: center;
   border: 1px solid var(--border-gray60);
-  font-size: var(--text-lg);
   line-height: 1;
   background-color: transparent;
 }

@@ -50,7 +50,7 @@
 
             <!-- 정기/일시 후원 구분 탭 버튼 -->
             <div class="donate-type-tabs">
-              <button type="button" class="btn-tab disabled" disabled>정기 후원</button>
+              <button type="button" class="btn-tab disabled" onclick="location.href='regular.html'">정기 후원</button>
               <button type="button" class="btn-tab">일시 후원</button>
             </div>
 
@@ -75,6 +75,9 @@
                       <input type="text" id="directAmount" placeholder="직접 입력" maxlength="9" />
                       <span class="unit">원</span>
                     </div>
+                  </div>
+                  <div class="direct-amount-warning" id="amountWarningText" style="display: none; color: var(--primary, #db0007); font-size: 1.4rem; margin-top: 1.2rem; font-weight: 500; text-align: left;">
+                    ⓘ 최소 후원 금액은 10,000원 이상 입력해 주세요.
                   </div>
 
 
@@ -193,6 +196,63 @@
                       </div>
                     </div>
 
+                  </div>
+
+                  <!-- 기업/단체 정보 입력 영역 (기본 숨김) -->
+                  <div id="groupInfoArea" style="display: none;">
+                    <hr class="sep-line" />
+                    
+                    <!-- 후원자 기본 정보 -->
+                    <div class="inner-form-group">
+                      <h3 class="form-subtitle">후원자 기본 정보</h3>
+                      
+                      <div class="inner-form-box">
+                        <!-- 기업/단체명 -->
+                        <div class="form-group form">
+                          <label for="groupName" class="form-label required">기업/단체명</label>
+                          <div class="form-field">
+                            <input type="text" id="groupName" class="form-control" placeholder="" />
+                          </div>
+                        </div>
+
+                        <!-- 사업자등록번호 -->
+                        <div class="form-group form">
+                          <label for="groupBizNum" class="form-label">사업자등록번호</label>
+                          <div class="form-field">
+                            <input type="text" id="groupBizNum" class="form-control" placeholder="사업자번호 10자리 (숫자만 입력)" maxlength="10" />
+                          </div>
+                        </div>
+
+                        <!-- 담당자명 -->
+                        <div class="form-group form">
+                          <label for="groupManager" class="form-label required">담당자명</label>
+                          <div class="form-field">
+                            <input type="text" id="groupManager" class="form-control" placeholder="" />
+                          </div>
+                        </div>
+
+                        <!-- 담당자 연락처 -->
+                        <div class="form-group form">
+                          <label for="groupPhone" class="form-label required">담당자 연락처</label>
+                          <div class="form-field">
+                            <input type="text" id="groupPhone" class="form-control" placeholder="연락처 (숫자만 입력)" maxlength="11" />
+                          </div>
+                        </div>
+
+                        <!-- 담당자 이메일 -->
+                        <div class="form-group form">
+                          <label for="groupEmail" class="form-label required">담당자 이메일</label>
+                          <div class="form-field">
+                            <input type="email" id="groupEmail" class="form-control" placeholder="" />
+                            <p class="receipt-helper-text" style="color: var(--text-gray60); margin-top: 0.8rem; font-size: 1.4rem;">기부금 영수증은 등록한 담당자 이메일로 발송됩니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 2단계 공통 정보 입력 영역 (기부금 영수증 및 약관동의, 기본 숨김) -->
+                  <div id="step2CommonArea" style="display: none;">
                     <hr class="sep-line" />
 
                     <!-- 기부금 영수증 신청 여부 (대분류 독립 노출) -->
@@ -215,39 +275,50 @@
                     <!-- 기부금 영수증 '예' 선택 시 노출 영역 (안내 가이드와 회색 박스를 품는 최외각 래퍼) -->
                     <div id="receiptDetailArea" style="display: none;">
                       
-                      <!-- 기부금 영수증 발급 안내 텍스트 (회색 박스 외부 상단 배치) -->
-                      <div class="receipt-helper">
-                        <p class="receipt-helper__primary">
-                          기부금 영수증 발급을 위한 필수 정보입니다.
-                        </p>
-                        <p class="receipt-helper__secondary">
-                          입력하신 개인정보는 기부금영수증 발급 목적으로만 수집·사용됩니다.
-                        </p>
-                      </div>
+                      <!-- 개인용 주민등록번호 입력 영역 -->
+                      <div id="receiptResidentNumArea" style="display: none;">
+                        <!-- 기부금 영수증 발급 안내 텍스트 (회색 박스 외부 상단 배치) -->
+                        <div class="receipt-helper">
+                          <p class="receipt-helper__primary">
+                            기부금 영수증 발급을 위한 필수 정보입니다.
+                          </p>
+                          <p class="receipt-helper__secondary">
+                            입력하신 개인정보는 기부금영수증 발급 목적으로만 수집·사용됩니다.
+                          </p>
+                        </div>
 
-                      <!-- 주민등록번호 입력 회색 박스 패널 (마진 0) -->
-                      <div class="receipt-resident-panel">
-                        <div class="form-group form">
-                          <div class="form-field">
-                            <div class="resident-label">주민등록번호</div>
-                            <div class="resident-input-group">
-                              <div class="resident-front-wrap">
-                                <input type="text" id="residentNum1" class="form-control" maxlength="6" />
+                        <!-- 주민등록번호 입력 회색 박스 패널 (마진 0) -->
+                        <div class="receipt-resident-panel">
+                          <div class="form-group form">
+                            <div class="form-field">
+                              <div class="resident-label">주민등록번호</div>
+                              <div class="resident-input-group">
+                                <div class="resident-front-wrap">
+                                  <input type="text" id="residentNum1" class="form-control" maxlength="6" />
+                                </div>
+                                <span class="resident-divider">-</span>
+                                <div class="resident-pw-wrap">
+                                  <input type="password" id="residentNum2" class="form-control" maxlength="7" />
+                                  <button type="button" class="eye-btn" aria-label="주민등록번호 뒷자리 보기 토글"></button>
+                                </div>
                               </div>
-                              <span class="resident-divider">-</span>
-                              <div class="resident-pw-wrap">
-                                <input type="password" id="residentNum2" class="form-control" maxlength="7" />
-                                <button type="button" class="eye-btn" aria-label="주민등록번호 뒷자리 보기 토글"></button>
-                              </div>
+
+                              <ul class="receipt-warning-list">
+                                <li>연말정산 간소화 서비스 등록을 위해 주민등록번호와 주소를 정확히 입력해 주세요.</li>
+                                <li>기부금 영수증은 국세청 홈택스 '간소화 서비스'를 통해 상시 조회 가능합니다.</li>
+                                <li>수집된 정보는 관련 법령에 따라 5년간 안전하게 보관됩니다.</li>
+                              </ul>
                             </div>
-
-                            <ul class="receipt-warning-list">
-                              <li>연말정산 간소화 서비스 등록을 위해 주민등록번호와 주소를 정확히 입력해 주세요.</li>
-                              <li>기부금 영수증은 국세청 홈택스 '간소화 서비스'를 통해 상시 조회 가능합니다.</li>
-                              <li>수집된 정보는 관련 법령에 따라 5년간 안전하게 보관됩니다.</li>
-                            </ul>
                           </div>
                         </div>
+                      </div>
+
+                      <!-- 기업/단체용 사업자 발급 안내 영역 (기본 숨김) -->
+                      <div id="receiptBizHelperArea">
+                        <p>
+                          사업자등록번호 입력 시 해당 정보 기준으로 기부금 영수증이 발급됩니다.<br />
+                          사업자등록번호가 없는 경우 기부금 영수증 발급이 제한될 수 있습니다.
+                        </p>
                       </div>
 
                     </div>
