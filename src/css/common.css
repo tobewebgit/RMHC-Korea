@@ -733,7 +733,6 @@
 
 /* 서브 탭 메뉴 */
 .sub-tab-menu {
-  border-bottom: 1px solid var(--border-color);
   margin-bottom: var(--spacing-6);
 }
 
@@ -754,20 +753,10 @@
   border: none;
   padding: 1.6rem 0;
   font-family: var(--font-extrabold);
-  font-size: var(--text-2xl);
-  font-weight: 800;
-  color: var(--text-gray60);
+  font-size: 2.8rem;
   cursor: pointer;
   position: relative;
   transition: color 0.2s ease;
-}
-
-.sub-tab-btn:hover {
-  color: #000000;
-}
-
-.sub-tab-btn.active {
-  color: #000000;
 }
 
 .sub-tab-btn.active::after {

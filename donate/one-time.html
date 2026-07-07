@@ -50,8 +50,8 @@
 
             <!-- 정기/일시 후원 구분 탭 버튼 -->
             <div class="donate-type-tabs">
-              <button type="button" class="donate-tab-btn regular" onclick="location.href='/donate/regular.html'">정기 후원</button>
-              <button type="button" class="donate-tab-btn once">일시 후원</button>
+              <button type="button" class="btn-tab disabled" disabled>정기 후원</button>
+              <button type="button" class="btn-tab">일시 후원</button>
             </div>
 
             <form id="oneTimeDonateForm" class="gala-apply-form" novalidate>
@@ -66,11 +66,11 @@
                 <div class="card-body">
                   <h3 class="card-subtitle">나눔의 크기를 선택해 주세요.</h3>
                   <div class="chip-grid cols-3">
-                    <button type="button" class="chip-btn" data-value="10000">10,000원</button>
-                    <button type="button" class="chip-btn" data-value="20000">20,000원</button>
-                    <button type="button" class="chip-btn" data-value="30000">30,000원</button>
-                    <button type="button" class="chip-btn" data-value="50000">50,000원</button>
-                    <button type="button" class="chip-btn" data-value="100000">100,000원</button>
+                    <button type="button" class="btn btn-outline" data-value="10000">10,000원</button>
+                    <button type="button" class="btn btn-outline" data-value="20000">20,000원</button>
+                    <button type="button" class="btn btn-outline" data-value="30000">30,000원</button>
+                    <button type="button" class="btn btn-outline" data-value="50000">50,000원</button>
+                    <button type="button" class="btn btn-outline" data-value="100000">100,000원</button>
                     <div class="direct-input-chip">
                       <input type="text" id="directAmount" placeholder="직접 입력" maxlength="9" />
                       <span class="unit">원</span>
@@ -106,8 +106,8 @@
                   </div>
 
                   <!-- 1단계 전용 다음 버튼 영역 (너비 100% 형태) -->
-                  <div class="next-btn-wrap" id="step1NextWrap" style="display: none; margin-top: 4rem;">
-                    <button type="button" id="btnStep1Next" class="btn btn-primary" style="width: 100%;">다음</button>
+                  <div class="next-btn-wrap" id="step1NextWrap" style="display: none;">
+                    <button type="button" id="btnStep1Next" class="btn btn-primary">다음</button>
                   </div>
                 </div>
               </section>
@@ -122,8 +122,8 @@
                 <div class="card-body">
                   <h3 class="card-subtitle">후원자 유형을 선택해 주세요.</h3>
                   <div class="chip-grid cols-2" id="donorTypeGrid">
-                    <button type="button" class="chip-btn active" data-type="individual">개인</button>
-                    <button type="button" class="chip-btn" data-type="group">기업 / 단체</button>
+                    <button type="button" class="btn btn-primary" data-type="individual">개인</button>
+                    <button type="button" class="btn btn-outline" data-type="group">기업 / 단체</button>
                   </div>
 
                   <hr class="sep-line" />
@@ -135,11 +135,11 @@
                       * 만 14세 미만은 보호자 명의로 후원해 주세요.
                     </p>
                     <div class="chip-grid cols-2" id="authBtnGrid">
-                      <button type="button" id="btnKakaoAuth" class="chip-btn btn-auth-action kakao">
+                      <button type="button" id="btnKakaoAuth" class="btn btn-outline btn-auth-action kakao">
                         <img src="/src/images/common/icon_kakao_pay.png" alt="카카오 로고" class="payment-logo" />
                         <span>카카오로 빠르게 시작하기</span>
                       </button>
-                      <button type="button" id="btnPassAuth" class="chip-btn btn-auth-action pass">
+                      <button type="button" id="btnPassAuth" class="btn btn-outline btn-auth-action pass">
                         <span>휴대폰으로 본인인증 (PASS)</span>
                       </button>
                     </div>
@@ -147,15 +147,22 @@
 
                   <!-- 본인인증 완료 시 노출되는 정보 입력 영역 (기본 숨김) -->
                   <div id="authInfoArea" style="display: none;">
+                    
+                    <hr class="sep-line" />
+
+                    <!-- 후원자 기본 정보 (인증 정보) -->
                     <div class="inner-form-group">
+                      <h3 class="form-subtitle">후원자 기본 정보 (인증 정보)</h3>
+                      <p class="receipt-helper-text">
+                        정보를 확인한 후 결제를 진행해 주세요.
+                      </p>
+
                       <div class="inner-form-box">
-                        <h4 class="card-subtitle">후원자 기본 정보 (인증 정보)</h4>
-                        
                         <!-- 이름 -->
                         <div class="form-group form">
                           <label for="donorName" class="form-label required">이름</label>
                           <div class="form-field">
-                            <input type="text" id="donorName" class="form-control" readonly value="로날드" />
+                            <input type="text" id="donorName" class="form-control disabled" disabled value="로날드" />
                           </div>
                         </div>
 
@@ -163,24 +170,15 @@
                         <div class="form-group form">
                           <label for="donorBirth" class="form-label required">생년월일</label>
                           <div class="form-field">
-                            <input type="text" id="donorBirth" class="form-control" readonly value="19880101" />
+                            <input type="text" id="donorBirth" class="form-control disabled" disabled value="19880101" />
                           </div>
                         </div>
 
-                        <!-- 성별 -->
+                        <!-- 성별 (라디오 버튼 대신 단순 텍스트 표기) -->
                         <div class="form-group form">
                           <span class="form-label required">성별</span>
-                          <div class="form-field">
-                            <div class="form-control-row">
-                              <label class="custom-radio">
-                                <input type="radio" name="donorGender" value="M" checked disabled />
-                                <span>남성</span>
-                              </label>
-                              <label class="custom-radio">
-                                <input type="radio" name="donorGender" value="F" disabled />
-                                <span>여성</span>
-                              </label>
-                            </div>
+                          <div class="form-field gender-field">
+                            <span class="gender-text">여성</span>
                           </div>
                         </div>
 
@@ -189,89 +187,115 @@
                           <label for="donorEmail" class="form-label required">이메일</label>
                           <div class="form-field">
                             <input type="email" id="donorEmail" class="form-control" value="rmhc@gmail.com" />
-                            <p class="receipt-helper-text">카카오 계정에 등록된 이메일입니다. 필요 시 수정해 주세요.</p>
+                            <p class="receipt-helper-text">후원 관련 안내를 받을 이메일을 입력해 주세요.</p>
                           </div>
                         </div>
-
-                        <hr class="sep-line" />
-
-                        <!-- 기부금 영수증 신청 여부 -->
-                        <div class="form-group form">
-                          <span class="form-label required">기부금 영수증</span>
-                          <div class="form-field">
-                            <div class="form-control-row">
-                              <label class="custom-radio">
-                                <input type="radio" name="receiptRequest" value="Y" checked />
-                                <span>예</span>
-                              </label>
-                              <label class="custom-radio">
-                                <input type="radio" name="receiptRequest" value="N" />
-                                <span>아니오</span>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- 기부금 영수증 발급 상세 정보 입력 영역 (기본 열림) -->
-                        <div id="receiptDetailArea" class="agreement-all">
-                          <p class="receipt-helper-text">
-                            기부금 영수증 발급을 위한 필수 정보입니다.<br />
-                            입력하신 개인정보는 기부금영수증 발급 목적으로만 수집·사용됩니다.
-                          </p>
-                          
-                          <!-- 주민등록번호 -->
-                          <div class="form-group form">
-                            <label for="residentNum" class="form-label required">주민등록번호</label>
-                            <div class="form-field">
-                              <div class="form-control-with-btn">
-                                <input type="text" id="residentNum" class="form-control" placeholder="주민등록번호 13자리 입력" maxlength="13" />
-                              </div>
-                              <p class="receipt-helper-text">
-                                연말정산 간소화 서비스 등록을 위해 주민등록번호와 주소를 정확히 입력해 주세요.<br />
-                                기부금 영수증은 국세청 홈택스 '간소화 서비스'를 통해 상시 조회 가능합니다.<br />
-                                수집된 정보는 관련 법령에 따라 5년간 안전하게 보관됩니다.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        <hr class="sep-line" />
-
-                        <!-- 약관동의 영역 -->
-                        <div class="agree-terms-content">
-                          <div class="agreement-all">
-                            <label class="custom-checkbox">
-                              <input type="checkbox" id="agreeAll" />
-                              <span>모두 동의합니다.</span>
-                            </label>
-                          </div>
-                          <div class="agreement-list">
-                            <div class="agreement-item">
-                              <label class="custom-checkbox">
-                                <input type="checkbox" name="agreeItem" class="required-agree" value="terms" />
-                                <span>[필수] 이용약관</span>
-                              </label>
-                              <a href="/policy/terms.html" target="_blank" class="agreement-link">자세히 보기</a>
-                            </div>
-                            <div class="agreement-item">
-                              <label class="custom-checkbox">
-                                <input type="checkbox" name="agreeItem" class="required-agree" value="privacy" />
-                                <span>[필수] 개인정보 수집 및 이용</span>
-                              </label>
-                              <a href="/policy/privacy.html" target="_blank" class="agreement-link">자세히 보기</a>
-                            </div>
-                            <div class="agreement-item">
-                              <label class="custom-checkbox">
-                                <input type="checkbox" name="agreeItem" value="marketing" />
-                                <span>[선택] 소식지 및 활동 알림 수신 동의</span>
-                              </label>
-                              <a href="#" class="agreement-link">자세히 보기</a>
-                            </div>
-                          </div>
-                        </div>
-
                       </div>
                     </div>
+
+                    <hr class="sep-line" />
+
+                    <!-- 기부금 영수증 신청 여부 (대분류 독립 노출) -->
+                    <div class="form-group form receipt-toggle-group">
+                      <span class="form-label required font-bold">*기부금 영수증</span>
+                      <div class="form-field">
+                        <div class="form-control-row gap-4">
+                          <label class="custom-radio">
+                            <input type="radio" name="receiptRequest" value="Y" />
+                            <span>예</span>
+                          </label>
+                          <label class="custom-radio">
+                            <input type="radio" name="receiptRequest" value="N" />
+                            <span>아니오</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 기부금 영수증 '예' 선택 시 노출 영역 (안내 가이드와 회색 박스를 품는 최외각 래퍼) -->
+                    <div id="receiptDetailArea" style="display: none;">
+                      
+                      <!-- 기부금 영수증 발급 안내 텍스트 (회색 박스 외부 상단 배치) -->
+                      <div class="receipt-helper">
+                        <p class="receipt-helper__primary">
+                          기부금 영수증 발급을 위한 필수 정보입니다.
+                        </p>
+                        <p class="receipt-helper__secondary">
+                          입력하신 개인정보는 기부금영수증 발급 목적으로만 수집·사용됩니다.
+                        </p>
+                      </div>
+
+                      <!-- 주민등록번호 입력 회색 박스 패널 (마진 0) -->
+                      <div class="receipt-resident-panel">
+                        <div class="form-group form">
+                          <div class="form-field">
+                            <div class="resident-label">주민등록번호</div>
+                            <div class="resident-input-group">
+                              <div class="resident-front-wrap">
+                                <input type="text" id="residentNum1" class="form-control" maxlength="6" />
+                              </div>
+                              <span class="resident-divider">-</span>
+                              <div class="resident-pw-wrap">
+                                <input type="password" id="residentNum2" class="form-control" maxlength="7" />
+                                <button type="button" class="eye-btn" aria-label="주민등록번호 뒷자리 보기 토글"></button>
+                              </div>
+                            </div>
+
+                            <ul class="receipt-warning-list">
+                              <li>연말정산 간소화 서비스 등록을 위해 주민등록번호와 주소를 정확히 입력해 주세요.</li>
+                              <li>기부금 영수증은 국세청 홈택스 '간소화 서비스'를 통해 상시 조회 가능합니다.</li>
+                              <li>수집된 정보는 관련 법령에 따라 5년간 안전하게 보관됩니다.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <hr class="sep-line" />
+
+                    <!-- 이용약관 및 수신 동의 (대분류) -->
+                    <div class="agree-terms-container">
+                      <h3 class="form-subtitle">이용약관, 개인정보 수집 및 이용 활동 안내 수신동의</h3>
+                      <div class="agree-terms-content">
+                        <div class="agreement-all">
+                          <label class="custom-checkbox">
+                            <input type="checkbox" id="agreeAll" />
+                            <span class="font-bold text-lg">모두 동의합니다.</span>
+                          </label>
+                        </div>
+                        <div class="agreement-list">
+                          <div class="agreement-item">
+                            <label class="custom-checkbox">
+                              <input type="checkbox" name="agreeItem" class="required-agree" value="terms" />
+                              <span><span class="color-primary" style="color: var(--primary);">[필수]</span> 이용약관</span>
+                            </label>
+                            <a href="/policy/terms.html" target="_blank" class="agreement-link">자세히 보기</a>
+                          </div>
+                          <div class="agreement-item">
+                            <label class="custom-checkbox">
+                              <input type="checkbox" name="agreeItem" class="required-agree" value="privacy" />
+                              <span><span class="color-primary" style="color: var(--primary);">[필수]</span> 개인정보 수집 및 이용</span>
+                            </label>
+                            <a href="/policy/privacy.html" target="_blank" class="agreement-link">자세히 보기</a>
+                          </div>
+                          <div class="agreement-item">
+                            <label class="custom-checkbox">
+                              <input type="checkbox" name="agreeItem" value="marketing" />
+                              <span><span>[선택]</span> 소식지 및 활동 알림 수신 동의</span>
+                            </label>
+                            <a href="#" class="agreement-link">자세히 보기</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 2단계 전용 이전 / 다음 버튼 영역 (이용약관 하단 배치) -->
+                    <div class="chip-grid cols-2">
+                      <button type="button" id="btnStep2Prev" class="btn btn-outline">이전</button>
+                      <button type="button" id="btnStep2Next" class="btn btn-primary" disabled>다음</button>
+                    </div>
+
                   </div>
 
                 </div>
@@ -289,30 +313,30 @@
                   
                   <!-- 공통화된 payment-tabs-grid 연동 -->
                   <div class="payment-tabs-grid">
-                    <button type="button" class="payment-tab-btn" data-pay="kakaopay">
-                      <img src="/src/images/logos/logo_kakaopay.svg" alt="카카오페이 로고" class="payment-tab-icon" />
+                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="kakaopay">
+                      <img src="/src/images/common/icon_kakao_pay.png" alt="카카오페이 로고" class="payment-tab-icon" />
                       <span>카카오페이</span>
                     </button>
-                    <button type="button" class="payment-tab-btn" data-pay="naverpay">
-                      <img src="/src/images/logos/logo_naverpay.svg" alt="네이버페이 로고" class="payment-tab-icon" />
+                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="naverpay">
+                      <img src="/src/images/common/icon_naver_pay.png" alt="네이버페이 로고" class="payment-tab-icon" />
                       <span>네이버페이</span>
                     </button>
-                    <button type="button" class="payment-tab-btn" data-pay="tosspay">
-                      <img src="/src/images/logos/logo_tosspay.svg" alt="토스페이 로고" class="payment-tab-icon" />
+                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="tosspay">
+                      <img src="/src/images/common/icon_toss_pay.png" alt="토스페이 로고" class="payment-tab-icon" />
                       <span>토스페이</span>
                     </button>
-                    <button type="button" class="payment-tab-btn" data-pay="card">
+                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="card">
                       <span>신용카드</span>
                     </button>
-                    <button type="button" class="payment-tab-btn" data-pay="bank">
+                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="bank">
                       <span>계좌이체</span>
                     </button>
                   </div>
 
                   <!-- 이전 / 후원하기 최종 액션 버튼 (좌우 50% 분할 칩 그리드 구성) -->
-                  <div class="chip-grid cols-2" style="margin-top: 4rem;">
-                    <button type="button" id="btnPrevStep" class="chip-btn btn-donate-prev">이전</button>
-                    <button type="submit" id="btnSubmitDonate" class="chip-btn btn-donate-submit">후원 하기</button>
+                  <div class="chip-grid cols-2">
+                    <button type="button" id="btnPrevStep" class="btn btn-outline primary">이전</button>
+                    <button type="submit" id="btnSubmitDonate" class="btn btn-primary" disabled>후원 하기</button>
                   </div>
                 </div>
               </section>

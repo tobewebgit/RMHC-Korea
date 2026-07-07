@@ -14,15 +14,17 @@ export function initCustomChips() {
       const groupName = this.getAttribute("data-toggle-chip");
       const value = this.getAttribute("data-chip-value");
 
-      // 1. 해당 그룹의 모든 칩 버튼 비활성화
+      // 1. 해당 그룹의 모든 칩 버튼 비활성화 (공통 테두리 복원)
       const siblings = document.querySelectorAll(`[data-toggle-chip="${groupName}"]`);
       siblings.forEach((sib) => {
-        sib.classList.remove("active");
+        sib.classList.remove("btn-primary");
+        sib.classList.add("btn-outline");
         sib.setAttribute("aria-checked", "false");
       });
 
-      // 2. 클릭한 칩 버튼 활성화
-      this.classList.add("active");
+      // 2. 클릭한 칩 버튼 활성화 (공통 주버튼 적용)
+      this.classList.remove("btn-outline");
+      this.classList.add("btn-primary");
       this.setAttribute("aria-checked", "true");
 
       // 3. 브릿지 hidden input 갱신 및 change 이벤트 방출

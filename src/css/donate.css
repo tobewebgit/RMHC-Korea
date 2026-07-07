@@ -20,9 +20,7 @@
 
 .donate-page .apply-left-col {
   flex: 1;
-  max-width: 70.6rem; /* 피그마 실측 좌측 영역 706px */
-  position: sticky;
-  top: 12rem;
+  max-width: 70.6rem;
 }
 
 .donate-page .apply-right-col {
@@ -116,28 +114,6 @@
   margin-bottom: 2rem;
 }
 
-.donate-tab-btn {
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 5.2rem;
-  border-radius: var(--radius-sm);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ffffff;
-  cursor: pointer;
-  transition: var(--transition-fast);
-  border: none;
-}
-
-.donate-tab-btn.regular {
-  background-color: #f1a7a9; /* 정기후원 비활성 상태의 피치 핑크 */
-}
-
-.donate-tab-btn.once {
-  background-color: var(--primary); /* 일시후원 활성 상태의 브랜드 레드 */
-}
 
 /* 4. 아코디언 카드 디자인 (gala_apply.html의 .common-card 사양 100% 동기화) */
 .accordion-card {
@@ -216,18 +192,6 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-.chip-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 5.6rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
 .direct-input-chip {
   position: relative;
   display: inline-flex;
@@ -264,27 +228,8 @@
   border-color: var(--primary);
 }
 
-.chip-btn:hover {
-  border-color: var(--border-hover);
-  background-color: var(--bg-secondary);
-}
-
-/* 활성화 상태 공통 */
-.chip-btn.active {
-}
-
-/* 후원 금액 칩 전용 활성화 (브랜드 레드 배경 / 흰색 폰트) */
-#step1Card .chip-btn.active {
-  background-color: var(--primary);
-  color: var(--bg-primary);
-  border-color: var(--primary);
-}
-
-/* 후원자 유형 칩 전용 활성화 (브랜드 레드 배경 / 흰색 폰트) */
+/* 후원자 유형 칩 전용 활성화 (굵기 가속) */
 #donorTypeGrid .chip-btn.active {
-  background-color: var(--primary);
-  color: var(--bg-primary);
-  border-color: var(--primary);
   font-weight: 700;
 }
 
@@ -381,35 +326,6 @@
 }
 
 /* 8. 최종 이전 / 후원하기 버튼 */
-.btn-donate-prev {
-  background-color: #ffffff !important;
-  border: 1px solid var(--primary) !important;
-  color: var(--primary) !important;
-}
-
-.btn-donate-prev:hover {
-  background-color: #fff9e6 !important;
-}
-
-.btn-donate-submit {
-  background-color: #f1a7a9 !important; /* 초기 비활성 느낌의 연핑크 */
-  color: #ffffff !important;
-  border: 1px solid #f1a7a9 !important;
-  pointer-events: none;
-  cursor: not-allowed;
-}
-
-.btn-donate-submit.active {
-  background-color: var(--primary) !important; /* 활성화 시 브랜드 레드 */
-  border-color: var(--primary) !important;
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-.btn-donate-submit.active:hover {
-  background-color: #c00005 !important;
-  border-color: #c00005 !important;
-}
 
 /* 기부금 영수증 발급 안내 텍스트 */
 .receipt-helper-text {
@@ -418,6 +334,146 @@
   color: var(--text-muted);
   margin-top: 1.6rem;
   word-break: keep-all;
+}
+
+/* 기부금 영수증 및 주민번호 인증 영역 (join/form.html & login.css 모듈 상속) */
+.receipt-resident-panel {
+  margin-left: 0 !important; /* 타 CSS에 기정의된 16rem 마진 상속 차단 */
+  padding: 3.2rem 2.4rem;
+  background-color: rgba(208, 201, 255, 0.15); /* 연한 연보라색 배경 원복 */
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-gray40);
+}
+
+.resident-label {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.resident-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.resident-front-wrap,
+.resident-pw-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.resident-front-wrap .form-control,
+.resident-pw-wrap .form-control {
+  width: 100%;
+  background-color: #ffffff; /* 인풋 배경색 화이트 지정 */
+}
+
+.resident-divider {
+  font-size: 1.6rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.resident-pw-wrap .form-control {
+  padding-right: 4.5rem;
+}
+
+.resident-pw-wrap .eye-btn {
+  position: absolute;
+  right: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  background-size: contain;
+}
+
+.receipt-warning-list {
+  margin-top: 2.4rem;
+  padding-left: 2rem;
+}
+.receipt-warning-list li {
+  list-style-type: disc;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* 인라인 스타일의 클래스화 규격화 */
+.form-field.gender-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 5.6rem;
+  text-align: left;
+}
+
+.gender-text {
+  font-size: 1.8rem;
+  font-family: var(--font-pretendard);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.next-btn-wrap {
+  margin-top: 4rem;
+}
+
+.next-btn-wrap .btn-primary {
+  width: 100%;
+}
+
+#receiptDetailArea {
+  margin-top: 4rem;
+}
+
+.receipt-helper {
+  margin-bottom: 2.4rem;
+  line-height: 1.5;
+}
+
+.receipt-helper__primary {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.receipt-helper__secondary {
+  font-size: 1.4rem;
+  margin-top: 0.4rem;
+  color: var(--text-muted);
+}
+
+.inner-form-group .receipt-helper-text {
+  margin-top: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.agree-terms-container {
+  margin-top: 5.2rem;
+}
+
+.agree-terms-content {
+  margin-top: 2rem;
+}
+
+.agreement-all .text-lg {
+  font-size: 1.8rem;
+}
+
+.agreement-list {
+  margin-top: 1.6rem;
+}
+
+.donate-page .card-body .chip-grid.cols-2 {
+  margin-top: 4rem;
 }
 
 /* 9. 반응형 브레이크포인트 보정 */

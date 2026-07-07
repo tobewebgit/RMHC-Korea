@@ -18,22 +18,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const step3Summary = document.getElementById('step3Summary');
   
   // 1단계: 금액 설정
-  const amountChips = step1Card.querySelectorAll('.chip-btn');
+  const amountChips = step1Card.querySelectorAll('.chip-grid .btn');
   const directInputChip = step1Card.querySelector('.direct-input-chip');
   const directAmountInput = document.getElementById('directAmount');
   const helperBoxes = step1Card.querySelectorAll('.notice-yellow-box');
   const step1NextWrap = document.getElementById('step1NextWrap');
   const btnStep1Next = document.getElementById('btnStep1Next');
   
-  // 2단계: 후원자 정보
-  const donorTypeChips = document.getElementById('donorTypeGrid').querySelectorAll('.chip-btn');
+  // 2단계: 후원자 정보 (join/form.html 2분할 사양 매핑)
+  const donorTypeChips = document.getElementById('donorTypeGrid').querySelectorAll('.btn');
   const authRequestArea = document.getElementById('authRequestArea');
   const authInfoArea = document.getElementById('authInfoArea');
   const btnKakaoAuth = document.getElementById('btnKakaoAuth');
   const btnPassAuth = document.getElementById('btnPassAuth');
   const receiptRadios = document.getElementsByName('receiptRequest');
   const receiptDetailArea = document.getElementById('receiptDetailArea');
-  const residentNumInput = document.getElementById('residentNum');
+  const residentNum1 = document.getElementById('residentNum1');
+  const residentNum2 = document.getElementById('residentNum2');
+  const btnStep2Prev = document.getElementById('btnStep2Prev');
+  const btnStep2Next = document.getElementById('btnStep2Next');
   
   // 약관동의
   const agreeAll = document.getElementById('agreeAll');
@@ -151,10 +154,14 @@ document.addEventListener('DOMContentLoaded', () => {
       isDirectMode = false;
       
       // 모든 일반 칩 액티브 해제 및 직접 입력 칩 포커스 제거
-      amountChips.forEach(c => c.classList.remove('active'));
+      amountChips.forEach(c => {
+        c.classList.remove('btn-primary');
+        c.classList.add('btn-outline');
+      });
       directInputChip.classList.remove('active');
       
-      chip.classList.add('active');
+      chip.classList.remove('btn-outline');
+      chip.classList.add('btn-primary');
       directAmountInput.value = '';
       
       const val = chip.getAttribute('data-value');
@@ -176,7 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
     isDirectMode = true;
     
     // 일반 칩 선택 해제 및 직접 입력 활성화 테두리 추가
-    amountChips.forEach(c => c.classList.remove('active'));
+    amountChips.forEach(c => {
+      c.classList.remove('btn-primary');
+      c.classList.add('btn-outline');
+    });
     directInputChip.classList.add('active');
     
     // 6번째 헬퍼 배너(직접입력 매칭 배너) 노출
@@ -185,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     validateDirectInput();
   });
 
+  // 직접 입력 금액 포맷팅 연동
   directAmountInput.addEventListener('input', (e) => {
     let val = e.target.value.replace(/[^0-9]/g, '');
     e.target.value = val ? formatNumber(parseInt(val, 10)) : '';
@@ -192,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     validateDirectInput();
   });
 
-  // 직접 입력 실시간 검증 및 다음 버튼 노출 여부 결정 (임의 최소금액 에러 체크 제거)
+  // 직접 입력 실시간 검증 및 다음 버튼 노출 여부 결정
   function validateDirectInput() {
     const rawVal = directAmountInput.value.replace(/[^0-9]/g, '');
     const numVal = parseInt(rawVal, 10);
@@ -207,7 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
       step1NextWrap.style.display = 'block'; // 금액이 입력되면 다음 버튼 표출
     }
 
-    // 변경된 높이 실시간 적용
     body.style.maxHeight = body.scrollHeight + 'px';
   }
 
@@ -229,8 +239,12 @@ document.addEventListener('DOMContentLoaded', () => {
   
   donorTypeChips.forEach(chip => {
     chip.addEventListener('click', () => {
-      donorTypeChips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
+      donorTypeChips.forEach(c => {
+        c.classList.remove('btn-primary');
+        c.classList.add('btn-outline');
+      });
+      chip.classList.remove('btn-outline');
+      chip.classList.add('btn-primary');
       
       const type = chip.getAttribute('data-type');
       selectedDonorType = type === 'individual' ? '개인' : '기업 / 단체';
@@ -239,14 +253,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 본인인증 성공 시뮬레이션
   function handleAuthSuccess(providerName) {
-    alert(`${providerName} 본인인증이 완료되었습니다.`);
     isAuthenticated = true;
     
-    authRequestArea.style.display = 'none';
     authInfoArea.style.display = 'block';
     
     const body = step2Card.querySelector('.card-body');
     body.style.maxHeight = body.scrollHeight + 'px';
+    checkAgreementAndProceed();
   }
 
   btnKakaoAuth.addEventListener('click', () => {
@@ -257,19 +270,56 @@ document.addEventListener('DOMContentLoaded', () => {
     handleAuthSuccess('휴대폰 (PASS)');
   });
 
-  // 기부금 영수증 신청 여부 라디오 분기 처리
+  // 기부금 영수증 신청 여부 라디오 분기 처리 (join/form.html 2분할 인풋 유효성 연동)
   receiptRadios.forEach(radio => {
     radio.addEventListener('change', (e) => {
       const body = step2Card.querySelector('.card-body');
       
       if (e.target.value === 'Y') {
         receiptDetailArea.style.display = 'block';
-        residentNumInput.setAttribute('required', 'true');
+        residentNum1.setAttribute('required', 'true');
+        residentNum2.setAttribute('required', 'true');
         body.style.maxHeight = body.scrollHeight + 'px';
       } else {
         receiptDetailArea.style.display = 'none';
-        residentNumInput.removeAttribute('required');
+        residentNum1.removeAttribute('required');
+        residentNum2.removeAttribute('required');
         body.style.maxHeight = body.scrollHeight + 'px';
+      }
+      checkAgreementAndProceed();
+    });
+  });
+
+  // 주민등록번호 앞자리 입력 제어 (6자 차면 뒷자리로 자동 포커스 포워딩 최적화)
+  residentNum1.addEventListener('input', (e) => {
+    let val = e.target.value.replace(/[^0-9]/g, '');
+    e.target.value = val;
+    if (val.length === 6) {
+      residentNum2.focus();
+    }
+    checkAgreementAndProceed();
+  });
+
+  // 주민등록번호 뒷자리 입력 제어
+  residentNum2.addEventListener('input', (e) => {
+    let val = e.target.value.replace(/[^0-9]/g, '');
+    e.target.value = val;
+    checkAgreementAndProceed();
+  });
+
+  // 주민등록번호 뒷자리 눈모양 마스킹 토글 이벤트 추가 (join/form.html 동일)
+  const eyeButtons = step2Card.querySelectorAll('.eye-btn');
+  eyeButtons.forEach(btn => {
+    btn.addEventListener('click', function () {
+      const input = this.previousElementSibling;
+      if (input && (input.type === 'password' || input.type === 'text')) {
+        if (input.type === 'password') {
+          input.type = 'text';
+          this.classList.add('visible');
+        } else {
+          input.type = 'password';
+          this.classList.remove('visible');
+        }
       }
     });
   });
@@ -291,22 +341,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 약관동의 여부 및 필수값 체크 후 3단계 이동
+  // 약관동의 여부 및 필수값 체크 후 2단계 다음 버튼 활성화 처리 (2분할 주민번호 정합성 13자리 체크)
   function checkAgreementAndProceed() {
-    if (!isAuthenticated) return;
+    if (!isAuthenticated) {
+      btnStep2Next.classList.remove('active');
+      return;
+    }
     
     const requiredAgreed = Array.from(agreeItems)
       .filter(i => i.classList.contains('required-agree'))
       .every(i => i.checked);
       
-    const receiptReq = form.querySelector('input[name="receiptRequest"]:checked').value;
+    const receiptRadioChecked = form.querySelector('input[name="receiptRequest"]:checked');
+    const receiptReq = receiptRadioChecked ? receiptRadioChecked.value : '';
     let residentNumValid = true;
     
     if (receiptReq === 'Y') {
-      residentNumValid = residentNumInput.value.trim().length === 13;
+      residentNumValid = (residentNum1.value.trim().length === 6) && (residentNum2.value.trim().length === 7);
+    } else if (receiptReq === 'N') {
+      residentNumValid = true;
+    } else {
+      // 초기 미선택 상태
+      residentNumValid = false;
     }
 
     if (requiredAgreed && residentNumValid) {
+      btnStep2Next.removeAttribute('disabled');
+    } else {
+      btnStep2Next.setAttribute('disabled', 'true');
+    }
+  }
+
+  // 2단계 이전 버튼 클릭 시 1단계로 슬라이딩 회귀
+  btnStep2Prev.addEventListener('click', () => {
+    switchStep(
+      step1Card,
+      step2Card,
+      step2Summary,
+      '',
+      step1Summary,
+      ''
+    );
+  });
+
+  // 2단계 다음 버튼 클릭 시 3단계 카드로 슬라이딩
+  btnStep2Next.addEventListener('click', () => {
+    if (!btnStep2Next.hasAttribute('disabled')) {
       switchStep(
         step3Card, 
         step2Card, 
@@ -316,28 +396,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ''
       );
     }
-  }
-
-  // 주민등록번호 13자리 입력 체크
-  residentNumInput.addEventListener('input', (e) => {
-    let val = e.target.value.replace(/[^0-9]/g, '');
-    e.target.value = val;
-    checkAgreementAndProceed();
   });
 
   // --- 3단계: 결제 수단 로직 ---
   
   paymentChips.forEach(chip => {
     chip.addEventListener('click', () => {
-      paymentChips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
+      paymentChips.forEach(c => {
+        c.classList.remove('btn-primary');
+        c.classList.add('btn-outline');
+      });
+      chip.classList.remove('btn-outline');
+      chip.classList.add('btn-primary');
       
       let payName = chip.querySelector('span') ? chip.querySelector('span').textContent : '기타결제';
       
       selectedPayment = payName;
       step3Summary.textContent = selectedPayment;
       
-      btnSubmitDonate.classList.add('active');
+      btnSubmitDonate.removeAttribute('disabled');
     });
   });
 
@@ -400,6 +477,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     
+    const finalResidentVal = receiptRadios[0].checked ? `${residentNum1.value}-${residentNum2.value}` : '';
     alert(`성공적으로 일시 후원이 완료되었습니다.\n후원 금액: ${selectedAmount}원\n결제 수단: ${selectedPayment}`);
     location.href = '/donate/complete.html';
   });

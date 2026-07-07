@@ -66,8 +66,13 @@
   font-family: var(--font-pretendard);
   font-size: var(--text-lg);
 }
-.form-control.disabled {
-  background: rgba(208, 201, 255, 0.2);
+.form-control.disabled,
+.form-control:disabled,
+.form-control[disabled] {
+  background: rgba(208, 201, 255, 0.2) !important;
+  color: var(--text-secondary) !important;
+  cursor: not-allowed;
+  border-color: var(--border-gray40) !important;
 }
 .form-control::placeholder {
   color: var(--text-muted);
@@ -320,33 +325,18 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 3.2rem;
   border-top: 1px solid var(--border-color);
-  padding-top: 2.4rem;
+  padding-top: 3.2rem;
 }
 
 .payment-tab-btn {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 5.2rem;
-  border: 1px solid var(--border-color) !important;
-  border-radius: var(--radius-sm);
-  font-size: 1.8rem;
-  color: var(--text-primary);
-  cursor: pointer;
-  transition: var(--transition-fast);
   gap: 0.8rem;
-}
-
-.payment-tab-btn:hover {
-  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 .payment-tab-btn.active {
   color: var(--primary) !important;
-  font-family: var(--font-bold) !important;
-  font-weight: 700 !important;
   background-color: var(--bg-primary) !important;
 }
 

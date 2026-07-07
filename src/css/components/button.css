@@ -29,17 +29,22 @@
   margin: 0 auto;
 }
 
+/* Disabled State */
+.btn:disabled,
+.btn.disabled,
+.btn-tab:disabled,
+.btn-tab.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* RMHC Red Button (Contrast: white on red = 5.34:1, PASSES AA) */
 .btn-primary, a.btn-primary {
   background-color: var(--primary);
   color: #fffde9;
-  /* box-shadow: 0 4px 12px var(--primary-glow); */
 }
-/* .btn-primary:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-0.2rem);
-  box-shadow: 0 8px 20px rgba(209, 35, 42, 0.2);
-} */
+.btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
   color: var(--text-white);
@@ -48,7 +53,7 @@
 /* RMHC Yellow Button (Contrast: Dark Charcoal on Gold = 7.8:1, PASSES AA) */
 .btn-secondary {
   background-color: var(--secondary);
-  color: var(--text-primary); /* Compliant with WCAG AA 명도대비 */
+  color: var(--text-primary);
   box-shadow: 0 4px 12px var(--secondary-glow);
 }
 /* .btn-secondary:hover {
@@ -95,6 +100,25 @@
 }
 .btn-text:hover {
   color: var(--primary);
+}
+
+/* Tab Buttons (e.g. for donate, member type selectors) */
+.btn-tab {
+  display: flex;
+  width: 34.6rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-Redius8, 0.8rem);
+  background: var(--color-brand-red, #DB0007);
+  color: #ffffff;
+  border: none;
+  min-height: 5.2rem;
+  font-size: var(--text-lg);
+  cursor: pointer;
+  user-select: none;
 }
 
 /* Table Specific Small Button (Height 36px) */

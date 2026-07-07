@@ -1094,29 +1094,24 @@ a.agreement-link {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 3.2rem;
 }
 
 .current-payment-title {
-  font-family: var(--font-extrabold);
   font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--text-primary);
+  font-weight: 600;
+  color: var(--text-gray100);
 }
 
 .current-payment-value {
   font-size: 1.8rem;
-  font-weight: 400;
-  color: var(--text-secondary);
 }
 
 
 .payment-form-section-title {
-  font-family: var(--font-extrabold);
   font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
 }
 
 /* 폼 외부 상자 배경색 피그마 fills 적용 */
@@ -1214,12 +1209,6 @@ a.agreement-link {
 
 .payment-popup-footer .btn-popup-cancel {
   width: 30.8rem;
-  height: 5.2rem;
-  font-family: var(--font-bold);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--primary);
-  border-color: var(--primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1231,10 +1220,6 @@ a.agreement-link {
 
 .payment-popup-footer .btn-popup-submit {
   width: 30.8rem;
-  height: 5.2rem;
-  font-family: var(--font-bold);
-  font-size: 1.8rem;
-  font-weight: 700;
   display: inline-flex;
   align-items: center;
   justify-content: center;
