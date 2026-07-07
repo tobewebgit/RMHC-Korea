@@ -1046,7 +1046,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     
-    alert(`성공적으로 후원이 완료되었습니다.\n후원 구분: ${activeDonateTab} 후원\n후원 금액: ${selectedAmount}원\n결제 수단: ${selectedPayment}`);
     location.href = '/donate/complete.html';
   });
 });

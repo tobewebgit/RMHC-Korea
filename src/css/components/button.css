@@ -23,6 +23,10 @@
   cursor: pointer;
   outline: 2px solid transparent;
   user-select: none;
+  transition: background-color 0.2s ease-in-out;
+}
+.btn:hover {
+  background-color: #b50005;
 }
 .btn.w-auto {
   width: auto;
@@ -83,9 +87,6 @@
   transform: translateY(-0.2rem);
   box-shadow: 0 6px 16px var(--primary-glow);
 }
-.btn-outline:active {
-  transform: translateY(0);
-} */
 .btn-outline.primary {
   color: var(--primary);
   border-color: var(--primary);

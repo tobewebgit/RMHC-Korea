@@ -25,7 +25,8 @@ const targetNodes = {
   terms: '2405:105067',
   email: '2405:105259',
   gala_apply: '2531:43001',
-  one_time: '2531:44497'
+  one_time: '2531:44497',
+  complete: '2531:48230'
 };
 
 Object.entries(targetNodes).forEach(([key, nodeId]) => {

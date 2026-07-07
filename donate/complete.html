@@ -6,6 +6,7 @@
     <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 후원이 성공적으로 완료되었습니다. 감사합니다." />
     <title>후원완료 - 한국로날드맥도날드하우스</title>
     <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/complete.css" />
   </head>
   <body>
     <!-- 웹 접근성 스킵 네비게이션 -->
@@ -15,8 +16,67 @@
     <load ="/includes/header.html" />
 
     <div class="page-wrapper">
-      <main id="main-content">
-        <!-- [작업 전 레거시 비움] 사용자 요청 시 순서대로 퍼블리싱 진행 예정 -->
+      <main id="main-content" class="container complete-container">
+        <!-- 완료 박스 카드 패널 -->
+        <div class="complete-card common-card">
+          <!-- 완료 인트로 비주얼 -->
+          <div class="complete-intro">
+            <img src="/src/images/login/icon-top-hands.png" alt="" class="complete-icon" />
+            <h1 class="complete-title">후원이 정상적으로 완료되었습니다.</h1>
+            <p class="complete-desc">
+              소중한 나눔에 함께해 주셔서 감사합니다.<br />
+              후원 내역은 마이페이지를 통해 확인하실 수 있습니다.
+            </p>
+          </div>
+
+          <!-- 구분선 -->
+          <div class="complete-divider-thick"></div>
+
+          <!-- 후원 정보 요약 테이블 -->
+          <div class="complete-info-section">
+            <h2 class="info-section-title">후원 정보</h2>
+            <div class="info-table">
+              <div class="info-row">
+                <span class="info-label">후원 신청일</span>
+                <span class="info-value" id="complete_date">2026년 04월 22일</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">후원 방식</span>
+                <span class="info-value" id="complete_type">정기후원</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">후원 금액</span>
+                <span class="info-value" id="complete_amount">30,000원</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">납부 방법</span>
+                <span class="info-value" id="complete_payment">신용카드</span>
+              </div>
+              <!-- 정기 후원인 경우에만 렌더링될 매월 결제일 (기본값 노출하되 JS로 조절) -->
+              <div class="info-row" id="complete_withdraw_row">
+                <span class="info-label">결제일</span>
+                <span class="info-value" id="complete_withdraw_day">매월 5일</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 영수증 안내 메시지 -->
+          <div class="complete-helper-box">
+            <p>기부금 영수증은 국세청 연말정산 간소화 서비스를 통해 확인하실 수 있습니다.</p>
+            <p class="highlight-link"><a href="mailto:ronaldmcdonaldhousekr.org">ronaldmcdonaldhousekr.org</a> 로 연락해 주세요.</p>
+          </div>
+
+          <!-- 후원 내역 조회하기 버튼 -->
+          <div class="complete-action-area">
+            <a href="/mypage/mypage.html" class="btn btn-primary">후원 내역 조회하기</a>
+          </div>
+
+          <!-- 비회원용 하단 안내 구분선 및 가이드 -->
+          <div class="complete-divider-thin"></div>
+          <p class="nonmember-guide-text">
+            비회원으로 후원하신 경우, 휴대폰 인증을 통해 내역을 조회하실 수 있습니다.
+          </p>
+        </div>
       </main>
     </div>
 
