@@ -25,9 +25,6 @@
   user-select: none;
   transition: background-color 0.2s ease-in-out;
 }
-.btn:hover {
-  background-color: #b50005;
-}
 .btn.w-auto {
   width: auto;
   margin: 0 auto;
@@ -52,10 +49,9 @@
   background-color: var(--primary);
   color: #fffde9;
 }
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
+.btn-primary:hover {
   color: var(--text-white);
+  background-color: #b50005;
 }
 
 /* RMHC Yellow Button (Contrast: Dark Charcoal on Gold = 7.8:1, PASSES AA) */

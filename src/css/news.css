@@ -4,67 +4,6 @@
    RMHC Korea 소식 (공지 및 활동 소식) 전용 스타일 (news.css)
    ========================================================================== */
 
-/* 1. 영웅 배너 (KV 영역) */
-.news-kv {
-  position: relative;
-  width: 100%;
-  margin-top: 5rem;
-  text-align: center;
-}
-
-.news-kv .kv-img-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 184rem;
-  height: 50rem;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.news-kv .kv-img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 184rem;
-  height: 50rem;
-  transform: translateX(-50%);
-  z-index: 1
-}
-
-.news-kv .kv-text-wrap {
-  position: absolute; /* absolute로 중앙정렬 */
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-  width: 100%;
-  max-width: 120.0rem; /* 내용 영역 최대폭 */
-  padding: 0 2.4rem;
-  box-sizing: border-box;
-  z-index: 10;
-}
-
-.news-kv .kv-title {
-  font-family: var(--font-extrabold); /* NanumSquare Neo */
-  font-size: 5.8rem; /* 58px */
-  font-weight: 800;
-  line-height: 1.3;
-  color: #FFFDF6;
-  letter-spacing: -0.03em;
-  margin: 0;
-}
-
-.news-kv .kv-desc { /* Pretendard */
-  font-size: 2.2rem; /* 22px */
-  line-height: 1.3;
-  color: #FFFDF6;
-  margin: 0;
-  white-space: pre-line;
-}
-
 /* 2. 리스트 헤더 (건수 및 검색) */
 .news-list-header {
   display: flex;

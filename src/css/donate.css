@@ -673,8 +673,177 @@
   transform: translateY(-50%) !important;
 }
 
+
+
 /* 유효기간 2분할용 셀렉트박스 반할 크기 명시 */
 .payment-form-field.double-select .custom-select.selectbox {
   width: 50% !important;
 }
 
+
+/* ==========================================================================
+   goods.css — 물품후원 페이지 전용 스타일 (donate.css 내 모듈)
+   피그마 실측 기준: node 2531:48628
+   ========================================================================== */
+
+/* 1. 물품후원 섹션 래퍼 */
+.goods-section {
+  padding: 10rem 0 12rem;
+}
+
+/* 2. 섹션 헤더: 제목 + 설명 */
+.goods-header {
+  max-width: 120rem;
+  margin: 0 auto 8rem;
+  text-align: center;
+}
+
+/* 제목: NanumSquare Neo OTF ExtraBold 58px */
+.goods-header__title {
+  font-family: var(--font-extrabold);
+  font-size: var(--text-6xl);
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 2.4rem;
+}
+
+/* 설명: Pretendard Regular 22px */
+.goods-header__desc {
+  font-family: var(--font-pretendard);
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--text-primary);
+  word-break: keep-all;
+}
+
+/* 3. 카드 그리드: 4열 × 2행 */
+.goods-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+  padding: 0 var(--spacing-4);
+}
+
+/* 4. 카드 공통 스타일 */
+.goods-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 5. 카드 헤더 (카테고리 뱃지 영역) */
+.goods-card__header {
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--spacing-10);
+}
+
+/* 카테고리명: NanumSquare Neo ExtraBold 28px */
+.goods-card__title {
+  font-family: var(--font-extrabold);
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--text-primary);
+  word-break: keep-all;
+}
+
+/* 6. 카드 바디 (물품 리스트 영역) */
+.goods-card__body {
+  flex: 1;
+  background-color: var(--bg-primary);
+  padding: var(--spacing-8) var(--spacing-10);
+}
+
+/* 7. 리스트 초기화 */
+.goods-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* 8. 리스트 아이템 */
+.goods-card__item {
+  font-family: var(--font-pretendard);
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--text-primary);
+  padding-left: 1.6rem;
+  position: relative;
+}
+
+/* 글머리 점(•) */
+.goods-card__item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--text-primary);
+}
+
+/* 9. 카드 헤더 배경색 4종 */
+/* 골드: #ffbc0d */
+.goods-card--gold .goods-card__header {
+  background-color: #ffbc0d;
+}
+
+/* 스카이블루: #8ee7f8 */
+.goods-card--blue .goods-card__header {
+  background-color: #8ee7f8;
+}
+
+/* 라임그린: #9cd83e */
+.goods-card--green .goods-card__header {
+  background-color: #9cd83e;
+}
+
+/* 라벤더: #d0c9ff */
+.goods-card--lavender .goods-card__header {
+  background-color: #d0c9ff;
+}
+
+/* 10. 반응형 브레이크포인트 */
+@media (max-width: 1024px) {
+  .goods-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .goods-section {
+    padding: 6rem 0 8rem;
+  }
+
+  .goods-header {
+    margin-bottom: 4rem;
+  }
+
+  .goods-header__title {
+    font-size: 3.6rem;
+  }
+
+  .goods-header__desc {
+    font-size: 1.6rem;
+  }
+
+  .goods-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .goods-card__title {
+    font-size: 2.4rem;
+  }
+
+  .goods-card__item {
+    font-size: 1.8rem;
+  }
+}
