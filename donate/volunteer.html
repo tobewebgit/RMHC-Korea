@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 자원봉사 신청 페이지입니다. 함께 따뜻한 울림을 전해요." />
+    <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 자원봉사 신청 페이지입니다. 당신의 1시간이 환아 가족에게 따뜻한 쉼이 됩니다." />
     <title>자원봉사 신청 - 한국로날드맥도날드하우스</title>
     <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/donate.css" />
   </head>
   <body>
     <!-- 웹 접근성 스킵 네비게이션 -->
@@ -16,7 +17,405 @@
 
     <div class="page-wrapper">
       <main id="main-content">
-        <!-- [작업 전 레거시 비움] 사용자 요청 시 순서대로 퍼블리싱 진행 예정 -->
+
+        <!-- ======================================================
+             KV — 히어로 영역
+             피그마: 1920×791, 좌측 텍스트 오버레이
+             ====================================================== -->
+        <section class="vol-kv" aria-label="자원봉사 히어로 영역">
+          <div class="vol-kv__img-wrap">
+            <img
+              src="/src/images/donate/img_volunteer_top.png"
+              alt="RMHC Korea 자원봉사 현장 사진"
+              class="vol-kv__img"
+              width="1920"
+              height="791"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="vol-kv__text-wrap">
+            <h1 class="vol-kv__title font-nanum">
+              당신의 1시간이 환아 가족에게<br />따뜻한 쉼이 됩니다.
+            </h1>
+            <p class="vol-kv__desc">나눔이 아이와 가족에게 큰 힘이 됩니다</p>
+            <a href="#vol-apply" class="btn btn-primary w-auto vol-kv__cta">자원봉사 알아보기</a>
+          </div>
+        </section>
+
+        <!-- ======================================================
+             Section 1 — 나눔의 기쁨은 (소개 텍스트 + 슬라이드 이미지)
+             피그마: 1920×676, paddingTop:200, gap:80
+             ====================================================== -->
+        <section class="vol-intro" aria-labelledby="vol-intro-title">
+          <div class="vol-intro__inner inner-layout">
+            <div class="vol-intro__text">
+              <h2 id="vol-intro-title" class="vol-intro__title font-nanum">
+                나눔의 기쁨은<br />서로를 더 성장하게 합니다
+              </h2>
+              <p class="vol-intro__desc">
+                아이와 가족 곁에서 함께하는 시간은 그 자체로 큰 위로가 됩니다.<br />
+                당신의 따뜻한 손길이 아이들에게는 잊지 못할 기억입니다.
+              </p>
+            </div>
+            <div class="vol-intro__slide-wrap">
+              <!-- 정적 이미지 처리 (슬라이더 인터랙션은 고도화 단계에서 구현) -->
+              <figure class="vol-intro__slide">
+                <img
+                  src="/src/images/donate/img_volunteer_slide_1.png"
+                  alt="자원봉사 활동 현장 이미지 1"
+                  class="vol-intro__slide-img"
+                  width="680"
+                  height="415"
+                  loading="lazy"
+                />
+                <img
+                  src="/src/images/donate/img_volunteer_slide_2.png"
+                  alt="자원봉사 활동 현장 이미지 2"
+                  class="vol-intro__slide-img"
+                  width="680"
+                  height="415"
+                  loading="lazy"
+                  aria-hidden="true"
+                />
+                <img
+                  src="/src/images/donate/img_volunteer_slide_3.png"
+                  alt="자원봉사 활동 현장 이미지 3"
+                  class="vol-intro__slide-img"
+                  width="680"
+                  height="415"
+                  loading="lazy"
+                  aria-hidden="true"
+                />
+                <img
+                  src="/src/images/donate/img_volunteer_slide_4.png"
+                  alt="자원봉사 활동 현장 이미지 4"
+                  class="vol-intro__slide-img"
+                  width="680"
+                  height="415"
+                  loading="lazy"
+                  aria-hidden="true"
+                />
+                <figcaption class="vol-intro__slide-caption font-nanum">하우스 객실 청소 및 침구 정리정돈</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================================================
+             Section 2 — 이런 분들과 함께합니다 (임팩트 수치)
+             피그마: 1920×754, paddingTop/Bottom:200, gap:80
+             ====================================================== -->
+        <section class="vol-impact" aria-labelledby="vol-impact-title">
+          <div class="vol-impact__inner inner-layout">
+            <div class="vol-impact__header">
+              <h2 id="vol-impact-title" class="vol-impact__title font-nanum">이런 분들과 함께합니다</h2>
+              <p class="vol-impact__desc">
+                후원자님과 파트너 기업이 함께해주신 덕분에, 하우스는 지친 환아 가족들에게<br />편안한 쉼표와 평범한 일상을 전할 수 있게 되었습니다.
+              </p>
+            </div>
+            <div class="vol-impact__cards">
+              <div class="vol-impact__card">
+                <span class="vol-impact__number font-audrey">1.4K+</span>
+                <p class="vol-impact__label font-nanum">약속한 시간을<br />소중히 지켜주시는 분</p>
+              </div>
+              <div class="vol-impact__card">
+                <span class="vol-impact__number font-audrey">2,131+</span>
+                <p class="vol-impact__label font-nanum">함께하는 동료와<br />기쁘게 협력하시는 분</p>
+              </div>
+              <div class="vol-impact__card">
+                <span class="vol-impact__number font-audrey">210+</span>
+                <p class="vol-impact__label font-nanum">환아와 가족의 마음을<br />먼저 살피시는 분</p>
+              </div>
+              <div class="vol-impact__card">
+                <span class="vol-impact__number font-audrey">210+</span>
+                <p class="vol-impact__label font-nanum">따뜻한 나눔의 가치를<br />함께 키워가시는 분</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================================================
+             Section 3 — 함께하기 전에 확인해주세요 (신청 조건)
+             피그마: 1920×880, paddingTop/Bottom:150, gap:80
+             배경: img_volunteer_section_3_bg.png
+             ====================================================== -->
+        <section id="vol-apply" class="vol-apply" aria-labelledby="vol-apply-title">
+          <div class="vol-apply__inner inner-layout">
+            <h2 id="vol-apply-title" class="vol-apply__title font-nanum">함께하기 전에 확인해주세요</h2>
+            <div class="vol-apply__box-wrap">
+              <!-- 참여 조건 박스 -->
+              <div class="vol-apply__box">
+                <h3 class="vol-apply__box-title font-roboto">Participation Conditions</h3>
+                <ul class="vol-apply__list">
+                  <li>· 단체 또는 팀 단위 참여</li>
+                  <li>· 지정 요일 정기 참여</li>
+                  <li>· 면접 및 선발 절차</li>
+                  <li>· 사전 교육 진행</li>
+                </ul>
+              </div>
+              <!-- 참여 안내 박스 -->
+              <div class="vol-apply__box">
+                <h3 class="vol-apply__box-title vol-apply__box-title--nanum">참여 안내</h3>
+                <ul class="vol-apply__list">
+                  <li>· 모집 대상 : 책임감과 열정이 있는 누구나</li>
+                  <li>· 활동 형태 : 협의 후 확정 (정기 봉사 가능자 우대)</li>
+                  <li>· 모집 방식 : 상시 모집</li>
+                  <li>· 활동 장소 : 하우스 별 상이</li>
+                </ul>
+              </div>
+            </div>
+            <a href="#" class="btn btn-primary w-auto vol-apply__cta">자원봉사 신청하기</a>
+          </div>
+        </section>
+
+        <!-- ======================================================
+             Section 4 — 이렇게 함께할 수 있어요 (3종 활동 카드)
+             피그마: 1920×1101, paddingTop/Bottom:200, gap:80
+             카드 크기: 464×186, pad:T40/R40/B40/L40
+             ====================================================== -->
+        <section class="vol-activities" aria-labelledby="vol-activities-title">
+          <div class="vol-activities__inner inner-layout">
+            <div class="vol-activities__header">
+              <h2 id="vol-activities-title" class="vol-activities__title font-nanum">이렇게 함께할 수 있어요</h2>
+              <p class="vol-activities__desc">
+                후원자님과 파트너 기업이 함께해주신 덕분에, 하우스는 지친 환아 가족들에게<br />편안한 쉼표와 평범한 일상을 전할 수 있게 되었습니다.
+              </p>
+            </div>
+            <div class="vol-activities__cards">
+
+              <!-- 카드 1: 하우스 운영 지원 (골드) -->
+              <article class="vol-act-card vol-act-card--gold">
+                <div class="vol-act-card__img-wrap">
+                  <img
+                    src="/src/images/donate/img_volunteer_section_4_1.png"
+                    alt="하우스 운영 지원 봉사 현장"
+                    class="vol-act-card__img"
+                    width="464"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="vol-act-card__body">
+                  <h3 class="vol-act-card__title font-nanum">하우스 운영 지원</h3>
+                  <p class="vol-act-card__desc">
+                    · 객실 청소 및 침구 정리<br />
+                    · 실내외 환경 관리
+                  </p>
+                  <a href="#" class="vol-act-card__cta">참여하기 →</a>
+                </div>
+              </article>
+
+              <!-- 카드 2: 프로그램 및 행사 지원 (스카이블루) -->
+              <article class="vol-act-card vol-act-card--blue">
+                <div class="vol-act-card__img-wrap">
+                  <img
+                    src="/src/images/donate/img_volunteer_section_4_2.png"
+                    alt="프로그램 및 행사 지원 봉사 현장"
+                    class="vol-act-card__img"
+                    width="464"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="vol-act-card__body">
+                  <h3 class="vol-act-card__title font-nanum">프로그램 및 행사 지원</h3>
+                  <p class="vol-act-card__desc">
+                    · 김장 행사, 쿠킹 클래스 등<br />
+                    · 가족 프로그램 및 이벤트 운영 지원
+                  </p>
+                  <a href="#" class="vol-act-card__cta">참여하기 →</a>
+                </div>
+              </article>
+
+              <!-- 카드 3: 전문 재능 기부 (라임그린) -->
+              <article class="vol-act-card vol-act-card--green">
+                <div class="vol-act-card__img-wrap">
+                  <img
+                    src="/src/images/donate/img_volunteer_section_4_3.png"
+                    alt="전문 재능 기부 봉사 현장"
+                    class="vol-act-card__img"
+                    width="464"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="vol-act-card__body">
+                  <h3 class="vol-act-card__title font-nanum">전문 재능 기부</h3>
+                  <p class="vol-act-card__desc">
+                    · 전문 분야 교육 및 프로그램 진행<br />
+                    · 기타 전문 역량을 활용한 나눔 활동
+                  </p>
+                  <a href="#" class="vol-act-card__cta">참여하기 →</a>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ======================================================
+             Section 5 — 봉사 참여 방법 (5단계 프로세스)
+             피그마: 1920×1005, paddingTop/Bottom:200, gap:80
+             배경: #ffbc0d (골드)
+             ====================================================== -->
+        <section class="vol-process" aria-labelledby="vol-process-title">
+          <div class="vol-process__inner inner-layout">
+            <div class="vol-process__header">
+              <h2 id="vol-process-title" class="vol-process__title font-nanum">봉사 참여 방법</h2>
+              <p class="vol-process__desc">봉사활동 시간은 VMS 가입 및 봉사자 등록 완료 후 확인 가능합니다.</p>
+              <p class="vol-process__note">*VMS: 사회복지 자원봉사 인증관리 시스템</p>
+            </div>
+            <ol class="vol-process__steps">
+
+              <!-- Step 01: 공지 확인 -->
+              <li class="vol-process__step">
+                <div class="vol-process__icon vol-process__icon--01">
+                  <img
+                    src="/src/images/donate/icon_volunteer_section_1.png"
+                    alt=""
+                    class="vol-process__icon-img"
+                    width="69"
+                    height="69"
+                    aria-hidden="true"
+                    loading="lazy"
+                  />
+                  <span class="vol-process__num font-nanum">01</span>
+                </div>
+                <p class="vol-process__label font-nanum">공지 확인</p>
+              </li>
+
+              <!-- Step 02: 봉사 신청 -->
+              <li class="vol-process__step">
+                <div class="vol-process__icon vol-process__icon--02">
+                  <img
+                    src="/src/images/donate/icon_volunteer_section_2.png"
+                    alt=""
+                    class="vol-process__icon-img"
+                    width="69"
+                    height="69"
+                    aria-hidden="true"
+                    loading="lazy"
+                  />
+                  <span class="vol-process__num font-nanum">02</span>
+                </div>
+                <p class="vol-process__label font-nanum">봉사 신청</p>
+              </li>
+
+              <!-- Step 03: 담당 부서 확인 -->
+              <li class="vol-process__step">
+                <div class="vol-process__icon vol-process__icon--03">
+                  <img
+                    src="/src/images/donate/icon_volunteer_section_3.png"
+                    alt=""
+                    class="vol-process__icon-img"
+                    width="69"
+                    height="69"
+                    aria-hidden="true"
+                    loading="lazy"
+                  />
+                  <span class="vol-process__num font-nanum">03</span>
+                </div>
+                <p class="vol-process__label font-nanum">담당 부서 확인<br />(개별 컨택)</p>
+              </li>
+
+              <!-- Step 04: 봉사 진행 -->
+              <li class="vol-process__step">
+                <div class="vol-process__icon vol-process__icon--04">
+                  <img
+                    src="/src/images/donate/icon_volunteer_section_4.png"
+                    alt=""
+                    class="vol-process__icon-img"
+                    width="69"
+                    height="69"
+                    aria-hidden="true"
+                    loading="lazy"
+                  />
+                  <span class="vol-process__num font-nanum">04</span>
+                </div>
+                <p class="vol-process__label font-nanum">봉사 진행</p>
+              </li>
+
+              <!-- Step 05: 활동 인증 (아이콘 파일 미존재 → 컬러 박스로 대체) -->
+              <li class="vol-process__step">
+                <div class="vol-process__icon vol-process__icon--05">
+                  <span class="vol-process__num font-nanum">05</span>
+                </div>
+                <p class="vol-process__label font-nanum">활동 인증</p>
+              </li>
+
+            </ol>
+            <a href="#" class="btn btn-primary w-auto vol-process__cta">자원봉사 신청하기</a>
+          </div>
+        </section>
+
+        <!-- ======================================================
+             Section 6 — 현장에서 전하는 따뜻한 기록 (뉴스카드)
+             피그마: 1440×1125, paddingTop/Bottom:200, gap:52
+             ====================================================== -->
+        <section class="vol-news" aria-labelledby="vol-news-title">
+          <div class="vol-news__inner inner-layout">
+            <div class="vol-news__header">
+              <h2 id="vol-news-title" class="vol-news__title font-nanum">현장에서 전하는 따뜻한 기록</h2>
+              <p class="vol-news__desc">아이들의 웃음이 이어질 수 있도록, 한국로날드맥도날드하우스가 함께합니다.</p>
+            </div>
+            <div class="vol-news__cards">
+
+              <article class="vol-news-card">
+                <div class="vol-news-card__img-wrap">
+                  <img
+                    src="/src/images/donate/img_volunteer_section_5_1.png"
+                    alt="RMHC Korea 크리스마스 카드 만들기 행사"
+                    class="vol-news-card__img"
+                    width="432"
+                    height="288"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="vol-news-card__body">
+                  <h3 class="vol-news-card__title font-nanum">RMHC Korea, 양산부산대학교 어린이병원과 환아 대상으로 함께 크리스마스 카드 만들기 행사 진행</h3>
+                  <time class="vol-news-card__date" datetime="2026-01-02">2026.01.02</time>
+                </div>
+              </article>
+
+              <article class="vol-news-card">
+                <div class="vol-news-card__img-wrap">
+                  <img
+                    src="/src/images/donate/img_volunteer_section_5_2.png"
+                    alt="RMHC 양산하우스 아름다운 동행의 날"
+                    class="vol-news-card__img"
+                    width="432"
+                    height="288"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="vol-news-card__body">
+                  <h3 class="vol-news-card__title font-nanum">[RMHC 소식]RMHC 양산하우스 아름다운 동행의 날 행사 진행</h3>
+                  <time class="vol-news-card__date" datetime="2025-11-18">2025.11.18</time>
+                </div>
+              </article>
+
+              <article class="vol-news-card">
+                <div class="vol-news-card__img-wrap">
+                  <img
+                    src="/src/images/donate/img_volunteer_section_5_3.png"
+                    alt="Alvarez &amp; Marsal Korea RMHC 양산하우스 봉사"
+                    class="vol-news-card__img"
+                    width="432"
+                    height="288"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="vol-news-card__body">
+                  <h3 class="vol-news-card__title font-nanum">Alvarez &amp; Marsal Korea, RMHC 양산하우스에 Care Kit 기부 및 자원봉사 진행</h3>
+                  <time class="vol-news-card__date" datetime="2025-10-28">2025.10.28</time>
+                </div>
+              </article>
+
+            </div>
+            <a href="#" class="btn btn-primary w-auto vol-news__cta">활동 소식 더 보기</a>
+          </div>
+        </section>
+
       </main>
     </div>
 
