@@ -94,53 +94,64 @@
 /* Hero */
 .house-hero {
   position: relative;
-  width: min(100% - 8rem, 184.8rem);
-  min-height: 79.1rem;
-  margin: 0 auto;
   overflow: hidden;
-  border-radius: 0 0 2.4rem 2.4rem;
-  background-color: #111111;
+  margin-top: 5rem;
 }
 
 .house-hero__visual {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
+  max-width: 184.8rem;
+  height: 79.1rem;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .house-hero__visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: absolute;
+  left: 50%;
+  width: 184.8rem;
+  height: 79.1rem;
+  transform: translateX(-50%);
 }
 
 .house-hero__content {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 0;
   z-index: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  min-height: 79.1rem;
-  max-width: 90rem;
-  padding: 8rem 0 8rem 16rem;
-  color: #ffffff;
+  gap: 2rem;
+  padding: 0 20rem;
+  transform: translateY(-50%);
 }
 
 .house-hero__content h1 {
   margin: 0;
   font-family: var(--font-extrabold);
-  font-size: 6.4rem;
+  font-size: var(--text-6xl);
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.3;
   letter-spacing: 0;
+  color: var(--bg-primary);
 }
 
 .house-hero__content p {
-  margin: 2.4rem 0 4rem;
+  margin: 0;
   max-width: 76rem;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--bg-primary);
+}
+
+.house-hero__cta {
+  width: 20.5rem;
+  margin: 1rem 0 0;
   font-size: 2rem;
-  font-weight: 500;
-  line-height: 1.5;
 }
 
 /* Story */
@@ -720,6 +731,11 @@
 }
 
 @media (max-width: 1024px) {
+  .house-hero__content {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   .house-value__inner {
     grid-template-columns: 1fr;
   }
@@ -754,25 +770,30 @@
   }
 
   .house-hero {
-    width: calc(100% - 4.8rem);
-    min-height: 54rem;
-    margin-top: 2rem;
-    border-radius: 0.8rem;
+    width: auto;
+    height: 50rem;
+    min-height: 0;
+    margin-top: 5rem;
+    border-radius: 0;
   }
 
   .house-hero__content {
-    justify-content: flex-start;
-    min-height: 54rem;
-    padding: 8rem 2.4rem 2.4rem;
+    min-height: 0;
+    padding: 0 4rem;
   }
 
   .house-hero__content h1 {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
   }
 
   .house-hero__content p {
-    margin: 1.6rem 0 2.4rem;
-    font-size: 1.4rem;
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  .house-hero__cta {
+    width: 20.5rem;
+    font-size: 2rem;
   }
 
   .story-slider {

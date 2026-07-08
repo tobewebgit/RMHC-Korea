@@ -25,14 +25,14 @@
               src="/src/images/houses/hero_yangsan.png"
               alt=""
               width="1848"
-              height="858"
+              height="791"
               fetchpriority="high"
             />
-          </div>
-          <div class="house-hero__content">
-            <h1 id="houseHeroTitle">집 같은 편안함을 선물하는 곳,<br />로날드 맥도날드 하우스 양산입니다.</h1>
-            <p>환아 가족이 병원 가까이에서 편안하게 머물며 아이의 치료에 집중할 수 있도록 돕는 가족 지원 공간입니다.</p>
-            <a href="#applyGuide" class="house-btn house-btn--primary">하우스 이용 방법 보기</a>
+            <div class="house-hero__content">
+              <h1 id="houseHeroTitle">집 같은 편안함을 선물하는 곳,<br />로날드 맥도날드 하우스 양산입니다.</h1>
+              <p>환아 가족이 병원 가까이에서 편안하게 머물며 아이의 치료에 집중할 수 있도록 돕는 가족 지원 공간입니다.</p>
+              <a href="#applyGuide" class="btn btn-primary house-hero__cta">하우스 이용 방법 보기</a>
+            </div>
           </div>
         </section>
 
@@ -121,17 +121,17 @@
           <ul class="impact-list">
             <li>
               <img src="/src/images/houses/icon_impact_1.png" alt="" width="100" height="100" loading="lazy" />
-              <strong>1.5K+</strong>
+              <strong data-counter-value="1.5" data-counter-decimals="1" data-counter-suffix="K+">1.5K+</strong>
               <span>누적 이용 환아 가족</span>
             </li>
             <li>
               <img src="/src/images/houses/icon_impact_2.png" alt="" width="100" height="100" loading="lazy" />
-              <strong>2,131+</strong>
+              <strong data-counter-value="2131" data-counter-comma="true" data-counter-suffix="+">2,131+</strong>
               <span>제공된 따뜻한 식사</span>
             </li>
             <li>
               <img src="/src/images/houses/icon_impact_3.png" alt="" width="100" height="100" loading="lazy" />
-              <strong>100+</strong>
+              <strong data-counter-value="100" data-counter-suffix="+">100+</strong>
               <span>함께하는 파트너 기업</span>
             </li>
           </ul>
@@ -292,6 +292,80 @@
     <script type="module" src="/src/js/common.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        const initImpactCounters = () => {
+          const impactSection = document.querySelector(".house-impact");
+          const counters = Array.from(document.querySelectorAll(".house-impact strong[data-counter-value]"));
+          if (!impactSection || counters.length === 0) return;
+
+          const formatCounter = (counter, value) => {
+            const decimals = Number(counter.dataset.counterDecimals || 0);
+            const suffix = counter.dataset.counterSuffix || "";
+            if (value <= 0) return `0${suffix.replace(/^K/, "")}`;
+
+            const roundedValue = decimals > 0 ? value.toFixed(decimals) : Math.round(value).toString();
+            const formattedValue = counter.dataset.counterComma === "true" ? Number(roundedValue).toLocaleString("en-US") : roundedValue;
+
+            return `${formattedValue}${suffix}`;
+          };
+
+          const animateCounter = (counter) => {
+            if (counter.dataset.counterFrame) {
+              cancelAnimationFrame(Number(counter.dataset.counterFrame));
+            }
+
+            const targetValue = Number(counter.dataset.counterValue || 0);
+            const duration = 2000;
+            const startTime = performance.now();
+
+            const updateCounter = (currentTime) => {
+              const progress = Math.min((currentTime - startTime) / duration, 1);
+              const easedProgress = 1 - Math.pow(1 - progress, 3);
+              counter.textContent = formatCounter(counter, targetValue * easedProgress);
+
+              if (progress < 1) {
+                counter.dataset.counterFrame = requestAnimationFrame(updateCounter);
+                return;
+              }
+
+              counter.textContent = formatCounter(counter, targetValue);
+              delete counter.dataset.counterFrame;
+            };
+
+            counter.dataset.counterFrame = requestAnimationFrame(updateCounter);
+          };
+
+          const resetCounters = () => {
+            counters.forEach((counter) => {
+              if (counter.dataset.counterFrame) {
+                cancelAnimationFrame(Number(counter.dataset.counterFrame));
+                delete counter.dataset.counterFrame;
+              }
+
+              counter.textContent = formatCounter(counter, 0);
+            });
+          };
+
+          resetCounters();
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  counters.forEach(animateCounter);
+                  return;
+                }
+
+                resetCounters();
+              });
+            },
+            {
+              threshold: 0.35,
+            },
+          );
+
+          observer.observe(impactSection);
+        };
+
         const initFallbackStorySlider = () => {
           const slider = document.querySelector(".js-house-story");
           const wrapper = slider?.querySelector(".swiper-wrapper");
@@ -335,6 +409,8 @@
 
           update();
         };
+
+        initImpactCounters();
 
         if (typeof Swiper !== "undefined") {
           new Swiper(".js-house-story", {
