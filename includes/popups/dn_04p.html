@@ -6,7 +6,9 @@
     <div class="vol-popup-header">
       <h3 class="vol-popup-title font-nanum" id="vol-popup-title">자원봉사자 신청서</h3>
       <p class="vol-popup-subtitle">자원봉사자 모집 지원신청서입니다.</p>
-      <button type="button" class="modal-close-btn vol-popup-close" aria-label="팝업 닫기">&times;</button>
+      <button type="button" class="modal-close-btn-circle" aria-label="팝업 닫기">
+        <span class="close-icon"></span>
+      </button>
     </div>
     <!-- E: 팝업 헤더 -->
 
@@ -16,23 +18,32 @@
       <!-- S: 하우스 선택 섹션 -->
       <div class="vol-popup-section vol-popup-section--house">
         <h4 class="vol-popup-section__title font-nanum">하우스 선택</h4>
-        <hr class="vol-popup-section__sep" />
+        <hr class="vol-popup-sep" />
         <div class="form-group form">
           <label for="vol_house" class="form-label">*지원하우스</label>
           <div class="form-field">
-            <select id="vol_house" class="form-control" required>
-              <option value="yangsan">로날드 맥도날드 하우스 양산</option>
-            </select>
+            <div class="custom-select" tabindex="0" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="vol_house_list">
+              <span class="custom-select-label">로날드 맥도날드 하우스 양산</span>
+              <svg class="custom-select-arrow" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L6.5 6.5L12 1" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <ul class="custom-select-list" id="vol_house_list" role="listbox">
+                <li role="option" aria-selected="true" data-value="yangsan">로날드 맥도날드 하우스 양산</li>
+              </ul>
+              <select id="vol_house" name="vol_house" required style="display:none;">
+                <option value="yangsan" selected>로날드 맥도날드 하우스 양산</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
       <!-- E: 하우스 선택 섹션 -->
 
       <!-- S: 개인/기업·단체 탭 -->
-      <div class="vol-popup-tabs" role="tablist" aria-label="봉사 신청 유형 선택">
+      <div class="donate-type-tabs" role="tablist" aria-label="봉사 신청 유형 선택">
         <button
           type="button"
-          class="vol-popup-tab is-active"
+          class="btn-tab"
           id="tab-personal"
           role="tab"
           aria-selected="true"
@@ -41,7 +52,7 @@
         >개인</button>
         <button
           type="button"
-          class="vol-popup-tab"
+          class="btn-tab disabled"
           id="tab-group"
           role="tab"
           aria-selected="false"
@@ -61,6 +72,7 @@
           <!-- S: 기본 정보 (필수) -->
           <div class="vol-popup-section">
             <h4 class="vol-popup-section__title font-nanum">기본 정보 (필수)</h4>
+            <hr class="vol-popup-sep" />
 
             <div class="form-group form">
               <label for="vp_name" class="form-label">*이름</label>
@@ -109,7 +121,7 @@
               <div class="form-field">
                 <div class="form-control-with-btn">
                   <input type="text" id="vp_zip" name="vp_zip" class="form-control" placeholder="우편번호" readonly inputmode="numeric" />
-                  <button type="button" class="btn btn-primary btn-input-action" id="vp_zip_search">숲찾기</button>
+                  <button type="button" class="btn btn-primary btn-input-action" id="vp_zip_search">중복확인</button>
                 </div>
                 <input type="text" id="vp_addr1" name="vp_addr1" class="form-control mt-2" placeholder="주소" readonly />
                 <input type="text" id="vp_addr2" name="vp_addr2" class="form-control mt-2" placeholder="상세 주소" />
@@ -121,6 +133,7 @@
           <!-- S: 지원 정보 -->
           <div class="vol-popup-section">
             <h4 class="vol-popup-section__title font-nanum">지원 정보</h4>
+            <hr class="vol-popup-sep" />
 
             <div class="form-group form">
               <label class="form-label">*지원분야</label>
@@ -190,22 +203,22 @@
                               <td class="is-prev-month" aria-disabled="true">28</td>
                               <td class="is-prev-month" aria-disabled="true">29</td>
                               <td class="is-prev-month" aria-disabled="true">30</td>
-                              <td><button type="button" class="vol-cal-day">1</button></td>
-                              <td><button type="button" class="vol-cal-day is-saturday">2</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">1</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday is-in-range">2</button></td>
                             </tr>
                             <tr>
-                              <td><button type="button" class="vol-cal-day is-sunday">3</button></td>
-                              <td><button type="button" class="vol-cal-day">4</button></td>
-                              <td><button type="button" class="vol-cal-day">5</button></td>
-                              <td><button type="button" class="vol-cal-day">6</button></td>
-                              <td><button type="button" class="vol-cal-day">7</button></td>
-                              <td><button type="button" class="vol-cal-day">8</button></td>
-                              <td><button type="button" class="vol-cal-day is-saturday">9</button></td>
+                              <td><button type="button" class="vol-cal-day is-sunday is-in-range">3</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">4</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">5</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">6</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">7</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">8</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday is-in-range">9</button></td>
                             </tr>
                             <tr>
-                              <td><button type="button" class="vol-cal-day is-sunday">10</button></td>
-                              <td><button type="button" class="vol-cal-day">11</button></td>
-                              <td><button type="button" class="vol-cal-day">12</button></td>
+                              <td><button type="button" class="vol-cal-day is-sunday is-in-range">10</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">11</button></td>
+                              <td><button type="button" class="vol-cal-day is-selected is-range-end">12</button></td>
                               <td><button type="button" class="vol-cal-day">13</button></td>
                               <td><button type="button" class="vol-cal-day">14</button></td>
                               <td><button type="button" class="vol-cal-day">15</button></td>
@@ -215,19 +228,19 @@
                               <td><button type="button" class="vol-cal-day is-sunday">17</button></td>
                               <td><button type="button" class="vol-cal-day">18</button></td>
                               <td><button type="button" class="vol-cal-day">19</button></td>
-                              <td><button type="button" class="vol-cal-day is-selected" aria-selected="true">20</button></td>
+                              <td><button type="button" class="vol-cal-day">20</button></td>
                               <td><button type="button" class="vol-cal-day">21</button></td>
-                              <td><button type="button" class="vol-cal-day">22</button></td>
-                              <td><button type="button" class="vol-cal-day is-saturday">23</button></td>
+                              <td><button type="button" class="vol-cal-day is-selected is-range-start" aria-selected="true">22</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday is-in-range">23</button></td>
                             </tr>
                             <tr>
-                              <td><button type="button" class="vol-cal-day is-sunday">24</button></td>
-                              <td><button type="button" class="vol-cal-day">25</button></td>
-                              <td><button type="button" class="vol-cal-day">26</button></td>
-                              <td><button type="button" class="vol-cal-day">27</button></td>
-                              <td><button type="button" class="vol-cal-day">28</button></td>
-                              <td><button type="button" class="vol-cal-day">29</button></td>
-                              <td><button type="button" class="vol-cal-day is-saturday">30</button></td>
+                              <td><button type="button" class="vol-cal-day is-sunday is-in-range">24</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">25</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">26</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">27</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">28</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">29</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday is-in-range">30</button></td>
                             </tr>
                           </tbody>
                         </table>
@@ -263,22 +276,22 @@
                               <td class="is-prev-month" aria-disabled="true">28</td>
                               <td class="is-prev-month" aria-disabled="true">29</td>
                               <td class="is-prev-month" aria-disabled="true">30</td>
-                              <td><button type="button" class="vol-cal-day">1</button></td>
-                              <td><button type="button" class="vol-cal-day is-saturday">2</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">1</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday is-in-range">2</button></td>
                             </tr>
                             <tr>
-                              <td><button type="button" class="vol-cal-day is-sunday">3</button></td>
-                              <td><button type="button" class="vol-cal-day">4</button></td>
-                              <td><button type="button" class="vol-cal-day">5</button></td>
-                              <td><button type="button" class="vol-cal-day">6</button></td>
-                              <td><button type="button" class="vol-cal-day">7</button></td>
-                              <td><button type="button" class="vol-cal-day">8</button></td>
-                              <td><button type="button" class="vol-cal-day is-saturday">9</button></td>
+                              <td><button type="button" class="vol-cal-day is-sunday is-in-range">3</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">4</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">5</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">6</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">7</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">8</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday is-in-range">9</button></td>
                             </tr>
                             <tr>
-                              <td><button type="button" class="vol-cal-day is-sunday">10</button></td>
-                              <td><button type="button" class="vol-cal-day">11</button></td>
-                              <td><button type="button" class="vol-cal-day">12</button></td>
+                              <td><button type="button" class="vol-cal-day is-sunday is-in-range">10</button></td>
+                              <td><button type="button" class="vol-cal-day is-in-range">11</button></td>
+                              <td><button type="button" class="vol-cal-day is-selected is-range-end">12</button></td>
                               <td><button type="button" class="vol-cal-day">13</button></td>
                               <td><button type="button" class="vol-cal-day">14</button></td>
                               <td><button type="button" class="vol-cal-day">15</button></td>
@@ -309,9 +322,8 @@
 
                     </div>
 
-                    <!-- S: 캘린더 CTA 바 (피그마: 480x56, pad T12/R16/B12/L16) -->
+                    <!-- S: 캘린더 CTA 바 -->
                     <div class="vol-cal-cta">
-                      <button type="button" class="vol-cal-btn-today">오늘</button>
                       <div class="vol-cal-cta-actions">
                         <button type="button" class="vol-cal-btn-cancel">취소</button>
                         <button type="button" class="vol-cal-btn-select btn btn-primary">선택</button>
@@ -325,14 +337,14 @@
             </div>
 
             <div class="form-group form">
-              <label for="vp_contact" class="form-label form-label--top">연락사항</label>
+              <label for="vp_contact" class="form-label form-label--top">경력사항</label>
               <div class="form-field">
                 <textarea id="vp_contact" name="vp_contact" class="form-control vol-textarea"></textarea>
               </div>
             </div>
 
             <div class="form-group form">
-              <label for="vp_lang" class="form-label form-label--top">어학능력<br /><span class="vol-label-note">(해당자 기재)</span></label>
+              <label for="vp_lang" class="form-label form-label--top">어학능력<br />(해당자 기재)</label>
               <div class="form-field">
                 <textarea id="vp_lang" name="vp_lang" class="form-control vol-textarea" placeholder="외 국어 및 수화 등"></textarea>
               </div>
@@ -344,6 +356,7 @@
           <!-- S: 개인정보 수집 동의 -->
           <div class="vol-popup-section">
             <h4 class="vol-popup-section__title font-nanum">개인정보 수집 동의</h4>
+            <hr class="vol-popup-sep" />
             <div class="vol-privacy-box">
               <p>
                 Ronald McDonald House Korea 는 자원봉사자 인력관리를 위하여 다음과 같이 개인정보를 수집하고 있습니다.
@@ -361,7 +374,7 @@
           </div>
           <!-- E: 개인정보 수집 동의 -->
 
-          <button type="submit" form="vol-popup-form" class="btn btn-primary vol-popup-submit">자원봉사 신청하기</button>
+          <button type="submit" form="vol-popup-form" class="btn btn-primary w-auto">자원봉사 신청하기</button>
 
         </div>
         <!-- E: 개인 탭 패널 -->
@@ -374,6 +387,7 @@
           <!-- S: 기본 정보 (필수) -->
           <div class="vol-popup-section">
             <h4 class="vol-popup-section__title font-nanum">기본 정보 (필수)</h4>
+            <hr class="vol-popup-sep" />
 
             <div class="form-group form">
               <label for="vg_org" class="form-label">*기업/단체명</label>
@@ -408,7 +422,7 @@
               <div class="form-field">
                 <div class="form-control-with-btn">
                   <input type="text" id="vg_zip" name="vg_zip" class="form-control" placeholder="우편번호" readonly inputmode="numeric" />
-                  <button type="button" class="btn btn-primary btn-input-action" id="vg_zip_search">숲찾기</button>
+                  <button type="button" class="btn btn-primary btn-input-action" id="vg_zip_search">중복확인</button>
                 </div>
                 <input type="text" id="vg_addr1" name="vg_addr1" class="form-control mt-2" placeholder="주소" readonly />
                 <input type="text" id="vg_addr2" name="vg_addr2" class="form-control mt-2" placeholder="상세 주소" />
@@ -421,6 +435,7 @@
           <!-- S: 지원 정보 -->
           <div class="vol-popup-section">
             <h4 class="vol-popup-section__title font-nanum">지원 정보</h4>
+            <hr class="vol-popup-sep" />
 
             <div class="form-group form">
               <label for="vg_motivation" class="form-label form-label--top">*지원동기</label>
@@ -561,13 +576,14 @@
                         </table>
                       </div>
                     </div>
+                    <!-- S: 캘린더 CTA 바 -->
                     <div class="vol-cal-cta">
-                      <button type="button" class="vol-cal-btn-today">오늘</button>
                       <div class="vol-cal-cta-actions">
                         <button type="button" class="vol-cal-btn-cancel">취소</button>
                         <button type="button" class="vol-cal-btn-select btn btn-primary">선택</button>
                       </div>
                     </div>
+                    <!-- E: 캘린더 CTA 바 -->
                   </div>
                   <!-- E: 캘린더 레이어 -->
                 </div>
@@ -587,6 +603,7 @@
           <!-- S: 개인정보 수집 동의 -->
           <div class="vol-popup-section">
             <h4 class="vol-popup-section__title font-nanum">개인정보 수집 동의</h4>
+            <hr class="vol-popup-sep" />
             <div class="vol-privacy-box">
               <p>
                 Ronald McDonald House Korea 는 자원봉사자 인력관리를 위하여 다음과 같이 개인정보를 수집하고 있습니다.
@@ -604,7 +621,7 @@
           </div>
           <!-- E: 개인정보 수집 동의 -->
 
-          <button type="submit" form="vol-popup-form" class="btn btn-primary vol-popup-submit">자원봉사 신청하기</button>
+          <button type="submit" form="vol-popup-form" class="btn btn-primary w-auto vol-popup-submit">자원봉사 신청하기</button>
 
         </div>
         <!-- E: 기업·단체 탭 패널 -->
@@ -615,3 +632,59 @@
 
   </div>
 </div>
+
+<script>
+  // 퍼블리싱 확인용: 탭 전환 및 캘린더 레이어 토글 스크립트
+  document.addEventListener('DOMContentLoaded', function() {
+    // 탭 전환
+    const tabs = document.querySelectorAll('.donate-type-tabs[role="tablist"] button[role="tab"]');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // 모든 탭 비활성화 (disabled 적용)
+        tabs.forEach(t => {
+          t.classList.add('disabled');
+          t.setAttribute('aria-selected', 'false');
+        });
+        // 현재 탭 활성화
+        this.classList.remove('disabled');
+        this.setAttribute('aria-selected', 'true');
+        
+        // 패널 전환
+        const targetId = this.getAttribute('data-target');
+        document.querySelectorAll('.vol-popup-panel').forEach(panel => {
+          if (panel.id === targetId) {
+            panel.hidden = false;
+            panel.classList.add('is-active');
+          } else {
+            panel.hidden = true;
+            panel.classList.remove('is-active');
+          }
+        });
+      });
+    });
+
+    // 캘린더 토글
+    const calTriggers = document.querySelectorAll('.vol-calendar-trigger');
+    calTriggers.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const wrap = this.closest('.vol-date-wrap');
+        const layer = wrap.querySelector('.vol-calendar-layer');
+        if (layer) {
+          layer.classList.toggle('is-open');
+        }
+      });
+    });
+    
+    // 달력 닫기 (선택 또는 취소)
+    const calCloseBtns = document.querySelectorAll('.vol-cal-btn-cancel, .vol-cal-btn-select');
+    calCloseBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const layer = this.closest('.vol-calendar-layer');
+        if (layer) {
+          layer.classList.remove('is-open');
+        }
+      });
+    });
+  });
+</script>
+

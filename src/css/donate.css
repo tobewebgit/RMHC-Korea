@@ -213,10 +213,6 @@
   padding: 0;
 }
 
-.direct-input-chip input::placeholder {
-  color: var(--text-secondary);
-}
-
 .direct-input-chip .unit {
   font-size: 1.8rem;
   margin-left: 0.8rem;
@@ -374,7 +370,6 @@
 
 .resident-divider {
   font-size: 1.6rem;
-  color: var(--text-secondary);
   flex-shrink: 0;
 }
 
@@ -1559,12 +1554,13 @@
 /* ── 팝업 컨테이너 ──────────────────────────────────────────── */
 
 .vol-popup-container {
-  width: 64rem;
+  width: 80rem; /* 시안 정밀 맞춤 800px */
   max-height: 90dvh;
   padding: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background-color: var(--bg-primary); /* 시안 아이보리 톤 배경 */
 }
 
 /* ── 팝업 헤더 (고정) ──────────────────────────────────────── */
@@ -1584,27 +1580,10 @@
 
 .vol-popup-subtitle {
   font-size: 2rem;
-  color: var(--text-secondary);
   margin: 0;
 }
 
-.vol-popup-close {
-  position: absolute;
-  top: 2.4rem;
-  right: 2.4rem;
-  font-size: 3.2rem;
-  line-height: 1;
-  color: var(--text-secondary);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0.4rem;
-  transition: color 0.2s;
-}
 
-.vol-popup-close:hover {
-  color: var(--primary);
-}
 
 /* ── 팝업 본문 (스크롤) ────────────────────────────────────── */
 
@@ -1620,13 +1599,24 @@
 /* ── 섹션 박스 ─────────────────────────────────────────────── */
 
 .vol-popup-section {
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 3.2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  background-color: var(--bg-white);
+  align-items: stretch;
+  padding: 6rem 4rem;
+  border-radius: 1.6rem;
+  background: var(--bg-primary);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.08);
+  border: none;
+}
+
+.vol-popup-sep {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--border-gray40);
+  margin: 3.2rem 0;
+}
+.vol-popup-section--house .vol-popup-sep {
+  border-top: 1px solid var(--border-black);
 }
 
 .vol-popup-section--house {
@@ -1645,31 +1635,7 @@
   margin: 0;
 }
 
-/* ── 개인/기업단체 탭 ─────────────────────────────────────── */
-
-.vol-popup-tabs {
-  display: flex;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.vol-popup-tab {
-  flex: 1;
-  height: 5.2rem;
-  font-size: var(--text-lg);
-  font-family: var(--font-extrabold);
-  cursor: pointer;
-  border: none;
-  background-color: #f2dede;
-  color: var(--primary);
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.vol-popup-tab.is-active {
-  background-color: var(--primary);
-  color: #ffffff;
-}
+/* ── 개인/기업단체 탭 (chip-grid 재사용으로 CSS 삭제) ───────────────── */
 
 /* ── 탭 패널 ────────────────────────────────────────────────── */
 
@@ -1683,6 +1649,16 @@
   display: none;
 }
 
+/* ── 팝업 폼 요소 오버라이드 (비활성 필드 등) ────────────────────── */
+
+.vol-popup-body .form-control[readonly],
+.vol-popup-body .form-control:disabled {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-gray40) !important;
+  color: var(--text-secondary) !important;
+  cursor: not-allowed;
+}
+
 /* ── 폼 레이블 상단 정렬 (textarea 행) ────────────────────── */
 
 .form-label--top {
@@ -1690,16 +1666,10 @@
   padding-top: 1.4rem;
 }
 
-.vol-label-note {
-  font-size: var(--text-sm);
-  color: var(--text-muted);
-  font-weight: 400;
-}
-
 /* ── textarea ───────────────────────────────────────────────── */
 
 .vol-textarea {
-  min-height: 10rem;
+  height: 5.2rem;
   resize: vertical;
 }
 
@@ -1710,8 +1680,7 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   padding: 2rem 2.4rem;
-  font-size: var(--text-base);
-  color: var(--text-secondary);
+  font-size: var(--text-lg);
   line-height: 1.7;
 }
 
@@ -1729,17 +1698,13 @@
 }
 
 .vol-privacy-check {
-  font-size: var(--text-base);
-  font-weight: 700;
+  margin-top: 1.6rem;
+  font-size: var(--text-lg);
 }
 
 /* ── 신청 버튼 ──────────────────────────────────────────────── */
 
 .vol-popup-submit {
-  width: 100%;
-  min-height: 5.6rem;
-  font-size: var(--text-lg);
-  font-family: var(--font-extrabold);
 }
 
 /* ── 날짜 인풋 + 캘린더 아이콘 래퍼 ───────────────────────── */
@@ -1766,7 +1731,6 @@
   align-items: center;
   justify-content: center;
   padding: 0.4rem;
-  color: var(--text-secondary);
 }
 
 .vol-calendar-trigger:hover {
@@ -1831,7 +1795,6 @@
   cursor: pointer;
   font-size: 2rem;
   line-height: 1;
-  color: var(--text-secondary);
   width: 2rem;
   height: 2rem;
   display: flex;
@@ -1854,82 +1817,95 @@
 
 .vol-cal-grid {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0 0.8rem; /* 줄 간격 */
 }
 
 .vol-cal-grid th {
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1.4rem;
+  font-weight: 700;
   text-align: center;
-  color: var(--text-secondary);
-  padding: 0.4rem 0;
+  color: var(--text-primary);
+  padding: 0.4rem 0 1.2rem;
+}
+
+/* 요일별 색상 (헤더 및 날짜 공통 적용을 위한 클래스 활용) */
+.vol-cal-grid th:first-child,
+.vol-cal-day.is-sunday {
+  color: #FFA500; /* 오렌지색 계열 */
+}
+
+.vol-cal-grid th:last-child,
+.vol-cal-day.is-saturday {
+  color: #FFC72C; /* 골드 계열 */
 }
 
 .vol-cal-grid td {
   text-align: center;
-  padding: 0.2rem 0;
+  padding: 0;
 }
 
 .vol-cal-grid td.is-prev-month {
-  color: var(--text-muted);
-  font-size: 1.2rem;
-  line-height: 2.8rem;
+  color: #ccc;
+  font-size: 1.4rem;
 }
 
 .vol-cal-day {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 1.2rem;
-  width: 2.8rem;
-  height: 2.8rem;
-  border-radius: 50%;
+  font-size: 1.4rem;
+  width: 100%;
+  height: 3.6rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-primary);
   transition: background-color 0.15s, color 0.15s;
 }
 
 .vol-cal-day:hover {
-  background-color: var(--primary-glow);
+  background-color: rgba(209, 33, 41, 0.05); /* --primary-glow */
+}
+
+/* 선택 범위 시작/끝 및 중간 스타일 */
+.vol-cal-day.is-in-range {
+  background-color: rgba(209, 33, 41, 0.15);
   color: var(--primary);
+}
+
+.vol-cal-day.is-in-range.is-sunday {
+  color: #FFA500;
+}
+
+.vol-cal-day.is-in-range.is-saturday {
+  color: #FFC72C;
 }
 
 .vol-cal-day.is-selected {
   background-color: var(--primary);
-  color: #ffffff;
-}
-
-.vol-cal-day.is-today {
+  color: #ffffff !important;
   font-weight: 700;
-  color: var(--primary);
 }
 
-.vol-cal-day.is-sunday {
-  color: var(--primary);
+.vol-cal-day.is-range-start {
+  border-radius: 0.8rem 0 0 0.8rem;
 }
 
-.vol-cal-day.is-saturday {
-  color: #1d4ed8;
+.vol-cal-day.is-range-end {
+  border-radius: 0 0.8rem 0.8rem 0;
 }
 
-/* ── 캘린더 CTA 바 (피그마: 480x56, pad T12/R16/B12/L16) ── */
+/* ── 캘린더 CTA 바 ─────────────────────────────────────── */
 
 .vol-cal-cta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.2rem 1.6rem;
-  background-color: var(--bg-primary);
-  border-top: 1px solid var(--border-color);
-}
-
-.vol-cal-btn-today {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  padding: 0.8rem 0;
+  justify-content: flex-end;
+  padding: 1.6rem 2.4rem;
+  background-color: transparent;
+  border-top: 1px solid var(--border-gray40);
+  margin-top: 1.6rem;
 }
 
 .vol-cal-cta-actions {
@@ -1938,27 +1914,28 @@
 }
 
 .vol-cal-btn-cancel {
+  width: 6rem;
   height: 3.2rem;
-  padding: 0 1.6rem;
   background: transparent;
   border: 1px solid var(--primary);
   border-radius: 0.4rem;
   cursor: pointer;
   font-size: 1.2rem;
+  font-weight: 500;
   color: var(--primary);
   transition: background-color 0.15s;
 }
 
 .vol-cal-btn-cancel:hover {
-  background-color: var(--primary-glow);
+  background-color: rgba(209, 33, 41, 0.05);
 }
 
 .vol-cal-btn-select {
+  width: 6rem;
   height: 3.2rem;
-  padding: 0 1.6rem;
   font-size: 1.2rem;
-  min-height: unset;
   border-radius: 0.4rem;
+  min-height: unset;
 }
 
 /* ── 반응형 (768px 이하) ────────────────────────────────────── */

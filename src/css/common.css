@@ -428,7 +428,7 @@ a.header__submenu-link:focus-visible,
   background: none;
 }
 .footer__newsletter-input::placeholder {
-  color: var(--text-gray80);
+  color: var(--text-gray70);
 }
 
 .footer__newsletter-btn {

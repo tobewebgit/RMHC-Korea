@@ -82,33 +82,35 @@
 
         <section class="house-value" aria-labelledby="valueTitle">
           <div class="house-value__inner">
-            <div class="house-value__image">
-              <img src="/src/images/houses/value_family.jpg" alt="아이와 보호자가 마주 보고 웃는 모습" width="500" height="647" loading="lazy" />
-            </div>
-            <div class="house-value__content">
-              <h2 id="valueTitle">머무는 곳, 그 이상의 가치를 전합니다</h2>
-              <ul class="value-list">
-                <li>
-                  <img src="/src/images/houses/icon_value_1.png" alt="" width="80" height="80" loading="lazy" />
-                  <strong>가족이 함께하는 공간</strong>
-                  <p>환아와 가족이 한 지붕 아래 머물며 소중한 일상을 함께 이어갑니다.</p>
-                </li>
-                <li>
-                  <img src="/src/images/houses/icon_value_2.png" alt="" width="80" height="80" loading="lazy" />
-                  <strong>몸과 마음을 채우는 식사</strong>
-                  <p>매일 제공되는 따뜻한 한 끼가 가족들에게 위로와 힘을 전합니다.</p>
-                </li>
-                <li>
-                  <img src="/src/images/houses/icon_value_3.png" alt="" width="80" height="80" loading="lazy" />
-                  <strong>온전한 휴식과 치유</strong>
-                  <p>편안한 환경과 다양한 프로그램을 통해 가족의 건강한 회복을 돕습니다.</p>
-                </li>
-                <li>
-                  <img src="/src/images/houses/icon_value_4.png" alt="" width="80" height="80" loading="lazy" />
-                  <strong>함께 이겨내는 희망</strong>
-                  <p>같은 아픔을 공유하는 가족들이 서로의 이야기에 귀기울이며 희망을 키워갑니다.</p>
-                </li>
-              </ul>
+            <div class="house-value__layout inner-layout">
+              <div class="house-value__image">
+                <img src="/src/images/houses/value_family.jpg" alt="아이와 보호자가 마주 보고 웃는 모습" width="500" height="648" loading="lazy" />
+              </div>
+              <div class="house-value__content">
+                <h2 id="valueTitle">머무는 곳, 그 이상의 가치를 전합니다</h2>
+                <ul class="value-list">
+                  <li>
+                    <img src="/src/images/houses/icon_value_1.png" alt="" width="80" height="80" loading="lazy" />
+                    <strong>가족이 함께하는 공간</strong>
+                    <p>환아와 가족이 한 지붕 아래 머물며 소중한 일상을 함께 이어갑니다.</p>
+                  </li>
+                  <li>
+                    <img src="/src/images/houses/icon_value_2.png" alt="" width="80" height="80" loading="lazy" />
+                    <strong>몸과 마음을 채우는 식사</strong>
+                    <p>매일 제공되는 따뜻한 한 끼가 가족들에게 위로와 힘을 전합니다.</p>
+                  </li>
+                  <li>
+                    <img src="/src/images/houses/icon_value_3.png" alt="" width="80" height="80" loading="lazy" />
+                    <strong>온전한 휴식과 치유</strong>
+                    <p>편안한 환경과 다양한 프로그램을 통해 가족의 건강한 회복을 돕습니다.</p>
+                  </li>
+                  <li>
+                    <img src="/src/images/houses/icon_value_4.png" alt="" width="80" height="80" loading="lazy" />
+                    <strong>함께 이겨내는 희망</strong>
+                    <p>같은 아픔을 공유하는 가족들이 서로의 이야기에 귀기울이며 희망을 키워갑니다.</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -143,22 +145,24 @@
             <h2 id="galleryTitle">아이들의 웃음과 가족의 행복이 가득한<br />로날드 맥도날드 하우스 양산을 소개합니다</h2>
             <p>로날드 맥도날드 하우스 양산은 환아 가족이 집처럼 편안하게 머물 수 있도록 세심하게 설계되었습니다.</p>
           </div>
-          <div class="gallery-tabs" role="tablist" aria-label="하우스 공간">
-            <button type="button" class="is-active">거실</button>
-            <button type="button">놀이방</button>
-            <button type="button">도서관</button>
-            <button type="button">가든</button>
-            <button type="button">침실</button>
-            <button type="button">키친</button>
+          <div class="gallery-control">
+            <div class="gallery-tabs" role="tablist" aria-label="하우스 공간">
+              <button type="button" role="tab" aria-selected="true" class="is-active" data-gallery-category="living">거실</button>
+              <button type="button" role="tab" aria-selected="false" data-gallery-category="playroom">놀이방</button>
+              <button type="button" role="tab" aria-selected="false" data-gallery-category="library">도서관</button>
+              <button type="button" role="tab" aria-selected="false" data-gallery-category="garden">가든</button>
+              <button type="button" role="tab" aria-selected="false" data-gallery-category="bedroom">침실</button>
+              <button type="button" role="tab" aria-selected="false" data-gallery-category="kitchen">키친</button>
+            </div>
+            <div class="gallery-nav" aria-label="갤러리 이미지 이동">
+              <button type="button" class="gallery-nav__btn gallery-nav__btn--prev" aria-label="이전 이미지"></button>
+              <button type="button" class="gallery-nav__btn gallery-nav__btn--next" aria-label="다음 이미지"></button>
+            </div>
           </div>
-          <figure class="gallery-view">
-            <img src="/src/images/houses/gallery_yangsan_1.jpg" alt="로날드 맥도날드 하우스 양산 옥상 가든과 병원 전경" width="1440" height="810" loading="lazy" />
-            <figcaption>로날드 맥도날드 하우스 양산</figcaption>
-          </figure>
-          <div class="gallery-thumbs" aria-hidden="true">
-            <img src="/src/images/houses/gallery_yangsan_1.jpg" alt="" width="197" height="111" loading="lazy" />
-            <img src="/src/images/houses/gallery_yangsan_2.png" alt="" width="197" height="111" loading="lazy" />
+          <div class="gallery-view swiper js-house-gallery">
+            <div class="swiper-wrapper"></div>
           </div>
+          <div class="gallery-thumbs" aria-label="갤러리 썸네일"></div>
         </section>
 
         <section class="house-partner" aria-labelledby="partnerTitle">
@@ -289,6 +293,7 @@
     <load ="/includes/footer.html" />
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script type="module" src="/src/js/common.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -410,7 +415,250 @@
           update();
         };
 
+        const initPartnerMarquee = () => {
+          const slider = document.querySelector(".js-house-partner");
+          const track = slider?.querySelector(".swiper-wrapper");
+          const slides = track ? Array.from(track.querySelectorAll(".swiper-slide")) : [];
+          const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+          let marqueeTween = null;
+          let resizeTimer = null;
+
+          if (!slider || !track || slides.length === 0) return;
+
+          slides.forEach((slide) => {
+            slide.dataset.marqueeOriginal = "true";
+          });
+
+          const removeClones = () => {
+            track.querySelectorAll('[data-marquee-clone="true"]').forEach((clone) => clone.remove());
+          };
+
+          const stopMarquee = () => {
+            marqueeTween?.kill();
+            marqueeTween = null;
+            removeClones();
+            slider.classList.add("is-fallback-slider");
+            if (typeof gsap !== "undefined") {
+              gsap.set(track, { x: 0, clearProps: "transform" });
+            }
+          };
+
+          const createMarquee = () => {
+            marqueeTween?.kill();
+            marqueeTween = null;
+            removeClones();
+
+            if (typeof gsap === "undefined" || reduceMotion.matches) {
+              stopMarquee();
+              return;
+            }
+
+            slider.classList.remove("is-fallback-slider");
+            gsap.set(track, { x: 0 });
+
+            const originalSlides = Array.from(track.querySelectorAll('[data-marquee-original="true"]'));
+            const originalWidth = track.scrollWidth;
+            const cloneRounds = Math.max(1, Math.ceil(slider.offsetWidth / originalWidth) + 1);
+
+            for (let round = 0; round < cloneRounds; round += 1) {
+              originalSlides.forEach((slide) => {
+                const clone = slide.cloneNode(true);
+                clone.dataset.marqueeClone = "true";
+                clone.removeAttribute("data-marquee-original");
+                clone.setAttribute("aria-hidden", "true");
+                track.appendChild(clone);
+              });
+            }
+
+            const firstClone = track.querySelector('[data-marquee-clone="true"]');
+            const distance = firstClone ? firstClone.offsetLeft - originalSlides[0].offsetLeft : originalWidth;
+            const pixelsPerSecond = 70;
+
+            marqueeTween = gsap.to(track, {
+              x: -distance,
+              duration: distance / pixelsPerSecond,
+              ease: "none",
+              repeat: -1,
+            });
+          };
+
+          const pauseMarquee = () => {
+            marqueeTween?.pause();
+          };
+
+          const playMarquee = () => {
+            if (!reduceMotion.matches) marqueeTween?.resume();
+          };
+
+          slider.addEventListener("mouseenter", pauseMarquee);
+          slider.addEventListener("mouseleave", playMarquee);
+          slider.addEventListener("focusin", pauseMarquee);
+          slider.addEventListener("focusout", playMarquee);
+
+          window.addEventListener("resize", () => {
+            window.clearTimeout(resizeTimer);
+            resizeTimer = window.setTimeout(createMarquee, 150);
+          });
+
+          reduceMotion.addEventListener?.("change", createMarquee);
+          createMarquee();
+        };
+
+        const initHouseGallery = () => {
+          const gallery = document.querySelector(".house-gallery");
+          const slider = gallery?.querySelector(".js-house-gallery");
+          const wrapper = slider?.querySelector(".swiper-wrapper");
+          const tabs = gallery ? Array.from(gallery.querySelectorAll("[data-gallery-category]")) : [];
+          const thumbs = gallery?.querySelector(".gallery-thumbs");
+          const prevButton = gallery?.querySelector(".gallery-nav__btn--prev");
+          const nextButton = gallery?.querySelector(".gallery-nav__btn--next");
+          if (!gallery || !slider || !wrapper || tabs.length === 0 || !thumbs || !prevButton || !nextButton) return;
+
+          const commonImages = [
+            {
+              src: "/src/images/houses/gallery_yangsan_1.jpg",
+              alt: "로날드 맥도날드 하우스 양산 옥상 가든과 병원 전경",
+              width: 1440,
+              height: 810,
+            },
+            {
+              src: "/src/images/houses/gallery_yangsan_2.png",
+              alt: "로날드 맥도날드 하우스 양산 옥상 가든 입구",
+              width: 720,
+              height: 406,
+            },
+          ];
+
+          const galleryItems = {
+            living: commonImages,
+            playroom: commonImages,
+            library: commonImages,
+            garden: commonImages,
+            bedroom: commonImages,
+            kitchen: commonImages,
+          };
+
+          let gallerySwiper = null;
+          let currentCategory = tabs.find((tab) => tab.classList.contains("is-active"))?.dataset.galleryCategory || tabs[0].dataset.galleryCategory;
+
+          const setActiveTab = (category) => {
+            tabs.forEach((tab) => {
+              const isActive = tab.dataset.galleryCategory === category;
+              tab.classList.toggle("is-active", isActive);
+              tab.setAttribute("aria-selected", String(isActive));
+            });
+          };
+
+          const updateThumbs = (activeIndex = 0) => {
+            Array.from(thumbs.querySelectorAll(".gallery-thumb")).forEach((thumb, index) => {
+              const isActive = index === activeIndex;
+              thumb.classList.toggle("is-active", isActive);
+              thumb.setAttribute("aria-current", isActive ? "true" : "false");
+            });
+          };
+
+          const renderGallery = (category) => {
+            const items = galleryItems[category] || [];
+            if (items.length === 0) return;
+
+            if (gallerySwiper) {
+              gallerySwiper.destroy(true, true);
+              gallerySwiper = null;
+            }
+
+            wrapper.innerHTML = items
+              .map(
+                (item) => `
+                  <div class="swiper-slide">
+                    <img src="${item.src}" alt="${item.alt}" width="${item.width}" height="${item.height}" loading="lazy" />
+                  </div>
+                `,
+              )
+              .join("");
+
+            thumbs.innerHTML = items
+              .map(
+                (item, index) => `
+                  <button type="button" class="gallery-thumb${index === 0 ? " is-active" : ""}" aria-label="${index + 1}번째 이미지 보기" aria-current="${index === 0 ? "true" : "false"}">
+                    <img src="${item.src}" alt="" width="197" height="111" loading="lazy" />
+                  </button>
+                `,
+              )
+              .join("");
+
+            setActiveTab(category);
+            updateThumbs(0);
+
+            if (typeof Swiper === "undefined") {
+              const slides = Array.from(wrapper.querySelectorAll(".swiper-slide"));
+              let activeIndex = 0;
+
+              const updateFallback = () => {
+                slides.forEach((slide, index) => {
+                  slide.hidden = index !== activeIndex;
+                });
+                prevButton.disabled = activeIndex === 0;
+                nextButton.disabled = activeIndex === slides.length - 1;
+                updateThumbs(activeIndex);
+              };
+
+              prevButton.onclick = () => {
+                activeIndex = Math.max(0, activeIndex - 1);
+                updateFallback();
+              };
+              nextButton.onclick = () => {
+                activeIndex = Math.min(slides.length - 1, activeIndex + 1);
+                updateFallback();
+              };
+              Array.from(thumbs.querySelectorAll(".gallery-thumb")).forEach((thumb, index) => {
+                thumb.addEventListener("click", () => {
+                  activeIndex = index;
+                  updateFallback();
+                });
+              });
+              updateFallback();
+              return;
+            }
+
+            gallerySwiper = new Swiper(slider, {
+              slidesPerView: 1,
+              loop: false,
+              speed: 500,
+              effect: "fade",
+              fadeEffect: {
+                crossFade: true,
+              },
+              navigation: {
+                prevEl: prevButton,
+                nextEl: nextButton,
+              },
+              on: {
+                slideChange(swiper) {
+                  updateThumbs(swiper.realIndex);
+                },
+              },
+            });
+
+            Array.from(thumbs.querySelectorAll(".gallery-thumb")).forEach((thumb, index) => {
+              thumb.addEventListener("click", () => {
+                gallerySwiper.slideTo(index);
+              });
+            });
+          };
+
+          tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+              currentCategory = tab.dataset.galleryCategory;
+              renderGallery(currentCategory);
+            });
+          });
+
+          renderGallery(currentCategory);
+        };
+
         initImpactCounters();
+        initPartnerMarquee();
+        initHouseGallery();
 
         if (typeof Swiper !== "undefined") {
           new Swiper(".js-house-story", {
@@ -423,17 +671,6 @@
             navigation: {
               prevEl: ".story-slider__btn--prev",
               nextEl: ".story-slider__btn--next",
-            },
-          });
-
-          new Swiper(".js-house-partner", {
-            slidesPerView: "auto",
-            spaceBetween: 24,
-            loop: false,
-            breakpoints: {
-              769: {
-                spaceBetween: 32,
-              },
             },
           });
 
