@@ -7,6 +7,8 @@
     <title>자원봉사 신청 - 한국로날드맥도날드하우스</title>
     <link rel="stylesheet" href="/src/css/common.css" />
     <link rel="stylesheet" href="/src/css/donate.css" />
+    <!-- Swiper CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body>
     <!-- 웹 접근성 스킵 네비게이션 -->
@@ -28,17 +30,14 @@
               src="/src/images/donate/img_volunteer_top.png"
               alt="RMHC Korea 자원봉사 현장 사진"
               class="vol-kv__img"
-              width="1920"
-              height="791"
-              fetchpriority="high"
             />
-          </div>
-          <div class="vol-kv__text-wrap">
-            <h1 class="vol-kv__title font-nanum">
-              당신의 1시간이 환아 가족에게<br />따뜻한 쉼이 됩니다.
-            </h1>
-            <p class="vol-kv__desc">나눔이 아이와 가족에게 큰 힘이 됩니다</p>
-            <a href="#vol-apply" class="btn btn-primary w-auto vol-kv__cta">자원봉사 알아보기</a>
+            <div class="vol-kv__text-wrap">
+              <h1 class="vol-kv__title font-nanum">
+                당신의 1시간이 환아 가족에게<br />따뜻한 쉼이 됩니다.
+              </h1>
+              <p class="vol-kv__desc">나눔이 아이와 가족에게 큰 힘이 됩니다</p>
+              <a href="#vol-apply" class="btn btn-primary vol-kv__cta">자원봉사 알아보기</a>
+            </div>
           </div>
         </section>
 
@@ -58,45 +57,67 @@
               </p>
             </div>
             <div class="vol-intro__slide-wrap">
-              <!-- 정적 이미지 처리 (슬라이더 인터랙션은 고도화 단계에서 구현) -->
-              <figure class="vol-intro__slide">
-                <img
-                  src="/src/images/donate/img_volunteer_slide_1.png"
-                  alt="자원봉사 활동 현장 이미지 1"
-                  class="vol-intro__slide-img"
-                  width="680"
-                  height="415"
-                  loading="lazy"
-                />
-                <img
-                  src="/src/images/donate/img_volunteer_slide_2.png"
-                  alt="자원봉사 활동 현장 이미지 2"
-                  class="vol-intro__slide-img"
-                  width="680"
-                  height="415"
-                  loading="lazy"
-                  aria-hidden="true"
-                />
-                <img
-                  src="/src/images/donate/img_volunteer_slide_3.png"
-                  alt="자원봉사 활동 현장 이미지 3"
-                  class="vol-intro__slide-img"
-                  width="680"
-                  height="415"
-                  loading="lazy"
-                  aria-hidden="true"
-                />
-                <img
-                  src="/src/images/donate/img_volunteer_slide_4.png"
-                  alt="자원봉사 활동 현장 이미지 4"
-                  class="vol-intro__slide-img"
-                  width="680"
-                  height="415"
-                  loading="lazy"
-                  aria-hidden="true"
-                />
-                <figcaption class="vol-intro__slide-caption font-nanum">하우스 객실 청소 및 침구 정리정돈</figcaption>
-              </figure>
+              <!-- Swiper 슬라이더 적용 -->
+              <div class="swiper vol-intro-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <figure class="vol-intro__slide">
+                      <p class="vol-intro__slide-caption font-nanum">하우스 객실 청소 및 침구 정리정돈</p>
+                      <img
+                        src="/src/images/donate/img_volunteer_slide_1.png"
+                        alt="하우스 객실 청소 및 침구 정리정돈"
+                        class="vol-intro__slide-img"
+                        width="680"
+                        height="415"
+                        loading="lazy"
+                      />
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure class="vol-intro__slide">
+                      <p class="vol-intro__slide-caption font-nanum">하우스 실내외 환경 관리</p>
+                      <img
+                        src="/src/images/donate/img_volunteer_slide_2.png"
+                        alt="하우스 실내외 환경 관리"
+                        class="vol-intro__slide-img"
+                        width="680"
+                        height="415"
+                        loading="lazy"
+                      />
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure class="vol-intro__slide">
+                      <p class="vol-intro__slide-caption font-nanum">옥상 정원, 중앙 정원 관리</p>
+                      <img
+                        src="/src/images/donate/img_volunteer_slide_3.png"
+                        alt="옥상 정원, 중앙 정원 관리"
+                        class="vol-intro__slide-img"
+                        width="680"
+                        height="415"
+                        loading="lazy"
+                      />
+                    </figure>
+                  </div>
+                  <div class="swiper-slide">
+                    <figure class="vol-intro__slide">
+                      <p class="vol-intro__slide-caption font-nanum">사랑의 김장담기 행사</p>
+                      <img
+                        src="/src/images/donate/img_volunteer_slide_4.png"
+                        alt="사랑의 김장담기 행사"
+                        class="vol-intro__slide-img"
+                        width="680"
+                        height="415"
+                        loading="lazy"
+                      />
+                    </figure>
+                  </div>
+                </div>
+                
+                <!-- 좌우 네비게이션 화살표 -->
+                <div class="swiper-button-prev vol-swiper-prev"></div>
+                <div class="swiper-button-next vol-swiper-next"></div>
+              </div>
             </div>
           </div>
         </section>
@@ -164,7 +185,12 @@
                 </ul>
               </div>
             </div>
-            <a href="#" class="btn btn-primary w-auto vol-apply__cta">자원봉사 신청하기</a>
+            <button
+              type="button"
+              class="btn btn-primary w-auto vol-apply__cta btn-open-popup"
+              data-popup="modal-dn_04p"
+              aria-haspopup="dialog"
+            >자원봉사 신청하기</button>
           </div>
         </section>
 
@@ -419,8 +445,28 @@
       </main>
     </div>
 
+    <!-- 자원봉사 신청 팝업 인클루드 -->
+    <load ="/includes/popups/dn_04p.html" />
+
     <!-- 푸터 공통 영역 인클루드 -->
     <load ="/includes/footer.html" />
+    <!-- Swiper JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 자원봉사 소개 슬라이더 초기화
+        const volSwiper = new Swiper(".vol-intro-swiper", {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          loop: false,
+          navigation: {
+            nextEl: ".vol-swiper-next",
+            prevEl: ".vol-swiper-prev",
+          },
+        });
+      });
+    </script>
     <script type="module" src="/src/js/common.js"></script>
+    <!-- 개발팀 인도: 팝업 탭 전환 및 캘린더 .is-open 토글 JS 연동 필요 -->
   </body>
 </html>

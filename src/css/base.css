@@ -395,6 +395,8 @@ em {
 }
 img {
   vertical-align: top;
+  width: 100%;
+  max-width: inherit;
 }
 img[src=""],
 img:not([src]) {

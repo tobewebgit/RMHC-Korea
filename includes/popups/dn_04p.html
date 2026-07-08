@@ -1,0 +1,617 @@
+<!-- DN_04P: 자원봉사신청 팝업 (피그마 실측: 2531:48751 / 2531:48895 / 2531:49006) -->
+<div class="modal-overlay" id="modal-dn_04p" role="dialog" aria-modal="true" aria-labelledby="vol-popup-title">
+  <div class="modal-container vol-popup-container">
+
+    <!-- S: 팝업 헤더 -->
+    <div class="vol-popup-header">
+      <h3 class="vol-popup-title font-nanum" id="vol-popup-title">자원봉사자 신청서</h3>
+      <p class="vol-popup-subtitle">자원봉사자 모집 지원신청서입니다.</p>
+      <button type="button" class="modal-close-btn vol-popup-close" aria-label="팝업 닫기">&times;</button>
+    </div>
+    <!-- E: 팝업 헤더 -->
+
+    <!-- S: 팝업 본문 (스크롤 영역) -->
+    <div class="vol-popup-body">
+
+      <!-- S: 하우스 선택 섹션 -->
+      <div class="vol-popup-section vol-popup-section--house">
+        <h4 class="vol-popup-section__title font-nanum">하우스 선택</h4>
+        <hr class="vol-popup-section__sep" />
+        <div class="form-group form">
+          <label for="vol_house" class="form-label">*지원하우스</label>
+          <div class="form-field">
+            <select id="vol_house" class="form-control" required>
+              <option value="yangsan">로날드 맥도날드 하우스 양산</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- E: 하우스 선택 섹션 -->
+
+      <!-- S: 개인/기업·단체 탭 -->
+      <div class="vol-popup-tabs" role="tablist" aria-label="봉사 신청 유형 선택">
+        <button
+          type="button"
+          class="vol-popup-tab is-active"
+          id="tab-personal"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-personal"
+          data-target="panel-personal"
+        >개인</button>
+        <button
+          type="button"
+          class="vol-popup-tab"
+          id="tab-group"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-group"
+          data-target="panel-group"
+        >기업 / 단체</button>
+      </div>
+      <!-- E: 탭 -->
+
+      <form id="vol-popup-form" class="vol-popup-form" novalidate>
+
+        <!-- ==============================================
+             S: 개인 탭 패널
+             ============================================== -->
+        <div id="panel-personal" class="vol-popup-panel is-active" role="tabpanel" aria-labelledby="tab-personal">
+
+          <!-- S: 기본 정보 (필수) -->
+          <div class="vol-popup-section">
+            <h4 class="vol-popup-section__title font-nanum">기본 정보 (필수)</h4>
+
+            <div class="form-group form">
+              <label for="vp_name" class="form-label">*이름</label>
+              <div class="form-field">
+                <input type="text" id="vp_name" name="vp_name" class="form-control" required autocomplete="name" />
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vp_birth" class="form-label">*생년월일</label>
+              <div class="form-field">
+                <input type="text" id="vp_birth" name="vp_birth" class="form-control" placeholder="예)19190101" required maxlength="8" inputmode="numeric" />
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label class="form-label">*성별</label>
+              <div class="form-field form-control-row">
+                <label class="custom-radio">
+                  <input type="radio" name="vp_gender" value="male" checked />
+                  <span>남성</span>
+                </label>
+                <label class="custom-radio">
+                  <input type="radio" name="vp_gender" value="female" />
+                  <span>여성</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vp_phone" class="form-label">*휴대폰 번호</label>
+              <div class="form-field">
+                <input type="tel" id="vp_phone" name="vp_phone" class="form-control" placeholder="휴대폰 번호 (숫자만 입력)" required inputmode="numeric" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vp_email" class="form-label">*이메일</label>
+              <div class="form-field">
+                <input type="email" id="vp_email" name="vp_email" class="form-control" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label class="form-label form-label--top">*주소</label>
+              <div class="form-field">
+                <div class="form-control-with-btn">
+                  <input type="text" id="vp_zip" name="vp_zip" class="form-control" placeholder="우편번호" readonly inputmode="numeric" />
+                  <button type="button" class="btn btn-primary btn-input-action" id="vp_zip_search">숲찾기</button>
+                </div>
+                <input type="text" id="vp_addr1" name="vp_addr1" class="form-control mt-2" placeholder="주소" readonly />
+                <input type="text" id="vp_addr2" name="vp_addr2" class="form-control mt-2" placeholder="상세 주소" />
+              </div>
+            </div>
+          </div>
+          <!-- E: 기본 정보 (필수) -->
+
+          <!-- S: 지원 정보 -->
+          <div class="vol-popup-section">
+            <h4 class="vol-popup-section__title font-nanum">지원 정보</h4>
+
+            <div class="form-group form">
+              <label class="form-label">*지원분야</label>
+              <div class="form-field form-control-row">
+                <label class="custom-radio">
+                  <input type="radio" name="vp_field" value="general" checked />
+                  <span>일반</span>
+                </label>
+                <label class="custom-radio">
+                  <input type="radio" name="vp_field" value="talent" />
+                  <span>재능기부</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vp_motivation" class="form-label form-label--top">*지원동기</label>
+              <div class="form-field">
+                <textarea id="vp_motivation" name="vp_motivation" class="form-control vol-textarea" required></textarea>
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vp_date" class="form-label">*희망 날짜</label>
+              <div class="form-field">
+                <!-- 캘린더 레이어 래퍼: 개발팀에서 .is-open 클래스 토글로 표시/숨김 제어 -->
+                <div class="vol-date-wrap">
+                  <input type="text" id="vp_date" name="vp_date" class="form-control" placeholder="희망 날짜" readonly />
+                  <!-- 캘린더 아이콘: 클릭 시 .vol-calendar-layer에 .is-open 추가 (개발팀 JS 연동) -->
+                  <button type="button" class="vol-calendar-trigger" aria-label="날짜 선택 달력 열기">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2.5" y="3.5" width="15" height="15" rx="2" stroke="#555555" stroke-width="1.5"/>
+                      <path d="M6.5 2V5M13.5 2V5M2.5 8H17.5" stroke="#555555" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                  <!-- S: 캘린더 레이어 (피그마: 2531:49006 / 480x348 / bg:#fffde9 / r:8) -->
+                  <!-- 개발팀 JS 연동: 캘린더 아이콘 클릭 시 is-open 클래스 토글 -->
+                  <div class="vol-calendar-layer" role="dialog" aria-label="날짜 선택">
+                    <div class="vol-cal-panels">
+
+                      <!-- 좌측 패널: 이전 달 (피그마: 240x292, pad T24/R8/B24/L8, gap:16) -->
+                      <div class="vol-cal-panel">
+                        <div class="vol-cal-header">
+                          <button type="button" class="vol-cal-nav vol-cal-nav--prev" aria-label="이전 달">&#8249;</button>
+                          <div class="vol-cal-yearmonth">
+                            <span class="vol-cal-year">2026년</span>
+                            <span class="vol-cal-month">6월</span>
+                          </div>
+                          <button type="button" class="vol-cal-nav vol-cal-nav--next" aria-label="다음 달" tabindex="-1" aria-hidden="true"></button>
+                        </div>
+                        <table class="vol-cal-grid" role="grid" aria-label="2026년 6월">
+                          <thead>
+                            <tr>
+                              <th scope="col" aria-label="일요일">일</th>
+                              <th scope="col">월</th>
+                              <th scope="col">화</th>
+                              <th scope="col">수</th>
+                              <th scope="col">목</th>
+                              <th scope="col">금</th>
+                              <th scope="col" aria-label="토요일">토</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="is-prev-month" aria-disabled="true">26</td>
+                              <td class="is-prev-month" aria-disabled="true">27</td>
+                              <td class="is-prev-month" aria-disabled="true">28</td>
+                              <td class="is-prev-month" aria-disabled="true">29</td>
+                              <td class="is-prev-month" aria-disabled="true">30</td>
+                              <td><button type="button" class="vol-cal-day">1</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">2</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">3</button></td>
+                              <td><button type="button" class="vol-cal-day">4</button></td>
+                              <td><button type="button" class="vol-cal-day">5</button></td>
+                              <td><button type="button" class="vol-cal-day">6</button></td>
+                              <td><button type="button" class="vol-cal-day">7</button></td>
+                              <td><button type="button" class="vol-cal-day">8</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">9</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">10</button></td>
+                              <td><button type="button" class="vol-cal-day">11</button></td>
+                              <td><button type="button" class="vol-cal-day">12</button></td>
+                              <td><button type="button" class="vol-cal-day">13</button></td>
+                              <td><button type="button" class="vol-cal-day">14</button></td>
+                              <td><button type="button" class="vol-cal-day">15</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">16</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">17</button></td>
+                              <td><button type="button" class="vol-cal-day">18</button></td>
+                              <td><button type="button" class="vol-cal-day">19</button></td>
+                              <td><button type="button" class="vol-cal-day is-selected" aria-selected="true">20</button></td>
+                              <td><button type="button" class="vol-cal-day">21</button></td>
+                              <td><button type="button" class="vol-cal-day">22</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">23</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">24</button></td>
+                              <td><button type="button" class="vol-cal-day">25</button></td>
+                              <td><button type="button" class="vol-cal-day">26</button></td>
+                              <td><button type="button" class="vol-cal-day">27</button></td>
+                              <td><button type="button" class="vol-cal-day">28</button></td>
+                              <td><button type="button" class="vol-cal-day">29</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">30</button></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- E: 좌측 패널 -->
+
+                      <!-- 우측 패널: 다음 달 (피그마: 240x292, pad T24/R8/B24/L8, gap:16) -->
+                      <div class="vol-cal-panel">
+                        <div class="vol-cal-header">
+                          <button type="button" class="vol-cal-nav vol-cal-nav--prev" aria-label="이전 달" tabindex="-1" aria-hidden="true"></button>
+                          <div class="vol-cal-yearmonth">
+                            <span class="vol-cal-year">2026년</span>
+                            <span class="vol-cal-month">7월</span>
+                          </div>
+                          <button type="button" class="vol-cal-nav vol-cal-nav--next" aria-label="다음 달">&#8250;</button>
+                        </div>
+                        <table class="vol-cal-grid" role="grid" aria-label="2026년 7월">
+                          <thead>
+                            <tr>
+                              <th scope="col" aria-label="일요일">일</th>
+                              <th scope="col">월</th>
+                              <th scope="col">화</th>
+                              <th scope="col">수</th>
+                              <th scope="col">목</th>
+                              <th scope="col">금</th>
+                              <th scope="col" aria-label="토요일">토</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="is-prev-month" aria-disabled="true">26</td>
+                              <td class="is-prev-month" aria-disabled="true">27</td>
+                              <td class="is-prev-month" aria-disabled="true">28</td>
+                              <td class="is-prev-month" aria-disabled="true">29</td>
+                              <td class="is-prev-month" aria-disabled="true">30</td>
+                              <td><button type="button" class="vol-cal-day">1</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">2</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">3</button></td>
+                              <td><button type="button" class="vol-cal-day">4</button></td>
+                              <td><button type="button" class="vol-cal-day">5</button></td>
+                              <td><button type="button" class="vol-cal-day">6</button></td>
+                              <td><button type="button" class="vol-cal-day">7</button></td>
+                              <td><button type="button" class="vol-cal-day">8</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">9</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">10</button></td>
+                              <td><button type="button" class="vol-cal-day">11</button></td>
+                              <td><button type="button" class="vol-cal-day">12</button></td>
+                              <td><button type="button" class="vol-cal-day">13</button></td>
+                              <td><button type="button" class="vol-cal-day">14</button></td>
+                              <td><button type="button" class="vol-cal-day">15</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">16</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">17</button></td>
+                              <td><button type="button" class="vol-cal-day">18</button></td>
+                              <td><button type="button" class="vol-cal-day">19</button></td>
+                              <td><button type="button" class="vol-cal-day">20</button></td>
+                              <td><button type="button" class="vol-cal-day">21</button></td>
+                              <td><button type="button" class="vol-cal-day">22</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">23</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">24</button></td>
+                              <td><button type="button" class="vol-cal-day">25</button></td>
+                              <td><button type="button" class="vol-cal-day">26</button></td>
+                              <td><button type="button" class="vol-cal-day">27</button></td>
+                              <td><button type="button" class="vol-cal-day">28</button></td>
+                              <td><button type="button" class="vol-cal-day">29</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">30</button></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- E: 우측 패널 -->
+
+                    </div>
+
+                    <!-- S: 캘린더 CTA 바 (피그마: 480x56, pad T12/R16/B12/L16) -->
+                    <div class="vol-cal-cta">
+                      <button type="button" class="vol-cal-btn-today">오늘</button>
+                      <div class="vol-cal-cta-actions">
+                        <button type="button" class="vol-cal-btn-cancel">취소</button>
+                        <button type="button" class="vol-cal-btn-select btn btn-primary">선택</button>
+                      </div>
+                    </div>
+                    <!-- E: 캘린더 CTA 바 -->
+                  </div>
+                  <!-- E: 캘린더 레이어 -->
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vp_contact" class="form-label form-label--top">연락사항</label>
+              <div class="form-field">
+                <textarea id="vp_contact" name="vp_contact" class="form-control vol-textarea"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vp_lang" class="form-label form-label--top">어학능력<br /><span class="vol-label-note">(해당자 기재)</span></label>
+              <div class="form-field">
+                <textarea id="vp_lang" name="vp_lang" class="form-control vol-textarea" placeholder="외 국어 및 수화 등"></textarea>
+              </div>
+            </div>
+
+          </div>
+          <!-- E: 지원 정보 -->
+
+          <!-- S: 개인정보 수집 동의 -->
+          <div class="vol-popup-section">
+            <h4 class="vol-popup-section__title font-nanum">개인정보 수집 동의</h4>
+            <div class="vol-privacy-box">
+              <p>
+                Ronald McDonald House Korea 는 자원봉사자 인력관리를 위하여 다음과 같이 개인정보를 수집하고 있습니다.
+              </p>
+              <ul>
+                <li>· 목적 : 신규 자원봉사자 모집</li>
+                <li>· 정보 : 성명, 생년월일, 성별, 주소, 연락처, 이메일 등</li>
+                <li>· 보존기간 : 1년</li>
+              </ul>
+            </div>
+            <label class="custom-checkbox vol-privacy-check" for="vp_agree">
+              <input type="checkbox" id="vp_agree" name="vp_agree" required />
+              <span>[필수] 개인정보 수집 및 이용에 동의합니다.</span>
+            </label>
+          </div>
+          <!-- E: 개인정보 수집 동의 -->
+
+          <button type="submit" form="vol-popup-form" class="btn btn-primary vol-popup-submit">자원봉사 신청하기</button>
+
+        </div>
+        <!-- E: 개인 탭 패널 -->
+
+        <!-- ==============================================
+             S: 기업·단체 탭 패널
+             ============================================== -->
+        <div id="panel-group" class="vol-popup-panel" role="tabpanel" aria-labelledby="tab-group" hidden>
+
+          <!-- S: 기본 정보 (필수) -->
+          <div class="vol-popup-section">
+            <h4 class="vol-popup-section__title font-nanum">기본 정보 (필수)</h4>
+
+            <div class="form-group form">
+              <label for="vg_org" class="form-label">*기업/단체명</label>
+              <div class="form-field">
+                <input type="text" id="vg_org" name="vg_org" class="form-control" required />
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vg_manager" class="form-label">*담당자명</label>
+              <div class="form-field">
+                <input type="text" id="vg_manager" name="vg_manager" class="form-control" required autocomplete="name" />
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vg_phone" class="form-label">*담당자 연락처</label>
+              <div class="form-field">
+                <input type="tel" id="vg_phone" name="vg_phone" class="form-control" placeholder="연락처 (숫자만 입력)" required inputmode="numeric" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vg_email" class="form-label">*담당자 이메일</label>
+              <div class="form-field">
+                <input type="email" id="vg_email" name="vg_email" class="form-control" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label class="form-label form-label--top">*주소</label>
+              <div class="form-field">
+                <div class="form-control-with-btn">
+                  <input type="text" id="vg_zip" name="vg_zip" class="form-control" placeholder="우편번호" readonly inputmode="numeric" />
+                  <button type="button" class="btn btn-primary btn-input-action" id="vg_zip_search">숲찾기</button>
+                </div>
+                <input type="text" id="vg_addr1" name="vg_addr1" class="form-control mt-2" placeholder="주소" readonly />
+                <input type="text" id="vg_addr2" name="vg_addr2" class="form-control mt-2" placeholder="상세 주소" />
+              </div>
+            </div>
+
+          </div>
+          <!-- E: 기본 정보 (필수) -->
+
+          <!-- S: 지원 정보 -->
+          <div class="vol-popup-section">
+            <h4 class="vol-popup-section__title font-nanum">지원 정보</h4>
+
+            <div class="form-group form">
+              <label for="vg_motivation" class="form-label form-label--top">*지원동기</label>
+              <div class="form-field">
+                <textarea id="vg_motivation" name="vg_motivation" class="form-control vol-textarea" required></textarea>
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vg_date" class="form-label">*희망 날짜</label>
+              <div class="form-field">
+                <!-- 캘린더 레이어 래퍼: 개발팀에서 .is-open 클래스 토글로 표시/숨김 제어 -->
+                <div class="vol-date-wrap">
+                  <input type="text" id="vg_date" name="vg_date" class="form-control" placeholder="희망 날짜" readonly />
+                  <!-- 캘린더 아이콘: 클릭 시 .vol-calendar-layer에 .is-open 추가 (개발팀 JS 연동) -->
+                  <button type="button" class="vol-calendar-trigger" aria-label="날짜 선택 달력 열기">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2.5" y="3.5" width="15" height="15" rx="2" stroke="#555555" stroke-width="1.5"/>
+                      <path d="M6.5 2V5M13.5 2V5M2.5 8H17.5" stroke="#555555" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                  <!-- S: 캘린더 레이어 (피그마: 2531:49006 / 480x348 / bg:#fffde9 / r:8) -->
+                  <!-- 개발팀 JS 연동: 캘린더 아이콘 클릭 시 is-open 클래스 토글 -->
+                  <div class="vol-calendar-layer" role="dialog" aria-label="날짜 선택">
+                    <div class="vol-cal-panels">
+                      <!-- 좌측 패널 -->
+                      <div class="vol-cal-panel">
+                        <div class="vol-cal-header">
+                          <button type="button" class="vol-cal-nav vol-cal-nav--prev" aria-label="이전 달">&#8249;</button>
+                          <div class="vol-cal-yearmonth">
+                            <span class="vol-cal-year">2026년</span>
+                            <span class="vol-cal-month">6월</span>
+                          </div>
+                          <button type="button" class="vol-cal-nav vol-cal-nav--next" aria-label="다음 달" tabindex="-1" aria-hidden="true"></button>
+                        </div>
+                        <table class="vol-cal-grid" role="grid" aria-label="2026년 6월">
+                          <thead>
+                            <tr>
+                              <th scope="col" aria-label="일요일">일</th>
+                              <th scope="col">월</th><th scope="col">화</th><th scope="col">수</th>
+                              <th scope="col">목</th><th scope="col">금</th>
+                              <th scope="col" aria-label="토요일">토</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="is-prev-month">26</td><td class="is-prev-month">27</td><td class="is-prev-month">28</td>
+                              <td class="is-prev-month">29</td><td class="is-prev-month">30</td>
+                              <td><button type="button" class="vol-cal-day">1</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">2</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">3</button></td>
+                              <td><button type="button" class="vol-cal-day">4</button></td><td><button type="button" class="vol-cal-day">5</button></td>
+                              <td><button type="button" class="vol-cal-day">6</button></td><td><button type="button" class="vol-cal-day">7</button></td>
+                              <td><button type="button" class="vol-cal-day">8</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">9</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">10</button></td>
+                              <td><button type="button" class="vol-cal-day">11</button></td><td><button type="button" class="vol-cal-day">12</button></td>
+                              <td><button type="button" class="vol-cal-day">13</button></td><td><button type="button" class="vol-cal-day">14</button></td>
+                              <td><button type="button" class="vol-cal-day">15</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">16</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">17</button></td>
+                              <td><button type="button" class="vol-cal-day">18</button></td><td><button type="button" class="vol-cal-day">19</button></td>
+                              <td><button type="button" class="vol-cal-day is-selected" aria-selected="true">20</button></td>
+                              <td><button type="button" class="vol-cal-day">21</button></td><td><button type="button" class="vol-cal-day">22</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">23</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">24</button></td>
+                              <td><button type="button" class="vol-cal-day">25</button></td><td><button type="button" class="vol-cal-day">26</button></td>
+                              <td><button type="button" class="vol-cal-day">27</button></td><td><button type="button" class="vol-cal-day">28</button></td>
+                              <td><button type="button" class="vol-cal-day">29</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">30</button></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- 우측 패널 -->
+                      <div class="vol-cal-panel">
+                        <div class="vol-cal-header">
+                          <button type="button" class="vol-cal-nav vol-cal-nav--prev" aria-label="이전 달" tabindex="-1" aria-hidden="true"></button>
+                          <div class="vol-cal-yearmonth">
+                            <span class="vol-cal-year">2026년</span>
+                            <span class="vol-cal-month">7월</span>
+                          </div>
+                          <button type="button" class="vol-cal-nav vol-cal-nav--next" aria-label="다음 달">&#8250;</button>
+                        </div>
+                        <table class="vol-cal-grid" role="grid" aria-label="2026년 7월">
+                          <thead>
+                            <tr>
+                              <th scope="col" aria-label="일요일">일</th>
+                              <th scope="col">월</th><th scope="col">화</th><th scope="col">수</th>
+                              <th scope="col">목</th><th scope="col">금</th>
+                              <th scope="col" aria-label="토요일">토</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="is-prev-month">26</td><td class="is-prev-month">27</td><td class="is-prev-month">28</td>
+                              <td class="is-prev-month">29</td><td class="is-prev-month">30</td>
+                              <td><button type="button" class="vol-cal-day">1</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">2</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">3</button></td>
+                              <td><button type="button" class="vol-cal-day">4</button></td><td><button type="button" class="vol-cal-day">5</button></td>
+                              <td><button type="button" class="vol-cal-day">6</button></td><td><button type="button" class="vol-cal-day">7</button></td>
+                              <td><button type="button" class="vol-cal-day">8</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">9</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">10</button></td>
+                              <td><button type="button" class="vol-cal-day">11</button></td><td><button type="button" class="vol-cal-day">12</button></td>
+                              <td><button type="button" class="vol-cal-day">13</button></td><td><button type="button" class="vol-cal-day">14</button></td>
+                              <td><button type="button" class="vol-cal-day">15</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">16</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">17</button></td>
+                              <td><button type="button" class="vol-cal-day">18</button></td><td><button type="button" class="vol-cal-day">19</button></td>
+                              <td><button type="button" class="vol-cal-day">20</button></td><td><button type="button" class="vol-cal-day">21</button></td>
+                              <td><button type="button" class="vol-cal-day">22</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">23</button></td>
+                            </tr>
+                            <tr>
+                              <td><button type="button" class="vol-cal-day is-sunday">24</button></td>
+                              <td><button type="button" class="vol-cal-day">25</button></td><td><button type="button" class="vol-cal-day">26</button></td>
+                              <td><button type="button" class="vol-cal-day">27</button></td><td><button type="button" class="vol-cal-day">28</button></td>
+                              <td><button type="button" class="vol-cal-day">29</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">30</button></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="vol-cal-cta">
+                      <button type="button" class="vol-cal-btn-today">오늘</button>
+                      <div class="vol-cal-cta-actions">
+                        <button type="button" class="vol-cal-btn-cancel">취소</button>
+                        <button type="button" class="vol-cal-btn-select btn btn-primary">선택</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- E: 캘린더 레이어 -->
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group form">
+              <label for="vg_note" class="form-label form-label--top">*기타사항</label>
+              <div class="form-field">
+                <textarea id="vg_note" name="vg_note" class="form-control vol-textarea" required></textarea>
+              </div>
+            </div>
+
+          </div>
+          <!-- E: 지원 정보 -->
+
+          <!-- S: 개인정보 수집 동의 -->
+          <div class="vol-popup-section">
+            <h4 class="vol-popup-section__title font-nanum">개인정보 수집 동의</h4>
+            <div class="vol-privacy-box">
+              <p>
+                Ronald McDonald House Korea 는 자원봉사자 인력관리를 위하여 다음과 같이 개인정보를 수집하고 있습니다.
+              </p>
+              <ul>
+                <li>· 목적 : 신규 자원봉사자 모집</li>
+                <li>· 정보 : 성명, 생년월일, 성별, 주소, 연락처, 이메일 등</li>
+                <li>· 보존기간 : 1년</li>
+              </ul>
+            </div>
+            <label class="custom-checkbox vol-privacy-check" for="vg_agree">
+              <input type="checkbox" id="vg_agree" name="vg_agree" required />
+              <span>[필수] 개인정보 수집 및 이용에 동의합니다.</span>
+            </label>
+          </div>
+          <!-- E: 개인정보 수집 동의 -->
+
+          <button type="submit" form="vol-popup-form" class="btn btn-primary vol-popup-submit">자원봉사 신청하기</button>
+
+        </div>
+        <!-- E: 기업·단체 탭 패널 -->
+
+      </form>
+    </div>
+    <!-- E: 팝업 본문 -->
+
+  </div>
+</div>
