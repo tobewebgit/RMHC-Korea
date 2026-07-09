@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="한국로날드맥도날드하우스와 함께하는 소중한 파트너사를 소개합니다." />
-    <title>파트너사 소개 - 한국로날드맥도날드하우스</title>
+    <meta name="description" content="한국로날드맥도날드하우스와 함께 환아 가족의 더 나은 일상을 만들어가는 기업 파트너를 소개합니다." />
+    <title>기업 파트너 - 한국로날드맥도날드하우스</title>
     <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/about.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body>
     <!-- 웹 접근성 스킵 네비게이션 -->
@@ -15,13 +17,489 @@
     <load ="/includes/header.html" />
 
     <div class="page-wrapper">
-      <main id="main-content">
-        <!-- [작업 전 레거시 비움] 사용자 요청 시 순서대로 퍼블리싱 진행 예정 -->
+      <main id="main-content" class="about-partner">
+        <section class="partner-kv" aria-labelledby="partnerTitle">
+          <picture>
+            <source srcset="/src/images/about/img_partner_kv_mo.png" media="(max-width: 768px)" />
+            <img src="/src/images/about/img_partner_kv.png" alt="두 사람이 악수하는 모습" width="1848" height="500" fetchpriority="high" />
+          </picture>
+          <div class="partner-kv__text">
+            <h1 id="partnerTitle">기업 파트너</h1>
+            <p>함께할 때 더 큰 기적이 시작됩니다.</p>
+          </div>
+        </section>
+
+        <section class="partner-intro" aria-labelledby="partnerIntroTitle">
+          <div class="inner-layout partner-intro__inner">
+            <div class="partner-intro__content">
+              <h2 id="partnerIntroTitle">기업 파트너들의 따뜻한 나눔은<br />환아와 가족들이 가장 힘든<br />순간에도 안심하고 치료에 집중할<br />수 있도록 돕는 큰 힘이 됩니다.</h2>
+              <p>
+                한국로날드맥도날드하우스는 환아 가족의 일상을 지키고 더 많은 가족에게 필요한 지원을 전하기 위해 함께 노력하고 있습니다.<br />
+                앞으로도 더 많은 가족이 함께할 수 있도록 의미 있는 변화를 만들어가겠습니다.
+              </p>
+            </div>
+            <img class="partner-intro__image" src="/src/images/about/img_partner_section_1.png" alt="여러 사람이 손을 포개어 협력하는 모습" width="680" height="460" loading="lazy" />
+          </div>
+        </section>
+
+        <section class="partner-highlight" aria-labelledby="partnerHighlightTitle">
+          <div class="inner-layout">
+            <h2 id="partnerHighlightTitle" class="partner-section-title">주요 파트너십 하이라이트</h2>
+
+            <div class="partner-highlight__group">
+              <h3>Founding &amp; Forever 파트너</h3>
+              <article class="founding-card">
+                <img class="founding-card__image" src="/src/images/about/img_partner_section_2.png" alt="어린이가 해피밀 박스를 들고 있는 모습" width="720" height="487" loading="lazy" />
+                <div class="founding-card__content">
+                  <img src="/src/images/about/logo_macdonald_section_2.png" alt="맥도날드" width="120" height="120" loading="lazy" />
+                  <h4>작은 정성이 모여 만드는 커다란 기적</h4>
+                  <p>해피밀®, 행운버거, 해피워크를 통해 전해진 소중한 나눔은 로날드 맥도날드 하우스 운영을 비롯하여 환아와 가족이 함께할 수 있도록 돕는 다양한 지원과 프로그램에 힘이 되고 있습니다.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="partner-highlight__group">
+              <h3>Mission 파트너</h3>
+              <ul class="partner-logo-grid partner-logo-grid--mission" aria-label="Mission 파트너 로고 목록">
+                <li><img src="/src/images/about/logo_mision_partner_1.png" alt="Mission 파트너 로고 1" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_2.png" alt="Mission 파트너 로고 2" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_3.png" alt="Mission 파트너 로고 3" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_4.png" alt="Mission 파트너 로고 4" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_5.png" alt="Mission 파트너 로고 5" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_6.png" alt="Mission 파트너 로고 6" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_7.png" alt="Mission 파트너 로고 7" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_8.png" alt="Mission 파트너 로고 8" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_9.png" alt="Mission 파트너 로고 9" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_10.png" alt="Mission 파트너 로고 10" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_11.png" alt="Mission 파트너 로고 11" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_12.png" alt="Mission 파트너 로고 12" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_13.png" alt="Mission 파트너 로고 13" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_14.png" alt="Mission 파트너 로고 14" width="230" height="84" loading="lazy" /></li>
+                <li><img src="/src/images/about/logo_mision_partner_15.png" alt="Mission 파트너 로고 15" width="230" height="84" loading="lazy" /></li>
+              </ul>
+            </div>
+
+            <div class="partner-highlight__group">
+              <h3>파트너</h3>
+              <div class="partner-logo-slider swiper partner-logo-slide-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <ul class="partner-logo-grid partner-logo-grid--partner" aria-label="파트너 로고 목록 1">
+                      <li><img src="/src/images/about/logo_partner_1.png" alt="파트너 로고 1" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_2.png" alt="파트너 로고 2" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_3.png" alt="파트너 로고 3" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_4.png" alt="파트너 로고 4" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_5.png" alt="파트너 로고 5" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_6.png" alt="파트너 로고 6" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_7.png" alt="파트너 로고 7" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_8.png" alt="파트너 로고 8" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_9.png" alt="파트너 로고 9" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_10.png" alt="파트너 로고 10" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_11.png" alt="파트너 로고 11" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_12.png" alt="파트너 로고 12" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_13.png" alt="파트너 로고 13" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_14.png" alt="파트너 로고 14" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_15.png" alt="파트너 로고 15" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_16.png" alt="파트너 로고 16" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_17.png" alt="파트너 로고 17" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_18.png" alt="파트너 로고 18" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_19.png" alt="파트너 로고 19" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_20.png" alt="파트너 로고 20" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_21.png" alt="파트너 로고 21" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_22.png" alt="파트너 로고 22" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_23.png" alt="파트너 로고 23" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_24.png" alt="파트너 로고 24" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_25.png" alt="파트너 로고 25" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_26.png" alt="파트너 로고 26" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_27.png" alt="파트너 로고 27" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_28.png" alt="파트너 로고 28" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_29.png" alt="파트너 로고 29" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_30.png" alt="파트너 로고 30" width="230" height="90" loading="lazy" /></li>
+                    </ul>
+                  </div>
+                  <div class="swiper-slide">
+                    <ul class="partner-logo-grid partner-logo-grid--partner" aria-label="파트너 로고 목록 2">
+                      <li><img src="/src/images/about/logo_partner_31.png" alt="파트너 로고 31" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_32.png" alt="파트너 로고 32" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_33.png" alt="파트너 로고 33" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_34.png" alt="파트너 로고 34" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_35.png" alt="파트너 로고 35" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_36.png" alt="파트너 로고 36" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_37.png" alt="파트너 로고 37" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_38.png" alt="파트너 로고 38" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_39.png" alt="파트너 로고 39" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_40.png" alt="파트너 로고 40" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_41.png" alt="파트너 로고 41" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_42.png" alt="파트너 로고 42" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_43.png" alt="파트너 로고 43" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_44.png" alt="파트너 로고 44" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_45.png" alt="파트너 로고 45" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_46.png" alt="파트너 로고 46" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_47.png" alt="파트너 로고 47" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_48.png" alt="파트너 로고 48" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_49.png" alt="파트너 로고 49" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_50.png" alt="파트너 로고 50" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_51.png" alt="파트너 로고 51" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_52.png" alt="파트너 로고 52" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_53.png" alt="파트너 로고 53" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_54.png" alt="파트너 로고 54" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_55.png" alt="파트너 로고 55" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_56.png" alt="파트너 로고 56" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_57.png" alt="파트너 로고 57" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_58.png" alt="파트너 로고 58" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_59.png" alt="파트너 로고 59" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_60.png" alt="파트너 로고 60" width="230" height="90" loading="lazy" /></li>
+                    </ul>
+                  </div>
+                  <div class="swiper-slide">
+                    <ul class="partner-logo-grid partner-logo-grid--partner" aria-label="파트너 로고 목록 3">
+                      <li><img src="/src/images/about/logo_partner_61.png" alt="파트너 로고 61" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_62.png" alt="파트너 로고 62" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_63.png" alt="파트너 로고 63" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_64.png" alt="파트너 로고 64" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_65.png" alt="파트너 로고 65" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_66.png" alt="파트너 로고 66" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_67.png" alt="파트너 로고 67" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_68.png" alt="파트너 로고 68" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_69.png" alt="파트너 로고 69" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_70.png" alt="파트너 로고 70" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_71.png" alt="파트너 로고 71" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_72.png" alt="파트너 로고 72" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_73.png" alt="파트너 로고 73" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_74.png" alt="파트너 로고 74" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_79.png" alt="파트너 로고 79" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_80.png" alt="파트너 로고 80" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_81.png" alt="파트너 로고 81" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_82.png" alt="파트너 로고 82" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_83.png" alt="파트너 로고 83" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_84.png" alt="파트너 로고 84" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_85.png" alt="파트너 로고 85" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_86.png" alt="파트너 로고 86" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_87.png" alt="파트너 로고 87" width="230" height="90" loading="lazy" /></li>
+                      <li><img src="/src/images/about/logo_partner_88.png" alt="파트너 로고 88" width="230" height="90" loading="lazy" /></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="partner-swiper-pagination swiper-pagination"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="partner-model" aria-labelledby="partnerModelTitle">
+          <div class="inner-layout">
+            <div class="partner-model__head">
+              <h2 id="partnerModelTitle" class="partner-section-title">파트너십 모델</h2>
+              <p>기업 파트너와 함께하는 나눔상품과 판매 연계 기부는 일상 속 나눔을 더욱 쉽게 만듭니다. 제품 구매와 모금 참여를 통해 모인 소중한 나눔은 환아 가족을 위한 하우스 운영과 다양한 지원으로 이어집니다.</p>
+            </div>
+            <div class="partner-model__diagram" aria-label="제품 생산자, 판매처 제공자, 소비자, 비영리 재단으로 이어지는 파트너십 모델">
+              <picture>
+                <source srcset="/src/images/about/bg_partner_round_mo.png" media="(max-width: 768px)" />
+                <img src="/src/images/about/bg_partner_round_pc.png" alt="" width="794" height="476" loading="lazy" />
+              </picture>
+              <div class="model-node model-node--seller">
+                <strong>판매처 제공자</strong>
+                <span>나눔 문화 확산<br />고객 참여 확대</span>
+              </div>
+              <div class="model-node model-node--maker">
+                <strong>제품 생산자</strong>
+                <span>사회적 가치 실현<br />브랜드 신뢰 제고</span>
+              </div>
+              <div class="model-node model-node--foundation">
+                <strong>비영리 재단</strong>
+                <span>지속가능한 지원 기반 마련<br />환아 가족 지원 확대</span>
+              </div>
+              <div class="model-node model-node--consumer">
+                <img src="/src/images/about/icon_section_3.png" alt="" width="80" height="80" loading="lazy" />
+                <strong>소비자</strong>
+                <span>소비자 만족도 향상</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="partner-activity" aria-labelledby="partnerActivityTitle">
+          <div class="inner-layout">
+            <h2 id="partnerActivityTitle" class="partner-section-title">파트너십 활동</h2>
+            <ul class="partner-activity__list">
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_01.png" alt="코스트코" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>코스트코</h3>
+                  <p>매주 채소, 과일 등 신선식품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_02.png" alt="비알코리아" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>비알코리아</h3>
+                  <p>분기별 식료품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_03.png" alt="매일유업" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>매일유업</h3>
+                  <p>분기별 식료품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_04.png" alt="동서식품" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>동서식품</h3>
+                  <p>분기별 식료품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_05.png" alt="바스틀리코리아" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>바스틀리코리아</h3>
+                  <p>휴지 및 위생용품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_06.png" alt="애경" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>애경</h3>
+                  <p>주방용품 및 욕실용품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_07.png" alt="LG전자" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>LG전자</h3>
+                  <p>냉장고, 전자레인지 등 가전제품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_08.png" alt="메르세데스-벤츠 코리아" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>메르세데스-벤츠 코리아</h3>
+                  <p>차량 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_09.png" alt="세포라" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>세포라</h3>
+                  <p>스킨케어 제품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_10.png" alt="라보드" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>라보드</h3>
+                  <p>치약 및 칫솔 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_11.png" alt="코카콜라" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>코카콜라</h3>
+                  <p>음료 쇼케이스 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_12.png" alt="세라젬" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>세라젬</h3>
+                  <p>안마의자 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_13.png" alt="JKL그룹" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>JKL그룹</h3>
+                  <p>로비 전자칠판 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_14.png" alt="대상웰라이프" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>대상웰라이프</h3>
+                  <p>뉴케어 제품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_15.png" alt="요기보" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>요기보</h3>
+                  <p>도서관 빈백 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_16.png" alt="스타리온" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>스타리온</h3>
+                  <p>쇼케이스 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_17.png" alt="한국투자증권" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>한국투자증권</h3>
+                  <p>쿠키 세트 및 그래놀라 볼 세트 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_18.png" alt="비올라글로벌" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>비올라글로벌</h3>
+                  <p>비치타월 100장 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_19.png" alt="얼라맘마" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>얼라맘마</h3>
+                  <p>즉석식품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_20.png" alt="주식회사 승만" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>주식회사 승만</h3>
+                  <p>곰보배추시럽 세트 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_21.png" alt="한우물" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>한우물</h3>
+                  <p>식음료 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_22.png" alt="창구식품" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>창구식품</h3>
+                  <p>식음료 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_23.png" alt="샤인프레시" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>샤인프레시</h3>
+                  <p>식음료 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_24.png" alt="소싱" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>소싱</h3>
+                  <p>소형 가전제품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_25.png" alt="움트리" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>움트리</h3>
+                  <p>식품 후원</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_26.png" alt="박준면의 김치이야기" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>박준면의 김치이야기</h3>
+                  <p>김치 1kg 판매당 100원 기부</p>
+                </div>
+              </li>
+              <li class="activity-card">
+                <div class="activity-card__logo"><img src="/src/images/about/logo_partner_goods_27.png" alt="샤인프레시" width="928" height="240" loading="lazy" /></div>
+                <div class="activity-card__body">
+                  <span class="activity-card__badge">현물 후원</span>
+                  <h3>샤인프레시</h3>
+                  <p>식음료 후원</p>
+                </div>
+              </li>
+            </ul>
+            <div class="partner-activity__more">
+              <a href="#" class="btn btn-primary" data-partner-more>더 보기 +</a>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
 
     <!-- 푸터 공통 영역 인클루드 -->
     <load ="/includes/footer.html" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new Swiper(".partner-logo-slide-container", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: false,
+          pagination: {
+            el: ".partner-swiper-pagination",
+            clickable: true,
+          },
+        });
+
+        const initPartnerActivityMore = () => {
+          const list = document.querySelector(".partner-activity__list");
+          const cards = Array.from(document.querySelectorAll(".partner-activity__list .activity-card"));
+          const moreButton = document.querySelector("[data-partner-more]");
+          if (!list || cards.length === 0 || !moreButton) return;
+
+          let visibleCount = 0;
+
+          const getColumnCount = () => {
+            const columns = window.getComputedStyle(list).gridTemplateColumns.split(" ").filter(Boolean);
+            return Math.max(columns.length, 1);
+          };
+
+          const getRowsCount = () => getColumnCount() * 4;
+
+          const updateVisibleCards = (count) => {
+            visibleCount = Math.min(count, cards.length);
+            cards.forEach((card, index) => {
+              card.hidden = index >= visibleCount;
+            });
+            moreButton.hidden = visibleCount >= cards.length;
+          };
+
+          moreButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            updateVisibleCards(visibleCount + getRowsCount());
+          });
+
+          window.addEventListener("resize", () => {
+            updateVisibleCards(Math.max(visibleCount, getRowsCount()));
+          });
+
+          updateVisibleCards(getRowsCount());
+        };
+
+        initPartnerActivityMore();
+      });
+    </script>
     <script type="module" src="/src/js/common.js"></script>
   </body>
 </html>

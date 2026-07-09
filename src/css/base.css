@@ -84,6 +84,14 @@
   src: url("../fonts/NanumSquareNeoTTF-eHv.woff2") format("woff2");
 }
 
+/* AudreyDisplay */
+@font-face {
+  font-family: "AudreyDisplay";
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/AudreyDisplay-Bold.woff2") format("woff2");
+}
+
 :root {
   /* Brand Color Palette (RMHC Warm Light Theme — 피그마 기준) */
   --primary: #db0007;
@@ -146,6 +154,9 @@
     sans-serif;
   --font-heavy:
     "NanumSquareNeoHeavy", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  --font-display:
+    "AudreyDisplay", -apple-system, BlinkMacSystemFont, system-ui,
     sans-serif;
 
   /* Typography Scale */
@@ -658,9 +669,7 @@ html:not(.lenis) [data-aos] {
     font-size: 2.5645vw; /* 390px :: iPhone 12 Pro */
   }
 }
-figcaption {
-  display: none;
-}
+
 .no-scroll {
   overflow: hidden;
 }

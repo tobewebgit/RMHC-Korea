@@ -88,6 +88,12 @@
   border-color: var(--primary);
 }
 
+/* white Button */
+.btn-white {
+  color: var(--text-black);
+  background-color: var(--text-white);
+}
+
 /* Text-only Button */
 .btn-text {
   min-height: auto;
@@ -172,6 +178,11 @@
   transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.btn.btn-white.btn-arrow::after {
+  background: url("/src/images/common/icon_arrow_right_black.png") no-repeat center/contain;
+}
+
+.btn.btn-white.btn-arrow:hover::after,
 .btn.btn-arrow:hover::after {
   transform: translateX(0.2rem); /* 호버 시 우측으로 2px 부드럽게 감속 이동 */
 }
