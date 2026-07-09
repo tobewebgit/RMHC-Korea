@@ -1,11 +1,12 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="재단법인 한국로날드맥도날드하우스의 투명하고 정직한 재정 및 감사 보고서를 공개합니다." />
-    <title>재정 투명성 - 한국로날드맥도날드하우스</title>
+    <title>재정보고 - 한국로날드맥도날드하우스</title>
     <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/about.css" />
   </head>
   <body>
     <!-- 웹 접근성 스킵 네비게이션 -->
@@ -15,13 +16,432 @@
     <load ="/includes/header.html" />
 
     <div class="page-wrapper">
-      <main id="main-content">
-        <!-- [작업 전 레거시 비움] 사용자 요청 시 순서대로 퍼블리싱 진행 예정 -->
+      <main id="main-content" class="about-transparency">
+        <section class="transparency-kv" aria-labelledby="transparencyTitle">
+          <picture>
+            <source srcset="/src/images/about/img_transparency_kv_mo.png" media="(max-width: 768px)" />
+            <img src="/src/images/about/img_transparency_kv.png" alt="재정보고 문서를 확인하는 손과 계산기" width="1848" height="500" fetchpriority="high" />
+          </picture>
+          <div class="transparency-kv__text">
+            <h1 id="transparencyTitle">재정보고</h1>
+            <p>재단법인 한국로날드맥도날드하우스는 투명한 재정운영을 위해 외부회계감사를 받고있으며 국세청, 보건복지부, 서울시청에 후원금사용내역 및 결산액을 보고하고 있습니다.</p>
+          </div>
+        </section>
+
+        <section class="finance-report" aria-labelledby="financeReportTitle">
+          <div class="inner-layout">
+            <div class="finance-report__head">
+              <h2 id="financeReportTitle">2025 한국로날드맥도날드하우스 재정보고</h2>
+              <p>재단법인 한국로날드맥도날드하우스는 투명한 재정운영을 위해 외부회계감사를 받고있으며 국세청, 보건복지부, 서울시청에 후원금사용내역 및 결산액을 보고하고 있습니다.</p>
+            </div>
+
+            <div class="finance-chart-list" data-finance-charts>
+              <article class="finance-chart-card">
+                <div class="finance-chart" aria-hidden="true">
+                  <svg class="finance-chart__svg" viewBox="0 0 547 274" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="finance-chart__draw-line finance-chart__draw-line--purple" data-draw-ratio="1" d="M20 253.5 A253.5 253.5 0 0 1 527 253.5" />
+                    <path class="finance-chart__draw-line finance-chart__draw-line--blue" data-draw-ratio="0.985" d="M20 253.5 A253.5 253.5 0 0 1 527 253.5" />
+                    <path class="finance-chart__draw-line finance-chart__draw-line--green" data-draw-ratio="0.965" d="M20 253.5 A253.5 253.5 0 0 1 527 253.5" />
+                    <path class="finance-chart__draw-line finance-chart__draw-line--red" data-draw-ratio="0.92" d="M20 253.5 A253.5 253.5 0 0 1 527 253.5" />
+                    <path class="finance-chart__draw-line finance-chart__draw-line--yellow" data-draw-ratio="0.82" d="M20 253.5 A253.5 253.5 0 0 1 527 253.5" />
+                  </svg>
+                  <div class="finance-chart__total">
+                    <strong>총 사업수익</strong>
+                    <span data-counter-value="2232958038" data-counter-comma="true" data-counter-suffix="원">2,232,958,038원</span>
+                  </div>
+                </div>
+                <ul class="finance-breakdown">
+                  <li><span><i class="dot dot--yellow"></i>기타 모금 64.5%</span><em>1,439,444,702 원</em></li>
+                  <li><span><i class="dot dot--red"></i>행사모금 24.3%</span><em>542,746,600 원</em></li>
+                  <li><span><i class="dot dot--green"></i>현물기부 7.1%</span><em>159,236,860 원</em></li>
+                  <li><span><i class="dot dot--blue"></i>정기후원 3.3%</span><em>72,686,000 원</em></li>
+                  <li><span><i class="dot dot--purple"></i>기타 수익 0.8%</span><em>18,843,876 원</em></li>
+                </ul>
+              </article>
+
+              <article class="finance-chart-card">
+                <div class="finance-chart finance-chart--expense" aria-hidden="true">
+                  <svg class="finance-chart__svg" viewBox="0 0 547 274" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="finance-chart__draw-line finance-chart__draw-line--green" data-draw-ratio="1" d="M20 253.5 A253.5 253.5 0 0 1 527 253.5" />
+                    <path class="finance-chart__draw-line finance-chart__draw-line--red" data-draw-ratio="0.75" d="M20 253.5 A253.5 253.5 0 0 1 527 253.5" />
+                    <path class="finance-chart__draw-line finance-chart__draw-line--yellow" data-draw-ratio="0.4" d="M20 253.5 A253.5 253.5 0 0 1 527 253.5" />
+                  </svg>
+                  <div class="finance-chart__total">
+                    <strong>총 사업비용</strong>
+                    <span data-counter-value="1763644958" data-counter-comma="true" data-counter-suffix="원">1,763,644,958원</span>
+                  </div>
+                </div>
+                <ul class="finance-breakdown">
+                  <li><span><i class="dot dot--yellow"></i>사업 수행 비용 79.5%</span><em>1,402,978,424 원</em></li>
+                  <li><span><i class="dot dot--red"></i>모금비용 10.6%</span><em>187,718,955 원</em></li>
+                  <li><span><i class="dot dot--green"></i>일반 관리 비용 9.8%</span><em>172,947,579 원</em></li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="donation-use" aria-labelledby="donationUseTitle">
+          <div class="inner-layout">
+            <div class="donation-use__head">
+              <h2 id="donationUseTitle">여러분의 후원은<br class="type-pc" /> 아이들의 치료와 회복을 위해 사용됩니다</h2>
+              <p>재단법인 한국로날드맥도날드하우스는 모집결과 공개의무에 따라 모집 완료 내역을 투명하게 공개합니다.</p>
+            </div>
+
+            <article class="offline-fund-card">
+              <img src="/src/images/about/icon_transparency_section_2.png" alt="" width="48" height="48" loading="lazy" />
+              <h3>2025년 맥도날드 오프라인 매장 모금함 모금</h3>
+              <div class="offline-fund-card__content">
+                <div class="offline-fund-card__amount">
+                  <strong>기부금 모집금액</strong>
+                  <p><span>1</span><span>3</span><span>5</span><em>,</em><span>1</span><span>8</span><span>7</span>원</p>
+                </div>
+                <div class="offline-fund-card__info">
+                  <ul>
+                    <li>등록번호 : 제2025-29호</li>
+                    <li>모집완료 보고일자 : 2026년 1월 12일</li>
+                    <li>기부금품 모집방법 : 오프라인 모금(협력사 매장 내 모금함 모금)</li>
+                    <li>모집기간 : 2025년 1월 1일 ~ 2025년 12월 31일</li>
+                    <li>모집금액 사용기간 : 2026년 1월 1일 ~ 2026년 12월 31일</li>
+                    <li>모집결과 공개의무 : <a href="#">자세히 보기</a></li>
+                  </ul>
+                  <p>2025년에는 2024년에 비해 오프라인 매장 모금함 운영 규모가 대폭 축소되었습니다.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="annual-report" aria-labelledby="annualReportTitle">
+          <div class="inner-layout">
+            <div class="annual-report__download">
+              <div>
+                <h2 id="annualReportTitle">연간 재정보고 및 감사보고서</h2>
+                <p>2025년부터는 공익법인 결산서류 공시 관련 제도 변경에 따라 기존 기부금 모금액 및 활용실적 명세서 대신, 재단의 투명성과 재무정보 제공 강화를 위해 외부 감사보고서를 게시합니다.</p>
+              </div>
+              <details class="report-select">
+                <summary>연도 선택</summary>
+                <ul>
+                  <li><a href="#">2025 재정보고서</a></li>
+                  <li><a href="#">2024 재정보고서</a></li>
+                  <li><a href="#">2023 재정보고서</a></li>
+                  <li><a href="#">2022 재정보고서</a></li>
+                  <li><a href="#">2021 재정보고서</a></li>
+                  <li><a href="#">2020 재정보고서</a></li>
+                  <li><a href="#">2019 재정보고서</a></li>
+                  <li><a href="#">2018 재정보고서</a></li>
+                  <li><a href="#">2017 재정보고서</a></li>
+                </ul>
+              </details>
+            </div>
+
+            <div class="donation-history">
+              <h2>이전 기부금품 사용 내역 보고서 보기</h2>
+              <div class="donation-report-list">
+                <details class="donation-report-item" open>
+                  <summary><span>2024년 기부금품 모집 및 사용 내역</span></summary>
+                  <div class="donation-report-panel">
+                    <div class="donation-report-tables">
+                      <article class="donation-report-table">
+                        <h3>모인 후원금</h3>
+                        <strong>22,953,997원</strong>
+                        <dl>
+                          <div><dt>2024년 모집금액</dt><dd>22,936,272원</dd></div>
+                          <div><dt>기부금품 사용계좌 이자(2025년)</dt><dd>17,725원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>22,953,997원</dd></div>
+                        </dl>
+                      </article>
+                      <article class="donation-report-table">
+                        <h3>사용된 금액</h3>
+                        <strong>22,953,997원</strong>
+                        <dl>
+                          <div><dt>어린이 병원학교</dt><dd>10,000,000원</dd></div>
+                          <div><dt>올림백일장</dt><dd>8,469,650원</dd></div>
+                          <div><dt>하우스 운영비</dt><dd>4,484,347원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>22,953,997원</dd></div>
+                        </dl>
+                      </article>
+                    </div>
+                    <div class="donation-report-note">
+                      <ul>
+                        <li>등록번호: 제2024-20호</li>
+                        <li>모집자: 재단법인 한국로날드맥도날드하우스</li>
+                        <li>기부금품 모집방법: 오프라인 모금(협력사 매장 내 모금함 모금)</li>
+                        <li>모집기간: 2024년 1월 1일 ~ 2024년 12월 31일</li>
+                        <li>모집금액 사용기간: 2025년 1월 1일 ~ 2025년 12월 31일</li>
+                      </ul>
+                      <ul>
+                        <li>모집완료 보고일자: 2023년 12월 29일</li>
+                        <li>모집목적: 중증 환아 및 장애아동을 위한 지원</li>
+                        <li>모집등록금액: 300,000,000원(현금)</li>
+                        <li>모집금품의 총액 및 수량: 22,936,272원</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="donation-report-item">
+                  <summary><span>2023년 기부금품 모집 및 사용 내역</span></summary>
+                  <div class="donation-report-panel">
+                    <div class="donation-report-tables">
+                      <article class="donation-report-table">
+                        <h3>모인 후원금</h3>
+                        <strong>24,734,278원</strong>
+                        <dl>
+                          <div><dt>2023년 모집금액</dt><dd>24,718,785원</dd></div>
+                          <div><dt>기부금품 사용계좌 이자(2024년)</dt><dd>15,493원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>24,734,278원</dd></div>
+                        </dl>
+                      </article>
+                      <article class="donation-report-table">
+                        <h3>사용된 금액</h3>
+                        <strong>24,734,278원</strong>
+                        <dl>
+                          <div><dt>어린이 병원학교</dt><dd>10,000,000원</dd></div>
+                          <div><dt>올림백일장</dt><dd>8,000,000원</dd></div>
+                          <div><dt>하우스 운영비</dt><dd>5,734,278원</dd></div>
+                          <div><dt>RMHC 라운지</dt><dd>1,000,000원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>24,734,278원</dd></div>
+                        </dl>
+                      </article>
+                    </div>
+                    <div class="donation-report-note">
+                      <ul>
+                        <li>등록번호: 제2022-148호</li>
+                        <li>모집자: 재단법인 한국로날드맥도날드하우스</li>
+                        <li>기부금품 모집방법: 오프라인 모금(협력사 매장 내 모금함 모금)</li>
+                        <li>모집기간: 2023년 1월 1일 ~ 2023년 12월 31일</li>
+                        <li>모집금액 사용기간: 2024년 1월 1일 ~ 2024년 12월 31일</li>
+                      </ul>
+                      <ul>
+                        <li>모집일자: 2022년 12월 21일</li>
+                        <li>모집목적: 중증 환아 및 장애아동을 위한 지원</li>
+                        <li>모집등록금액: 300,000,000원(현금)</li>
+                        <li>모집금품의 총액 및 수량: 24,718,785원</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="donation-report-item">
+                  <summary><span>2022년 기부금품 모집 및 사용 내역</span></summary>
+                  <div class="donation-report-panel">
+                    <div class="donation-report-tables">
+                      <article class="donation-report-table">
+                        <h3>모인 후원금</h3>
+                        <strong>22,519,570원</strong>
+                        <dl>
+                          <div><dt>2022년 모집금액</dt><dd>22,519,570원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>22,519,570원</dd></div>
+                        </dl>
+                      </article>
+                      <article class="donation-report-table">
+                        <h3>사용된 금액</h3>
+                        <strong>22,519,570원</strong>
+                        <dl>
+                          <div><dt>하우스 운영비</dt><dd>11,968,000원</dd></div>
+                          <div><dt>올림백일장</dt><dd>10,551,570원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>22,519,570원</dd></div>
+                        </dl>
+                      </article>
+                    </div>
+                    <div class="donation-report-note">
+                      <ul>
+                        <li>등록번호: 제2021-151호</li>
+                        <li>모집자: 재단법인 한국로날드맥도날드하우스</li>
+                        <li>기부금품 모집방법: 오프라인 모금(협력사 매장 내 모금함 모금)</li>
+                        <li>모집기간: 2022년 1월 1일 ~ 2022년 12월 31일</li>
+                        <li>모집금액 사용기간: 2023년 1월 1일 ~ 2023년 12월 31일</li>
+                      </ul>
+                      <ul>
+                        <li>모집완료 보고일자: 2021년 12월 16일</li>
+                        <li>모집목적: 중증 환아 및 장애아동을 위한 지원</li>
+                        <li>모집등록금액: 300,000,000원(현금)</li>
+                        <li>모집금품의 총액 및 수량: 22,519,570원</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="donation-report-item">
+                  <summary><span>2021년 기부금품 모집 및 사용 내역</span></summary>
+                  <div class="donation-report-panel">
+                    <div class="donation-report-tables">
+                      <article class="donation-report-table">
+                        <h3>모인 후원금</h3>
+                        <strong>26,069,496원</strong>
+                        <dl>
+                          <div><dt>2021년 모집금액</dt><dd>26,069,496원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>26,069,496원</dd></div>
+                        </dl>
+                      </article>
+                      <article class="donation-report-table">
+                        <h3>사용된 금액</h3>
+                        <strong>26,069,496원</strong>
+                        <dl>
+                          <div><dt>중증 장애 아동 구강 치료 지원</dt><dd>17,818,603원</dd></div>
+                          <div><dt>하우스 운영비</dt><dd>8,250,893원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>26,069,496원</dd></div>
+                        </dl>
+                      </article>
+                    </div>
+                    <div class="donation-report-note">
+                      <ul>
+                        <li>등록번호: 제2020-133호</li>
+                        <li>모집자: 재단법인 한국로날드맥도날드하우스</li>
+                        <li>기부금품 모집방법: 오프라인 모금(협력사 매장 내 모금함 모금)</li>
+                        <li>모집기간: 2021년 1월 1일 ~ 2021년 12월 31일</li>
+                        <li>모집금액 사용기간: 2022년 1월 1일 ~ 2022년 12월 31일</li>
+                      </ul>
+                      <ul>
+                        <li>모집완료 보고일자: 2020년 12월 18일</li>
+                        <li>모집목적: 중증 환아 및 장애아동을 위한 지원</li>
+                        <li>모집등록금액: 300,000,000원(현금)</li>
+                        <li>모집금품의 총액 및 수량: 26,069,496원</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="donation-report-item">
+                  <summary><span>2020년 기부금품 모집 및 사용 내역</span></summary>
+                  <div class="donation-report-panel">
+                    <div class="donation-report-tables">
+                      <article class="donation-report-table">
+                        <h3>모인 후원금</h3>
+                        <strong>35,502,805원</strong>
+                        <dl>
+                          <div><dt>2020년 모집금액</dt><dd>35,502,805원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>35,502,805원</dd></div>
+                        </dl>
+                      </article>
+                      <article class="donation-report-table">
+                        <h3>사용된 금액</h3>
+                        <strong>35,502,805원</strong>
+                        <dl>
+                          <div><dt>올림 백일장</dt><dd>146,408원</dd></div>
+                          <div><dt>중증 장애 아동 구강 치료 지원</dt><dd>3,181,397원</dd></div>
+                          <div><dt>하우스 운영비</dt><dd>32,175,000원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>35,502,805원</dd></div>
+                        </dl>
+                      </article>
+                    </div>
+                    <div class="donation-report-note">
+                      <ul>
+                        <li>등록번호: 제2019-126-1호</li>
+                        <li>모집자: 재단법인 한국로날드맥도날드하우스</li>
+                        <li>기부금품 모집방법: 오프라인 모금(협력사 매장 내 모금함 모금)</li>
+                        <li>모집기간: 2020년 1월 1일 ~ 2020년 12월 31일</li>
+                        <li>모집금액 사용기간: 2021년 1월 1일 ~ 2022년 12월 31일</li>
+                      </ul>
+                      <ul>
+                        <li>모집완료 보고일자: 2019년 12월 31일</li>
+                        <li>모집목적: 중증 환아 및 장애아동을 위한 지원</li>
+                        <li>모집등록금액: 300,000,000원(현금)</li>
+                        <li>모집금품의 총액 및 수량: 35,502,805원</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="donation-report-item">
+                  <summary><span>2018~2019년 기부금품 모집 및 사용 내역</span></summary>
+                  <div class="donation-report-panel">
+                    <div class="donation-report-tables">
+                      <article class="donation-report-table">
+                        <h3>모인 후원금</h3>
+                        <strong>91,634,292원</strong>
+                        <dl>
+                          <div><dt>2018~2019년 모집금액</dt><dd>91,634,292원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>91,634,292원</dd></div>
+                        </dl>
+                      </article>
+                      <article class="donation-report-table">
+                        <h3>사용된 금액</h3>
+                        <strong>91,634,292원</strong>
+                        <dl>
+                          <div><dt>RMHC 라운지</dt><dd>2,000,000원</dd></div>
+                          <div><dt>올림 백일장</dt><dd>11,972,492원</dd></div>
+                          <div><dt>중증 장애 아동 구강 치료 지원</dt><dd>20,000,000원</dd></div>
+                          <div><dt>하우스 운영비</dt><dd>35,661,800원</dd></div>
+                          <div><dt>온오프라인 캠페인 및 홍보</dt><dd>22,000,000원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>91,634,292원</dd></div>
+                        </dl>
+                      </article>
+                    </div>
+                    <div class="donation-report-note">
+                      <ul>
+                        <li>등록번호: 제2018-29-1</li>
+                        <li>모집자: 재단법인 한국로날드맥도날드하우스</li>
+                        <li>기부금품 모집방법: 온오프라인을 통한 성금 모금</li>
+                        <li>모집기간: 2018년 2월 12일~2019년 12월 31일</li>
+                        <li>모집금액 사용기간: 2020년 1월 1일~2021년 12월 31일</li>
+                      </ul>
+                      <ul>
+                        <li>모집완료 보고일자: 2018년 12월 28일</li>
+                        <li>모집목적: 중증 환아 및 장애아동을 위한 지원</li>
+                        <li>모집등록금액: 500,000,000원(현금)</li>
+                        <li>모집금품의 총액 및 수량: 91,634,292원</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="donation-report-item">
+                  <summary><span>2017년 기부금품 모집 및 사용 내역</span></summary>
+                  <div class="donation-report-panel">
+                    <div class="donation-report-tables">
+                      <article class="donation-report-table">
+                        <h3>모인 후원금</h3>
+                        <strong>71,414,362원</strong>
+                        <dl>
+                          <div><dt>2017년 모집 금액</dt><dd>71,414,362원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>71,414,362원</dd></div>
+                        </dl>
+                      </article>
+                      <article class="donation-report-table">
+                        <h3>사용된 금액</h3>
+                        <strong>71,414,362원</strong>
+                        <dl>
+                          <div><dt>하우스건립</dt><dd>71,414,362원</dd></div>
+                          <div class="total"><dt>총계</dt><dd>71,414,362원</dd></div>
+                        </dl>
+                      </article>
+                    </div>
+                    <div class="donation-report-note">
+                      <ul>
+                        <li>모집자: 재단법인 한국로날드맥도날드하우스</li>
+                        <li>모집목적: 중증 환아 및 장애아동을 위한 지원</li>
+                        <li>모집 등록 기간: 2017년 1월 19일 ~ 2017년 12월 31일</li>
+                      </ul>
+                      <ul>
+                        <li>모집등록금액: 100,000,000원(현금)</li>
+                        <li>모집금품의 총액 및 수량: 71,414,362원</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
 
     <!-- 푸터 공통 영역 인클루드 -->
     <load ="/includes/footer.html" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script type="module" src="/src/js/common.js"></script>
+    <script type="module">
+      import { initCounters } from '/src/js/components/counter.js';
+      import { initSvgLineReveal } from '/src/js/components/svg-line-reveal.js';
+
+      initSvgLineReveal({
+        sectionSelector: '.finance-chart-list',
+        groupSelector: '.finance-chart',
+        lineSelector: '.finance-chart__draw-line',
+      });
+      initCounters('.finance-chart-list', '.finance-chart__total span[data-counter-value]');
+    </script>
   </body>
 </html>

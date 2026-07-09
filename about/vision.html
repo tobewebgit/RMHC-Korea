@@ -264,9 +264,15 @@
     <load ="/includes/footer.html" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script type="module" src="/src/js/common.js"></script>
+    <!-- 공통 카운터 모듈 (counter.js) -->
+    <script type="module">
+      import { initCounters } from '/src/js/components/counter.js';
+      initCounters('.about-impact', 'strong[data-counter-value]');
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const initAboutImpactCounters = () => {
+        const initAboutImpactCounters = () => { /* counter.js 공통 모듈로 이전 — 이 함수는 더 이상 사용되지 않음 */
+          return;
           const impactSection = document.querySelector(".about-impact");
           const counters = Array.from(document.querySelectorAll(".about-impact strong[data-counter-value]"));
           if (!impactSection || counters.length === 0) return;
@@ -460,7 +466,7 @@
           });
         };
 
-        initAboutImpactCounters();
+        /* initAboutImpactCounters() → counter.js 공통 모듈로 이전됨 */
         initAboutMotions();
         initHistoryAccordion();
       });
