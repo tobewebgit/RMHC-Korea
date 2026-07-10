@@ -80,7 +80,8 @@
   background-color: var(--bg-primary);
   transition:
     transform 0.28s ease,
-    box-shadow 0.2s ease;
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .header.is-scrolled {
