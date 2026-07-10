@@ -108,53 +108,58 @@ export function initIndexReveal() {
       let lineProgress = (progress - startRange) / (endRange - startRange);
       lineProgress = Math.max(0, Math.min(1, lineProgress));
 
-      const lineChars = line.querySelectorAll('.reveal-char');
-      const totalChars = lineChars.length;
+      const sequenceItems = line.querySelectorAll('.reveal-char, .inline-icon');
+      const totalItems = sequenceItems.length;
 
-      // 줄 내부의 글자들은 해당 줄의 lineProgress 내에서 완전 순차(오버랩 없음) 전개
-      lineChars.forEach((char, index) => {
-        const charInterval = 1.0 / totalChars;
-        // 각 글자가 움직이는 시간은 인터벌의 55%로 축소하여, 나머지 45%를 이전 글자 완료 후 다음 글자 시작 전의 정적 대기 시간(텀)으로 확보
-        const charDuration = charInterval * 0.55; 
-        const charStart = index * charInterval;
+      // 줄 내부의 글자와 아이콘들은 해당 줄의 lineProgress 내에서 완전 순차(오버랩 없음) 전개
+      sequenceItems.forEach((item, index) => {
+        const itemInterval = 1.0 / totalItems;
+        // 각 요소가 움직이는 시간은 인터벌의 55%로 축소하여 텀 확보
+        const itemDuration = itemInterval * 0.55; 
+        const itemStart = index * itemInterval;
 
-        let charProgress = (lineProgress - charStart) / charDuration;
-        charProgress = Math.max(0, Math.min(1, charProgress));
+        let itemProgress = (lineProgress - itemStart) / itemDuration;
+        itemProgress = Math.max(0, Math.min(1, itemProgress));
 
-        // 1) transform: 0.5rem -> 0rem 위로 안착
-        const translateY = (1 - charProgress) * 0.5;
-        char.style.transform = `translateY(${translateY}rem)`;
+        if (item.classList.contains('inline-icon')) {
+          // 아이콘: 텍스트가 벌어지면서 나타나도록 너비와 마진을 0에서부터 증가시킴
+          item.style.opacity = itemProgress;
+          
+          // CSS 기본값: width 5.2rem, margin 0.3rem
+          const targetWidth = 5.2;
+          const targetMargin = 0.3;
+          
+          item.style.width = `${itemProgress * targetWidth}rem`;
+          item.style.marginLeft = `${itemProgress * targetMargin}rem`;
+          item.style.marginRight = `${itemProgress * targetMargin}rem`;
+          
+          // 0.6 스케일에서 1로 커지는 효과
+          const scale = 0.6 + (itemProgress * 0.4);
+          item.style.transform = `scale(${scale}) translateY(-0.6rem)`;
+          item.style.filter = 'none';
+          
+          // 이미지가 공간 내에서 비율을 유지하며 잘리지 않도록 (너비 0일 때 깨짐 방지)
+          item.style.objectFit = 'contain';
+        } else {
+          // 글자(reveal-char): 기존 로직 동일 (위로 0.5rem 안착, 회색 -> 검은색)
+          const translateY = (1 - itemProgress) * 0.5;
+          item.style.transform = `translateY(${translateY}rem)`;
 
-        // 2) color: 초기 회색 rgb(170,170,170) -> 완전 블랙 rgb(0,0,0) (피그마 기준)
-        const r = Math.round(170 - charProgress * 170);
-        const g = Math.round(170 - charProgress * 170);
-        const b = Math.round(170 - charProgress * 170);
-        char.style.color = `rgb(${r}, ${g}, ${b})`;
+          const r = Math.round(170 - itemProgress * 170);
+          const g = Math.round(170 - itemProgress * 170);
+          const b = Math.round(170 - itemProgress * 170);
+          item.style.color = `rgb(${r}, ${g}, ${b})`;
 
-        // reveal-highlight 밑줄 클래스 제어
-        if (char.closest('.reveal-highlight')) {
-          if (charProgress >= 0.95) {
-            line.classList.add('is-highlighted');
-          } else {
-            line.classList.remove('is-highlighted');
+          // reveal-highlight 밑줄 클래스 제어
+          if (item.closest('.reveal-highlight')) {
+            if (itemProgress >= 0.95) {
+              line.classList.add('is-highlighted');
+            } else {
+              line.classList.remove('is-highlighted');
+            }
           }
         }
       });
-    });
-
-    // 인라인 아이콘 개별 스크롤 연동 (전체 progress 비례)
-    const icons = document.querySelectorAll('.reveal-line .inline-icon');
-    icons.forEach((icon) => {
-      const rect = icon.getBoundingClientRect();
-      const start = viewHeight * 0.90;
-      const end = viewHeight * 0.25;
-
-      let iconProgress = (start - rect.top) / (start - end);
-      iconProgress = Math.max(0, Math.min(1, iconProgress));
-
-      const translateY = (1 - iconProgress) * 0.5;
-      icon.style.transform = `translateY(${translateY - 0.2}rem)`;
-      icon.style.filter = `grayscale(${1 - iconProgress})`;
     });
   };
 
