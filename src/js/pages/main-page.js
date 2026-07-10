@@ -8,13 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (reduceMotion.matches) {
       gsap.set(visual, {
         x: '0%',
-        '--kv-heart-mask-size': '100%',
+        opacity: 1,
+        '--kv-heart-mask-size': '105%',
       });
       return;
     }
 
     gsap.set(visual, {
       x: '20%',
+      opacity: 0,
       '--kv-heart-mask-size': '70%',
     });
 
@@ -22,11 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
       .timeline({ delay: 0.18 })
       .to(visual, {
         x: '0%',
+        opacity: 1,
         duration: 1.65,
         ease: 'power3.out',
       })
       .to(visual, {
-        '--kv-heart-mask-size': '100%',
+        '--kv-heart-mask-size': '105%',
         duration: 1.35,
         ease: 'power2.out',
       }, '-=0.05');
@@ -258,9 +261,45 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(banner);
   };
 
+  const initMainPopupSwiper = () => {
+    // 팝업 엘리먼트가 없으면 즉시 종료 (주석 처리 시 오류 방지)
+    const overlay = document.getElementById('modal-ma_01p');
+    if (!overlay) return;
+
+    const slider = overlay.querySelector('.main-popup-swiper');
+
+    // 팝업 자동 노출
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    // Swiper 라이브러리 또는 슬라이더 없으면 종료
+    if (!slider || typeof Swiper === 'undefined') return;
+
+    const slides = slider.querySelectorAll('.swiper-slide');
+
+    if (slides.length <= 1) {
+      // 슬라이드 1개: dot 숨김, Swiper 초기화 안 함
+      slider.classList.add('is-single');
+      return;
+    }
+
+    // 슬라이드 2개 이상: Swiper 활성화
+    new Swiper(slider, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      pagination: {
+        el: slider.querySelector('.main-popup-pagination'),
+        clickable: true,
+      },
+    });
+  };
+
   initMainKvMotion();
   initEventsSwiper();
   initThanksMarquee();
   initPartnerSlider();
   initDonateBannerHeart();
+  // initMainPopupSwiper(); // 팝업 임시 비활성화 — 재개 시 주석 해제
 });
