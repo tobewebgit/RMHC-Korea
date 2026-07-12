@@ -848,3 +848,20 @@ table caption {
 /* @media all and (max-width: 767px) {
   html { font-size: 3.7209vw } 
 } */
+
+/* ==========================================================================
+   FOUC (Flash of Unstyled Content) 방지용 스크롤 모션 초기 스타일
+   JS(motion.js)가 로드되기 전에 컨텐츠가 보였다가 사라지는 깜빡임을 막기 위해
+   초기 상태부터 숨김(opacity: 0) 및 하단 이동(transform) 처리를 미리 해둡니다.
+   ========================================================================== */
+[data-motion="fade-up"] {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion="fade-up"] {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -51,12 +51,42 @@ export function initCounters(sectionSelector, counterSelector) {
     const tick = (now) => {
       const progress = Math.min((now - startTime) / duration, 1);
       const eased    = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
-      el.textContent = formatValue(el, target * eased);
+      if (el.dataset.counterSplit === 'true') {
+        const strVal = formatValue(el, target * eased);
+        let html = '';
+        for (const char of strVal) {
+          if (/[0-9]/.test(char)) {
+            html += `<span>${char}</span>`;
+          } else if (char === ',') {
+            html += `<em>${char}</em>`;
+          } else {
+            html += char;
+          }
+        }
+        el.innerHTML = html;
+      } else {
+        el.textContent = formatValue(el, target * eased);
+      }
 
       if (progress < 1) {
         el.dataset.counterFrame = requestAnimationFrame(tick);
       } else {
-        el.textContent = formatValue(el, target);
+        if (el.dataset.counterSplit === 'true') {
+          const finalStr = formatValue(el, target);
+          let finalHtml = '';
+          for (const char of finalStr) {
+            if (/[0-9]/.test(char)) {
+              finalHtml += `<span>${char}</span>`;
+            } else if (char === ',') {
+              finalHtml += `<em>${char}</em>`;
+            } else {
+              finalHtml += char;
+            }
+          }
+          el.innerHTML = finalHtml;
+        } else {
+          el.textContent = formatValue(el, target);
+        }
         delete el.dataset.counterFrame;
       }
     };
@@ -71,7 +101,22 @@ export function initCounters(sectionSelector, counterSelector) {
         cancelAnimationFrame(Number(el.dataset.counterFrame));
         delete el.dataset.counterFrame;
       }
-      el.textContent = formatValue(el, 0);
+      if (el.dataset.counterSplit === 'true') {
+        const strVal = formatValue(el, 0);
+        let html = '';
+        for (const char of strVal) {
+          if (/[0-9]/.test(char)) {
+            html += `<span>${char}</span>`;
+          } else if (char === ',') {
+            html += `<em>${char}</em>`;
+          } else {
+            html += char;
+          }
+        }
+        el.innerHTML = html;
+      } else {
+        el.textContent = formatValue(el, 0);
+      }
     });
   };
 

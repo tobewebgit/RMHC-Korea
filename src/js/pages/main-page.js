@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       gsap.set(visual, {
         x: '0%',
         opacity: 1,
-        '--kv-heart-mask-size': '105%',
+        '--kv-heart-mask-size': '100%',
       });
       return;
     }
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.set(visual, {
       x: '20%',
       opacity: 0,
-      '--kv-heart-mask-size': '70%',
+      '--kv-heart-mask-size': '80%',
     });
 
     gsap
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: 'power3.out',
       })
       .to(visual, {
-        '--kv-heart-mask-size': '105%',
+        '--kv-heart-mask-size': '100%',
         duration: 1.35,
         ease: 'power2.out',
       }, '-=0.05');

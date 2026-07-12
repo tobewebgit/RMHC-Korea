@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -30,13 +30,13 @@
 
         <section class="finance-report" aria-labelledby="financeReportTitle">
           <div class="inner-layout">
-            <div class="finance-report__head">
+            <div class="finance-report__head" data-motion="fade-up">
               <h2 id="financeReportTitle">2025 한국로날드맥도날드하우스 재정보고</h2>
               <p>재단법인 한국로날드맥도날드하우스는 투명한 재정운영을 위해 외부회계감사를 받고있으며 국세청, 보건복지부, 서울시청에 후원금사용내역 및 결산액을 보고하고 있습니다.</p>
             </div>
 
             <div class="finance-chart-list" data-finance-charts>
-              <article class="finance-chart-card">
+              <article class="finance-chart-card" data-motion="fade-up" data-motion-delay="0.00">
                 <div class="finance-chart" aria-hidden="true">
                   <svg class="finance-chart__svg" viewBox="0 0 547 274" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path class="finance-chart__draw-line finance-chart__draw-line--purple" data-draw-ratio="1" d="M20 253.5 A253.5 253.5 0 0 1 527 253.5" />
@@ -59,7 +59,7 @@
                 </ul>
               </article>
 
-              <article class="finance-chart-card">
+              <article class="finance-chart-card" data-motion="fade-up" data-motion-delay="0.15">
                 <div class="finance-chart finance-chart--expense" aria-hidden="true">
                   <svg class="finance-chart__svg" viewBox="0 0 547 274" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path class="finance-chart__draw-line finance-chart__draw-line--green" data-draw-ratio="1" d="M20 253.5 A253.5 253.5 0 0 1 527 253.5" />
@@ -83,18 +83,18 @@
 
         <section class="donation-use" aria-labelledby="donationUseTitle">
           <div class="inner-layout">
-            <div class="donation-use__head">
+            <div class="donation-use__head" data-motion="fade-up">
               <h2 id="donationUseTitle">여러분의 후원은<br class="type-pc" /> 아이들의 치료와 회복을 위해 사용됩니다</h2>
               <p>재단법인 한국로날드맥도날드하우스는 모집결과 공개의무에 따라 모집 완료 내역을 투명하게 공개합니다.</p>
             </div>
 
-            <article class="offline-fund-card">
+            <article class="offline-fund-card" data-motion="fade-up" data-motion-delay="0.15">
               <img src="/src/images/about/icon_transparency_section_2.png" alt="" width="48" height="48" loading="lazy" />
               <h3>2025년 맥도날드 오프라인 매장 모금함 모금</h3>
               <div class="offline-fund-card__content">
                 <div class="offline-fund-card__amount">
                   <strong>기부금 모집금액</strong>
-                  <p><span>1</span><span>3</span><span>5</span><em>,</em><span>1</span><span>8</span><span>7</span>원</p>
+                  <p data-counter-value="135187" data-counter-comma="true" data-counter-suffix="원" data-counter-split="true"><span>1</span><span>3</span><span>5</span><em>,</em><span>1</span><span>8</span><span>7</span>원</p>
                 </div>
                 <div class="offline-fund-card__info">
                   <ul>
@@ -114,7 +114,7 @@
 
         <section class="annual-report" aria-labelledby="annualReportTitle">
           <div class="inner-layout">
-            <div class="annual-report__download">
+            <div class="annual-report__download" data-motion="fade-up">
               <div>
                 <h2 id="annualReportTitle">연간 재정보고 및 감사보고서</h2>
                 <p>2025년부터는 공익법인 결산서류 공시 관련 제도 변경에 따라 기존 기부금 모금액 및 활용실적 명세서 대신, 재단의 투명성과 재무정보 제공 강화를 위해 외부 감사보고서를 게시합니다.</p>
@@ -136,29 +136,32 @@
             </div>
 
             <div class="donation-history">
-              <h2>이전 기부금품 사용 내역 보고서 보기</h2>
-              <div class="donation-report-list">
-                <details class="donation-report-item" open>
+              <h2 data-motion="fade-up">이전 기부금품 사용 내역 보고서 보기</h2>
+              <div class="donation-report-list" data-motion="fade-up" data-motion-delay="0.15">
+                <details class="donation-report-item" name="donation-reports" open>
                   <summary><span>2024년 기부금품 모집 및 사용 내역</span></summary>
                   <div class="donation-report-panel">
                     <div class="donation-report-tables">
                       <article class="donation-report-table">
                         <h3>모인 후원금</h3>
-                        <strong>22,953,997원</strong>
+                        <strong>24,734,278원</strong>
                         <dl>
-                          <div><dt>2024년 모집금액</dt><dd>22,936,272원</dd></div>
+                          <div><dt>2024년 모집금액</dt><dd>24,718,785원</dd></div>
                           <div><dt>기부금품 사용계좌 이자(2025년)</dt><dd>17,725원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>22,953,997원</dd></div>
+                          <div><dt></dt></div>
+                          <div><dt></dt></div>
+                          <div class="total left"><dt>총계</dt><dd>24,734,278원</dd></div>
                         </dl>
                       </article>
                       <article class="donation-report-table">
                         <h3>사용된 금액</h3>
-                        <strong>22,953,997원</strong>
+                        <strong>24,734,278원</strong>
                         <dl>
                           <div><dt>어린이 병원학교</dt><dd>10,000,000원</dd></div>
-                          <div><dt>올림백일장</dt><dd>8,469,650원</dd></div>
+                          <div><dt>올림백일장</dt><dd>8,000,000원</dd></div>
                           <div><dt>하우스 운영비</dt><dd>4,484,347원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>22,953,997원</dd></div>
+                          <div><dt>RMHC 라운지</dt><dd>1,000,000원</dd></div>
+                          <div class="total right"><dt>총계</dt><dd>24,734,278원원</dd></div>
                         </dl>
                       </article>
                     </div>
@@ -180,7 +183,7 @@
                   </div>
                 </details>
 
-                <details class="donation-report-item">
+                <details class="donation-report-item" name="donation-reports">
                   <summary><span>2023년 기부금품 모집 및 사용 내역</span></summary>
                   <div class="donation-report-panel">
                     <div class="donation-report-tables">
@@ -190,7 +193,7 @@
                         <dl>
                           <div><dt>2023년 모집금액</dt><dd>24,718,785원</dd></div>
                           <div><dt>기부금품 사용계좌 이자(2024년)</dt><dd>15,493원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>24,734,278원</dd></div>
+                          <div class="total left"><dt>총계</dt><dd>24,734,278원</dd></div>
                         </dl>
                       </article>
                       <article class="donation-report-table">
@@ -201,7 +204,7 @@
                           <div><dt>올림백일장</dt><dd>8,000,000원</dd></div>
                           <div><dt>하우스 운영비</dt><dd>5,734,278원</dd></div>
                           <div><dt>RMHC 라운지</dt><dd>1,000,000원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>24,734,278원</dd></div>
+                          <div class="total right"><dt>총계</dt><dd>24,734,278원</dd></div>
                         </dl>
                       </article>
                     </div>
@@ -223,7 +226,7 @@
                   </div>
                 </details>
 
-                <details class="donation-report-item">
+                <details class="donation-report-item" name="donation-reports">
                   <summary><span>2022년 기부금품 모집 및 사용 내역</span></summary>
                   <div class="donation-report-panel">
                     <div class="donation-report-tables">
@@ -232,7 +235,7 @@
                         <strong>22,519,570원</strong>
                         <dl>
                           <div><dt>2022년 모집금액</dt><dd>22,519,570원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>22,519,570원</dd></div>
+                          <div class="total left"><dt>총계</dt><dd>22,519,570원</dd></div>
                         </dl>
                       </article>
                       <article class="donation-report-table">
@@ -241,7 +244,7 @@
                         <dl>
                           <div><dt>하우스 운영비</dt><dd>11,968,000원</dd></div>
                           <div><dt>올림백일장</dt><dd>10,551,570원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>22,519,570원</dd></div>
+                          <div class="total right"><dt>총계</dt><dd>22,519,570원</dd></div>
                         </dl>
                       </article>
                     </div>
@@ -263,7 +266,7 @@
                   </div>
                 </details>
 
-                <details class="donation-report-item">
+                <details class="donation-report-item" name="donation-reports">
                   <summary><span>2021년 기부금품 모집 및 사용 내역</span></summary>
                   <div class="donation-report-panel">
                     <div class="donation-report-tables">
@@ -272,7 +275,7 @@
                         <strong>26,069,496원</strong>
                         <dl>
                           <div><dt>2021년 모집금액</dt><dd>26,069,496원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>26,069,496원</dd></div>
+                          <div class="total left"><dt>총계</dt><dd>26,069,496원</dd></div>
                         </dl>
                       </article>
                       <article class="donation-report-table">
@@ -281,7 +284,7 @@
                         <dl>
                           <div><dt>중증 장애 아동 구강 치료 지원</dt><dd>17,818,603원</dd></div>
                           <div><dt>하우스 운영비</dt><dd>8,250,893원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>26,069,496원</dd></div>
+                          <div class="total right"><dt>총계</dt><dd>26,069,496원</dd></div>
                         </dl>
                       </article>
                     </div>
@@ -303,7 +306,7 @@
                   </div>
                 </details>
 
-                <details class="donation-report-item">
+                <details class="donation-report-item" name="donation-reports">
                   <summary><span>2020년 기부금품 모집 및 사용 내역</span></summary>
                   <div class="donation-report-panel">
                     <div class="donation-report-tables">
@@ -312,7 +315,7 @@
                         <strong>35,502,805원</strong>
                         <dl>
                           <div><dt>2020년 모집금액</dt><dd>35,502,805원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>35,502,805원</dd></div>
+                          <div class="total left"><dt>총계</dt><dd>35,502,805원</dd></div>
                         </dl>
                       </article>
                       <article class="donation-report-table">
@@ -322,7 +325,7 @@
                           <div><dt>올림 백일장</dt><dd>146,408원</dd></div>
                           <div><dt>중증 장애 아동 구강 치료 지원</dt><dd>3,181,397원</dd></div>
                           <div><dt>하우스 운영비</dt><dd>32,175,000원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>35,502,805원</dd></div>
+                          <div class="total right"><dt>총계</dt><dd>35,502,805원</dd></div>
                         </dl>
                       </article>
                     </div>
@@ -344,7 +347,7 @@
                   </div>
                 </details>
 
-                <details class="donation-report-item">
+                <details class="donation-report-item" name="donation-reports">
                   <summary><span>2018~2019년 기부금품 모집 및 사용 내역</span></summary>
                   <div class="donation-report-panel">
                     <div class="donation-report-tables">
@@ -353,7 +356,7 @@
                         <strong>91,634,292원</strong>
                         <dl>
                           <div><dt>2018~2019년 모집금액</dt><dd>91,634,292원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>91,634,292원</dd></div>
+                          <div class="total left"><dt>총계</dt><dd>91,634,292원</dd></div>
                         </dl>
                       </article>
                       <article class="donation-report-table">
@@ -365,7 +368,7 @@
                           <div><dt>중증 장애 아동 구강 치료 지원</dt><dd>20,000,000원</dd></div>
                           <div><dt>하우스 운영비</dt><dd>35,661,800원</dd></div>
                           <div><dt>온오프라인 캠페인 및 홍보</dt><dd>22,000,000원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>91,634,292원</dd></div>
+                          <div class="total right"><dt>총계</dt><dd>91,634,292원</dd></div>
                         </dl>
                       </article>
                     </div>
@@ -387,7 +390,7 @@
                   </div>
                 </details>
 
-                <details class="donation-report-item">
+                <details class="donation-report-item" name="donation-reports">
                   <summary><span>2017년 기부금품 모집 및 사용 내역</span></summary>
                   <div class="donation-report-panel">
                     <div class="donation-report-tables">
@@ -396,7 +399,7 @@
                         <strong>71,414,362원</strong>
                         <dl>
                           <div><dt>2017년 모집 금액</dt><dd>71,414,362원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>71,414,362원</dd></div>
+                          <div class="total left"><dt>총계</dt><dd>71,414,362원</dd></div>
                         </dl>
                       </article>
                       <article class="donation-report-table">
@@ -404,7 +407,7 @@
                         <strong>71,414,362원</strong>
                         <dl>
                           <div><dt>하우스건립</dt><dd>71,414,362원</dd></div>
-                          <div class="total"><dt>총계</dt><dd>71,414,362원</dd></div>
+                          <div class="total right"><dt>총계</dt><dd>71,414,362원</dd></div>
                         </dl>
                       </article>
                     </div>
@@ -430,9 +433,7 @@
 
     <!-- 푸터 공통 영역 인클루드 -->
     <load ="/includes/footer.html" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script type="module" src="/src/js/common.js"></script>
-    <script type="module">
+<script type="module">
       import { initCounters } from '/src/js/components/counter.js';
       import { initSvgLineReveal } from '/src/js/components/svg-line-reveal.js';
 
@@ -442,6 +443,21 @@
         lineSelector: '.finance-chart__draw-line',
       });
       initCounters('.finance-chart-list', '.finance-chart__total span[data-counter-value]');
+      initCounters('.donation-use', '.offline-fund-card__amount p[data-counter-value]');
+
+      // 아코디언 하나만 열리도록 처리 (구형 브라우저 대응)
+      const reportDetails = document.querySelectorAll('.donation-report-item');
+      reportDetails.forEach((detail) => {
+        detail.addEventListener('toggle', (e) => {
+          if (detail.open) {
+            reportDetails.forEach((other) => {
+              if (other !== detail && other.open) {
+                other.open = false;
+              }
+            });
+          }
+        });
+      });
     </script>
   </body>
 </html>

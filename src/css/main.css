@@ -4,6 +4,10 @@
   background-color: #fffdf0;
 }
 
+.main .page-wrapper {
+  padding-top: 0;
+}
+
 .main .header:not(.is-scrolled):not(.is-gnb-open) {
   background-color: #d0c9ff;
   box-shadow: none;
@@ -57,11 +61,14 @@
   overflow: hidden;
   height: 98rem;
   background-color: #d0c9ff;
-  --kv-heart-width: 185.8rem;
+  --kv-heart-width: 189.8rem;
   --kv-heart-height: 165.4rem;
   --kv-heart-bottom-offset: 8rem;
   --kv-heart-enter-x: 20%;
   --kv-heart-mask-size: 100%;
+}
+.main .main-kv {
+  padding-top: 10rem;
 }
 
 .main-kv__inner {
@@ -70,14 +77,13 @@
   align-items: center;
   height: 100%;
   min-height: 100%;
-  padding: 10rem 7.8vw 0;
+  padding: 0 7.8vw 0;
 }
 
 .main-kv__content {
   position: relative;
   z-index: 2;
   width: 78rem;
-  padding-top: 4rem;
   transform: translateY(-12rem);
 }
 
@@ -97,6 +103,7 @@
 
 .main-kv__visual {
   position: absolute;
+  top: 1rem;
   right: calc(var(--kv-heart-width) * -0.47);
   bottom: calc(var(--kv-heart-height) * -0.46 + var(--kv-heart-bottom-offset));
   z-index: 1;
@@ -104,6 +111,7 @@
   height: var(--kv-heart-height);
   max-width: none;
   min-width: 0;
+  opacity: 0;
   pointer-events: none;
   transform: translateX(var(--kv-heart-enter-x));
   transform-origin: 50% 50%;
@@ -119,8 +127,8 @@
 
 .main-kv__visual img {
   position: absolute;
-  top: -10%;
-  left: -5.3%;
+  top: -15%;
+  left: -6.3%;
   display: block;
   width: 100%;
   height: 100%;

@@ -29,6 +29,10 @@
   width: auto;
   margin: 0 auto;
 }
+.btn.w-left {
+  width: auto;
+  margin-left: 0;
+}
 
 /* Disabled State */
 .btn:disabled,
@@ -175,6 +179,21 @@
   width: 2.4rem;
   height: 2.4rem;
   background: url("/src/images/common/icon_arrow_right_white.png") no-repeat center/contain;
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* + 아이콘이 포함된 버튼 (피그마 수치 12x8px, 간격 4px 적용) */
+.btn.btn-plus {
+  gap: 0.8rem;
+  padding: 0 2.4rem 0 2.4rem;
+}
+
+.btn.btn-plus::after {
+  content: "";
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url("/src/images/common/icon_btn_plus.png") no-repeat center/contain;
   transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 

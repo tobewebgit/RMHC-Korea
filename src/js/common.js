@@ -7,6 +7,7 @@ import { initModal } from './components/modal.js';
 import { initAgreementEvents } from './components/agreement.js';
 import { initCustomSelect } from './components/form-select.js';
 import { initCustomChips } from './components/form-chip.js';
+import { initScrollMotions } from './components/motion.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. 공통 레이아웃 및 컴포넌트 기능 초기화
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initAgreementEvents();
   initCustomSelect();
   initCustomChips();
+  initScrollMotions();
 
   console.log('RMHC Portal template initialized successfully.');
 });
+
