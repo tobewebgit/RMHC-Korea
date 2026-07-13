@@ -87,6 +87,7 @@
   transform: translateY(-0.2rem);
   box-shadow: 0 6px 16px var(--primary-glow);
 }
+*/
 .btn-outline.primary {
   color: var(--primary);
   border-color: var(--primary);

@@ -1632,7 +1632,6 @@
   align-items: center;
   justify-content: center;
   height: 12rem;
-  border-bottom: 1px solid #e0e0e0;
 }
 
 .activity-card__logo img {
@@ -2326,8 +2325,7 @@
   display: none;
 }
 
-.report-select summary::after,
-.donation-report-item summary::after {
+.report-select summary::after {
   content: "";
   width: 1rem;
   height: 1rem;
@@ -2339,6 +2337,19 @@
 
 .report-select[open] summary::after {
   transform: rotate(225deg);
+}
+
+.donation-report-item summary::after {
+  content: "";
+  width: 3.2rem;
+  height: 3.2rem;
+  background: url(/src/images/common/icon_arrow_bottom.png) 50% 50% no-repeat;
+  background-size: 100% 100%;
+}
+
+.donation-report-item[open] summary::after {
+  background: url(/src/images/common/icon_arrow_up.png) 50% 50% no-repeat;
+  background-size: 100% 100%;
 }
 
 .report-select ul {
@@ -2410,10 +2421,6 @@
   font-size: 2.8rem;
   line-height: 1.35;
   word-break: keep-all;
-}
-
-.donation-report-item[open] summary::after {
-  transform: rotate(225deg);
 }
 
 .donation-report-panel {

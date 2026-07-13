@@ -372,7 +372,9 @@
       </main>
     </div>
 
-    <script>
+    <script type="module">
+      import iaDataUrl from './src/js/publishing-ia.json?url';
+
       // State management
       let iaItems = [];
       let currentFilter = "all";
@@ -388,7 +390,7 @@
       // Load publishing IA from JSON
       async function loadIAData() {
         try {
-          const response = await fetch("./src/js/publishing-ia.json");
+          const response = await fetch(iaDataUrl);
           iaItems = await response.json();
 
           calculateMetrics();

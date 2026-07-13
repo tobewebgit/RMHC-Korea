@@ -1,12 +1,15 @@
 /* ==========================================================================
    login.css — 로그인 및 계정/비밀번호 재설정 페이지 전용 개별 스타일
    ========================================================================== */
+.page-title.mypage {
+  padding: 15rem 0 10rem;
+}
 
 .login-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-100) var(--spacing-100);
+  padding: var(--spacing-200) 0 0;
 }
 .login-section.w-lg {
   padding-top: 4rem;
@@ -296,8 +299,9 @@
 }
 
 .icon-top {
-  margin-bottom: var(--spacing-4);
-  text-align: center;
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto var(--spacing-4);
 }
 
 /* 회원가입 */
@@ -464,15 +468,14 @@ a.agreement-link {
 
 /* 하단 액션 버튼 */
 .join-actions {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   gap: var(--spacing-4);
   margin-top: var(--spacing-5);
   margin-bottom: var(--spacing-16);
 }
 .join-actions .btn {
-  max-width: 15.4rem;
-  margin: 0 auto;
+  max-width: 15rem;
 }
 .join-actions .error-text {
   color: var(--primary);
@@ -1214,9 +1217,9 @@ a.agreement-link {
   justify-content: center;
 }
 
-.payment-popup-footer .btn-popup-cancel:hover {
+/* .payment-popup-footer .btn-popup-cancel:hover {
   background-color: var(--primary-glow);
-}
+} */
 
 .payment-popup-footer .btn-popup-submit {
   width: 30.8rem;

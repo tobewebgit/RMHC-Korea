@@ -125,8 +125,6 @@
   height: 48.8rem;
   border-radius: 1.6rem;
   overflow: hidden;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.06);
-  background-color: var(--bg-tertiary);
 }
 
 .timeline-img-card img {
@@ -571,7 +569,6 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-
 /* 결제수단 로고 이미지 크기 및 간격 */
 .apply-page .payment-logo {
   width: auto !important; /* 전역 img width 100% 침범 방지 */
@@ -580,6 +577,35 @@
   object-fit: contain;
   vertical-align: middle;
 }
+
+/* 추가 캠페인 */
+.campaign-container .campaign-section {
+  margin-top: 10rem;
+}
+.campaign-container .campaign-row {
+  display: flex;
+  gap: 8rem;
+  align-items: center;
+  text-align: left;
+}
+.campaign-container .campaign-row + .campaign-row {
+  margin-top: 10rem;
+}
+.campaign-container .campaign-row .campaign-col {
+  width: 50%;
+}
+.campaign-container .campaign-row .campaign-col .campaign-title {
+  margin-bottom: 6rem;
+  font-family: var(--font-extrabold);
+  font-size: 4.8rem;
+}
+.campaign-container .campaign-row .campaign-col .text-col p {
+  font-size: 2.2rem;
+}
+.campaign-container .campaign-row + a.btn {
+  margin-top: 10rem;
+}
+
 
 /* CTA 버튼 간격 */
 .apply-page .apply-btn-wrap {

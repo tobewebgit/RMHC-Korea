@@ -231,26 +231,15 @@
     "memo": "안내 유의사항 카드 및 탈퇴 동의/설문 폼 구현 완료"
   },
   {
-    "id": 22,
-    "depth1": "소개",
-    "depth2": "소개 메인",
-    "depth3": "",
-    "depth4": "",
-    "path": "/about.html",
-    "status": "완료",
-    "lastModified": "2026-06-09",
-    "memo": "재단 소개 메인 퍼블리싱 고도화 완료"
-  },
-  {
     "id": 23,
     "depth1": "소개",
-    "depth2": "비전 & 미션",
+    "depth2": "한국 로날드 맥도날드 하우스",
     "depth3": "",
     "depth4": "",
     "path": "/about/vision.html",
-    "status": "작업전",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "완료"
   },
   {
     "id": 24,
@@ -259,42 +248,42 @@
     "depth3": "",
     "depth4": "",
     "path": "/about/greetings.html",
-    "status": "작업전",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "완료"
   },
   {
     "id": 25,
     "depth1": "소개",
-    "depth2": "RMHC 이사회",
+    "depth2": "기업 파트너",
     "depth3": "",
     "depth4": "",
-    "path": "/about/board.html",
-    "status": "작업전",
+    "path": "/about/partner.html",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "완료"
   },
   {
     "id": 26,
     "depth1": "소개",
-    "depth2": "파트너사 소개",
+    "depth2": "이사회",
     "depth3": "",
     "depth4": "",
-    "path": "/about/partner.html",
-    "status": "작업전",
+    "path": "/about/board.html",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "완료"
   },
   {
     "id": 27,
     "depth1": "소개",
-    "depth2": "재정 투명성",
+    "depth2": "재정보고",
     "depth3": "",
     "depth4": "",
     "path": "/about/transparency.html",
-    "status": "작업전",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "완료"
   },
   {
     "id": 28,
@@ -303,9 +292,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/houses/yangsan.html",
-    "status": "작업전",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "완료"
   },
   {
     "id": 29,
@@ -358,9 +347,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/donate/one-time.html",
-    "status": "작업전",
-    "lastModified": "",
-    "memo": "작업 대기 중 (신규 기본 뼈대)"
+    "status": "완료",
+    "lastModified": "2026-07-13",
+    "memo": "작업 완료"
   },
   {
     "id": 34,
@@ -368,10 +357,10 @@
     "depth2": "정기후원",
     "depth3": "",
     "depth4": "",
-    "path": "/donate/regular.html",
-    "status": "작업전",
+    "path": "/donate/one-time.html",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (신규 기본 뼈대)"
+    "memo": "완료"
   },
   {
     "id": 35,
@@ -380,9 +369,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/donate/goods.html",
-    "status": "작업전",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (신규 기본 뼈대)"
+    "memo": "완료"
   },
   {
     "id": 36,
@@ -391,9 +380,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/donate/volunteer.html",
-    "status": "작업전",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (신규 기본 뼈대)"
+    "memo": "완료"
   },
   {
     "id": 37,
@@ -402,9 +391,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/donate/complete.html",
-    "status": "작업전",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (신규 기본 뼈대)"
+    "memo": "완료"
   },
   {
     "id": 38,
@@ -449,6 +438,17 @@
     "status": "완료",
     "lastModified": "2026-06-09",
     "memo": "KCR 캠페인 역사 및 성과 지표 구현 완료"
+  },
+  {
+    "id": 56,
+    "depth1": "캠페인",
+    "depth2": "생성 캠페인",
+    "depth3": "",
+    "depth4": "",
+    "path": "/campaign/add_campaign.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": "생성 캠페인"
   },
   {
     "id": 42,
@@ -526,5 +526,82 @@
     "status": "완료",
     "lastModified": "2026-06-09",
     "memo": "이메일 무단수집 금지 정보통신망법 조항 안내 페이지 구현 완료"
+  },
+  {
+    "id": 55,
+    "depth1": "약관 및 정책",
+    "depth2": "자주묻는 질문(FAQ)",
+    "depth3": "",
+    "depth4": "",
+    "path": "/faq/faq.html",
+    "status": "완료",
+    "lastModified": "2026-06-09",
+    "memo": ""
+  },
+  {
+    "id": 49,
+    "depth1": "공통",
+    "depth2": "404",
+    "depth3": "",
+    "depth4": "",
+    "path": "/404.html",
+    "status": "진행중",
+    "lastModified": "2026-06-09",
+    "memo": ""
+  },
+  {
+    "id": 50,
+    "depth1": "공통",
+    "depth2": "회원가입 완료 메일",
+    "depth3": "",
+    "depth4": "",
+    "path": "/mail/join-complete.html",
+    "status": "진행중",
+    "lastModified": "2026-07-13",
+    "memo": ""
+  },
+  {
+    "id": 51,
+    "depth1": "공통",
+    "depth2": "후원 완료 메일",
+    "depth3": "",
+    "depth4": "",
+    "path": "/mail/donate-complete.html",
+    "status": "진행중",
+    "lastModified": "2026-07-13",
+    "memo": ""
+  },
+  {
+    "id": 52,
+    "depth1": "공통",
+    "depth2": "자원봉사 완료 메일",
+    "depth3": "",
+    "depth4": "",
+    "path": "/mail/volunteer-complete.html",
+    "status": "진행중",
+    "lastModified": "2026-07-13",
+    "memo": ""
+  },
+  {
+    "id": 53,
+    "depth1": "공통",
+    "depth2": "뉴스레터구독 팝업",
+    "depth3": "",
+    "depth4": "",
+    "path": "/includes/popups/newsletter.html",
+    "status": "완료",
+    "lastModified": "2026-07-13",
+    "memo": ""
+  },
+  {
+    "id": 54,
+    "depth1": "공통",
+    "depth2": "뉴스레터구독 팝업 완료",
+    "depth3": "",
+    "depth4": "",
+    "path": "/includes/popups/newsletter.html",
+    "status": "완료",
+    "lastModified": "2026-07-13",
+    "memo": ""
   }
 ]

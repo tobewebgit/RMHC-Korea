@@ -982,7 +982,7 @@ a.header__submenu-link:focus-visible,
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5rem; /* 그룹 간 격리 배치용 넓은 간격 (피그마 50px) */
+  gap: 1.2rem; /* 그룹 간 격리 배치용 넓은 간격 (피그마 50px) */
   margin-top: 6rem;
 }
 
@@ -1025,10 +1025,12 @@ a.header__submenu-link:focus-visible,
   background-size: 1.8rem;
 }
 .page-arrow.page-prev {
+  margin-right: 3.5rem;
   background: url("../images/common/icon_left.png") no-repeat center;
   background-size: 1rem; /* 이전 화살표 크기 키움 */
 }
 .page-arrow.page-next {
+  margin-left: 3.5rem;
   background: url("../images/common/icon_right.png") no-repeat center;
   background-size: 1rem; /* 다음 화살표 크기 키움 */
 }
@@ -1042,10 +1044,6 @@ a.header__submenu-link:focus-visible,
    ========================================================================== */
 
 /* 1. 레이아웃 및 컨테이너 */
-.nonmember-wrapper {
-  padding-bottom: 12rem;
-}
-
 .main-content, .inner-container {
   margin: 0 auto;
 }
