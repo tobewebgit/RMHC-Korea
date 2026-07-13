@@ -461,32 +461,6 @@
   background-color: var(--primary);
 }
 
-.gallery-nav {
-  display: flex;
-  align-items: center;
-  gap: 2.8rem;
-  flex: 0 0 auto;
-  padding-top: 0.4rem;
-}
-
-.gallery-nav__btn {
-  width: 4rem;
-  height: 4rem;
-  border: 0;
-  background: url(/src/images/donate/icon_slide_next.png) 50% 50% / 4rem 4rem no-repeat;
-  cursor: pointer;
-}
-
-.gallery-nav__btn--prev {
-  transform: rotate(180deg);
-}
-
-.gallery-nav__btn.swiper-button-disabled,
-.gallery-nav__btn:disabled {
-  opacity: 0.3;
-  pointer-events: none;
-}
-
 .gallery-view {
   width: min(100% - 8rem, 144rem);
   margin: 0 auto;

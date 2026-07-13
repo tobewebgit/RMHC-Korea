@@ -882,6 +882,33 @@ a.header__submenu-link:focus-visible,
   }
 }
 
+/* 갤러리 우상단 다음/이전 버튼 */
+.gallery-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  flex: 0 0 auto;
+  padding-top: 0.4rem;
+}
+
+.gallery-nav__btn {
+  width: 4rem;
+  height: 4rem;
+  border: 0;
+  background: url(/src/images/donate/icon_slide_next.png) 50% 50% / 4rem 4rem no-repeat;
+  cursor: pointer;
+}
+
+.gallery-nav__btn--prev {
+  transform: rotate(180deg);
+}
+
+.gallery-nav__btn.swiper-button-disabled,
+.gallery-nav__btn:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 /* ==========================================================================
    공통 테이블 & 페이지네이션 스타일 (common.css)
    ========================================================================== */
