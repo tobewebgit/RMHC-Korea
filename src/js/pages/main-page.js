@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const createLogo = (num) => {
       const li = document.createElement('li');
       const img = document.createElement('img');
-      img.src = `/src/images/partner/logo_main_partner_${num}.png`;
+      img.src = new URL(`../../images/partner/logo_main_partner_${num}.png`, import.meta.url).href;
       img.alt = `파트너 로고 ${num}`;
       img.width = 230;
       img.height = 84;

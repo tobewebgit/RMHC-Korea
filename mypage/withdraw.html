@@ -20,86 +20,88 @@
 
     <div class="page-wrapper">
       <main id="main-content" class="main-content">
-        <h1 class="join-title">회원 탈퇴</h1>
+        <div class="inner-container inner-layout">
+          <h1 class="page-title mypage">회원 탈퇴</h1>
 
-        <section class="withdraw-section">
-        <!-- 회원 탈퇴 안내 섹션 -->
-        <div class="content-card">
-          <h2 class="withdraw-title">회원탈퇴 시 아래의 내용을 반드시 확인해주세요.</h2>
-          
-          <div class="withdraw-notice-desc">
-            <p>후원회원이 아닌 경우, <strong>홈페이지 탈퇴 후 1주일간 개인정보를 보유</strong>하며 이후 탈퇴 회원의 별도 원복 요청이 없는 경우 홈페이지 회원정보는 모두 파기됩니다.</p>
-            <p>홈페이지 회원이면서 후원회원인 경우, 홈페이지 탈퇴와 후원 종료를 요청하더라도 개인정보는 추후 각종 증명서 발급 또는 회원관리 업무를 위해 재단법인 한국로날드맥도날드하우스에서 계속 보유할 수 있습니다.</p>
-            <p>단, 홈페이지 회원 또는 후원자가 개인정보 삭제를 별도로 요청할 경우 등록된 개인정보는 즉시 파기되며, 이후에는 각종 증명서 발급 또는 회원관리 업무를 지원하지 않습니다.</p>
-            <p class="warning-highlight">회원 탈퇴는 한국로날드맥도날드하우스 홈페이지 회원 탈퇴를 의미합니다. 회원 탈퇴만으로는 진행 중인 후원 또는 참여가 자동 종료되지 않습니다.</p>
-            <p>후원 종료를 원하시는 경우 회원 탈퇴 전에 마이페이지 &gt; 후원현황에서 해지해 주시기 바라며, 추가 문의는 문의전화(02-723-2013) 또는 이메일(rmhc@rmhc.or.kr)로 연락해 주시기 바랍니다.</p>
-          </div>
-
-          <!-- 구분선 -->
-          <hr class="withdraw-divider" />
-
-          <!-- 동의 체크박스 -->
-          <div class="withdraw-agree-wrap">
-            <label class="custom-checkbox">
-              <input type="checkbox" id="agreeCheck" name="agreeCheck" required />
-              <span class="checkbox-txt"><span class="required-badge">[필수]</span> 위 내용은 모두 확인 했습니다.</span>
-            </label>
-          </div>
-
-          <!-- 정보 확인 카드 상자 -->
-          <div class="withdraw-confirm-card">
-            <h3 class="card-section-title">정보 확인</h3>
+          <section class="withdraw-section">
+          <!-- 회원 탈퇴 안내 섹션 -->
+          <div class="content-card">
+            <h2 class="withdraw-title">회원탈퇴 시 아래의 내용을 반드시 확인해주세요.</h2>
             
-            <div class="withdraw-form-grid">
-              <!-- 아이디 -->
-              <div class="form-group-col">
-                <label for="infoId" class="form-label required min-h-auto">아이디</label>
-                <input
-                  type="text"
-                  id="infoId"
-                  class="form-control info-readonly"
-                  value="donald04"
-                  disabled
-                  readonly
-                />
-              </div>
+            <div class="withdraw-notice-desc">
+              <p>후원회원이 아닌 경우, <strong>홈페이지 탈퇴 후 1주일간 개인정보를 보유</strong>하며 이후 탈퇴 회원의 별도 원복 요청이 없는 경우 홈페이지 회원정보는 모두 파기됩니다.</p>
+              <p>홈페이지 회원이면서 후원회원인 경우, 홈페이지 탈퇴와 후원 종료를 요청하더라도 개인정보는 추후 각종 증명서 발급 또는 회원관리 업무를 위해 재단법인 한국로날드맥도날드하우스에서 계속 보유할 수 있습니다.</p>
+              <p>단, 홈페이지 회원 또는 후원자가 개인정보 삭제를 별도로 요청할 경우 등록된 개인정보는 즉시 파기되며, 이후에는 각종 증명서 발급 또는 회원관리 업무를 지원하지 않습니다.</p>
+              <p class="warning-highlight">회원 탈퇴는 한국로날드맥도날드하우스 홈페이지 회원 탈퇴를 의미합니다. 회원 탈퇴만으로는 진행 중인 후원 또는 참여가 자동 종료되지 않습니다.</p>
+              <p>후원 종료를 원하시는 경우 회원 탈퇴 전에 마이페이지 &gt; 후원현황에서 해지해 주시기 바라며, 추가 문의는 문의전화(02-723-2013) 또는 이메일(rmhc@rmhc.or.kr)로 연락해 주시기 바랍니다.</p>
+            </div>
 
-              <!-- 이름 -->
-              <div class="form-group-col">
-                <label for="infoName" class="form-label required min-h-auto">이름</label>
-                <input
-                  type="text"
-                  id="infoName"
-                  class="form-control info-readonly"
-                  value="로날드"
-                  disabled
-                  readonly
-                />
-              </div>
+            <!-- 구분선 -->
+            <hr class="withdraw-divider" />
 
-              <!-- 비밀번호 -->
-              <div class="form-group-col">
-                <label for="infoPw" class="form-label required min-h-auto">비밀번호</label>
-                <div class="pw-input-wrapper">
+            <!-- 동의 체크박스 -->
+            <div class="withdraw-agree-wrap">
+              <label class="custom-checkbox">
+                <input type="checkbox" id="agreeCheck" name="agreeCheck" required />
+                <span class="checkbox-txt"><span class="required-badge">[필수]</span> 위 내용은 모두 확인 했습니다.</span>
+              </label>
+            </div>
+
+            <!-- 정보 확인 카드 상자 -->
+            <div class="withdraw-confirm-card">
+              <h3 class="card-section-title">정보 확인</h3>
+              
+              <div class="withdraw-form-grid">
+                <!-- 아이디 -->
+                <div class="form-group-col">
+                  <label for="infoId" class="form-label required min-h-auto">아이디</label>
                   <input
-                    type="password"
-                    id="infoPw"
-                    class="form-control password editable"
-                    placeholder=""
+                    type="text"
+                    id="infoId"
+                    class="form-control info-readonly"
+                    value="donald04"
+                    disabled
+                    readonly
                   />
-                  <button type="button" class="eye-btn" aria-label="비밀번호 표시 토글"></button>
+                </div>
+
+                <!-- 이름 -->
+                <div class="form-group-col">
+                  <label for="infoName" class="form-label required min-h-auto">이름</label>
+                  <input
+                    type="text"
+                    id="infoName"
+                    class="form-control info-readonly"
+                    value="로날드"
+                    disabled
+                    readonly
+                  />
+                </div>
+
+                <!-- 비밀번호 -->
+                <div class="form-group-col">
+                  <label for="infoPw" class="form-label required min-h-auto">비밀번호</label>
+                  <div class="pw-input-wrapper">
+                    <input
+                      type="password"
+                      id="infoPw"
+                      class="form-control password editable"
+                      placeholder=""
+                    />
+                    <button type="button" class="eye-btn" aria-label="비밀번호 표시 토글"></button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- 하단 버튼 영역 -->
-          <div class="withdraw-actions">
-            <a href="/mypage.html" class="btn btn-outline primary">취소하기</a>
-            <button type="submit" id="btnSubmit" class="btn btn-primary" disabled>탈퇴하기</button>
-          </div>
-          </div>
-        </section>
+            <!-- 하단 버튼 영역 -->
+            <div class="withdraw-actions">
+              <a href="/mypage.html" class="btn btn-outline primary">취소하기</a>
+              <button type="submit" id="btnSubmit" class="btn btn-primary" disabled>탈퇴하기</button>
+            </div>
+            </div>
+          </section>
+        </div>
       </main>
 
       <script>

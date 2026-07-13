@@ -204,7 +204,7 @@
 
 .btn.btn-white.btn-arrow:hover::after,
 .btn.btn-arrow:hover::after {
-  transform: translateX(0.2rem); /* 호버 시 우측으로 2px 부드럽게 감속 이동 */
+  transform: translateX(0.2rem);
 }
 
 /* 다운로드 아이콘이 포함된 버튼 (피그마 가이드 24px 아이콘 반영) */
@@ -218,7 +218,7 @@
   display: inline-block;
   width: 2.4rem;
   height: 2.4rem;
-  background: url("/src/images/common/icon_download.png") no-repeat center/contain;
+  background: url("/src/images/common/icon_download_white.png") no-repeat center/contain;
   transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 

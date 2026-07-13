@@ -216,23 +216,25 @@
   flex-direction: column;
 }
 
-.history-item {
+/* .history-item {
   border-bottom: 1px solid #000000;
 }
 
 .history-item:first-child {
   border-top: 1px solid #000000;
-}
+} */
 
 .history-item summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 9.4rem;
+  padding: 0 2.4rem;
   gap: 3.2rem;
   font-family: var(--font-extrabold);
   font-size: 2.8rem;
   line-height: 1.3;
+  border-bottom: 1px solid #000000;
   cursor: pointer;
   list-style: none;
 }
@@ -242,25 +244,35 @@
 }
 
 .history-item summary::after {
-  content: "+";
-  flex: 0 0 auto;
-  font-size: 3.2rem;
-  line-height: 1;
+  content: "";
+  width: 3.2rem; /* 32px */
+  height: 3.2rem; /* 32px */
+  margin-left: auto;
+  flex-shrink: 0;
+  background-image: url("../images/common/icon_faq_plus.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.4rem;
 }
 
 .history-item[open] summary::after {
-  content: "-";
+  content: "";
+  background-image: url("../images/common/icon_faq_minus.png");
 }
 
 .history-panel {
   max-height: 25rem;
-  margin: -1.2rem 0 4rem;
-  padding-right: 2.4rem;
+  margin: 2.4rem 0 4rem;
+  padding: 0 2.4rem;
   overflow-y: auto;
 }
 
 .history-panel::-webkit-scrollbar {
   width: 0.4rem;
+}
+
+.history-panel::-webkit-scrollbar-track {
+  background-color: #dddddd;
 }
 
 .history-panel::-webkit-scrollbar-thumb {
@@ -2253,18 +2265,53 @@
 
 .offline-fund-card__info li,
 .offline-fund-card__info p {
+  position: relative;
+  display: flex;
+  align-items: center;
   font-size: 2.2rem;
   line-height: 1.55;
 }
-
+.offline-fund-card__info li {
+  padding-left: 1rem;
+}
 .offline-fund-card__info li::before {
   content: "· ";
+  position: absolute;
+  left: 0;
+  top: 0.14rem;
+  margin-right: 0.5rem;
 }
 
-.offline-fund-card__info a {
+.offline-fund-card__info button {
+  margin-left: 1rem;
   color: #db0007;
-  font-weight: 800;
-  text-decoration: none;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.offline-fund-card__info button::after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 0.4rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../images/common/icon_detail_arrow_down.png) 50% 50% no-repeat;
+  background-size: 100% 100%;
+  margin-left: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.offline-fund-card__info button[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.detail-view-wrap {
+  display: none;
+  margin-top: 2.4rem;
+}
+.detail-view-wrap strong {
+  font-family: var(--font-extrabold);
+  font-size: 2.2rem;
 }
 
 .offline-fund-card__info p {
@@ -2380,9 +2427,10 @@
 
 .report-select a::after {
   content: "";
-  width: 1.6rem;
-  height: 1.6rem;
-  transform: translateY(0.1rem);
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(/src/images/common/icon_download_black.png) 50% 50% no-repeat;
+  background-size: 100% 100%;
 }
 
 .donation-history {

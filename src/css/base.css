@@ -310,7 +310,7 @@ video {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  word-break: normal;
+  word-break: keep-all;
   background: none;
 }
 article,
@@ -366,16 +366,16 @@ h4,
 h5,
 h6 {
   font-family: var(--font-extrabold);
-  word-break: normal;
+  word-break: keep-all;
 }
 ol,
 ul {
   list-style: none;
-  word-break: normal;
+  word-break: keep-all;
 }
 dt,
 dd {
-  word-break: normal;
+  word-break: keep-all;
 }
 legend,
 caption{
@@ -393,10 +393,10 @@ table {
 }
 th {
   font-weight: normal;
-  word-break: normal;
+  word-break: keep-all;
 }
 td {
-  word-break: normal;
+  word-break: keep-all;
 }
 strong,
 b {
@@ -409,6 +409,15 @@ img {
   vertical-align: top;
   width: 100%;
   max-width: inherit;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+}
+
+.smooth-edges {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  outline: 1px solid transparent;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0);
 }
 img[src=""],
 img:not([src]) {

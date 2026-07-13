@@ -270,7 +270,6 @@
   position: relative; /* 뱃지 absolute 배치를 위한 부모 relative 설정 */
   border-radius: 0.8rem; /* 피그마 실측 cornerRadius: 8px */
   overflow: hidden;
-  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.04);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 

@@ -103,8 +103,23 @@
                     <li>기부금품 모집방법 : 오프라인 모금(협력사 매장 내 모금함 모금)</li>
                     <li>모집기간 : 2025년 1월 1일 ~ 2025년 12월 31일</li>
                     <li>모집금액 사용기간 : 2026년 1월 1일 ~ 2026년 12월 31일</li>
-                    <li>모집결과 공개의무 : <a href="#">자세히 보기</a></li>
+                    <li>모집결과 공개의무 : <button type="button" class="toggle-detail" aria-expanded="false" aria-controls="toggleDetail">자세히 보기</button></li>
                   </ul>
+                  <div class="detail-view-wrap" id="toggleDetail" aria-hidden="true">
+                    <strong>
+                      모집결과 공개의무(기부금품법 시행령 제 19조 3항, 5항)
+                    </strong>
+                    <ul>
+                      <li>모집자는 법 제 14조 제 2항에 따라 기부금품의 모집을 중단하거나 끝낸 경우 및
+                      모집된 기부금품을 사용하거나 법 제 12조 제1항 단서에 따라 다른 목적에
+                      사용한 경우에는 다음 각 호의 사항을 해당 등록청에 지체없이 알려야 하고
+                      모집자의 인터넷 홈페이지에 30일 이상 게시하여 일반인이 열람할 수 있도록
+                      하여야 한다.</li>
+                      <li>모집자는 모집기간이 끝나거나 모집목표액에 이르면 즉시 모집을 중단하여야
+                      하며, 중단한 날부터 30일 이내에 별지 제8호 서식의 기부금품 모집 완료
+                      보고서를 등록청에 제출하여야 한다.</li>
+                    </ul>
+                  </div>
                   <p>2025년에는 2024년에 비해 오프라인 매장 모금함 운영 규모가 대폭 축소되었습니다.</p>
                 </div>
               </div>
@@ -458,6 +473,17 @@
           }
         });
       });
+
+      // 모집결과 공개의무 토글
+      const toggleDetailBtn = document.querySelector('.toggle-detail');
+      const toggleDetailWrap = document.getElementById('toggleDetail');
+      if (toggleDetailBtn && toggleDetailWrap) {
+        toggleDetailBtn.addEventListener('click', () => {
+          const isExpanded = toggleDetailBtn.getAttribute('aria-expanded') === 'true';
+          toggleDetailBtn.setAttribute('aria-expanded', !isExpanded);
+          toggleDetailWrap.style.display = isExpanded ? 'none' : 'block';
+        });
+      }
     </script>
   </body>
 </html>
