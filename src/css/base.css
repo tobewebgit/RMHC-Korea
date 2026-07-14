@@ -351,6 +351,8 @@ body {
   word-break: keep-all;
   overflow-wrap: break-word;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html * {

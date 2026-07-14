@@ -291,7 +291,6 @@ a.header__submenu-link:focus-visible,
 }
 
 .header__util-link {
-  font-family: "Pretendard", var(--font-sans);
   font-size: 1.8rem;
   font-weight: 400;
   color: #000000;
