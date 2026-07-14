@@ -12,7 +12,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* 딤드 배경 */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
@@ -74,7 +74,7 @@
   padding: 2.4rem 0 0;
 }
 
-/* 4. 모달 공통 닫기 버튼 (일반 텍스트/&times; 대응형) */
+/* 4. 모달 공통 닫기 버튼 */
 .modal-close-btn {
   position: absolute;
   top: 2.4rem;
@@ -83,7 +83,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  font-size: 3.2rem; /* &times; 엑스문자 대응 */
+  font-size: 3.2rem;
   line-height: 1;
   color: var(--text-secondary);
   display: inline-flex;
@@ -96,7 +96,7 @@
   color: var(--primary);
 }
 
-/* 5. 🌟 글로벌 공통 원형 검정 X 닫기 버튼 (뉴스레터 및 백일장 공통 통일 스타일) */
+/* 5. 뉴스레터 및 백일장 공통 통일 스타일 */
 .modal-close-btn-circle {
   display: flex;
   align-items: center;
@@ -318,12 +318,90 @@
 
 
 /* ==========================================================================
+   공통 알럿(Alert / Confirm) 모달 전용 스타일 (.common-alert-container)
+   ========================================================================== */
+.common-alert-container {
+  position: relative;
+  width: 100%;
+  max-width: 40rem;
+  min-height: 21.8rem;
+}
+
+.common-alert__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  height: 100%;
+}
+.common-alert-container .modal-close-btn-circle {
+  position: absolute;
+  top: 2.4rem;
+  right: 2.4rem;
+}
+
+.common-alert__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 4rem 0 3.2rem;
+}
+
+.common-alert__text-group {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.6rem;
+}
+
+.common-alert__title {
+  font-family: var(--font-extra-bold);
+  font-size: 2.4rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.common-alert__desc {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.common-alert__footer {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.common-alert__footer .btn {
+  height: 5.2rem;
+  min-height: auto;
+  flex: 1;
+  max-width: 20rem;
+}
+
+.common-alert__footer.type-confirm .btn {
+  max-width: 100%;
+}
+
+.btn-alert-cancel {
+  background-color: #F1A3A3;
+  color: #ffffff;
+}
+
+.btn-alert-cancel:hover {
+  background-color: #E88B8B;
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
    글로벌 공통 모달 반응형 제어 (768px 이하)
    ========================================================================== */
 @media (max-width: 768px) {
   .newsletter-modal-container {
     width: 90%;
-    padding: 3rem 2rem; /* 가로 여백 20px 반영 */
+    padding: 3rem 2rem;
   }
   .newsletter-modal-container.step-1-active,
   .newsletter-modal-container.step-2-active {
@@ -360,5 +438,24 @@
   .award-detail-modal-container .modal-close-btn-circle {
     top: 2rem;
     right: 2rem;
+  }
+
+  /* 공통 알럿 모달 모바일 반응형 */
+  .common-alert-container {
+    width: 90%;
+    padding: 3rem 2rem;
+  }
+  .common-alert-container .modal-close-btn-circle {
+    top: 2rem;
+    right: 2rem;
+  }
+  .common-alert__title {
+    font-size: 2rem;
+  }
+  .common-alert__desc {
+    font-size: 1.6rem;
+  }
+  .common-alert__footer .btn {
+    max-width: 100%;
   }
 }

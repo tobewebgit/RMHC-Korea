@@ -53,13 +53,13 @@ export function initNewsletter() {
     const emailVal = footerEmailInput.value;
 
     if (!emailVal.trim()) {
-      alert('이메일 주소를 입력해주세요.');
+      window.showAlert({ type: 'alert', message: '이메일 주소를 입력해주세요.' });
       footerEmailInput.focus();
       return;
     }
 
     if (!validateEmail(emailVal)) {
-      alert('올바른 이메일 주소 형식을 입력해주세요.');
+      window.showAlert({ type: 'alert', message: '올바른 이메일 주소 형식을 입력해주세요.' });
       footerEmailInput.focus();
       return;
     }
