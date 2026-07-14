@@ -1,38 +1,95 @@
 document.addEventListener('DOMContentLoaded', () => {
   const initMainKvMotion = () => {
     const visual = document.querySelector('.main-kv__visual');
+    const content = document.querySelector('.main-kv__content');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     if (!visual || typeof gsap === 'undefined') return;
 
     if (reduceMotion.matches) {
-      gsap.set(visual, {
-        x: '0%',
-        opacity: 1,
-        '--kv-heart-mask-size': '100%',
-      });
+      gsap.set(visual, { x: '0%', opacity: 1, '--kv-heart-mask-size': '100%' });
+      if (content) gsap.set(content, { x: '0%', opacity: 1 });
       return;
     }
 
+    // 우측 visual 초기 상태
     gsap.set(visual, {
       x: '20%',
       opacity: 0,
       '--kv-heart-mask-size': '80%',
     });
 
-    gsap
-      .timeline({ delay: 0.18 })
-      .to(visual, {
+    // 좌측 content 초기 상태 (좌측에서 슬라이드인)
+    if (content) {
+      gsap.set(content, { x: '-50%', opacity: 0 });
+    }
+
+    const tl = gsap.timeline({ delay: 0 });
+
+    // 좌측 content: 좌 → 우 페이드인 (먼저 시작)
+    if (content) {
+      tl.to(content, {
+        x: '0%',
+        opacity: 1,
+        duration: 2,
+        ease: 'power3.out',
+      });
+    }
+
+    // 우측 visual: 우 → 좌 페이드인 (content와 오버랩)
+    tl.to(visual, {
         x: '0%',
         opacity: 1,
         duration: 1.65,
         ease: 'power3.out',
-      })
+      }, content ? '-=0.9' : 0)
       .to(visual, {
         '--kv-heart-mask-size': '100%',
         duration: 1.35,
         ease: 'power2.out',
       }, '-=0.05');
+  };
+
+  const initMainQuickMotion = () => {
+    const quick = document.querySelector('.main-quick');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    if (!quick || typeof gsap === 'undefined') return;
+
+    // prefers-reduced-motion 시 즉시 노출
+    if (reduceMotion.matches) {
+      gsap.set(quick, { opacity: 1, y: 0 });
+      return;
+    }
+
+    // 초기 상태: 투명 + 아래로 내려진 상태로 숨김 (CSS에서도 opacity:0으로 초기 처리)
+    gsap.set(quick, { opacity: 0, y: 100 });
+
+    let animated = false;
+
+    const playQuickMotion = () => {
+      if (animated || window.scrollY <= 0) return;
+      animated = true;
+
+      gsap.to(quick, {
+        opacity: 1,
+        y: 0,
+        duration: 1.1,
+        ease: 'power3.out',
+      });
+
+      window.removeEventListener('scroll', onScroll, { passive: true });
+    };
+
+    const onScroll = () => playQuickMotion();
+
+    // 이미 스크롤된 상태라면 즉시 실행
+    if (window.scrollY > 0) {
+      gsap.set(quick, { opacity: 1, y: 0 });
+      return;
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
   };
 
   const initEventsSwiper = () => {
@@ -137,6 +194,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
+    const pauseMarquee = () => {
+      marqueeTween?.pause();
+    };
+
+    const playMarquee = () => {
+      if (!reduceMotion.matches && !mobile.matches) marqueeTween?.resume();
+    };
+
+    slider.addEventListener('mouseenter', pauseMarquee);
+    slider.addEventListener('mouseleave', playMarquee);
+    slider.addEventListener('focusin', pauseMarquee);
+    slider.addEventListener('focusout', playMarquee);
+
     createMarquee();
 
     window.addEventListener('resize', () => {
@@ -203,6 +273,11 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 1,
         spaceBetween: 30,
         loop: false,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
         pagination: {
           el: pagination,
           clickable: true,
@@ -297,6 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   initMainKvMotion();
+  initMainQuickMotion();
   initEventsSwiper();
   initThanksMarquee();
   initPartnerSlider();

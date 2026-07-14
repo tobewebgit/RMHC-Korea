@@ -151,6 +151,7 @@
   background-color: #e60012;
   color: #fff;
   box-shadow: 0 2.6rem 4rem rgba(0, 0, 0, 0.18);
+  opacity: 0; /* JS 모션 초기값 — initMainQuickMotion에서 제어 */
 }
 
 .main-quick__lead {

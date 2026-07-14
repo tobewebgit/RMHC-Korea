@@ -454,8 +454,11 @@ a:visited,
 a:hover,
 a:active,
 a:focus {
+  font-family: var(--font-pretendard);
   text-decoration: none;
   color: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 a:hover {
   text-decoration: none;
