@@ -461,6 +461,7 @@ a:focus {
   -moz-osx-font-smoothing: grayscale;
 }
 a:hover {
+  color: var(--primary);
   text-decoration: none;
 }
 a:focus,
@@ -468,6 +469,26 @@ button:focus {
   outline: 2px dotted #000;
   border: 0;
 }
+.link-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.link-text:hover {
+  color: var(--primary);
+}
+.link-arrow::after {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_arrow_right_black.png") no-repeat right center;
+  mask: url("/src/images/common/icon_arrow_right_black.png") no-repeat right center;
+}
+
 header.head,
 .main-content {
   opacity: 1;

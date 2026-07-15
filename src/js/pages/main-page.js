@@ -277,12 +277,30 @@ document.addEventListener('DOMContentLoaded', () => {
           delay: 4000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
+          enabled: false, // 화면 진입 시 IntersectionObserver가 시작
         },
         pagination: {
           el: pagination,
           clickable: true,
         },
       });
+
+      // 화면에 보일 때만 자동재생 시작/종료
+      const section = slider.closest('.main-partners') || slider;
+      const swiperObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!swiper) return;
+            if (entry.isIntersecting) {
+              swiper.autoplay.start();
+            } else {
+              swiper.autoplay.stop();
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      swiperObserver.observe(section);
     };
 
     buildSlides();

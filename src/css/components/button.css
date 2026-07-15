@@ -15,15 +15,15 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 5.2rem;
-  padding: 1.2rem var(--spacing-4);
+  height: 5.2rem;
+  padding: 2.4rem var(--spacing-4);
   border-radius: var(--radius-sm);
   font-size: var(--text-lg);
   line-height: 1;
   cursor: pointer;
   outline: 2px solid transparent;
   user-select: none;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .btn.w-auto {
   width: auto;
@@ -53,9 +53,9 @@
   background-color: var(--primary);
   color: #fffde9;
 }
-.btn-primary:hover {
-  color: var(--text-white);
-  background-color: #b50005;
+.btn:hover, a.btn:hover {
+  color: var(--text-black);
+  background-color: #D0C9FF;
 }
 
 /* RMHC Yellow Button (Contrast: Dark Charcoal on Gold = 7.8:1, PASSES AA) */
@@ -96,7 +96,7 @@
 /* white Button */
 .btn-white {
   color: var(--text-black);
-  background-color: var(--text-white);
+  background-color: #FFFDE9;
 }
 
 /* Text-only Button */
@@ -174,14 +174,18 @@
   padding: 0 1.6rem 0 2.4rem;
 }
 
+/* currentColor를 통해 자동으로 텍스트 색상으로 변경*/
 .btn.btn-arrow::after {
   content: "";
   display: inline-block;
   width: 2.4rem;
   height: 2.4rem;
-  background: url("/src/images/common/icon_arrow_right_white.png") no-repeat center/contain;
-  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_arrow_right_white.png") no-repeat center/contain;
+  mask: url("/src/images/common/icon_arrow_right_white.png") no-repeat center/contain;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease;
 }
+
 
 /* + 아이콘이 포함된 버튼 (피그마 수치 12x8px, 간격 4px 적용) */
 .btn.btn-plus {
@@ -198,9 +202,8 @@
   transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.btn.btn-white.btn-arrow::after {
-  background: url("/src/images/common/icon_arrow_right_black.png") no-repeat center/contain;
-}
+/* btn-white 또한 텍스트 색상을 따라가도록 둡니다. */
+/* .btn.btn-white.btn-arrow::after { ... } */
 
 .btn.btn-white.btn-arrow:hover::after,
 .btn.btn-arrow:hover::after {
@@ -213,15 +216,40 @@
   padding: 0 1.6rem 0 2.4rem;
 }
 
-.btn.btn-down::after {
+.btn-down::after {
   content: "";
   display: inline-block;
   width: 2.4rem;
   height: 2.4rem;
+  margin-left: 1.2rem;
   background: url("/src/images/common/icon_download_white.png") no-repeat center/contain;
   transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.btn.btn-down:hover::after {
+.btn-down:hover::after {
   transform: translateY(0.2rem);
 }
+
+/* 하트 버튼 */
+.btn-heart::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_btn_heart_black.svg") no-repeat center;
+  mask: url("/src/images/common/icon_btn_heart_black.svg") no-repeat center;
+  background-size: contain;
+  transition: all 0.2s ease;
+}
+
+.btn-heart:hover::after,
+.btn-heart:focus-visible::after {
+  content: "";
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: 0.5rem;
+  opacity: 1;
+}
+

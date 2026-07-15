@@ -23,10 +23,11 @@ export const initScrollMotions = () => {
     const delay = parseFloat(el.dataset.motionDelay) || 0;
     const offset = parseFloat(el.dataset.motionOffset) || 40;
     const once = el.dataset.motionOnce === 'true'; // 기본값 false (화면 이탈 시 반복 동작)
+    const initialScale = el.dataset.motionScale ? parseFloat(el.dataset.motionScale) : null;
 
     // prefers-reduced-motion이 켜져 있는 경우, 모션 효과 없이 즉시 표시되도록 설정
     if (reduceMotion) {
-      gsap.set(el, { opacity: 1, y: 0 });
+      gsap.set(el, { opacity: 1, y: 0, ...(initialScale !== null && { scale: 1 }) });
       return;
     }
 
@@ -35,6 +36,7 @@ export const initScrollMotions = () => {
       gsap.set(el, {
         opacity: 0,
         y: offset,
+        ...(initialScale !== null && { scale: initialScale }),
       });
     }
 
@@ -47,6 +49,7 @@ export const initScrollMotions = () => {
             gsap.to(el, {
               opacity: 1,
               y: 0,
+              ...(initialScale !== null && { scale: 1 }),
               duration: duration,
               delay: delay,
               ease: 'power2.out',
@@ -76,6 +79,7 @@ export const initScrollMotions = () => {
                   gsap.set(el, {
                     opacity: 0,
                     y: offset,
+                    ...(initialScale !== null && { scale: initialScale }),
                   });
                 }
               }

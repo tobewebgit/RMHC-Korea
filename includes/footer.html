@@ -58,7 +58,7 @@
         <span class="footer__family-site-label">Family site</span>
         <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="footer__family-site-arrow">
         <ul class="footer__family-site-list" role="listbox">
-          <li role="option"><a href="https://www.rmhc.org" target="_blank" rel="noopener noreferrer">RMHC Global</a></li>
+          <li role="option"><a href="https://www.rmhc.org" target="_blank" rel="noopener noreferrer">Ronald McDonald House Global</a></li>
           <li role="option"><a href="https://www.mcdonalds.co.kr" target="_blank" rel="noopener noreferrer">한국맥도날드</a></li>
         </ul>
       </div>
@@ -69,6 +69,35 @@
       Copyright © 2026 Ronald McDonald House Charities Korea. All Right Reserved.
     </div>
   </div>
+
+  <!-- Floating Action Button (FAB) -->
+  <aside class="fab-container">
+    <!-- 후원하기 -->
+    <a href="#" class="fab-item fab-donate" aria-label="후원하기">
+      <img src="/src/images/common/icon_heart_fab.svg" alt="" class="fab-icon-heart" />
+      <span class="fab-text">후원하기</span>
+    </a>
+
+    <!-- SNS -->
+    <div class="fab-sns-wrap">
+      <ul class="fab-sns-list">
+        <li><a href="#" aria-label="Instagram"><img src="/src/images/common/instagram.svg" alt=""></a></li>
+        <li><a href="#" aria-label="LinkedIn"><img src="/src/images/common/linkedIn.svg" alt=""></a></li>
+        <li><a href="#" aria-label="YouTube"><img src="/src/images/common/youtube.svg" alt=""></a></li>
+      </ul>
+      <button type="button" class="fab-sns-toggle" aria-label="SNS 메뉴 토글">
+        <img src="/src/images/common/icon_plus_fab.svg" alt="" class="fab-icon-plus" />
+        <span class="fab-text fab-text-default">SNS</span>
+        <span class="fab-text fab-text-active">닫기</span>
+      </button>
+    </div>
+
+    <!-- 위로가기 -->
+    <button type="button" class="fab-item fab-top" id="btn-scroll-top" aria-label="최상단으로 이동" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+      <img src="/src/images/common/icon_arrow_up_fab.svg" alt="" class="fab-icon-up" />
+    </button>
+  </aside>
+
   <load ="/includes/popups/newsletter.html" />
   <load ="/includes/popups/common-alert.html" />
 </footer>

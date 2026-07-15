@@ -125,9 +125,10 @@ export function initIndexReveal() {
           // 아이콘: 텍스트가 벌어지면서 나타나도록 너비와 마진을 0에서부터 증가시킴
           item.style.opacity = itemProgress;
           
-          // CSS 기본값: width 5.2rem, margin 0.3rem
-          const targetWidth = 5.2;
-          const targetMargin = 0.3;
+          // data-width 속성이 있으면 해당 값을 rem으로 환산하여 적용, 없으면 기본값 6rem
+          const dataWidth = parseFloat(item.dataset.width);
+          const targetWidth = isNaN(dataWidth) ? 6 : (dataWidth / 10);
+          const targetMargin = 0;
           
           item.style.width = `${itemProgress * targetWidth}rem`;
           item.style.marginLeft = `${itemProgress * targetMargin}rem`;
@@ -142,7 +143,8 @@ export function initIndexReveal() {
           item.style.objectFit = 'contain';
         } else {
           // 글자(reveal-char): 기존 로직 동일 (위로 0.5rem 안착, 회색 -> 검은색)
-          const translateY = (1 - itemProgress) * 0.5;
+          // const translateY = (1 - itemProgress) * 0.5;
+          const translateY = 0;
           item.style.transform = `translateY(${translateY}rem)`;
 
           const r = Math.round(170 - itemProgress * 170);
