@@ -8,7 +8,8 @@
     "path": "/main/main.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "메인 홈 하우스 소개 인터랙션 및 리빌 효과 보정 완료"
+    "memo": "메인 홈 하우스 소개 인터랙션 및 리빌 효과 보정 완료",
+    "qa": "완료"
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "path": "/login/login.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "로그인 폼 및 소셜 로그인 연동 화면 퍼블리싱 완료"
+    "memo": "로그인 폼 및 소셜 로그인 연동 화면 퍼블리싱 완료",
+    "qa": ""
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "path": "/login/find-id.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "아이디 찾기 본인인증 폼 퍼블리싱 완료"
+    "memo": "아이디 찾기 본인인증 폼 퍼블리싱 완료",
+    "qa": ""
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "path": "/login/find-id/result.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "아이디 찾기 결과 및 로그인/비밀번호찾기 링크 연동 완료"
+    "memo": "아이디 찾기 결과 및 로그인/비밀번호찾기 링크 연동 완료",
+    "qa": ""
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "path": "/login/reset-pw.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "비밀번호 재설정 인증 폼 퍼블리싱 완료"
+    "memo": "비밀번호 재설정 인증 폼 퍼블리싱 완료",
+    "qa": ""
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "path": "/login/reset-pw/new.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "신규 비밀번호 입력 및 유효성 검증 마크업 완료"
+    "memo": "신규 비밀번호 입력 및 유효성 검증 마크업 완료",
+    "qa": ""
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "path": "/login/reset-pw/complete.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "비밀번호 재설정 완료 안내 화면 퍼블리싱 완료"
+    "memo": "비밀번호 재설정 완료 안내 화면 퍼블리싱 완료",
+    "qa": ""
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "path": "/login/link-sns.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "간편 로그인 연동 관리 및 상태 표시 화면 퍼블리싱 완료"
+    "memo": "간편 로그인 연동 관리 및 상태 표시 화면 퍼블리싱 완료",
+    "qa": ""
   },
   {
     "id": 9,
@@ -96,7 +104,8 @@
     "path": "/nonmember/donations.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "인증번호 발송/타이머 및 결과 대시보드/배너 연동 완료"
+    "memo": "인증번호 발송/타이머 및 결과 대시보드/배너 연동 완료",
+    "qa": ""
   },
   {
     "id": 10,
@@ -107,7 +116,8 @@
     "path": "/join/join.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "일반/기관 회원가입 선택 및 약관 동의 퍼블리싱 완료"
+    "memo": "일반/기관 회원가입 선택 및 약관 동의 퍼블리싱 완료",
+    "qa": ""
   },
   {
     "id": 11,
@@ -118,7 +128,8 @@
     "path": "/join/auth.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "본인 인증 수단 선택 화면 퍼블리싱 완료"
+    "memo": "본인 인증 수단 선택 화면 퍼블리싱 완료",
+    "qa": ""
   },
   {
     "id": 12,
@@ -129,7 +140,8 @@
     "path": "/join/form.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "상세 개인정보 입력 폼 및 우편번호 찾기 연동 완료"
+    "memo": "상세 개인정보 입력 폼 및 우편번호 찾기 연동 완료",
+    "qa": ""
   },
   {
     "id": 13,
@@ -140,7 +152,8 @@
     "path": "/join/complete.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "가입 완료 축하 메시지 및 메인 이동 링크 연동 완료"
+    "memo": "가입 완료 축하 메시지 및 메인 이동 링크 연동 완료",
+    "qa": ""
   },
   {
     "id": 14,
@@ -151,7 +164,8 @@
     "path": "/mypage/mypage.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "마이페이지 대시보드 및 서비스 이동 퀵 링크 연동 완료"
+    "memo": "마이페이지 대시보드 및 서비스 이동 퀵 링크 연동 완료",
+    "qa": ""
   },
   {
     "id": 15,
@@ -162,7 +176,8 @@
     "path": "/mypage/donations.html",
     "status": "작업전",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "작업 대기 중 (레거시 비움)",
+    "qa": ""
   },
   {
     "id": 16,
@@ -173,7 +188,8 @@
     "path": "/mypage/donations/detail.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "납부 내역 테이블 및 금액변경/해지 모달 구현 완료"
+    "memo": "납부 내역 테이블 및 금액변경/해지 모달 구현 완료",
+    "qa": ""
   },
   {
     "id": 17,
@@ -184,7 +200,8 @@
     "path": "/mypage/verify-password.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "안전 정보 보호 비밀번호 재입력 폼 구현 완료"
+    "memo": "안전 정보 보호 비밀번호 재입력 폼 구현 완료",
+    "qa": ""
   },
   {
     "id": 18,
@@ -195,7 +212,8 @@
     "path": "/mypage/donation-receipts.html",
     "status": "작업전",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "작업 대기 중 (레거시 비움)",
+    "qa": ""
   },
   {
     "id": 19,
@@ -206,7 +224,8 @@
     "path": "/mypage/donation-receipts/apply.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "본인인증 가상 팝업 및 기부 영수증 신청 폼 구현 완료"
+    "memo": "본인인증 가상 팝업 및 기부 영수증 신청 폼 구현 완료",
+    "qa": ""
   },
   {
     "id": 20,
@@ -217,7 +236,8 @@
     "path": "/mypage/donation-receipts/status.html",
     "status": "작업전",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "작업 대기 중 (레거시 비움)",
+    "qa": ""
   },
   {
     "id": 21,
@@ -228,7 +248,8 @@
     "path": "/mypage/withdraw.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "안내 유의사항 카드 및 탈퇴 동의/설문 폼 구현 완료"
+    "memo": "안내 유의사항 카드 및 탈퇴 동의/설문 폼 구현 완료",
+    "qa": ""
   },
   {
     "id": 23,
@@ -239,7 +260,8 @@
     "path": "/about/vision.html",
     "status": "완료",
     "lastModified": "",
-    "memo": "완료"
+    "memo": "완료",
+    "qa": ""
   },
   {
     "id": 24,
@@ -250,7 +272,8 @@
     "path": "/about/greetings.html",
     "status": "완료",
     "lastModified": "",
-    "memo": "완료"
+    "memo": "완료",
+    "qa": ""
   },
   {
     "id": 25,
@@ -261,7 +284,8 @@
     "path": "/about/partner.html",
     "status": "완료",
     "lastModified": "",
-    "memo": "완료"
+    "memo": "완료",
+    "qa": ""
   },
   {
     "id": 26,
@@ -272,7 +296,8 @@
     "path": "/about/board.html",
     "status": "완료",
     "lastModified": "",
-    "memo": "완료"
+    "memo": "완료",
+    "qa": ""
   },
   {
     "id": 27,
@@ -283,7 +308,8 @@
     "path": "/about/transparency.html",
     "status": "완료",
     "lastModified": "",
-    "memo": "완료"
+    "memo": "완료",
+    "qa": ""
   },
   {
     "id": 28,
@@ -294,7 +320,8 @@
     "path": "/houses/yangsan.html",
     "status": "완료",
     "lastModified": "",
-    "memo": "완료"
+    "memo": "완료",
+    "qa": ""
   },
   {
     "id": 29,
@@ -305,7 +332,8 @@
     "path": "/houses/gangnam.html",
     "status": "작업전",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "작업 대기 중 (레거시 비움)",
+    "qa": ""
   },
   {
     "id": 30,
@@ -316,7 +344,8 @@
     "path": "/houses/inha.html",
     "status": "작업전",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "작업 대기 중 (레거시 비움)",
+    "qa": ""
   },
   {
     "id": 31,
@@ -327,7 +356,8 @@
     "path": "/houses/seocho.html",
     "status": "작업전",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "작업 대기 중 (레거시 비움)",
+    "qa": ""
   },
   {
     "id": 32,
@@ -338,7 +368,8 @@
     "path": "/houses/yeonhui.html",
     "status": "작업전",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)"
+    "memo": "작업 대기 중 (레거시 비움)",
+    "qa": ""
   },
   {
     "id": 33,
@@ -349,7 +380,8 @@
     "path": "/donate/one-time.html",
     "status": "완료",
     "lastModified": "2026-07-13",
-    "memo": "작업 완료"
+    "memo": "작업 완료",
+    "qa": ""
   },
   {
     "id": 34,
@@ -360,7 +392,8 @@
     "path": "/donate/one-time.html",
     "status": "완료",
     "lastModified": "",
-    "memo": "완료"
+    "memo": "완료",
+    "qa": ""
   },
   {
     "id": 35,
@@ -371,7 +404,8 @@
     "path": "/donate/goods.html",
     "status": "완료",
     "lastModified": "",
-    "memo": "완료"
+    "memo": "완료",
+    "qa": ""
   },
   {
     "id": 36,
@@ -382,7 +416,8 @@
     "path": "/donate/volunteer.html",
     "status": "완료",
     "lastModified": "",
-    "memo": "완료"
+    "memo": "완료",
+    "qa": ""
   },
   {
     "id": 37,
@@ -393,7 +428,8 @@
     "path": "/donate/complete.html",
     "status": "완료",
     "lastModified": "",
-    "memo": "완료"
+    "memo": "완료",
+    "qa": ""
   },
   {
     "id": 38,
@@ -404,7 +440,8 @@
     "path": "/campaign/family.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "패밀리하우스 캠페인 소개 및 소구 정보 구현 완료"
+    "memo": "패밀리하우스 캠페인 소개 및 소구 정보 구현 완료",
+    "qa": ""
   },
   {
     "id": 39,
@@ -415,7 +452,8 @@
     "path": "/campaign/gala.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "갈라 디너 캠페인 연혁 및 티켓/후원 신청 영역 구현 완료"
+    "memo": "갈라 디너 캠페인 연혁 및 티켓/후원 신청 영역 구현 완료",
+    "qa": ""
   },
   {
     "id": 40,
@@ -426,7 +464,8 @@
     "path": "/campaign/writing-contest.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "울림백일장 공모 요강 테이블 및 접수 바로가기 구현 완료"
+    "memo": "울림백일장 공모 요강 테이블 및 접수 바로가기 구현 완료",
+    "qa": ""
   },
   {
     "id": 41,
@@ -437,7 +476,8 @@
     "path": "/campaign/kcr.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "KCR 캠페인 역사 및 성과 지표 구현 완료"
+    "memo": "KCR 캠페인 역사 및 성과 지표 구현 완료",
+    "qa": ""
   },
   {
     "id": 56,
@@ -448,7 +488,8 @@
     "path": "/campaign/add_campaign.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "생성 캠페인"
+    "memo": "생성 캠페인",
+    "qa": ""
   },
   {
     "id": 42,
@@ -459,7 +500,8 @@
     "path": "/news/notice.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "공지사항 게시판 목록 반응형 테이블 구현 완료"
+    "memo": "공지사항 게시판 목록 반응형 테이블 구현 완료",
+    "qa": ""
   },
   {
     "id": 43,
@@ -470,7 +512,8 @@
     "path": "/news/notice/detail.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "공지사항 보도자료 및 첨부파일 상세 페이지 구현 완료"
+    "memo": "공지사항 보도자료 및 첨부파일 상세 페이지 구현 완료",
+    "qa": ""
   },
   {
     "id": 44,
@@ -481,7 +524,8 @@
     "path": "/news/activity.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "활동소식 카드 그리드(3열/1열) 반응형 목록 구현 완료"
+    "memo": "활동소식 카드 그리드(3열/1열) 반응형 목록 구현 완료",
+    "qa": ""
   },
   {
     "id": 45,
@@ -492,7 +536,8 @@
     "path": "/news/activity/detail.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "활동소식 이벤트 상세 및 사진 보도 본문 구현 완료"
+    "memo": "활동소식 이벤트 상세 및 사진 보도 본문 구현 완료",
+    "qa": ""
   },
   {
     "id": 46,
@@ -503,7 +548,8 @@
     "path": "/policy/terms.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "이용약관 조/항 구조화 및 정책 탭 연동 완료"
+    "memo": "이용약관 조/항 구조화 및 정책 탭 연동 완료",
+    "qa": ""
   },
   {
     "id": 47,
@@ -514,7 +560,8 @@
     "path": "/policy/privacy.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "개인정보 수집 목적 및 보유 기간 테이블 표기 및 처리방침 완성"
+    "memo": "개인정보 수집 목적 및 보유 기간 테이블 표기 및 처리방침 완성",
+    "qa": ""
   },
   {
     "id": 48,
@@ -525,7 +572,8 @@
     "path": "/policy/email.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": "이메일 무단수집 금지 정보통신망법 조항 안내 페이지 구현 완료"
+    "memo": "이메일 무단수집 금지 정보통신망법 조항 안내 페이지 구현 완료",
+    "qa": ""
   },
   {
     "id": 55,
@@ -536,7 +584,8 @@
     "path": "/faq/faq.html",
     "status": "완료",
     "lastModified": "2026-06-09",
-    "memo": ""
+    "memo": "",
+    "qa": ""
   },
   {
     "id": 49,
@@ -547,7 +596,8 @@
     "path": "/404.html",
     "status": "진행중",
     "lastModified": "2026-06-09",
-    "memo": ""
+    "memo": "",
+    "qa": ""
   },
   {
     "id": 50,
@@ -558,7 +608,8 @@
     "path": "/mail/join-complete.html",
     "status": "진행중",
     "lastModified": "2026-07-13",
-    "memo": ""
+    "memo": "",
+    "qa": ""
   },
   {
     "id": 51,
@@ -569,7 +620,8 @@
     "path": "/mail/donate-complete.html",
     "status": "진행중",
     "lastModified": "2026-07-13",
-    "memo": ""
+    "memo": "",
+    "qa": ""
   },
   {
     "id": 52,
@@ -580,7 +632,8 @@
     "path": "/mail/volunteer-complete.html",
     "status": "진행중",
     "lastModified": "2026-07-13",
-    "memo": ""
+    "memo": "",
+    "qa": ""
   },
   {
     "id": 53,
@@ -591,7 +644,8 @@
     "path": "/includes/popups/newsletter.html",
     "status": "완료",
     "lastModified": "2026-07-13",
-    "memo": ""
+    "memo": "",
+    "qa": ""
   },
   {
     "id": 54,
@@ -602,6 +656,7 @@
     "path": "/includes/popups/newsletter.html",
     "status": "완료",
     "lastModified": "2026-07-13",
-    "memo": ""
+    "memo": "",
+    "qa": ""
   }
 ]

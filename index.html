@@ -136,6 +136,12 @@
         border-radius: 4px;
         font-weight: 700;
       }
+      .item-qa{
+        padding: 0.15rem 0.45rem;
+        border-radius: 4px;
+        background-color: #d1232a;
+        color: #fff;
+      }
       .badge-ready {
         background-color: #475569;
         color: #cbd5e1;
@@ -474,7 +480,13 @@
           element.innerHTML = `
           <div class="item-meta">
             <span class="item-depth">${pathDisplay}</span>
-            <span class="item-badge ${badgeClass}">${item.status}</span>
+            <div>
+              <span class="item-badge ${badgeClass}">${item.status}</span>
+              ${item.qa === "완료" ? `
+                <span class="item-qa">${item.qa}</span>
+              ` : "<span></span>"}
+            </div>
+            
           </div>
           <div class="item-title">${item.depth2 || item.depth1}</div>
           <div class="item-path">${item.path}</div>
