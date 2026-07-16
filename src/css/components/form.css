@@ -94,7 +94,7 @@
   right: 1.6rem;
   top: 50%;
   transform: translateY(-50%);
-  background: url("../images/common/eye-off.png") no-repeat center;
+  background: url("../../images/common/eye-off.png") no-repeat center;
   width: 2rem;
   height: 2rem;
   cursor: pointer;
@@ -148,7 +148,7 @@
 }
 .custom-checkbox input[type="checkbox"] {
   border-radius: 0.4rem;
-  background: url("../images/common/icon_checkbox.svg") 50% 50% no-repeat;
+  background: url("../../images/common/icon_checkbox.svg") 50% 50% no-repeat;
   background-size: 1.1rem 0.8rem;
 }
 .custom-radio input[type="radio"] {
@@ -165,7 +165,7 @@
 }
 .custom-checkbox input[type="checkbox"]:checked {
   border-color: var(--primary);
-  background: var(--primary) url("../images/common/icon_checkbox_checked.svg") 50% 50% no-repeat;
+  background: var(--primary) url("../../images/common/icon_checkbox_checked.svg") 50% 50% no-repeat;
   background-size: 1.1rem 0.8rem;
 }
 .custom-radio input[type="radio"]:checked {

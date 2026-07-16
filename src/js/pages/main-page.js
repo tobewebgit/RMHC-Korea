@@ -1,5 +1,4 @@
 import { createSwiper } from '../components/swiper-utils.js';
-import { closeModal } from '../components/modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const initMainKvMotion = () => {
@@ -365,20 +364,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const remainingSlides = Array.from(slider.querySelectorAll('.swiper-slide')).filter(s => s !== slide);
         
         if (remainingSlides.length === 0) {
-          closeModal(overlay); // 모두 닫히면 전체 팝업 닫기
+          import('../components/modal.js').then(module => {
+            if (module.closeModal) module.closeModal(overlay); // 모두 닫히면 전체 팝업 닫기
+          });
         } else if (remainingSlides.length === 1) {
           const remain = remainingSlides[0];
           const container = overlay.querySelector('.main-popup-container');
           
           if (window.innerWidth > 768) {
             // PC: GSAP FLIP 기법으로 스르륵 부드럽게 가운데 이동
+            // 1. 남은 슬라이드의 현재 화면 좌표 기록 (Swiper 레이아웃이 깨지기 전에 기록)
+            const rectBefore = remain.getBoundingClientRect();
+
             if (swiperInstance && swiperInstance.destroy) {
               swiperInstance.destroy(true, true);
               swiperInstance = null;
             }
-            
-            // 1. 남은 슬라이드의 현재 화면 좌표 기록
-            const rectBefore = remain.getBoundingClientRect();
             
             // 2. DOM에서 슬라이드 제거 및 컨테이너 축소 (가운데 정렬 즉시 적용)
             slide.remove();
