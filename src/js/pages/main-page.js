@@ -1,4 +1,5 @@
 import { createSwiper } from '../components/swiper-utils.js';
+import { closeModal } from '../components/modal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const initMainKvMotion = () => {
@@ -351,23 +352,89 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
 
+    let swiperInstance = null;
+
+    // 개별 배너 닫기 로직
+    const closeBtns = overlay.querySelectorAll('.main-popup__close');
+    closeBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // 전역 모달 닫기 방지
+        const slide = e.target.closest('.swiper-slide');
+        if (!slide) return;
+        
+        const remainingSlides = Array.from(slider.querySelectorAll('.swiper-slide')).filter(s => s !== slide);
+        
+        if (remainingSlides.length === 0) {
+          closeModal(overlay); // 모두 닫히면 전체 팝업 닫기
+        } else if (remainingSlides.length === 1) {
+          const remain = remainingSlides[0];
+          const container = overlay.querySelector('.main-popup-container');
+          
+          if (window.innerWidth > 768) {
+            // PC: GSAP FLIP 기법으로 스르륵 부드럽게 가운데 이동
+            if (swiperInstance && swiperInstance.destroy) {
+              swiperInstance.destroy(true, true);
+              swiperInstance = null;
+            }
+            
+            // 1. 남은 슬라이드의 현재 화면 좌표 기록
+            const rectBefore = remain.getBoundingClientRect();
+            
+            // 2. DOM에서 슬라이드 제거 및 컨테이너 축소 (가운데 정렬 즉시 적용)
+            slide.remove();
+            if (container) {
+              container.style.width = '40rem';
+              container.classList.add('is-single-slide');
+            }
+            slider.classList.add('is-single');
+            
+            // 3. 브라우저 렌더 트리 갱신을 위해 최종 좌표 기록
+            const rectAfter = remain.getBoundingClientRect();
+            const dx = rectBefore.left - rectAfter.left;
+            
+            // 4. GSAP 애니메이션 (가상 이전 위치에서 원래 자리로 이동)
+            if (typeof gsap !== 'undefined') {
+              gsap.fromTo(remain, 
+                { x: dx }, 
+                { x: 0, duration: 0.5, ease: 'power3.out' }
+              );
+            }
+          } else {
+            // 모바일: 스와이퍼 내장 업데이트 사용
+            slide.remove();
+            if (swiperInstance) swiperInstance.update();
+            slider.classList.add('is-single');
+            if (container) container.classList.add('is-single-slide');
+          }
+        }
+      });
+    });
+
     const slides = slider?.querySelectorAll('.swiper-slide');
 
-    if (!slides || slides.length <= 1) {
+    if (!slides || slides.length === 0) return;
+
+    if (slides.length === 1) {
       // 슬라이드 1개 이하: dot 숨김, Swiper 초기화 안 함
       if (slider) slider.classList.add('is-single');
       return;
     }
 
     // 슬라이드 2개 이상: Swiper 활성화
-    createSwiper(slider, {
+    swiperInstance = createSwiper(slider, {
       slidesPerView: 1,
-      spaceBetween: 0,
-      loop: true,
+      spaceBetween: 16,
+      loop: false,
       pagination: {
         el: slider.querySelector('.main-popup-pagination'),
         clickable: true,
       },
+      breakpoints: {
+        769: {
+          slidesPerView: 2,
+          spaceBetween: 8,
+        }
+      }
     });
   };
 
@@ -377,5 +444,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initThanksMarquee();
   initPartnerSlider();
   initDonateBannerHeart();
-  // initMainPopupSwiper(); // 팝업 임시 비활성화 — 재개 시 주석 해제
+  initMainPopupSwiper();
 });

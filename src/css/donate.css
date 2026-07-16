@@ -118,11 +118,11 @@
   margin-bottom: 2rem;
   overflow: hidden;
   transition: all 0.3s ease;
-  padding: 4rem 4rem 3.6rem
+  padding: 3.2rem 4rem;
 }
 
 .accordion-card.is-disabled {
-  opacity: 0.55;
+  min-height: 10rem;
   pointer-events: none;
 }
 

@@ -2,80 +2,92 @@
 <div class="modal-overlay modal-overlay--main" id="modal-ma_01p" aria-modal="true" role="dialog" aria-label="공지 팝업">
   <div class="main-popup-container">
 
-    <!-- S: 원형 닫기 버튼 (우상단 고정) -->
-    <button type="button" class="modal-close-btn-circle main-popup__close" aria-label="팝업 닫기">
-      <span class="close-icon"></span>
-    </button>
-    <!-- E: 원형 닫기 버튼 -->
 
-    <!-- S: 팝업 슬라이드 (관리자 등록 이미지/링크 목록) -->
     <div class="swiper main-popup-swiper">
       <div class="swiper-wrapper">
 
         <!-- S: 슬라이드 1 -->
         <div class="swiper-slide">
-          <a class="main-popup__slide-link" href="#" target="_blank" rel="noopener noreferrer">
-            <!-- PC 이미지 (769px~) -->
-            <img
-              class="main-popup__img main-popup__img--pc"
-              src="/src/images/main/img_main_popup.png"
-              alt="2026 맥도날드 해피워크 — 가족이 함께하는 행복한 기부 (2026.05.24 인천문학경기장 동문광장)"
-              width="680"
-              height="760"
-              fetchpriority="high"
-            />
-            <!-- MO 이미지 (~768px) -->
-            <img
-              class="main-popup__img main-popup__img--mo"
-              src="/src/images/main/img_main_popup_mo.png"
-              alt="2026 맥도날드 해피워크 — 가족이 함께하는 행복한 기부 (2026.05.24 인천문학경기장 동문광장)"
-              width="360"
-              height="400"
-              fetchpriority="high"
-            />
-          </a>
+          <div class="main-popup__slide-content">
+
+            <button type="button" class="modal-close-btn-circle main-popup__close" aria-label="팝업 닫기">
+              <span class="close-icon"></span>
+            </button>
+            
+            <a class="main-popup__slide-link" href="#" target="_blank" rel="noopener noreferrer">
+
+              <img
+                class="main-popup__img main-popup__img--pc"
+                src="/src/images/main/img_main_popup.png"
+                alt="2026 맥도날드 해피워크"
+                width="400"
+                height="447"
+                fetchpriority="high"
+              />
+
+              <img
+                class="main-popup__img main-popup__img--mo"
+                src="/src/images/main/img_main_popup_mo.png"
+                alt="2026 맥도날드 해피워크"
+                width="360"
+                height="400"
+                fetchpriority="high"
+              />
+            </a>
+            
+            <div class="main-popup__footer">
+              <a href="#" class="btn btn-primary btn-arrow w-auto main-popup__cta" target="_blank" rel="noopener noreferrer">자세히 보기</a>
+              <label class="custom-checkbox main-popup__today-close">
+                <input type="checkbox" class="main-popup__today-chk">
+                <span>오늘 하루 그만 보기1</span>
+              </label>
+            </div>
+          </div>
         </div>
         <!-- E: 슬라이드 1 -->
 
-        <!-- S: 슬라이드 2 (다중 슬라이드 예시 — 실 운영 시 관리자에서 등록) -->
+        <!-- S: 슬라이드 2 -->
         <div class="swiper-slide">
-          <a class="main-popup__slide-link" href="#" target="_blank" rel="noopener noreferrer">
-            <img
-              class="main-popup__img main-popup__img--pc"
-              src="/src/images/main/img_main_popup.png"
-              alt="2026 맥도날드 해피워크 2번 슬라이드"
-              width="680"
-              height="760"
-              loading="lazy"
-            />
-            <img
-              class="main-popup__img main-popup__img--mo"
-              src="/src/images/main/img_main_popup_mo.png"
-              alt="2026 맥도날드 해피워크 2번 슬라이드"
-              width="360"
-              height="400"
-              loading="lazy"
-            />
-          </a>
+          <div class="main-popup__slide-content">
+
+            <button type="button" class="modal-close-btn-circle main-popup__close" aria-label="팝업 닫기">
+              <span class="close-icon"></span>
+            </button>
+
+            <a class="main-popup__slide-link" href="#" target="_blank" rel="noopener noreferrer">
+              <img
+                class="main-popup__img main-popup__img--pc"
+                src="/src/images/main/img_main_popup.png"
+                alt="2026 맥도날드 해피워크 2번 슬라이드"
+                width="400"
+                height="447"
+                loading="lazy"
+              />
+              <img
+                class="main-popup__img main-popup__img--mo"
+                src="/src/images/main/img_main_popup_mo.png"
+                alt="2026 맥도날드 해피워크 2번 슬라이드"
+                width="360"
+                height="400"
+                loading="lazy"
+              />
+            </a>
+            
+            <div class="main-popup__footer">
+              <a href="#" class="btn btn-primary btn-arrow w-auto main-popup__cta" target="_blank" rel="noopener noreferrer">자세히 보기</a>
+              <label class="custom-checkbox main-popup__today-close">
+                <input type="checkbox" class="main-popup__today-chk">
+                <span>오늘 하루 그만 보기2</span>
+              </label>
+            </div>
+          </div>
         </div>
         <!-- E: 슬라이드 2 -->
 
       </div>
       <!-- S: 슬라이드 인디케이터 (2개 이상일 때만 노출 — JS로 제어) -->
       <div class="swiper-pagination main-popup-pagination"></div>
-      <!-- E: 슬라이드 인디케이터 -->
     </div>
-    <!-- E: 팝업 슬라이드 -->
-
-    <!-- S: 팝업 푸터 (CTA + 오늘 하루 그만 보기) -->
-    <div class="main-popup__footer">
-      <a href="#" class="btn btn-primary btn-arrow main-popup__cta" target="_blank" rel="noopener noreferrer">자세히 보기</a>
-      <label class="custom-checkbox main-popup__today-close">
-        <input type="checkbox" id="chk-main-popup-today" class="main-popup__today-chk">
-        <span>오늘 하루 그만 보기</span>
-      </label>
-    </div>
-    <!-- E: 팝업 푸터 -->
 
   </div>
 </div>

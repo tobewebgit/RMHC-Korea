@@ -57,6 +57,10 @@ export function initModal() {
   // 3. 딤드(오버레이) 영역 클릭 시 모달 닫기
   document.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-overlay')) {
+      // 메인 팝업은 오버레이 클릭으로 닫히지 않도록 예외 처리
+      if (e.target.classList.contains('modal-overlay--main') || e.target.hasAttribute('data-disable-overlay-close')) {
+        return;
+      }
       closeModal(e.target);
     }
   });

@@ -148,8 +148,8 @@
 }
 .custom-checkbox input[type="checkbox"] {
   border-radius: 0.4rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23bbbbbb' width='1.8rem' height='1.8rem'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
+  background: url("../images/common/icon_checkbox.svg") 50% 50% no-repeat;
+  background-size: 1.1rem 0.8rem;
 }
 .custom-radio input[type="radio"] {
   border-radius: var(--radius-full);
@@ -164,10 +164,9 @@
   background-color: var(--border-color);
 }
 .custom-checkbox input[type="checkbox"]:checked {
-  background-color: var(--primary);
   border-color: var(--primary);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='1.8rem' height='1.8rem'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
+  background: var(--primary) url("../images/common/icon_checkbox_checked.svg") 50% 50% no-repeat;
+  background-size: 1.1rem 0.8rem;
 }
 .custom-radio input[type="radio"]:checked {
   border-color: var(--primary);
