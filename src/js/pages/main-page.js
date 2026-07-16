@@ -1,3 +1,5 @@
+import { createSwiper } from '../components/swiper-utils.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   const initMainKvMotion = () => {
     const visual = document.querySelector('.main-kv__visual');
@@ -94,9 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const initEventsSwiper = () => {
     const slider = document.querySelector('.main-events-swiper');
-    if (!slider || typeof Swiper === 'undefined') return;
+    if (!slider) return;
 
-    new Swiper(slider, {
+    createSwiper(slider, {
       slidesPerView: 4,
       spaceBetween: 24,
       loop: false,
@@ -269,7 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
         wrapper.appendChild(slide);
       }
 
-      swiper = new Swiper(slider, {
+      const section = slider.closest('.main-partners') || slider;
+      swiper = createSwiper(slider, {
         slidesPerView: 1,
         spaceBetween: 30,
         loop: false,
@@ -277,30 +280,12 @@ document.addEventListener('DOMContentLoaded', () => {
           delay: 4000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
-          enabled: false, // 화면 진입 시 IntersectionObserver가 시작
         },
         pagination: {
           el: pagination,
           clickable: true,
         },
-      });
-
-      // 화면에 보일 때만 자동재생 시작/종료
-      const section = slider.closest('.main-partners') || slider;
-      const swiperObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!swiper) return;
-            if (entry.isIntersecting) {
-              swiper.autoplay.start();
-            } else {
-              swiper.autoplay.stop();
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-      swiperObserver.observe(section);
+      }, section);
     };
 
     buildSlides();
@@ -366,19 +351,16 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
 
-    // Swiper 라이브러리 또는 슬라이더 없으면 종료
-    if (!slider || typeof Swiper === 'undefined') return;
+    const slides = slider?.querySelectorAll('.swiper-slide');
 
-    const slides = slider.querySelectorAll('.swiper-slide');
-
-    if (slides.length <= 1) {
-      // 슬라이드 1개: dot 숨김, Swiper 초기화 안 함
-      slider.classList.add('is-single');
+    if (!slides || slides.length <= 1) {
+      // 슬라이드 1개 이하: dot 숨김, Swiper 초기화 안 함
+      if (slider) slider.classList.add('is-single');
       return;
     }
 
     // 슬라이드 2개 이상: Swiper 활성화
-    new Swiper(slider, {
+    createSwiper(slider, {
       slidesPerView: 1,
       spaceBetween: 0,
       loop: true,

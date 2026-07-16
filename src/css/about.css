@@ -59,6 +59,7 @@
   z-index: 1;
   display: flex;
   align-items: center;
+  max-width: 160rem;
   min-height: 88rem;
 }
 
@@ -114,15 +115,15 @@
 }
 
 .promise-card--mission {
-  background-image: url("/src/images/about/bg_section_1.png");
+  background-image: url("/src/images/about/bg_section_1.svg");
 }
 
 .promise-card--vision {
-  background-image: url("/src/images/about/bg_section_2.png");
+  background-image: url("/src/images/about/bg_section_2.svg");
 }
 
 .promise-card--slogan {
-  background-image: url("/src/images/about/bg_section_3.png");
+  background-image: url("/src/images/about/bg_section_3.svg");
 }
 
 .promise-card strong {
@@ -593,7 +594,7 @@
   max-width: 17.4rem;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .about-vision-kv__panel {
     width: 72rem;
     min-height: 44.6rem;
@@ -622,7 +623,7 @@
   .donate-banner {
     padding: 0 8rem;
   }
-}
+} */
 
 @media (max-width: 768px) {
   .pc-only {

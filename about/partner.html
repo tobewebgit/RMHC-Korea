@@ -51,7 +51,7 @@
               <article class="founding-card">
                 <img class="founding-card__image" src="/src/images/about/img_partner_section_2.png" alt="어린이가 해피밀 박스를 들고 있는 모습" width="720" height="487" loading="lazy" />
                 <div class="founding-card__content">
-                  <img src="/src/images/about/logo_macdonald_section_2.png" alt="맥도날드" width="120" height="120" loading="lazy" />
+                  <img src="/src/images/about/logo_macdonald_section_2.svg" alt="맥도날드" width="120" height="120" loading="lazy" />
                   <h4>작은 정성이 모여 만드는 커다란 기적</h4>
                   <p>해피밀®, 행운버거, 해피워크를 통해 전해진 소중한 나눔은 로날드 맥도날드 하우스 운영을 비롯하여 환아와 가족이 함께할 수 있도록 돕는 다양한 지원과 프로그램에 힘이 되고 있습니다.</p>
                 </div>
@@ -449,17 +449,24 @@
 
     <!-- 푸터 공통 영역 인클루드 -->
     <load ="/includes/footer.html" />
-    <script>
+    <script type="module">
+      import { createSwiper } from '/src/js/components/swiper-utils.js';
+
       document.addEventListener("DOMContentLoaded", () => {
-        new Swiper(".partner-logo-slide-container", {
+        const sliderElement = document.querySelector(".partner-logo-slide-container");
+        const partnerSwiper = createSwiper(".partner-logo-slide-container", {
           slidesPerView: 1,
           spaceBetween: 30,
-          loop: false,
+          loop: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
           pagination: {
             el: ".partner-swiper-pagination",
             clickable: true,
           },
-        });
+        }, sliderElement);
 
         const initPartnerActivityMore = () => {
           const list = document.querySelector(".partner-activity__list");

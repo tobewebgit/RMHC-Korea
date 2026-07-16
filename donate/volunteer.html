@@ -413,10 +413,12 @@
     <!-- 푸터 공통 영역 인클루드 -->
     <load ="/includes/footer.html" />
     <!-- Swiper JS CDN -->
-<script>
+<script type="module">
+      import { createSwiper } from '/src/js/components/swiper-utils.js';
+
       document.addEventListener("DOMContentLoaded", () => {
         // 자원봉사 소개 슬라이더 초기화
-        const volSwiper = new Swiper(".vol-intro-swiper", {
+        const volSwiper = createSwiper(".vol-intro-swiper", {
           slidesPerView: 1,
           spaceBetween: 20,
           loop: false,

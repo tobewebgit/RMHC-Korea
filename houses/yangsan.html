@@ -319,6 +319,8 @@
     <load ="/includes/footer.html" />
 
 <script type="module">
+      import { createSwiper } from '/src/js/components/swiper-utils.js';
+
       document.addEventListener("DOMContentLoaded", () => {
         const initImpactCounters = () => {
           const impactSection = document.querySelector(".house-impact");
@@ -688,25 +690,23 @@
         initPartnerMarquee();
         initHouseGallery();
 
-        if (typeof Swiper !== "undefined") {
-          new Swiper(".js-house-story", {
-            slidesPerView: 1,
-            loop: false,
-            pagination: {
-              el: ".story-slider__pagination",
-              clickable: true,
-            },
-            navigation: {
-              prevEl: ".story-slider__btn--prev",
-              nextEl: ".story-slider__btn--next",
-            },
-          });
+        const storySwiper = createSwiper(".js-house-story", {
+          slidesPerView: 1,
+          loop: false,
+          pagination: {
+            el: ".story-slider__pagination",
+            clickable: true,
+          },
+          navigation: {
+            prevEl: ".story-slider__btn--prev",
+            nextEl: ".story-slider__btn--next",
+          },
+        });
 
-          return;
+        if (!storySwiper) {
+          initFallbackStorySlider();
+          document.querySelector(".js-house-partner")?.classList.add("is-fallback-slider");
         }
-
-        initFallbackStorySlider();
-        document.querySelector(".js-house-partner")?.classList.add("is-fallback-slider");
       });
 
       // 아코디언 하나만 열리도록 처리
