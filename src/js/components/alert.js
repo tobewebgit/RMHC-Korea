@@ -70,16 +70,27 @@ export function showAlert(options = {}) {
     confirmText = '확인',
     cancelText = '취소하기',
     onConfirm = null,
-    onCancel = null
+    onCancel = null,
+    className = '',
+    hideFooter = false
   } = options;
 
   // 1. 요소 찾기
+  const containerEl = modal.querySelector('.common-alert-container');
   const titleEl = document.getElementById('common-alert-title');
   const descEl = document.getElementById('common-alert-desc');
   const footerEl = document.getElementById('common-alert-footer');
   const cancelBtn = document.getElementById('btn-common-alert-cancel');
   const confirmBtn = document.getElementById('btn-common-alert-confirm');
   const confirmBtnText = confirmBtn.querySelector('span');
+
+  // 1.5 커스텀 클래스 제어
+  if (containerEl) {
+    containerEl.className = 'modal-container common-alert-container';
+    if (className) {
+      className.split(' ').filter(Boolean).forEach(cls => containerEl.classList.add(cls));
+    }
+  }
 
   // 2. 텍스트 바인딩
   if (title) {
@@ -99,13 +110,18 @@ export function showAlert(options = {}) {
   confirmBtnText.innerText = confirmText;
 
   // 3. 버튼 레이아웃 제어
-  if (type === 'confirm') {
-    footerEl.classList.add('type-confirm');
-    cancelBtn.style.display = 'inline-flex';
-    cancelBtn.querySelector('span').innerText = cancelText;
+  if (hideFooter) {
+    footerEl.style.display = 'none';
   } else {
-    footerEl.classList.remove('type-confirm');
-    cancelBtn.style.display = 'none';
+    footerEl.style.display = ''; // CSS 기본값 유지
+    if (type === 'confirm') {
+      footerEl.classList.add('type-confirm');
+      cancelBtn.style.display = 'inline-flex';
+      cancelBtn.querySelector('span').innerText = cancelText;
+    } else {
+      footerEl.classList.remove('type-confirm');
+      cancelBtn.style.display = 'none';
+    }
   }
 
   // 4. 콜백 초기화

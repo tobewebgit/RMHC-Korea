@@ -4,6 +4,7 @@ export function initSvgLineReveal({
   lineSelector,
   duration = 0.9,
   delayStep = 0.9,
+  totalDuration = null,
   threshold = 0.2,
   offsetAdjustment = 20,
 }) {
@@ -81,12 +82,12 @@ export function initSvgLineReveal({
     }, 480);
   };
 
-  const drawLine = (line, delay) => {
+  const drawLine = (line, delay, lineDuration) => {
     if (window.gsap) {
       const tween = gsap.to(line, {
         strokeDashoffset: 0,
         opacity: 1,
-        duration,
+        duration: lineDuration,
         delay,
         ease: 'none',
       });
@@ -100,7 +101,7 @@ export function initSvgLineReveal({
         { strokeDashoffset: '0', opacity: 1 },
       ],
       {
-        duration: duration * 1000,
+        duration: lineDuration * 1000,
         delay: delay * 1000,
         easing: 'linear',
         fill: 'forwards',
@@ -112,8 +113,20 @@ export function initSvgLineReveal({
   const play = () => {
     reset();
     groups.forEach((group) => {
-      Array.from(group.querySelectorAll(lineSelector)).forEach((line, index) => {
-        drawLine(line, index * delayStep);
+      const groupLines = Array.from(group.querySelectorAll(lineSelector));
+      const n = groupLines.length;
+      if (n === 0) return;
+      
+      let calcDuration = duration;
+      let calcDelayStep = delayStep;
+
+      if (totalDuration !== null) {
+        calcDuration = totalDuration / n;
+        calcDelayStep = totalDuration / n;
+      }
+
+      groupLines.forEach((line, index) => {
+        drawLine(line, index * calcDelayStep, calcDuration);
       });
     });
   };

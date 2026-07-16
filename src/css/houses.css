@@ -192,16 +192,16 @@
   text-align: center;
 }
 .story-slider .swiper-slide.type1 .story-card {
-  background: url("/src/images/houses/yangsan_grid_card_1.png") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_card_1.svg") 50% 50% / 100% 100% no-repeat;
 }
 .story-slider .swiper-slide.type2 .story-card {
-  background: url("/src/images/houses/yangsan_grid_card_2.png") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_card_2.svg") 50% 50% / 100% 100% no-repeat;
 }
 .story-slider .swiper-slide.type3 .story-card {
-  background: url("/src/images/houses/yangsan_grid_card_3.png") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_card_3.svg") 50% 50% / 100% 100% no-repeat;
 }
 .story-slider .swiper-slide.type4 .story-card {
-  background: url("/src/images/houses/yangsan_grid_card_4.png") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_card_4.svg") 50% 50% / 100% 100% no-repeat;
 }
 
 .story-card__mark {
@@ -557,13 +557,12 @@
 .partner-card img {
   width: 20rem;
   height: 10rem;
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 
 .partner-card p {
   margin: 2.4rem 0 0;
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.8rem;
   line-height: 1.5;
 }
 
@@ -644,7 +643,7 @@
   justify-content: center;
   gap: 5.6rem;
   width: min(100% - 8rem, 120rem);
-  margin: 3.2rem auto 0;
+  margin: 6rem auto 0;
   padding: 0;
   list-style: none;
   font-size: 2.2rem;
@@ -674,7 +673,7 @@
 }
 
 .location-info strong {
-  margin-right: 0.8rem;
+  margin-right: 2.4rem;
   font-family: var(--font-extrabold);
   font-size: 2.8rem;
 }
@@ -683,12 +682,12 @@
   display: flex;
   justify-content: center;
   gap: 0.8rem;
-  margin-top: 3.2rem;
+  margin-top: 6rem;
 }
 
 /* FAQ */
 .house-faq {
-  padding: 12rem 0;
+  padding: 20rem 0;
   background-color: #ffbc0d;
 }
 
@@ -700,7 +699,7 @@
 .faq-list summary {
   position: relative;
   min-height: 7.2rem;
-  padding: 2.4rem 5rem 2.4rem 0;
+  padding: 2.4rem 5rem 2.4rem 2.4rem;
   border-bottom: 1px solid var(--border-black);
   font-family: var(--font-extrabold);
   font-size: 2.8rem;
@@ -717,7 +716,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 2.4rem;
   width: 3.2rem; /* 32px */
   height: 3.2rem; /* 32px */
   margin-left: auto;
@@ -737,7 +736,6 @@
 .faq-list p {
   margin: 0;
   padding: 2.4rem;
-  max-width: 92rem;
   font-size: 2.2rem;
   line-height: 1.7;
 }
