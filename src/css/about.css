@@ -26,6 +26,9 @@
   line-height: 1.25;
   letter-spacing: 0;
 }
+.donate-banner h2 {
+  font-size: 3.8rem;
+}
 
 .about-section-head p {
   margin: 2.4rem 0 0;
@@ -64,7 +67,7 @@
   min-height: 54.2rem;
   padding: 10rem 8rem 8rem;
   background: url("/src/images/about/bg_about_vision_kv.png") 50% 50% / 100% 100% no-repeat;
-  color: #fffdf0;
+  color: #FFFDE9;
 }
 
 .about-vision-kv__panel h1 {
@@ -229,7 +232,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: 9.4rem;
-  padding: 0 2.4rem;
+  padding: 2.4rem;
   gap: 3.2rem;
   font-family: var(--font-extrabold);
   font-size: 2.8rem;
@@ -368,15 +371,21 @@
 .house-list a {
   display: flex;
   align-items: center;
+  width: 100%;
   min-height: 7.4rem;
   padding: 0 2.4rem;
   border-radius: 1.2rem;
-  background-color: rgba(255, 253, 240, 0.4);
   color: rgba(0, 0, 0, 0.45);
   font-family: var(--font-extrabold);
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   line-height: 1.2;
+  background-color: var(--bg-primary);
+}
+
+.house-list a.coming {
+  background-color: rgba(255, 253, 240, 0.4);
+  pointer-events: none;
 }
 
 .house-list a.is-active {
@@ -384,18 +393,26 @@
 }
 
 .house-list a.is-active::after {
-  content: "→";
-  margin-left: auto;
-  font-family: var(--font-extrabold);
-  font-size: 2.4rem;
-  line-height: 1;
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: 0.8rem;
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_arrow_right_black.png") no-repeat center/contain;
+  mask: url("/src/images/common/icon_arrow_right_black.png") no-repeat center/contain;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease;
+}
+
+.house-list a:hover::after {
+  transform: translateX(0.4rem);
 }
 
 .house-heart {
-  width: 3.4rem;
-  height: 3rem;
-  margin-right: 2rem;
-  background: url("/src/images/about/icon_heart_section_5.svg") center / contain no-repeat;
+  width: 2.4rem;
+  height: 2.1rem;
+  margin-right: 1.6rem;
+  background: url("/src/images/about/icon_heart_section_5_btn.svg") center / contain no-repeat;
 }
 
 .house-heart--coming {
@@ -426,11 +443,9 @@
 }
 
 .inner-heart {
+  position: absolute;
   width: 4rem;
   height: 4rem;
-}
-.inner-heart.abs {
-  position: absolute;
 }
 
 .map-pin__heart {
@@ -442,28 +457,48 @@
 }
 
 .map-pin--inha {
-  left: 1.2rem;
-  top: 25.4rem;
+  left: 4.1rem;
+  top: 16.6rem;
+}
+.map-pin--inha .inner-heart {
+  left: 4.2rem;
+  top: -0.8rem;
 }
 
 .map-pin--yeonhui {
-  left: 11.4rem;
+  left: 11.1rem;
   top: 13.4rem;
+}
+.map-pin--yeonhui .inner-heart {
+  left: 0.5rem;
+  top: 1.9rem;
 }
 
 .map-pin--seocho {
-  left: 8.2rem;
-  top: 31rem;
+  left: 11.6rem;
+  top: 21.4rem;
+}
+.map-pin--seocho .inner-heart {
+  left: 0.6rem;
+  top: -3.6rem;
 }
 
 .map-pin--gangnam {
-  left: 17.2rem;
-  top: 28.4rem;
+  left: 18.6rem;
+  top: 17.4rem;
+}
+.map-pin--gangnam .inner-heart {
+  left: -3.4rem;
+  top: -0.6rem;
 }
 
 .map-pin--yangsan {
-  right: 1rem;
-  bottom: 13.2rem;
+  right: 10.8rem;
+  bottom: 14.2rem;
+}
+.map-pin--yangsan .inner-heart {
+  left: 4rem;
+  top: -0.8rem;
 }
 
 /* Symbol */
@@ -540,13 +575,13 @@
 }
 
 .donate-banner h2 {
-  color: #fffdf0;
+  color: #FFFDE9;
 }
 
 .donate-banner p {
   margin: 3.2rem 0 0;
-  color: #fffdf0;
-  font-size: 2.2rem;
+  color: #FFFDE9;
+  font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.55;
 }

@@ -1276,10 +1276,26 @@ a.header__submenu-link:focus-visible,
   }
 }
 
-/* 요소에 class="motion-floating" 을 추가하면 동작합니다. */
 .motion-floating {
-  animation: motionFloating 4s ease-in-out infinite; /* 4초 동안 무한 반복 */
-  will-change: transform; /* 애니메이션 성능 최적화 */
+  animation: motionFloating 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes motionFloatingFast {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.motion-floating-fast {
+  animation: motionFloatingFast 1.5s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* ==========================================================================

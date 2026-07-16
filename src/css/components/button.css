@@ -207,7 +207,7 @@
 
 .btn.btn-white.btn-arrow:hover::after,
 .btn.btn-arrow:hover::after {
-  transform: translateX(0.2rem);
+  transform: translateX(0.4rem);
 }
 
 /* 다운로드 아이콘이 포함된 버튼 (피그마 가이드 24px 아이콘 반영) */
@@ -222,12 +222,15 @@
   width: 2.4rem;
   height: 2.4rem;
   margin-left: 1.2rem;
-  background: url("/src/images/common/icon_download_white.png") no-repeat center/contain;
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_download_white.svg") no-repeat center;
+  mask: url("/src/images/common/icon_download_white.svg") no-repeat center;
+  background-size: contain;
   transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .btn-down:hover::after {
-  transform: translateY(0.2rem);
+  transform: translateY(0.4rem);
 }
 
 /* 하트 버튼 */
