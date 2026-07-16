@@ -279,8 +279,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- 전체 폼 상태 초기화 함수 (최상위 탭 전환 시 호출) ---
   function resetAllSteps() {
     try {
-      console.log("[resetAllSteps] Resetting entire donate flow...");
-
       // 1. 모든 상태 변수 초기화
       selectedAmount = '';
       isAmountValid = false;
@@ -879,6 +877,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  [withdrawDayInput, pmCardCompany, pmExpMonth, pmExpYear, pmCmsBank].forEach(input => {
+    if (input) {
+      input.addEventListener('change', () => {
+        updateDonateFlowUI();
+      });
+    }
+  });
+
   // 카드번호/소유자생년월일/계좌번호/생년월일 숫자만 입력
   [pmCardNumber, pmOwnerBirth, pmCmsAccount, pmCmsBirth].forEach(input => {
     if (input) {
@@ -890,6 +896,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 서명 캔버스 드로잉 엔진
   let isDrawing = false;
+  let isSignatureCanvasBound = false;
   const ctx = signatureCanvas ? signatureCanvas.getContext('2d') : null;
 
   function initSignatureCanvas() {
@@ -899,13 +906,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const rect = signatureCanvas.getBoundingClientRect();
     if (rect.width === 0) return; // 미노출 상태 방지
     
-    signatureCanvas.width = rect.width;
-    signatureCanvas.height = rect.height;
+    const nextWidth = Math.round(rect.width);
+    const nextHeight = Math.round(rect.height);
+    if (signatureCanvas.width !== nextWidth || signatureCanvas.height !== nextHeight) {
+      signatureCanvas.width = nextWidth;
+      signatureCanvas.height = nextHeight;
+      signatureDrawn = false;
+    }
 
     ctx.strokeStyle = '#1f2937';
     ctx.lineWidth = 3;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
+
+    if (isSignatureCanvasBound) return;
+    isSignatureCanvasBound = true;
 
     // 마우스 드로잉
     signatureCanvas.addEventListener('mousedown', startDrawing);
