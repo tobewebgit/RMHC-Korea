@@ -35,7 +35,7 @@
 }
 
 .login-title {
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
   font-size: var(--text-4xl);
   text-align: center;
   letter-spacing: var(--letter-spacing-tight);
@@ -82,16 +82,16 @@
 }
 
 .btn-social .icon-kakao {
-  width: 2.7rem;
-  height: 2.8rem;
-  background: url(../images/common/kakao_icon.png) no-repeat center center;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../images/common/icon_kakao_pay.png) no-repeat center center;
   background-size: contain;
 }
 
 .btn-social .icon-naver {
-  width: 1.8rem;
-  height: 1.8rem;
-  background: url(../images/common/naver_icon.png) no-repeat center center;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../images/common/icon_naver_pay.png) no-repeat center center;
   background-size: contain;
 }
 
@@ -138,10 +138,12 @@
 .login-guide {
   margin-top: var(--spacing-4);
   color: var(--text-gray80);
+  font-size: var(--text-lg);
   text-align: center;
 }
 .login-guide a {
   color: var(--text-gray80);
+  font-weight: 700;
 }
 
 /* 로그인 옵션 (아이디 저장 & 계정 찾기/가입) */
@@ -167,7 +169,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-3);
 }
 
 .login-links a {
@@ -181,12 +182,11 @@
 
 .login-links a:not(:last-child)::after {
   content: "";
-  position: absolute;
-  right: -0.8rem;
-  top: 50%;
-  transform: translateY(-50%);
+  display: inline-block;
+  position: relative;
   width: 1px;
   height: 1.2rem;
+  margin: 0 0.8rem;
   background-color: var(--border-color);
 }
 
@@ -287,6 +287,7 @@
 }
 
 .result-box__value {
+  font-family: var(--font-extrabold);
   font-size: 2.8rem;
 }
 
@@ -362,6 +363,7 @@
   width: 100%;
   max-width: 56rem;
   color: var(--text-white);
+  font-size: 2.2rem;
   text-align: center;
 }
 
@@ -379,7 +381,7 @@
 }
 
 .receipt-resident-panel {
-  margin-left: 16rem;
+  margin: 1.6rem 0 0 16rem;
   padding: var(--spacing-8) var(--spacing-6);
   background-color: rgba(208, 201, 255, 0.2);
   border-radius: var(--radius-lg);
@@ -387,10 +389,8 @@
 }
 
 .resident-label {
-  font-family: var(--font-sans);
-  font-weight: 700;
   font-size: var(--text-lg);
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
 }
 
 .resident-input-group {
@@ -401,7 +401,7 @@
 }
 
 .resident-input-group .form-control {
-  min-width: 14.5rem;
+  min-width: 22.5rem;
   background-color: var(--bg-primary);
 }
 
@@ -475,7 +475,7 @@ a.agreement-link {
   margin-bottom: var(--spacing-16);
 }
 .join-actions .btn {
-  max-width: 15rem;
+  width: 15rem;
 }
 .join-actions .error-text {
   color: var(--primary);
@@ -495,7 +495,7 @@ a.agreement-link {
   background-color: rgba(208, 201, 255, 0.2);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  margin-bottom: var(--spacing-12);
+  margin-bottom: var(--spacing-60);
   box-sizing: border-box;
 }
 
@@ -505,15 +505,13 @@ a.agreement-link {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 2.2rem 2.8rem;
+  padding: 4rem;
   box-sizing: border-box;
 }
 
 .summary-label {
   font-family: var(--font-extrabold);
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #000000;
+  font-size: 2.2rem;
   align-self: flex-start;
 }
 
@@ -522,20 +520,17 @@ a.agreement-link {
   align-items: baseline;
   gap: var(--spacing-1);
   align-self: flex-end;
+  line-height: 1;
 }
 
 .summary-value .number {
   font-family: var(--font-extrabold);
-  font-size: 3.2rem;
-  font-weight: 800;
-  color: #000000;
+  font-size: 2.8rem;
   line-height: 1;
 }
 
 .summary-value .unit {
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: #000000;
+  font-size: 2.2rem;
 }
 
 .divider {
@@ -677,7 +672,7 @@ a.agreement-link {
 .info-card-body {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.6rem;
   flex: 1;
 }
 
@@ -693,8 +688,6 @@ a.agreement-link {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  min-height: 5.2rem;
-  margin-top: auto; /* 계정 정보 카드에서 알림 수신동의를 하단 배치하기 위함 */
 }
 
 .info-label {
@@ -704,13 +697,13 @@ a.agreement-link {
 
 .info-label.required::before {
   content: "* ";
-  color: #000000; /* 시안 상 검은색 별표 */
+  color: #000000;
   margin-right: 0.2rem;
 }
 
 /* 수정 가능 필드 배경색 (크림색) */
 .form-control.editable {
-  background-color: var(--bg-primary); /* #fffde9 */
+  background-color: var(--bg-primary);
 }
 
 .form-control.editable:focus {
@@ -730,7 +723,7 @@ a.agreement-link {
 }
 
 .info-action-btn {
-  max-width: 16.6rem;
+  /* max-width: 16.6rem; */
 }
 
 /* 4. 비밀번호 변경 박스 */
@@ -820,7 +813,7 @@ a.agreement-link {
 }
 
 .receipt-consent-btn {
-  max-width: 22rem;
+  max-width: 23rem;
   flex-shrink: 0;
 }
 
@@ -845,11 +838,9 @@ a.agreement-link {
 
 .withdraw-link {
   font-family: var(--font-bold);
-  font-size: var(--text-base);
-  font-weight: 700;
-  color: #000000;
+  font-size: var(--text-lg);
   text-decoration: none;
-  border-bottom: 2px solid var(--primary); /* 빨간색 밑줄 */
+  border-bottom: 3px solid var(--primary); /* 빨간색 밑줄 */
   padding-bottom: 0.2rem;
   display: inline-block;
 }
@@ -1142,8 +1133,6 @@ a.agreement-link {
   width: 12rem;
   flex-shrink: 0;
   font-size: 1.8rem;
-  font-weight: 400;
-  color: var(--text-primary);
   line-height: 1.4;
 }
 
@@ -1154,7 +1143,6 @@ a.agreement-link {
 /* 인풋창들의 배경색 연노랑(#fffde9) 적용 */
 .payment-form-field .form-control {
   width: 100%;
-  max-width: 41.6rem;
   height: 5.2rem;
   padding: 0 1.6rem;
   border: 1px solid var(--border-color);
@@ -1178,11 +1166,9 @@ a.agreement-link {
 .payment-form-field.double-select {
   display: flex;
   gap: 0.8rem;
-  max-width: 41.6rem;
 }
 
 .payment-form-field.double-select .selectbox {
-  width: 20.4rem;
   height: 5.2rem;
 }
 
@@ -1211,7 +1197,6 @@ a.agreement-link {
 }
 
 .payment-popup-footer .btn-popup-cancel {
-  width: 30.8rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1222,7 +1207,6 @@ a.agreement-link {
 } */
 
 .payment-popup-footer .btn-popup-submit {
-  width: 30.8rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
