@@ -145,7 +145,9 @@
         });
         rows.forEach(row => {
           const cols = row.querySelectorAll(".timeline-col");
-          gsap.set(cols, { opacity: 0, y: 50 });
+          gsap.set(cols, { y: 50 });
+          const textCol = row.querySelector(".text-col");
+          if (textCol) gsap.set(textCol, { opacity: 0 });
         });
 
         // [수정 가이드] 모션 시작/종료 지점 뷰포트 비율 (종료 비율을 90%로 수정하여 스크롤을 끝까지 내렸을 때 물결선이 누락 없이 100% 다 그려지도록 동기화합니다.)
@@ -182,7 +184,9 @@
         // 3. [단독] 각 타임라인 행(카드 세트)별 개별 리빌 트리거 (화면에 30%가 나타났을 때 개별 격발)
         rows.forEach(row => {
           const cols = row.querySelectorAll(".timeline-col");
-          gsap.set(cols, { opacity: 0, y: 50 }); // 최초 상태
+          gsap.set(cols, { y: 50 }); // 최초 상태
+          const textCol = row.querySelector(".text-col");
+          if (textCol) gsap.set(textCol, { opacity: 0 });
 
           gsap.to(cols, {
             opacity: 1,

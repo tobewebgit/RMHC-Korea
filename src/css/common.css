@@ -1024,7 +1024,7 @@ a.header__submenu-link:focus-visible,
   align-items: center;
   justify-content: center;
   gap: 1.2rem; /* 그룹 간 격리 배치용 넓은 간격 (피그마 50px) */
-  margin-top: 6rem;
+  margin-top: 8rem;
 }
 
 .page-group-arrow,

@@ -221,6 +221,10 @@
   --transition-fast: all 0.15s ease;
   --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-arrow: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* transform */
+  --arrow-move: translateX(0.5rem);
 }
 
 html,
@@ -463,10 +467,10 @@ a:focus {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-a:hover {
+/* a:hover {
   color: var(--primary);
   text-decoration: none;
-}
+} */
 a:focus,
 button:focus {
   outline: 2px dotted #000;

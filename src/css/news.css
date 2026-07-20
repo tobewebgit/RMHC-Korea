@@ -123,6 +123,7 @@
 .notice-item .notice-new-badge {
   width: 4.2rem;
   height: 2.1rem;
+  margin-left: 0.8rem;
   display: block;
   flex-shrink: 0;
 }
@@ -139,6 +140,10 @@
   height: 1.6rem;
   display: block;
   flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.notice-item:hover .notice-arrow {
+  transform: translateX(0.5rem);
 }
 
 /* 4. 활동소식 목록 */
@@ -178,6 +183,10 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
+}
+.activity-card:hover .card-img-wrap img {
+  transform: scale(1.05);
 }
 
 .activity-card .card-badge {
@@ -198,16 +207,19 @@
 }
 
 .activity-card .card-text-wrap {
+  position: relative;
   flex: 1;
   padding: 6.0rem 4rem 0;
   background-color: #D0C9FF;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4);
+  gap: 1.6rem;
   box-sizing: border-box;
+  transition: padding 0.3s ease;
 }
 
 .activity-card .card-title {
+  min-height: 6.4rem;
   font-size: 2.4rem;
   line-height: 1.3;
   letter-spacing: -0.03em;
@@ -220,6 +232,26 @@
 .activity-card .card-date {
   font-size: 2.0rem;
   line-height: 1.5;
+}
+
+.activity-card .arrow {
+  position: absolute;
+  left: 4rem;
+  bottom: 4rem;
+  width: 2.2rem;
+  height: 1.6rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateX(-1rem);
+}
+
+.activity-card:hover .arrow {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.activity-card:hover .card-text-wrap {
+  padding: 4.0rem 4rem 0;
 }
 
 /* 5. 상세 페이지 공통 */
@@ -245,7 +277,7 @@
   justify-content: center;
   width: 4.2rem;
   height: 2.1rem;
-  margin-bottom: 1rem;
+  margin-left: 1.2rem;
   flex-shrink: 0;
 }
 
@@ -368,6 +400,11 @@
   font-size: var(--text-lg);
   line-height: 1.5;
   text-decoration: none;
+}
+.detail-navigation-bar .nav-btn.disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
 }
 
 .detail-navigation-bar .nav-btn img {
