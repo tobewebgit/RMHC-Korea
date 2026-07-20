@@ -978,16 +978,16 @@ a.header__submenu-link:focus-visible,
   border-collapse: collapse;
   border-top: 2px solid #000000;
   border-bottom: 1px solid #000000;
-  margin-bottom: 4rem;
+  margin-bottom: 3.2rem;
 }
 
-.detail-info-table + .detail-info-table {
-  margin-top: 2rem; /* 테이블 분할 여백 */
+.detail-info-table + .card-title-wrap {
+  margin-top: 8rem;
 }
 
 .detail-info-table th {
   width: 18%;
-  background-color: #f8f9fa;
+  background-color: rgba(208, 201, 255, 0.20);
   font-family: var(--font-extrabold);
   font-size: 2.2rem;
   font-weight: 800;

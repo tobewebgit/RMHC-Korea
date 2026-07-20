@@ -166,8 +166,7 @@
 }
 
 .btn-table.btn-outline.secondary {
-  border-color: var(--border-gray60);
-  color: var(--text-gray90);
+  color: #000000;
 }
 
 .btn-table.btn-outline.secondary:hover {
