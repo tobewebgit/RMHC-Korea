@@ -174,6 +174,12 @@
 .accordion-card.is-active .card-body {
   opacity: 1; /* 활성 상태일 때 노출 */
 }
+.accordion-card.is-active .card-body h3,
+.accordion-card.is-active .radio-label {
+  font-family: var(--font-pretendard);
+  font-weight: 600;
+  font-size: 2.2rem;
+}
 
 .accordion-card .card-subtitle {
   font-size: 2.2rem;
@@ -329,9 +335,9 @@
 
 /* 기부금 영수증 발급 안내 텍스트 */
 .receipt-helper-text {
-  font-size: 1.4rem;
   line-height: 1.6;
-  color: var(--text-muted);
+  color: var(--text-gray90);
+  font-size: var(--text-lg);
   margin-top: 1.6rem;
   word-break: keep-all;
 }
@@ -346,9 +352,7 @@
 }
 
 .resident-label {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 1.8rem;
+  font-size: var(--text-lg);
   margin-bottom: 1.6rem;
 }
 
@@ -370,7 +374,7 @@
 .resident-front-wrap .form-control,
 .resident-pw-wrap .form-control {
   width: 100%;
-  background-color: #ffffff; /* 인풋 배경색 화이트 지정 */
+  background-color: var(--bg-primary);
 }
 
 .resident-divider {
@@ -401,7 +405,6 @@
   list-style-type: disc;
   font-size: 1.4rem;
   line-height: 1.6;
-  color: var(--text-muted);
 }
 
 /* 인라인 스타일의 클래스화 규격화 */
@@ -420,7 +423,7 @@
 }
 
 .next-btn-wrap {
-  margin-top: 4rem;
+  margin-top: 5.2rem;
 }
 
 .next-btn-wrap .btn-primary {
@@ -428,19 +431,17 @@
 }
 
 .receipt-helper {
-  margin-bottom: 2.4rem;
+  margin: 1.6rem 0;
+  color: var(--text-gray90);
   line-height: 1.5;
 }
 
 .receipt-helper__primary {
-  font-size: 1.6rem;
-  font-weight: 500;
+
 }
 
 .receipt-helper__secondary {
-  font-size: 1.4rem;
-  margin-top: 0.4rem;
-  color: var(--text-muted);
+
 }
 
 .inner-form-group .receipt-helper-text {
@@ -1101,7 +1102,6 @@
   background-repeat: no-repeat;
   padding: 8rem;
   max-width: 90.5rem;
-  height: 61.4rem;
 }
 
 .vol-apply__title {
@@ -1156,6 +1156,10 @@
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.2rem;
+}
+.vol-apply__list li span {
+  display: inline-block;
+  margin-left: 8rem;
 }
 
 .vol-apply__cta {
@@ -1365,7 +1369,7 @@
 
 .vol-process__label {
   font-family: var(--font-extrabold);
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   line-height: 1.3;
   text-align: center;
 }
@@ -1549,7 +1553,6 @@
    ========================================================================== */
 
 /* ── 유틸리티 ─────────────────────────────────────────────── */
-
 .mt-2 {
   margin-top: 0.8rem;
 }
@@ -1567,7 +1570,6 @@
 }
 
 /* ── 팝업 헤더 (고정) ──────────────────────────────────────── */
-
 .vol-popup-header {
   position: relative;
   text-align: center;
@@ -1586,21 +1588,17 @@
   margin: 0;
 }
 
-
-
 /* ── 팝업 본문 (스크롤) ────────────────────────────────────── */
-
 .vol-popup-body {
   flex: 1;
   overflow-y: auto;
-  padding: 0 4rem 4rem;
+  padding: 0 6rem 8rem;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
 }
 
 /* ── 섹션 박스 ─────────────────────────────────────────────── */
-
 .vol-popup-section {
   display: flex;
   flex-direction: column;
@@ -1653,33 +1651,29 @@
 }
 
 /* ── 팝업 폼 요소 오버라이드 (비활성 필드 등) ────────────────────── */
-
 .vol-popup-body .form-control[readonly],
 .vol-popup-body .form-control:disabled {
-  background-color: var(--bg-secondary) !important;
+  background-color: rgba(208, 201, 255, 0.20) !important;
   border-color: var(--border-gray40) !important;
   color: var(--text-secondary) !important;
   cursor: not-allowed;
 }
 
 /* ── 폼 레이블 상단 정렬 (textarea 행) ────────────────────── */
-
 .form-label--top {
   align-items: flex-start;
   padding-top: 1.4rem;
 }
 
 /* ── textarea ───────────────────────────────────────────────── */
-
 .vol-textarea {
   height: 5.2rem;
   resize: vertical;
 }
 
 /* ── 개인정보 동의 박스 ─────────────────────────────────────── */
-
 .vol-privacy-box {
-  background-color: var(--bg-secondary);
+  background-color: rgba(208, 201, 255, 0.20);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   padding: 2rem 2.4rem;
@@ -1697,7 +1691,6 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
 }
 
 .vol-privacy-check {
@@ -1708,6 +1701,8 @@
 /* ── 신청 버튼 ──────────────────────────────────────────────── */
 
 .vol-popup-submit {
+  position: relative;
+  top: 2rem;
 }
 
 /* ── 날짜 인풋 + 캘린더 아이콘 래퍼 ───────────────────────── */
@@ -1888,15 +1883,16 @@
 .vol-cal-day.is-selected {
   background-color: var(--primary);
   color: #ffffff !important;
+  border-radius: 0.4rem;
   font-weight: 700;
 }
 
 .vol-cal-day.is-range-start {
-  border-radius: 0.8rem 0 0 0.8rem;
+  border-radius: 0.4rem 0 0 0.4rem;
 }
 
 .vol-cal-day.is-range-end {
-  border-radius: 0 0.8rem 0.8rem 0;
+  border-radius: 0 0.4rem 0.4rem 0;
 }
 
 /* ── 캘린더 CTA 바 ─────────────────────────────────────── */
@@ -1933,14 +1929,6 @@
   background-color: rgba(209, 33, 41, 0.05);
 }
 
-.vol-cal-btn-select {
-  width: 6rem;
-  height: 3.2rem;
-  font-size: 1.2rem;
-  border-radius: 0.4rem;
-  min-height: unset;
-}
-
 /* ── 반응형 (768px 이하) ────────────────────────────────────── */
 
 @media (max-width: 768px) {
@@ -1974,3 +1962,110 @@
   }
 }
 
+/* ==========================================================================
+   일시후원/정기후원 폼 (one-time.html)
+   ========================================================================== */
+
+#amountWarningText {
+  display: none;
+  color: var(--primary);
+  margin-top: -1.2rem;
+  text-align: left;
+}
+
+#step1NextWrap,
+#authInfoArea,
+#groupInfoArea,
+#step2CommonArea,
+#receiptDetailArea,
+#receiptResidentNumArea,
+#withdrawDayArea,
+#paymentDetailFormArea,
+#cardPaymentForm,
+#cmsPaymentForm {
+  display: none;
+}
+
+.color-primary {
+  color: var(--primary);
+}
+
+.withdraw-day-box .receipt-warning-list {
+  margin-top: 1.2rem;
+  margin-bottom: 2.4rem;
+  padding-left: 0;
+}
+
+.withdraw-day-box .receipt-warning-list li {
+  list-style: none;
+  font-size: 1.4rem;
+  color: var(--text-gray60);
+}
+
+.payment-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.payment-detail-header .form-subtitle {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: var(--font-pretendard);
+}
+
+.form-helper-note {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+}
+
+.form-helper-note.mt-2 {
+  margin-top: 0.8rem;
+}
+
+.form-helper-note.cms-helper {
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  margin-top: 0;
+}
+
+.signature-pad-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+#signatureCanvas {
+  width: 100%;
+  height: 12rem;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  cursor: crosshair;
+  display: block;
+}
+
+.signature-action-wrap {
+  text-align: right;
+  margin-top: 0.8rem;
+}
+
+#btnSignatureClear {
+  background: none;
+  border: none;
+  font-family: var(--font-pretendard);
+  font-size: 1.4rem;
+  color: var(--text-gray60);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cms-payment-spacer {
+  margin-top: 4rem;
+}
+
+.group-email-helper {
+  color: var(--text-gray60);
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+}

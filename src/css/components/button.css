@@ -33,6 +33,12 @@
   width: auto;
   margin-left: 0;
 }
+.btn.btn-small {
+  height: 3.2rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+}
 
 /* Disabled State */
 .btn:disabled,

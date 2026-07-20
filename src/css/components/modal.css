@@ -36,7 +36,7 @@
   background-color: #fffde9;
   position: relative;
   width: 100%;
-  max-width: 67.2rem;
+  max-width: 80rem;
   padding: 2.4rem;
 }
 .modal-container.mypage {
@@ -45,6 +45,10 @@
 
 .modal-overlay.active .modal-container {
   transform: translateY(0);
+}
+.modal-overlay.active .modal-container .donate-type-tabs .btn-tab {
+  width: 100%;
+  max-width: calc(50% - 0.6rem);
 }
 
 /* 3. 모달 공통 구조 요소 */

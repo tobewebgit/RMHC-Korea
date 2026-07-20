@@ -117,7 +117,7 @@
             </div>
 
             <div class="form-group form">
-              <label class="form-label form-label--top">*주소</label>
+              <label class="form-label">*주소</label>
               <div class="form-field">
                 <div class="form-control-with-btn">
                   <input type="text" id="vp_zip" name="vp_zip" class="form-control" placeholder="우편번호" readonly inputmode="numeric" />
@@ -150,7 +150,7 @@
             </div>
 
             <div class="form-group form">
-              <label for="vp_motivation" class="form-label form-label--top">*지원동기</label>
+              <label for="vp_motivation" class="form-label">*지원동기</label>
               <div class="form-field">
                 <textarea id="vp_motivation" name="vp_motivation" class="form-control vol-textarea" required></textarea>
               </div>
@@ -164,10 +164,7 @@
                   <input type="text" id="vp_date" name="vp_date" class="form-control" placeholder="희망 날짜" readonly />
                   <!-- 캘린더 아이콘: 클릭 시 .vol-calendar-layer에 .is-open 추가 (개발팀 JS 연동) -->
                   <button type="button" class="vol-calendar-trigger" aria-label="날짜 선택 달력 열기">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="2.5" y="3.5" width="15" height="15" rx="2" stroke="#555555" stroke-width="1.5"/>
-                      <path d="M6.5 2V5M13.5 2V5M2.5 8H17.5" stroke="#555555" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
+                    <img src="/src/images/common/icon_calendar.svg" alt="달력 아이콘" />
                   </button>
                   <!-- S: 캘린더 레이어 (피그마: 2531:49006 / 480x348 / bg:#fffde9 / r:8) -->
                   <!-- 개발팀 JS 연동: 캘린더 아이콘 클릭 시 is-open 클래스 토글 -->
@@ -203,22 +200,22 @@
                               <td class="is-prev-month" aria-disabled="true">28</td>
                               <td class="is-prev-month" aria-disabled="true">29</td>
                               <td class="is-prev-month" aria-disabled="true">30</td>
-                              <td><button type="button" class="vol-cal-day is-in-range">1</button></td>
-                              <td><button type="button" class="vol-cal-day is-saturday is-in-range">2</button></td>
+                              <td><button type="button" class="vol-cal-day">1</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">2</button></td>
                             </tr>
                             <tr>
-                              <td><button type="button" class="vol-cal-day is-sunday is-in-range">3</button></td>
-                              <td><button type="button" class="vol-cal-day is-in-range">4</button></td>
-                              <td><button type="button" class="vol-cal-day is-in-range">5</button></td>
-                              <td><button type="button" class="vol-cal-day is-in-range">6</button></td>
-                              <td><button type="button" class="vol-cal-day is-in-range">7</button></td>
-                              <td><button type="button" class="vol-cal-day is-in-range">8</button></td>
-                              <td><button type="button" class="vol-cal-day is-saturday is-in-range">9</button></td>
+                              <td><button type="button" class="vol-cal-day is-sunday">3</button></td>
+                              <td><button type="button" class="vol-cal-day">4</button></td>
+                              <td><button type="button" class="vol-cal-day">5</button></td>
+                              <td><button type="button" class="vol-cal-day">6</button></td>
+                              <td><button type="button" class="vol-cal-day is-selected">7</button></td>
+                              <td><button type="button" class="vol-cal-day">8</button></td>
+                              <td><button type="button" class="vol-cal-day is-saturday">9</button></td>
                             </tr>
                             <tr>
-                              <td><button type="button" class="vol-cal-day is-sunday is-in-range">10</button></td>
-                              <td><button type="button" class="vol-cal-day is-in-range">11</button></td>
-                              <td><button type="button" class="vol-cal-day is-selected is-range-end">12</button></td>
+                              <td><button type="button" class="vol-cal-day is-sunday">10</button></td>
+                              <td><button type="button" class="vol-cal-day">11</button></td>
+                              <td><button type="button" class="vol-cal-day">12</button></td>
                               <td><button type="button" class="vol-cal-day">13</button></td>
                               <td><button type="button" class="vol-cal-day">14</button></td>
                               <td><button type="button" class="vol-cal-day">15</button></td>
@@ -325,8 +322,8 @@
                     <!-- S: 캘린더 CTA 바 -->
                     <div class="vol-cal-cta">
                       <div class="vol-cal-cta-actions">
-                        <button type="button" class="vol-cal-btn-cancel">취소</button>
-                        <button type="button" class="vol-cal-btn-select btn btn-primary">선택</button>
+                        <button type="button" class="btn btn-outline btn-small primary">취소</button>
+                        <button type="button" class="btn btn-primary btn-small">선택</button>
                       </div>
                     </div>
                     <!-- E: 캘린더 CTA 바 -->
@@ -337,14 +334,14 @@
             </div>
 
             <div class="form-group form">
-              <label for="vp_contact" class="form-label form-label--top">경력사항</label>
+              <label for="vp_contact" class="form-label">경력사항</label>
               <div class="form-field">
                 <textarea id="vp_contact" name="vp_contact" class="form-control vol-textarea"></textarea>
               </div>
             </div>
 
             <div class="form-group form">
-              <label for="vp_lang" class="form-label form-label--top">어학능력<br />(해당자 기재)</label>
+              <label for="vp_lang" class="form-label">어학능력<br />(해당자 기재)</label>
               <div class="form-field">
                 <textarea id="vp_lang" name="vp_lang" class="form-control vol-textarea" placeholder="외 국어 및 수화 등"></textarea>
               </div>
@@ -369,12 +366,12 @@
             </div>
             <label class="custom-checkbox vol-privacy-check" for="vp_agree">
               <input type="checkbox" id="vp_agree" name="vp_agree" required />
-              <span>[필수] 개인정보 수집 및 이용에 동의합니다.</span>
+              <span><span class="color-primary">[필수]</span> 개인정보 수집 및 이용에 동의합니다.</span>
             </label>
           </div>
           <!-- E: 개인정보 수집 동의 -->
 
-          <button type="submit" form="vol-popup-form" class="btn btn-primary w-auto">자원봉사 신청하기</button>
+          <button type="submit" form="vol-popup-form" class="btn btn-primary w-auto vol-popup-submit">자원봉사 신청하기</button>
 
         </div>
         <!-- E: 개인 탭 패널 -->
@@ -418,7 +415,7 @@
             </div>
 
             <div class="form-group form">
-              <label class="form-label form-label--top">*주소</label>
+              <label class="form-label">*주소</label>
               <div class="form-field">
                 <div class="form-control-with-btn">
                   <input type="text" id="vg_zip" name="vg_zip" class="form-control" placeholder="우편번호" readonly inputmode="numeric" />
@@ -438,7 +435,7 @@
             <hr class="vol-popup-sep" />
 
             <div class="form-group form">
-              <label for="vg_motivation" class="form-label form-label--top">*지원동기</label>
+              <label for="vg_motivation" class="form-label">*지원동기</label>
               <div class="form-field">
                 <textarea id="vg_motivation" name="vg_motivation" class="form-control vol-textarea" required></textarea>
               </div>
@@ -452,10 +449,7 @@
                   <input type="text" id="vg_date" name="vg_date" class="form-control" placeholder="희망 날짜" readonly />
                   <!-- 캘린더 아이콘: 클릭 시 .vol-calendar-layer에 .is-open 추가 (개발팀 JS 연동) -->
                   <button type="button" class="vol-calendar-trigger" aria-label="날짜 선택 달력 열기">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="2.5" y="3.5" width="15" height="15" rx="2" stroke="#555555" stroke-width="1.5"/>
-                      <path d="M6.5 2V5M13.5 2V5M2.5 8H17.5" stroke="#555555" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
+                    <img src="/src/images/common/icon_calendar.svg" alt="달력 아이콘" />
                   </button>
                   <!-- S: 캘린더 레이어 (피그마: 2531:49006 / 480x348 / bg:#fffde9 / r:8) -->
                   <!-- 개발팀 JS 연동: 캘린더 아이콘 클릭 시 is-open 클래스 토글 -->
@@ -591,7 +585,7 @@
             </div>
 
             <div class="form-group form">
-              <label for="vg_note" class="form-label form-label--top">*기타사항</label>
+              <label for="vg_note" class="form-label">*기타사항</label>
               <div class="form-field">
                 <textarea id="vg_note" name="vg_note" class="form-control vol-textarea" required></textarea>
               </div>

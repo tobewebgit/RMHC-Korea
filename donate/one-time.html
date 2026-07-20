@@ -76,11 +76,9 @@
                       <span class="unit">원</span>
                     </div>
                   </div>
-                  <div class="direct-amount-warning" id="amountWarningText" style="display: none; color: var(--primary, #db0007); font-size: 1.4rem; margin-top: 1.2rem; font-weight: 500; text-align: left;">
+                  <div class="direct-amount-warning" id="amountWarningText">
                     ⓘ 최소 후원 금액은 10,000원 이상 입력해 주세요.
                   </div>
-
-
 
                   <!-- 헬퍼 옐로우 박스 -->
                   <div class="notice-yellow-box">
@@ -109,7 +107,7 @@
                   </div>
 
                   <!-- 1단계 전용 다음 버튼 영역 (너비 100% 형태) -->
-                  <div class="next-btn-wrap" id="step1NextWrap" style="display: none;">
+                  <div class="next-btn-wrap" id="step1NextWrap">
                     <button type="button" id="btnStep1Next" class="btn btn-primary">다음</button>
                   </div>
                 </div>
@@ -149,7 +147,7 @@
                   </div>
 
                   <!-- 본인인증 완료 시 노출되는 정보 입력 영역 (기본 숨김) -->
-                  <div id="authInfoArea" style="display: none;">
+                  <div id="authInfoArea">
                     
                     <hr class="sep-line" />
 
@@ -199,7 +197,7 @@
                   </div>
 
                   <!-- 기업/단체 정보 입력 영역 (기본 숨김) -->
-                  <div id="groupInfoArea" style="display: none;">
+                  <div id="groupInfoArea">
                     <hr class="sep-line" />
                     
                     <!-- 후원자 기본 정보 -->
@@ -244,7 +242,7 @@
                           <label for="groupEmail" class="form-label required">담당자 이메일</label>
                           <div class="form-field">
                             <input type="email" id="groupEmail" class="form-control" placeholder="" />
-                            <p class="receipt-helper-text" style="color: var(--text-gray60); margin-top: 0.8rem; font-size: 1.4rem;">기부금 영수증은 등록한 담당자 이메일로 발송됩니다.</p>
+                            <p class="receipt-helper-text group-email-helper">기부금 영수증은 등록한 담당자 이메일로 발송됩니다.</p>
                           </div>
                         </div>
                       </div>
@@ -252,12 +250,12 @@
                   </div>
 
                   <!-- 2단계 공통 정보 입력 영역 (기부금 영수증 및 약관동의, 기본 숨김) -->
-                  <div id="step2CommonArea" style="display: none;">
+                  <div id="step2CommonArea">
                     <hr class="sep-line" />
 
                     <!-- 기부금 영수증 신청 여부 (대분류 독립 노출) -->
                     <div class="form-group form receipt-toggle-group">
-                      <span class="form-label required font-bold">기부금 영수증</span>
+                      <span class="form-label radio-label required">기부금 영수증</span>
                       <div class="form-field">
                         <div class="form-control-row gap-4">
                           <label class="custom-radio">
@@ -273,10 +271,10 @@
                     </div>
 
                     <!-- 기부금 영수증 '예' 선택 시 노출 영역 (안내 가이드와 회색 박스를 품는 최외각 래퍼) -->
-                    <div id="receiptDetailArea" style="display: none;">
+                    <div id="receiptDetailArea">
                       
                       <!-- 개인용 주민등록번호 입력 영역 -->
-                      <div id="receiptResidentNumArea" style="display: none;">
+                      <div id="receiptResidentNumArea">
                         <!-- 기부금 영수증 발급 안내 텍스트 (회색 박스 외부 상단 배치) -->
                         <div class="receipt-helper">
                           <p class="receipt-helper__primary">
@@ -339,14 +337,14 @@
                           <div class="agreement-item">
                             <label class="custom-checkbox">
                               <input type="checkbox" name="agreeItem" class="required-agree" value="terms" />
-                              <span><span class="color-primary" style="color: var(--primary);">[필수]</span> 이용약관</span>
+                              <span><span class="color-primary">[필수]</span> 이용약관</span>
                             </label>
                             <a href="/policy/terms.html" target="_blank" class="agreement-link">자세히 보기</a>
                           </div>
                           <div class="agreement-item">
                             <label class="custom-checkbox">
                               <input type="checkbox" name="agreeItem" class="required-agree" value="privacy" />
-                              <span><span class="color-primary" style="color: var(--primary);">[필수]</span> 개인정보 수집 및 이용</span>
+                              <span><span class="color-primary">[필수]</span> 개인정보 수집 및 이용</span>
                             </label>
                             <a href="/policy/privacy.html" target="_blank" class="agreement-link">자세히 보기</a>
                           </div>
@@ -405,10 +403,10 @@
                   </div>
 
                   <!-- 출금일 선택 영역 (정기 후원 시 노출) -->
-                  <div id="withdrawDayArea" class="withdraw-day-box" style="display: none;">
+                  <div id="withdrawDayArea" class="withdraw-day-box">
                     <hr class="sep-line" />
                     <div class="form-group form">
-                      <label class="form-label required font-bold">출금일 선택</label>
+                      <label class="form-label required form-label">출금일 선택</label>
                       <div class="form-field">
                         <div class="custom-select selectbox" id="withdrawDaySelect" role="combobox" aria-label="출금일 선택" aria-expanded="false" tabindex="0">
                           <span class="custom-select-label" id="withdrawDaySelectLabel">출금일 선택</span>
@@ -422,17 +420,17 @@
                         </div>
                       </div>
                     </div>
-                    <ul class="receipt-warning-list" style="margin-top: 1.2rem; margin-bottom: 2.4rem; padding-left: 0;">
-                      <li style="list-style: none; font-size: 1.4rem; color: var(--text-gray60);">• 매월 선택한 날짜에 자동으로 결제가 진행됩니다.</li>
-                      <li style="list-style: none; font-size: 1.4rem; color: var(--text-gray60);">• 정기후원은 마이페이지에서 언제든지 변경 및 해지하실 수 있습니다.</li>
+                    <ul class="receipt-warning-list">
+                      <li>• 매월 선택한 날짜에 자동으로 결제가 진행됩니다.</li>
+                      <li>• 정기후원은 마이페이지에서 언제든지 변경 및 해지하실 수 있습니다.</li>
                     </ul>
                   </div>
 
                   <!-- 결제 정보 세부 입력 영역 (신용카드, CMS 자동이체 선택 시 노출) -->
-                  <div id="paymentDetailFormArea" style="display: none;">
+                  <div id="paymentDetailFormArea">
                     <hr class="sep-line" />
-                    <div class="payment-detail-header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
-                      <h3 class="form-subtitle" style="margin: 0; font-size: 1.8rem; font-weight: bold; font-family: var(--font-pretendard);">결제정보를 입력해주세요.</h3>
+                    <div class="payment-detail-header">
+                      <h3 class="form-subtitle">결제정보를 입력해주세요.</h3>
                       <label class="custom-checkbox" id="sameAsDonorCheckboxLabel">
                         <input type="checkbox" id="sameAsDonor" />
                         <span class="font-bold">후원자와 동일</span>
@@ -440,7 +438,7 @@
                     </div>
 
                     <!-- 신용카드 정보 입력 폼 -->
-                    <div id="cardPaymentForm" class="payment-info-form-box" style="display: none;">
+                    <div id="cardPaymentForm" class="payment-info-form-box">
                       <!-- 카드사명 -->
                       <div class="payment-form-row">
                         <label class="payment-form-label">*카드사명</label>
@@ -525,13 +523,13 @@
                         <label for="pm_owner_birth" class="payment-form-label">*카드소유자<br>생년월일</label>
                         <div class="payment-form-field">
                           <input type="text" id="pm_owner_birth" class="form-control" placeholder="예)19880101 (숫자만 입력)" maxlength="8" />
-                          <p class="form-helper-note mt-2" style="font-size: 1.4rem; color: var(--text-muted); margin-top: 0.8rem;">카드 소유자 확인을 위해 사용됩니다.</p>
+                          <p class="form-helper-note mt-2">카드 소유자 확인을 위해 사용됩니다.</p>
                         </div>
                       </div>
                     </div>
 
                     <!-- CMS 자동이체 정보 입력 폼 -->
-                    <div id="cmsPaymentForm" class="payment-info-form-box" style="display: none;">
+                    <div id="cmsPaymentForm" class="payment-info-form-box">
                       <!-- 은행명 -->
                       <div class="payment-form-row">
                         <label class="payment-form-label">*은행명</label>
@@ -579,16 +577,16 @@
                       <div class="payment-form-row align-start">
                         <label class="payment-form-label">*출금동의 서명</label>
                         <div class="payment-form-field">
-                          <p class="form-helper-note" style="font-size: 1.4rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.2rem; margin-top: 0;">
+                          <p class="form-helper-note cms-helper">
                             자동이체를 위해 출금 동의가 필요합니다.<br>
                             아래 서명을 진행해 주세요.<br>
                             마우스를 올린 후 클릭한 상태에서 서명해 주세요.
                           </p>
                           <!-- 서명 패드 캔버스 보드 (H: 12rem) -->
-                          <div class="signature-pad-wrapper" style="position: relative; width: 100%;">
-                            <canvas id="signatureCanvas" style="width: 100%; height: 12rem; background-color: #ffffff; border: 1px solid var(--border-gray60); border-radius: var(--radius-sm); box-sizing: border-box; cursor: crosshair; display: block;"></canvas>
-                            <div style="text-align: right; margin-top: 0.8rem;">
-                              <button type="button" id="btnSignatureClear" style="background: none; border: none; font-family: var(--font-pretendard); font-size: 1.4rem; color: var(--text-gray60); text-decoration: underline; cursor: pointer;">다시 서명하기</button>
+                          <div class="signature-pad-wrapper">
+                            <canvas id="signatureCanvas"></canvas>
+                            <div class="signature-action-wrap">
+                              <button type="button" id="btnSignatureClear">다시 서명하기</button>
                             </div>
                           </div>
                         </div>
@@ -596,7 +594,7 @@
                     </div>
                     
                     <!-- CMS 정기 결제용 여백 보완용 구분선 -->
-                    <div style="margin-top: 4rem;"></div>
+                    <div class="cms-payment-spacer"></div>
                   </div>
 
                   <!-- 이전 / 후원하기 최종 액션 버튼 (좌우 50% 분할 칩 그리드 구성) -->
