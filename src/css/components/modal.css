@@ -175,10 +175,6 @@
   width: 73rem;
 }
 
-.newsletter-modal-container.step-1-active {
-  min-height: 54.5rem;
-}
-
 .newsletter-modal-container.step-2-active {
   min-height: 53.8rem;
 }
@@ -188,7 +184,7 @@
   flex-direction: column;
   gap: 1.6rem;
   height: 100%;
-  padding: 1.6rem;
+  padding: 1.6rem 4rem 0;
   flex: 1;
 }
 
@@ -269,7 +265,7 @@
 .newsletter-modal__footer {
   display: flex;
   justify-content: center;
-  padding-top: 4rem;
+  padding: 4rem 0;
 }
 
 .newsletter-modal__cta-btn {
@@ -345,7 +341,7 @@
   position: relative;
   width: 100%;
   max-width: 40rem;
-  min-height: 21.8rem;
+  min-height: 20rem;
 }
 .common-alert-container.w-640 {
   max-width: 64rem;
@@ -374,7 +370,7 @@
   flex-direction: column;
   gap: 1.6rem;
   height: 100%;
-  padding: 0 1.6rem;
+  padding: 0 4rem;
 }
 .common-alert__content strong {
   font-weight: 600;

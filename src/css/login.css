@@ -1243,6 +1243,7 @@ a.agreement-link {
 .signature-pad-canvas-box {
   transition: var(--transition-fast);
   user-select: none;
+  background-color: rgba(208, 201, 255, 0.20);
 }
 
 .signature-pad-canvas-box:hover {

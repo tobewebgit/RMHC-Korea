@@ -110,14 +110,17 @@
   --bg-secondary: #faf8f5;
   --bg-tertiary: #f3f0ea;
   --bg-white: #ffffff;
+  --bg-violet: #d0c9ff;
   --bg-kv: #d0c9ff;
   --bg-gray90: #3d3d3d;
   --bg-gray80: #555555;
   --bg-gray60: #8f8f8f;
   --bg-gray40: #bbbbbb;
   --bg-gray30: #dddddd;
+  --bg-hover: #FFF0BD;
 
   /* Text Color Tokens (Contrast Ratio Compliant) */
+  --text-black: #000000;
   --text-white: #ffffff;
   --text-primary: #1f2937;
   --text-secondary: #4b5563;

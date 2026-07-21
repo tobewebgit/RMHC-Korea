@@ -23,6 +23,7 @@
   cursor: pointer;
   outline: 2px solid transparent;
   user-select: none;
+  white-space: nowrap;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .btn.w-auto {
@@ -59,6 +60,14 @@
 .btn-primary:hover, a.btn-primary:hover {
   color: #fffde9;
   background-color: var(--primary);
+}
+.btn-primary.btn-page:hover, a.btn-primary.btn-page:hover {
+  color: var(--text-black);
+  background-color: var(--bg-violet);
+}
+.btn-primary.btn-page1:hover, a.btn-primary.btn-page1:hover {
+  color: var(--text-black);
+  background-color: var(--bg-primary);
 }
 
 /* RMHC Yellow Button (Contrast: Dark Charcoal on Gold = 7.8:1, PASSES AA) */
@@ -204,7 +213,10 @@
   display: inline-block;
   width: 1.2rem;
   height: 1.2rem;
-  background: url("/src/images/common/icon_btn_plus.png") no-repeat center/contain;
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_btn_plus.png") no-repeat center;
+  mask: url("/src/images/common/icon_btn_plus.png") no-repeat center;
+  background-size: contain;
   transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -252,7 +264,9 @@
   background-size: contain;
   transition: all 0.2s ease;
 }
-
+.btn-heart:hover {
+  background-color: var(--bg-violet);
+}
 .btn-heart:hover::after,
 .btn-heart:focus-visible::after {
   content: "";

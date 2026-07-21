@@ -223,9 +223,8 @@
 
 .story-card p {
   margin: 2.4rem 0 0;
-  font-size: 1.7rem;
-  font-weight: 600;
-  line-height: 1.7;
+  font-size: 2rem;
+  line-height: 1.5;
 }
 .story-slider__btn {
   position: absolute;
@@ -404,13 +403,6 @@
   font-size: 2.4rem;
 }
 
-.impact-note {
-  margin: 4rem auto 0;
-  font-size: 1.8rem;
-  color: var(--text-gray80);
-  text-align: center;
-}
-
 /* Gallery */
 .house-gallery {
   padding-top: 4rem;
@@ -434,13 +426,12 @@
 .gallery-tabs button {
   position: relative;
   min-height: 4.8rem;
-  padding: 1.6rem 3.2rem;
+  padding: 1.6rem 2.4rem;
   border: 0;
   background: transparent;
   font-family: var(--font-extrabold);
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   line-height: 1;
-  color: var(--text-primary);
   cursor: pointer;
 }
 
@@ -641,7 +632,7 @@
 .location-info {
   display: flex;
   justify-content: center;
-  gap: 5.6rem;
+  gap: 0.8rem;
   width: min(100% - 8rem, 120rem);
   margin: 6rem auto 0;
   padding: 0;
@@ -652,6 +643,9 @@
 .location-info li {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 39.3rem;
 }
 .location-info li::before {
   content: "";
@@ -762,19 +756,19 @@
 }
 
 .support-card--yellow {
-  background: url(/src/images/houses/bg_house-support_1.png) 50% 50% no-repeat;
+  background: url(/src/images/houses/bg_house-support_1.svg) 50% 50% no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .support-card--sky {
-  background: url(/src/images/houses/bg_house-support_2.png) 50% 50% no-repeat;
+  background: url(/src/images/houses/bg_house-support_2.svg) 50% 50% no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .support-card--green {
-  background: url(/src/images/houses/bg_house-support_3.png) 50% 50% no-repeat;
+  background: url(/src/images/houses/bg_house-support_3.svg) 50% 50% no-repeat;
   background-size: cover;
   background-position: center;
 }

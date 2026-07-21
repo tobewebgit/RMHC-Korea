@@ -541,10 +541,10 @@ document.addEventListener('DOMContentLoaded', () => {
           paymentDetailFormArea.style.display = showDetailForm ? 'block' : 'none';
         }
         if (cardPaymentForm) {
-          cardPaymentForm.style.display = (selectedPayment === 'card') ? 'block' : 'none';
+          cardPaymentForm.style.display = (selectedPayment === 'card') ? 'flex' : 'none';
         }
         if (cmsPaymentForm) {
-          cmsPaymentForm.style.display = (selectedPayment === 'cms') ? 'block' : 'none';
+          cmsPaymentForm.style.display = (selectedPayment === 'cms') ? 'flex' : 'none';
         }
       }
 
