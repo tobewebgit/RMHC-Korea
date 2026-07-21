@@ -85,7 +85,6 @@
 
 /* Outline Button */
 .btn-outline {
-  color: var(--text-gray90);
   text-align: center;
   border: 1px solid var(--border-gray40);
   line-height: 1;

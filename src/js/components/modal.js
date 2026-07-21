@@ -10,6 +10,8 @@ export function openModal(target) {
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
   }
+
+  console.log('test', target);
 }
 
 // 모달 닫기 공통 함수

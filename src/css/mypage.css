@@ -732,11 +732,6 @@
   font-weight: 600;
 }
 
-/* 모달 팝업 */
-.modal-container--payment {
-  max-width: 67.2rem; /* 결제 팝업 피그마 폭 672px */
-}
-
 /* 기부금 영수증 인증 & 본인인증 전용 */
 .auth-panel {
   text-align: center;
