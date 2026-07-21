@@ -380,11 +380,6 @@
   gap: 0.8rem;
 }
 
-.payment-tab-btn.active {
-  color: var(--primary) !important;
-  background-color: var(--bg-primary) !important;
-}
-
 .payment-tab-btn .payment-tab-icon {
   width: 2rem !important;
   height: 2rem !important;

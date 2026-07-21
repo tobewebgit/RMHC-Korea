@@ -28,8 +28,18 @@ export function initTabs() {
           siblingButtons = this.parentElement.querySelectorAll('[data-tab-target]');
         }
       }
-      siblingButtons.forEach(btn => btn.classList.remove('active'));
+      siblingButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.classList.contains('btn-primary')) {
+          btn.classList.remove('btn-primary');
+          btn.classList.add('btn-outline');
+        }
+      });
       this.classList.add('active');
+      if (this.classList.contains('btn-outline')) {
+        this.classList.remove('btn-outline');
+        this.classList.add('btn-primary');
+      }
       
       // 2. 정확한 탭 계층에 맞춰 콘텐츠 영역 display 제어 (클래스 매칭 검증)
       const contentClasses = ['tab-content', 'sub-tab-content', 'payment-tab-content', 'faq-tab-content'];
