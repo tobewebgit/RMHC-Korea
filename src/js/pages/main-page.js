@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // 우측 visual: 우 → 좌 페이드인 (content와 오버랩)
+    // 우측 visual: 우 → 좌 페이드인 (좌측과 동시 시작)
     tl.to(visual, {
         x: '0%',
         opacity: 1,
         duration: 1.65,
         ease: 'power3.out',
-      }, content ? '-=0.9' : 0)
+      }, 0)
       .to(visual, {
         '--kv-heart-mask-size': '100%',
         duration: 1.35,

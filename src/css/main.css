@@ -80,6 +80,7 @@
   position: relative;
   z-index: 2;
   width: 78rem;
+  opacity: 0;
   transform: translateY(-12rem);
 }
 
@@ -214,7 +215,7 @@
 }
 
 .main-house__copy {
-  margin-bottom: 10rem;
+  margin-bottom: 15rem;
 }
 
 .main-house__title {
@@ -274,11 +275,26 @@
   margin: 0 auto;
 }
 
-.main-house__photo > img {
-  display: block;
+.main-house__photo img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: auto;
   border-radius: 1.4rem;
+  opacity: 1 !important;
+}
+
+/* 동기화 전용 이미지 모션 초기 설정 */
+.main-house__sync-img {
+  opacity: 0 !important;
+  transform: translateY(0) scale(0.67);
+  transform-origin: top center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-house__sync-img {
+    transform: none;
+  }
 }
 
 .main-house__label {
@@ -289,14 +305,7 @@
   height: 29.6rem;
   opacity: 0;
   transform: translate(3rem, 2rem) scale(0.9);
-  transition:
-    opacity 0.8s ease 0.35s,
-    transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s;
-}
-
-.cascade-trigger.is-visible .main-house__label {
-  opacity: 1;
-  transform: translate(0, 0) scale(1);
+  z-index: 10;
 }
 
 .main-house__label img {
@@ -316,6 +325,7 @@
   line-height: 1.22;
   transform: rotate(13deg);
   word-break: keep-all;
+  z-index: 10;
 }
 
 .main-house__sub {
@@ -822,7 +832,17 @@
   width: 1rem;
   height: 1rem;
   border-radius: 0.5rem;
-  background-color: #e60012;
+  background-color: var(--primary);
+  animation: partner-bullet-progress 4s linear forwards;
+}
+
+@keyframes partner-bullet-progress {
+  0% {
+    width: 1rem;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 /* Section 8 */
@@ -1437,22 +1457,23 @@
 /* 팝업 푸터 */
 .main-popup__footer {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   gap: 1.6rem;
-  padding: 4rem 2.4rem;
+  padding: 2.4rem;
   background-color: #ffffff; /* 기존 베이지색 대신 흰색 */
 }
 
 /* CTA 버튼 */
 .main-popup__cta {
-  width: 28rem;
+  width: 16rem;
   min-height: 5.2rem;
   font-size: 1.8rem;
 }
 
 /* 오늘 하루 그만 보기 */
 .main-popup__today-close {
+  min-height: 5.2rem;
   font-size: 1.8rem;
 }
 

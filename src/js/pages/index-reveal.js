@@ -13,6 +13,37 @@ export function initIndexReveal() {
     threshold: 0.15
   };
 
+  const syncImage = document.querySelector('.main-house__sync-img');
+  const syncLabel = document.querySelector('.main-house__label');
+  let syncTimeline = null;
+
+  if (syncImage && typeof gsap !== 'undefined') {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion) {
+      syncTimeline = gsap.timeline({ paused: true });
+      
+      // 1. 이미지 스케일 업
+      syncTimeline.to(syncImage, {
+        opacity: 1,
+        scale: 1,
+        duration: 1.5,
+        ease: 'power2.out'
+      });
+      
+      // 2. 이미지가 커진 후 라벨 노출
+      if (syncLabel) {
+        syncTimeline.to(syncLabel, {
+          opacity: 1,
+          x: 0,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: 'back.out(1.5)'
+        }, "-=0.5"); // 이미지 애니메이션 끝나기 0.5초 전에 서서히 나타나기 시작
+      }
+    }
+  }
+
   const cascadeObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -163,6 +194,14 @@ export function initIndexReveal() {
         }
       });
     });
+
+    if (syncTimeline) {
+      if (progress >= 0.99) {
+        syncTimeline.play();
+      } else {
+        syncTimeline.reverse();
+      }
+    }
   };
 
   const tick = () => {

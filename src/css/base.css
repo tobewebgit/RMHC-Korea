@@ -899,11 +899,16 @@ table caption {
    ========================================================================== */
 [data-motion="fade-up"] {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(50px);
+}
+[data-motion="fade-down"] {
+  opacity: 0;
+  transform: translateY(-50px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-motion="fade-up"] {
+  [data-motion="fade-up"],
+  [data-motion="fade-down"] {
     opacity: 1;
     transform: none;
   }

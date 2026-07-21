@@ -13,15 +13,15 @@ export const initScrollMotions = () => {
     return;
   }
 
-  // 2. data-motion 속성을 가진 모든 요소 탐색
-  const motionElements = document.querySelectorAll('[data-motion]');
+  // 2. data-motion 속성을 가진 모든 요소 탐색 (예외 클래스 js-sync-reveal 제외)
+  const motionElements = document.querySelectorAll('[data-motion]:not(.js-sync-reveal)');
   if (motionElements.length === 0) return;
 
   motionElements.forEach((el) => {
     const motionType = el.dataset.motion; // 'fade-up' 등 확장 대비
     const duration = parseFloat(el.dataset.motionDuration) || 0.8;
     const delay = parseFloat(el.dataset.motionDelay) || 0;
-    const offset = parseFloat(el.dataset.motionOffset) || 40;
+    const offset = parseFloat(el.dataset.motionOffset) || 50;
     const once = el.dataset.motionOnce === 'true'; // 기본값 false (화면 이탈 시 반복 동작)
     const initialScale = el.dataset.motionScale ? parseFloat(el.dataset.motionScale) : null;
 
@@ -36,6 +36,12 @@ export const initScrollMotions = () => {
       gsap.set(el, {
         opacity: 0,
         y: offset,
+        ...(initialScale !== null && { scale: initialScale }),
+      });
+    } else if (motionType === 'fade-down') {
+      gsap.set(el, {
+        opacity: 0,
+        y: -offset,
         ...(initialScale !== null && { scale: initialScale }),
       });
     }
@@ -79,6 +85,12 @@ export const initScrollMotions = () => {
                   gsap.set(el, {
                     opacity: 0,
                     y: offset,
+                    ...(initialScale !== null && { scale: initialScale }),
+                  });
+                } else if (motionType === 'fade-down') {
+                  gsap.set(el, {
+                    opacity: 0,
+                    y: -offset,
                     ...(initialScale !== null && { scale: initialScale }),
                   });
                 }

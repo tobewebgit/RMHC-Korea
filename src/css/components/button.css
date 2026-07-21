@@ -55,18 +55,11 @@
 }
 
 /* RMHC Red Button (Contrast: white on red = 5.34:1, PASSES AA) */
-.btn-primary, a.btn-primary {
-  background-color: var(--primary);
-  color: #fffde9;
-}
-.btn:hover, a.btn:hover {
-  color: var(--text-black);
-  background-color: #D0C9FF;
-}
-/* .btn-primary:hover, a.btn-primary:hover {
+.btn-primary, a.btn-primary,
+.btn-primary:hover, a.btn-primary:hover {
   color: #fffde9;
   background-color: var(--primary);
-} */
+}
 
 /* RMHC Yellow Button (Contrast: Dark Charcoal on Gold = 7.8:1, PASSES AA) */
 .btn-secondary {
@@ -89,6 +82,7 @@
   border: 1px solid var(--border-gray40);
   line-height: 1;
   background-color: transparent;
+  transition: border 0.3s ease, color 0.3s ease, background-color 0.3s ease;
 }
 .btn-outline:hover {
   border-color: var(--primary);
@@ -97,6 +91,10 @@
 .btn-outline.primary {
   color: var(--primary);
   border-color: var(--primary);
+}
+.btn-outline.primary:hover {
+  color: var(--secondary);
+  background-color: var(--primary);
 }
 .btn-outline span + span {
   display: inline-block;
@@ -160,18 +158,21 @@
   border-color: var(--primary);
   color: var(--primary);
 }
-
-.btn-table.btn-outline.primary:hover {
-  background-color: rgba(224, 0, 0, 0.05);
+.btn-table:hover {
+  border-color: var(--primary);
 }
+
+/* .btn-table.btn-outline.primary:hover {
+  background-color: rgba(224, 0, 0, 0.05);
+} */
 
 .btn-table.btn-outline.secondary {
   color: #000000;
 }
 
-.btn-table.btn-outline.secondary:hover {
+/* .btn-table.btn-outline.secondary:hover {
   background-color: rgba(0, 0, 0, 0.05);
-}
+} */
 
 /* 화살표 아이콘이 포함된 버튼 (피그마 수치 12x8px, 간격 4px 적용) */
 .btn.btn-arrow {
