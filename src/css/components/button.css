@@ -63,6 +63,10 @@
   color: var(--text-black);
   background-color: #D0C9FF;
 }
+/* .btn-primary:hover, a.btn-primary:hover {
+  color: #fffde9;
+  background-color: var(--primary);
+} */
 
 /* RMHC Yellow Button (Contrast: Dark Charcoal on Gold = 7.8:1, PASSES AA) */
 .btn-secondary {
@@ -87,13 +91,10 @@
   line-height: 1;
   background-color: transparent;
 }
-/* .btn-outline:hover {
-  background-color: var(--primary);
-  color: #ffffff;
-  transform: translateY(-0.2rem);
-  box-shadow: 0 6px 16px var(--primary-glow);
+.btn-outline:hover {
+  border-color: var(--primary);
 }
-*/
+
 .btn-outline.primary {
   color: var(--primary);
   border-color: var(--primary);

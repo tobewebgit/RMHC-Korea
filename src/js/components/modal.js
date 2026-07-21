@@ -44,7 +44,7 @@ export function initModal() {
 
   // 2. 전역 모달 닫기 핸들러 (취소, 닫기 및 공통 원형 닫기 단추 매핑)
   document.addEventListener('click', (e) => {
-    const closeTrigger = e.target.closest('.modal-close-btn, .modal-close, .btn-popup-cancel, .modal-close-btn-circle, [data-modal-close]');
+    const closeTrigger = e.target.closest('.modal-close, .btn-popup-cancel, .modal-close-btn-circle, [data-modal-close]');
     if (closeTrigger) {
       e.preventDefault();
       const modal = closeTrigger.closest('.modal-overlay');

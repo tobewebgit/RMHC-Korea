@@ -937,13 +937,10 @@ a.agreement-link {
 
 .withdraw-agree-wrap .custom-checkbox {
   font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--text-primary);
 }
 
 .withdraw-agree-wrap .required-badge {
-  color: #db0007; /* 빨간색 필수 표시 */
-  font-weight: 700;
+  color: #db0007;
   margin-right: 0.4rem;
 }
 
@@ -963,8 +960,8 @@ a.agreement-link {
   font-size: 2.2rem;
   color: var(--text-black);
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: var(--spacing-2);
-  margin-bottom: var(--spacing-6);
+  padding-bottom: 3.2rem;
+  margin-bottom: 3.2rem;
 }
 
 .withdraw-form-grid {
