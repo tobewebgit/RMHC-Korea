@@ -129,7 +129,7 @@
 /* Tab Buttons (e.g. for donate, member type selectors) */
 .btn-tab {
   display: flex;
-  width: 34.6rem;
+  max-width: 33rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;

@@ -111,11 +111,60 @@
 
 /* 3. 후원 구분 탭 버튼 (정기/일시) */
 .donate-type-tabs {
-  display: flex;
-  gap: 1.2rem;
+  position: relative;
+  display: inline-flex;
+  gap: 0;
+  width: 100%;
   margin-bottom: 2rem;
+  padding: 1.6rem;
+  border-radius: 1.6rem;
+  background-color: rgba(0, 0, 0, 0.06);
 }
 
+.donate-tab-indicator {
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
+  width: 33rem;
+  height: 5.2rem;
+  background-color: var(--primary);
+  border-radius: 0.8rem;
+  z-index: 0;
+  
+  /* 애니메이션 및 트랜지션 (레퍼런스와 동일) */
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+/* 두 번째 탭 활성화 시 (is-one-time 은 후원용, is-second-active 는 범용) */
+.donate-type-tabs.is-one-time .donate-tab-indicator,
+.donate-type-tabs.is-second-active .donate-tab-indicator {
+  transform: translateX(100%);
+}
+
+.donate-type-tabs .btn-tab {
+  position: relative;
+  width: 33rem;
+  z-index: 1;
+  background-color: transparent;
+  color: var(--text-black);
+  font-weight: 600;
+  opacity: 1;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  outline: none;
+}
+
+/* 활성화된 탭에 배경색을 주어 슬라이더와 섞이게 하는 착시 효과 */
+.donate-type-tabs .btn-tab:not(.disabled) {
+  color: var(--text-white);
+  font-weight: 400;
+  background-color: var(--primary);
+}
+
+.donate-type-tabs .btn-tab.disabled {
+  background-color: transparent;
+  opacity: 1;
+}
 
 /* 4. 아코디언 카드 디자인 (gala_apply.html의 .common-card 사양 100% 동기화) */
 .accordion-card {
@@ -1545,7 +1594,7 @@
 .vol-popup-body {
   flex: 1;
   overflow-y: auto;
-  padding: 0 6rem 8rem;
+  padding: 1.6rem 6rem 8rem;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -1556,7 +1605,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 6rem 4rem;
+  padding: 4rem;
   border-radius: 1.6rem;
   background: var(--bg-primary);
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.08);
@@ -1564,18 +1613,21 @@
 }
 
 .vol-popup-sep {
-  width: 100%;
   border: 0;
-  border-top: 1px solid var(--border-gray40);
-  margin: 3.2rem 0;
+  border-top: 1px solid var(--border-gray30);
+  margin: 3.2rem -4rem;
 }
 .vol-popup-section--house .vol-popup-sep {
-  border-top: 1px solid var(--border-black);
+  border-top: 1px solid var(--border-gray80);
 }
 
 .vol-popup-section--house {
   background-color: var(--bg-kv);
   border-color: transparent;
+}
+
+.vol-popup-body .donate-type-tabs {
+  margin-bottom: 0;
 }
 
 .vol-popup-section__title {

@@ -386,8 +386,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- 2단계 & 3단계 & 탭 통합 상태 기반 렌더링 파이프라인 (Single Source of Truth) ---
-
   // 전체 기부 플로우 상태 기반 통합 렌더링 함수
   function updateDonateFlowUI() {
     try {
@@ -395,6 +393,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const step3Body = step3Card.querySelector('.card-body');
       
       // 1. 최상위 정기/일시 탭 버튼 비주얼 클래스 동기화
+      const donateTypeTabsWrapper = document.querySelector('.donate-type-tabs');
+      if (donateTypeTabsWrapper) {
+        if (activeDonateTab === '일시') {
+          donateTypeTabsWrapper.classList.add('is-one-time');
+          donateTypeTabsWrapper.classList.remove('is-regular');
+        } else {
+          donateTypeTabsWrapper.classList.add('is-regular');
+          donateTypeTabsWrapper.classList.remove('is-one-time');
+        }
+      }
+
       donateTypeTabs.forEach(tab => {
         const isReg = tab.textContent.trim().includes('정기');
         if (activeDonateTab === '정기') {
@@ -643,6 +652,12 @@ document.addEventListener('DOMContentLoaded', () => {
     tab.addEventListener('click', () => {
       const isReg = tab.textContent.trim().includes('정기');
       activeDonateTab = isReg ? '정기' : '일시';
+
+      // 최초 로드 시 설정된 애니메이션 방지 클래스 제거
+      const donateTypeTabsWrapper = document.querySelector('.donate-type-tabs');
+      if (donateTypeTabsWrapper && donateTypeTabsWrapper.classList.contains('initial-one-time')) {
+        donateTypeTabsWrapper.classList.remove('initial-one-time');
+      }
 
       // 탭 전환 시 전체 상태 및 폼 필드 초기화 (지정 1번 요구사항 완벽 해결)
       resetAllSteps();

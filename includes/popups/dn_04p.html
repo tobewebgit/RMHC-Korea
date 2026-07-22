@@ -41,6 +41,7 @@
 
       <!-- S: 개인/기업·단체 탭 -->
       <div class="donate-type-tabs" role="tablist" aria-label="봉사 신청 유형 선택">
+        <div class="donate-tab-indicator"></div>
         <button
           type="button"
           class="btn-tab"
@@ -161,7 +162,7 @@
               <div class="form-field">
                 <!-- 캘린더 레이어 래퍼: 개발팀에서 .is-open 클래스 토글로 표시/숨김 제어 -->
                 <div class="vol-date-wrap">
-                  <input type="text" id="vp_date" name="vp_date" class="form-control" placeholder="희망 날짜" readonly />
+                  <input type="text" id="vp_date" name="vp_date" class="form-control" placeholder="희망 날짜" />
                   <!-- 캘린더 아이콘: 클릭 시 .vol-calendar-layer에 .is-open 추가 (개발팀 JS 연동) -->
                   <button type="button" class="vol-calendar-trigger" aria-label="날짜 선택 달력 열기">
                     <img src="/src/images/common/icon_calendar.svg" alt="달력 아이콘" />
@@ -371,7 +372,7 @@
           </div>
           <!-- E: 개인정보 수집 동의 -->
 
-          <button type="submit" form="vol-popup-form" class="btn btn-primary w-auto vol-popup-submit">자원봉사 신청하기</button>
+          <button type="submit" form="vol-popup-form" class="btn btn-primary btn-page w-auto vol-popup-submit">자원봉사 신청하기</button>
 
         </div>
         <!-- E: 개인 탭 패널 -->
@@ -446,7 +447,7 @@
               <div class="form-field">
                 <!-- 캘린더 레이어 래퍼: 개발팀에서 .is-open 클래스 토글로 표시/숨김 제어 -->
                 <div class="vol-date-wrap">
-                  <input type="text" id="vg_date" name="vg_date" class="form-control" placeholder="희망 날짜" readonly />
+                  <input type="text" id="vg_date" name="vg_date" class="form-control" placeholder="희망 날짜" />
                   <!-- 캘린더 아이콘: 클릭 시 .vol-calendar-layer에 .is-open 추가 (개발팀 JS 연동) -->
                   <button type="button" class="vol-calendar-trigger" aria-label="날짜 선택 달력 열기">
                     <img src="/src/images/common/icon_calendar.svg" alt="달력 아이콘" />
@@ -615,7 +616,7 @@
           </div>
           <!-- E: 개인정보 수집 동의 -->
 
-          <button type="submit" form="vol-popup-form" class="btn btn-primary w-auto vol-popup-submit">자원봉사 신청하기</button>
+          <button type="submit" form="vol-popup-form" class="btn btn-primary btn-page w-auto vol-popup-submit">자원봉사 신청하기</button>
 
         </div>
         <!-- E: 기업·단체 탭 패널 -->
@@ -642,6 +643,17 @@
         // 현재 탭 활성화
         this.classList.remove('disabled');
         this.setAttribute('aria-selected', 'true');
+        
+        // 부모 컨테이너에 인디케이터 이동용 클래스 처리
+        const wrapper = this.closest('.donate-type-tabs');
+        if (wrapper) {
+          const tabList = Array.from(wrapper.querySelectorAll('.btn-tab'));
+          if (tabList.indexOf(this) === 1) {
+            wrapper.classList.add('is-second-active');
+          } else {
+            wrapper.classList.remove('is-second-active');
+          }
+        }
         
         // 패널 전환
         const targetId = this.getAttribute('data-target');

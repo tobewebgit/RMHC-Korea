@@ -49,7 +49,8 @@
             </div>
 
             <!-- 정기/일시 후원 구분 탭 버튼 -->
-            <div class="donate-type-tabs">
+            <div class="donate-type-tabs is-one-time initial-one-time">
+              <div class="donate-tab-indicator"></div>
               <button type="button" class="btn-tab disabled">정기 후원</button>
               <button type="button" class="btn-tab">일시 후원</button>
             </div>
@@ -137,7 +138,7 @@
                     </p>
                     <div class="chip-grid cols-2" id="authBtnGrid">
                       <button type="button" id="btnKakaoAuth" class="btn btn-outline btn-auth-action kakao">
-                        <img src="/src/images/common/icon_kakao_check_pay.svg" alt="카카오 로고" class="payment-logo" />
+                        <img src="/src/images/common/icon_kakao_pay.svg" alt="카카오 로고" class="payment-logo" />
                         <span>카카오로 빠르게 시작하기</span>
                       </button>
                       <button type="button" id="btnPassAuth" class="btn btn-outline btn-auth-action pass">
@@ -383,7 +384,7 @@
                   <!-- 공통화된 payment-tabs-grid 연동 -->
                   <div class="payment-tabs-grid">
                     <button type="button" class="btn btn-outline payment-tab-btn" data-pay="kakaopay">
-                      <img src="/src/images/common/icon_kakao_check_pay.png" alt="카카오페이 로고" class="payment-tab-icon" />
+                      <img src="/src/images/common/icon_kakao_check_pay.svg" alt="카카오페이 로고" class="payment-tab-icon" />
                       <span>카카오페이</span>
                     </button>
                     <button type="button" class="btn btn-outline payment-tab-btn" data-pay="naverpay">
