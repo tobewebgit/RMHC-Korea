@@ -1038,7 +1038,7 @@
 
 .greetings-message__body p {
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.2rem;
   line-height: 1.8;
 }
 
@@ -1422,7 +1422,7 @@
 
 .partner-intro__content p {
   margin: 4rem 0 0;
-  font-size: 2rem;
+  font-size: 2.2rem;
   line-height: 1.5;
 }
 
@@ -2605,7 +2605,7 @@
 }
 .donation-report-table .total dd {
   font-family: var(--font-extrabold);
-  font-size: 2.4rem;
+  font-size: 2.8rem;
 }
 
 .donation-report-note {

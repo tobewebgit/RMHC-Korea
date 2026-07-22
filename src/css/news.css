@@ -334,29 +334,11 @@
   color: var(--primary);
   text-decoration: underline;
 }
-.detail-contents .detail-text {
-  width: 100%;
-  max-width: 80rem;
-  font-size: var(--text-lg);
-  line-height: 1.5;
-  margin: 0;
-  word-break: keep-all;
-}
-
-/* 활동소식 본문 컬러 대응 */
-.activity-detail-page .detail-contents .detail-text {
-  color: #21272A;
-}
 
 .detail-contents .detail-img-wrap {
   width: 100%;
   max-width: 80rem;
   margin: 4.8rem 0;
-}
-
-.detail-contents .detail-img-wrap + .detail-text,
-.detail-contents .detail-text + .detail-img-wrap {
-  
 }
 
 .detail-contents .detail-img-wrap img {

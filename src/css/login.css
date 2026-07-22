@@ -84,14 +84,14 @@
 .btn-social .icon-kakao {
   width: 2.4rem;
   height: 2.4rem;
-  background: url(../images/common/icon_kakao_pay.png) no-repeat center center;
+  background: url(../images/common/icon_kakao_pay.svg) no-repeat center center;
   background-size: contain;
 }
 
 .btn-social .icon-naver {
   width: 2.4rem;
   height: 2.4rem;
-  background: url(../images/common/icon_naver_pay.png) no-repeat center center;
+  background: url(../images/common/icon_naver_pay.svg) no-repeat center center;
   background-size: contain;
 }
 
@@ -686,7 +686,6 @@ a.agreement-link {
 
 .info-form-group.flex-row-layout {
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -769,8 +768,8 @@ a.agreement-link {
 
 /* 5. 알림 수신동의 체크박스 색상 커스텀 */
 .info-form-group .custom-checkbox {
+  width: 24rem;
   font-size: var(--text-lg);
-  color: #000000;
 }
 
 /* 6. 기부금 영수증 신청 여부 카드 */
@@ -840,7 +839,7 @@ a.agreement-link {
   font-family: var(--font-bold);
   font-size: var(--text-lg);
   text-decoration: none;
-  border-bottom: 3px solid var(--primary); /* 빨간색 밑줄 */
+  border-bottom: 3px solid var(--primary);
   padding-bottom: 0.2rem;
   display: inline-block;
 }
@@ -849,7 +848,67 @@ a.agreement-link {
   color: var(--primary);
 }
 
-/* 9. 반응형 미디어 쿼리 */
+/* SNS 계정 연동 */
+.sns-connect-wrap {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-direction: column;
+  width: 24rem;
+  font-size: var(--text-lg);
+}
+
+.sns-connect-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2);
+  font-size: var(--text-lg);
+}
+
+.sns-icon {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+.sns-icon::before {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.8rem;
+  border-radius: 50%;
+}
+.sns-icon.kakao::before {
+  background: url('/src/images/common/icon_kakao_pay.svg') 50% 50% no-repeat;
+  background-size: contain;
+}
+.sns-icon.naver::before {
+  background: url('/src/images/common/icon_naver_pay.svg') 50% 50% no-repeat;
+  background-size: contain;
+}
+
+.sns-status.connected {
+  display: flex;
+}
+.sns-status.connected::before {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url('/src/images/common/icon_check.png') 50% 50% no-repeat;
+  background-size: contain;
+}
+
+.sns-status.action {
+  font-size: var(--text-lg);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.sns-status.action:hover {
+  color: var(--primary);
+}
+
+/* 반응형 미디어 쿼리 */
 @media screen and (max-width: 1024px) {
   .mypage-info-grid {
     grid-template-columns: 1fr;
@@ -1239,7 +1298,7 @@ a.agreement-link {
   justify-content: center;
 }
 
-/* 🖋️ 출금동의 서명 캔버스/패널 스타일 */
+/* 출금동의 서명 캔버스/패널 스타일 */
 .signature-pad-canvas-box {
   transition: var(--transition-fast);
   user-select: none;
@@ -1252,4 +1311,49 @@ a.agreement-link {
 
 .btn-signature-clear:hover {
   color: var(--primary) !important;
+}
+
+/* 하단 배너 */
+.nonmember-wrapper .donate-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 12rem;
+  margin-top: 8rem;
+  padding: 0 18rem;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  background-color: #D0C9FF;
+}
+
+.nonmember-wrapper .donate-banner__heart {
+  position: absolute;
+  left: 6rem;
+  top: -22rem;
+  width: 90.4rem;
+  height: 76rem;
+  background: url("/src/images/main/img_heart_banner.svg") center / contain no-repeat;
+  will-change: transform;
+}
+
+.nonmember-wrapper .donate-banner__content,
+.nonmember-wrapper .donate-banner__btn {
+  position: relative;
+  z-index: 1;
+}
+
+.nonmember-wrapper .donate-banner h2 {
+  color: #fffdf0;
+  font-size: 2.4rem;
+  line-height: 1.35;
+}
+
+.nonmember-wrapper .donate-banner__btn {
+  max-width: 19rem;
+}
+
+.nonmember-wrapper .donate-banner__btn.btn-arrow:hover {
+  color: #fffdf0;
+  background-color: var(--primary);
 }

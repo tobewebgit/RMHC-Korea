@@ -601,6 +601,9 @@
   margin: 8rem 0 8rem;
   text-align: left;
 }
+.main-field__grid a:hover strong {
+  text-decoration: underline;
+}
 
 .main-field__featured,
 .main-field__list a {
@@ -693,10 +696,6 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-.main-field__list a:hover strong {
-  text-decoration: underline;
-}
-
 .main-field__list time {
   margin-top: 2.2rem;
   color: #555;

@@ -278,10 +278,7 @@
 
           const mapSection = document.querySelector(".about-map");
           const mapHearts = Array.from(document.querySelectorAll(".map-pin__heart .js-motion"));
-          const banner = document.querySelector(".donate-banner");
-          const bannerHeart = document.querySelector(".donate-banner__heart");
           let mapTimeline = null;
-          let bannerTimeline = null;
 
           const resetMapHearts = () => {
             if (mapTimeline) {
@@ -319,27 +316,6 @@
             });
           };
 
-          const resetBannerHeart = () => {
-            if (!bannerHeart) return;
-            if (bannerTimeline) {
-              bannerTimeline.kill();
-              bannerTimeline = null;
-            }
-
-            gsap.set(bannerHeart, { scale: 0.8, opacity: 1, transformOrigin: "50% 50%" });
-          };
-
-          const playBannerHeart = () => {
-            if (!bannerHeart) return;
-            resetBannerHeart();
-            bannerTimeline = gsap.timeline();
-            bannerTimeline.to(bannerHeart, {
-              scale: 1,
-              duration: 0.8,
-              ease: "back.out(1.25)",
-            });
-          };
-
           if (mapSection && mapHearts.length > 0) {
             resetMapHearts();
             const mapObserver = new IntersectionObserver(
@@ -356,24 +332,6 @@
               { threshold: 0.35 },
             );
             mapObserver.observe(mapSection);
-          }
-
-          if (banner && bannerHeart) {
-            resetBannerHeart();
-            const bannerObserver = new IntersectionObserver(
-              (entries) => {
-                entries.forEach((entry) => {
-                  if (entry.isIntersecting) {
-                    playBannerHeart();
-                    return;
-                  }
-
-                  resetBannerHeart();
-                });
-              },
-              { threshold: 0.35 },
-            );
-            bannerObserver.observe(banner);
           }
         };
 
