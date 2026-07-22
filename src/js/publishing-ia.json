@@ -168,18 +168,6 @@
     "qa": "완료"
   },
   {
-    "id": 15,
-    "depth1": "마이페이지 & 비회원 서비스",
-    "depth2": "후원 이력 목록",
-    "depth3": "",
-    "depth4": "",
-    "path": "/mypage/donations.html",
-    "status": "작업전",
-    "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)",
-    "qa": ""
-  },
-  {
     "id": 16,
     "depth1": "마이페이지 & 비회원 서비스",
     "depth2": "후원 이력 상세",
@@ -204,18 +192,6 @@
     "qa": "완료"
   },
   {
-    "id": 18,
-    "depth1": "마이페이지 & 비회원 서비스",
-    "depth2": "기부금영수증 내역",
-    "depth3": "",
-    "depth4": "",
-    "path": "/mypage/donation-receipts.html",
-    "status": "작업전",
-    "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)",
-    "qa": ""
-  },
-  {
     "id": 19,
     "depth1": "마이페이지 & 비회원 서비스",
     "depth2": "기부금영수증 신청",
@@ -226,18 +202,6 @@
     "lastModified": "2026-06-09",
     "memo": "본인인증 가상 팝업 및 기부 영수증 신청 폼 구현 완료",
     "qa": "완료"
-  },
-  {
-    "id": 20,
-    "depth1": "마이페이지 & 비회원 서비스",
-    "depth2": "기부금영수증 발급현황",
-    "depth3": "",
-    "depth4": "",
-    "path": "/mypage/donation-receipts/status.html",
-    "status": "작업전",
-    "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)",
-    "qa": ""
   },
   {
     "id": 21,
@@ -594,9 +558,9 @@
     "depth3": "",
     "depth4": "",
     "path": "/404.html",
-    "status": "진행중",
-    "lastModified": "2026-06-09",
-    "memo": "",
+    "status": "완료",
+    "lastModified": "2026-07-22",
+    "memo": "완료",
     "qa": ""
   },
   {

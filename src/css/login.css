@@ -176,6 +176,7 @@
   color: var(--text-gray80);
 }
 
+.login-guide a:hover,
 .login-links a:hover {
   color: var(--primary);
 }

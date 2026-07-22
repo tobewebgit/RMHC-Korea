@@ -564,6 +564,7 @@
   text-align: center;
 }
 
+.apply-steps.inner-layout,
 .apply-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

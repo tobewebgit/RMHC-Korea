@@ -1387,6 +1387,9 @@ a.header__submenu-link:focus-visible,
   margin-top: 0.4rem;
   color: #000;
 }
+.fab-sns-toggle .fab-text {
+  font-weight: 700;
+}
 
 /* 1. 후원하기 */
 .fab-donate {
@@ -1491,3 +1494,39 @@ a.header__submenu-link:focus-visible,
 .fab-top:hover .fab-icon-up {
   transform: translateY(-0.4rem);
 }
+
+
+/* ==========================================================================
+   Section 404 Styles
+   ========================================================================== */
+.section-404 {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rem 2rem 0;
+}
+
+.section-404 img {
+  width: 100%;
+  max-width: 532px;
+  height: auto;
+  margin-bottom: 4rem;
+}
+
+.error-title {
+  margin-top: 8rem;
+  font-family: var(--font-extrabold);
+  font-size: 5.8rem;
+}
+
+.error-subtitle {
+  font-size: 2.2rem;
+  margin: 2.4rem 0 4rem;
+  text-align: center;
+}
+

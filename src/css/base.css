@@ -458,6 +458,7 @@ textarea {
   border-radius: 0;
 }
 button {
+  font-family: var(--font-pretendard);
   cursor: pointer;
 }
 a:link,
