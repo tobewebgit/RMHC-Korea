@@ -1114,11 +1114,10 @@ a.header__submenu-link:focus-visible,
 .page-btn.active {
   background-color: var(--primary);
   color: var(--text-white);
-  border-color: var(--primary);
+  border-color: transparent;
 }
-
-.page-btn:not(.active):not(.page-arrow):hover {
-  background-color: rgba(0, 0, 0, 0.05);
+.page-btn:hover {
+  border-color: var(--primary);
 }
 
 /* 화살표 아이콘 배경 (실제 PNG 에셋 매핑 및 크기 차등) */
