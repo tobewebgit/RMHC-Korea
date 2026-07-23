@@ -81,7 +81,7 @@
   z-index: 2;
   width: 78rem;
   opacity: 0;
-  transform: translateY(-12rem);
+  transform: translateY(-7rem);
 }
 
 .main-kv__title {
@@ -849,57 +849,7 @@
   max-width: 17.4rem;
 }
 
-@media (max-width: 1400px) {
-  .main-quick {
-    padding-right: 5rem;
-    padding-left: 5rem;
-  }
-
-  .main-quick__list {
-    gap: 4rem;
-  }
-
-  .main-kv {
-    --kv-heart-width: 185.8rem;
-    --kv-heart-height: 165.4rem;
-  }
-}
-
-@media (min-width: 1600px) {
-  .main-kv {
-    --kv-heart-width: 185.8rem;
-    --kv-heart-height: 165.4rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  .main-section-title {
-    font-size: 4.2rem;
-  }
-
-  .main-kv__inner {
-    min-height: 100%;
-  }
-
-  .main-kv {
-    --kv-heart-width: 150rem;
-    --kv-heart-height: 133.5rem;
-  }
-
-  .main-quick {
-    align-items: flex-start;
-    gap: 2.4rem;
-  }
-
-  .main-quick__list {
-    grid-template-columns: repeat(2, max-content);
-    gap: 2rem 4rem;
-  }
-
-  .main-field__grid {
-    grid-template-columns: 1fr;
-  }
-}
+/* 모바일 */
 
 @media (max-width: 768px) {
   .main .header:not(.is-scrolled):not(.is-gnb-open) {
@@ -953,7 +903,7 @@
     --kv-heart-height: 48.1rem;
     --kv-heart-bottom-offset: 0;
     --kv-heart-enter-x: 18%;
-    height: 54.4rem;
+    height: 52rem;
   }
 
   .main-kv__visual {
@@ -965,7 +915,7 @@
     display: block;
     width: calc(100% - 4.8rem);
     min-height: 21.2rem;
-    margin-top: -0.8rem;
+    margin-top: 2.4rem;
     padding: 2.4rem;
     border-radius: 0.6rem;
   }
@@ -1322,17 +1272,15 @@
 
 
 /* ==========================================================================
-   메인 공지 팝업 (MA_01P) 전용 스타일
+   메인 공지 팝업
    ========================================================================== */
 
-/* 팝업 컨테이너 — modal-container 클래스 독립 분리, flex 없는 block */
 .main-popup-container {
   position: relative;
   width: 80.8rem;
   max-width: 92vw;
   padding: 0;
   background-color: transparent;
-  /* modal-overlay.active에서 transform 없이 바로 표시 */
   transform: translateY(0);
 }
 
@@ -1340,7 +1288,6 @@
   width: 40rem;
 }
 
-/* 각 슬라이드의 실제 컨텐츠 영역 */
 .main-popup__slide-content {
   position: relative;
   width: 40rem;
@@ -1351,28 +1298,24 @@
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
 }
 
-/* 닫기 버튼 */
 .main-popup__close {
   top: 1.6rem;
   right: 1.6rem;
   z-index: 10;
 }
 
-/* 슬라이드 링크 */
 .main-popup__slide-link {
   display: block;
   width: 100%;
   line-height: 0;
 }
 
-/* 팝업 이미지 */
 .main-popup__img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* PC/MO 이미지 전환 */
 .main-popup__img--mo { display: none; }
 .main-popup__img--pc { display: block; }
 
@@ -1384,7 +1327,6 @@
   line-height: 0;
 }
 
-/* 슬라이드 1개 → dot 숨김 및 overflow 해제 (애니메이션 시 잘림 방지) */
 .main-popup-swiper.is-single {
   overflow: visible;
 }
@@ -1392,7 +1334,6 @@
   display: none;
 }
 
-/* dot 색상 */
 .main-popup-pagination .swiper-pagination-bullet {
   width: 0.8rem;
   height: 0.8rem;
@@ -1403,30 +1344,27 @@
   background-color: var(--primary);
 }
 
-/* 팝업 푸터 */
 .main-popup__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1.6rem;
   padding: 2.4rem;
-  background-color: #ffffff; /* 기존 베이지색 대신 흰색 */
+  background-color: #ffffff;
 }
 
-/* CTA 버튼 */
 .btn.main-popup__cta {
   width: 16rem;
   min-height: 5.2rem;
   font-size: 1.8rem;
 }
 
-/* 오늘 하루 그만 보기 */
 .main-popup__today-close {
   min-height: 5.2rem;
   font-size: 1.8rem;
 }
 
-/* ── 모바일 (768px 이하) ─────────────────────────────── */
+/* 모바일 */
 @media (max-width: 768px) {
   .main-popup-container,
   .main-popup-container.is-single-slide {
