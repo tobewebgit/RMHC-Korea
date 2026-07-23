@@ -706,10 +706,6 @@ a.agreement-link {
   background-color: var(--bg-primary);
 }
 
-.form-control.editable:focus {
-  background-color: var(--bg-white);
-}
-
 .info-input-desc {
   color: var(--text-gray60);
   line-height: 1.4;

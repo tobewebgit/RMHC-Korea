@@ -164,7 +164,7 @@
                         <div class="form-group form">
                           <label for="donorName" class="form-label required">이름</label>
                           <div class="form-field">
-                            <input type="text" id="donorName" class="form-control disabled" disabled value="로날드" />
+                            <input type="text" id="donorName" class="form-control disabled" disabled placeholder="로날드" />
                           </div>
                         </div>
 
@@ -172,7 +172,7 @@
                         <div class="form-group form">
                           <label for="donorBirth" class="form-label required">생년월일</label>
                           <div class="form-field">
-                            <input type="text" id="donorBirth" class="form-control disabled" disabled value="19880101" />
+                            <input type="text" id="donorBirth" class="form-control disabled" disabled placeholder="19880101" />
                           </div>
                         </div>
 
@@ -188,7 +188,7 @@
                         <div class="form-group form">
                           <label for="donorEmail" class="form-label required">이메일</label>
                           <div class="form-field">
-                            <input type="email" id="donorEmail" class="form-control" value="rmhc@gmail.com" />
+                            <input type="email" id="donorEmail" class="form-control" placeholder="rmhc@gmail.com" />
                             <p class="receipt-helper-text">후원 관련 안내를 받을 이메일을 입력해 주세요.</p>
                           </div>
                         </div>
@@ -407,18 +407,16 @@
                   <div id="withdrawDayArea" class="withdraw-day-box">
                     <hr class="sep-line" />
                     <div class="form-group form">
-                      <label class="form-label required form-label">출금일 선택</label>
+                      <label class="form-label required form-label font-bold">출금일 선택</label>
                       <div class="form-field">
-                        <div class="custom-select selectbox" id="withdrawDaySelect" role="combobox" aria-label="출금일 선택" aria-expanded="false" tabindex="0">
-                          <span class="custom-select-label" id="withdrawDaySelectLabel">출금일 선택</span>
-                          <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
-                          <ul class="custom-select-list" role="listbox">
-                            <li role="option" data-value="05">매월 5일</li>
-                            <li role="option" data-value="15">매월 15일</li>
-                            <li role="option" data-value="25">매월 25일</li>
+                        <details class="custom-select selectbox" id="withdrawDaySelect">
+                          <summary id="withdrawDaySelectLabel">출금일 선택</summary>
+                          <ul>
+                            <li data-value="05">매월 5일</li>
+                            <li data-value="15">매월 15일</li>
+                            <li data-value="25">매월 25일</li>
                           </ul>
-                          <input type="hidden" name="withdrawDay" id="withdrawDay" value="" />
-                        </div>
+                        </details>
                       </div>
                     </div>
                     <ul class="receipt-warning-list">
@@ -434,7 +432,7 @@
                       <h3 class="form-subtitle">결제정보를 입력해주세요.</h3>
                       <label class="custom-checkbox" id="sameAsDonorCheckboxLabel">
                         <input type="checkbox" id="sameAsDonor" />
-                        <span class="font-bold">후원자와 동일</span>
+                        <span class="donate-payment-same">후원자와 동일</span>
                       </label>
                     </div>
 
@@ -444,19 +442,17 @@
                       <div class="payment-form-row">
                         <label class="payment-form-label">*카드사명</label>
                         <div class="payment-form-field">
-                          <div class="custom-select selectbox" id="cardCompanySelect" role="combobox" aria-label="카드사 선택" aria-expanded="false" tabindex="0">
-                            <span class="custom-select-label" id="cardCompanySelectLabel">카드사를 선택해 주세요.</span>
-                            <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
-                            <ul class="custom-select-list" role="listbox">
-                              <li role="option" data-value="국민">KB국민카드</li>
-                              <li role="option" data-value="하나">하나카드</li>
-                              <li role="option" data-value="신한">신한카드</li>
-                              <li role="option" data-value="삼성">삼성카드</li>
-                              <li role="option" data-value="현대">현대카드</li>
-                              <li role="option" data-value="롯데">롯데카드</li>
+                          <details class="custom-select selectbox" id="cardCompanySelect">
+                            <summary id="cardCompanySelectLabel">카드사를 선택해 주세요.</summary>
+                            <ul>
+                              <li data-value="국민">KB국민카드</li>
+                              <li data-value="하나">하나카드</li>
+                              <li data-value="신한">신한카드</li>
+                              <li data-value="삼성">삼성카드</li>
+                              <li data-value="현대">현대카드</li>
+                              <li data-value="롯데">롯데카드</li>
                             </ul>
-                            <input type="hidden" name="cardCompany" id="pm_card_company" value="" />
-                          </div>
+                          </details>
                         </div>
                       </div>
 
@@ -472,42 +468,38 @@
                       <div class="payment-form-row">
                         <label class="payment-form-label">*카드 유효기간</label>
                         <div class="payment-form-field double-select">
-                          <div class="custom-select selectbox" id="expMonthSelect" role="combobox" aria-label="유효기간 월" aria-expanded="false" tabindex="0">
-                            <span class="custom-select-label" id="expMonthSelectLabel">월</span>
-                            <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
-                            <ul class="custom-select-list" role="listbox">
-                              <li role="option" data-value="01">01</li>
-                              <li role="option" data-value="02">02</li>
-                              <li role="option" data-value="03">03</li>
-                              <li role="option" data-value="04">04</li>
-                              <li role="option" data-value="05">05</li>
-                              <li role="option" data-value="06">06</li>
-                              <li role="option" data-value="07">07</li>
-                              <li role="option" data-value="08">08</li>
-                              <li role="option" data-value="09">09</li>
-                              <li role="option" data-value="10">10</li>
-                              <li role="option" data-value="11">11</li>
-                              <li role="option" data-value="12">12</li>
+                          <details class="custom-select selectbox" id="expMonthSelect">
+                            <summary id="expMonthSelectLabel">월</summary>
+                            <ul>
+                              <li data-value="01">01</li>
+                              <li data-value="02">02</li>
+                              <li data-value="03">03</li>
+                              <li data-value="04">04</li>
+                              <li data-value="05">05</li>
+                              <li data-value="06">06</li>
+                              <li data-value="07">07</li>
+                              <li data-value="08">08</li>
+                              <li data-value="09">09</li>
+                              <li data-value="10">10</li>
+                              <li data-value="11">11</li>
+                              <li data-value="12">12</li>
                             </ul>
-                            <input type="hidden" name="expMonth" id="pm_exp_month" value="" />
-                          </div>
-                          <div class="custom-select selectbox" id="expYearSelect" role="combobox" aria-label="유효기간 년" aria-expanded="false" tabindex="0">
-                            <span class="custom-select-label" id="expYearSelectLabel">년</span>
-                            <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
-                            <ul class="custom-select-list" role="listbox">
-                              <li role="option" data-value="26">2026</li>
-                              <li role="option" data-value="27">2027</li>
-                              <li role="option" data-value="28">2028</li>
-                              <li role="option" data-value="29">2029</li>
-                              <li role="option" data-value="30">2030</li>
-                              <li role="option" data-value="31">2031</li>
-                              <li role="option" data-value="32">2032</li>
-                              <li role="option" data-value="33">2033</li>
-                              <li role="option" data-value="34">2034</li>
-                              <li role="option" data-value="35">2035</li>
+                          </details>
+                          <details class="custom-select selectbox" id="expYearSelect">
+                            <summary id="expYearSelectLabel">년</summary>
+                            <ul>
+                              <li data-value="26">2026</li>
+                              <li data-value="27">2027</li>
+                              <li data-value="28">2028</li>
+                              <li data-value="29">2029</li>
+                              <li data-value="30">2030</li>
+                              <li data-value="31">2031</li>
+                              <li data-value="32">2032</li>
+                              <li data-value="33">2033</li>
+                              <li data-value="34">2034</li>
+                              <li data-value="35">2035</li>
                             </ul>
-                            <input type="hidden" name="expYear" id="pm_exp_year" value="" />
-                          </div>
+                          </details>
                         </div>
                       </div>
 
@@ -524,7 +516,7 @@
                         <label for="pm_owner_birth" class="payment-form-label">*카드소유자<br>생년월일</label>
                         <div class="payment-form-field">
                           <input type="text" id="pm_owner_birth" class="form-control" placeholder="예)19880101 (숫자만 입력)" maxlength="8" />
-                          <p class="form-helper-note mt-2">카드 소유자 확인을 위해 사용됩니다.</p>
+                          <p class="form-helper-note mt-2">• 카드 소유자 확인을 위해 사용됩니다.</p>
                         </div>
                       </div>
                     </div>
@@ -535,18 +527,16 @@
                       <div class="payment-form-row">
                         <label class="payment-form-label">*은행명</label>
                         <div class="payment-form-field">
-                          <div class="custom-select selectbox" id="cmsBankSelect" role="combobox" aria-label="은행 선택" aria-expanded="false" tabindex="0">
-                            <span class="custom-select-label" id="cmsBankSelectLabel">은행을 선택해 주세요.</span>
-                            <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
-                            <ul class="custom-select-list" role="listbox">
-                              <li role="option" data-value="국민">KB국민은행</li>
-                              <li role="option" data-value="신한">신한은행</li>
-                              <li role="option" data-value="하나">하나은행</li>
-                              <li role="option" data-value="우리">우리은행</li>
-                              <li role="option" data-value="농협">NH농협은행</li>
+                          <details class="custom-select selectbox" id="cmsBankSelect">
+                            <summary id="cmsBankSelectLabel">은행을 선택해 주세요.</summary>
+                            <ul>
+                              <li data-value="국민">KB국민은행</li>
+                              <li data-value="신한">신한은행</li>
+                              <li data-value="하나">하나은행</li>
+                              <li data-value="우리">우리은행</li>
+                              <li data-value="농협">NH농협은행</li>
                             </ul>
-                            <input type="hidden" name="cmsBank" id="pm_cms_bank" value="" />
-                          </div>
+                          </details>
                         </div>
                       </div>
 
@@ -579,9 +569,9 @@
                         <label class="payment-form-label">*출금동의 서명</label>
                         <div class="payment-form-field">
                           <p class="form-helper-note cms-helper">
-                            자동이체를 위해 출금 동의가 필요합니다.<br>
-                            아래 서명을 진행해 주세요.<br>
-                            마우스를 올린 후 클릭한 상태에서 서명해 주세요.
+                            • 자동이체를 위해 출금 동의가 필요합니다.<br>
+                            • 아래 서명을 진행해 주세요.<br>
+                            • 마우스를 올린 후 클릭한 상태에서 서명해 주세요.
                           </p>
                           <!-- 서명 패드 캔버스 보드 (H: 12rem) -->
                           <div class="signature-pad-wrapper">

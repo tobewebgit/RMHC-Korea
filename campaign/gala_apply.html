@@ -71,25 +71,21 @@
                   <div class="form-group form" id="attendeeCountGroup">
                     <label for="attendeeCount" class="form-label">참석인원</label>
                     <div class="form-field">
-                      <!-- 커스텀 셀렉트박스 구조 적용 (푸터 패밀리 사이트 공통 패턴 준수) -->
-                      <div class="custom-select" id="attendeeSelect" role="combobox" aria-label="참석인원 선택" aria-expanded="false" tabindex="0">
-                        <span class="custom-select-label" id="attendeeSelectLabel">2명</span>
-                        <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="custom-select-arrow" />
-                        <ul class="custom-select-list" role="listbox">
-                          <li role="option" data-value="1">1명</li>
-                          <li role="option" data-value="2">2명</li>
-                          <li role="option" data-value="3">3명</li>
-                          <li role="option" data-value="4">4명</li>
-                          <li role="option" data-value="5">5명</li>
-                          <li role="option" data-value="6">6명</li>
-                          <li role="option" data-value="7">7명</li>
-                          <li role="option" data-value="8">8명</li>
-                          <li role="option" data-value="9">9명</li>
-                          <li role="option" data-value="10">10명</li>
+                      <details class="custom-select" id="attendeeSelect">
+                        <summary id="attendeeSelectLabel">2명</summary>
+                        <ul>
+                          <li data-value="1">1명</li>
+                          <li data-value="2">2명</li>
+                          <li data-value="3">3명</li>
+                          <li data-value="4">4명</li>
+                          <li data-value="5">5명</li>
+                          <li data-value="6">6명</li>
+                          <li data-value="7">7명</li>
+                          <li data-value="8">8명</li>
+                          <li data-value="9">9명</li>
+                          <li data-value="10">10명</li>
                         </ul>
-                        <!-- 전송 및 제어용 Hidden Input -->
-                        <input type="hidden" name="attendeeCount" id="attendeeCount" value="2" />
-                      </div>
+                      </details>
                       <p class="helper-text" id="attendeeHelperText">• 최대 10명까지 선택 가능합니다.</p>
                     </div>
                   </div>

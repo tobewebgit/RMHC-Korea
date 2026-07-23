@@ -557,18 +557,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // 후원자와 동일 체크박스 노출 여부 (기업/단체 후원이면 이 기능 차단 및 가림)
-      const sameAsDonorCheckboxLabel = document.getElementById('sameAsDonorCheckboxLabel');
-      if (sameAsDonorCheckboxLabel && sameAsDonor) {
-        if (selectedDonorType === '기업 / 단체') {
-          sameAsDonorCheckboxLabel.style.display = 'none';
-          sameAsDonor.checked = false;
-          toggleSameAsDonor(false);
-        } else {
-          sameAsDonorCheckboxLabel.style.display = 'flex';
-        }
-      }
-
       // 6. 3단계 결제 유효성 검사 및 최종 후원하기 버튼 제어
       let isPaymentValid = false;
       let withdrawDayValid = true;

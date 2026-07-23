@@ -124,7 +124,7 @@
   --text-white: #ffffff;
   --text-primary: #1f2937;
   --text-secondary: #4b5563;
-  --text-muted: #8e959f;
+  --text-muted: #8f8f8f;
   --text-gray100: #121619;
   --text-gray90: #3d3d3d;
   --text-gray80: #555555;
@@ -132,6 +132,7 @@
   --text-gray60: #8f8f8f;
   --text-gray40: #bbbbbb;
   --text-gray30: #dddddd;
+  --text-helper: #697077;
 
   /* Border Colors */
   --border-black: #000000;

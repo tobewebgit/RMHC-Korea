@@ -53,15 +53,14 @@
           <span>후원문의·상담 02-723-2013 / 상담시간 (월~금) 09:00 - 18:00</span>
         </div>
       </div>
-      <!-- Family site: 커스텀 셀렉트 (시안 화살표 ico_arrow_bottom.svg) -->
-      <div class="footer__family-site" tabindex="0" role="combobox" aria-label="Family Site 선택" aria-expanded="false">
-        <span class="footer__family-site-label">Family site</span>
-        <img src="/src/images/common/ico_arrow_bottom.svg" alt="" class="footer__family-site-arrow">
-        <ul class="footer__family-site-list" role="listbox">
-          <li role="option"><a href="https://www.rmhc.org" target="_blank" rel="noopener noreferrer">Ronald McDonald House Global</a></li>
-          <li role="option"><a href="https://www.mcdonalds.co.kr" target="_blank" rel="noopener noreferrer">한국맥도날드</a></li>
+      <!-- Family site: 공통 커스텀 셀렉트 (custom-select) 적용 -->
+      <details class="custom-select footer__family-site" id="footerFamilySite">
+        <summary>Family site</summary>
+        <ul>
+          <li><a href="https://www.rmhc.org" target="_blank" rel="noopener noreferrer">Ronald McDonald House Global</a></li>
+          <li><a href="https://www.mcdonalds.co.kr" target="_blank" rel="noopener noreferrer">한국맥도날드</a></li>
         </ul>
-      </div>
+      </details>
     </div>
     
     <!-- footer__copyright: 가장 하단 별도 줄 -->

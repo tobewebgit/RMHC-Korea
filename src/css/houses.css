@@ -758,19 +758,19 @@
 
 .support-card--yellow {
   background: url(/src/images/houses/bg_house-support_1.svg) 50% 50% no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 
 .support-card--sky {
   background: url(/src/images/houses/bg_house-support_2.svg) 50% 50% no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 
 .support-card--green {
   background: url(/src/images/houses/bg_house-support_3.svg) 50% 50% no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 

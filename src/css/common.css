@@ -520,65 +520,30 @@ a.header__submenu-link:focus-visible,
   color: var(--text-gray80);
 }
 
-/* Family site: 커스텀 셀렉트 (시안 화살표 ico_arrow_bottom.svg) */
-.footer__family-site {
-  position: relative;
+/* Family site: 푸터 전용 커스텀 셀렉트 오버라이드 (위로 열림, 너비 조정) */
+.custom-select.footer__family-site {
   top: 2.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 26.6rem;
-  height: 5.2rem;
-  padding: 0 1.6rem;
-  border: 1px solid var(--border-color);
+}
+
+.custom-select.footer__family-site summary {
   border-radius: 0.8rem;
-  background-color: #fffde9;
-  cursor: pointer;
-  user-select: none;
+}
+.custom-select[open].footer__family-site summary {
+  border-top: 0;
+  border-radius: 0 0 0.8rem 0.8rem;
 }
 
-.footer__family-site-label {
-  font-size: 1.8rem;
-  
-}
-
-.footer__family-site-arrow {
-  width: 1.3rem;
-  height: 0.8rem;
-  transition: transform 0.2s ease;
-}
-
-.footer__family-site[aria-expanded="true"] .footer__family-site-arrow {
-  transform: rotate(180deg);
-}
-
-.footer__family-site-list {
-  display: none;
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
+.custom-select.footer__family-site ul {
+  top: auto;
+  bottom: calc(100% - 0.1rem);
+  border-bottom: 0;
   border-radius: 0.8rem;
-  overflow: hidden;
-  margin-bottom: 0.4rem;
-  list-style: none;
-  z-index: 10;
+  box-shadow: none;
 }
 
-.footer__family-site[aria-expanded="true"] .footer__family-site-list {
-  display: block;
-}
-
-.footer__family-site-list li a {
-  display: block;
-  padding: 1.2rem 1.6rem;
-  font-size: 1.6rem;
-  color: #1f2937;
-}
-.footer__family-site-list li a:hover {
-  background-color: #f5f3ef;
+.custom-select[open].footer__family-site ul {
+  border-radius: 0.8rem 0.8rem 0 0;
 }
 
 /* ── footer__copyright: 가장 하단 별도 줄 ── */
@@ -894,11 +859,15 @@ a.header__submenu-link:focus-visible,
     align-items: flex-start;
     width: 100%;
   }
-  .footer__copyright {
+  .footer-center {
     margin-top: 3.2rem;
     width: 100%;
   }
-  .footer__family-site {
+  .custom-select.footer__family-site {
+    width: 100%;
+  }
+  .footer__copyright {
+    margin-top: 3.2rem;
     width: 100%;
   }
 }

@@ -453,7 +453,6 @@
 }
 .receipt-warning-list li {
   list-style-type: disc;
-  font-size: 1.4rem;
   line-height: 1.6;
 }
 
@@ -665,6 +664,10 @@
   cursor: pointer;
   user-select: none;
   font-size: 1.6rem;
+}
+
+.donate-payment-same {
+  font-size: var(--text-lg);
 }
 
 .payment-form-field.double-select .custom-select {
@@ -1615,6 +1618,9 @@
 .vol-popup-sep {
   border: 0;
   border-top: 1px solid var(--border-gray30);
+  margin: 3.2rem 0;
+}
+.vol-popup-panel .vol-popup-sep {
   margin: 3.2rem -4rem;
 }
 .vol-popup-section--house .vol-popup-sep {
@@ -1629,7 +1635,9 @@
 .vol-popup-body .donate-type-tabs {
   margin-bottom: 0;
 }
-
+.vol-popup-body .donate-type-tabs .donate-tab-indicator {
+  width: 31rem;
+}
 .vol-popup-section__title {
   font-size: 2.8rem;
   margin: 0;
@@ -1998,8 +2006,7 @@
 
 .withdraw-day-box .receipt-warning-list li {
   list-style: none;
-  font-size: 1.4rem;
-  color: var(--text-gray60);
+  color: var(--text-helper);
 }
 
 .payment-detail-header {
@@ -2017,8 +2024,7 @@
 }
 
 .form-helper-note {
-  font-size: 1.4rem;
-  color: var(--text-muted);
+  color: var(--text-helper);
 }
 
 .form-helper-note.mt-2 {
