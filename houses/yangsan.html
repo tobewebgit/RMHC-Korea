@@ -247,7 +247,7 @@
             <p>양산부산대학교병원 내에 위치한 로날드 맥도날드 하우스 양산은<br class="type-pc" />환아 가족들이 병원과 가장 가까운 곳에서 머물며 쉴 수 있는 든든한 보금자리입니다.</p>
           </div>
           <div class="location-map" data-motion="fade-up" data-motion-delay="0.1">
-            <img src="/src/images/houses/map_yangsan.jpg" alt="로날드 맥도날드 하우스 양산 위치 지도" width="1440" height="600" loading="lazy" />
+            <img src="/src/images/houses/map_yangsan.jpg" alt="로날드 맥도날드 하우스 양산 위치 지도" loading="lazy" />
             <div class="icon-marker"></div>
           </div>
           <ul class="location-info" data-motion="fade-up" data-motion-delay="0.2">
@@ -693,6 +693,11 @@
         const storySwiper = createSwiper(".js-house-story", {
           slidesPerView: 1,
           loop: false,
+          autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
           pagination: {
             el: ".story-slider__pagination",
             clickable: true,

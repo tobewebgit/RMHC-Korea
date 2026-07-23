@@ -92,6 +92,9 @@
   position: relative;
   padding-right: 4rem;
 }
+.form-control-with-icon {
+  position: relative;
+}
 .eye-btn {
   position: absolute;
   right: 1.6rem;
