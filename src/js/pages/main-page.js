@@ -397,5 +397,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initEventsSwiper();
   initThanksMarquee();
   initPartnerSlider();
-  initMainPopupSwiper();
+  // initMainPopupSwiper();
 });

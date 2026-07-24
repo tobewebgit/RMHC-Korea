@@ -609,7 +609,6 @@ a.header__submenu-link:focus-visible,
     align-items: center;
     gap: 0.4rem;
     min-height: 4.8rem;
-    font-family: "Pretendard", var(--font-sans);
     font-size: 1.4rem;
     font-weight: 400;
     color: #000000;
@@ -641,7 +640,7 @@ a.header__submenu-link:focus-visible,
     right: 0;
     z-index: 200;
     flex-direction: column;
-    width: min(100%, 36rem);
+    width: 100vw;
     height: 100dvh;
     padding: 0 2.4rem 2.4rem;
     background-color: var(--bg-primary);
@@ -711,7 +710,6 @@ a.header__submenu-link:focus-visible,
     align-items: center;
     gap: 0.4rem;
     min-height: 4.8rem;
-    font-family: "Pretendard", var(--font-sans);
     font-size: 1.4rem;
     color: #000000;
   }
@@ -756,7 +754,6 @@ a.header__submenu-link:focus-visible,
     padding: 0;
     border: 0;
     background: transparent;
-    font-family: "Pretendard", var(--font-sans);
     font-size: 1.4rem;
     font-weight: 600;
     line-height: 1.5;
