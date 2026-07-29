@@ -92,6 +92,20 @@
   src: url("../fonts/AudreyDisplay-Bold.woff2") format("woff2");
 }
 
+/* Audrey Text (영문 본문 폰트) */
+/* @font-face {
+  font-family: "Audrey Text";
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Audrey-Normal.woff") format("woff");
+}
+@font-face {
+  font-family: "Audrey Text";
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Audrey-Bold.woff") format("woff");
+} */
+
 :root {
   /* Brand Color Palette (RMHC Warm Light Theme — 피그마 기준) */
   --primary: #db0007;
@@ -917,4 +931,20 @@ table caption {
     opacity: 1;
     transform: none;
   }
+}
+
+
+/* 영문 페이지 (html[lang="en"]) 전용 폰트 스타일 재정의 */
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+html[lang="en"] h4,
+html[lang="en"] h5,
+html[lang="en"] h6,
+html[lang="en"] {
+  --font-pretendard:
+    "Audrey Text", "AudreyDisplay", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-extrabold:
+    "AudreyDisplay", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  word-break: normal; 
 }

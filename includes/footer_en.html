@@ -1,0 +1,211 @@
+<footer class="footer">
+  <div class="container footer__container inner-layout">
+    <!-- footer__top: 뉴스레터 영역 (배경이미지 footer__top_bg.png) -->
+    <div class="footer__top">
+      <div class="footer__slogan">
+        <a href="/" class="footer__logo" aria-label="RMHC Korea 홈">
+          <img src="/src/images/common/logo.svg" alt="RMHC Korea Logo" />
+        </a>
+        <span class="footer__slogan-text"
+          >Be the first to hear how your support is making a difference.</span
+        >
+      </div>
+      <div class="footer__newsletter">
+        <div class="footer__newsletter-input-wrapper">
+          <input
+            type="email"
+            id="input-footer-email"
+            class="footer__newsletter-input"
+            placeholder="Enter your email"
+            aria-label="Enter your email"
+          />
+        </div>
+        <button
+          type="button"
+          id="btn-footer-newsletter"
+          class="btn btn-primary footer__newsletter-btn"
+        >
+          <span>Subscribe</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- footer__middle: 링크(좌) + SNS(우) -->
+    <div class="footer__middle">
+      <div class="footer__links">
+        <a href="/policy/privacy.html" class="footer__link-item"
+          >Privacy Policy</a
+        >
+        <a href="/en/faq/faq.html" class="footer__link-item">FAQ</a>
+      </div>
+      <div class="footer__sns">
+        <a
+          href="https://www.instagram.com/rmhc_korea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__sns-link"
+          aria-label="Instagram"
+        >
+          <img
+            src="/src/images/common/instagram.svg"
+            alt="Instagram"
+            class="footer__sns-icon"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/rmhc-korea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__sns-link"
+          aria-label="LinkedIn"
+        >
+          <img
+            src="/src/images/common/linkedIn.svg"
+            alt="LinkedIn"
+            class="footer__sns-icon"
+          />
+        </a>
+        <a
+          href="https://www.youtube.com/@rmhckorea"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__sns-link"
+          aria-label="YouTube"
+        >
+          <img
+            src="/src/images/common/youtube.svg"
+            alt="YouTube"
+            class="footer__sns-icon"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- footer__info: 법인정보(좌) + Family site(우) -->
+    <div class="footer__info">
+      <div class="footer__info-text">
+        <div class="footer__info-row">
+          <span>Business Registration Number: 101-82-15312</span>
+          <span>Representative: JEFFREY DAVID JONES </span>
+          <span
+            >Address: 10, Gangnam-daero 128-gil, Gangnam-gu, Seoul, Republic o f
+            Korea (06114)</span
+          >
+        </div>
+        <div class="footer__info-row">
+          <span>Email: rmhc@rmhc.or.kr</span>
+          <span
+            >Donor Support: +82-2-723-2013 / Hours: Mon–Fri 09:00 – 18:00
+            (KST)</span
+          >
+        </div>
+      </div>
+      <!-- Family site: 공통 커스텀 셀렉트 (custom-select) 적용 -->
+      <details class="custom-select footer__family-site" id="footerFamilySite">
+        <summary>Family site</summary>
+        <ul>
+          <li>
+            <a
+              href="https://www.rmhc.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ronald McDonald House Global</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.mcdonalds.co.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              >한국맥도날드</a
+            >
+          </li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- footer__copyright: 가장 하단 별도 줄 -->
+    <div class="footer__copyright">
+      Copyright © 2026 Ronald McDonald House Charities Korea. All Right
+      Reserved.
+    </div>
+  </div>
+
+  <!-- Floating Action Button (FAB) -->
+  <aside class="fab-container">
+    <!-- Donate -->
+    <a href="#" class="fab-item fab-donate" aria-label="Donate">
+      <img
+        src="/src/images/common/icon_heart_fab.svg"
+        alt=""
+        class="fab-icon-heart"
+      />
+      <span class="fab-text">Donate</span>
+    </a>
+
+    <!-- SNS -->
+    <div class="fab-sns-wrap">
+      <ul class="fab-sns-list">
+        <li>
+          <a
+            href="https://www.instagram.com/rmhc_korea"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            ><img src="/src/images/common/instagram.svg" alt=""
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/company/rmhc-korea"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            ><img src="/src/images/common/linkedIn.svg" alt=""
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/@rmhckorea"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            ><img src="/src/images/common/youtube.svg" alt=""
+          /></a>
+        </li>
+      </ul>
+      <button type="button" class="fab-sns-toggle" aria-label="SNS 메뉴 토글">
+        <img
+          src="/src/images/common/icon_plus_fab.svg"
+          alt=""
+          class="fab-icon-plus"
+        />
+        <span class="fab-text fab-text-default">SNS</span>
+        <span class="fab-text fab-text-active">닫기</span>
+      </button>
+    </div>
+
+    <!-- 위로가기 -->
+    <button
+      type="button"
+      class="fab-item fab-top"
+      id="btn-scroll-top"
+      aria-label="Top"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      <img
+        src="/src/images/common/icon_arrow_up_fab.svg"
+        alt=""
+        class="fab-icon-up"
+      />
+    </button>
+  </aside>
+
+  <load ="/includes/popups/newsletter_en.html" />
+  <load ="/includes/popups/common-alert.html" />
+</footer>
+
+<!-- 공통 라이브러리 및 스크립트 일괄 적용 -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script type="module" src="/src/js/common.js"></script>

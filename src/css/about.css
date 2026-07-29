@@ -65,18 +65,16 @@
 
 .about-vision-kv__panel {
   width: 87.5rem;
-  min-height: 54.2rem;
-  padding: 10rem 8rem 8rem;
+  height: 69.1rem;
+  padding: 8rem;
   background: url("/src/images/about/bg_about_vision_kv.png") 50% 50% / 100% 100% no-repeat;
   color: #FFFDE9;
 }
 
 .about-vision-kv__panel h1 {
   margin: 0;
-  font-family: var(--font-extrabold);
   font-size: 5.8rem;
-  font-weight: 800;
-  line-height: 1.26;
+  line-height: 1.2;
   letter-spacing: 0;
 }
 
@@ -350,7 +348,7 @@
 .impact-list span {
   display: block;
   margin-top: 1.6rem;
-  padding: 0 4rem;
+  padding: 0 2rem;
   font-family: var(--font-extrabold);
   font-size: 2rem;
   font-weight: 800;
@@ -365,7 +363,7 @@
 
 .map-layout {
   display: grid;
-  grid-template-columns: 39rem 47.1rem;
+  grid-template-columns: 48.4rem 47.1rem;
   gap: 28rem;
   align-items: center;
   justify-content: center;
@@ -1000,7 +998,6 @@
 
 .greetings-kv__text h1 {
   margin: 0;
-  font-family: var(--font-extrabold);
   font-size: 5.8rem;
   line-height: 1.25;
 }
@@ -1027,7 +1024,6 @@
 
 .greetings-message__content h2 {
   margin: 0;
-  font-family: var(--font-extrabold);
   font-size: 4.8rem;
   line-height: 1.32;
 }
@@ -1225,7 +1221,6 @@
 
 .board-kv__text h1 {
   margin: 0;
-  font-family: var(--font-extrabold);
   font-size: 5.8rem;
   line-height: 1.25;
 }
@@ -1346,16 +1341,18 @@
 
 .about-partner {
   overflow: hidden;
-  color: #000000;
-  background: #fffde9;
 }
 
 .partner-section-title {
-  margin: 0;
+  margin: 0 0 -4rem;
   font-family: var(--font-extrabold);
   font-size: 4.8rem;
   line-height: 1.3;
   text-align: center;
+}
+
+.partner-model__head .partner-section-title + p {
+  margin-top: 6.4rem;
 }
 
 .partner-kv {
@@ -1391,7 +1388,6 @@
 
 .partner-kv__text h1 {
   margin: 0;
-  font-family: var(--font-extrabold);
   font-size: 5.8rem;
   line-height: 1.25;
 }
@@ -1415,7 +1411,6 @@
 
 .partner-intro__content h2 {
   margin: 0;
-  font-family: var(--font-extrabold);
   font-size: 4.8rem;
   line-height: 1.3;
 }
@@ -1444,7 +1439,6 @@
 
 .partner-highlight__group h3 {
   margin: 0 0 8rem;
-  font-family: var(--font-extrabold);
   font-size: 3.8rem;
   line-height: 1.3;
   text-align: center;
@@ -1481,7 +1475,6 @@
 
 .founding-card__content h4 {
   margin: 4rem 0 0;
-  font-family: var(--font-extrabold);
   font-size: 2.8rem;
   line-height: 1.3;
 }
@@ -1627,6 +1620,10 @@
   line-height: 1.35;
 }
 
+html[lang="en"] .model-node span {
+  font-size: 1.6rem;
+}
+
 .model-node--seller {
   top: 0rem;
   left: 50.4%;
@@ -1682,7 +1679,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2.4rem;
-  margin: 6rem 0 0;
+  margin: 10rem 0 0;
   padding: 0;
   list-style: none;
 }
@@ -1701,7 +1698,7 @@
 }
 
 .activity-card__body {
-  min-height: 22.6rem;
+  height: 22.6rem;
   padding: 4rem;
   border: 1px solid #e0e0e0;
   border-top: none;
@@ -1727,14 +1724,13 @@
 }
 
 .activity-card h3 {
-  margin: 3.2rem 0 0;
-  font-family: var(--font-extrabold);
+  margin: 2.4rem 0 0;
   font-size: 2.2rem;
   line-height: 1.3;
 }
 
 .activity-card p {
-  margin: 1.6rem 0 0;
+  margin: 1.4rem 0 0;
   font-size: 2rem;
   line-height: 1.5;
 }
