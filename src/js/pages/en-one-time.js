@@ -11,9 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const chkRecurringWrap = document.getElementById('chkRecurringWrap');
   const monthlySectionWrap = document.getElementById('monthlySectionWrap');
   const oneTimeSectionWrap = document.getElementById('oneTimeSectionWrap');
+  const chkBusiness = document.getElementById('chkBusiness');
+  const businessNameArea = document.getElementById('businessNameArea');
+  const businessNameInput = document.getElementById('businessName');
+
+  let currentTab = 'one-time';
+
+  function updateBusinessNameVisibility() {
+    if (!businessNameArea) return;
+    if (currentTab === 'monthly' && chkBusiness && chkBusiness.checked) {
+      businessNameArea.style.display = 'block';
+      if (businessNameInput) businessNameInput.focus();
+    } else {
+      businessNameArea.style.display = 'none';
+      if (businessNameInput) businessNameInput.value = '';
+    }
+  }
 
   function switchTab(type) {
     if (!donateTypeTabsWrapper) return;
+
+    currentTab = type;
 
     if (donateTypeTabsWrapper.classList.contains('initial-one-time')) {
       donateTypeTabsWrapper.classList.remove('initial-one-time');
@@ -38,6 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (monthlySectionWrap) monthlySectionWrap.style.display = 'none';
       if (oneTimeSectionWrap) oneTimeSectionWrap.style.display = 'block';
     }
+
+    updateBusinessNameVisibility();
   }
 
   if (btnMonthlyTab) {
@@ -114,20 +134,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 4. Business Name 체크박스 토글 ---
-  const chkBusiness = document.getElementById('chkBusiness');
-  const businessNameArea = document.getElementById('businessNameArea');
-  const businessNameInput = document.getElementById('businessName');
-
-  if (chkBusiness && businessNameArea) {
+  // --- 4. Business Name 체크박스 토글 (Monthly 탭에서만 동작) ---
+  if (chkBusiness) {
     chkBusiness.addEventListener('change', () => {
-      if (chkBusiness.checked) {
-        businessNameArea.style.display = 'block';
-        if (businessNameInput) businessNameInput.focus();
-      } else {
-        businessNameArea.style.display = 'none';
-        if (businessNameInput) businessNameInput.value = '';
-      }
+      updateBusinessNameVisibility();
     });
   }
 

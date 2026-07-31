@@ -26,8 +26,9 @@ export function initCounters(sectionSelector, counterSelector) {
   /* ── 포맷 헬퍼 ───────────────────────────────────────── */
   const formatValue = (el, value) => {
     const decimals = Number(el.dataset.counterDecimals || 0);
+    const prefix   = el.dataset.counterPrefix || '';
     const suffix   = el.dataset.counterSuffix || '';
-    if (value <= 0) return `0${suffix}`;
+    if (value <= 0) return `${prefix}0${suffix}`;
 
     const rounded  = decimals > 0 ? value.toFixed(decimals) : Math.round(value).toString();
     const formatted =
@@ -35,7 +36,7 @@ export function initCounters(sectionSelector, counterSelector) {
         ? Number(rounded).toLocaleString('en-US')
         : rounded;
 
-    return `${formatted}${suffix}`;
+    return `${prefix}${formatted}${suffix}`;
   };
 
   /* ── 개별 애니메이션 ─────────────────────────────────── */

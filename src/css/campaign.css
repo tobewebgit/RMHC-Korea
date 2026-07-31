@@ -14,7 +14,7 @@
 }
 
 .campaign-container .page-header-wrap {
-  margin: 0 auto;  
+  margin: 0 auto;
   font-size: 2.2rem;
   text-align: center;
 }
@@ -189,32 +189,32 @@
     max-width: 100%;
     padding: 4rem var(--spacing-4);
   }
-  
+
   /* SVG 라인 숨김 */
   .campaign-svg-line-wrap,
   .timeline-heart-marker {
     display: none !important;
   }
-  
+
   .timeline-row {
     flex-direction: column !important;
     gap: var(--spacing-4);
     margin-bottom: var(--spacing-12);
     align-items: center;
   }
-  
+
   .timeline-col,
   .timeline-img-card,
   .timeline-title {
     width: 100% !important;
     max-width: 68rem;
   }
-  
+
   .timeline-img-card {
     height: auto;
     aspect-ratio: 680/488;
   }
-  
+
   .timeline-title {
     font-size: 2.8rem;
   }
@@ -296,8 +296,8 @@
 }
 
 .award-badge-wrap .badge-icon {
-  width: 6.0rem;
-  height: 6.0rem;
+  width: 6rem;
+  height: 6rem;
   object-fit: contain;
 }
 
@@ -312,28 +312,28 @@
 
 /* 최우수상 뱃지 (#FFBC0D) */
 .award-badge.badge-grand {
-  background-color: #FFBC0D;
+  background-color: #ffbc0d;
 }
 
 /* 우수상 뱃지 (#8EE7F8) */
 .award-badge.badge-excellent {
-  background-color: #8EE7F8;
+  background-color: #8ee7f8;
 }
 
 /* 장려상 뱃지 (#9CD83E) */
 .award-badge.badge-participation {
-  background-color: #9CD83E;
+  background-color: #9cd83e;
 }
 
 /* 입상 뱃지 (#D0C9FF) */
 .award-badge.badge-runnerup {
-  background-color: #D0C9FF;
+  background-color: #d0c9ff;
 }
 
 /* 특별상 뱃지 (#FF6E0D) */
 .award-badge.badge-special {
   color: var(--text-white);
-  background-color: #FF6E0D;
+  background-color: #ff6e0d;
 }
 
 /* 웜 페이지네이션 도트 커스텀 (슬라이더 외곽 독립 배치 구조) */
@@ -342,7 +342,7 @@
   bottom: auto !important;
   left: auto !important;
   transform: none !important;
-  margin-top: 10.0rem !important;
+  margin-top: 10rem !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,8 +353,8 @@
 .award-swiper-pagination .swiper-pagination-bullet {
   background-color: var(--bg-gray30);
   opacity: 1;
-  width: 1.0rem;
-  height: 1.0rem;
+  width: 1rem;
+  height: 1rem;
   margin: 0 !important;
   border-radius: 0.5rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -363,7 +363,7 @@
 .award-swiper-pagination .swiper-pagination-bullet-active {
   position: relative;
   background-color: var(--bg-gray30);
-  height: 1.0rem;
+  height: 1rem;
   border-radius: 0.5rem;
 }
 
@@ -372,8 +372,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 1.0rem;
-  height: 1.0rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 0.5rem;
   background-color: var(--primary);
   transition: left 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -385,20 +385,20 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.6rem;
   }
-  
+
   .award-section {
     margin-top: 8rem;
     margin-bottom: 18rem;
   }
-  
+
   .award-section-header {
     margin-bottom: 4rem;
   }
-  
+
   .award-section-header .sub-title {
     font-size: 2.8rem;
   }
-  
+
   .award-desc {
     font-size: 1.6rem;
   }
@@ -492,7 +492,7 @@
 }
 
 /* 신청서 기본 정보 입력 회색 상자 */
-.apply-page .inner-wrap{
+.apply-page .inner-wrap {
   padding: 4rem 0;
 }
 
@@ -545,7 +545,7 @@
   margin-left: 0;
   color: var(--text-gray60);
 }
-.apply-page .form-label{
+.apply-page .form-label {
   font-size: 2.2rem;
   font-weight: 600;
 }
@@ -602,7 +602,6 @@
   margin-top: 10rem;
 }
 
-
 /* CTA 버튼 간격 */
 .apply-page .apply-btn-wrap {
   margin-top: var(--spacing-8);
@@ -646,15 +645,15 @@
   .apply-page {
     padding-bottom: 6rem;
   }
-  
+
   .apply-page .donate-card {
     padding: var(--spacing-6) var(--spacing-4);
   }
-  
+
   .apply-page .total-amount {
     font-size: 2.4rem;
   }
-  
+
   .apply-page .chip-grid.cols-3 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -667,7 +666,6 @@
   min-height: auto;
   line-height: 2.9rem;
 }
-
 
 /* ==========================================================================
    디너 신청 페이지 전용 반응형 비율 축소 제어 (1500px 해상도 기준)
@@ -703,17 +701,20 @@
   text-align: left;
   box-sizing: border-box;
 }
+html[lang="en"] .kcr-card {
+  padding: 6rem;
+}
 
 .kcr-card--cheer {
-  background-image: url('/src/images/campaign/bg_kcr_1.svg');
+  background-image: url("/src/images/campaign/bg_kcr_1.svg");
 }
 
 .kcr-card--hope {
-  background-image: url('/src/images/campaign/bg_kcr_2.svg');
+  background-image: url("/src/images/campaign/bg_kcr_2.svg");
 }
 
 .kcr-card--change {
-  background-image: url('/src/images/campaign/bg_kcr_3.svg');
+  background-image: url("/src/images/campaign/bg_kcr_3.svg");
 }
 
 .kcr-card-icon {
@@ -747,7 +748,7 @@
     gap: 2.4rem;
     max-width: 50rem;
   }
-  
+
   .kcr-card {
     min-height: auto;
     padding: 5rem 3.6rem;

@@ -67,8 +67,9 @@
   width: 87.5rem;
   height: 69.1rem;
   padding: 8rem;
-  background: url("/src/images/about/bg_about_vision_kv.png") 50% 50% / 100% 100% no-repeat;
-  color: #FFFDE9;
+  background: url("/src/images/about/bg_about_vision_kv.png") 50% 50% / 100%
+    100% no-repeat;
+  color: #fffde9;
 }
 
 .about-vision-kv__panel h1 {
@@ -168,7 +169,7 @@
   min-height: 34.2rem;
   padding: 6rem;
   border-radius: 1.2rem;
-  background-color: #FFFDE9;
+  background-color: #fffde9;
 }
 
 .support-list img {
@@ -306,7 +307,7 @@
   line-height: 1.45;
 }
 .history-panel dd::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 1rem;
   top: 1.4rem;
@@ -409,9 +410,13 @@
   height: 2.4rem;
   margin-left: 0.8rem;
   background-color: currentColor;
-  -webkit-mask: url("/src/images/common/icon_arrow_right_black.png") no-repeat center/contain;
-  mask: url("/src/images/common/icon_arrow_right_black.png") no-repeat center/contain;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease;
+  -webkit-mask: url("/src/images/common/icon_arrow_right_black.png") no-repeat
+    center/contain;
+  mask: url("/src/images/common/icon_arrow_right_black.png") no-repeat
+    center/contain;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    background-color 0.3s ease;
 }
 
 .house-list a:hover::after {
@@ -422,7 +427,8 @@
   width: 2.4rem;
   height: 2.1rem;
   margin-right: 1.6rem;
-  background: url("/src/images/about/icon_heart_section_5_btn.svg") center / contain no-repeat;
+  background: url("/src/images/about/icon_heart_section_5_btn.svg") center /
+    contain no-repeat;
 }
 
 .house-heart--coming {
@@ -462,7 +468,8 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: url("/src/images/about/icon_heart_section_5.png") center / contain no-repeat;
+  background: url("/src/images/about/icon_heart_section_5.png") center / contain
+    no-repeat;
   will-change: transform;
 }
 
@@ -509,6 +516,9 @@
 .map-pin--yangsan .inner-heart {
   left: 4rem;
   top: -0.8rem;
+}
+html[lang="en"] .map-pin--yangsan .inner-heart {
+  left: 8.5rem;
 }
 
 /* Symbol */
@@ -574,7 +584,8 @@
   top: -34rem;
   width: 139.2rem;
   height: 121.3rem;
-  background: url("/src/images/about/img_heart_banner.svg") center / contain no-repeat;
+  background: url("/src/images/about/img_heart_banner.svg") center / contain
+    no-repeat;
   will-change: transform;
 }
 
@@ -585,12 +596,12 @@
 }
 
 .donate-banner h2 {
-  color: #FFFDE9;
+  color: #fffde9;
 }
 
 .donate-banner p {
   margin: 3.2rem 0 0;
-  color: #FFFDE9;
+  color: #fffde9;
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.55;
@@ -992,7 +1003,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #FFFDE9;
+  color: #fffde9;
   text-align: center;
 }
 
@@ -1117,7 +1128,6 @@
 
   .greetings-message {
     padding-top: 7.2rem;
-
   }
 
   .greetings-message__inner {
@@ -1589,7 +1599,6 @@
   max-width: 78rem;
   height: auto;
   transform: translateX(-50%);
-  
 }
 
 .model-node {
@@ -2232,7 +2241,7 @@ html[lang="en"] .model-node span {
   margin-top: 8rem;
   padding: 8rem 4rem;
   border-radius: 1.2rem;
-  background: rgba(255, 188, 13, 0.20);
+  background: rgba(255, 188, 13, 0.2);
   text-align: center;
 }
 
@@ -2274,7 +2283,7 @@ html[lang="en"] .model-node span {
 
 .offline-fund-card__amount p {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   gap: 0.6rem;
   margin: 4rem 0 0;
@@ -2401,7 +2410,6 @@ html[lang="en"] .model-node span {
   line-height: 1.55;
   word-break: keep-all;
 }
-
 
 /* 연간 재정보고 다운로드 전용 아이콘 오버라이드 */
 .donation-report-item summary::-webkit-details-marker {
@@ -2540,10 +2548,10 @@ html[lang="en"] .model-node span {
   border-bottom: 0;
 }
 .donation-report-table .total.left {
-  background: rgba(145, 24, 125, 0.10);
+  background: rgba(145, 24, 125, 0.1);
 }
 .donation-report-table .total.right {
-  background: rgba(27, 67, 178, 0.10);
+  background: rgba(27, 67, 178, 0.1);
 }
 
 .donation-report-table .total dt {
@@ -2560,7 +2568,7 @@ html[lang="en"] .model-node span {
   gap: 4rem;
   margin-top: 3.2rem;
   padding: 3.2rem 4rem;
-  background: rgba(208, 201, 255, 0.20);
+  background: rgba(208, 201, 255, 0.2);
 }
 
 .donation-report-note ul {

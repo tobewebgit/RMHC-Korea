@@ -16,7 +16,9 @@
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .modal-overlay.active {
@@ -167,7 +169,6 @@
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-
 /* ==========================================================================
    뉴스레터 구독 모달 전용 수식 스타일 (.newsletter-modal-container)
    ========================================================================== */
@@ -221,7 +222,6 @@
 }
 
 .newsletter-modal__title {
-  font-family: "NanumSquareNeoExtraBold", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   font-size: 2.8rem;
   font-weight: normal;
   line-height: 3.1rem;
@@ -230,7 +230,6 @@
 }
 
 .newsletter-modal__desc {
-  font-family: var(--font-pretendard), sans-serif;
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 2.7rem;
@@ -239,8 +238,8 @@
 }
 
 .newsletter-modal__agreement-box {
-  background-color: rgba(208, 201, 255, 0.2);
-  border: 1px solid #aaaaaa;
+  background-color: var(--bg-info);
+  border: 1px solid var(--border-color);
   border-radius: 0.8rem;
   padding: 3.2rem 2.4rem;
   display: flex;
@@ -254,12 +253,7 @@
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 2.7rem;
-  color: #000000;
   margin: 0;
-}
-
-.newsletter-modal__checkbox-text {
-  color: #000000;
 }
 
 .newsletter-modal__footer {
@@ -303,7 +297,6 @@
   padding-top: 4rem;
 }
 
-
 /* ==========================================================================
    백일장 수상작 상세 팝업 전용 수식 스타일 (.award-detail-modal-container)
    ========================================================================== */
@@ -334,7 +327,6 @@
   top: 4rem;
   right: 4rem;
 }
-
 
 /* ==========================================================================
    공통 알럿(Alert / Confirm) 모달 전용 스타일 (.common-alert-container)
@@ -429,15 +421,14 @@
 }
 
 .btn-alert-cancel {
-  background-color: #F1A3A3;
+  background-color: #f1a3a3;
   color: #ffffff;
 }
 
 .btn-alert-cancel:hover {
-  background-color: #E88B8B;
+  background-color: #e88b8b;
   color: #ffffff;
 }
-
 
 /* ==========================================================================
    글로벌 공통 모달 반응형 제어 (768px 이하)
