@@ -83,14 +83,55 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnSubmitDonate = document.getElementById('btnSubmitDonate');
 
   // --- State Variables ---
-  let activeDonateTab = '일시'; // '정기' | '일시'
-  let selectedAmount = ''; // 초기 미선택
+  let activeDonateTab = 'one-time'; // 'regular' | 'one-time'
+  let selectedAmount = '';
   let isAmountValid = false;
-  let selectedDonorType = '개인';
+  let selectedDonorType = 'individual'; // 'individual' | 'group'
   let isAuthenticated = false;
-  let selectedPayment = ''; // 'kakaopay' | 'naverpay' | 'tosspay' | 'card' | 'cms'
-  let isDirectMode = false; // 직접 입력 인풋 모드 여부
-  let signatureDrawn = false; // 서명 여부
+  let selectedPayment = '';
+  let isDirectMode = false;
+  let signatureDrawn = false;
+
+  // --- DOM Element Text Helpers (HTML DOM 기반 동적 텍스트 캡처 및 추출) ---
+  
+  // 셀렉트박스 초기 HTML 텍스트 캡처 (HTML에 정의된 텍스트 원본 보존)
+  const cardLabel = document.getElementById('cardCompanySelectLabel');
+  const initialCardLabelText = cardLabel ? cardLabel.textContent : '';
+  const bankLabel = document.getElementById('cmsBankSelectLabel');
+  const initialBankLabelText = bankLabel ? bankLabel.textContent : '';
+  const withdrawLabel = document.getElementById('withdrawDaySelectLabel');
+  const initialWithdrawLabelText = withdrawLabel ? withdrawLabel.textContent : '';
+  const expMonthLabel = document.getElementById('expMonthSelectLabel');
+  const initialExpMonthLabelText = expMonthLabel ? expMonthLabel.textContent : '';
+  const expYearLabel = document.getElementById('expYearSelectLabel');
+  const initialExpYearLabelText = expYearLabel ? expYearLabel.textContent : '';
+
+  // 1단계 요약: ID 및 Class 선택자로 활성 탭 및 단위 텍스트 캡처
+  function getStep1SummaryText() {
+    if (!selectedAmount) return '';
+    const activeTab = document.querySelector('.donate-type-tabs .btn-tab:not(.disabled)') || document.querySelector('.donate-type-tabs .btn-tab.active');
+    const tabLabel = activeTab ? activeTab.textContent.trim() : '';
+    const unitEl = document.querySelector('.direct-input-chip .unit');
+    const unitText = unitEl ? unitEl.textContent.trim() : '';
+    return `${tabLabel} ${selectedAmount}${unitText}`;
+  }
+
+  // 2단계 요약: #donorTypeGrid 내의 .btn-primary 칩 텍스트 캡처
+  function getStep2SummaryText() {
+    if (!isAuthenticated) return '';
+    const activeChip = document.querySelector('#donorTypeGrid .btn.btn-primary');
+    const donorLabel = activeChip ? activeChip.textContent.trim() : '';
+    return `${donorLabel}(인증 완료)`;
+  }
+
+  // 3단계 요약: .payment-tabs-grid 내의 활성 결제 버튼 텍스트 캡처
+  function getStep3SummaryText() {
+    if (!selectedPayment) return '';
+    const activeChip = document.querySelector(`.payment-tabs-grid .payment-tab-btn[data-pay="${selectedPayment}"]`) || document.querySelector('.payment-tabs-grid .payment-tab-btn.btn-primary');
+    if (!activeChip) return '';
+    const labelSpan = activeChip.querySelector('span');
+    return labelSpan ? labelSpan.textContent.trim() : activeChip.textContent.trim();
+  }
 
   // --- 아코디언 타이틀 우측 가이드/요약 초기 텍스트 설정 (임의 가이드 제거, 빈 칸 복원) ---
   step1Summary.textContent = ''; 
@@ -269,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
         step2Card, 
         step1Card, 
         step1Summary, 
-        `${activeDonateTab} 후원 ${selectedAmount}원`,
+        getStep1SummaryText(),
         step2Summary,
         ''
       );
@@ -298,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
       helperBoxes.forEach(box => box.style.display = 'none');
 
       // 3. 2단계 후원자 정보 초기화
-      selectedDonorType = '개인';
+      selectedDonorType = 'individual';
       donorTypeChips.forEach(c => {
         if (c.getAttribute('data-type') === 'individual') {
           c.classList.remove('btn-outline');
@@ -337,28 +378,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // 셀렉트박스 텍스트 복원
-      const cardLabel = document.getElementById('cardCompanySelectLabel');
-      if (cardLabel) cardLabel.textContent = '카드사를 선택해 주세요.';
+      // 셀렉트박스 원본 HTML 텍스트로 복원
+      if (cardLabel) cardLabel.textContent = initialCardLabelText;
       const pmCardCompanyInput = document.getElementById('pm_card_company');
       if (pmCardCompanyInput) pmCardCompanyInput.value = '';
 
-      const bankLabel = document.getElementById('cmsBankSelectLabel');
-      if (bankLabel) bankLabel.textContent = '은행을 선택해 주세요.';
+      if (bankLabel) bankLabel.textContent = initialBankLabelText;
       const pmCmsBankInput = document.getElementById('pm_cms_bank');
       if (pmCmsBankInput) pmCmsBankInput.value = '';
 
-      const withdrawLabel = document.getElementById('withdrawDaySelectLabel');
-      if (withdrawLabel) withdrawLabel.textContent = '출금일 선택';
+      if (withdrawLabel) withdrawLabel.textContent = initialWithdrawLabelText;
       if (withdrawDayInput) withdrawDayInput.value = '';
 
-      const expMonthLabel = document.getElementById('expMonthSelectLabel');
-      if (expMonthLabel) expMonthLabel.textContent = '월';
+      if (expMonthLabel) expMonthLabel.textContent = initialExpMonthLabelText;
       const pmExpMonthInput = document.getElementById('pm_exp_month');
       if (pmExpMonthInput) pmExpMonthInput.value = '';
 
-      const expYearLabel = document.getElementById('expYearSelectLabel');
-      if (expYearLabel) expYearLabel.textContent = '년';
+      if (expYearLabel) expYearLabel.textContent = initialExpYearLabelText;
       const pmExpYearInput = document.getElementById('pm_exp_year');
       if (pmExpYearInput) pmExpYearInput.value = '';
 
@@ -395,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // 1. 최상위 정기/일시 탭 버튼 비주얼 클래스 동기화
       const donateTypeTabsWrapper = document.querySelector('.donate-type-tabs');
       if (donateTypeTabsWrapper) {
-        if (activeDonateTab === '일시') {
+        if (activeDonateTab === 'one-time') {
           donateTypeTabsWrapper.classList.add('is-one-time');
           donateTypeTabsWrapper.classList.remove('is-regular');
         } else {
@@ -404,9 +440,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      donateTypeTabs.forEach(tab => {
-        const isReg = tab.textContent.trim().includes('정기');
-        if (activeDonateTab === '정기') {
+      donateTypeTabs.forEach((tab, index) => {
+        const isReg = index === 0;
+        if (activeDonateTab === 'regular') {
           if (isReg) {
             tab.classList.remove('disabled');
           } else {
@@ -422,21 +458,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // 2. 1단계 아코디언 헤더 요약 텍스트 업데이트
-      if (selectedAmount) {
-        step1Summary.textContent = `${activeDonateTab} 후원 ${selectedAmount}원`;
-      } else {
-        step1Summary.textContent = '';
-      }
+      step1Summary.textContent = getStep1SummaryText();
 
       // 3. 2단계 아코디언 헤더 요약 텍스트 업데이트
-      if (isAuthenticated) {
-        step2Summary.textContent = `${selectedDonorType}(인증 완료)`;
-      } else {
-        step2Summary.textContent = '';
-      }
+      step2Summary.textContent = getStep2SummaryText();
 
       // 4. 2단계 후원자 유형별 (개인 / 기업) UI 가시성 및 인증 영역 제어
-      if (selectedDonorType === '개인') {
+      if (selectedDonorType === 'individual') {
         if (authRequestArea) authRequestArea.style.display = 'block'; // 본인인증 영역 항상 보임
         if (authInfoArea) authInfoArea.style.display = isAuthenticated ? 'block' : 'none'; // 인증 정보 폼
         if (groupInfoArea) groupInfoArea.style.display = 'none'; // 기업용 폼 가림
@@ -454,7 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (isAuthenticated && receiptReq === 'Y') {
         if (receiptDetailArea) receiptDetailArea.style.display = 'block';
-        if (selectedDonorType === '개인') {
+        if (selectedDonorType === 'individual') {
           if (receiptResidentNumArea) receiptResidentNumArea.style.display = 'block';
           if (receiptBizHelperArea) receiptBizHelperArea.style.display = 'none';
           if (residentNum1) residentNum1.setAttribute('required', 'true');
@@ -480,7 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let step2FieldsValid = false;
       let residentNumValid = true;
 
-      if (selectedDonorType === '개인') {
+      if (selectedDonorType === 'individual') {
         if (isAuthenticated) {
           step2FieldsValid = true;
           if (receiptReq === 'Y') {
@@ -537,7 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // [파이프라인 분리 핵심] 일시 후원 vs 정기 후원 UI 제어
-      if (activeDonateTab === '일시') {
+      if (activeDonateTab === 'one-time') {
         // [일시 후원 파이프라인] - 출금일 및 카드/CMS 상세 정보 입력 박스는 아예 숨김 처리
         if (withdrawDayArea) withdrawDayArea.style.display = 'none';
         if (paymentDetailFormArea) paymentDetailFormArea.style.display = 'none';
@@ -561,7 +589,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let isPaymentValid = false;
       let withdrawDayValid = true;
 
-      if (activeDonateTab === '일시') {
+      if (activeDonateTab === 'one-time') {
         // 일시 후원은 결제 수단만 선택되면 바로 '후원하기' 활성화 (PG 처리 대상)
         isPaymentValid = (selectedPayment !== '');
         withdrawDayValid = true;
@@ -599,18 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // 3단계 헤더 요약 텍스트 업데이트
-      if (selectedPayment) {
-        const payNameMap = {
-          kakaopay: '카카오페이',
-          naverpay: '네이버페이',
-          tosspay: '토스페이',
-          card: '신용카드',
-          cms: 'CMS 자동이체'
-        };
-        step3Summary.textContent = payNameMap[selectedPayment] || '';
-      } else {
-        step3Summary.textContent = '';
-      }
+      step3Summary.textContent = getStep3SummaryText();
 
       if (btnSubmitDonate) {
         if (isPaymentValid && withdrawDayValid) {
@@ -636,10 +653,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- 이벤트 리스너 리액티브 바인딩 ---
 
   // 최상위 탭 전환 리스너
-  donateTypeTabs.forEach(tab => {
+  donateTypeTabs.forEach((tab, index) => {
     tab.addEventListener('click', () => {
-      const isReg = tab.textContent.trim().includes('정기');
-      activeDonateTab = isReg ? '정기' : '일시';
+      const isReg = index === 0;
+      activeDonateTab = isReg ? 'regular' : 'one-time';
 
       // 최초 로드 시 설정된 애니메이션 방지 클래스 제거
       const donateTypeTabsWrapper = document.querySelector('.donate-type-tabs');
@@ -663,7 +680,7 @@ document.addEventListener('DOMContentLoaded', () => {
       chip.classList.add('btn-primary');
       
       const type = chip.getAttribute('data-type');
-      selectedDonorType = type === 'individual' ? '개인' : '기업 / 단체';
+      selectedDonorType = type === 'group' ? 'group' : 'individual';
 
       updateDonateFlowUI();
     });
@@ -798,7 +815,7 @@ document.addEventListener('DOMContentLoaded', () => {
         step3Card, 
         step2Card, 
         step2Summary, 
-        `${selectedDonorType}(인증 완료)`,
+        getStep2SummaryText(),
         step3Summary,
         ''
       );
@@ -1023,15 +1040,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (card.classList.contains('is-disabled')) return;
       
       if (card.classList.contains('is-active')) {
-        if (card === step1Card) closeCard(card, step1Summary, selectedAmount ? `${activeDonateTab} 후원 ${selectedAmount}원` : '');
-        else if (card === step2Card) closeCard(card, step2Summary, isAuthenticated ? `${selectedDonorType}(인증 완료)` : '');
-        else if (card === step3Card) closeCard(card, step3Summary, selectedPayment || '');
+        if (card === step1Card) closeCard(card, step1Summary, getStep1SummaryText());
+        else if (card === step2Card) closeCard(card, step2Summary, getStep2SummaryText());
+        else if (card === step3Card) closeCard(card, step3Summary, getStep3SummaryText());
       } else {
         [step1Card, step2Card, step3Card].forEach(c => {
           if (c !== card && c.classList.contains('is-active')) {
-            if (c === step1Card) closeCard(c, step1Summary, selectedAmount ? `${activeDonateTab} 후원 ${selectedAmount}원` : '');
-            else if (c === step2Card) closeCard(c, step2Summary, isAuthenticated ? `${selectedDonorType}(인증 완료)` : '');
-            else if (c === step3Card) closeCard(c, step3Summary, selectedPayment || '');
+            if (c === step1Card) closeCard(c, step1Summary, getStep1SummaryText());
+            else if (c === step2Card) closeCard(c, step2Summary, getStep2SummaryText());
+            else if (c === step3Card) closeCard(c, step3Summary, getStep3SummaryText());
           }
         });
         
@@ -1064,6 +1081,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     
-    location.href = '/donate/complete.html';
+    const isEnPage = window.location.pathname.includes('/en/');
+    location.href = isEnPage ? '/en/donate/complete.html' : '/donate/complete.html';
   });
 });

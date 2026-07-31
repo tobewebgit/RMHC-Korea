@@ -103,7 +103,9 @@
 .foreign-card-banner .banner-link img {
   width: 2.4rem;
   height: 2.4rem;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    background-color 0.3s ease;
 }
 .foreign-card-banner .banner-link:hover img {
   transform: translateX(0.4rem);
@@ -130,7 +132,7 @@
   background-color: var(--primary);
   border-radius: 0.8rem;
   z-index: 0;
-  
+
   /* 애니메이션 및 트랜지션 (레퍼런스와 동일) */
   transition: transform 0.3s ease;
   transform: translateX(0);
@@ -150,7 +152,9 @@
   color: var(--text-black);
   font-weight: 600;
   opacity: 1;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   outline: none;
 }
 
@@ -189,9 +193,13 @@
   border-bottom: 1px solid transparent; /* 닫혀있을 땐 투명 보더 라인 */
   cursor: pointer;
   user-select: none;
-  transition: padding 0.45s cubic-bezier(0.25, 1, 0.5, 1),
-              margin 0.45s cubic-bezier(0.25, 1, 0.5, 1),
-              border-color 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  transition:
+    padding 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+    margin 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+html[lang="en"] .accordion-card .card-title-wrap {
+  cursor: text;
 }
 
 /* 카드가 열렸을 때 하단 마진 복원 및 라인 노출 */
@@ -216,13 +224,17 @@
 .accordion-card .card-body {
   max-height: 0;
   overflow: hidden;
-  opacity: 0; /* 기본적으로 투명하게 닫힘 */
-  transition: max-height 0.45s cubic-bezier(0.25, 1, 0.5, 1),
-              opacity 0.35s ease; /* 닫힐 때 오퍼시티 페이드아웃 적용 */
+  opacity: 0;
+  transition:
+    max-height 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.35s ease;
 }
 
 .accordion-card.is-active .card-body {
-  opacity: 1; /* 활성 상태일 때 노출 */
+  opacity: 1;
+}
+html[lang="en"] .accordion-card.is-active .card-body {
+  max-height: none;
 }
 .accordion-card.is-active .card-body h3,
 .accordion-card.is-active .radio-label {
@@ -240,7 +252,7 @@
 /* 5. 금액 및 정보 칩 그리드 */
 .chip-grid {
   display: grid;
-  gap: 1.2rem; /* 피그마 실측 12px */
+  gap: 1.2rem;
   margin-bottom: 2rem;
 }
 
@@ -319,7 +331,7 @@
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  background-color: rgba(255, 188, 13, 0.20);
+  background-color: rgba(255, 188, 13, 0.2);
   border-radius: var(--radius-sm);
   padding: 2.4rem 4rem;
   margin-top: 2.4rem;
@@ -486,11 +498,9 @@
 }
 
 .receipt-helper__primary {
-
 }
 
 .receipt-helper__secondary {
-
 }
 
 .inner-form-group .receipt-helper-text {
@@ -525,12 +535,12 @@
     gap: 4rem;
     padding: 0 var(--spacing-4) 6rem;
   }
-  
+
   .donate-page .apply-left-col {
     position: static;
     max-width: 100%;
   }
-  
+
   .donate-page .apply-right-col {
     max-width: 100%;
   }
@@ -540,7 +550,7 @@
   .donate-page .page-title {
     font-size: 3.6rem;
   }
-  
+
   .foreign-card-banner {
     padding: 0 2rem;
     height: auto;
@@ -549,25 +559,24 @@
     align-items: flex-start;
     gap: 1.2rem;
   }
-  
+
   .accordion-card {
     padding: 2.4rem 2rem;
   }
-  
+
   .accordion-card .card-title-wrap {
     margin: -0.8rem -2rem 0;
     padding: 0 2rem 2.4rem;
   }
-  
+
   .accordion-card.is-active .card-title-wrap {
     margin-bottom: 2.4rem;
   }
 }
 
-
 /* 결제 정보 입력 폼 */
 .payment-info-form-box {
-  background-color: rgba(208, 201, 255, 0.2);
+  background-color: var(--bg-info);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 4rem 2.4rem;
@@ -598,14 +607,7 @@
 }
 
 .payment-form-field .form-control {
-  width: 100%;
-  height: 5.2rem;
-  padding: 0 1.6rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  font-size: 1.8rem;
   background-color: var(--bg-primary);
-  box-sizing: border-box;
 }
 
 .payment-form-field select.form-control {
@@ -645,7 +647,7 @@
   user-select: none;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  background-color: rgba(208, 201, 255, 0.20);
+  background-color: rgba(208, 201, 255, 0.2);
 }
 
 #signatureCanvas:hover {
@@ -680,7 +682,6 @@
   color: var(--text-secondary);
   line-height: 1.4;
 }
-
 
 /* ==========================================================================
    goods.css — 물품후원 페이지 전용 스타일 (donate.css 내 모듈)
@@ -751,7 +752,7 @@
 .goods-card__body {
   flex: 1;
   padding: var(--spacing-8) var(--spacing-10);
-  background-color: rgba(255, 188, 13, 0.20);
+  background-color: rgba(255, 188, 13, 0.2);
 }
 
 /* 7. 리스트 초기화 */
@@ -838,7 +839,6 @@
   }
 }
 
-
 /* ==========================================================================
    volunteer — 자원봉사 신청 페이지 전용 스타일 (donate.css 내 모듈)
    피그마 실측 기준: node 2531:48366
@@ -857,7 +857,6 @@
 .font-roboto {
   font-family: "Roboto", sans-serif;
 }
-
 
 /* ── KV 히어로 영역 ─────────────────────────────── */
 
@@ -912,7 +911,6 @@
   margin: 1rem 0 0;
   font-size: 2rem;
 }
-
 
 /* ── Section 1: 소개 텍스트 + 슬라이드 이미지 ──────── */
 
@@ -995,7 +993,7 @@
 
 .vol-intro-swiper .vol-swiper-prev::after,
 .vol-intro-swiper .vol-swiper-next::after {
-  content: '';
+  content: "";
   display: block;
   width: 4rem;
   height: 4rem;
@@ -1083,7 +1081,6 @@
   text-align: center;
 }
 
-
 /* ── Section 3: 함께하기 전에 확인해주세요 ───────────── */
 
 .vol-apply {
@@ -1119,7 +1116,7 @@
 .vol-apply__box-wrap {
   display: flex;
   width: 100%;
-  background-color: #FFFDE9;
+  background-color: #fffde9;
   border-radius: 0.8rem;
   padding: 4rem 0;
 }
@@ -1170,7 +1167,6 @@
 .vol-apply__cta {
   width: 20.5rem;
 }
-
 
 /* ── Section 4: 이렇게 함께할 수 있어요 ─────────────── */
 
@@ -1256,7 +1252,6 @@
 .vol-act-card--green .vol-act-card__body {
   background-color: #9cd83e;
 }
-
 
 /* ── Section 5: 봉사 참여 방법 ───────────────────── */
 
@@ -1359,11 +1354,21 @@
   justify-content: center;
 }
 
-.vol-process__icon--01 { background-color: #ff6e0d; }
-.vol-process__icon--02 { background-color: #ffbc0d; }
-.vol-process__icon--03 { background-color: #9cd83e; }
-.vol-process__icon--04 { background-color: #8ee7f8; }
-.vol-process__icon--05 { background-color: #d0c9ff; }
+.vol-process__icon--01 {
+  background-color: #ff6e0d;
+}
+.vol-process__icon--02 {
+  background-color: #ffbc0d;
+}
+.vol-process__icon--03 {
+  background-color: #9cd83e;
+}
+.vol-process__icon--04 {
+  background-color: #8ee7f8;
+}
+.vol-process__icon--05 {
+  background-color: #d0c9ff;
+}
 
 .vol-process__num {
   font-family: var(--font-extrabold);
@@ -1382,7 +1387,6 @@
 .vol-process__cta {
   width: 20.5rem;
 }
-
 
 /* ── Section 6: 현장에서 전하는 따뜻한 기록 ──────────── */
 
@@ -1430,15 +1434,19 @@
 
 .vol-news-card__img-wrap {
   overflow: hidden;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-radius: 1.2rem;
 }
 
 .vol-news-card__img {
   width: 100%;
   height: auto;
   display: block;
+  transition: all 0.3s ease-in-out;
 }
-
+.vol-news-card:hover .vol-news-card__img {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
 .vol-news-card__body {
   padding: 2.4rem 0;
   display: flex;
@@ -1457,6 +1465,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.vol-news-card:hover .vol-news-card__title {
+  text-decoration: underline;
+}
 
 .vol-news-card__date {
   font-size: 1.6rem;
@@ -1467,7 +1478,6 @@
 .vol-news__cta {
   width: 19.9rem;
 }
-
 
 /* ── volunteer 반응형 ───────────────────────────── */
 
@@ -1550,7 +1560,6 @@
     align-items: center;
   }
 }
-
 
 /* ==========================================================================
    DN_04P — 자원봉사 신청 팝업 전용 스타일
@@ -1663,7 +1672,7 @@
 /* ── 팝업 폼 요소 오버라이드 (비활성 필드 등) ────────────────────── */
 .vol-popup-body .form-control[readonly],
 .vol-popup-body .form-control:disabled {
-  background-color: rgba(208, 201, 255, 0.20) !important;
+  background-color: rgba(208, 201, 255, 0.2) !important;
   border-color: var(--border-gray40) !important;
   color: var(--text-secondary) !important;
   cursor: not-allowed;
@@ -1683,7 +1692,7 @@
 
 /* ── 개인정보 동의 박스 ─────────────────────────────────────── */
 .vol-privacy-box {
-  background-color: rgba(208, 201, 255, 0.20);
+  background-color: rgba(208, 201, 255, 0.2);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   padding: 2rem 2.4rem;
@@ -1838,12 +1847,12 @@
 /* 요일별 색상 (헤더 및 날짜 공통 적용을 위한 클래스 활용) */
 .vol-cal-grid th:first-child,
 .vol-cal-day.is-sunday {
-  color: #FFA500; /* 오렌지색 계열 */
+  color: #ffa500; /* 오렌지색 계열 */
 }
 
 .vol-cal-grid th:last-child,
 .vol-cal-day.is-saturday {
-  color: #FFC72C; /* 골드 계열 */
+  color: #ffc72c; /* 골드 계열 */
 }
 
 .vol-cal-grid td {
@@ -1867,7 +1876,9 @@
   align-items: center;
   justify-content: center;
   color: var(--text-primary);
-  transition: background-color 0.15s, color 0.15s;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
 }
 
 .vol-cal-day:hover {
@@ -1881,11 +1892,11 @@
 }
 
 .vol-cal-day.is-in-range.is-sunday {
-  color: #FFA500;
+  color: #ffa500;
 }
 
 .vol-cal-day.is-in-range.is-saturday {
-  color: #FFC72C;
+  color: #ffc72c;
 }
 
 .vol-cal-day.is-selected {
@@ -2073,4 +2084,114 @@
   color: var(--text-gray60);
   margin-top: 0.8rem;
   font-size: 1.4rem;
+}
+
+/* ==========================================================================
+   영문 일시후원 (Foreign Card Donation / EN Form) 전용 스타일
+   ========================================================================== */
+
+.en-form-card-box {
+  background-color: var(--bg-info);
+  border: 1px solid var(--border-color);
+  border-radius: 0.8rem;
+  padding: 4rem 2.4rem;
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.en-check-area {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.en-form-card-box + .en-form-card-title {
+  margin-top: 5.2rem;
+}
+
+.en-form-card-title {
+  font-size: 2rem;
+}
+
+.form-group.label-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 0;
+}
+
+.form-group.label-top .form-label {
+  width: 100%;
+  text-align: left;
+  font-size: 1.6rem;
+}
+
+.form-group.label-top .form-field {
+  width: 100%;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.en-field-note {
+  margin-top: -2.2rem;
+  font-size: 1.4rem;
+  color: var(--text-gray60);
+}
+
+.en-payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+}
+
+.en-payment-btn {
+}
+
+.en-payment-btn img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 1rem;
+  object-fit: contain;
+}
+
+.en-payment-note {
+  font-size: 1.5rem;
+  color: #767676;
+  margin-top: 5.2rem;
+  text-align: left;
+}
+
+.en-accordion-wrap {
+  margin: 5.2rem 0;
+}
+.en-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.en-accordion-header .accordion-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: transform 0.3s ease;
+}
+
+.en-accordion-body {
+  margin-top: 0.8rem;
+}
+
+.en-donate-submit-wrap {
+  width: 100%;
 }
