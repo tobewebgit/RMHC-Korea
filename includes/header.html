@@ -174,29 +174,7 @@
         <span class="header__donate-btn-icon"></span>
       </a>
 
-      <a
-        href="/en/main/main.html"
-        class="header__mobile-lang"
-        aria-label="언어 선택"
-      >
-        <svg
-          class="header__util-icon"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.8"
-            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-          ></path>
-        </svg>
-        EN
-      </a>
-
+      <!-- mobile nav toggle -->
       <button
         type="button"
         class="mobile-nav-toggle"
@@ -214,7 +192,7 @@
 
 <div class="mobile-menu-panel type-mo" id="mobileMenuPanel" aria-hidden="true">
   <div class="mobile-panel-header">
-    <a href="/" class="logo-link" aria-label="RMHC Korea 홈">
+    <a href="/main/main.html" class="logo-link" aria-label="RMHC Korea 홈">
       <img
         src="/src/images/common/logo.svg"
         alt="RMHC Korea Logo"
@@ -253,6 +231,9 @@
   <div class="mobile-utility">
     <a href="/login/login.html" class="mobile-utility-link">로그인</a>
     <a href="/join/join.html" class="mobile-utility-link">회원가입</a>
+    <a href="#" class="mobile-utility-link active">로날드님</a>
+    <a href="#" class="mobile-utility-link">회원가입</a>
+    <a href="#" class="mobile-utility-link">로그아웃</a>
   </div>
 
   <nav class="mobile-nav" aria-label="모바일 주 메뉴">
@@ -262,7 +243,9 @@
           소개
         </button>
         <div class="m-gnb-depth2">
-          <a href="/about/vision.html">한국 로날드 맥도날드 하우스</a>
+          <a href="/about/vision.html" class="active"
+            >한국 로날드 맥도날드 하우스</a
+          >
           <a href="/about/greetings.html">회장 인사말</a>
           <a href="/about/partner.html">기업 파트너</a>
           <a href="/about/board.html">이사회</a>
@@ -318,12 +301,10 @@
   <div class="mobile-panel-footer">
     <a
       href="/nonmember/donations.html"
-      class="mobile-panel-btn mobile-panel-btn--outline"
+      class="btn btn-outline primary mobile-panel-btn"
       >기부금 영수증 확인</a
     >
-    <a
-      href="/donate/regular.html"
-      class="mobile-panel-btn mobile-panel-btn--primary"
+    <a href="/donate/regular.html" class="btn btn-primary mobile-panel-btn"
       >후원하기</a
     >
   </div>

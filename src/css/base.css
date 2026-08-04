@@ -701,17 +701,6 @@ html:not(.lenis) [data-aos] {
   padding: var(--spacing-8);
 }
 
-@media screen and (min-width: 769px) and (max-width: 1472px) {
-  html {
-    font-size: 0.68493vw;
-  }
-}
-@media only screen and (max-width: 768px) {
-  html {
-    font-size: 2.5645vw; /* 390px :: iPhone 12 Pro */
-  }
-}
-
 .no-scroll {
   overflow: hidden;
 }
@@ -835,7 +824,7 @@ table caption {
   height: auto !important;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .nowrap {
     display: block;
   }
@@ -856,10 +845,33 @@ table caption {
   }
 }
 
-@media screen and (max-width: 767px) {
+/* pc 1440 기준 (16 / 1440) * 100 = 1.1111vw */
+/* @media screen and (min-width: 768px) and (max-width:1440px) {
+  html { font-size: 1.1111vw } 
+} */
+/* @media screen and (min-width: 768px) and (max-width:1024px) {
+  html { font-size: 1.5625vw }
+} */
+/* 아이폰14 pro max 430 기준 (16 / 430) * 100 = 3.7209vw */
+/* @media all and (max-width: 767px) {
+  html { font-size: 3.7209vw } 
+} */
+
+@media screen and (min-width: 769px) and (max-width: 1472px) {
+  html {
+    /* font-size: 0.68493vw; */
+    font-size: calc(100vw / 147.2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    /* font-size: calc(100vw / 39); */
+    font-size: calc(100vw / 36);
+  }
   button {
     cursor: pointer;
-    color: #000 !important;
+    color: #000000;
   }
   .nowrap {
     display: inline;
@@ -872,24 +884,26 @@ table caption {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
+@media screen and (min-width: 769px) and (max-width: 1279px) and (orientation: landscape) {
   .gnb__dimmed,
   .gnb__dimmed.open {
     display: none !important;
   }
 }
 
-/* pc 1440 기준 (16 / 1440) * 100 = 1.1111vw */
-/* @media screen and (min-width: 768px) and (max-width:1440px) {
-  html { font-size: 1.1111vw } 
-} */
-/* @media screen and (min-width: 768px) and (max-width:1024px) {
-  html { font-size: 1.5625vw }
-} */
-/* 아이폰14 pro max 430 기준 (16 / 430) * 100 = 3.7209vw */
-/* @media all and (max-width: 767px) {
-  html { font-size: 3.7209vw } 
-} */
+/* ==========================================================================
+   브라우저 자동완성(Autofill) 선택 시 배경색 및 글자색 변함 방지
+   ========================================================================== */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #fffde9 inset !important;
+  box-shadow: 0 0 0 1000px #fffde9 inset !important;
+  -webkit-text-fill-color: var(--text-primary, #000000) !important;
+  border-radius: inherit !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 /* ==========================================================================
    FOUC (Flash of Unstyled Content) 방지용 스크롤 모션 초기 스타일
@@ -910,6 +924,13 @@ table caption {
   [data-motion="fade-down"] {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .no-motion-mo[data-motion] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 

@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       marqueeTween = null;
       removeClones();
 
-      if (typeof gsap === 'undefined' || reduceMotion.matches || mobile.matches) {
+      if (typeof gsap === 'undefined' || reduceMotion.matches) {
         stopMarquee();
         return;
       }
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const playMarquee = () => {
-      if (!reduceMotion.matches && !mobile.matches) marqueeTween?.resume();
+      if (!reduceMotion.matches) marqueeTween?.resume();
     };
 
     slider.addEventListener('mouseenter', pauseMarquee);

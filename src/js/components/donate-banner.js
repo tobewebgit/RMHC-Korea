@@ -9,8 +9,11 @@ export const initDonateBannerHeart = () => {
   const reset = () => {
     timeline?.kill();
     timeline = null;
+    const isMobile = window.innerWidth <= 1024;
+    const startScale = isMobile ? 0.5 : 0.8; // 모바일에서는 더 작은 상태(0.5)에서 출발
+
     gsap.set(heart, {
-      scale: 0.8,
+      scale: startScale,
       opacity: 1,
       transformOrigin: '50% 50%',
     });
@@ -19,9 +22,12 @@ export const initDonateBannerHeart = () => {
   const play = () => {
     if (reduceMotion.matches) return;
     reset();
+    const isMobile = window.innerWidth <= 1024;
+    const targetScale = isMobile ? 1.05 : 1.0; // 모바일일 때 약 5% 더 크게 (1.05) 완료
+
     timeline = gsap.timeline();
     timeline.to(heart, {
-      scale: 1,
+      scale: targetScale,
       duration: 0.8,
       ease: 'back.out(1.25)',
     });

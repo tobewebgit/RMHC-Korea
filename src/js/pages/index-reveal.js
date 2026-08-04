@@ -13,17 +13,17 @@ export function initIndexReveal() {
     threshold: 0.15
   };
 
-  const syncImage = document.querySelector('.main-house__sync-img');
+  const syncImages = document.querySelectorAll('.main-house__sync-img');
   const syncLabel = document.querySelector('.main-house__label');
   let syncTimeline = null;
 
-  if (syncImage && typeof gsap !== 'undefined') {
+  if (syncImages.length > 0 && typeof gsap !== 'undefined') {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduceMotion) {
       syncTimeline = gsap.timeline({ paused: true });
       
-      // 1. 이미지 스케일 업
-      syncTimeline.to(syncImage, {
+      // 1. 이미지 스케일 업 (PC & MO 이미지 전체 적용)
+      syncTimeline.to(syncImages, {
         opacity: 1,
         scale: 1,
         duration: 1.5,
@@ -156,9 +156,10 @@ export function initIndexReveal() {
           // 아이콘: 텍스트가 벌어지면서 나타나도록 너비와 마진을 0에서부터 증가시킴
           item.style.opacity = itemProgress;
           
-          // data-width 속성이 있으면 해당 값을 rem으로 환산하여 적용, 없으면 기본값 6rem
+          // data-width 속성이 있으면 해당 값을 rem으로 환산하여 적용, 없으면 기본값 6rem (모바일 1024px 이하 3.2rem 통일)
+          const isMobile = window.innerWidth <= 1024;
           const dataWidth = parseFloat(item.dataset.width);
-          const targetWidth = isNaN(dataWidth) ? 6 : (dataWidth / 10);
+          const targetWidth = isMobile ? 3.2 : (isNaN(dataWidth) ? 6 : (dataWidth / 10));
           const targetMargin = 0;
           
           item.style.width = `${itemProgress * targetWidth}rem`;
