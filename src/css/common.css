@@ -559,6 +559,9 @@ a.header__submenu-link:focus-visible,
    Responsive Adjustments (Fallback & Mobile Mobile scale reset)
    ========================================================================== */
 @media (max-width: 768px) {
+  .page-wrapper {
+    padding-top: 8rem;
+  }
   /* ── Mobile Footer (display: contents + order 모바일 단일 HTML 배치) ── */
   .footer {
     margin-top: 10rem;
@@ -1576,10 +1579,6 @@ a.header__submenu-link:focus-visible,
 .fab-icon-up {
   width: 3.2rem;
   height: 3.2rem;
-  transition: transform 0.3s ease;
-}
-.fab-top:hover .fab-icon-up {
-  transform: translateY(-0.4rem);
 }
 
 /* Mobile FAB Bottom Bar (최하단 고정 바) */
@@ -1732,7 +1731,7 @@ a.header__submenu-link:focus-visible,
     align-items: center;
     justify-content: center;
     background-color: #fffde9;
-    border-left: 1px solid #e2ddb7;
+    border-left: 1px solid var(--border-gray40);
   }
 
   .fab-icon-up {
