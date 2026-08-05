@@ -467,8 +467,6 @@
                 class="symbol-logo"
                 src="/src/images/about/logo_section_6.png"
                 alt="Ronald McDonald House Korea"
-                width="360"
-                height="197"
                 loading="lazy"
                 data-motion="fade-up"
               />
@@ -510,23 +508,29 @@
           class="about-donate-banner"
           aria-labelledby="donateBannerTitle"
         >
-          <div class="inner-layout">
-            <div class="donate-banner" data-motion="fade-up">
-              <span class="donate-banner__heart" aria-hidden="true"></span>
-              <div class="donate-banner__content">
-                <h2 id="donateBannerTitle">
-                  아이와 가족이 함께할 수 있도록,<br />지금 따뜻한 마음을
-                  전해주세요
-                </h2>
-                <p>
-                  환아 가족이 안심하고 머물 수 있도록,<br />후원금은 하우스
-                  운영과 생활 지원에 소중히 사용됩니다.
-                </p>
-              </div>
-              <a href="#" class="btn btn-white btn-heart donate-banner__btn"
-                >지금 후원하기</a
+          <div class="donate-banner">
+            <span class="donate-banner__heart" aria-hidden="true"></span>
+            <div class="donate-banner__content">
+              <h2
+                id="donateBannerTitle"
+                data-motion="fade-up"
+                data-motion-delay="0.25"
               >
+                아이와 가족이 함께할 수 있도록,<br />
+                지금 따뜻한 마음을 전해주세요
+              </h2>
+              <p data-motion="fade-up" data-motion-delay="0.3">
+                환아 가족이 안심하고 머물 수 있도록,<br />
+                후원금은 하우스 운영과 생활 지원에 소중히 사용됩니다.
+              </p>
             </div>
+            <a
+              href="#"
+              class="btn btn-white btn-heart donate-banner__btn"
+              data-motion="fade-up"
+              data-motion-delay="0.75"
+              >지금 후원하기</a
+            >
           </div>
         </section>
       </main>
@@ -632,21 +636,34 @@
         };
 
         const initMapHover = () => {
-          const btnYangsan = document.querySelector(
-            ".about-map .house-list li:first-child a",
+          const activeHouseBtn = document.querySelector(
+            ".about-map .house-list a.is-active",
           );
           const heartYangsan = document.querySelector(
-            ".about-map .map-pin--yangsan .map-pin__heart",
+            ".about-map .map-pin--yangsan .icon-heart",
           );
 
-          if (btnYangsan && heartYangsan) {
-            btnYangsan.addEventListener("mouseenter", () => {
-              heartYangsan.classList.add("motion-floating-fast");
+          if (activeHouseBtn && heartYangsan) {
+            activeHouseBtn.addEventListener("mouseenter", () => {
+              heartYangsan.classList.add("motion-pulse");
             });
-            btnYangsan.addEventListener("mouseleave", () => {
-              heartYangsan.classList.remove("motion-floating-fast");
+            activeHouseBtn.addEventListener("mouseleave", () => {
+              heartYangsan.classList.remove("motion-pulse");
             });
           }
+
+          const mapPins = document.querySelectorAll(".about-map .map-pin");
+          mapPins.forEach((pin) => {
+            const heartIcon = pin.querySelector(".icon-heart");
+            if (heartIcon) {
+              pin.addEventListener("mouseenter", () => {
+                heartIcon.classList.add("motion-pulse");
+              });
+              pin.addEventListener("mouseleave", () => {
+                heartIcon.classList.remove("motion-pulse");
+              });
+            }
+          });
         };
 
         initAboutMotions();

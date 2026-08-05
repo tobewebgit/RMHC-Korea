@@ -459,17 +459,17 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #000000;
   font-family: var(--font-extrabold);
   font-size: 2rem;
   font-weight: 800;
   line-height: 1;
+  cursor: pointer;
 }
 
 .inner-heart {
   position: absolute;
-  width: 4rem;
-  height: 4rem;
+  width: 4.1rem;
+  height: 4.1rem;
 }
 
 .map-pin__heart {
@@ -484,10 +484,27 @@
 }
 
 .map-pin__heart .icon-heart {
+  display: block;
   width: 2.6rem;
   height: 2.2rem;
   background: url("/src/images/about/icon_heart_section_5_btn.svg") center /
     contain no-repeat;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+@keyframes motionPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+.motion-pulse {
+  animation: motionPulse 1.2s ease-in-out infinite;
 }
 
 .map-pin--inha {
@@ -580,6 +597,8 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
 /* Donation banner */
 .about-donate-banner {
+  width: min(144rem, calc(100% - 4.8rem));
+  margin: 0 auto;
   padding-top: 20rem;
 }
 
@@ -601,7 +620,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   top: -34rem;
   width: 139.2rem;
   height: 121.3rem;
-  background: url("/src/images/about/img_heart_banner.svg") center / contain
+  background: url("/src/images/main/img_heart_banner.svg") center / contain
     no-repeat;
   will-change: transform;
 }
@@ -613,21 +632,23 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 }
 
 .donate-banner h2 {
-  color: #fffde9;
+  color: #fffdf0;
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.35;
+  word-break: keep-all;
 }
 
 .donate-banner p {
   margin: 3.2rem 0 0;
-  color: #fffde9;
+  color: #fffdf0;
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.55;
+  word-break: keep-all;
 }
 
 .donate-banner__btn {
-  display: inline-flex;
-  justify-content: center;
-  width: 100%;
   max-width: 17.4rem;
 }
 
@@ -872,13 +893,13 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .about-map {
-    padding: 8rem 0;
+    padding: 10rem 0;
   }
 
   .map-layout {
     display: flex;
     flex-direction: column-reverse;
-    gap: 4rem;
+    gap: 2rem;
   }
 
   .korea-map {
@@ -890,37 +911,56 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
     font-size: 1.4rem;
   }
 
-  .map-pin__heart {
-    width: 2rem;
-    height: 1.8rem;
-  }
-
   .map-pin--inha {
-    left: 0.8rem;
-    top: 15rem;
+    left: 0.7rem;
+    top: 7rem;
+  }
+  .map-pin--inha .inner-heart {
+    left: 2.8rem;
+    top: -0.3rem;
   }
 
   .map-pin--yeonhui {
-    left: 6.2rem;
-    top: 13.4rem;
+    left: 4.7rem;
+    top: 5.2rem;
+  }
+  .map-pin--yeonhui .inner-heart {
+    left: 0.6rem;
+    top: 1.4rem;
   }
 
   .map-pin--seocho {
-    left: 5.4rem;
-    top: 18.5rem;
+    left: 4.9rem;
+    top: 9.1rem;
+  }
+  .map-pin--seocho .inner-heart {
+    left: 0.3rem;
+    top: -1.5rem;
   }
 
   .map-pin--gangnam {
-    left: 10.6rem;
-    top: 16.8rem;
+    left: 7.9rem;
+    top: 7.4rem;
+  }
+  .map-pin--gangnam .inner-heart {
+    left: -1.4rem;
+    top: -0.3rem;
   }
 
   .map-pin--yangsan {
-    right: 0.4rem;
-    bottom: 8.2rem;
+    right: 4.6rem;
+    bottom: 5.6rem;
+  }
+  .map-pin--yangsan .inner-heart {
+    left: 3rem;
+    top: -0.3rem;
+  }
+  html[lang="en"] .map-pin--yangsan .inner-heart {
+    left: 3.6rem;
   }
 
   .house-list {
+    gap: 0.8rem;
     width: 100%;
   }
 
@@ -931,35 +971,64 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .house-heart {
-    width: 3rem;
-    height: 2.6rem;
+    width: 2.4rem;
+    height: 2.1rem;
+  }
+
+  .house-heart--coming {
+    width: 3.1rem;
+    height: 2.2rem;
     margin-right: 1.6rem;
   }
 
+  .inner-heart {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .map-pin__heart .icon-heart {
+    width: 1.1rem;
+    height: 1rem;
+  }
+
   .about-symbol {
-    padding: 8rem 0;
+    padding: 10rem 0;
     text-align: center;
   }
 
   .symbol-layout {
     display: flex;
-    flex-direction: column-reverse;
-    gap: 4.8rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
   }
 
-  .symbol-logo {
-    width: 20rem;
+  .symbol-content {
+    display: contents;
+  }
+
+  .about-symbol h2 {
+    order: 1;
   }
 
   .about-symbol p {
+    order: 2;
     margin-top: 2.4rem;
     font-size: 1.4rem;
     line-height: 1.45;
   }
 
+  .symbol-logo {
+    order: 3;
+    width: 18.7rem;
+    margin-top: 4rem;
+  }
+
   .symbol-buttons {
+    order: 4;
+    width: 100%;
     grid-template-columns: 1fr;
-    gap: 1.2rem;
+    gap: 0.8rem;
     margin-top: 4rem;
   }
 
@@ -969,26 +1038,29 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .about-donate-banner {
-    padding: 8rem 0;
+    width: 100%;
+    padding: 0;
   }
 
   .donate-banner {
     display: block;
-    min-height: 46.4rem;
-    padding: 12.8rem 2.4rem 0;
+    min-height: 45rem;
+    padding: 13.2rem 2.4rem 0;
+    border-radius: 0;
     text-align: center;
   }
 
   .donate-banner__heart {
     left: 50%;
-    top: -13.6rem;
+    top: -11rem;
     width: 70rem;
     height: 61rem;
-    transform: translateX(-50%);
+    margin-left: -35rem;
+    transform: none;
   }
 
   .donate-banner h2 {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   .donate-banner p {
@@ -1000,7 +1072,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
     min-width: 15.3rem;
     min-height: 5.2rem;
     margin-top: 3.2rem;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -1142,14 +1214,14 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
 @media (max-width: 768px) {
   .greetings-kv {
-    width: calc(100% - 4rem);
+    width: 31.2rem;
     height: 24rem;
-    margin: 0 auto;
+    margin: 2rem auto 0;
   }
 
   .greetings-kv__text h1 {
-    font-size: 3.2rem;
-    line-height: 1.25;
+    font-size: 2.8rem;
+    line-height: 1.3;
   }
 
   .greetings-kv__text p {
@@ -1160,13 +1232,13 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .greetings-message {
-    padding-top: 7.2rem;
+    padding-top: 6rem;
   }
 
   .greetings-message__inner {
     display: flex;
     flex-direction: column;
-    gap: 5.6rem;
+    gap: 4rem;
     padding-right: 2rem;
     padding-left: 2rem;
   }
@@ -1183,7 +1255,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .greetings-message__body {
-    margin-top: 4rem;
+    margin-top: 2.4rem;
   }
 
   .greetings-message__body p {
@@ -1197,7 +1269,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .greetings-sign {
-    margin-top: 4rem;
+    margin-top: 2.4rem;
   }
 
   .greetings-sign p {
@@ -1208,7 +1280,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   .greetings-sign img {
     position: static;
     width: 15.6rem;
-    margin-top: 2.4rem;
+    margin-top: 1.6rem;
   }
 
   .greetings-portrait {
@@ -1321,17 +1393,14 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 }
 
 @media (max-width: 768px) {
-  .about-board {
-  }
-
   .board-kv {
-    width: calc(100% - 4rem);
+    width: 31.2rem;
     height: 24rem;
-    margin: 0 auto;
+    margin: 2rem auto 0;
   }
 
   .board-kv__text h1 {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
     line-height: 1.25;
   }
 
@@ -1343,7 +1412,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .board-members {
-    padding: 7.2rem 0 10rem;
+    padding: 6rem 0 0;
   }
 
   .board-members .inner-layout {
@@ -1353,23 +1422,38 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
   .board-members__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4.8rem 2rem;
+    gap: 2.4rem 1.6rem;
     max-width: none;
   }
 
-  .board-member figcaption {
-    margin-top: 2rem;
-    color: #000000;
-    font-size: 1.4rem;
-    line-height: 1.45;
+  .board-member__photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 1.6rem;
+    object-fit: cover;
   }
 
-  .board-member figcaption strong {
+  .board-member figcaption {
+    margin-top: 1.6rem;
+    text-align: center;
+  }
+
+  .board-member figcaption h2 {
     display: block;
-    margin-bottom: 0.8rem;
     font-family: var(--font-extrabold);
-    font-size: 2.2rem;
-    line-height: 1.25;
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #000000;
+  }
+
+  .board-member figcaption p {
+    margin-top: 0.8rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: #666666;
+    word-break: keep-all;
   }
 
   .board-member figcaption span {
@@ -1387,7 +1471,6 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 }
 
 .partner-section-title {
-  margin: 0 0 -4rem;
   font-family: var(--font-extrabold);
   font-size: 4.8rem;
   line-height: 1.3;
@@ -1478,6 +1561,9 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
 .partner-highlight__group {
   margin-top: 12rem;
+}
+.partner-highlight__group:first-of-type {
+  margin-top: 8rem;
 }
 
 .partner-highlight__group h3 {
@@ -1814,7 +1900,7 @@ html[lang="en"] .model-node span {
 
 @media (max-width: 768px) {
   .partner-section-title {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     line-height: 1.25;
   }
 
@@ -1824,14 +1910,14 @@ html[lang="en"] .model-node span {
   }
 
   .partner-kv {
-    width: calc(100% - 4rem);
+    width: 31.2rem;
     height: 24rem;
-    margin: 0 auto;
+    margin: 2rem auto 0;
   }
 
   .partner-kv__text h1 {
-    font-size: 3.2rem;
-    line-height: 1.25;
+    font-size: 2.8rem;
+    line-height: 1.3;
   }
 
   .partner-kv__text p {
@@ -1842,7 +1928,7 @@ html[lang="en"] .model-node span {
   }
 
   .partner-intro {
-    padding: 7.2rem 0 8rem;
+    padding: 6rem 0 8rem;
     text-align: center;
   }
 
@@ -1853,12 +1939,12 @@ html[lang="en"] .model-node span {
   }
 
   .partner-intro__content h2 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     line-height: 1.35;
   }
 
   .partner-intro__content p {
-    margin-top: 3.2rem;
+    margin-top: 4rem;
     font-size: 1.4rem;
     line-height: 1.55;
   }
@@ -1869,16 +1955,19 @@ html[lang="en"] .model-node span {
   }
 
   .partner-highlight {
-    padding: 7.2rem 0 9.6rem;
+    padding: 8rem 0;
   }
 
   .partner-highlight__group {
-    margin-top: 5.6rem;
+    margin-top: 6rem;
+  }
+  .partner-highlight__group:first-of-type {
+    margin-top: 4rem;
   }
 
   .partner-highlight__group h3 {
-    margin-bottom: 3.2rem;
-    font-size: 1.8rem;
+    margin-bottom: 4rem;
+    font-size: 2rem;
     line-height: 1.35;
   }
 
@@ -1898,18 +1987,18 @@ html[lang="en"] .model-node span {
   }
 
   .founding-card__content img {
-    width: 8rem;
-    height: 8rem;
+    width: 6rem;
+    height: 6rem;
   }
 
   .founding-card__content h4 {
-    margin-top: 2.4rem;
+    margin-top: 4rem;
     font-size: 1.8rem;
     line-height: 1.35;
   }
 
   .founding-card__content p {
-    margin-top: 2rem;
+    margin-top: 2.4rem;
     font-size: 1.4rem;
     line-height: 1.55;
   }
@@ -1922,6 +2011,7 @@ html[lang="en"] .model-node span {
 
   .partner-swiper-pagination {
     margin-top: 4rem !important;
+    margin-bottom: 0 !important;
   }
 
   .partner-swiper-pagination .swiper-pagination-bullet {
@@ -1940,7 +2030,7 @@ html[lang="en"] .model-node span {
   }
 
   .partner-model {
-    padding: 7.2rem 0 5.6rem;
+    padding: 8rem 0 10rem;
   }
 
   .partner-model__head p {

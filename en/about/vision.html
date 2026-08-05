@@ -353,17 +353,30 @@
         };
 
         const initMapHover = () => {
-          const btnYangsan = document.querySelector(".about-map .house-list li:first-child a");
-          const heartYangsan = document.querySelector(".about-map .map-pin--yangsan .map-pin__heart");
-          
-          if (btnYangsan && heartYangsan) {
-            btnYangsan.addEventListener("mouseenter", () => {
-              heartYangsan.classList.add("motion-floating-fast");
+          const activeHouseBtn = document.querySelector(".about-map .house-list a.is-active");
+          const heartYangsan = document.querySelector(".about-map .map-pin--yangsan .icon-heart");
+
+          if (activeHouseBtn && heartYangsan) {
+            activeHouseBtn.addEventListener("mouseenter", () => {
+              heartYangsan.classList.add("motion-pulse");
             });
-            btnYangsan.addEventListener("mouseleave", () => {
-              heartYangsan.classList.remove("motion-floating-fast");
+            activeHouseBtn.addEventListener("mouseleave", () => {
+              heartYangsan.classList.remove("motion-pulse");
             });
           }
+
+          const mapPins = document.querySelectorAll(".about-map .map-pin");
+          mapPins.forEach((pin) => {
+            const heartIcon = pin.querySelector(".icon-heart");
+            if (heartIcon) {
+              pin.addEventListener("mouseenter", () => {
+                heartIcon.classList.add("motion-pulse");
+              });
+              pin.addEventListener("mouseleave", () => {
+                heartIcon.classList.remove("motion-pulse");
+              });
+            }
+          });
         };
 
         initAboutMotions();
