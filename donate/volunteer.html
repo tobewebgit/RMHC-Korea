@@ -17,27 +17,37 @@
     />
   </head>
   <body>
-    <!-- 웹 접근성 스킵 네비게이션 -->
     <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-    <!-- 헤더 공통 영역 인클루드 -->
     <load ="/includes/header.html" />
 
     <div class="page-wrapper">
       <main id="main-content">
         <section class="vol-kv" aria-label="자원봉사 히어로 영역">
           <div class="vol-kv__img-wrap">
-            <img
-              src="/src/images/donate/img_volunteer_top.png"
-              alt="RMHC Korea 자원봉사 현장 사진"
-              class="vol-kv__img"
-            />
-            <div class="vol-kv__text-wrap" data-motion="fade-up">
-              <h1 class="vol-kv__title font-nanum">
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="/src/images/donate/img_volunteer_top_mo.png"
+              />
+              <img
+                src="/src/images/donate/img_volunteer_top.png"
+                alt=""
+                fetchpriority="high"
+              />
+            </picture>
+
+            <div class="vol-kv__text-wrap">
+              <h1 class="vol-kv__title font-nanum" data-motion="fade-up">
                 당신의 1시간이 환아 가족에게<br />따뜻한 쉼이 됩니다.
               </h1>
-              <p class="vol-kv__desc">나눔이 아이와 가족에게 큰 힘이 됩니다</p>
-              <a href="#vol-apply" class="btn btn-primary btn-page vol-kv__cta"
+              <p class="vol-kv__desc" data-motion="fade-up">
+                나눔이 아이와 가족에게 큰 힘이 됩니다
+              </p>
+              <a
+                href="#vol-apply"
+                class="btn btn-primary btn-page btn-kv vol-kv__cta"
+                data-motion="fade-up"
                 >자원봉사 알아보기</a
               >
             </div>
@@ -52,7 +62,7 @@
               </h2>
               <p class="vol-intro__desc">
                 아이와 가족 곁에서 함께하는 시간은 그 자체로 큰 위로가
-                됩니다.<br />
+                됩니다.<br class="type-pc" />
                 당신의 따뜻한 손길이 아이들에게는 잊지 못할 기억입니다.
               </p>
             </div>

@@ -11,9 +11,9 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 6rem; /* 피그마 실측 컬럼 간의 갭 90px */
+  gap: 6rem;
   width: 100%;
-  max-width: 144rem; /* 전체 너비 1500px */
+  max-width: 144rem;
   margin: 0 auto;
   padding: 10rem var(--spacing-4) 0;
 }
@@ -25,7 +25,7 @@
 
 .donate-page .apply-right-col {
   flex: 1;
-  max-width: 70.4rem; /* 피그마 실측 우측 영역 704px */
+  max-width: 70.4rem;
   width: 100%;
 }
 
@@ -36,7 +36,7 @@
 
 .donate-page .page-title {
   font-family: var(--font-extrabold);
-  font-size: 5.8rem; /* 피그마 실측 58px */
+  font-size: 5.8rem;
   line-height: 1.3;
   margin-bottom: 2.4rem;
   text-align: left;
@@ -188,9 +188,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: -0.8rem -4rem 0; /* 닫혀있을 땐 하단 마진 0 */
+  margin: -0.8rem -4rem 0;
   padding: 0 4rem 0rem;
-  border-bottom: 1px solid transparent; /* 닫혀있을 땐 투명 보더 라인 */
+  border-bottom: 1px solid transparent;
   cursor: pointer;
   user-select: none;
   transition:
@@ -406,9 +406,9 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 /* 기부금 영수증 및 주민번호 인증 영역 (join/form.html & login.css 모듈 상속) */
 .receipt-resident-panel {
-  margin-left: 0 !important; /* 타 CSS에 기정의된 16rem 마진 상속 차단 */
+  margin-left: 0 !important;
   padding: 3.2rem 2.4rem;
-  background-color: rgba(208, 201, 255, 0.15); /* 연한 연보라색 배경 원복 */
+  background-color: rgba(208, 201, 255, 0.15);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-gray40);
 }
@@ -945,7 +945,9 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .vol-intro__slide-wrap {
   flex: 1;
-  overflow: hidden; /* 영역 밖으로 삐져나가는 슬라이드 숨김 */
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .vol-intro__slide {
@@ -972,6 +974,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 /* Swiper 네비게이션 버튼 커스텀 */
 .vol-intro-swiper {
   position: relative;
+  width: 100%;
 }
 
 .vol-intro-swiper .vol-swiper-prev,
@@ -1484,83 +1487,244 @@ html[lang="en"] .vol-act-card__body {
 
 /* ── volunteer 반응형 ───────────────────────────── */
 
-@media (max-width: 1024px) {
-  .vol-kv__text-wrap {
-    padding-left: 4rem;
-    padding-right: 4rem;
+@media (max-width: 768px) {
+  /* Common */
+  .vol-intro,
+  .vol-impact,
+  .vol-activities,
+  .vol-process,
+  .vol-news {
+    padding-top: 10rem;
+  }
+  .vol-intro__title,
+  .vol-impact__title,
+  .vol-apply__title,
+  .vol-activities__title,
+  .vol-process__title,
+  .vol-news__title {
+    font-size: 2.4rem;
+  }
+  .vol-intro__desc,
+  .vol-impact__desc,
+  .vol-activities__desc,
+  .vol-process__desc,
+  .vol-news__desc {
+    font-size: 1.4rem;
   }
 
-  .vol-intro__inner {
-    flex-direction: column;
-  }
-
-  .vol-intro__text {
-    flex: none;
-    width: 100%;
-  }
-
-  .vol-impact__cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .vol-activities__cards {
-    flex-direction: column;
-  }
-
-  .vol-process__steps {
-    flex-wrap: wrap;
-    gap: 3.2rem;
-  }
-
-  .vol-news__cards {
-    flex-direction: column;
-  }
-
-  .vol-apply__box-wrap {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 576px) {
+  /* KV */
   .vol-kv {
-    height: 50rem;
+    margin-top: 2rem;
   }
-
+  .vol-kv__img-wrap,
+  .vol-kv__img {
+    width: 31.2rem;
+    height: 54rem;
+  }
+  .vol-kv__text-wrap {
+    padding: 0 2.4rem;
+    text-align: center;
+    align-items: center;
+  }
   .vol-kv__title {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
   }
-
   .vol-kv__desc {
+    font-size: 1.4rem;
+  }
+  .vol-kv__cta {
+    width: auto;
     font-size: 1.6rem;
   }
 
+  /* Intro */
+  .vol-intro__inner {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .vol-intro__text {
+    flex: none;
+    width: 100%;
+    gap: 2.4rem;
+    text-align: center;
+    word-break: keep-all;
+  }
   .vol-intro__title {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
+  }
+  .vol-intro__slide-caption {
+    font-size: 1.4rem;
+    padding-right: 8rem;
+  }
+  .vol-intro-swiper .vol-swiper-prev,
+  .vol-intro-swiper .vol-swiper-next {
+    top: -1rem;
+  }
+  .vol-intro-swiper .vol-swiper-next {
+  }
+  .vol-intro-swiper .vol-swiper-prev {
+    right: 4.4rem;
   }
 
+  /* Impact */
+  .vol-impact__inner {
+    gap: 4rem;
+  }
+  .vol-impact__header {
+    gap: 1.6rem;
+  }
   .vol-impact__cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 1.6rem;
+  }
+  .vol-impact__card {
+    gap: 0;
+  }
+  .vol-impact__icon {
+    height: 6rem;
+  }
+  .vol-impact__label {
+    margin-top: 1.2rem;
+    font-size: 1.4rem;
   }
 
-  .vol-impact__number {
-    font-size: 6rem;
+  /* Apply */
+  .vol-apply {
+    margin-top: 10rem;
+    padding: 8rem 0 0;
+    height: auto;
+    background-size: cover;
+  }
+  .vol-apply__inner {
+    padding: 4rem 2.4rem;
+  }
+  .vol-apply__box-wrap {
+    flex-direction: column;
+    padding: 2.4rem 0;
+    gap: 2.4rem;
+  }
+  .vol-apply__box {
+    padding: 0 2.4rem;
+  }
+  .vol-apply__box:first-child {
+    border-right: none;
+    border-bottom: 1px dashed #000000;
+    padding-bottom: 2.4rem;
+  }
+  .vol-apply__box-title {
+    font-size: 1.8rem;
+  }
+  .vol-apply__box-title--nanum {
+    font-size: 2rem;
+  }
+  .vol-apply__list li {
+    font-size: 1.4rem;
+  }
+  .vol-apply__list li span {
+    margin-left: 0;
+    display: block;
+    padding-left: 1.2rem;
+  }
+  .vol-apply__cta {
+    width: 100%;
+    font-size: 1.6rem;
   }
 
-  .vol-impact__title,
-  .vol-activities__title,
-  .vol-apply__title,
-  .vol-process__title,
-  .vol-news__title {
-    font-size: 3.2rem;
+  /* Activities */
+  .vol-activities__inner {
+    gap: 4rem;
+  }
+  .vol-activities__cards {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .vol-act-card__body {
+    padding: 3.2rem 2.4rem;
+    height: auto !important;
+  }
+  .vol-act-card__title {
+    font-size: 2rem;
+  }
+  .vol-act-card__desc {
+    font-size: 1.4rem;
   }
 
-  .vol-news__title {
-    font-size: 3.6rem;
+  /* Process */
+  .vol-process {
+    margin-top: 10rem;
+    padding: 4rem 0;
   }
-
+  .vol-process__inner {
+    gap: 4rem;
+    width: calc(100% - 4.8rem);
+    padding: 4rem 2.4rem;
+    background-size: cover;
+    border-radius: 1.6rem;
+  }
+  .vol-process__note {
+    font-size: 1.4rem;
+  }
   .vol-process__steps {
     flex-direction: column;
+    align-items: stretch;
+    gap: 3.2rem;
+  }
+  .vol-process__step {
+    flex-direction: row;
+    width: 100%;
     align-items: center;
+    gap: 2.4rem;
+    position: relative;
+  }
+  .vol-process__step:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    left: 3.9rem;
+    top: 8rem;
+    height: 3.2rem;
+    border-left: 2px dotted #ccc;
+  }
+  .vol-process__line {
+    display: none;
+  }
+  .vol-process__icon {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 1.6rem;
+    flex-shrink: 0;
+  }
+  .vol-process__num {
+    font-size: 2.8rem;
+  }
+  .vol-process__label {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+  .vol-process__cta {
+    width: 100%;
+    font-size: 1.6rem;
+  }
+
+  /* News */
+  .vol-news__inner {
+    gap: 4rem;
+  }
+  .vol-news__cards {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .vol-news-card__body {
+    gap: 1.6rem;
+  }
+  .vol-news-card__title {
+    font-size: 1.8rem;
+  }
+  .vol-news-card__date {
+    font-size: 1.4rem;
+  }
+  .vol-news__cta {
+    width: 100%;
+    font-size: 1.6rem;
   }
 }
 
@@ -1577,13 +1741,13 @@ html[lang="en"] .vol-act-card__body {
 /* ── 팝업 컨테이너 ──────────────────────────────────────────── */
 
 .vol-popup-container {
-  width: 80rem; /* 시안 정밀 맞춤 800px */
+  width: 80rem;
   max-height: 90dvh;
   padding: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: var(--bg-primary); /* 시안 아이보리 톤 배경 */
+  background-color: var(--bg-primary);
 }
 
 /* ── 팝업 헤더 (고정) ──────────────────────────────────────── */
@@ -1836,7 +2000,7 @@ html[lang="en"] .vol-act-card__body {
 .vol-cal-grid {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0 0.8rem; /* 줄 간격 */
+  border-spacing: 0 0.8rem;
 }
 
 .vol-cal-grid th {
@@ -1850,12 +2014,12 @@ html[lang="en"] .vol-act-card__body {
 /* 요일별 색상 (헤더 및 날짜 공통 적용을 위한 클래스 활용) */
 .vol-cal-grid th:first-child,
 .vol-cal-day.is-sunday {
-  color: #ffa500; /* 오렌지색 계열 */
+  color: #ffa500;
 }
 
 .vol-cal-grid th:last-child,
 .vol-cal-day.is-saturday {
-  color: #ffc72c; /* 골드 계열 */
+  color: #ffc72c;
 }
 
 .vol-cal-grid td {
@@ -1885,7 +2049,7 @@ html[lang="en"] .vol-act-card__body {
 }
 
 .vol-cal-day:hover {
-  background-color: rgba(209, 33, 41, 0.05); /* --primary-glow */
+  background-color: rgba(209, 33, 41, 0.05);
 }
 
 /* 선택 범위 시작/끝 및 중간 스타일 */

@@ -562,6 +562,10 @@ a.header__submenu-link:focus-visible,
   .page-wrapper {
     padding-top: 8rem;
   }
+  .impact-note {
+    margin: 2rem auto 0;
+    font-size: 1.4rem;
+  }
   /* ── Mobile Footer (display: contents + order 모바일 단일 HTML 배치) ── */
   .footer {
     margin-top: 10rem;
