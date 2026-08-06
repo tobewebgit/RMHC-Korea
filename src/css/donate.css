@@ -873,12 +873,16 @@ html[lang="en"] .accordion-card.is-active .card-body {
   margin: 0 auto;
   overflow: hidden;
 }
-.vol-kv__img {
+.vol-kv__img,
+.vol-kv__img-wrap img {
   position: absolute;
+  top: 0;
   left: 50%;
   width: 184.8rem;
+  max-width: none;
   height: 79.1rem;
   transform: translateX(-50%);
+  object-fit: cover;
 }
 
 .vol-kv__text-wrap {
@@ -1157,10 +1161,18 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .vol-apply__list li {
+  position: relative;
+  padding-left: 1.2rem;
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.2rem;
+}
+.vol-apply__list li::before {
+  content: "·";
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .vol-apply__list li span {
   display: inline-block;
@@ -1517,7 +1529,8 @@ html[lang="en"] .vol-act-card__body {
     margin-top: 2rem;
   }
   .vol-kv__img-wrap,
-  .vol-kv__img {
+  .vol-kv__img,
+  .vol-kv__img-wrap img {
     width: 31.2rem;
     height: 54rem;
   }
@@ -1590,26 +1603,50 @@ html[lang="en"] .vol-act-card__body {
 
   /* Apply */
   .vol-apply {
+    height: 58rem;
     margin-top: 10rem;
-    padding: 8rem 0 0;
-    height: auto;
+    padding: 2rem 0 0;
+    background-image: url(/src/images/donate/img_volunteer_section_3_bg_mo.png);
     background-size: cover;
   }
   .vol-apply__inner {
-    padding: 4rem 2.4rem;
+    align-items: flex-start;
+    gap: 1.2rem;
+    width: 30.4rem;
+    height: 45.4rem;
+    margin: 0 auto;
+    padding: 2.4rem;
+    background-image: url(/src/images/donate/img_section_3_bg_mo.svg);
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .vol-apply__title {
+    margin-top: 0;
   }
   .vol-apply__box-wrap {
     flex-direction: column;
-    padding: 2.4rem 0;
-    gap: 2.4rem;
+    height: 33.9rem;
+    padding: 2rem 0;
+    gap: 2rem;
   }
   .vol-apply__box {
-    padding: 0 2.4rem;
+    gap: 1.2rem;
+    padding: 0 1.6rem;
   }
   .vol-apply__box:first-child {
     border-right: none;
-    border-bottom: 1px dashed #000000;
+    border-bottom: none;
     padding-bottom: 2.4rem;
+    position: relative;
+  }
+  .vol-apply__box:first-child::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 1.6rem;
+    right: 1.6rem;
+    border-bottom: 1px dashed #000000;
   }
   .vol-apply__box-title {
     font-size: 1.8rem;
@@ -1617,13 +1654,16 @@ html[lang="en"] .vol-act-card__body {
   .vol-apply__box-title--nanum {
     font-size: 2rem;
   }
+  .vol-apply__list {
+    gap: 0;
+  }
   .vol-apply__list li {
     font-size: 1.4rem;
+    line-height: 1.5;
   }
   .vol-apply__list li span {
     margin-left: 0;
     display: block;
-    padding-left: 1.2rem;
   }
   .vol-apply__cta {
     width: 100%;
