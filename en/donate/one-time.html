@@ -1,458 +1,344 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Support RMHC Korea's foreign card donation program. Help families stay near their hospitalized children."
-    />
-    <title>Donation - RMHC Korea</title>
-    <link rel="stylesheet" href="/src/css/common.css" />
-    <link rel="stylesheet" href="/src/css/donate.css" />
-  </head>
-  <body>
-    <!-- 웹 접근성 스킵 네비게이션 -->
-    <a href="#main-content" class="skip-nav">Skip to main content</a>
 
-    <!-- 헤더 공통 영역 인클루드 -->
-    <load ="/includes/header_en.html" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Support RMHC Korea's foreign card donation program. Help families stay near their hospitalized children." />
+  <title>Donation - RMHC Korea</title>
+  <link rel="stylesheet" href="/src/css/common.css" />
+  <link rel="stylesheet" href="/src/css/donate.css" />
+</head>
 
-    <div class="page-wrapper donate-page">
-      <main id="main-content">
-        <div class="apply-wrapper">
-          <!-- [좌측 영역] 타이틀 및 포스터 이미지 -->
-          <div class="apply-left-col">
-            <div class="page-header-wrap">
-              <h1 class="page-title font-nanum">
-                Help a family stay near their hospitalized child
-              </h1>
-              <p class="page-desc font-pretendard">
-                Help families stay together during a child’s treatment journey.
-              </p>
+<body>
+  <!-- 웹 접근성 스킵 네비게이션 -->
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <!-- 헤더 공통 영역 인클루드 -->
+  <load src="/includes/header_en.html" />
+
+  <div class="page-wrapper donate-page">
+    <main id="main-content">
+      <div class="apply-wrapper">
+        <!-- [좌측 영역] 타이틀 및 포스터 이미지 -->
+        <div class="apply-left-col">
+          <div class="page-header-wrap">
+            <h1 class="page-title font-nanum">
+              Help a family stay near their hospitalized child
+            </h1>
+            <p class="page-desc font-pretendard">
+              Help families stay together during a child’s treatment journey.
+            </p>
+          </div>
+          <!-- 비주얼 포스터 이미지 -->
+          <div class="poster-wrap">
+            <img src="/src/images/donate/img_donate_1.png" alt="RMHC House family stay" fetchpriority="high" />
+          </div>
+        </div>
+
+        <!-- [우측 영역] 단계별 신청서 폼 -->
+        <div class="apply-right-col">
+          <!-- 해외 카드 기부 안내 배너 -->
+          <div class="foreign-card-banner">
+            <div class="banner-text">
+              <img src="/src/images/donate/icon_foreign_card.svg" alt="" />
+              <span>Do you use a Korean card?</span>
             </div>
-            <!-- 비주얼 포스터 이미지 -->
-            <div class="poster-wrap">
-              <img
-                src="/src/images/donate/img_donate_1.png"
-                alt="RMHC House family stay"
-                fetchpriority="high"
-              />
-            </div>
+            <a href="/donate/one-time.html" class="banner-link">
+              <span>Foreign Card Donation</span>
+              <img src="/src/images/donate/icon_foreign_arrow.png" alt="" />
+            </a>
           </div>
 
-          <!-- [우측 영역] 단계별 신청서 폼 -->
-          <div class="apply-right-col">
-            <!-- 해외 카드 기부 안내 배너 -->
-            <div class="foreign-card-banner">
-              <div class="banner-text">
-                <img src="/src/images/donate/icon_foreign_card.svg" alt="" />
-                <span>Do you use a Korean card?</span>
+          <!-- 정기/일시 후원 구분 탭 버튼 (단일 페이지 탭 전환) -->
+          <div class="donate-type-tabs is-one-time initial-one-time" id="donateTypeTabs">
+            <div class="donate-tab-indicator"></div>
+            <button type="button" class="btn-tab disabled" id="tabMonthly">Monthly</button>
+            <button type="button" class="btn-tab" id="tabOneTime">One-time</button>
+          </div>
+
+          <form id="enDonateForm" class="gala-apply-form" novalidate>
+            <!-- [카드 1] 후원 금액 설정 (Donation Amount - 공통) -->
+            <section id="step1Card" class="common-card accordion-card is-active">
+              <div class="card-title-wrap">
+                <h2 class="donate-section-title font-nanum">
+                  Donation Amount
+                </h2>
               </div>
-              <a href="/donate/one-time.html" class="banner-link">
-                <span>Foreign Card Donation</span>
-                <img src="/src/images/donate/icon_foreign_arrow.png" alt="" />
-              </a>
-            </div>
 
-            <!-- 정기/일시 후원 구분 탭 버튼 (단일 페이지 탭 전환) -->
-            <div class="donate-type-tabs is-one-time initial-one-time" id="donateTypeTabs">
-              <div class="donate-tab-indicator"></div>
-              <button type="button" class="btn-tab disabled" id="tabMonthly">Monthly</button>
-              <button type="button" class="btn-tab" id="tabOneTime">One-time</button>
-            </div>
+              <div class="card-body">
+                <h3 class="card-subtitle">
+                  Choose how much you'd like to share.
+                </h3>
+                <div class="chip-grid cols-3" id="enAmountGrid">
+                  <button type="button" class="btn btn-outline" data-value="10">
+                    $10
+                  </button>
+                  <button type="button" class="btn btn-outline" data-value="25">
+                    $25
+                  </button>
+                  <button type="button" class="btn btn-outline is-active" data-value="50">
+                    $50
+                  </button>
+                  <button type="button" class="btn btn-outline" data-value="100">
+                    $100
+                  </button>
+                  <button type="button" class="btn btn-outline" data-value="250">
+                    $250
+                  </button>
+                  <!-- 금액 버튼과 동일한 모양의 Other 버튼 -->
+                  <button type="button" class="btn btn-outline" id="btnOtherAmount">
+                    Other
+                  </button>
+                  <!-- 직접 입력 인풋 칩 (초기 숨김) -->
+                  <div class="direct-input-chip" id="directInputChip" style="display: none">
+                    <input type="text" id="directAmount" placeholder="Other" maxlength="9" />
+                  </div>
+                </div>
 
-            <form id="enDonateForm" class="gala-apply-form" novalidate>
-              <!-- [카드 1] 후원 금액 설정 (Donation Amount - 공통) -->
-              <section
-                id="step1Card"
-                class="common-card accordion-card is-active"
-              >
+                <!-- 헬퍼 옐로우 박스 -->
+                <div class="notice-yellow-box" id="enNoticeBox">
+                  <img src="/src/images/donate/icon_helper_3.png" alt="" />
+                  <span>Give a family a comfortable place to rest</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- [카드 2] 후원 정보 상세 (Donation Details) -->
+            <section id="step2Card" class="common-card accordion-card is-active">
+              <div class="card-title-wrap">
+                <h2 class="donate-section-title font-nanum">
+                  Donation Details
+                </h2>
+              </div>
+
+              <div class="card-body en-check-area">
+                <!-- Monthly 전용 첫 번째 체크박스 (One-time 시 숨김) -->
+                <label class="custom-checkbox" id="chkRecurringWrap" style="display: none;">
+                  <input type="checkbox" id="chkRecurring" checked />
+                  <span>I authorize recurring monthly donations</span>
+                </label>
+
+                <label class="custom-checkbox">
+                  <input type="checkbox" id="chkAnonymous" />
+                  <span>Keep my donation anonymous</span>
+                </label>
+
+                <label class="custom-checkbox">
+                  <input type="checkbox" id="chkBusiness" />
+                  <span>I am donating on behalf of a business</span>
+                </label>
+
+                <!-- 3번째 체크박스 체크 시 토글되는 Business Name 인풋 영역 -->
+                <div id="businessNameArea" style="display: none; margin-top: 1rem;">
+                  <div class="form-group label-top">
+                    <div class="form-field">
+                      <input type="text" id="businessName" name="businessName" class="form-control"
+                        placeholder="Business Name" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- [Monthly 탭 전용 결제 영역] -->
+            <div id="monthlySectionWrap" style="display: none;">
+              <section class="common-card accordion-card is-active">
                 <div class="card-title-wrap">
                   <h2 class="donate-section-title font-nanum">
-                    Donation Amount
+                    Payment method
+                  </h2>
+                </div>
+                <div class="card-body">
+                  <div class="en-donate-submit-wrap">
+                    <button type="submit" class="btn btn-primary">
+                      Donate With Card
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <!-- [One-time 탭 전용 결제 영역] -->
+            <div id="oneTimeSectionWrap">
+              <!-- [카드 3] 결제 수단 선택 (Choose your payment method) -->
+              <section id="step3Card" class="common-card accordion-card is-active">
+                <div class="card-title-wrap">
+                  <h2 class="donate-section-title font-nanum">
+                    Choose your payment method
                   </h2>
                 </div>
 
                 <div class="card-body">
-                  <h3 class="card-subtitle">
-                    Choose how much you'd like to share.
-                  </h3>
-                  <div class="chip-grid cols-3" id="enAmountGrid">
-                    <button
-                      type="button"
-                      class="btn btn-outline"
-                      data-value="10"
-                    >
-                      $10
+                  <div class="en-payment-grid">
+                    <button type="button" class="btn btn-outline en-payment-btn" id="btnApplePay">
+                      <img src="/src/images/common/icon_apple_pay.svg" alt="Apple Pay" />
+                      <span>Apple Pay</span>
                     </button>
-                    <button
-                      type="button"
-                      class="btn btn-outline"
-                      data-value="25"
-                    >
-                      $25
+                    <button type="button" class="btn btn-primary en-payment-btn is-active" id="btnDonateCard">
+                      <span>Donate With Card</span>
                     </button>
-                    <button
-                      type="button"
-                      class="btn btn-outline is-active"
-                      data-value="50"
-                    >
-                      $50
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-outline"
-                      data-value="100"
-                    >
-                      $100
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-outline"
-                      data-value="250"
-                    >
-                      $250
-                    </button>
-                    <!-- 금액 버튼과 동일한 모양의 Other 버튼 -->
-                    <button
-                      type="button"
-                      class="btn btn-outline"
-                      id="btnOtherAmount"
-                    >
-                      Other
-                    </button>
-                    <!-- 직접 입력 인풋 칩 (초기 숨김) -->
-                    <div
-                      class="direct-input-chip"
-                      id="directInputChip"
-                      style="display: none"
-                    >
-                      <input
-                        type="text"
-                        id="directAmount"
-                        placeholder="Other"
-                        maxlength="9"
-                      />
-                    </div>
                   </div>
-
-                  <!-- 헬퍼 옐로우 박스 -->
-                  <div class="notice-yellow-box" id="enNoticeBox">
-                    <img src="/src/images/donate/icon_helper_3.png" alt="" />
-                    <span>Give a family a comfortable place to rest</span>
-                  </div>
+                  <p class="en-payment-note">
+                    Dedicate this donation or send an e-card after checkout.
+                  </p>
                 </div>
               </section>
 
-              <!-- [카드 2] 후원 정보 상세 (Donation Details) -->
-              <section
-                id="step2Card"
-                class="common-card accordion-card is-active"
-              >
+              <!-- [카드 4] 청구 정보 (Billing Information) -->
+              <section id="step4Card" class="common-card accordion-card is-active">
                 <div class="card-title-wrap">
                   <h2 class="donate-section-title font-nanum">
-                    Donation Details
+                    Billing Information
                   </h2>
                 </div>
 
-                <div class="card-body en-check-area">
-                  <!-- Monthly 전용 첫 번째 체크박스 (One-time 시 숨김) -->
-                  <label class="custom-checkbox" id="chkRecurringWrap" style="display: none;">
-                    <input type="checkbox" id="chkRecurring" checked />
-                    <span>I authorize recurring monthly donations</span>
-                  </label>
+                <div class="card-body">
+                  <!-- 1. Information 카드 박스 (형제 1) -->
+                  <div class="en-form-card-box">
+                    <!-- First Name / Last Name -->
+                    <div class="form-row-2col">
+                      <div class="form-group label-top">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <div class="form-field">
+                          <input type="text" id="firstName" name="firstName" class="form-control"
+                            placeholder="First Name" />
+                        </div>
+                      </div>
 
-                  <label class="custom-checkbox">
-                    <input type="checkbox" id="chkAnonymous" />
-                    <span>Keep my donation anonymous</span>
-                  </label>
-
-                  <label class="custom-checkbox">
-                    <input type="checkbox" id="chkBusiness" />
-                    <span>I am donating on behalf of a business</span>
-                  </label>
-
-                  <!-- 3번째 체크박스 체크 시 토글되는 Business Name 인풋 영역 -->
-                  <div id="businessNameArea" style="display: none; margin-top: 1rem;">
-                    <div class="form-group label-top">
-                      <div class="form-field">
-                        <input
-                          type="text"
-                          id="businessName"
-                          name="businessName"
-                          class="form-control"
-                          placeholder="Business Name"
-                        />
+                      <div class="form-group label-top">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <div class="form-field">
+                          <input type="text" id="lastName" name="lastName" class="form-control"
+                            placeholder="Last Name" />
+                        </div>
                       </div>
                     </div>
+
+                    <!-- Email Address -->
+                    <div class="form-group label-top">
+                      <label for="userEmail" class="form-label">Email Address</label>
+                      <div class="form-field">
+                        <input type="email" id="userEmail" name="userEmail" class="form-control"
+                          placeholder="Email Address" />
+                      </div>
+                    </div>
+                    <p class="en-field-note">
+                      Your receipt will be sent to this email.
+                    </p>
+
+                    <!-- Country -->
+                    <div class="form-group label-top">
+                      <label for="countrySelect" class="form-label">Country</label>
+                      <details class="custom-select selectbox" id="countrySelect">
+                        <summary>United States</summary>
+                        <ul>
+                          <li data-value="US">United States</li>
+                          <li data-value="KR">Korea, Republic of</li>
+                          <li data-value="CA">Canada</li>
+                          <li data-value="GB">United Kingdom</li>
+                          <li data-value="AU">Australia</li>
+                          <li data-value="JP">Japan</li>
+                        </ul>
+                        <input type="hidden" name="country" value="US" />
+                      </details>
+                    </div>
+                  </div>
+
+                  <!-- 2. Add billing address 타이틀 & 폼 박스 (형제 2) -->
+                  <h3 class="en-form-card-title">Add billing address</h3>
+
+                  <div class="en-form-card-box">
+                    <!-- Postal Code -->
+                    <div class="form-group label-top">
+                      <label for="postalCode" class="form-label">Postal Code</label>
+                      <div class="form-field">
+                        <input type="text" id="postalCode" name="postalCode" class="form-control"
+                          placeholder="Postal Code" />
+                      </div>
+                    </div>
+
+                    <!-- Address Line 1 -->
+                    <div class="form-group label-top">
+                      <label for="addressLine1" class="form-label">Address Line 1</label>
+                      <div class="form-field">
+                        <input type="text" id="addressLine1" name="addressLine1" class="form-control"
+                          placeholder="Address Line 1" />
+                      </div>
+                    </div>
+
+                    <!-- Address Line 2 -->
+                    <div class="form-group label-top">
+                      <label for="addressLine2" class="form-label">Address Line 2</label>
+                      <div class="form-field">
+                        <input type="text" id="addressLine2" name="addressLine2" class="form-control"
+                          placeholder="Address Line 2 (Optional)" />
+                      </div>
+                    </div>
+
+                    <!-- City / State -->
+                    <div class="form-row-2col">
+                      <div class="form-group label-top">
+                        <label for="city" class="form-label">City</label>
+                        <div class="form-field">
+                          <input type="text" id="city" name="city" class="form-control" placeholder="City" />
+                        </div>
+                      </div>
+
+                      <div class="form-group label-top">
+                        <label for="stateProvince" class="form-label">State / Province</label>
+                        <div class="form-field">
+                          <input type="text" id="stateProvince" name="stateProvince" class="form-control"
+                            placeholder="State / Province" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 3. Add tax receipt information -->
+                  <div class="en-accordion-wrap" id="taxReceiptAccordion">
+                    <div class="en-accordion-header" id="taxReceiptHeader">
+                      <h3 class="en-form-card-title">
+                        Add tax receipt information
+                      </h3>
+                      <img src="/src/images/common/icon_nav_arrow_down.svg" alt="Toggle accordion"
+                        class="en-accordion-arrow" id="taxAccordionIcon" />
+                    </div>
+
+                    <div class="en-accordion-body" id="taxReceiptBody" style="display: none; margin-top: 1.6rem;">
+                      <div class="en-form-card-box">
+                        <div class="form-group label-top">
+                          <label for="taxId" class="form-label">Tax ID / Business Number</label>
+                          <div class="form-field">
+                            <input type="text" id="taxId" name="taxId" class="form-control"
+                              placeholder="Enter your Tax ID or Business Number" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 4. Donate Now 버튼 -->
+                  <div class="en-donate-submit-wrap">
+                    <button type="submit" class="btn btn-primary">
+                      Donate Now
+                    </button>
                   </div>
                 </div>
               </section>
-
-              <!-- [Monthly 탭 전용 결제 영역] -->
-              <div id="monthlySectionWrap" style="display: none;">
-                <section class="common-card accordion-card is-active">
-                  <div class="card-title-wrap">
-                    <h2 class="donate-section-title font-nanum">
-                      Payment method
-                    </h2>
-                  </div>
-                  <div class="card-body">
-                    <div class="en-donate-submit-wrap">
-                      <button type="submit" class="btn btn-primary">
-                        Donate With Card
-                      </button>
-                    </div>
-                  </div>
-                </section>
-              </div>
-
-              <!-- [One-time 탭 전용 결제 영역] -->
-              <div id="oneTimeSectionWrap">
-                <!-- [카드 3] 결제 수단 선택 (Choose your payment method) -->
-                <section
-                  id="step3Card"
-                  class="common-card accordion-card is-active"
-                >
-                  <div class="card-title-wrap">
-                    <h2 class="donate-section-title font-nanum">
-                      Choose your payment method
-                    </h2>
-                  </div>
-
-                  <div class="card-body">
-                    <div class="en-payment-grid">
-                      <button
-                        type="button"
-                        class="btn btn-outline en-payment-btn"
-                        id="btnApplePay"
-                      >
-                        <img
-                          src="/src/images/common/icon_apple_pay.svg"
-                          alt="Apple Pay"
-                        />
-                        <span>Apple Pay</span>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary en-payment-btn is-active"
-                        id="btnDonateCard"
-                      >
-                        <span>Donate With Card</span>
-                      </button>
-                    </div>
-                    <p class="en-payment-note">
-                      Dedicate this donation or send an e-card after checkout.
-                    </p>
-                  </div>
-                </section>
-
-                <!-- [카드 4] 청구 정보 (Billing Information) -->
-                <section
-                  id="step4Card"
-                  class="common-card accordion-card is-active"
-                >
-                  <div class="card-title-wrap">
-                    <h2 class="donate-section-title font-nanum">
-                      Billing Information
-                    </h2>
-                  </div>
-
-                  <div class="card-body">
-                    <!-- 1. Information 카드 박스 (형제 1) -->
-                    <div class="en-form-card-box">
-                      <!-- First Name / Last Name -->
-                      <div class="form-row-2col">
-                        <div class="form-group label-top">
-                          <label for="firstName" class="form-label">First Name</label>
-                          <div class="form-field">
-                            <input
-                              type="text"
-                              id="firstName"
-                              name="firstName"
-                              class="form-control"
-                              placeholder="First Name"
-                            />
-                          </div>
-                        </div>
-
-                        <div class="form-group label-top">
-                          <label for="lastName" class="form-label">Last Name</label>
-                          <div class="form-field">
-                            <input
-                              type="text"
-                              id="lastName"
-                              name="lastName"
-                              class="form-control"
-                              placeholder="Last Name"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Email Address -->
-                      <div class="form-group label-top">
-                        <label for="userEmail" class="form-label">Email Address</label>
-                        <div class="form-field">
-                          <input
-                            type="email"
-                            id="userEmail"
-                            name="userEmail"
-                            class="form-control"
-                            placeholder="Email Address"
-                          />
-                        </div>
-                      </div>
-                      <p class="en-field-note">
-                        Your receipt will be sent to this email.
-                      </p>
-
-                      <!-- Country -->
-                      <div class="form-group label-top">
-                        <label for="countrySelect" class="form-label">Country</label>
-                        <details class="custom-select selectbox" id="countrySelect">
-                          <summary>United States</summary>
-                          <ul>
-                            <li data-value="US">United States</li>
-                            <li data-value="KR">Korea, Republic of</li>
-                            <li data-value="CA">Canada</li>
-                            <li data-value="GB">United Kingdom</li>
-                            <li data-value="AU">Australia</li>
-                            <li data-value="JP">Japan</li>
-                          </ul>
-                          <input type="hidden" name="country" value="US" />
-                        </details>
-                      </div>
-                    </div>
-
-                    <!-- 2. Add billing address 타이틀 & 폼 박스 (형제 2) -->
-                    <h3 class="en-form-card-title">Add billing address</h3>
-
-                    <div class="en-form-card-box">
-                      <!-- Postal Code -->
-                      <div class="form-group label-top">
-                        <label for="postalCode" class="form-label">Postal Code</label>
-                        <div class="form-field">
-                          <input
-                            type="text"
-                            id="postalCode"
-                            name="postalCode"
-                            class="form-control"
-                            placeholder="Postal Code"
-                          />
-                        </div>
-                      </div>
-
-                      <!-- Address Line 1 -->
-                      <div class="form-group label-top">
-                        <label for="addressLine1" class="form-label">Address Line 1</label>
-                        <div class="form-field">
-                          <input
-                            type="text"
-                            id="addressLine1"
-                            name="addressLine1"
-                            class="form-control"
-                            placeholder="Address Line 1"
-                          />
-                        </div>
-                      </div>
-
-                      <!-- Address Line 2 -->
-                      <div class="form-group label-top">
-                        <label for="addressLine2" class="form-label">Address Line 2</label>
-                        <div class="form-field">
-                          <input
-                            type="text"
-                            id="addressLine2"
-                            name="addressLine2"
-                            class="form-control"
-                            placeholder="Address Line 2 (Optional)"
-                          />
-                        </div>
-                      </div>
-
-                      <!-- City / State -->
-                      <div class="form-row-2col">
-                        <div class="form-group label-top">
-                          <label for="city" class="form-label">City</label>
-                          <div class="form-field">
-                            <input
-                              type="text"
-                              id="city"
-                              name="city"
-                              class="form-control"
-                              placeholder="City"
-                            />
-                          </div>
-                        </div>
-
-                        <div class="form-group label-top">
-                          <label for="stateProvince" class="form-label">State / Province</label>
-                          <div class="form-field">
-                            <input
-                              type="text"
-                              id="stateProvince"
-                              name="stateProvince"
-                              class="form-control"
-                              placeholder="State / Province"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- 3. Add tax receipt information -->
-                    <div class="en-accordion-wrap" id="taxReceiptAccordion">
-                      <div class="en-accordion-header" id="taxReceiptHeader">
-                        <h3 class="en-form-card-title">
-                          Add tax receipt information
-                        </h3>
-                        <img
-                          src="/src/images/common/icon_nav_arrow_down.svg"
-                          alt="Toggle accordion"
-                          class="en-accordion-arrow"
-                          id="taxAccordionIcon"
-                        />
-                      </div>
-
-                      <div class="en-accordion-body" id="taxReceiptBody" style="display: none; margin-top: 1.6rem;">
-                        <div class="en-form-card-box">
-                          <div class="form-group label-top">
-                            <label for="taxId" class="form-label">Tax ID / Business Number</label>
-                            <div class="form-field">
-                              <input
-                                type="text"
-                                id="taxId"
-                                name="taxId"
-                                class="form-control"
-                                placeholder="Enter your Tax ID or Business Number"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- 4. Donate Now 버튼 -->
-                    <div class="en-donate-submit-wrap">
-                      <button type="submit" class="btn btn-primary">
-                        Donate Now
-                      </button>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
+  </div>
 
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="/includes/footer_en.html" />
+  <!-- 푸터 공통 영역 인클루드 -->
+  <load src="/includes/footer_en.html" />
 
-    <!-- 영문 기부 통합 스크립트 -->
-    <script src="/src/js/pages/en-one-time.js"></script>
-  </body>
+  <!-- 영문 기부 통합 스크립트 -->
+  <script src="/src/js/pages/en-one-time.js"></script>
+</body>
+
 </html>

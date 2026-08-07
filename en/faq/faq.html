@@ -1,305 +1,264 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="RMHC Korea 자주 묻는 질문(FAQ) 페이지입니다. 하우스 이용, 기부금영수증 발급, 후원 안내 등 다양한 궁금증을 확인해 보세요."
-    />
-    <title>자주 묻는 질문(FAQ) | RMHC Korea</title>
-    <link rel="stylesheet" href="/src/css/common.css" />
-    <link rel="stylesheet" href="/src/css/faq.css" />
-  </head>
-  <body>
-    <!-- S: Skip Navigation -->
-    <a href="#main-content" class="skip-nav">본문 바로가기</a>
-    <!-- E: Skip Navigation -->
 
-    <!-- 헤더 공통 영역 인클루드 -->
-    <load ="/includes/header_en.html" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RMHC Korea 자주 묻는 질문(FAQ) 페이지입니다. 하우스 이용, 기부금영수증 발급, 후원 안내 등 다양한 궁금증을 확인해 보세요." />
+  <title>자주 묻는 질문(FAQ) | RMHC Korea</title>
+  <link rel="stylesheet" href="/src/css/common.css" />
+  <link rel="stylesheet" href="/src/css/faq.css" />
+</head>
 
-    <div class="page-wrapper">
-      <main id="main-content">
-        <div class="inner-layout">
-          <div class="faq-container">
-            <div class="faq-content">
-              <h1 class="page-title type01">FAQ</h1>
+<body>
+  <!-- S: Skip Navigation -->
+  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+  <!-- E: Skip Navigation -->
 
-              <!-- 공통 탭 메뉴 -->
-              <nav class="tab-menu faq-tab-menu" aria-label="FAQ 카테고리 탭">
-                <ul class="tab-list">
-                  <li class="tab-item">
-                    <button
-                      type="button"
-                      class="tab-btn active"
-                      data-tab-target="faq-yangsan"
-                    >
-                      Ronald McDonald House: Yangsan
+  <!-- 헤더 공통 영역 인클루드 -->
+  <load src="/includes/header_en.html" />
+
+  <div class="page-wrapper">
+    <main id="main-content">
+      <div class="inner-layout">
+        <div class="faq-container">
+          <div class="faq-content">
+            <h1 class="page-title type01">FAQ</h1>
+
+            <!-- 공통 탭 메뉴 -->
+            <nav class="tab-menu faq-tab-menu" aria-label="FAQ 카테고리 탭">
+              <ul class="tab-list">
+                <li class="tab-item">
+                  <button type="button" class="tab-btn active" data-tab-target="faq-yangsan">
+                    Ronald McDonald House: Yangsan
+                  </button>
+                </li>
+                <li class="tab-item">
+                  <button type="button" class="tab-btn" data-tab-target="faq-receipt">
+                    Donation Receipt
+                  </button>
+                </li>
+                <li class="tab-item">
+                  <button type="button" class="tab-btn" data-tab-target="faq-donate">
+                    Sponsorship
+                  </button>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- 탭 콘텐츠 영역 -->
+            <div class="tab-content-container">
+              <!-- 탭 1: 로날드 맥도날드 하우스 양산 -->
+              <div id="faq-yangsan" class="tab-content faq-tab-content active">
+                <ul class="faq-list">
+                  <li class="faq-item">
+                    <button type="button" class="faq-q">
+                      <span class="faq-q-text">Whose name will appear on the donation receipt?</span>
+                      <span class="faq-toggle-btn" aria-hidden="true"></span>
                     </button>
+                    <div class="faq-a" style="display: none">
+                      <div class="faq-a-inner">
+                        <p class="faq-a-text">
+                          Donation receipts are issued in the name of the
+                          actual donor—the individual or organization that
+                          made the donation. They cannot be issued under a
+                          different name.
+                        </p>
+                      </div>
+                    </div>
                   </li>
-                  <li class="tab-item">
-                    <button
-                      type="button"
-                      class="tab-btn"
-                      data-tab-target="faq-receipt"
-                    >
-                      Donation Receipt
+                  <li class="faq-item">
+                    <button type="button" class="faq-q">
+                      <span class="faq-q-text">When and how can I obtain a donation receipt for
+                        Korean tax purposes?</span>
+                      <span class="faq-toggle-btn" aria-hidden="true"></span>
                     </button>
+                    <div class="faq-a" style="display: none">
+                      <div class="faq-a-inner">
+                        <p class="faq-a-text">
+                          After we verify your donation and the information
+                          provided in your donation receipt request, your
+                          donation receipt will be issued through the National
+                          Tax Service (Hometax). Once issued, individual and
+                          corporate donors can view and download it directly
+                          from Hometax.
+                        </p>
+                      </div>
+                    </div>
                   </li>
-                  <li class="tab-item">
-                    <button
-                      type="button"
-                      class="tab-btn"
-                      data-tab-target="faq-donate"
-                    >
-                      Sponsorship
+                  <li class="faq-item">
+                    <button type="button" class="faq-q">
+                      <span class="faq-q-text">What should I do if my donation receipt information
+                        is incorrect?</span>
+                      <span class="faq-toggle-btn" aria-hidden="true"></span>
                     </button>
+                    <div class="faq-a" style="display: none">
+                      <div class="faq-a-inner">
+                        <p class="faq-a-text">
+                          If required information such as your name, resident
+                          registration number, or business registration number
+                          is incorrect, we may not be able to issue a donation
+                          receipt. Please contact Ronald McDonald House Korea
+                          at rmhc@rmhc.or.kr if any correction is needed.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="faq-item">
+                    <button type="button" class="faq-q">
+                      <span class="faq-q-text">Can overseas donors receive a donation receipt?</span>
+                      <span class="faq-toggle-btn" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-a" style="display: none">
+                      <div class="faq-a-inner">
+                        <p class="faq-a-text">
+                          Donation receipts issued by Ronald McDonald House
+                          Korea are intended for Korean tax deduction
+                          purposes. Therefore, they are not issued to overseas
+                          donors who do not claim a Korean tax deduction.
+                        </p>
+                      </div>
+                    </div>
                   </li>
                 </ul>
-              </nav>
+              </div>
 
-              <!-- 탭 콘텐츠 영역 -->
-              <div class="tab-content-container">
-                <!-- 탭 1: 로날드 맥도날드 하우스 양산 -->
-                <div
-                  id="faq-yangsan"
-                  class="tab-content faq-tab-content active"
-                >
-                  <ul class="faq-list">
-                    <li class="faq-item">
-                      <button type="button" class="faq-q">
-                        <span class="faq-q-text"
-                          >Whose name will appear on the donation receipt?</span
-                        >
-                        <span class="faq-toggle-btn" aria-hidden="true"></span>
-                      </button>
-                      <div class="faq-a" style="display: none">
-                        <div class="faq-a-inner">
-                          <p class="faq-a-text">
-                            Donation receipts are issued in the name of the
-                            actual donor—the individual or organization that
-                            made the donation. They cannot be issued under a
-                            different name.
-                          </p>
-                        </div>
+              <!-- 탭 2: 기부금영수증 -->
+              <div id="faq-receipt" class="tab-content faq-tab-content" style="display: none">
+                <ul class="faq-list">
+                  <li class="faq-item">
+                    <button type="button" class="faq-q">
+                      <span class="faq-q-text">기부금영수증은 누구 명의로 발급되나요?</span>
+                      <span class="faq-toggle-btn" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-a" style="display: none">
+                      <div class="faq-a-inner">
+                        <p class="faq-a-text">
+                          기부금영수증은 실제 후원자명, 즉 입금자 또는 결제자
+                          본인 명의로 발급됩니다. 입금자 또는 결제자와 다른
+                          명의로는 발급이 어렵습니다.
+                        </p>
                       </div>
-                    </li>
-                    <li class="faq-item">
-                      <button type="button" class="faq-q">
-                        <span class="faq-q-text"
-                          >When and how can I obtain a donation receipt for
-                          Korean tax purposes?</span
-                        >
-                        <span class="faq-toggle-btn" aria-hidden="true"></span>
-                      </button>
-                      <div class="faq-a" style="display: none">
-                        <div class="faq-a-inner">
-                          <p class="faq-a-text">
-                            After we verify your donation and the information
-                            provided in your donation receipt request, your
-                            donation receipt will be issued through the National
-                            Tax Service (Hometax). Once issued, individual and
-                            corporate donors can view and download it directly
-                            from Hometax.
-                          </p>
-                        </div>
+                    </div>
+                  </li>
+                  <li class="faq-item">
+                    <button type="button" class="faq-q">
+                      <span class="faq-q-text">기부금영수증은 언제, 어디서 받을 수 있나요?</span>
+                      <span class="faq-toggle-btn" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-a" style="display: none">
+                      <div class="faq-a-inner">
+                        <p class="faq-a-text">
+                          기부금영수증은 내부적으로 기부금 수령 및 신청 정보를
+                          확인한 후 국세청 홈택스를 통해 발급됩니다. 발급이
+                          완료되면 개인 및 기업 후원자는 국세청 홈택스에서
+                          직접 조회 및 출력하실 수 있습니다.
+                        </p>
                       </div>
-                    </li>
-                    <li class="faq-item">
-                      <button type="button" class="faq-q">
-                        <span class="faq-q-text"
-                          >What should I do if my donation receipt information
-                          is incorrect?</span
-                        >
-                        <span class="faq-toggle-btn" aria-hidden="true"></span>
-                      </button>
-                      <div class="faq-a" style="display: none">
-                        <div class="faq-a-inner">
-                          <p class="faq-a-text">
-                            If required information such as your name, resident
-                            registration number, or business registration number
-                            is incorrect, we may not be able to issue a donation
-                            receipt. Please contact Ronald McDonald House Korea
-                            at rmhc@rmhc.or.kr if any correction is needed.
-                          </p>
-                        </div>
+                    </div>
+                  </li>
+                  <li class="faq-item">
+                    <button type="button" class="faq-q">
+                      <span class="faq-q-text">기부금영수증 신청 정보가 잘못된 경우 어떻게 해야
+                        하나요?</span>
+                      <span class="faq-toggle-btn" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-a" style="display: none">
+                      <div class="faq-a-inner">
+                        <p class="faq-a-text">
+                          성명, 주민등록번호 또는 사업자등록번호 등 필수
+                          정보가 정확하지 않을 경우 기부금영수증 발급이 어려울
+                          수 있습니다. 수정이 필요한 경우 Ronald McDonald
+                          House Korea(rmhc@rmhc.or.kr)로 문의해 주세요.
+                        </p>
                       </div>
-                    </li>
-                    <li class="faq-item">
-                      <button type="button" class="faq-q">
-                        <span class="faq-q-text"
-                          >Can overseas donors receive a donation receipt?</span
-                        >
-                        <span class="faq-toggle-btn" aria-hidden="true"></span>
-                      </button>
-                      <div class="faq-a" style="display: none">
-                        <div class="faq-a-inner">
-                          <p class="faq-a-text">
-                            Donation receipts issued by Ronald McDonald House
-                            Korea are intended for Korean tax deduction
-                            purposes. Therefore, they are not issued to overseas
-                            donors who do not claim a Korean tax deduction.
-                          </p>
-                        </div>
+                    </div>
+                  </li>
+                  <li class="faq-item">
+                    <button type="button" class="faq-q">
+                      <span class="faq-q-text">해외 거주자도 기부금영수증을 발급받을 수
+                        있나요?</span>
+                      <span class="faq-toggle-btn" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-a" style="display: none">
+                      <div class="faq-a-inner">
+                        <p class="faq-a-text">
+                          Ronald McDonald House Korea에서 발급하는
+                          기부금영수증은 대한민국 세법에 따른 기부금
+                          세액공제(또는 소득공제) 목적의 서류입니다. 따라서
+                          대한민국에서 세법에 따른 기부금 공제를 받지 않는
+                          해외 기부자에게는 기부금영수증을 발급하지 않습니다.
+                        </p>
                       </div>
-                    </li>
-                  </ul>
-                </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
 
-                <!-- 탭 2: 기부금영수증 -->
-                <div
-                  id="faq-receipt"
-                  class="tab-content faq-tab-content"
-                  style="display: none"
-                >
-                  <ul class="faq-list">
-                    <li class="faq-item">
-                      <button type="button" class="faq-q">
-                        <span class="faq-q-text"
-                          >기부금영수증은 누구 명의로 발급되나요?</span
-                        >
-                        <span class="faq-toggle-btn" aria-hidden="true"></span>
-                      </button>
-                      <div class="faq-a" style="display: none">
-                        <div class="faq-a-inner">
-                          <p class="faq-a-text">
-                            기부금영수증은 실제 후원자명, 즉 입금자 또는 결제자
-                            본인 명의로 발급됩니다. 입금자 또는 결제자와 다른
-                            명의로는 발급이 어렵습니다.
-                          </p>
-                        </div>
+              <!-- 탭 3: 후원관련 -->
+              <div id="faq-donate" class="tab-content faq-tab-content" style="display: none">
+                <ul class="faq-list">
+                  <li class="faq-item">
+                    <button type="button" class="faq-q">
+                      <span class="faq-q-text">후원금은 어떻게 투명하게 사용되나요?</span>
+                      <span class="faq-toggle-btn" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-a" style="display: none">
+                      <div class="faq-a-inner">
+                        <p class="faq-a-text">
+                          RMHC Korea는 매년 삼일회계법인을 통해 외부 감사를
+                          수감하며, 홈페이지의 '재정 투명성' 메뉴를 통해
+                          연차보고서 및 기부금 모금/사용 내역을 공시하고
+                          있습니다.
+                        </p>
                       </div>
-                    </li>
-                    <li class="faq-item">
-                      <button type="button" class="faq-q">
-                        <span class="faq-q-text"
-                          >기부금영수증은 언제, 어디서 받을 수 있나요?</span
-                        >
-                        <span class="faq-toggle-btn" aria-hidden="true"></span>
-                      </button>
-                      <div class="faq-a" style="display: none">
-                        <div class="faq-a-inner">
-                          <p class="faq-a-text">
-                            기부금영수증은 내부적으로 기부금 수령 및 신청 정보를
-                            확인한 후 국세청 홈택스를 통해 발급됩니다. 발급이
-                            완료되면 개인 및 기업 후원자는 국세청 홈택스에서
-                            직접 조회 및 출력하실 수 있습니다.
-                          </p>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="faq-item">
-                      <button type="button" class="faq-q">
-                        <span class="faq-q-text"
-                          >기부금영수증 신청 정보가 잘못된 경우 어떻게 해야
-                          하나요?</span
-                        >
-                        <span class="faq-toggle-btn" aria-hidden="true"></span>
-                      </button>
-                      <div class="faq-a" style="display: none">
-                        <div class="faq-a-inner">
-                          <p class="faq-a-text">
-                            성명, 주민등록번호 또는 사업자등록번호 등 필수
-                            정보가 정확하지 않을 경우 기부금영수증 발급이 어려울
-                            수 있습니다. 수정이 필요한 경우 Ronald McDonald
-                            House Korea(rmhc@rmhc.or.kr)로 문의해 주세요.
-                          </p>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="faq-item">
-                      <button type="button" class="faq-q">
-                        <span class="faq-q-text"
-                          >해외 거주자도 기부금영수증을 발급받을 수
-                          있나요?</span
-                        >
-                        <span class="faq-toggle-btn" aria-hidden="true"></span>
-                      </button>
-                      <div class="faq-a" style="display: none">
-                        <div class="faq-a-inner">
-                          <p class="faq-a-text">
-                            Ronald McDonald House Korea에서 발급하는
-                            기부금영수증은 대한민국 세법에 따른 기부금
-                            세액공제(또는 소득공제) 목적의 서류입니다. 따라서
-                            대한민국에서 세법에 따른 기부금 공제를 받지 않는
-                            해외 기부자에게는 기부금영수증을 발급하지 않습니다.
-                          </p>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- 탭 3: 후원관련 -->
-                <div
-                  id="faq-donate"
-                  class="tab-content faq-tab-content"
-                  style="display: none"
-                >
-                  <ul class="faq-list">
-                    <li class="faq-item">
-                      <button type="button" class="faq-q">
-                        <span class="faq-q-text"
-                          >후원금은 어떻게 투명하게 사용되나요?</span
-                        >
-                        <span class="faq-toggle-btn" aria-hidden="true"></span>
-                      </button>
-                      <div class="faq-a" style="display: none">
-                        <div class="faq-a-inner">
-                          <p class="faq-a-text">
-                            RMHC Korea는 매년 삼일회계법인을 통해 외부 감사를
-                            수감하며, 홈페이지의 '재정 투명성' 메뉴를 통해
-                            연차보고서 및 기부금 모금/사용 내역을 공시하고
-                            있습니다.
-                          </p>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
+  </div>
 
-    <!-- 푸터 공통 영역 인클루드 -->
-    <load ="/includes/footer_en.html" />
+  <!-- 푸터 공통 영역 인클루드 -->
+  <load src="/includes/footer_en.html" />
 
-    <!-- FAQ 전용 아코디언 스크립트 -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const faqQs = document.querySelectorAll(".faq-q");
-        faqQs.forEach((q) => {
-          q.addEventListener("click", function () {
-            const item = this.closest(".faq-item");
-            const answer = item.querySelector(".faq-a");
-            const isOpened = answer.style.display === "block";
+  <!-- FAQ 전용 아코디언 스크립트 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const faqQs = document.querySelectorAll(".faq-q");
+      faqQs.forEach((q) => {
+        q.addEventListener("click", function () {
+          const item = this.closest(".faq-item");
+          const answer = item.querySelector(".faq-a");
+          const isOpened = answer.style.display === "block";
 
-            // 클릭한 항목 이외의 다른 열려있는 항목 닫기
-            const allItems =
-              this.closest(".faq-list").querySelectorAll(".faq-item");
-            allItems.forEach((i) => {
-              if (i !== item) {
-                const a = i.querySelector(".faq-a");
-                a.style.display = "none";
-                i.querySelector(".faq-q").classList.remove("active");
-              }
-            });
-
-            // 현재 항목 토글
-            if (!isOpened) {
-              answer.style.display = "block";
-              this.classList.add("active");
-            } else {
-              answer.style.display = "none";
-              this.classList.remove("active");
+          // 클릭한 항목 이외의 다른 열려있는 항목 닫기
+          const allItems =
+            this.closest(".faq-list").querySelectorAll(".faq-item");
+          allItems.forEach((i) => {
+            if (i !== item) {
+              const a = i.querySelector(".faq-a");
+              a.style.display = "none";
+              i.querySelector(".faq-q").classList.remove("active");
             }
           });
+
+          // 현재 항목 토글
+          if (!isOpened) {
+            answer.style.display = "block";
+            this.classList.add("active");
+          } else {
+            answer.style.display = "none";
+            this.classList.remove("active");
+          }
         });
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
