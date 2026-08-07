@@ -565,6 +565,7 @@ a.header__submenu-link:focus-visible,
 
   .page-wrapper {
     padding-top: 8rem;
+    font-size: 1.4rem;
   }
   .impact-note {
     margin: 2rem auto 0;
@@ -1441,6 +1442,17 @@ a.header__submenu-link:focus-visible,
   .page-container {
     margin-top: 0 !important;
     text-align: center;
+  }
+
+  .page-title {
+    font-size: 2.8rem;
+  }
+  .page-title + p {
+    font-size: 1.4rem;
+  }
+
+  .sub-title {
+    font-size: 2.4rem;
   }
 }
 

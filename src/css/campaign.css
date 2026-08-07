@@ -183,43 +183,6 @@
   height: 100%;
 }
 
-/* 반응형 브레이크포인트 (1024px 이하) */
-@media (max-width: 1024px) {
-  .campaign-timeline {
-    max-width: 100%;
-    padding: 4rem var(--spacing-4);
-  }
-
-  /* SVG 라인 숨김 */
-  .campaign-svg-line-wrap,
-  .timeline-heart-marker {
-    display: none !important;
-  }
-
-  .timeline-row {
-    flex-direction: column !important;
-    gap: var(--spacing-4);
-    margin-bottom: var(--spacing-12);
-    align-items: center;
-  }
-
-  .timeline-col,
-  .timeline-img-card,
-  .timeline-title {
-    width: 100% !important;
-    max-width: 68rem;
-  }
-
-  .timeline-img-card {
-    height: auto;
-    aspect-ratio: 680/488;
-  }
-
-  .timeline-title {
-    font-size: 2.8rem;
-  }
-}
-
 /* 갈라디너 자선 모금 버튼 영역 (피그마 Spacing 가이드) */
 .campaign-container .button-wrap {
   margin-top: 10rem;
@@ -640,25 +603,6 @@
   }
 }
 
-/* 모바일 768px 이하 대응 */
-@media (max-width: 768px) {
-  .apply-page {
-    padding-bottom: 6rem;
-  }
-
-  .apply-page .donate-card {
-    padding: var(--spacing-6) var(--spacing-4);
-  }
-
-  .apply-page .total-amount {
-    font-size: 2.4rem;
-  }
-
-  .apply-page .chip-grid.cols-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 /* 후원자 유형 선택 라벨 수직 정밀 정렬 및 세로 간격 24px 복원 */
 .apply-page .donor-type-group .form-label {
   display: block;
@@ -741,8 +685,64 @@ html[lang="en"] .kcr-card {
   word-break: keep-all;
 }
 
-/* KCR 모바일 반응형 처리 */
-@media (max-width: 1024px) {
+/* 모바일 */
+@media (max-width: 768px) {
+  .campaign-container {
+    padding: 5rem 2.4rem 0;
+  }
+
+  .campaign-container .page-title + p {
+    font-size: 1.4rem;
+  }
+
+  .campaign-container .img-top-wrap {
+    margin-top: 4rem;
+  }
+
+  .campaign-container .btn-play img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .campaign-container .line-path-wrap {
+    margin-top: 10rem;
+  }
+
+  .campaign-timeline {
+    max-width: 100%;
+    padding: 4rem var(--spacing-4);
+  }
+
+  /* SVG 라인 숨김 */
+  .campaign-svg-line-wrap,
+  .timeline-heart-marker {
+    display: none !important;
+  }
+
+  .timeline-row {
+    flex-direction: column !important;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-12);
+    align-items: center;
+  }
+
+  .timeline-col,
+  .timeline-img-card,
+  .timeline-title {
+    width: 100% !important;
+    max-width: 68rem;
+  }
+
+  .timeline-img-card {
+    height: auto;
+    aspect-ratio: 680/488;
+  }
+
+  .timeline-title {
+    font-size: 2.8rem;
+  }
+
+  /*  */
   .kcr-card-grid {
     grid-template-columns: 1fr;
     gap: 2.4rem;
@@ -752,5 +752,22 @@ html[lang="en"] .kcr-card {
   .kcr-card {
     min-height: auto;
     padding: 5rem 3.6rem;
+  }
+
+  /*  */
+  .apply-page {
+    padding-bottom: 6rem;
+  }
+
+  .apply-page .donate-card {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+
+  .apply-page .total-amount {
+    font-size: 2.4rem;
+  }
+
+  .apply-page .chip-grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

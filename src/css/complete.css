@@ -132,18 +132,50 @@ html[lang="en"] .complete-action-area {
     padding: 3.2rem 0;
   }
 
+  .complete-container {
+    margin: 2rem auto 0;
+    padding: 0 2.4rem;
+  }
+
   .complete-card {
     padding: 4.8rem 2.4rem;
     border-radius: 1.6rem;
   }
 
+  .page-wrapper .complete-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
   .complete-title {
-    font-size: 2.8rem !important;
-    line-height: 3.64rem !important;
+    font-size: 2rem !important;
+  }
+
+  .complete-desc {
+    font-size: 1.4rem;
   }
 
   .btn-complete-action {
     width: 100%;
     padding: 0 !important;
+  }
+
+  .info-section-title {
+    height: 6.8rem;
+    padding: 2rem 0;
+    font-size: 2rem;
+  }
+
+  .info-row {
+    height: 6.8rem;
+    font-size: 1.4rem;
+  }
+  .info-row .info-label,
+  .info-row .info-value {
+    font-size: 1.4rem;
+  }
+
+  .complete-helper-box p {
+    font-size: 1.4rem !important;
   }
 }
