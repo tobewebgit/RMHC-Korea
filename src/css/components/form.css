@@ -398,15 +398,91 @@ html[lang="en"] .form-label {
 /* mobile */
 @media (max-width: 768px) {
   .form-control,
+  .form-label,
+  .payment-form-label,
   .donate-page .form-label,
   .inner-form-group .inner-form-box label,
   .accordion-card.is-active .card-body h3,
   .accordion-card.is-active .radio-label,
   .custom-checkbox,
   .custom-radio,
-  .agreement-all .text-lg {
+  .agreement-all .text-lg,
+  .custom-select summary,
+  .receipt-warning-list,
+  .form-helper-note,
+  .receipt-helper__primary,
+  .receipt-helper__secondary,
+  .resident-label,
+  .custom-select ul li {
     font-size: 1.4rem !important;
   }
+
+  /* 2단계 및 3단계 공통 폼 박스 모바일 반응형 (라벨 상단 좌측 배치 & 폼 요소 100%) */
+  .payment-info-form-box,
+  .inner-form-group .inner-form-box {
+    padding: 2.4rem 1.6rem;
+    gap: 0;
+    border-radius: 1.2rem;
+  }
+
+  .payment-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+    width: 100%;
+    text-align: left !important;
+  }
+
+  .payment-detail-header .form-subtitle {
+    font-size: 1.6rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .form-group.form,
+  .payment-form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    /* margin-bottom: 1.6rem; */
+    width: 100%;
+    text-align: left !important;
+  }
+
+  .form-group.form:last-child,
+  .payment-form-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .form-label,
+  .payment-form-label {
+    width: 100%;
+    min-height: auto;
+    line-height: 1.4;
+    margin-bottom: 0;
+    text-align: left !important;
+    font-size: 1.4rem !important;
+  }
+
+  .form-field,
+  .payment-form-field {
+    width: 100%;
+    text-align: left !important;
+  }
+
+  /* 3단계 유효기간 (월/년) 2개 셀렉트 가로 50% 분할 */
+  .payment-form-field.double-select {
+    display: flex;
+    gap: 0.8rem;
+  }
+  .payment-form-field.double-select .custom-select {
+    flex: 1;
+    width: 50%;
+  }
+
   .payment-tabs-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;

@@ -529,6 +529,13 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 /* 9. 반응형 브레이크포인트 보정 */
 @media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .donate-page {
+    padding-top: 11rem;
+  }
+
   .donate-page .apply-wrapper {
     flex-direction: column;
     gap: 4rem;
@@ -538,25 +545,17 @@ html[lang="en"] .accordion-card.is-active .card-body {
   .donate-page .apply-left-col {
     position: static;
     max-width: 100%;
+    text-align: center;
   }
 
   .donate-page .apply-right-col {
     max-width: 100%;
   }
-}
-
-@media (max-width: 768px) {
-  .donate-page {
-    padding-top: 11rem;
-  }
 
   .donate-page .apply-wrapper {
     gap: 4rem;
     padding: 0 2rem 0;
-  }
-
-  .donate-page .apply-left-col {
-    text-align: center;
+    font-size: 1.4rem;
   }
 
   .donate-page .page-header-wrap {
@@ -759,13 +758,6 @@ html[lang="en"] .accordion-card.is-active .card-body {
     margin-top: 2.8rem;
   }
 
-  #btnStep1Next {
-    height: 5.6rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    border-radius: 1.2rem;
-  }
-
   .auth-intro-text + .chip-grid.cols-2 {
     grid-template-columns: 1fr;
   }
@@ -782,12 +774,13 @@ html[lang="en"] .accordion-card.is-active .card-body {
     font-size: 1.4rem;
   }
 
+  .donate-payment-same {
+    font-size: var(--text-lg);
+  }
+
   /* Step 2 폼 박스 & 입력 컨트롤 모바일 반응형 */
   .donate-page .form-group.form {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 0.8rem;
-    width: 100%;
   }
 
   .donate-page .form-label {
@@ -830,6 +823,62 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
   .agree-terms-container {
     margin-top: 2.6rem;
+  }
+
+  /* Step 3 결제 정보 입력 폼 (신용카드, CMS 자동이체) 모바일 반응형 정밀 튜닝 */
+  .donate-page .payment-info-form-box {
+    padding: 2.4rem 1.6rem;
+    gap: 0;
+    border-radius: 1.2rem;
+    background-color: rgba(208, 201, 255, 0.2);
+  }
+
+  .donate-page .payment-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+    width: 100%;
+    text-align: left !important;
+  }
+
+  .donate-page .payment-detail-header .form-subtitle {
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .donate-page .payment-form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 1.6rem;
+    width: 100%;
+    text-align: left !important;
+  }
+
+  .donate-page .payment-form-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .donate-page .payment-form-field {
+    width: 100%;
+    text-align: left !important;
+  }
+
+  .donate-page .payment-form-field.double-select {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .donate-page .payment-form-field.double-select .custom-select {
+    flex: 1;
+    width: 50%;
+  }
+  .donate-payment-same {
+    font-size: 1.4rem;
   }
 }
 
@@ -925,10 +974,6 @@ html[lang="en"] .accordion-card.is-active .card-body {
   cursor: pointer;
   user-select: none;
   font-size: 1.6rem;
-}
-
-.donate-payment-same {
-  font-size: var(--text-lg);
 }
 
 .payment-form-field.double-select .custom-select {
