@@ -188,6 +188,10 @@
   margin-top: 10rem;
 }
 
+.gala-top-btn-wrap {
+  display: none;
+}
+
 /* ==========================================================================
    울림백일장 수상작 Swiper 슬라이드 및 4x2 그리드 스타일 (피그마 정밀 실측 반영)
    ========================================================================== */
@@ -388,7 +392,6 @@
 .apply-page .page-title {
   font-family: var(--font-extrabold);
   line-height: 1.3;
-  margin-bottom: 2.4rem;
   text-align: left;
 }
 
@@ -740,39 +743,61 @@ html[lang="en"] .kcr-card {
     word-break: keep-all;
   }
 
-  /*  */
+  /* kcr */
   .kcr-card-grid {
     grid-template-columns: 1fr;
     gap: 2.4rem;
     max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .kcr-card {
-    min-height: auto;
-    padding: 5rem 3.6rem;
+    width: 31.2rem;
+    height: 26rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
   }
 
-  /*  */
-  .apply-page {
-    padding-bottom: 6rem;
+  .kcr-card-icon {
+    margin-bottom: 2.4rem;
+    justify-content: center;
+  }
+
+  .kcr-card-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .kcr-card-desc {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  /* Gala 신청 페이지 */
+  .apply-page .page-title,
+  .apply-page .page-desc {
+    text-align: center;
+  }
+
+  .apply-page .gala-top-btn-wrap {
+    display: block !important;
+    margin-top: 5rem;
   }
 
   .apply-page .donate-card {
     padding: var(--spacing-6) var(--spacing-4);
   }
 
-  .apply-page .total-amount {
-    font-size: 2.4rem;
-  }
-
-  .apply-page .chip-grid.cols-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .apply-page .apply-wrapper {
     flex-direction: column;
     align-items: center;
-    gap: 6rem;
+    gap: 10rem;
   }
 
   .apply-page .apply-left-col {
@@ -783,14 +808,156 @@ html[lang="en"] .kcr-card {
 
   .apply-page .apply-right-col {
     max-width: 68rem;
+    width: 100%;
   }
 
   .apply-page .poster-wrap {
-    margin-top: 3.2rem;
+    margin-top: 4rem;
   }
 
   .apply-page .common-card {
     padding: 2.4rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .apply-page .donate-section-title {
+    font-size: 1.8rem;
+  }
+
+  .apply-page .card-title-wrap {
+    margin: 0 -2.4rem 2.4rem;
+    padding: 0 2.4rem 2.4rem;
+    box-sizing: border-box;
+  }
+
+  .apply-page .sep-line {
+    margin: 3.2rem 0;
+  }
+
+  .apply-page .gala-apply-form {
+    gap: 1rem;
+  }
+
+  .apply-page .inner-wrap {
+    padding: 0;
+  }
+
+  .apply-page .chip-grid {
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .apply-page .chip-grid .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 1.2rem 0.8rem !important;
+    font-size: 1.4rem !important;
+  }
+
+  .apply-page .form-subtitle {
+    margin-bottom: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  /* 폼 그룹 라벨 상단 좌측 배치 & 1.4rem */
+  .apply-page .form-group.form {
+    margin-top: 0;
+  }
+
+  .apply-page .form-label {
+    width: 100%;
+    min-height: auto;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+
+  .apply-page .form-field {
+  }
+
+  .apply-page .form-control,
+  .apply-page .custom-select summary,
+  .apply-page .helper-text,
+  .apply-page .payment-notice-text {
+    font-size: 1.4rem !important;
+    text-align: left !important;
+  }
+
+  .apply-page .inner-form-group .inner-form-box {
+    padding: 2.4rem 1.6rem;
+    gap: 1.6rem;
+    border-radius: 1.2rem;
+  }
+
+  /* 총 결제 금액 모바일 레이아웃 (우측 정렬) */
+  .apply-page .total-payment-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.6rem;
+    width: 100%;
+  }
+
+  .apply-page .total-payment-wrap .form-label {
+    width: auto !important;
+  }
+
+  .apply-page .total-payment-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 5rem;
+  }
+
+  .apply-page .total-amount {
+    font-size: 1.8rem;
+  }
+
+  .apply-page .amount-detail {
+    margin-top: 0.4rem;
+    font-size: 1.2rem;
+  }
+
+  /* 결제 수단 칩 그리드 2컬럼 (one-time.html 동일) */
+  .apply-page .chip-grid.cols-3 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 약관 동의 리스트 모바일 정렬 (one-time.html 동일) */
+  .apply-page .agree-terms-container {
+    margin-top: 3.2rem !important;
+  }
+
+  .apply-page .agreement-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .apply-page .agreement-link {
+    margin-left: 2.8rem;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+  }
+
+  /* CTA 신청 완료 버튼 100% 풀 너비 */
+  .apply-btn-wrap {
+    display: block !important;
+    margin-top: 3.2rem !important;
+    width: 100% !important;
+  }
+  .apply-btn-wrap .btn {
+    width: 100% !important;
   }
 
   /* 수상작 카드 모바일 가로 1개 (1줄에 1개씩 2줄 = 총 2개 묶음) */
@@ -824,5 +991,67 @@ html[lang="en"] .kcr-card {
   /* swipe */
   .award-swiper-pagination {
     margin-top: 5rem !important;
+  }
+
+  /* 추가 캠페인 (add_campaign.html) 모바일 반응형 스타일 */
+  .campaign-container .campaign-section {
+    margin-top: 6rem;
+  }
+
+  .campaign-container .campaign-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* type-right 구역: 모바일에서 텍스트 상단 -> 이미지 하단 순서 세로 스택 */
+  .campaign-container .campaign-row.type-right {
+    flex-direction: column-reverse;
+  }
+
+  .campaign-container .campaign-row + .campaign-row {
+    margin-top: 10rem;
+  }
+
+  .campaign-container .campaign-row .campaign-col {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+
+  .campaign-container .campaign-row .campaign-col .campaign-title {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  .campaign-container .campaign-row .campaign-col .campaign-title + p {
+    font-size: 1.4rem;
+  }
+
+  .campaign-container .campaign-row .campaign-col .text-col p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  .campaign-container .campaign-img-card {
+    width: 100%;
+    border-radius: 1.2rem;
+    overflow: hidden;
+  }
+
+  .campaign-container .campaign-img-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .campaign-container .campaign-section .btn {
+    margin-top: 5rem;
   }
 }

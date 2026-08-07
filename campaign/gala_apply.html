@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="RMHC 갈라 디너 참석 신청"
-    />
+    <meta name="description" content="RMHC 갈라 디너 참석 신청" />
     <title>RMHC 갈라 디너 참석 신청 - RMHC Korea</title>
     <link rel="stylesheet" href="/src/css/common.css" />
     <link rel="stylesheet" href="/src/css/campaign.css" />
@@ -21,29 +18,37 @@
     <div class="page-wrapper">
       <main id="main-content">
         <div class="campaign-container apply-page">
-          
           <div class="apply-wrapper">
-            
             <!-- [좌측 영역] 타이틀 및 포스터 이미지 -->
             <div class="apply-left-col">
               <div class="page-header-wrap">
-                <h1 class="page-title font-nanum">2026<br />한국로날드맥도날드하우스<br />Gala Dinner에<br />초대합니다.</h1>
+                <h1 class="page-title font-nanum">
+                  2026<br />한국로날드맥도날드하우스<br />Gala Dinner에<br />초대합니다.
+                </h1>
                 <p class="page-desc font-pretendard">
-                  Gala Dinner는 치료 중인 아이와 가족이 함께 머물 수 있는
-                  로날드 맥도날드 하우스의 설립과 운영을 지원하는 대표 자선 모금 행사입니다.
+                  Gala Dinner는 치료 중인 아이와 가족이 함께 머물 수 있는 로날드
+                  맥도날드 하우스의 설립과 운영을 지원하는 대표 자선 모금
+                  행사입니다.
                 </p>
               </div>
 
-              <!-- 갈라 포스터 이미지 -->
+              <!-- 갈라 포스터 이미지 및 모바일 참가신청 CTA 버튼 -->
               <div class="poster-wrap">
-                <img src="/src/images/campaign/img_gala_dinner.png" alt="2026 Gala Charity Dinner Poster" />
+                <img
+                  src="/src/images/campaign/img_gala_dinner.png"
+                  alt="2026 Gala Charity Dinner Poster"
+                />
+              </div>
+              <div class="button-wrap gala-top-btn-wrap">
+                <button type="button" class="btn btn-primary btn-arrow w-100">
+                  2026 KCR 참가 신청하기
+                </button>
               </div>
             </div>
 
             <!-- [우측 영역] 신청서 폼 카드 리스트 -->
             <div class="apply-right-col">
               <form id="galaApplyForm" class="gala-apply-form" novalidate>
-                
                 <!-- 1. 참석 신청 정보 -->
                 <section class="common-card">
                   <div class="card-title-wrap">
@@ -56,7 +61,12 @@
                     <div class="form-field">
                       <div class="form-control-row">
                         <label class="custom-radio">
-                          <input type="radio" name="applyType" value="individual" checked />
+                          <input
+                            type="radio"
+                            name="applyType"
+                            value="individual"
+                            checked
+                          />
                           <span>인원별 신청</span>
                         </label>
                         <label class="custom-radio">
@@ -69,7 +79,9 @@
 
                   <!-- 참석인원 -->
                   <div class="form-group form" id="attendeeCountGroup">
-                    <label for="attendeeCount" class="form-label">참석인원</label>
+                    <label for="attendeeCount" class="form-label"
+                      >참석인원</label
+                    >
                     <div class="form-field">
                       <details class="custom-select" id="attendeeSelect">
                         <summary id="attendeeSelectLabel">2명</summary>
@@ -86,7 +98,9 @@
                           <li data-value="10">10명</li>
                         </ul>
                       </details>
-                      <p class="helper-text" id="attendeeHelperText">• 최대 10명까지 선택 가능합니다.</p>
+                      <p class="helper-text" id="attendeeHelperText">
+                        • 최대 10명까지 선택 가능합니다.
+                      </p>
                     </div>
                   </div>
 
@@ -96,8 +110,12 @@
                   <div class="total-payment-wrap">
                     <span class="form-label font-bold">총 결제 금액</span>
                     <div class="total-payment-content">
-                      <strong class="total-amount font-nanum" id="totalAmount">1,000,000원</strong>
-                      <span class="amount-detail" id="amountDetail">(1명 X 500,000원)</span>
+                      <strong class="total-amount font-nanum" id="totalAmount"
+                        >1,000,000원</strong
+                      >
+                      <span class="amount-detail" id="amountDetail"
+                        >(1명 X 500,000원)</span
+                      >
                     </div>
                   </div>
                 </section>
@@ -105,15 +123,24 @@
                 <!-- 2. 후원자 정보입력 및 약관동의 -->
                 <section class="common-card">
                   <div class="card-title-wrap">
-                    <h2 class="donate-section-title font-nanum">후원자 정보입력 및 약관동의</h2>
+                    <h2 class="donate-section-title font-nanum">
+                      후원자 정보입력 및 약관동의
+                    </h2>
                   </div>
 
                   <!-- 후원자 유형 -->
                   <div class="inner-wrap">
                     <div class="form-group donor-type-group">
-                      <span class="form-label">후원자 유형을 선택해 주세요.</span>
+                      <span class="form-label"
+                        >후원자 유형을 선택해 주세요.</span
+                      >
                       <div class="form-field">
-                        <div class="chip-grid cols-2" id="donorTypeChips" role="radiogroup" aria-label="후원자 유형 선택">
+                        <div
+                          class="chip-grid cols-2"
+                          id="donorTypeChips"
+                          role="radiogroup"
+                          aria-label="후원자 유형 선택"
+                        >
                           <button
                             type="button"
                             class="btn btn-outline"
@@ -135,7 +162,12 @@
                             기업 / 단체
                           </button>
                         </div>
-                        <input type="hidden" name="donorType" id="galaDonorType" value="corporate" />
+                        <input
+                          type="hidden"
+                          name="donorType"
+                          id="galaDonorType"
+                          value="corporate"
+                        />
                       </div>
                     </div>
 
@@ -144,12 +176,16 @@
                     <!-- 후원자 기본 정보 입력 박스 (가로 정렬 폼) -->
                     <div class="inner-form-group">
                       <h3 class="form-subtitle">후원자 기본 정보</h3>
-
+                      <p class="form-helper-sub font-pretendard">
+                        정보를 확인한 후 결제를 진행해 주세요.
+                      </p>
 
                       <div class="inner-form-box">
                         <!-- 기업/단체명 -->
                         <div class="form-group form" id="groupCorporateName">
-                          <label for="corporateName" class="form-label required">기업/단체명</label>
+                          <label for="corporateName" class="form-label required"
+                            >기업/단체명</label
+                          >
                           <div class="form-field">
                             <input
                               type="text"
@@ -161,7 +197,9 @@
 
                         <!-- 사업자등록번호 -->
                         <div class="form-group form" id="groupBusinessNo">
-                          <label for="businessNo" class="form-label">사업자등록번호</label>
+                          <label for="businessNo" class="form-label"
+                            >사업자등록번호</label
+                          >
                           <div class="form-field">
                             <input
                               type="text"
@@ -175,7 +213,9 @@
 
                         <!-- 담당자명 -->
                         <div class="form-group form">
-                          <label for="managerName" class="form-label required">담당자명</label>
+                          <label for="managerName" class="form-label required"
+                            >담당자명</label
+                          >
                           <div class="form-field">
                             <input
                               type="text"
@@ -187,7 +227,9 @@
 
                         <!-- 담당자 연락처 -->
                         <div class="form-group form">
-                          <label for="managerPhone" class="form-label required">담당자 연락처</label>
+                          <label for="managerPhone" class="form-label required"
+                            >담당자 연락처</label
+                          >
                           <div class="form-field">
                             <input
                               type="tel"
@@ -200,24 +242,32 @@
 
                         <!-- 담당자 이메일 -->
                         <div class="form-group form">
-                          <label for="managerEmail" class="form-label required">담당자 이메일</label>
+                          <label for="managerEmail" class="form-label required"
+                            >담당자 이메일</label
+                          >
                           <div class="form-field">
                             <input
                               type="email"
                               id="managerEmail"
                               class="form-control"
                             />
-                            <p class="helper-text">입력하신 사업자등록번호로 기부금 영수증이 발급됩니다. 정확히 입력해 주세요.</p>
+                            <p class="helper-text">
+                              입력하신 사업자등록번호로 기부금 영수증이
+                              발급됩니다. 정확히 입력해 주세요.
+                            </p>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <hr class="sep-line" />
-
                     <!-- 이용약관 및 수신 동의 -->
-                    <div class="agree-terms-container" style="margin-top: 5.2rem;">
-                      <h3 class="form-subtitle">이용약관, 개인정보 수집 및 이용 활동 안내 수신동의</h3>
+                    <div
+                      class="agree-terms-container"
+                      style="margin-top: 5.2rem"
+                    >
+                      <h3 class="form-subtitle">
+                        이용약관, 개인정보 수집 및 이용 활동 안내 수신동의
+                      </h3>
                       <div class="agree-terms-content">
                         <load ="/includes/components/agree_terms.html" />
                       </div>
@@ -233,14 +283,20 @@
 
                   <div class="payment-intro">
                     <p class="payment-notice-text">
-                      후원금은 환아와 가족들을 위한 하우스 운영에 투명하게 사용됩니다.
+                      후원금은 환아와 가족들을 위한 하우스 운영에 투명하게
+                      사용됩니다.
                     </p>
                   </div>
 
                   <!-- 결제 수단 칩 그리드 (로고 아이콘 포함) -->
                   <div class="form-group">
                     <div class="form-field">
-                      <div class="chip-grid cols-3" id="paymentChips" role="radiogroup" aria-label="결제수단 선택">
+                      <div
+                        class="chip-grid cols-3"
+                        id="paymentChips"
+                        role="radiogroup"
+                        aria-label="결제수단 선택"
+                      >
                         <button
                           type="button"
                           class="btn btn-primary"
@@ -249,7 +305,11 @@
                           role="radio"
                           aria-checked="true"
                         >
-                          <img src="/src/images/common/icon_kakao_pay.png" alt="카카오페이" class="payment-logo" />
+                          <img
+                            src="/src/images/common/icon_kakao_pay.png"
+                            alt="카카오페이"
+                            class="payment-logo"
+                          />
                           <span>카카오페이</span>
                         </button>
                         <button
@@ -260,7 +320,11 @@
                           role="radio"
                           aria-checked="false"
                         >
-                          <img src="/src/images/common/icon_naver_pay.png" alt="네이버페이" class="payment-logo" />
+                          <img
+                            src="/src/images/common/icon_naver_pay.png"
+                            alt="네이버페이"
+                            class="payment-logo"
+                          />
                           <span>네이버페이</span>
                         </button>
                         <button
@@ -271,7 +335,11 @@
                           role="radio"
                           aria-checked="false"
                         >
-                          <img src="/src/images/common/icon_toss_pay.png" alt="토스페이" class="payment-logo" />
+                          <img
+                            src="/src/images/common/icon_toss_pay.png"
+                            alt="토스페이"
+                            class="payment-logo"
+                          />
                           <span>토스페이</span>
                         </button>
                         <button
@@ -295,44 +363,57 @@
                           <span>계좌이체</span>
                         </button>
                       </div>
-                      <input type="hidden" name="paymentMethod" id="galaPaymentMethod" value="kakaopay" />
+                      <input
+                        type="hidden"
+                        name="paymentMethod"
+                        id="galaPaymentMethod"
+                        value="kakaopay"
+                      />
 
-                      <!-- CTA 신청 완료 버튼 -->
-                      <div class="button-wrap apply-btn-wrap">
-                        <button type="submit" class="btn btn-primary">
+                      <!-- CTA 신청 완료 버튼 (100% 너비 적용) -->
+                      <div
+                        class="button-wrap apply-btn-wrap"
+                        style="margin-top: 3.2rem"
+                      >
+                        <button type="submit" class="btn btn-primary w-100">
                           갈라 디너 신청하기
                         </button>
                       </div>
                     </div>
                   </div>
                 </section>
-
               </form>
             </div>
-
           </div>
-
         </div>
       </main>
     </div>
 
     <!-- 푸터 공통 영역 인클루드 -->
     <load ="/includes/footer.html" />
-<!-- 인터랙션 제어 스크립트 -->
+    <!-- 인터랙션 제어 스크립트 -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         // 1. 신청 방식 토글 인터랙션 및 금액 업데이트
-        const applyRadios = document.querySelectorAll("input[name='applyType']");
-        const attendeeCountGroup = document.getElementById("attendeeCountGroup");
+        const applyRadios = document.querySelectorAll(
+          "input[name='applyType']",
+        );
+        const attendeeCountGroup =
+          document.getElementById("attendeeCountGroup");
         const attendeeCountSelect = document.getElementById("attendeeCount");
         const totalAmount = document.getElementById("totalAmount");
         const amountDetail = document.getElementById("amountDetail");
         const attendeeSelect = document.getElementById("attendeeSelect");
-        const attendeeSelectLabel = document.getElementById("attendeeSelectLabel");
-        const attendeeHelperText = document.getElementById("attendeeHelperText");
+        const attendeeSelectLabel = document.getElementById(
+          "attendeeSelectLabel",
+        );
+        const attendeeHelperText =
+          document.getElementById("attendeeHelperText");
 
         function updatePrice() {
-          const activeApplyType = document.querySelector("input[name='applyType']:checked").value;
+          const activeApplyType = document.querySelector(
+            "input[name='applyType']:checked",
+          ).value;
           const count = parseInt(attendeeCountSelect.value, 10) || 1;
           if (activeApplyType === "individual") {
             const price = count * 500000;
@@ -348,7 +429,9 @@
 
         applyRadios.forEach((radio) => {
           radio.addEventListener("change", () => {
-            const listItems = attendeeSelect.querySelectorAll(".custom-select-list li");
+            const listItems = attendeeSelect.querySelectorAll(
+              ".custom-select-list li",
+            );
             if (radio.value === "individual") {
               // 셀렉트 목록 텍스트를 '명' 단위로 변환
               listItems.forEach((li) => {
@@ -359,7 +442,8 @@
               attendeeSelectLabel.textContent = "2명";
               attendeeCountSelect.value = "2";
               // 헬퍼 텍스트 변경
-              attendeeHelperText.textContent = "• 최대 10명까지 선택 가능합니다.";
+              attendeeHelperText.textContent =
+                "• 최대 10명까지 선택 가능합니다.";
             } else {
               // 셀렉트 목록 텍스트를 '테이블' 단위로 변환
               listItems.forEach((li) => {
@@ -370,7 +454,8 @@
               attendeeSelectLabel.textContent = "1테이블";
               attendeeCountSelect.value = "1";
               // 헬퍼 텍스트 변경
-              attendeeHelperText.innerHTML = "• 1테이블 기준 : 10명입니다.<br>• 1테이블 신청 시 500,000원 할인이 적용됩니다.";
+              attendeeHelperText.innerHTML =
+                "• 1테이블 기준 : 10명입니다.<br>• 1테이블 신청 시 500,000원 할인이 적용됩니다.";
             }
             updatePrice();
           });
@@ -382,7 +467,8 @@
 
         // 2. 후원자 유형 변경 감지 시 기본 정보 폼 필드 제어
         const galaDonorTypeInput = document.getElementById("galaDonorType");
-        const groupCorporateName = document.getElementById("groupCorporateName");
+        const groupCorporateName =
+          document.getElementById("groupCorporateName");
         const groupBusinessNo = document.getElementById("groupBusinessNo");
         const corporateInput = document.getElementById("corporateName");
 
