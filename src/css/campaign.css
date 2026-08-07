@@ -224,7 +224,7 @@
 .award-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.4rem;
+  gap: 4rem 2.4rem;
   width: 100%;
 }
 
@@ -250,8 +250,8 @@
 /* 수상작 뱃지 랩퍼 및 좌측 아이콘 분리 정밀 구조 */
 .award-badge-wrap {
   position: absolute;
-  top: 1.6rem;
-  left: 1.6rem;
+  top: 1rem;
+  left: 0.4rem;
   z-index: 5;
   display: flex;
   align-items: center;
@@ -266,8 +266,11 @@
 
 /* 텍스트만 포함하는 뱃지 박스 */
 .award-badge {
-  display: inline-block;
-  padding: 0.56rem 1.36rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2rem;
+  padding: 0.56rem 0.4rem;
   border-radius: 0.4rem;
   font-weight: 600;
   line-height: 1;
@@ -340,31 +343,6 @@
   border-radius: 0.5rem;
   background-color: var(--primary);
   transition: left 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* 모바일 2열 전환 미디어 쿼리 */
-@media (max-width: 1024px) {
-  .award-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.6rem;
-  }
-
-  .award-section {
-    margin-top: 8rem;
-    margin-bottom: 18rem;
-  }
-
-  .award-section-header {
-    margin-bottom: 4rem;
-  }
-
-  .award-section-header .sub-title {
-    font-size: 2.8rem;
-  }
-
-  .award-desc {
-    font-size: 1.6rem;
-  }
 }
 
 /* ==========================================================================
@@ -570,39 +548,6 @@
   margin-top: var(--spacing-8);
 }
 
-/* 모바일 1024px 이하 반응형 2컬럼 해제 */
-@media (max-width: 1024px) {
-  .apply-page .apply-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 6rem;
-  }
-
-  .apply-page .apply-left-col {
-    max-width: 68rem;
-    position: relative;
-    top: 0;
-  }
-
-  .apply-page .apply-right-col {
-    max-width: 68rem;
-  }
-
-  .apply-page .page-title {
-    font-size: 3.6rem;
-    text-align: center;
-  }
-
-  .apply-page .page-desc {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .apply-page .poster-wrap {
-    margin-top: 3.2rem;
-  }
-}
-
 /* 후원자 유형 선택 라벨 수직 정밀 정렬 및 세로 간격 24px 복원 */
 .apply-page .donor-type-group .form-label {
   display: block;
@@ -708,38 +653,91 @@ html[lang="en"] .kcr-card {
     margin-top: 10rem;
   }
 
-  .campaign-timeline {
-    max-width: 100%;
-    padding: 4rem var(--spacing-4);
+  .campaign-container .button-wrap {
+    margin-top: 2rem;
   }
 
-  /* SVG 라인 숨김 */
-  .campaign-svg-line-wrap,
-  .timeline-heart-marker {
+  .campaign-timeline {
+    max-width: 100%;
+    padding: 10rem 0 0;
+    position: relative;
+  }
+
+  /* SVG 라인 및 하트 마크 모바일 노출 & 정밀 뷰포트 배치 */
+  .campaign-svg-line.type-pc {
     display: none !important;
   }
 
-  .timeline-row {
-    flex-direction: column !important;
-    gap: var(--spacing-4);
-    margin-bottom: var(--spacing-12);
-    align-items: center;
+  .campaign-svg-line.type-mo {
+    display: block !important;
+    width: 100%;
+    height: 100%;
   }
 
-  .timeline-col,
-  .timeline-img-card,
-  .timeline-title {
+  .campaign-svg-line-wrap {
+    display: block !important;
+    position: absolute;
+    width: 36rem !important;
+    height: 135rem !important;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    overflow: visible;
+  }
+
+  .timeline-heart-marker {
+    display: block !important;
+    left: auto;
+    right: 17.5rem;
+    top: auto;
+    bottom: 2.4rem;
+    width: 2.6rem;
+    height: 2.9rem;
+    z-index: 1;
+    transform: scale(0.6);
+  }
+
+  .timeline-row {
+    display: flex;
+    flex-direction: column !important;
+    gap: 4rem;
+    margin-bottom: 10rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-row .img-col {
+    order: 1 !important;
     width: 100% !important;
-    max-width: 68rem;
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-row .text-col {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
   }
 
   .timeline-img-card {
+    width: 100% !important;
     height: auto;
-    aspect-ratio: 680/488;
+    aspect-ratio: 680 / 488;
+    border-radius: 1.2rem;
   }
 
   .timeline-title {
-    font-size: 2.8rem;
+    width: 100% !important;
+    font-size: 2rem;
+    line-height: 1.4;
+    text-align: center;
+    word-break: keep-all;
   }
 
   /*  */
@@ -769,5 +767,62 @@ html[lang="en"] .kcr-card {
 
   .apply-page .chip-grid.cols-3 {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .apply-page .apply-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+  }
+
+  .apply-page .apply-left-col {
+    max-width: 68rem;
+    position: relative;
+    top: 0;
+  }
+
+  .apply-page .apply-right-col {
+    max-width: 68rem;
+  }
+
+  .apply-page .poster-wrap {
+    margin-top: 3.2rem;
+  }
+
+  .apply-page .common-card {
+    padding: 2.4rem;
+  }
+
+  /* 수상작 카드 모바일 가로 1개 (1줄에 1개씩 2줄 = 총 2개 묶음) */
+  .award-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .award-section {
+    margin-top: 8rem;
+  }
+
+  .award-section-header {
+    margin-bottom: 4rem;
+  }
+
+  .award-section-header .sub-title {
+    margin-bottom: 2.4rem;
+    font-size: 2.4rem;
+  }
+
+  .award-desc {
+    font-size: 1.6rem;
+  }
+
+  .award-badge {
+    height: 1.6rem;
+    font-size: 1.2rem;
+  }
+
+  /* swipe */
+  .award-swiper-pagination {
+    margin-top: 5rem !important;
   }
 }
