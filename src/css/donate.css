@@ -96,7 +96,6 @@
   gap: 0.8rem;
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--text-gray90);
   text-decoration: none;
 }
 
@@ -474,7 +473,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  min-height: 5.6rem;
+  min-height: 5.2rem;
   text-align: left;
 }
 
@@ -546,31 +545,291 @@ html[lang="en"] .accordion-card.is-active .card-body {
   }
 }
 
-@media (max-width: 576px) {
-  .donate-page .page-title {
-    font-size: 3.6rem;
+@media (max-width: 768px) {
+  .donate-page {
+    padding-top: 11rem;
   }
 
+  .donate-page .apply-wrapper {
+    gap: 4rem;
+    padding: 0 2rem 0;
+  }
+
+  .donate-page .apply-left-col {
+    text-align: center;
+  }
+
+  .donate-page .page-header-wrap {
+    text-align: center;
+  }
+
+  .donate-page .page-title {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin-bottom: 2.4rem;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  .donate-page .page-desc {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* 모바일 시안에서는 포스터 이미지 비노출 */
+  .donate-page .poster-wrap {
+    display: none;
+  }
+
+  /* 해외 발급카드 배너 - 피그마 시안 100% 완벽 동기화 */
   .foreign-card-banner {
-    padding: 0 2rem;
-    height: auto;
-    padding: 1.6rem 2rem;
+    position: relative;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.2rem;
+    justify-content: center;
+    padding: 2.4rem 4.8rem 2.4rem 1.6rem;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+    background-color: #d2d0fc;
   }
 
+  .foreign-card-banner .banner-text {
+    display: block;
+    width: 100%;
+  }
+
+  .foreign-card-banner .banner-text img {
+    position: absolute;
+    left: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .foreign-card-banner .banner-text span {
+    display: block;
+    font-size: 1.2rem;
+    padding-left: 5.2rem;
+  }
+
+  .foreign-card-banner .banner-link {
+    display: block;
+    width: 100%;
+    padding-left: 5.2rem;
+    font-size: 1.4rem;
+    text-decoration: none;
+  }
+
+  .foreign-card-banner .banner-link img {
+    position: absolute;
+    right: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.4rem;
+    height: 2.4rem;
+    transition: transform 0.3s ease;
+  }
+
+  /* 정기 / 일시 후원 탭 */
+  .donate-type-tabs {
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .donate-tab-indicator {
+    top: 0.8rem;
+    left: 0.8rem;
+    width: calc(50% - 0.8rem);
+    height: 4.8rem;
+    border-radius: 1rem;
+  }
+
+  .donate-type-tabs .btn-tab {
+    width: 50%;
+    height: 4.8rem;
+    font-size: 1.6rem;
+  }
+
+  /* 아코디언 카드 (Step 1 공통 및 1단계) */
   .accordion-card {
-    padding: 2.4rem 2rem;
+    padding: 2.8rem 2.4rem 3.2rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .accordion-card.is-disabled {
+    min-height: 7.1rem;
+    padding-bottom: 0;
   }
 
   .accordion-card .card-title-wrap {
-    margin: -0.8rem -2rem 0;
-    padding: 0 2rem 2.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0rem;
+    margin: -0.8rem -2.4rem 0;
+    padding: 0 2.4rem 0rem;
+    line-height: 1.6;
   }
 
   .accordion-card.is-active .card-title-wrap {
-    margin-bottom: 2.4rem;
+    margin-bottom: 2.8rem;
+    padding: 0 2.4rem 1.4rem;
+  }
+
+  .accordion-card .donate-section-title {
+    font-size: 1.8rem;
+    top: 0;
+  }
+
+  .accordion-card .header-summary {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 0;
+    color: var(--text-black);
+  }
+
+  .accordion-card.is-active .card-body h3,
+  .accordion-card .card-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 1.6rem;
+    font-weight: 600;
+  }
+  .receipt-helper-text {
+    font-size: 1.2rem;
+  }
+
+  /* Step 1 금액 칩 - 모바일 시안 2열 배치 */
+  .chip-grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  .chip-grid .btn {
+    height: 5.2rem;
+    padding: 0 1rem;
+  }
+  .auth-intro-text + .chip-grid .btn {
+    font-size: 1.2rem;
+  }
+
+  .direct-input-chip {
+    min-height: 5.2rem;
+    padding: 0 1.6rem;
+    border-radius: 0.8rem;
+  }
+
+  .direct-input-chip input {
+    font-size: 1.6rem;
+  }
+
+  .direct-input-chip .unit {
+    font-size: 1.6rem;
+    margin-left: 0.4rem;
+  }
+
+  .direct-amount-warning {
+    font-size: 1.4rem;
+    margin-top: 0.8rem;
+  }
+
+  /* Step 1 헬퍼 옐로우 박스 */
+  .notice-yellow-box {
+    padding: 2rem 2.4rem;
+    gap: 1.4rem;
+    margin-top: 2rem;
+    border-radius: 1.2rem;
+  }
+
+  .notice-yellow-box img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .notice-yellow-box span {
+    font-size: 1.5rem;
+    line-height: 1.45;
+  }
+
+  /* Step 1 다음 버튼 */
+  #step1NextWrap {
+    margin-top: 2.8rem;
+  }
+
+  #btnStep1Next {
+    height: 5.6rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-radius: 1.2rem;
+  }
+
+  .auth-intro-text + .chip-grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .donate-page .card-body .chip-grid.cols-2 {
+    margin-top: 2.4rem;
+  }
+
+  .sep-line {
+    margin: 2.4rem 0;
+  }
+
+  .auth-intro-text {
+    font-size: 1.4rem;
+  }
+
+  /* Step 2 폼 박스 & 입력 컨트롤 모바일 반응형 */
+  .donate-page .form-group.form {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  .donate-page .form-label {
+    width: 100%;
+    min-height: auto;
+    margin-bottom: 0;
+  }
+
+  .donate-page .form-field {
+    width: 100%;
+  }
+
+  .donate-page .inner-form-group .inner-form-box {
+    padding: 2.4rem 1.6rem;
+  }
+
+  /* 기부금 영수증 신청 여부 */
+  .donate-page .receipt-toggle-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  /* 약관 동의 세로 수직 정렬 */
+  .donate-page .agreement-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .donate-page .agreement-link {
+    margin-left: 2.8rem;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+  }
+
+  .gender-text {
+    font-size: 1.4rem;
+  }
+
+  .agree-terms-container {
+    margin-top: 2.6rem;
   }
 }
 

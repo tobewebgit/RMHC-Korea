@@ -559,6 +559,10 @@ a.header__submenu-link:focus-visible,
    Responsive Adjustments (Fallback & Mobile Mobile scale reset)
    ========================================================================== */
 @media (max-width: 768px) {
+  .common-card {
+    border-radius: 0.8rem;
+  }
+
   .page-wrapper {
     padding-top: 8rem;
   }

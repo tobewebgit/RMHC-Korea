@@ -105,7 +105,7 @@
   --bg-white: #ffffff;
   --bg-violet: #d0c9ff;
   --bg-kv: #d0c9ff;
-  --bg-gray90: #3d3d3d;
+  --bg-gray90: #21272a;
   --bg-gray80: #555555;
   --bg-gray60: #8f8f8f;
   --bg-gray40: #bbbbbb;
@@ -120,7 +120,7 @@
   --text-secondary: #4b5563;
   --text-muted: #8f8f8f;
   --text-gray100: #121619;
-  --text-gray90: #3d3d3d;
+  --text-gray90: #21272a;
   --text-gray80: #555555;
   --text-gray70: #757575;
   --text-gray60: #8f8f8f;
@@ -130,7 +130,7 @@
 
   /* Border Colors */
   --border-black: #000000;
-  --border-gray90: #3d3d3d;
+  --border-gray90: #21272a;
   --border-gray80: #555555;
   --border-gray60: #8f8f8f;
   --border-gray50: #aaaaaa;
