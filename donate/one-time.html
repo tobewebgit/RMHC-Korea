@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 일시후원 페이지입니다. 따뜻한 나눔에 동참해 주세요." />
+    <meta
+      name="description"
+      content="재단법인 한국로날드맥도날드하우스(RMHC Korea) 일시후원 페이지입니다. 따뜻한 나눔에 동참해 주세요."
+    />
     <title>일시후원 - 한국로날드맥도날드하우스</title>
     <link rel="stylesheet" href="/src/css/common.css" />
     <link rel="stylesheet" href="/src/css/donate.css" />
@@ -18,33 +21,44 @@
     <div class="page-wrapper donate-page">
       <main id="main-content">
         <div class="apply-wrapper">
-          
           <!-- [좌측 영역] 타이틀 및 포스터 이미지 -->
           <div class="apply-left-col">
             <div class="page-header-wrap">
-              <h1 class="page-title font-nanum">당신의 후원이 환아 가족에게 '함께하는 밤'을 선물합니다.</h1>
+              <h1 class="page-title font-nanum">
+                당신의 후원이 환아 가족에게 '함께하는 밤'을 선물합니다.
+              </h1>
               <p class="page-desc font-pretendard">
                 집보다 더 따뜻한 집, 로날드 맥도날드 하우스의 가족이 되어주세요.
               </p>
             </div>
             <!-- 비주얼 포스터 이미지 (LCP 고속 로드 속성 부여) -->
             <div class="poster-wrap">
-              <img src="/src/images/donate/img_donate_1.png" alt="엄마와 환아가 따뜻하게 안아주는 모습" fetchpriority="high" />
+              <img
+                src="/src/images/donate/img_donate_1.png"
+                alt="엄마와 환아가 따뜻하게 안아주는 모습"
+                class="type-pc"
+                fetchpriority="high"
+              />
             </div>
           </div>
 
           <!-- [우측 영역] 단계별 아코디언 신청서 폼 -->
           <div class="apply-right-col">
-            
             <!-- 해외 카드 기부 배너 -->
             <div class="foreign-card-banner">
               <div class="banner-text">
-                <img src="/src/images/donate/icon_foreign_card.svg" alt="해외 신용카드 아이콘" />
+                <img
+                  src="/src/images/donate/icon_foreign_card.svg"
+                  alt="해외 신용카드 아이콘"
+                />
                 <span>해외 발급카드를 이용하시나요?</span>
               </div>
               <a href="#" class="banner-link">
                 <span>Foreign Card Donation</span>
-                <img src="/src/images/donate/icon_foreign_arrow.png" alt="이동 화살표" />
+                <img
+                  src="/src/images/donate/icon_foreign_arrow.png"
+                  alt="이동 화살표"
+                />
               </a>
             </div>
 
@@ -56,24 +70,61 @@
             </div>
 
             <form id="oneTimeDonateForm" class="gala-apply-form" novalidate>
-              
               <!-- [카드 1] 후원 금액 설정 -->
-              <section id="step1Card" class="common-card accordion-card is-active">
+              <section
+                id="step1Card"
+                class="common-card accordion-card is-active"
+              >
                 <div class="card-title-wrap">
                   <h2 class="donate-section-title font-nanum">후원 금액</h2>
                   <span class="header-summary" id="step1Summary"></span>
                 </div>
-                
+
                 <div class="card-body">
                   <h3 class="card-subtitle">나눔의 크기를 선택해 주세요.</h3>
                   <div class="chip-grid cols-3">
-                    <button type="button" class="btn btn-outline" data-value="10000">10,000원</button>
-                    <button type="button" class="btn btn-outline" data-value="20000">20,000원</button>
-                    <button type="button" class="btn btn-outline" data-value="30000">30,000원</button>
-                    <button type="button" class="btn btn-outline" data-value="50000">50,000원</button>
-                    <button type="button" class="btn btn-outline" data-value="100000">100,000원</button>
+                    <button
+                      type="button"
+                      class="btn btn-outline"
+                      data-value="10000"
+                    >
+                      10,000원
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline"
+                      data-value="20000"
+                    >
+                      20,000원
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline"
+                      data-value="30000"
+                    >
+                      30,000원
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline"
+                      data-value="50000"
+                    >
+                      50,000원
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline"
+                      data-value="100000"
+                    >
+                      100,000원
+                    </button>
                     <div class="direct-input-chip">
-                      <input type="text" id="directAmount" placeholder="직접 입력" maxlength="9" />
+                      <input
+                        type="text"
+                        id="directAmount"
+                        placeholder="직접 입력"
+                        maxlength="9"
+                      />
                       <span class="unit">원</span>
                     </div>
                   </div>
@@ -83,49 +134,90 @@
 
                   <!-- 헬퍼 옐로우 박스 -->
                   <div class="notice-yellow-box">
-                    <img src="/src/images/donate/icon_helper_1.png" alt="쉼 지원 안내 아이콘" />
+                    <img
+                      src="/src/images/donate/icon_helper_1.png"
+                      alt="쉼 지원 안내 아이콘"
+                    />
                     <span>환아 가족에게 따뜻한 응원을 전합니다.</span>
                   </div>
                   <div class="notice-yellow-box">
-                    <img src="/src/images/donate/icon_helper_2.png" alt="쉼 지원 안내 아이콘" />
+                    <img
+                      src="/src/images/donate/icon_helper_2.png"
+                      alt="쉼 지원 안내 아이콘"
+                    />
                     <span>환아 가족의 따뜻한 한 끼 식사를 돕습니다.</span>
                   </div>
                   <div class="notice-yellow-box">
-                    <img src="/src/images/donate/icon_helper_3.png" alt="쉼 지원 안내 아이콘" />
+                    <img
+                      src="/src/images/donate/icon_helper_3.png"
+                      alt="쉼 지원 안내 아이콘"
+                    />
                     <span>환아 가족의 편안한 쉼을 지원합니다.</span>
                   </div>
                   <div class="notice-yellow-box">
-                    <img src="/src/images/donate/icon_helper_4.png" alt="쉼 지원 안내 아이콘" />
+                    <img
+                      src="/src/images/donate/icon_helper_4.png"
+                      alt="쉼 지원 안내 아이콘"
+                    />
                     <span>환아 가족의 소중한 하루를 지켜줍니다.</span>
                   </div>
                   <div class="notice-yellow-box">
-                    <img src="/src/images/donate/icon_helper_5.png" alt="쉼 지원 안내 아이콘" />
+                    <img
+                      src="/src/images/donate/icon_helper_5.png"
+                      alt="쉼 지원 안내 아이콘"
+                    />
                     <span>더 많은 가족에게 함께하는 밤을 선물합니다.</span>
                   </div>
                   <div class="notice-yellow-box">
-                    <img src="/src/images/donate/icon_helper_6.png" alt="쉼 지원 안내 아이콘" />
+                    <img
+                      src="/src/images/donate/icon_helper_6.png"
+                      alt="쉼 지원 안내 아이콘"
+                    />
                     <span>당신의 나눔이 가족의 곁을 지킵니다.</span>
                   </div>
 
                   <!-- 1단계 전용 다음 버튼 영역 (너비 100% 형태) -->
                   <div class="next-btn-wrap" id="step1NextWrap">
-                    <button type="button" id="btnStep1Next" class="btn btn-primary">다음</button>
+                    <button
+                      type="button"
+                      id="btnStep1Next"
+                      class="btn btn-primary"
+                    >
+                      다음
+                    </button>
                   </div>
                 </div>
               </section>
 
               <!-- [카드 2] 후원자 정보입력 및 약관동의 -->
-              <section id="step2Card" class="common-card accordion-card is-disabled">
+              <section
+                id="step2Card"
+                class="common-card accordion-card is-disabled"
+              >
                 <div class="card-title-wrap">
-                  <h2 class="donate-section-title font-nanum">후원자 정보입력 및 약관동의</h2>
+                  <h2 class="donate-section-title font-nanum">
+                    후원자 정보입력 및 약관동의
+                  </h2>
                   <span class="header-summary" id="step2Summary"></span>
                 </div>
 
                 <div class="card-body">
                   <h3 class="card-subtitle">후원자 유형을 선택해 주세요.</h3>
                   <div class="chip-grid cols-2" id="donorTypeGrid">
-                    <button type="button" class="btn btn-primary" data-type="individual">개인</button>
-                    <button type="button" class="btn btn-outline" data-type="group">기업 / 단체</button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-type="individual"
+                    >
+                      개인
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-outline"
+                      data-type="group"
+                    >
+                      기업 / 단체
+                    </button>
                   </div>
 
                   <hr class="sep-line" />
@@ -137,11 +229,23 @@
                       * 만 14세 미만은 보호자 명의로 후원해 주세요.
                     </p>
                     <div class="chip-grid cols-2" id="authBtnGrid">
-                      <button type="button" id="btnKakaoAuth" class="btn btn-outline btn-auth-action kakao">
-                        <img src="/src/images/common/icon_kakao_check_pay.svg" alt="카카오 로고" class="payment-logo" />
+                      <button
+                        type="button"
+                        id="btnKakaoAuth"
+                        class="btn btn-outline btn-auth-action kakao"
+                      >
+                        <img
+                          src="/src/images/common/icon_kakao_check_pay.svg"
+                          alt="카카오 로고"
+                          class="payment-logo"
+                        />
                         <span>카카오로 빠르게 시작하기</span>
                       </button>
-                      <button type="button" id="btnPassAuth" class="btn btn-outline btn-auth-action pass">
+                      <button
+                        type="button"
+                        id="btnPassAuth"
+                        class="btn btn-outline btn-auth-action pass"
+                      >
                         <span>휴대폰으로 본인인증 (PASS)</span>
                       </button>
                     </div>
@@ -149,12 +253,13 @@
 
                   <!-- 본인인증 완료 시 노출되는 정보 입력 영역 (기본 숨김) -->
                   <div id="authInfoArea">
-                    
                     <hr class="sep-line" />
 
                     <!-- 후원자 기본 정보 (인증 정보) -->
                     <div class="inner-form-group">
-                      <h3 class="form-subtitle">후원자 기본 정보 (인증 정보)</h3>
+                      <h3 class="form-subtitle">
+                        후원자 기본 정보 (인증 정보)
+                      </h3>
                       <p class="receipt-helper-text">
                         정보를 확인한 후 결제를 진행해 주세요.
                       </p>
@@ -162,17 +267,33 @@
                       <div class="inner-form-box">
                         <!-- 이름 -->
                         <div class="form-group form">
-                          <label for="donorName" class="form-label required">이름</label>
+                          <label for="donorName" class="form-label required"
+                            >이름</label
+                          >
                           <div class="form-field">
-                            <input type="text" id="donorName" class="form-control disabled" disabled placeholder="로날드" />
+                            <input
+                              type="text"
+                              id="donorName"
+                              class="form-control disabled"
+                              disabled
+                              placeholder="로날드"
+                            />
                           </div>
                         </div>
 
                         <!-- 생년월일 -->
                         <div class="form-group form">
-                          <label for="donorBirth" class="form-label required">생년월일</label>
+                          <label for="donorBirth" class="form-label required"
+                            >생년월일</label
+                          >
                           <div class="form-field">
-                            <input type="text" id="donorBirth" class="form-control disabled" disabled placeholder="19880101" />
+                            <input
+                              type="text"
+                              id="donorBirth"
+                              class="form-control disabled"
+                              disabled
+                              placeholder="19880101"
+                            />
                           </div>
                         </div>
 
@@ -186,64 +307,111 @@
 
                         <!-- 이메일 -->
                         <div class="form-group form">
-                          <label for="donorEmail" class="form-label required">이메일</label>
+                          <label for="donorEmail" class="form-label required"
+                            >이메일</label
+                          >
                           <div class="form-field">
-                            <input type="email" id="donorEmail" class="form-control" placeholder="rmhc@gmail.com" />
-                            <p class="receipt-helper-text">후원 관련 안내를 받을 이메일을 입력해 주세요.</p>
+                            <input
+                              type="email"
+                              id="donorEmail"
+                              class="form-control"
+                              placeholder="rmhc@gmail.com"
+                            />
+                            <p class="receipt-helper-text">
+                              후원 관련 안내를 받을 이메일을 입력해 주세요.
+                            </p>
                           </div>
                         </div>
                       </div>
                     </div>
-
                   </div>
 
                   <!-- 기업/단체 정보 입력 영역 (기본 숨김) -->
                   <div id="groupInfoArea">
                     <hr class="sep-line" />
-                    
+
                     <!-- 후원자 기본 정보 -->
                     <div class="inner-form-group">
                       <h3 class="form-subtitle">후원자 기본 정보</h3>
-                      
+
                       <div class="inner-form-box">
                         <!-- 기업/단체명 -->
                         <div class="form-group form">
-                          <label for="groupName" class="form-label required">기업/단체명</label>
+                          <label for="groupName" class="form-label required"
+                            >기업/단체명</label
+                          >
                           <div class="form-field">
-                            <input type="text" id="groupName" class="form-control" placeholder="" />
+                            <input
+                              type="text"
+                              id="groupName"
+                              class="form-control"
+                              placeholder=""
+                            />
                           </div>
                         </div>
 
                         <!-- 사업자등록번호 -->
                         <div class="form-group form">
-                          <label for="groupBizNum" class="form-label">사업자등록번호</label>
+                          <label for="groupBizNum" class="form-label"
+                            >사업자등록번호</label
+                          >
                           <div class="form-field">
-                            <input type="text" id="groupBizNum" class="form-control" placeholder="사업자번호 10자리 (숫자만 입력)" maxlength="10" />
+                            <input
+                              type="text"
+                              id="groupBizNum"
+                              class="form-control"
+                              placeholder="사업자번호 10자리 (숫자만 입력)"
+                              maxlength="10"
+                            />
                           </div>
                         </div>
 
                         <!-- 담당자명 -->
                         <div class="form-group form">
-                          <label for="groupManager" class="form-label required">담당자명</label>
+                          <label for="groupManager" class="form-label required"
+                            >담당자명</label
+                          >
                           <div class="form-field">
-                            <input type="text" id="groupManager" class="form-control" placeholder="" />
+                            <input
+                              type="text"
+                              id="groupManager"
+                              class="form-control"
+                              placeholder=""
+                            />
                           </div>
                         </div>
 
                         <!-- 담당자 연락처 -->
                         <div class="form-group form">
-                          <label for="groupPhone" class="form-label required">담당자 연락처</label>
+                          <label for="groupPhone" class="form-label required"
+                            >담당자 연락처</label
+                          >
                           <div class="form-field">
-                            <input type="text" id="groupPhone" class="form-control" placeholder="연락처 (숫자만 입력)" maxlength="11" />
+                            <input
+                              type="text"
+                              id="groupPhone"
+                              class="form-control"
+                              placeholder="연락처 (숫자만 입력)"
+                              maxlength="11"
+                            />
                           </div>
                         </div>
 
                         <!-- 담당자 이메일 -->
                         <div class="form-group form">
-                          <label for="groupEmail" class="form-label required">담당자 이메일</label>
+                          <label for="groupEmail" class="form-label required"
+                            >담당자 이메일</label
+                          >
                           <div class="form-field">
-                            <input type="email" id="groupEmail" class="form-control" placeholder="" />
-                            <p class="receipt-helper-text group-email-helper">기부금 영수증은 등록한 담당자 이메일로 발송됩니다.</p>
+                            <input
+                              type="email"
+                              id="groupEmail"
+                              class="form-control"
+                              placeholder=""
+                            />
+                            <p class="receipt-helper-text group-email-helper">
+                              기부금 영수증은 등록한 담당자 이메일로 발송됩니다.
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -256,15 +424,25 @@
 
                     <!-- 기부금 영수증 신청 여부 (대분류 독립 노출) -->
                     <div class="form-group form receipt-toggle-group">
-                      <span class="form-label radio-label required">기부금 영수증</span>
+                      <span class="form-label radio-label required"
+                        >기부금 영수증</span
+                      >
                       <div class="form-field">
                         <div class="form-control-row gap-4">
                           <label class="custom-radio">
-                            <input type="radio" name="receiptRequest" value="Y" />
+                            <input
+                              type="radio"
+                              name="receiptRequest"
+                              value="Y"
+                            />
                             <span>예</span>
                           </label>
                           <label class="custom-radio">
-                            <input type="radio" name="receiptRequest" value="N" />
+                            <input
+                              type="radio"
+                              name="receiptRequest"
+                              value="N"
+                            />
                             <span>아니오</span>
                           </label>
                         </div>
@@ -273,7 +451,6 @@
 
                     <!-- 기부금 영수증 '예' 선택 시 노출 영역 (안내 가이드와 회색 박스를 품는 최외각 래퍼) -->
                     <div id="receiptDetailArea">
-                      
                       <!-- 개인용 주민등록번호 입력 영역 -->
                       <div id="receiptResidentNumArea">
                         <!-- 기부금 영수증 발급 안내 텍스트 (회색 박스 외부 상단 배치) -->
@@ -282,7 +459,8 @@
                             기부금 영수증 발급을 위한 필수 정보입니다.
                           </p>
                           <p class="receipt-helper__secondary">
-                            입력하신 개인정보는 기부금영수증 발급 목적으로만 수집·사용됩니다.
+                            입력하신 개인정보는 기부금영수증 발급 목적으로만
+                            수집·사용됩니다.
                           </p>
                         </div>
 
@@ -293,19 +471,42 @@
                               <div class="resident-label">주민등록번호</div>
                               <div class="resident-input-group">
                                 <div class="resident-front-wrap">
-                                  <input type="text" id="residentNum1" class="form-control" maxlength="6" />
+                                  <input
+                                    type="text"
+                                    id="residentNum1"
+                                    class="form-control"
+                                    maxlength="6"
+                                  />
                                 </div>
                                 <span class="resident-divider">-</span>
                                 <div class="resident-pw-wrap">
-                                  <input type="password" id="residentNum2" class="form-control" maxlength="7" />
-                                  <button type="button" class="eye-btn" aria-label="주민등록번호 뒷자리 보기 토글"></button>
+                                  <input
+                                    type="password"
+                                    id="residentNum2"
+                                    class="form-control"
+                                    maxlength="7"
+                                  />
+                                  <button
+                                    type="button"
+                                    class="eye-btn"
+                                    aria-label="주민등록번호 뒷자리 보기 토글"
+                                  ></button>
                                 </div>
                               </div>
 
                               <ul class="receipt-warning-list">
-                                <li>연말정산 간소화 서비스 등록을 위해 주민등록번호와 주소를 정확히 입력해 주세요.</li>
-                                <li>기부금 영수증은 국세청 홈택스 '간소화 서비스'를 통해 상시 조회 가능합니다.</li>
-                                <li>수집된 정보는 관련 법령에 따라 5년간 안전하게 보관됩니다.</li>
+                                <li>
+                                  연말정산 간소화 서비스 등록을 위해
+                                  주민등록번호와 주소를 정확히 입력해 주세요.
+                                </li>
+                                <li>
+                                  기부금 영수증은 국세청 홈택스 '간소화
+                                  서비스'를 통해 상시 조회 가능합니다.
+                                </li>
+                                <li>
+                                  수집된 정보는 관련 법령에 따라 5년간 안전하게
+                                  보관됩니다.
+                                </li>
                               </ul>
                             </div>
                           </div>
@@ -315,18 +516,21 @@
                       <!-- 기업/단체용 사업자 발급 안내 영역 (기본 숨김) -->
                       <div id="receiptBizHelperArea">
                         <p>
-                          사업자등록번호 입력 시 해당 정보 기준으로 기부금 영수증이 발급됩니다.<br />
-                          사업자등록번호가 없는 경우 기부금 영수증 발급이 제한될 수 있습니다.
+                          사업자등록번호 입력 시 해당 정보 기준으로 기부금
+                          영수증이 발급됩니다.<br />
+                          사업자등록번호가 없는 경우 기부금 영수증 발급이 제한될
+                          수 있습니다.
                         </p>
                       </div>
-
                     </div>
 
                     <hr class="sep-line" />
 
                     <!-- 이용약관 및 수신 동의 (대분류) -->
                     <div class="agree-terms-container">
-                      <h3 class="form-subtitle">이용약관, 개인정보 수집 및 이용 활동 안내 수신동의</h3>
+                      <h3 class="form-subtitle">
+                        이용약관, 개인정보 수집 및 이용 활동 안내 수신동의
+                      </h3>
                       <div class="agree-terms-content">
                         <div class="agreement-all">
                           <label class="custom-checkbox">
@@ -337,22 +541,55 @@
                         <div class="agreement-list">
                           <div class="agreement-item">
                             <label class="custom-checkbox">
-                              <input type="checkbox" name="agreeItem" class="required-agree" value="terms" />
-                              <span><span class="color-primary">[필수]</span> 이용약관</span>
+                              <input
+                                type="checkbox"
+                                name="agreeItem"
+                                class="required-agree"
+                                value="terms"
+                              />
+                              <span
+                                ><span class="color-primary">[필수]</span>
+                                이용약관</span
+                              >
                             </label>
-                            <a href="/policy/terms.html" target="_blank" class="agreement-link">자세히 보기</a>
+                            <a
+                              href="/policy/terms.html"
+                              target="_blank"
+                              class="agreement-link"
+                              >자세히 보기</a
+                            >
                           </div>
                           <div class="agreement-item">
                             <label class="custom-checkbox">
-                              <input type="checkbox" name="agreeItem" class="required-agree" value="privacy" />
-                              <span><span class="color-primary">[필수]</span> 개인정보 수집 및 이용</span>
+                              <input
+                                type="checkbox"
+                                name="agreeItem"
+                                class="required-agree"
+                                value="privacy"
+                              />
+                              <span
+                                ><span class="color-primary">[필수]</span>
+                                개인정보 수집 및 이용</span
+                              >
                             </label>
-                            <a href="/policy/privacy.html" target="_blank" class="agreement-link">자세히 보기</a>
+                            <a
+                              href="/policy/privacy.html"
+                              target="_blank"
+                              class="agreement-link"
+                              >자세히 보기</a
+                            >
                           </div>
                           <div class="agreement-item">
                             <label class="custom-checkbox">
-                              <input type="checkbox" name="agreeItem" value="marketing" />
-                              <span><span>[선택]</span> 소식지 및 활동 알림 수신 동의</span>
+                              <input
+                                type="checkbox"
+                                name="agreeItem"
+                                value="marketing"
+                              />
+                              <span
+                                ><span>[선택]</span> 소식지 및 활동 알림 수신
+                                동의</span
+                              >
                             </label>
                             <a href="#" class="agreement-link">자세히 보기</a>
                           </div>
@@ -362,43 +599,92 @@
 
                     <!-- 2단계 전용 이전 / 다음 버튼 영역 (이용약관 하단 배치) -->
                     <div class="chip-grid cols-2">
-                      <button type="button" id="btnStep2Prev" class="btn btn-outline">이전</button>
-                      <button type="button" id="btnStep2Next" class="btn btn-primary" disabled>다음</button>
+                      <button
+                        type="button"
+                        id="btnStep2Prev"
+                        class="btn btn-outline"
+                      >
+                        이전
+                      </button>
+                      <button
+                        type="button"
+                        id="btnStep2Next"
+                        class="btn btn-primary"
+                        disabled
+                      >
+                        다음
+                      </button>
                     </div>
-
                   </div>
-
                 </div>
               </section>
 
               <!-- [카드 3] 결제수단 설정 -->
-              <section id="step3Card" class="common-card accordion-card is-disabled">
+              <section
+                id="step3Card"
+                class="common-card accordion-card is-disabled"
+              >
                 <div class="card-title-wrap">
                   <h2 class="donate-section-title font-nanum">결제수단</h2>
                   <span class="header-summary" id="step3Summary"></span>
                 </div>
 
                 <div class="card-body">
-                  <h3 class="card-subtitle">후원금은 환아와 가족들을 위한 하우스 운영에 투명하게 사용됩니다.</h3>
-                  
+                  <h3 class="card-subtitle">
+                    후원금은 환아와 가족들을 위한 하우스 운영에 투명하게
+                    사용됩니다.
+                  </h3>
+
                   <!-- 공통화된 payment-tabs-grid 연동 -->
                   <div class="payment-tabs-grid">
-                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="kakaopay">
-                      <img src="/src/images/common/icon_kakao_pay.svg" alt="카카오페이 로고" class="payment-tab-icon" />
+                    <button
+                      type="button"
+                      class="btn btn-outline payment-tab-btn"
+                      data-pay="kakaopay"
+                    >
+                      <img
+                        src="/src/images/common/icon_kakao_pay.svg"
+                        alt="카카오페이 로고"
+                        class="payment-tab-icon"
+                      />
                       <span>카카오페이</span>
                     </button>
-                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="naverpay">
-                      <img src="/src/images/common/icon_naver_pay.png" alt="네이버페이 로고" class="payment-tab-icon" />
+                    <button
+                      type="button"
+                      class="btn btn-outline payment-tab-btn"
+                      data-pay="naverpay"
+                    >
+                      <img
+                        src="/src/images/common/icon_naver_pay.png"
+                        alt="네이버페이 로고"
+                        class="payment-tab-icon"
+                      />
                       <span>네이버페이</span>
                     </button>
-                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="tosspay">
-                      <img src="/src/images/common/icon_toss_pay.png" alt="토스페이 로고" class="payment-tab-icon" />
+                    <button
+                      type="button"
+                      class="btn btn-outline payment-tab-btn"
+                      data-pay="tosspay"
+                    >
+                      <img
+                        src="/src/images/common/icon_toss_pay.png"
+                        alt="토스페이 로고"
+                        class="payment-tab-icon"
+                      />
                       <span>토스페이</span>
                     </button>
-                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="card">
+                    <button
+                      type="button"
+                      class="btn btn-outline payment-tab-btn"
+                      data-pay="card"
+                    >
                       <span>신용카드</span>
                     </button>
-                    <button type="button" class="btn btn-outline payment-tab-btn" data-pay="cms">
+                    <button
+                      type="button"
+                      class="btn btn-outline payment-tab-btn"
+                      data-pay="cms"
+                    >
                       <span>CMS 자동이체</span>
                     </button>
                   </div>
@@ -407,10 +693,17 @@
                   <div id="withdrawDayArea" class="withdraw-day-box">
                     <hr class="sep-line" />
                     <div class="form-group form">
-                      <label class="form-label required form-label font-bold">출금일 선택</label>
+                      <label class="form-label required form-label font-bold"
+                        >출금일 선택</label
+                      >
                       <div class="form-field">
-                        <details class="custom-select selectbox" id="withdrawDaySelect">
-                          <summary id="withdrawDaySelectLabel">출금일 선택</summary>
+                        <details
+                          class="custom-select selectbox"
+                          id="withdrawDaySelect"
+                        >
+                          <summary id="withdrawDaySelectLabel">
+                            출금일 선택
+                          </summary>
                           <ul>
                             <li data-value="05">매월 5일</li>
                             <li data-value="15">매월 15일</li>
@@ -421,7 +714,10 @@
                     </div>
                     <ul class="receipt-warning-list">
                       <li>• 매월 선택한 날짜에 자동으로 결제가 진행됩니다.</li>
-                      <li>• 정기후원은 마이페이지에서 언제든지 변경 및 해지하실 수 있습니다.</li>
+                      <li>
+                        • 정기후원은 마이페이지에서 언제든지 변경 및 해지하실 수
+                        있습니다.
+                      </li>
                     </ul>
                   </div>
 
@@ -430,7 +726,10 @@
                     <hr class="sep-line" />
                     <div class="payment-detail-header">
                       <h3 class="form-subtitle">결제정보를 입력해주세요.</h3>
-                      <label class="custom-checkbox" id="sameAsDonorCheckboxLabel">
+                      <label
+                        class="custom-checkbox"
+                        id="sameAsDonorCheckboxLabel"
+                      >
                         <input type="checkbox" id="sameAsDonor" />
                         <span class="donate-payment-same">후원자와 동일</span>
                       </label>
@@ -442,8 +741,13 @@
                       <div class="payment-form-row">
                         <label class="payment-form-label">*카드사명</label>
                         <div class="payment-form-field">
-                          <details class="custom-select selectbox" id="cardCompanySelect">
-                            <summary id="cardCompanySelectLabel">카드사를 선택해 주세요.</summary>
+                          <details
+                            class="custom-select selectbox"
+                            id="cardCompanySelect"
+                          >
+                            <summary id="cardCompanySelectLabel">
+                              카드사를 선택해 주세요.
+                            </summary>
                             <ul>
                               <li data-value="국민">KB국민카드</li>
                               <li data-value="하나">하나카드</li>
@@ -458,9 +762,17 @@
 
                       <!-- 카드번호 -->
                       <div class="payment-form-row">
-                        <label for="pm_card_number" class="payment-form-label">*카드번호</label>
+                        <label for="pm_card_number" class="payment-form-label"
+                          >*카드번호</label
+                        >
                         <div class="payment-form-field">
-                          <input type="text" id="pm_card_number" class="form-control" placeholder="카드번호 (숫자만 입력)" maxlength="16" />
+                          <input
+                            type="text"
+                            id="pm_card_number"
+                            class="form-control"
+                            placeholder="카드번호 (숫자만 입력)"
+                            maxlength="16"
+                          />
                         </div>
                       </div>
 
@@ -468,7 +780,10 @@
                       <div class="payment-form-row">
                         <label class="payment-form-label">*카드 유효기간</label>
                         <div class="payment-form-field double-select">
-                          <details class="custom-select selectbox" id="expMonthSelect">
+                          <details
+                            class="custom-select selectbox"
+                            id="expMonthSelect"
+                          >
                             <summary id="expMonthSelectLabel">월</summary>
                             <ul>
                               <li data-value="01">01</li>
@@ -485,7 +800,10 @@
                               <li data-value="12">12</li>
                             </ul>
                           </details>
-                          <details class="custom-select selectbox" id="expYearSelect">
+                          <details
+                            class="custom-select selectbox"
+                            id="expYearSelect"
+                          >
                             <summary id="expYearSelectLabel">년</summary>
                             <ul>
                               <li data-value="26">2026</li>
@@ -505,18 +823,35 @@
 
                       <!-- 카드소유자명 -->
                       <div class="payment-form-row">
-                        <label for="pm_owner_name" class="payment-form-label">*카드소유자명</label>
+                        <label for="pm_owner_name" class="payment-form-label"
+                          >*카드소유자명</label
+                        >
                         <div class="payment-form-field">
-                          <input type="text" id="pm_owner_name" class="form-control" placeholder="이름을 입력해 주세요." />
+                          <input
+                            type="text"
+                            id="pm_owner_name"
+                            class="form-control"
+                            placeholder="이름을 입력해 주세요."
+                          />
                         </div>
                       </div>
 
                       <!-- 카드소유자 생년월일 -->
                       <div class="payment-form-row align-start">
-                        <label for="pm_owner_birth" class="payment-form-label">*카드소유자<br>생년월일</label>
+                        <label for="pm_owner_birth" class="payment-form-label"
+                          >*카드소유자<br />생년월일</label
+                        >
                         <div class="payment-form-field">
-                          <input type="text" id="pm_owner_birth" class="form-control" placeholder="예)19880101 (숫자만 입력)" maxlength="8" />
-                          <p class="form-helper-note mt-2">• 카드 소유자 확인을 위해 사용됩니다.</p>
+                          <input
+                            type="text"
+                            id="pm_owner_birth"
+                            class="form-control"
+                            placeholder="예)19880101 (숫자만 입력)"
+                            maxlength="8"
+                          />
+                          <p class="form-helper-note mt-2">
+                            • 카드 소유자 확인을 위해 사용됩니다.
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -527,8 +862,13 @@
                       <div class="payment-form-row">
                         <label class="payment-form-label">*은행명</label>
                         <div class="payment-form-field">
-                          <details class="custom-select selectbox" id="cmsBankSelect">
-                            <summary id="cmsBankSelectLabel">은행을 선택해 주세요.</summary>
+                          <details
+                            class="custom-select selectbox"
+                            id="cmsBankSelect"
+                          >
+                            <summary id="cmsBankSelectLabel">
+                              은행을 선택해 주세요.
+                            </summary>
                             <ul>
                               <li data-value="국민">KB국민은행</li>
                               <li data-value="신한">신한은행</li>
@@ -542,25 +882,47 @@
 
                       <!-- 계좌번호 -->
                       <div class="payment-form-row">
-                        <label for="pm_cms_account" class="payment-form-label">*계좌번호</label>
+                        <label for="pm_cms_account" class="payment-form-label"
+                          >*계좌번호</label
+                        >
                         <div class="payment-form-field">
-                          <input type="text" id="pm_cms_account" class="form-control" placeholder="계좌번호 (숫자만 입력)" />
+                          <input
+                            type="text"
+                            id="pm_cms_account"
+                            class="form-control"
+                            placeholder="계좌번호 (숫자만 입력)"
+                          />
                         </div>
                       </div>
 
                       <!-- 예금주명 -->
                       <div class="payment-form-row">
-                        <label for="pm_cms_owner" class="payment-form-label">*예금주명</label>
+                        <label for="pm_cms_owner" class="payment-form-label"
+                          >*예금주명</label
+                        >
                         <div class="payment-form-field">
-                          <input type="text" id="pm_cms_owner" class="form-control" placeholder="예금주명을 입력해 주세요." />
+                          <input
+                            type="text"
+                            id="pm_cms_owner"
+                            class="form-control"
+                            placeholder="예금주명을 입력해 주세요."
+                          />
                         </div>
                       </div>
 
                       <!-- 생년월일 -->
                       <div class="payment-form-row">
-                        <label for="pm_cms_birth" class="payment-form-label">*생년월일</label>
+                        <label for="pm_cms_birth" class="payment-form-label"
+                          >*생년월일</label
+                        >
                         <div class="payment-form-field">
-                          <input type="text" id="pm_cms_birth" class="form-control" placeholder="예)19880101 (숫자만 입력)" maxlength="8" />
+                          <input
+                            type="text"
+                            id="pm_cms_birth"
+                            class="form-control"
+                            placeholder="예)19880101 (숫자만 입력)"
+                            maxlength="8"
+                          />
                         </div>
                       </div>
 
@@ -569,42 +931,55 @@
                         <label class="payment-form-label">*출금동의 서명</label>
                         <div class="payment-form-field">
                           <p class="form-helper-note cms-helper">
-                            • 자동이체를 위해 출금 동의가 필요합니다.<br>
-                            • 아래 서명을 진행해 주세요.<br>
+                            • 자동이체를 위해 출금 동의가 필요합니다.<br />
+                            • 아래 서명을 진행해 주세요.<br />
                             • 마우스를 올린 후 클릭한 상태에서 서명해 주세요.
                           </p>
                           <!-- 서명 패드 캔버스 보드 (H: 12rem) -->
                           <div class="signature-pad-wrapper">
                             <canvas id="signatureCanvas"></canvas>
                             <div class="signature-action-wrap">
-                              <button type="button" id="btnSignatureClear">다시 서명하기</button>
+                              <button type="button" id="btnSignatureClear">
+                                다시 서명하기
+                              </button>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    
+
                     <!-- CMS 정기 결제용 여백 보완용 구분선 -->
                     <div class="cms-payment-spacer"></div>
                   </div>
 
                   <!-- 이전 / 후원하기 최종 액션 버튼 (좌우 50% 분할 칩 그리드 구성) -->
                   <div class="chip-grid cols-2">
-                    <button type="button" id="btnPrevStep" class="btn btn-outline primary">이전</button>
-                    <button type="submit" id="btnSubmitDonate" class="btn btn-primary" disabled>후원 하기</button>
+                    <button
+                      type="button"
+                      id="btnPrevStep"
+                      class="btn btn-outline primary"
+                    >
+                      이전
+                    </button>
+                    <button
+                      type="submit"
+                      id="btnSubmitDonate"
+                      class="btn btn-primary"
+                      disabled
+                    >
+                      후원 하기
+                    </button>
                   </div>
                 </div>
               </section>
-
             </form>
           </div>
-
         </div>
       </main>
     </div>
 
     <!-- 푸터 공통 영역 인클루드 -->
     <load ="/includes/footer.html" />
-<script type="module" src="/src/js/pages/one-time.js"></script>
+    <script type="module" src="/src/js/pages/one-time.js"></script>
   </body>
 </html>

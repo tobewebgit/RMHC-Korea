@@ -804,14 +804,29 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 /* 10. 반응형 브레이크포인트 */
 @media (max-width: 1024px) {
-  .goods-grid {
+  /* .goods-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
+  } */
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+  .goods-kv {
+    width: 31.2rem;
+    height: 24rem;
+    margin: 2rem auto 0;
+  }
+  .goods-kv .kv-text-wrap {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fffde9;
+    text-align: center;
+  }
   .goods-section {
-    padding: 6rem 0 8rem;
+    padding: 6rem 2.4rem 0;
   }
 
   .goods-header {
@@ -819,23 +834,36 @@ html[lang="en"] .accordion-card.is-active .card-body {
   }
 
   .goods-header__title {
-    font-size: 3.6rem;
+    font-size: 2.4rem;
   }
 
   .goods-header__desc {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .goods-grid {
+    padding: 0;
     grid-template-columns: 1fr;
   }
 
   .goods-card__title {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 
   .goods-card__item {
-    font-size: 1.8rem;
+    text-align: left;
+    font-size: 1.4rem;
+  }
+
+  .goods-card {
+    height: auto;
+  }
+  .goods-card__header {
+    height: 8rem;
+  }
+
+  .goods-card__body {
+    padding: 2.4rem;
   }
 }
 
@@ -1679,11 +1707,11 @@ html[lang="en"] .vol-act-card__body {
     gap: 2.4rem;
   }
   .vol-act-card__body {
-    padding: 3.2rem 2.4rem;
+    padding: 2rem 1.6rem;
     height: auto !important;
   }
   .vol-act-card__title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .vol-act-card__desc {
     font-size: 1.4rem;
@@ -1696,10 +1724,19 @@ html[lang="en"] .vol-act-card__body {
   }
   .vol-process__inner {
     gap: 4rem;
-    width: calc(100% - 4.8rem);
+    width: 31.1rem;
+    height: 89.6rem;
     padding: 4rem 2.4rem;
-    background-size: cover;
-    border-radius: 1.6rem;
+    background-image: url(/src/images/donate/img_section_5_bg_mo.svg);
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .vol-process__header {
+    gap: 0;
+  }
+  .vol-process__desc {
+    margin: 2.4rem 0 1.6rem;
   }
   .vol-process__note {
     font-size: 1.4rem;
@@ -1707,34 +1744,50 @@ html[lang="en"] .vol-act-card__body {
   .vol-process__steps {
     flex-direction: column;
     align-items: stretch;
-    gap: 3.2rem;
+    gap: 6rem;
   }
   .vol-process__step {
     flex-direction: row;
     width: 100%;
     align-items: center;
-    gap: 2.4rem;
+    gap: 2rem;
     position: relative;
+    padding-left: 4rem;
   }
-  .vol-process__step:not(:last-of-type)::after {
+  .vol-process__step::after {
     content: "";
     position: absolute;
-    left: 3.9rem;
-    top: 8rem;
-    height: 3.2rem;
-    border-left: 2px dotted #ccc;
+    left: 13.5rem;
+    top: 6.5rem;
+    width: 0.8rem;
+    height: 4.8rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+  .vol-process__step:nth-child(1)::after {
+    background: url(/src/images/donate/line_section_5_1_mo.png);
+  }
+  .vol-process__step:nth-child(3)::after {
+    background: url(/src/images/donate/line_section_5_2_mo.png);
+  }
+  .vol-process__step:nth-child(5)::after {
+    background: url(/src/images/donate/line_section_5_3_mo.png);
+  }
+  .vol-process__step:nth-child(7)::after {
+    background: url(/src/images/donate/line_section_5_4_mo.png);
   }
   .vol-process__line {
     display: none;
   }
   .vol-process__icon {
-    width: 8rem;
-    height: 8rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 1.6rem;
     flex-shrink: 0;
   }
   .vol-process__num {
-    font-size: 2.8rem;
+    font-size: 2rem;
   }
   .vol-process__label {
     font-size: 1.8rem;
@@ -1751,10 +1804,11 @@ html[lang="en"] .vol-act-card__body {
   }
   .vol-news__cards {
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 3.2rem;
   }
   .vol-news-card__body {
-    gap: 1.6rem;
+    gap: 1.2rem;
+    padding: 2.4rem 0 0;
   }
   .vol-news-card__title {
     font-size: 1.8rem;
