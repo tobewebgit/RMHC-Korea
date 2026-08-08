@@ -10,6 +10,7 @@ import { initScrollMotions } from './components/motion.js';
 import { initAlert, showAlert } from './components/alert.js';
 import { initFab } from './components/fab.js';
 import { initDonateBannerHeart } from './components/donate-banner.js';
+import { initEyeButtons } from './components/form-eye.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. 공통 레이아웃 및 컴포넌트 기능 초기화
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAlert();
   initFab();
   initDonateBannerHeart();
+  initEyeButtons();
 
   // 전역 알럿 접근
   window.showAlert = showAlert;

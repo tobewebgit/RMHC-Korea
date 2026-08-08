@@ -98,13 +98,20 @@ html[lang="en"] .form-label {
   outline: none;
 }
 
-.form-control.password {
+.pw-input-wrapper,
+.form-control-with-icon,
+.resident-pw-wrap {
   position: relative;
-  padding-right: 4rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
-.form-control-with-icon {
-  position: relative;
+.pw-input-wrapper .form-control,
+.form-control-with-icon .form-control,
+.resident-pw-wrap .form-control,
+.form-control.password {
+  padding-right: 4.5rem;
 }
 
 .eye-btn {
@@ -113,9 +120,18 @@ html[lang="en"] .form-label {
   top: 50%;
   transform: translateY(-50%);
   background: url("../../images/common/eye-off.png") no-repeat center;
+  background-size: contain;
   width: 2rem;
   height: 2rem;
+  border: none;
+  padding: 0;
   cursor: pointer;
+  z-index: 2;
+}
+
+.eye-btn.visible,
+.eye-btn.active {
+  background-image: url("../../images/common/eye-on.png");
 }
 
 /* 폼 필드 가로 배열 (라디오 등) */

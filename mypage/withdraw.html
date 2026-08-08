@@ -73,7 +73,7 @@
                   <label for="infoPw" class="form-label required min-h-auto">비밀번호</label>
                   <div class="pw-input-wrapper">
                     <input type="password" id="infoPw" class="form-control password editable" placeholder="" />
-                    <button type="button" class="eye-btn" aria-label="비밀번호 표시 토글"></button>
+                    <button type="button" class="eye-btn" aria-label="비밀번호 표시 토글" aria-pressed="false"></button>
                   </div>
                 </div>
               </div>
@@ -91,20 +91,6 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // 비밀번호 눈 토글
-        const eyeBtn = document.querySelector(".pw-input-wrapper .eye-btn");
-        if (eyeBtn) {
-          eyeBtn.addEventListener("click", function () {
-            const input = this.previousElementSibling;
-            if (input && input.type === "password") {
-              input.type = "text";
-              this.classList.add("visible");
-            } else if (input) {
-              input.type = "password";
-              this.classList.remove("visible");
-            }
-          });
-        }
 
         // 동의 체크박스 상태에 따른 버튼 제어
         const agreeCheck = document.getElementById("agreeCheck");

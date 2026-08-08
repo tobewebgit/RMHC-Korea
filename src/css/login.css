@@ -673,22 +673,7 @@
   gap: 0.8rem;
 }
 
-.pw-input-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.pw-input-wrapper .form-control {
-  padding-right: 5rem;
-}
-
-/* 눈 아이콘 토글 처리 */
-.pw-input-wrapper .eye-btn.visible {
-  opacity: 0.4;
-  /* 눈이 켜지면 투명하게 하여 상태 변화 표시 */
-}
+/* 눈 아이콘 토글 처리는 form.css에서 공통 관리됩니다 */
 
 /* 5. 알림 수신동의 체크박스 색상 커스텀 */
 .info-form-group .custom-checkbox {
@@ -949,19 +934,7 @@
   margin-right: 0.2rem;
 }
 
-.form-group-col .pw-input-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
 
-.form-group-col .pw-input-wrapper .form-control {
-  padding-right: 5rem;
-}
-
-.form-group-col .pw-input-wrapper .eye-btn.visible {
-  opacity: 0.4;
-}
 
 /* 하단 액션 버튼 */
 .withdraw-actions {

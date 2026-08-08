@@ -732,22 +732,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 주민등록번호 뒷자리 눈모양 마스킹 토글
-  const eyeButtons = step2Card.querySelectorAll('.eye-btn');
-  eyeButtons.forEach(btn => {
-    btn.addEventListener('click', function () {
-      const input = this.previousElementSibling;
-      if (input && (input.type === 'password' || input.type === 'text')) {
-        if (input.type === 'password') {
-          input.type = 'text';
-          this.classList.add('visible');
-        } else {
-          input.type = 'password';
-          this.classList.remove('visible');
-        }
-      }
-    });
-  });
+  // 주민등록번호 뒷자리 눈모양 마스킹 토글 기능은 전역 common.js(form-eye.js)에서 일괄 처리됩니다.
 
   // 기업용 입력 필드 실시간 유효성 체크
   [groupName, groupManager, groupEmail].forEach(input => {

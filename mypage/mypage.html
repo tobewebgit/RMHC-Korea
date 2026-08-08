@@ -367,7 +367,7 @@
                           <label for="newPw" class="info-label">새 비밀번호</label>
                           <div class="pw-input-wrapper">
                             <input type="password" id="newPw" class="form-control password editable" placeholder="" />
-                            <button type="button" class="eye-btn" aria-label="비밀번호 표시 토글"></button>
+                            <button type="button" class="eye-btn" aria-label="비밀번호 표시 토글" aria-pressed="false"></button>
                           </div>
                         </div>
 
@@ -377,7 +377,7 @@
                           <div class="pw-input-wrapper">
                             <input type="password" id="confirmNewPw" class="form-control password editable"
                               placeholder="" />
-                            <button type="button" class="eye-btn" aria-label="비밀번호 확인 표시 토글"></button>
+                            <button type="button" class="eye-btn" aria-label="비밀번호 확인 표시 토글" aria-pressed="false"></button>
                           </div>
                         </div>
 
@@ -536,7 +536,7 @@
                           <div class="pw-input-wrapper">
                             <input type="password" id="corpNewPw" class="form-control password editable"
                               placeholder="" />
-                            <button type="button" class="eye-btn" aria-label="비밀번호 표시 토글"></button>
+                            <button type="button" class="eye-btn" aria-label="비밀번호 표시 토글" aria-pressed="false"></button>
                           </div>
                         </div>
 
@@ -546,7 +546,7 @@
                           <div class="pw-input-wrapper">
                             <input type="password" id="corpConfirmNewPw" class="form-control password editable"
                               placeholder="" />
-                            <button type="button" class="eye-btn" aria-label="비밀번호 확인 표시 토글"></button>
+                            <button type="button" class="eye-btn" aria-label="비밀번호 확인 표시 토글" aria-pressed="false"></button>
                           </div>
                         </div>
 
@@ -608,22 +608,6 @@
     <!-- 마이페이지 전용 인터랙션 스크립트 (모션 없음) -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // 비밀번호 눈 아이콘 토글 기능
-        const eyeButtons = document.querySelectorAll(".pw-input-wrapper .eye-btn");
-        eyeButtons.forEach((btn) => {
-          btn.addEventListener("click", function () {
-            const input = this.previousElementSibling;
-            if (input && (input.type === "password" || input.type === "text")) {
-              if (input.type === "password") {
-                input.type = "text";
-                this.classList.add("visible");
-              } else {
-                input.type = "password";
-                this.classList.remove("visible");
-              }
-            }
-          });
-        });
         // 전역 form-select.js를 통해 팝업 내 커스텀 셀렉트박스들이 공통 제어됩니다.
       });
     </script>

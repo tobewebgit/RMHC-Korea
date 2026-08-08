@@ -173,28 +173,6 @@
       </div>
     </main>
 
-    <!-- 마이페이지 전용 인터랙션 스크립트 (모션 없음) -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // 비밀번호 눈 아이콘 토글 기능
-        const eyeButtons = document.querySelectorAll(".pw-input-wrapper .eye-btn");
-        eyeButtons.forEach((btn) => {
-          btn.addEventListener("click", function () {
-            const input = this.previousElementSibling;
-            if (input && (input.type === "password" || input.type === "text")) {
-              if (input.type === "password") {
-                input.type = "text";
-                this.classList.add("visible");
-              } else {
-                input.type = "password";
-                this.classList.remove("visible");
-              }
-            }
-          });
-        });
-      });
-    </script>
-
     <!-- 모달 팝업 공통 로드 영역 -->
     <load src="/includes/popups/mp_p_01.html" />
     <load src="/includes/popups/mp_p_02.html" />
