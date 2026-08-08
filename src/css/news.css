@@ -21,13 +21,15 @@
 
 .news-list-header .list-total span {
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .news-list-header .search-field {
   position: relative;
-  width: 36.0rem; /* 360px */
-  height: 5.2rem; /* 52px */
+  width: 36.0rem;
+  /* 360px */
+  height: 5.2rem;
+  /* 52px */
 }
 
 .news-list-header .search-input {
@@ -36,7 +38,8 @@
   padding: 0 4.8rem 0 1.6rem;
   border: 1px solid #BBBBBB;
   border-radius: var(--radius-sm);
-  font-size: 1.8rem; /* 18px */
+  font-size: 1.8rem;
+  /* 18px */
   line-height: 1.5;
   outline: none;
   box-sizing: border-box;
@@ -120,11 +123,16 @@
   flex-shrink: 0;
 }
 
-.notice-item .notice-new-badge {
+.notice-item .notice-title span {
+  display: inline-block;
+  margin-right: 0.8rem;
+}
+
+.notice-item .notice-title .notice-new-badge {
+  display: inline-block;
+  vertical-align: middle;
   width: 4.2rem;
   height: 2.1rem;
-  margin-left: 0.8rem;
-  display: block;
   flex-shrink: 0;
 }
 
@@ -142,6 +150,7 @@
   flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
 .notice-item:hover .notice-arrow {
   transform: translateX(0.5rem);
 }
@@ -185,6 +194,7 @@
   display: block;
   transition: transform 0.3s ease;
 }
+
 .activity-card:hover .card-img-wrap img {
   transform: scale(1.05);
 }
@@ -280,12 +290,15 @@
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  font-family: var(--font-extrabold); /* NanumSquare Neo */
-  font-size: 3.8rem; /* 38px */
+  font-family: var(--font-extrabold);
+  /* NanumSquare Neo */
+  font-size: 3.8rem;
+  /* 38px */
   line-height: 1.3;
   letter-spacing: -0.03em;
   margin: 0;
 }
+
 .detail-header .detail-title .notice-megaphone {
   width: 3.2rem;
 }
@@ -300,27 +313,33 @@
 .detail-contents {
   margin: 8rem 0 4.0rem;
 }
+
 .detail-contents .detail-contents-title {
   font-size: 2.8rem;
 }
+
 .detail-contents .detail-contents-desc {
   font-family: var(--font-extrabold);
   font-size: 2.2rem;
   margin-top: 2.4rem;
 }
+
 .detail-contents dt {
   font-family: var(--font-extrabold);
   font-size: 2.0rem;
   margin: 2.4rem 0;
 }
+
 .detail-contents .text-marker {
   color: var(--primary);
   font-size: 2.0rem;
 }
+
 .detail-contents dd {
   font-size: var(--text-lg);
   line-height: 1.5;
 }
+
 .detail-contents dd::before {
   content: "•";
   display: inline-flex;
@@ -330,6 +349,7 @@
   height: 2.0rem;
   font-size: var(--text-lg);
 }
+
 .detail-contents dd a {
   color: var(--primary);
   text-decoration: underline;
@@ -384,9 +404,7 @@
   white-space: nowrap;
 }
 
-.activity-detail-page .detail-attachments .attachment-link {
-
-}
+.activity-detail-page .detail-attachments .attachment-link {}
 
 .detail-attachments .attachment-link:hover {
   text-decoration: underline;
@@ -405,7 +423,8 @@
 .detail-navigation-bar .nav-btn-group {
   display: flex;
   justify-content: space-between;
-  gap: 8.0rem; /* 이전글과 다음글 간격 */
+  gap: 8.0rem;
+  /* 이전글과 다음글 간격 */
   width: 100%;
   height: 5.2rem;
 }
@@ -418,6 +437,7 @@
   line-height: 1.5;
   text-decoration: none;
 }
+
 .detail-navigation-bar .nav-btn.disabled {
   opacity: 0.4;
   cursor: default;
@@ -445,9 +465,11 @@
    반응형 브레이크포인트 (Responsive Design - 768px 이하 모바일)
    ========================================================================== */
 @media screen and (max-width: 768px) {
+
   /* 1. 영웅 배너 (KV 영역) 모바일 */
   .news-kv {
-    height: 30.0rem; /* 높이 축소 */
+    height: 30.0rem;
+    /* 높이 축소 */
     padding: 0;
     border-radius: var(--radius-md);
   }
@@ -457,11 +479,13 @@
   }
 
   .news-kv .kv-title {
-    font-size: 2.8rem; /* 28px */
+    font-size: 2.8rem;
+    /* 28px */
   }
 
   .news-kv .kv-desc {
-    font-size: 1.4rem; /* 14px */
+    font-size: 1.4rem;
+    /* 14px */
   }
 
   /* 2. 리스트 헤더 모바일 */
@@ -474,17 +498,16 @@
   }
 
   .news-list-header .list-total {
-    font-size: 1.6rem; /* 16px */
-    font-weight: 600;
+    font-size: 1.2rem;
   }
 
   .news-list-header .search-field {
-    width: 100%; /* 가로 꽉 차게 */
+    width: 100%;
     height: 5.2rem;
   }
 
   .news-list-header .search-input {
-    font-size: 1.4rem; /* 14px */
+    font-size: 1.4rem;
   }
 
   /* 3. 공지사항 목록 모바일 */
@@ -493,58 +516,90 @@
   }
 
   .notice-item {
+    position: relative;
     flex-direction: column;
     align-items: flex-start;
-    padding: 2.0rem 1.6rem;
-    gap: 1.6rem;
+    padding: 2.4rem 3.6rem 2.4rem 0;
+    gap: 1.2rem;
+    box-sizing: border-box;
+    text-align: left;
   }
 
   .notice-item .notice-left {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 0.8rem;
+    text-align: left;
+  }
+
+  .notice-item .notice-megaphone {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 0;
+    display: block;
   }
 
   .notice-item .notice-title {
-    font-size: 2.0rem; /* 20px */
-    white-space: normal; /* 모바일에서는 줄바꿈 허용 */
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-size: 1.8rem;
+    white-space: normal;
+    display: inline-block;
+    word-break: keep-all;
+    line-height: 1.4;
+    text-align: left;
   }
 
   .notice-item .notice-right {
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 1.6rem;
   }
 
-  .notice-item .notice-new-badge {
+  .notice-item .notice-title .notice-new-badge {
     width: 3.3rem;
     height: 1.6rem;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   .notice-item .notice-date {
-    font-size: 1.4rem; /* 14px */
+    font-size: 1.2rem;
+    margin: 0;
+    width: auto;
   }
 
+  /* 플러스 버튼: 상단 여백(top: 2.4rem) 기준 absolute 고정 */
   .notice-item .notice-arrow {
-    margin-left: auto;
-    width: 2.2rem;
-    height: 1.6rem;
+    position: absolute;
+    right: 0;
+    top: 2.4rem;
+    content: url("../images/common/icon_faq_plus.png");
+    width: 3.2rem;
+    height: 3.2rem;
+    margin: 0;
+  }
+
+  /* 메가폰 아이콘이 존재할 때: 타이틀 첫 줄 라인 위치(5.6rem)에 정렬 */
+  .notice-item:has(.notice-megaphone) .notice-arrow {
+    top: 5.6rem;
   }
 
   /* 4. 활동소식 목록 모바일 */
   .activity-grid {
-    grid-template-columns: 1fr; /* 1열 배치 */
-    gap: 2.4rem;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
     margin-bottom: 4.0rem;
   }
 
   .activity-card {
     width: 100%;
     height: auto;
+    border-radius: 0.8rem;
+  }
+
+  .activity-card:hover .card-img-wrap img {
+    transform: none;
   }
 
   .activity-card .card-img-wrap {
@@ -553,7 +608,38 @@
 
   .activity-card .card-text-wrap {
     padding: 2.4rem;
-    gap: 3.2rem;
+    gap: 4rem;
+    text-align: left;
+  }
+
+  .activity-card:hover .card-text-wrap {
+    padding: 2.4rem;
+  }
+
+  .activity-card .card-title {
+    font-size: 1.6rem;
+    /* 16px */
+    min-height: auto;
+    line-height: 1.4;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .activity-card .card-date {
+    font-size: 1.4rem;
+    /* 14px */
+    line-height: 1.4;
+    text-align: left;
+    margin: 0;
+  }
+
+  .activity-card .arrow,
+  .activity-card:hover .arrow {
+    display: none !important;
   }
 
   /* 5. 상세 페이지 모바일 */
@@ -563,7 +649,7 @@
   }
 
   .detail-header {
-    margin-top: 4.0rem;
+    margin-top: 5.0rem;
     margin-bottom: 2.4rem;
   }
 
@@ -581,15 +667,32 @@
   }
 
   .detail-header .detail-title {
-    font-size: 2.0rem; /* 20px */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 2.0rem;
+    text-align: left;
+    line-height: 1.3;
+  }
+
+  .detail-header .detail-title .notice-megaphone {
+    display: block;
+    margin-bottom: 0.8rem;
   }
 
   .detail-header .detail-date {
-    font-size: 1.4rem; /* 14px */
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  .detail-contents {
+    margin-top: 5rem;
+    text-align: left;
+    font-size: 1.4rem;
   }
 
   .detail-contents .detail-text {
-    font-size: 1.4rem; /* 14px */
+    font-size: 1.4rem;
   }
 
   .detail-contents .detail-img-wrap {
@@ -604,11 +707,11 @@
   }
 
   .detail-attachments .attachment-label {
-    font-size: 1.4rem; /* 14px */
+    font-size: 1.4rem;
   }
 
   .detail-attachments .attachment-link {
-    font-size: 1.4rem; /* 14px */
+    font-size: 1.4rem;
   }
 
   .detail-navigation-bar {
@@ -616,7 +719,14 @@
     flex-direction: column-reverse;
     gap: 2.4rem;
     align-items: center;
-    margin-bottom: 6.0rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding-top: 5rem;
+  }
+
+  .detail-navigation-bar .btn-wrap {
+    top: 5rem;
+    max-width: 8rem;
   }
 
   .detail-navigation-bar .nav-btn-group {
@@ -626,9 +736,16 @@
   }
 
   .detail-navigation-bar .nav-btn {
-    font-size: 1.4rem; /* 14px */
+    font-size: 1.4rem;
   }
 
+  .detail-contents .detail-text-title,
+  .detail-contents .detail-contents-desc,
+  .detail-contents .detail-contents-title {
+    font-size: 1.8rem;
+  }
 
+  .detail-contents dd {
+    font-size: 1.4rem;
+  }
 }
-
