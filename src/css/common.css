@@ -585,7 +585,7 @@ a.header__submenu-link:focus-visible,
   /* ── Mobile Footer (display: contents + order 모바일 단일 HTML 배치) ── */
   .footer {
     margin-top: 10rem;
-    padding: 4rem 0.8rem 8rem;
+    padding: 4rem 0 8rem;
     border-radius: 100% 50% 0 0 / 6vw 5vw 0 0;
   }
 
@@ -1623,6 +1623,11 @@ a.header__submenu-link:focus-visible,
 
   .sub-title {
     font-size: 2.4rem;
+  }
+
+  .page-title.mypage,
+  .page-title.type01 {
+    font-size: 2.8rem;
   }
 }
 
