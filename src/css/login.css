@@ -11,6 +11,7 @@
   justify-content: center;
   padding: var(--spacing-200) 0 0;
 }
+
 .login-section.w-lg {
   padding-top: 4rem;
 }
@@ -40,9 +41,11 @@
   text-align: center;
   letter-spacing: var(--letter-spacing-tight);
 }
+
 .login-title.text-lg {
   font-size: var(--text-5xl);
 }
+
 .login-title.text-lg.mt100 {
   margin-top: var(--spacing-100);
 }
@@ -72,6 +75,7 @@
   border-radius: var(--radius-sm);
   cursor: pointer;
 }
+
 .btn-social-kakao {
   background-color: #ffeb00;
 }
@@ -117,6 +121,7 @@
   height: 1px;
   background-color: var(--border-color);
 }
+
 .line-box .line-text {
   font-size: 1.8rem;
 }
@@ -141,6 +146,7 @@
   font-size: var(--text-lg);
   text-align: center;
 }
+
 .login-guide a {
   color: var(--text-gray80);
   font-weight: 700;
@@ -356,6 +362,7 @@
   background-image: url(../images/login/bg_join_bottom.png);
   background-repeat: no-repeat;
 }
+
 .join-banner-section h2 {
   display: flex;
   align-items: center;
@@ -377,6 +384,7 @@
   line-height: 1.5;
   color: var(--text-gray60);
 }
+
 .receipt-helper__secondary {
   margin-top: 0.2rem;
 }
@@ -438,6 +446,7 @@
   margin-top: var(--spacing-6);
   padding-left: var(--spacing-4);
 }
+
 .receipt-warning-list li {
   list-style-type: disc;
   font-size: var(--text-sm);
@@ -463,6 +472,7 @@ a.agreement-link {
   white-space: nowrap;
   transition: var(--transition-fast);
 }
+
 .agreement-link:hover {
   color: var(--text-primary);
 }
@@ -475,13 +485,16 @@ a.agreement-link {
   margin-top: var(--spacing-5);
   margin-bottom: var(--spacing-16);
 }
+
 .join-actions .btn {
   width: 15rem;
 }
+
 .join-actions .error-text {
   color: var(--primary);
   text-align: center;
 }
+
 .join-actions .error-text span {
   position: relative;
   padding-left: 2rem;
@@ -549,9 +562,7 @@ a.agreement-link {
 }
 
 /* 기부금 영수증 확인 탭 */
-.receipt-card {
-
-}
+.receipt-card {}
 
 .receipt-notice {
   font-size: 2rem;
@@ -606,12 +617,15 @@ a.agreement-link {
   height: 1.2rem;
   border-radius: 50%;
 }
+
 .status-dot.yellow {
   background-color: #ffc72c;
 }
+
 .status-dot.green {
   background-color: #7cb342;
 }
+
 .status-dot.red {
   background-color: #e00000;
 }
@@ -760,7 +774,8 @@ a.agreement-link {
 
 /* 눈 아이콘 토글 처리 */
 .pw-input-wrapper .eye-btn.visible {
-  opacity: 0.4; /* 눈이 켜지면 투명하게 하여 상태 변화 표시 */
+  opacity: 0.4;
+  /* 눈이 켜지면 투명하게 하여 상태 변화 표시 */
 }
 
 /* 5. 알림 수신동의 체크박스 색상 커스텀 */
@@ -867,6 +882,7 @@ a.agreement-link {
   align-items: center;
   width: 100%;
 }
+
 .sns-icon::before {
   content: "";
   display: inline-block;
@@ -875,10 +891,12 @@ a.agreement-link {
   margin-right: 0.8rem;
   border-radius: 50%;
 }
+
 .sns-icon.kakao::before {
   background: url('/src/images/common/icon_kakao_pay.svg') 50% 50% no-repeat;
   background-size: contain;
 }
+
 .sns-icon.naver::before {
   background: url('/src/images/common/icon_naver_pay.svg') 50% 50% no-repeat;
   background-size: contain;
@@ -887,6 +905,7 @@ a.agreement-link {
 .sns-status.connected {
   display: flex;
 }
+
 .sns-status.connected::before {
   content: "";
   display: inline-block;
@@ -901,6 +920,7 @@ a.agreement-link {
   text-decoration: underline;
   cursor: pointer;
 }
+
 .sns-status.action:hover {
   color: var(--primary);
 }
@@ -909,32 +929,6 @@ a.agreement-link {
 @media screen and (max-width: 1024px) {
   .mypage-info-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .info-card {
-    padding: 3rem 2rem;
-  }
-  
-  .receipt-consent-content {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1.6rem;
-  }
-  
-  .receipt-consent-btn {
-    max-width: 100%;
-  }
-
-  .info-action-buttons {
-    flex-direction: row;
-    width: 100%;
-  }
-
-  .info-action-buttons .btn {
-    flex: 1;
-    max-width: none;
   }
 }
 
@@ -1000,12 +994,12 @@ a.agreement-link {
   margin-right: 0.4rem;
 }
 
-.withdraw-agree-wrap .checkbox-txt {
-}
+.withdraw-agree-wrap .checkbox-txt {}
 
 /* 정보 확인 카드 상자 */
 .withdraw-confirm-card {
-  background-color: rgba(208, 201, 255, 0.15); /* 연보랏빛/연회색빛 배경 */
+  background-color: rgba(208, 201, 255, 0.15);
+  /* 연보랏빛/연회색빛 배경 */
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: var(--spacing-60);
@@ -1034,7 +1028,8 @@ a.agreement-link {
 }
 
 .form-group-col .form-label {
-  font-size: var(--text-lg);;
+  font-size: var(--text-lg);
+  ;
 }
 
 .form-group-col .form-label.required::before {
@@ -1072,37 +1067,12 @@ a.agreement-link {
 .btn-primary.btn-disabled,
 .btn-primary.btn-disabled:hover,
 .btn-primary:disabled {
-  background-color: #f39c9c !important; /* 핑크 톤 */
+  background-color: #f39c9c !important;
+  /* 핑크 톤 */
   color: #ffffff !important;
   cursor: not-allowed;
   box-shadow: none;
 }
-
-/* 반응형 스타일 */
-@media screen and (max-width: 1024px) {
-  .withdraw-form-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-4);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .withdraw-confirm-card {
-    padding: 3rem var(--spacing-4);
-  }
-  
-  .withdraw-actions {
-    flex-direction: row;
-    width: 100%;
-  }
-  
-  .withdraw-actions .btn {
-    flex: 1;
-    max-width: none;
-  }
-}
-
-
 
 /* 후원상세 타이틀 및 요약 박스 피그마 폰트 스케일 정밀 연동 */
 .donation-detail-section .card-title {
@@ -1170,7 +1140,8 @@ a.agreement-link {
 
 /* 폼 외부 상자 배경색 피그마 fills 적용 */
 .payment-info-form-box {
-  background-color: rgba(208, 201, 255, 0.2) !important; /* 옅은 보라/회색 opacity 20% */
+  background-color: rgba(208, 201, 255, 0.2) !important;
+  /* 옅은 보라/회색 opacity 20% */
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 4rem 2.4rem;
@@ -1208,7 +1179,8 @@ a.agreement-link {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   font-size: 1.8rem;
-  background-color: var(--bg-primary) !important; /* 연노랑 배경 */
+  background-color: var(--bg-primary) !important;
+  /* 연노랑 배경 */
   box-sizing: border-box;
 }
 
@@ -1220,7 +1192,8 @@ a.agreement-link {
   background-repeat: no-repeat !important;
   background-position: right 2.4rem center !important;
   background-size: 1.4rem 0.8rem !important;
-  padding-right: 4.8rem !important; /* 우측 여백 24px 이상 완벽 확보 */
+  padding-right: 4.8rem !important;
+  /* 우측 여백 24px 이상 완벽 확보 */
 }
 
 .payment-form-field.double-select {
@@ -1353,4 +1326,256 @@ a.agreement-link {
 .nonmember-wrapper .donate-banner__btn.btn-arrow:hover {
   color: #fffdf0;
   background-color: var(--primary);
+}
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+
+  .login-section {
+    padding: 2rem 2.4rem;
+  }
+
+  .login-title.small {
+    font-size: 2rem;
+  }
+
+  .login-desc {
+    margin-bottom: 2.4rem;
+  }
+
+  .login-desc.small {
+    font-size: 1.4rem;
+  }
+
+  .login-card {
+    padding: 4rem 2.4rem;
+  }
+
+  .btn-social {
+    font-size: 1.4rem;
+  }
+
+  .error-text {
+    font-size: 1.2rem;
+  }
+
+  .login-guide span {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+  }
+
+  .login-guide a {
+    font-size: 1.2rem;
+  }
+
+  .social-login {
+    gap: 0.8rem;
+  }
+
+  .login-section .form-group+.form-group {
+    margin-top: 0.8rem
+  }
+
+  .login-info {
+    margin-top: 2.4rem;
+    font-size: 1.2rem;
+  }
+
+  .login-links a {
+    font-size: 1.2rem;
+  }
+
+  .result-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
+    padding: 0;
+  }
+
+  .result-box__value {
+    font-size: 1.8rem;
+  }
+
+  .line {
+    margin: 2.4rem 0;
+  }
+
+  .user-info {
+    font-size: 1.8rem;
+  }
+
+  .helper-text {
+    font-size: 1.2rem;
+  }
+
+  .icon-top {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  /* 회원가입 */
+  .join-section {
+    padding: 2rem 2.4rem;
+  }
+
+  .join-title {
+    font-size: 2.4rem;
+  }
+
+  .join-form {
+    gap: 2rem;
+  }
+
+  .join-form .join-card {
+    padding: 4rem 2.4rem;
+  }
+
+  .join-card__title {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2.4rem;
+    font-size: 1.8rem;
+  }
+
+  .form-group.form+.form-group.form {
+    margin-top: 2.4rem;
+  }
+
+  .form-control-row {
+    min-height: 3rem;
+  }
+
+  .form-check-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .form-check-wrap .form-control-with-btn {
+    display: contents;
+  }
+
+  .form-check-wrap .form-control-with-btn .form-control {
+    order: 1;
+  }
+
+  .form-check-wrap .form-helper {
+    order: 2;
+    margin-top: 0;
+  }
+
+  .form-check-wrap .form-control-with-btn .btn {
+    order: 3;
+    width: 100%;
+  }
+
+  .btn-input-action {
+    width: 9.2rem;
+  }
+
+
+
+  /*  */
+  .info-card {
+    padding: 3rem 2rem;
+  }
+
+  .receipt-consent-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.6rem;
+  }
+
+  .receipt-consent-btn {
+    max-width: 100%;
+  }
+
+  .info-action-buttons {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .info-action-buttons .btn {
+    flex: 1;
+    max-width: none;
+  }
+
+  .withdraw-form-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+
+  .withdraw-confirm-card {
+    padding: 3rem var(--spacing-4);
+  }
+
+  .withdraw-actions {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .withdraw-actions .btn {
+    flex: 1;
+    max-width: none;
+  }
+
+  /* 기부금 영수증 모바일 펼침 영역 (.receipt-resident-panel) */
+  .receipt-resident-panel {
+    margin: 1.6rem 0 0 0 !important;
+    padding: 2.0rem 1.6rem;
+    border-radius: 1.2rem;
+  }
+
+  .receipt-resident-panel .form-group.form {
+    gap: 0;
+  }
+
+  .resident-label {
+    font-size: 1.4rem !important;
+    margin-bottom: 1.2rem;
+  }
+
+  .resident-input-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  .resident-input-group > .form-control,
+  .resident-pw-wrap {
+    flex: 1;
+    min-width: 0 !important;
+    width: auto;
+  }
+
+  .resident-pw-wrap .form-control {
+    width: 100%;
+    padding-right: 4.0rem;
+  }
+
+  .resident-divider {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .resident-btn-submit {
+    width: 100%;
+    margin-top: 0.4rem;
+  }
+
+  .receipt-warning-list {
+    margin-top: 1.6rem;
+    padding-left: 1.6rem;
+  }
+
+  .receipt-warning-list li {
+    font-size: 1.4rem !important;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
 }

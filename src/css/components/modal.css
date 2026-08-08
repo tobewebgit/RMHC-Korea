@@ -41,6 +41,7 @@
   max-width: 80rem;
   max-height: 90vh;
 }
+
 /* .modal-container.mypage {
   padding: 2.4rem;
 } */
@@ -52,6 +53,7 @@
 .modal-overlay.active .modal-container {
   transform: translateY(0);
 }
+
 .modal-overlay.active .modal-container .donate-type-tabs .btn-tab {
   width: 100%;
   max-width: calc(50% - 0.6rem);
@@ -126,7 +128,8 @@
   justify-content: center;
   width: 2.4rem;
   height: 2.4rem;
-  background-color: rgba(0, 0, 0, 0.6); /* 피그마 fills 60% 블랙 */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* 피그마 fills 60% 블랙 */
   border-radius: 1.2rem;
   border: none;
   cursor: pointer;
@@ -156,8 +159,10 @@
   top: 50%;
   left: 50%;
   width: 1.2rem;
-  height: 2px; /* 피그마 strokes width 2px */
-  background-color: #fffde9; /* 피그마 strokes #fffde9 */
+  height: 2px;
+  /* 피그마 strokes width 2px */
+  background-color: #fffde9;
+  /* 피그마 strokes #fffde9 */
   border-radius: 1px;
 }
 
@@ -337,24 +342,31 @@
   max-width: 40rem;
   min-height: 20rem;
 }
+
 .common-alert-container.w-640 {
   max-width: 64rem;
 }
+
 .common-alert-container.w-660 {
   max-width: 66rem;
 }
+
 .common-alert-container.w-680 {
   max-width: 68rem;
 }
+
 .common-alert-container.w-720 {
   max-width: 72rem;
 }
+
 .common-alert-container.w-740 {
   max-width: 74rem;
 }
+
 .common-alert-container.w-760 {
   max-width: 76rem;
 }
+
 .common-alert-container.w-780 {
   max-width: 78rem;
 }
@@ -366,9 +378,11 @@
   height: 100%;
   padding: 0 4rem;
 }
+
 .common-alert__content strong {
   font-weight: 600;
 }
+
 .common-alert-container .modal-close-btn-circle {
   position: absolute;
   top: 2.4rem;
@@ -438,14 +452,17 @@
     width: 90%;
     padding: 3rem 2rem;
   }
+
   .newsletter-modal-container.step-1-active,
   .newsletter-modal-container.step-2-active {
     height: auto;
   }
+
   .newsletter-modal__title {
     font-size: 2rem;
     line-height: 2.6rem;
   }
+
   .newsletter-modal__desc,
   .newsletter-modal__agreement-text,
   .newsletter-modal__checkbox-text,
@@ -453,11 +470,13 @@
     font-size: 1.6rem;
     line-height: 2.4rem;
   }
+
   .newsletter-modal__agreement-box {
     width: 100%;
     height: auto;
     padding: 2rem 1.6rem;
   }
+
   .newsletter-modal__cta-btn {
     width: 100%;
   }
@@ -466,10 +485,12 @@
   .award-detail-modal-container {
     padding: 3rem 2rem;
   }
+
   .award-detail-image {
     max-height: 60vh;
     border-radius: 0.6rem;
   }
+
   .award-detail-modal-container .modal-close-btn-circle {
     top: 2rem;
     right: 2rem;
@@ -480,17 +501,25 @@
     width: 90%;
     padding: 3rem 2rem;
   }
+
   .common-alert-container .modal-close-btn-circle {
     top: 2rem;
     right: 2rem;
   }
+
   .common-alert__title {
     font-size: 2rem;
   }
+
   .common-alert__desc {
     font-size: 1.6rem;
   }
+
   .common-alert__footer .btn {
     max-width: 100%;
+  }
+
+  .newsletter-modal__content {
+    padding: 1.6rem 0;
   }
 }
