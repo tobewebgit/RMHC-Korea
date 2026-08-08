@@ -273,17 +273,16 @@
                   <div class="form-field">
                     <div class="resident-label">주민등록번호</div>
                     <div class="resident-input-group">
-                      <input type="text" id="resident-num-1" class="form-control" placeholder="19880101"
-                        maxlength="6" />
+                      <div class="resident-front-wrap">
+                        <input type="text" id="resident-num-1" class="form-control" placeholder="19880101"
+                          maxlength="6" />
+                      </div>
                       <span class="resident-divider">-</span>
                       <div class="resident-pw-wrap">
                         <input type="password" id="resident-num-2" class="form-control" placeholder="*******"
                           maxlength="7" />
                         <button type="button" class="eye-btn" aria-label="주민등록번호 뒷자리 보기 토글"></button>
                       </div>
-                      <button type="button" class="btn btn-primary resident-btn-submit">
-                        실명 확인
-                      </button>
                     </div>
 
                     <ul class="receipt-warning-list">
@@ -314,41 +313,40 @@
             </h2>
 
             <div class="join-card__content">
-              <div class="agreement-all">
-                <label class="custom-checkbox" for="agree-all">
-                  <input type="checkbox" id="agree-all" />
-                  <span class="text-lg">모두 동의합니다.</span>
-                </label>
-              </div>
-
-              <div class="agreement-list">
-                <!-- 약관 1 -->
-                <div class="agreement-item">
-                  <label class="custom-checkbox" for="agree-terms">
-                    <input type="checkbox" id="agree-terms" required />
-                    <span><span class="color-primary">[필수]</span>
-                      이용약관</span>
+              <div class="agree-terms-content">
+                <div class="agreement-all">
+                  <label class="custom-checkbox" for="agree-all">
+                    <input type="checkbox" id="agree-all" />
+                    <span class="text-lg">모두 동의합니다.</span>
                   </label>
-                  <a href="/policy/terms.html" target="_blank" class="agreement-link">자세히 보기</a>
                 </div>
 
-                <!-- 약관 2 -->
-                <div class="agreement-item">
-                  <label class="custom-checkbox" for="agree-privacy">
-                    <input type="checkbox" id="agree-privacy" required />
-                    <span><span class="color-primary">[필수]</span> 개인정보 수집
-                      및 이용</span>
-                  </label>
-                  <a href="/policy/privacy.html" target="_blank" class="agreement-link">자세히 보기</a>
-                </div>
+                <div class="agreement-list">
+                  <div class="agreement-item">
+                    <label class="custom-checkbox" for="agree-terms">
+                      <input type="checkbox" id="agree-terms" name="agreeItem" class="required-agree" value="terms" required />
+                      <span><span class="color-primary">[필수]</span>
+                        이용약관</span>
+                    </label>
+                    <a href="/policy/terms.html" target="_blank" class="agreement-link">자세히 보기</a>
+                  </div>
 
-                <!-- 약관 3 (선택) -->
-                <div class="agreement-item">
-                  <label class="custom-checkbox" for="agree-marketing">
-                    <input type="checkbox" id="agree-marketing" />
-                    <span><span>[선택]</span> 소식지 및 활동 알림 수신 동의</span>
-                  </label>
-                  <a href="/policy/marketing.html" target="_blank" class="agreement-link">자세히 보기</a>
+                  <div class="agreement-item">
+                    <label class="custom-checkbox" for="agree-privacy">
+                      <input type="checkbox" id="agree-privacy" name="agreeItem" class="required-agree" value="privacy" required />
+                      <span><span class="color-primary">[필수]</span> 개인정보 수집
+                        및 이용</span>
+                    </label>
+                    <a href="/policy/privacy.html" target="_blank" class="agreement-link">자세히 보기</a>
+                  </div>
+
+                  <div class="agreement-item">
+                    <label class="custom-checkbox" for="agree-marketing">
+                      <input type="checkbox" id="agree-marketing" name="agreeItem" value="marketing" />
+                      <span><span>[선택]</span> 소식지 및 활동 알림 수신 동의</span>
+                    </label>
+                    <a href="/policy/marketing.html" target="_blank" class="agreement-link">자세히 보기</a>
+                  </div>
                 </div>
               </div>
             </div>

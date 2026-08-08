@@ -403,68 +403,9 @@ html[lang="en"] .accordion-card.is-active .card-body {
   word-break: keep-all;
 }
 
-/* 기부금 영수증 및 주민번호 인증 영역 (join/form.html & login.css 모듈 상속) */
-.receipt-resident-panel {
-  margin-left: 0 !important;
-  padding: 3.2rem 2.4rem;
-  background-color: rgba(208, 201, 255, 0.15);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-gray40);
-}
-
-.resident-label {
-  font-size: var(--text-lg);
-  margin-bottom: 1.6rem;
-}
-
-.resident-input-group {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  width: 100%;
-}
-
-.resident-front-wrap,
-.resident-pw-wrap {
-  position: relative;
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-
-.resident-front-wrap .form-control,
-.resident-pw-wrap .form-control {
-  width: 100%;
-  background-color: var(--bg-primary);
-}
-
-.resident-divider {
-  font-size: 1.6rem;
-  flex-shrink: 0;
-}
-
-.resident-pw-wrap .form-control {
-  padding-right: 4.5rem;
-}
-
-.resident-pw-wrap .eye-btn {
-  position: absolute;
-  right: 1.6rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  background-size: contain;
-}
-
-.receipt-warning-list {
-  margin-top: 2.4rem;
-  padding-left: 2rem;
-}
-.receipt-warning-list li {
-  list-style-type: disc;
-  line-height: 1.6;
+/* 기부금 영수증 및 주민번호 인증 영역 (form.css 공통 모듈 상속) */
+.donate-page .receipt-resident-panel {
+  margin-left: 0;
 }
 
 /* 인라인 스타일의 클래스화 규격화 */
@@ -511,17 +452,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   margin-top: 5.2rem;
 }
 
-.agree-terms-content {
-  margin-top: 2rem;
-}
 
-.agreement-all .text-lg {
-  font-size: 1.8rem;
-}
-
-.agreement-list {
-  margin-top: 1.6rem;
-}
 
 .donate-page .card-body .chip-grid.cols-2 {
   margin-top: 4rem;
@@ -804,18 +735,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
     gap: 0.8rem;
   }
 
-  /* 약관 동의 세로 수직 정렬 */
-  .donate-page .agreement-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
 
-  .donate-page .agreement-link {
-    margin-left: 2.8rem;
-    font-size: 1.2rem;
-    text-decoration: none !important;
-  }
 
   .gender-text {
     font-size: 1.4rem;

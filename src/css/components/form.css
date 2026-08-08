@@ -9,9 +9,9 @@
   position: relative;
 }
 
-.form-group + .form-group,
-.form-group + button,
-.form-group + .button-wrap {
+.form-group+.form-group,
+.form-group+button,
+.form-group+.button-wrap {
   margin-top: var(--spacing-4);
 }
 
@@ -24,7 +24,7 @@
   width: 100%;
 }
 
-.form-group + .helper-text {
+.form-group+.helper-text {
   margin-top: var(--spacing-2);
 }
 
@@ -37,6 +37,7 @@
   font-size: var(--text-lg);
   flex-shrink: 0;
 }
+
 html[lang="en"] .form-label {
   min-height: 3rem;
 }
@@ -74,6 +75,7 @@ html[lang="en"] .form-label {
   font-size: var(--text-lg);
   background-color: var(--bg-primary);
 }
+
 .form-control.disabled,
 .form-control:disabled,
 .form-control[disabled] {
@@ -82,23 +84,29 @@ html[lang="en"] .form-label {
   cursor: not-allowed;
   border-color: var(--border-gray40) !important;
 }
+
 .form-control::placeholder {
   color: var(--text-muted);
 }
+
 .form-control:hover {
   border-color: var(--border-hover);
 }
+
 .form-control:focus {
   border-color: var(--border-focus);
   outline: none;
 }
+
 .form-control.password {
   position: relative;
   padding-right: 4rem;
 }
+
 .form-control-with-icon {
   position: relative;
 }
+
 .eye-btn {
   position: absolute;
   right: 1.6rem;
@@ -126,6 +134,7 @@ html[lang="en"] .form-label {
   gap: var(--spacing-2);
   width: 100%;
 }
+
 .form-control-with-btn .form-control {
   flex: 1;
 }
@@ -146,6 +155,7 @@ html[lang="en"] .form-label {
   font-size: var(--text-lg);
   user-select: none;
 }
+
 .custom-checkbox input[type="checkbox"],
 .custom-radio input[type="radio"] {
   appearance: none;
@@ -156,16 +166,19 @@ html[lang="en"] .form-label {
   background-color: var(--bg-primary);
   cursor: pointer;
 }
+
 .custom-checkbox input[type="checkbox"] {
   border-radius: 0.4rem;
   background: url("../../images/common/icon_checkbox.svg") 50% 50% no-repeat;
   background-size: 1.1rem 0.8rem;
 }
+
 .custom-radio input[type="radio"] {
   border-radius: var(--radius-full);
   display: grid;
   place-content: center;
 }
+
 .custom-radio input[type="radio"]::before {
   content: "";
   width: 1rem;
@@ -173,15 +186,17 @@ html[lang="en"] .form-label {
   border-radius: var(--radius-full);
   background-color: var(--border-color);
 }
+
 .custom-checkbox input[type="checkbox"]:checked {
   border-color: var(--primary);
-  background: var(--primary)
-    url("../../images/common/icon_checkbox_checked.svg") 50% 50% no-repeat;
+  background: var(--primary) url("../../images/common/icon_checkbox_checked.svg") 50% 50% no-repeat;
   background-size: 1.1rem 0.8rem;
 }
+
 .custom-radio input[type="radio"]:checked {
   border-color: var(--primary);
 }
+
 .custom-radio input[type="radio"]:checked::before {
   background-color: var(--primary);
 }
@@ -272,6 +287,15 @@ html[lang="en"] .form-label {
 /* ==========================================================================
    agreement-terms — 프로젝트 공통 약관동의 영역 컴포넌트 (100% 원본 상속)
    ========================================================================== */
+.agree-terms-container {
+  width: 100%;
+}
+
+.agree-terms-content {
+  width: 100%;
+  margin-top: 2rem;
+}
+
 .agreement-all {
   background-color: transparent;
   border: none;
@@ -282,10 +306,10 @@ html[lang="en"] .form-label {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-4);
-  padding: 0 var(--spacing-4);
+  padding: 0 var(--spacing-2);
 }
 
-.agreement-all + .agreement-list {
+.agreement-all+.agreement-list {
   margin-top: var(--spacing-4);
 }
 
@@ -317,10 +341,12 @@ html[lang="en"] .form-label {
   display: flex;
   flex-direction: column;
 }
+
 .inner-form-group .inner-form-box label {
   font-weight: 400;
   font-size: var(--text-lg);
 }
+
 .inner-form-group .inner-form-box .form-field input {
   background-color: #fffde9;
 }
@@ -335,7 +361,8 @@ html[lang="en"] .form-label {
   border-top: 1px solid var(--border-color);
   padding-top: 3.2rem;
 }
-.payment-tabs-grid + .payment-tab-contents {
+
+.payment-tabs-grid+.payment-tab-contents {
   margin-top: 3.2rem;
 }
 
@@ -395,8 +422,82 @@ html[lang="en"] .form-label {
   flex-shrink: 0;
 }
 
+/* ==========================================================================
+   receipt-resident-panel — 기부금 영수증 주민등록번호 입력 공통 컴포넌트
+   ========================================================================== */
+.receipt-resident-panel {
+  margin: 1.6rem 0 0 0;
+  padding: 3.2rem 2.4rem;
+  background-color: rgba(208, 201, 255, 0.15);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-gray40);
+}
+
+.join-card .receipt-resident-panel {
+  margin: 1.6rem 0 0 16rem;
+}
+
+.resident-label {
+  font-size: var(--text-lg);
+  margin-bottom: 1.6rem;
+}
+
+.resident-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.resident-front-wrap,
+.resident-pw-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.resident-front-wrap .form-control,
+.resident-pw-wrap .form-control {
+  width: 100%;
+  background-color: var(--bg-primary);
+}
+
+.resident-divider {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.resident-pw-wrap .form-control {
+  padding-right: 4.5rem;
+}
+
+.resident-pw-wrap .eye-btn {
+  position: absolute;
+  right: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  background-size: contain;
+}
+
+.receipt-warning-list {
+  margin-top: var(--spacing-6);
+  padding-left: var(--spacing-4);
+}
+
+.receipt-warning-list li {
+  list-style-type: disc;
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
 /* mobile */
 @media (max-width: 768px) {
+
   .form-control,
   .form-label,
   .payment-form-label,
@@ -478,6 +579,7 @@ html[lang="en"] .form-label {
     display: flex;
     gap: 0.8rem;
   }
+
   .payment-form-field.double-select .custom-select {
     flex: 1;
     width: 50%;
@@ -489,6 +591,7 @@ html[lang="en"] .form-label {
     width: 100%;
     box-sizing: border-box;
   }
+
   .payment-tabs-grid .payment-tab-btn {
     width: 100%;
     padding: 0 0.8rem;
@@ -497,8 +600,70 @@ html[lang="en"] .form-label {
     font-size: 1.3rem !important;
     box-sizing: border-box;
   }
+
   .payment-tabs-grid .payment-tab-btn .payment-tab-icon {
     width: 1.8rem !important;
     height: 1.8rem !important;
+  }
+
+  /* 기부금 영수증 모바일 펼침 영역 (.receipt-resident-panel) */
+  .receipt-resident-panel,
+  .join-card .receipt-resident-panel {
+    margin: 1.6rem 0 0 0 !important;
+    padding: 2.0rem 1.6rem;
+    border-radius: 1.2rem;
+  }
+
+  .resident-label {
+    font-size: 1.4rem !important;
+    margin-bottom: 1.2rem;
+  }
+
+  .resident-input-group {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  .resident-front-wrap,
+  .resident-pw-wrap {
+    flex: 1;
+    min-width: 0 !important;
+    width: 100%;
+  }
+
+  .resident-divider {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .receipt-warning-list {
+    margin-top: 1.6rem;
+    padding-left: 1.6rem;
+  }
+
+  .receipt-warning-list li {
+    font-size: 1.4rem !important;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+
+  /* 약관 동의 모바일 반응형 수직 정렬 공통화 */
+  .agree-terms-container {
+    margin-top: 3.2rem !important;
+  }
+
+  .agreement-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .agreement-link {
+    margin-left: 2.8rem;
+    font-size: 1.2rem !important;
+    text-decoration: none !important;
   }
 }

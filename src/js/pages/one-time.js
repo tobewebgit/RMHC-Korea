@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnStep2Next = document.getElementById('btnStep2Next');
   
   // 약관동의
-  const agreeAll = document.getElementById('agreeAll');
+  const agreeAll = document.getElementById('agree-all') || document.getElementById('agreeAll');
   const agreeItems = document.getElementsByName('agreeItem');
   
   // 3단계: 결제수단 및 상세 정보 폼

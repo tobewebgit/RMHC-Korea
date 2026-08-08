@@ -389,101 +389,13 @@
   margin-top: 0.2rem;
 }
 
-.receipt-resident-panel {
-  margin: 1.6rem 0 0 16rem;
-  padding: var(--spacing-8) var(--spacing-6);
-  background-color: rgba(208, 201, 255, 0.2);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-gray50);
-}
-
-.resident-label {
-  font-size: var(--text-lg);
-  margin-bottom: var(--spacing-6);
-}
-
-.resident-input-group {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  width: 100%;
-}
-
-.resident-input-group .form-control {
-  min-width: 22.5rem;
-  background-color: var(--bg-primary);
-}
-
-.resident-divider {
-  font-size: var(--text-base);
-  color: var(--text-secondary);
-  flex-shrink: 0;
-}
-
-.resident-pw-wrap {
-  position: relative;
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-
-.resident-pw-wrap .form-control {
-  padding-right: 4.5rem;
-}
-
-.resident-pw-wrap .eye-btn {
-  position: absolute;
-  right: 1.6rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  background-size: contain;
-}
-
-.receipt-warning-list {
-  margin-top: var(--spacing-6);
-  padding-left: var(--spacing-4);
-}
-
-.receipt-warning-list li {
-  list-style-type: disc;
-  font-size: var(--text-sm);
-  line-height: 1.6;
-}
-
-/* 이용약관 */
-.agreement-list {
-  display: flex;
-  flex-direction: column;
-  padding: 0 0 0 2.8rem;
-}
-
-.agreement-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-a.agreement-link {
-  color: var(--text-gray60);
-  white-space: nowrap;
-  transition: var(--transition-fast);
-}
-
-.agreement-link:hover {
-  color: var(--text-primary);
-}
-
 /* 하단 액션 버튼 */
 .join-actions {
   display: inline-flex;
   justify-content: center;
   gap: var(--spacing-4);
-  margin-top: var(--spacing-5);
-  margin-bottom: var(--spacing-16);
+  /* margin-top: var(--spacing-5); */
+  /* margin-bottom: var(--spacing-16); */
 }
 
 .join-actions .btn {
@@ -1522,60 +1434,36 @@ a.agreement-link {
     max-width: none;
   }
 
-  /* 기부금 영수증 모바일 펼침 영역 (.receipt-resident-panel) */
-  .receipt-resident-panel {
-    margin: 1.6rem 0 0 0 !important;
-    padding: 2.0rem 1.6rem;
-    border-radius: 1.2rem;
-  }
-
-  .receipt-resident-panel .form-group.form {
-    gap: 0;
-  }
-
-  .resident-label {
-    font-size: 1.4rem !important;
-    margin-bottom: 1.2rem;
-  }
-
-  .resident-input-group {
-    display: flex;
-    flex-wrap: wrap;
+  /* 회원가입 완료 하단 배너 반응형 */
+  .join-banner-section {
+    flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
+    justify-content: center;
+    height: 24rem;
+    padding: 3.2rem 2.0rem;
+    gap: 2.0rem;
+    text-align: center;
+    background-image: url(/src/images/common/img_heart_banner.svg);
+    background-size: 145%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .join-banner-section h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.4;
+    text-align: center !important;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .join-banner-section .button-wrap {
+    width: 16.5rem;
+    height: auto;
+  }
+
+  .join-banner-section .btn {
     width: 100%;
-  }
-
-  .resident-input-group > .form-control,
-  .resident-pw-wrap {
-    flex: 1;
-    min-width: 0 !important;
-    width: auto;
-  }
-
-  .resident-pw-wrap .form-control {
-    width: 100%;
-    padding-right: 4.0rem;
-  }
-
-  .resident-divider {
-    font-size: 1.4rem;
-    flex-shrink: 0;
-  }
-
-  .resident-btn-submit {
-    width: 100%;
-    margin-top: 0.4rem;
-  }
-
-  .receipt-warning-list {
-    margin-top: 1.6rem;
-    padding-left: 1.6rem;
-  }
-
-  .receipt-warning-list li {
-    font-size: 1.4rem !important;
-    line-height: 1.5;
-    word-break: keep-all;
+    max-width: 24rem;
   }
 }

@@ -933,22 +933,7 @@ html[lang="en"] .kcr-card {
     box-sizing: border-box !important;
   }
 
-  /* 약관 동의 리스트 모바일 정렬 (one-time.html 동일) */
-  .apply-page .agree-terms-container {
-    margin-top: 3.2rem !important;
-  }
 
-  .apply-page .agreement-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
-
-  .apply-page .agreement-link {
-    margin-left: 2.8rem;
-    font-size: 1.2rem;
-    text-decoration: none !important;
-  }
 
   /* CTA 신청 완료 버튼 100% 풀 너비 */
   .apply-btn-wrap {
