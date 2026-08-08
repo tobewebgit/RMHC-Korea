@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-200) 0 0;
+  padding: 10rem 0 0;
 }
 
 .login-section.w-lg {
@@ -355,24 +355,7 @@
   display: flex;
   width: 100%;
   max-width: 80rem;
-  height: 12rem;
-  margin-top: var(--spacing-6);
-  border-radius: var(--radius-lg);
-  background-color: var(--bg-kv);
-  background-image: url(../images/login/bg_join_bottom.png);
-  background-repeat: no-repeat;
-}
-
-.join-banner-section h2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 56rem;
-  color: var(--text-white);
-  font-size: 2.2rem;
-  text-align: center;
+  margin-top: 4rem;
 }
 
 .form-address-wrap {
@@ -1169,20 +1152,28 @@
 }
 
 /* 하단 배너 */
-.nonmember-wrapper .donate-banner {
+/* 공통 하단 배너 (PC) */
+.donate-banner {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 12rem;
+  width: 100%;
   margin-top: 8rem;
   padding: 0 18rem;
   overflow: hidden;
   border-radius: 1.2rem;
   background-color: #D0C9FF;
+  box-sizing: border-box;
 }
 
-.nonmember-wrapper .donate-banner__heart {
+.join-banner-section .donate-banner {
+  margin-top: 0;
+  padding: 0 4rem;
+}
+
+.donate-banner__heart {
   position: absolute;
   left: 6rem;
   top: -22rem;
@@ -1192,23 +1183,33 @@
   will-change: transform;
 }
 
-.nonmember-wrapper .donate-banner__content,
-.nonmember-wrapper .donate-banner__btn {
+.join-banner-section .donate-banner__heart {
+  left: -2rem;
+  top: -24rem;
+  width: 70rem;
+}
+
+.donate-banner__content,
+.donate-banner__btn {
   position: relative;
   z-index: 1;
 }
 
-.nonmember-wrapper .donate-banner h2 {
+.donate-banner h2 {
   color: #fffdf0;
   font-size: 2.4rem;
   line-height: 1.35;
 }
 
-.nonmember-wrapper .donate-banner__btn {
+.join-banner-section .donate-banner h2 {
+  font-size: 2.0rem;
+}
+
+.donate-banner__btn {
   max-width: 19rem;
 }
 
-.nonmember-wrapper .donate-banner__btn.btn-arrow:hover {
+.donate-banner__btn.btn-arrow:hover {
   color: #fffdf0;
   background-color: var(--primary);
 }
@@ -1242,6 +1243,10 @@
 
   .error-text {
     font-size: 1.2rem;
+  }
+
+  .join-actions .btn {
+    width: 100%;
   }
 
   .login-guide span {
@@ -1308,6 +1313,7 @@
   }
 
   .join-title {
+    margin-bottom: 2.4rem;
     font-size: 2.4rem;
   }
 
@@ -1407,36 +1413,299 @@
     max-width: none;
   }
 
-  /* 회원가입 완료 하단 배너 반응형 */
-  .join-banner-section {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 24rem;
-    padding: 3.2rem 2.0rem;
-    gap: 2.0rem;
-    text-align: center;
-    background-image: url(/src/images/common/img_heart_banner.svg);
-    background-size: 145%;
-    background-position: center;
-    background-repeat: no-repeat;
+
+  /* ==========================================================================
+     비회원 후원 조회 & 마이페이지 공통 요약 박스 (.summary-box) 모바일 세로 정렬 반응형
+     (Frame 1010107166.pdf 모바일 시안 스펙 100% 반영)
+     ========================================================================== */
+  .summary-box,
+  .donation-detail-section .summary-box {
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 2.4rem 2.0rem;
+    margin-bottom: 3rem;
+    gap: 1.6rem;
+    border-radius: 0.8rem;
   }
 
-  .join-banner-section h2 {
-    font-size: 1.6rem !important;
-    line-height: 1.4;
+  .summary-item,
+  .donation-detail-section .summary-box .summary-item {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0.5rem 0 !important;
+    height: auto !important;
+  }
+
+  /* 누적 후원 금액 (마지막 항목): 금액 확장 시 겹침 방지를 위해 라벨 상단/금액 우측하단 세로배치 (Frame 1010107166.pdf 시안 100% 일치) */
+  .summary-item:last-child,
+  .donation-detail-section .summary-box .summary-item:last-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.8rem;
+  }
+
+  .summary-item:last-child .summary-label,
+  .donation-detail-section .summary-box .summary-item:last-child .summary-label {
+    align-self: flex-start !important;
+  }
+
+  .summary-item:last-child .summary-value,
+  .donation-detail-section .summary-box .summary-item:last-child .summary-value {
+    align-self: flex-end !important;
+    width: 100% !important;
+    justify-content: flex-end !important;
+  }
+
+  .summary-label,
+  .donation-detail-section .summary-box .summary-label {
+    font-size: 1.4rem !important;
+    align-self: center !important;
+    margin-bottom: 0 !important;
+  }
+
+  .summary-value,
+  .donation-detail-section .summary-box .summary-value {
+    align-self: center !important;
+    align-items: baseline !important;
+  }
+
+  .summary-value .number,
+  .donation-detail-section .summary-box .summary-value .number {
+    font-size: 1.8rem !important;
+  }
+
+  .summary-value .unit,
+  .donation-detail-section .summary-box .summary-value .unit {
+    font-size: 1.4rem !important;
+  }
+
+  /* 세로 가로 분리선 */
+  .divider {
+    width: 100% !important;
+    height: 1px !important;
+    background-color: var(--border-color, #e5e7eb) !important;
+    align-self: stretch !important;
+  }
+
+  /* ==========================================================================
+     후원 현황 테이블 모바일 카드 UI (table.pdf & table (1).pdf 디자인 공통화 - 넘버 생략 및 버튼 가로 1줄 배치)
+     ========================================================================== */
+  .table-wrap {
+    overflow-x: visible;
+  }
+
+  .donation-table,
+  .donation-table tbody {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .donation-table thead {
+    display: none !important;
+  }
+
+  .donation-table tr {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    border: 1px solid var(--border-gray40);
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  /* 카드의 상단 핑크 헤더 띠 영역 (구분 td.col-type) - order 1 */
+  .donation-table td.col-type {
+    order: 1 !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    background-color: rgba(219, 0, 7, 0.10);
+    padding: 1.5rem 1.6rem;
+    font-family: var(--font-extrabold);
+    font-size: 1.6rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-gray40);
+    box-sizing: border-box !important;
+  }
+
+  .donation-table td.col-type::before {
+    display: none !important;
+  }
+
+  /* 일반 키-값 데이터 셀 (No, 구분, 버튼 제외) - order 2 */
+  .donation-table td:not(.col-type):not(.col-no):not(.col-action):not([data-label="No"]) {
+    order: 2 !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1.0rem 1.6rem;
+    font-size: 1.4rem;
+    border-bottom: none;
+    text-align: right;
+    box-sizing: border-box !important;
+  }
+
+  /* col-type 바로 다음 첫 번째 데이터 td: 위쪽 패딩 16px (1.6rem) */
+  .donation-table td.col-type+td {
+    padding-top: 1.6rem !important;
+  }
+
+  /* 데이터 셀 중 마지막 td: 아래쪽 패딩 16px (1.6rem) */
+  .donation-table td:not(.col-type):not(.col-no):not(.col-action):not([data-label="No"]):last-of-type {
+    padding-bottom: 1.6rem !important;
+  }
+
+  .donation-table td:not(.col-type):not(.col-no):not(.col-action):not([data-label="No"])::before {
+    content: attr(data-label);
+    font-weight: 600;
+    text-align: left;
+    font-size: 1.4rem;
+  }
+
+  .donation-table td.col-amount,
+  .donation-table td[data-label="금액"] {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  /* No (숫자 번호) 항목은 모바일 카드 시안에 맞춰 100% 완전 생략 */
+  .donation-table td.col-no,
+  .donation-table th.col-no,
+  .donation-table td[data-label="No"] {
+    display: none !important;
+  }
+
+  /* 카드의 하단 버튼 영역 (col-action) - order 3 (단일 가로 1줄 및 가운데 정렬) */
+  .donation-table td.col-action {
+    order: 3 !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1.2rem 0.4rem;
+    border-bottom: none;
+    box-sizing: border-box !important;
+  }
+
+  .donation-table td.col-action:first-of-type {
+    padding-left: 1.6rem;
+  }
+
+  .donation-table td.col-action::before {
+    display: none !important;
+  }
+
+  .donation-table td.col-action .btn-table {
+    min-width: 7.2rem;
+    height: 3.6rem;
+    padding: 0 1.2rem;
+    font-size: 1.3rem;
+    border-radius: 0.8rem;
+    border: 1px solid #1f2937;
+    margin: 0;
+  }
+
+  .donation-table td.col-action .btn-table.secondary {
+    border-color: #d1d5db;
+  }
+
+  /* 비회원 후원 조회 페이지 제목, 탭, 카드 모바일 반응형 */
+  .page-title.mypage {
+    padding: 5rem 0;
+  }
+
+  .page-title.mypage+.tab-menu {
+    margin-bottom: 2.4rem;
+  }
+
+  .tab-btn {
+    font-size: 1.4rem;
+    padding: 1.2rem 0.8rem;
+  }
+
+  .content-card {
+    padding: 3rem 2.4rem;
+  }
+
+  .card-title-wrap .card-title {
+    font-size: 2.0rem;
+  }
+
+  .receipt-notice {
+    margin-bottom: 2.4rem;
+    font-size: 1.4rem;
+  }
+
+  .receipt-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .receipt-title {
+    font-size: 2rem;
+  }
+
+  .receipt-desc {
+    font-size: 1.4rem;
+  }
+
+  .receipt-box {
+    padding: 3rem 2.4rem;
+  }
+
+  .receipt-status {
+    font-size: 1.4rem;
+  }
+
+  /* 공통 하단 배너 모바일 (join/complete.html 모바일 배너 100% 동일 스펙 공통화) */
+  .donate-banner {
+    position: relative;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 24rem !important;
+    height: 24rem !important;
+    padding: 3.2rem 2.0rem !important;
+    margin-top: 4rem !important;
+    gap: 2.0rem !important;
     text-align: center !important;
-    max-width: 100%;
-    justify-content: center;
+    border-radius: 1.2rem !important;
+    background-color: #D0C9FF !important;
+    background-image: url(/src/images/common/img_heart_banner.svg) !important;
+    background-size: 145% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
   }
 
-  .join-banner-section .button-wrap {
-    width: 16.5rem;
-    height: auto;
+  .donate-banner__heart {
+    display: none !important;
   }
 
-  .join-banner-section .btn {
+  .donate-banner h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.4 !important;
+    color: #fffdf0 !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+
+  .donate-banner__btn {
+    width: 100% !important;
+    max-width: 24rem !important;
+    min-height: 4.8rem !important;
+  }
+
+  .join-banner-section {
     width: 100%;
-    max-width: 24rem;
+    margin-top: 0;
   }
 }

@@ -129,35 +129,35 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>2</td>
-                        <td>정기</td>
-                        <td>신용카드(하나/1234)</td>
-                        <td>50,000원</td>
-                        <td>2026.01.18</td>
-                        <td>-</td>
-                        <td>
+                        <td data-label="No">2</td>
+                        <td class="col-type" data-label="구분">정기</td>
+                        <td data-label="결제방법">신용카드(하나/1234)</td>
+                        <td class="col-amount" data-label="금액">50,000원</td>
+                        <td data-label="기부일">2026.01.18</td>
+                        <td data-label="기부종료일">-</td>
+                        <td class="col-action" data-label="결제수단 변경">
                           <button type="button" class="btn-table btn-open-popup" data-popup="modal-mp_p_01">결제
                             변경</button>
                         </td>
-                        <td>
+                        <td class="col-action" data-label="후원금 변경">
                           <button type="button" class="btn-table btn-open-popup" data-popup="modal-mp_p_02">금액
                             변경</button>
                         </td>
-                        <td>
-                          <button type="button" class="btn-table secondary">보기</button>
+                        <td class="col-action" data-label="상세보기">
+                          <button type="button" class="btn-table secondary">상세보기</button>
                         </td>
                       </tr>
                       <tr>
-                        <td>1</td>
-                        <td>정기</td>
-                        <td>실시간계좌이체(국민/5678)</td>
-                        <td>20,000원</td>
-                        <td>2026.01.18</td>
-                        <td>2025.04.02</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>
-                          <button type="button" class="btn-table secondary">보기</button>
+                        <td data-label="No">1</td>
+                        <td class="col-type" data-label="구분">정기</td>
+                        <td data-label="결제방법">실시간계좌이체(국민/5678)</td>
+                        <td class="col-amount" data-label="금액">20,000원</td>
+                        <td data-label="기부일">2026.01.18</td>
+                        <td data-label="기부종료일">2025.04.02</td>
+                        <td class="col-action" data-label="결제수단 변경"></td>
+                        <td class="col-action" data-label="후원금 변경"></td>
+                        <td class="col-action" data-label="상세보기">
+                          <button type="button" class="btn-table secondary">상세보기</button>
                         </td>
                       </tr>
                     </tbody>
@@ -171,7 +171,7 @@
                     <button type="button" class="page-btn page-arrow page-prev" aria-label="이전 페이지"></button>
                   </div>
                   <div class="page-group-numbers">
-                    <button type="button" class="page-btn active">1</button>
+                    <button type="button" class="page-btn active"><span>1</span></button>
                     <button type="button" class="page-btn">2</button>
                     <button type="button" class="page-btn">3</button>
                     <button type="button" class="page-btn">4</button>
@@ -217,20 +217,20 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>2</td>
-                        <td>일시</td>
-                        <td>B 캠페인</td>
-                        <td>카카오pay</td>
-                        <td>50,000원</td>
-                        <td>2026.01.18</td>
+                        <td data-label="No">2</td>
+                        <td class="col-type" data-label="구분">일시</td>
+                        <td data-label="캠페인">B 캠페인</td>
+                        <td data-label="결제방법">카카오pay</td>
+                        <td class="col-amount" data-label="금액">50,000원</td>
+                        <td data-label="기부일">2026.01.18</td>
                       </tr>
                       <tr>
-                        <td>1</td>
-                        <td>일시</td>
-                        <td>갈라디너</td>
-                        <td>신용카드(하나/1234)</td>
-                        <td>20,000원</td>
-                        <td>2026.01.18</td>
+                        <td data-label="No">1</td>
+                        <td class="col-type" data-label="구분">일시</td>
+                        <td data-label="캠페인">갈라디너</td>
+                        <td data-label="결제방법">신용카드(하나/1234)</td>
+                        <td class="col-amount" data-label="금액">20,000원</td>
+                        <td data-label="기부일">2026.01.18</td>
                       </tr>
                     </tbody>
                   </table>
@@ -243,7 +243,7 @@
                     <button type="button" class="page-btn page-arrow page-prev" aria-label="이전 페이지"></button>
                   </div>
                   <div class="page-group-numbers">
-                    <button type="button" class="page-btn active">1</button>
+                    <button type="button" class="page-btn active"><span>1</span></button>
                     <button type="button" class="page-btn">2</button>
                     <button type="button" class="page-btn">3</button>
                     <button type="button" class="page-btn">4</button>
@@ -377,7 +377,8 @@
                           <div class="pw-input-wrapper">
                             <input type="password" id="confirmNewPw" class="form-control password editable"
                               placeholder="" />
-                            <button type="button" class="eye-btn" aria-label="비밀번호 확인 표시 토글" aria-pressed="false"></button>
+                            <button type="button" class="eye-btn" aria-label="비밀번호 확인 표시 토글"
+                              aria-pressed="false"></button>
                           </div>
                         </div>
 
@@ -546,7 +547,8 @@
                           <div class="pw-input-wrapper">
                             <input type="password" id="corpConfirmNewPw" class="form-control password editable"
                               placeholder="" />
-                            <button type="button" class="eye-btn" aria-label="비밀번호 확인 표시 토글" aria-pressed="false"></button>
+                            <button type="button" class="eye-btn" aria-label="비밀번호 확인 표시 토글"
+                              aria-pressed="false"></button>
                           </div>
                         </div>
 

@@ -94,26 +94,23 @@
                 </div>
               </div>
 
-              <!-- 기부금 영수증 '예' 선택 시 노출 영역 -->
+              <!-- 기부금 영수증 -->
               <div id="receipt-resident-panel" class="receipt-resident-panel">
                 <div class="form-group form">
                   <div class="form-field">
                     <div class="resident-label">주민등록번호</div>
                     <div class="resident-input-group">
-                      <input type="text" id="resident-num-1" class="form-control" placeholder="19880101"
-                        maxlength="6" />
+                      <div class="resident-front-wrap">
+                        <input type="text" id="resident-num-1" class="form-control" placeholder="19880101"
+                          maxlength="6" />
+                      </div>
                       <span class="resident-divider">-</span>
                       <div class="resident-pw-wrap">
                         <input type="password" id="resident-num-2" class="form-control" placeholder="*******"
                           maxlength="7" />
-                        <button type="button" class="eye-btn" aria-label="주민등록번호 뒷자리 보기 토글" aria-pressed="false"></button>
+                        <button type="button" class="eye-btn" aria-label="주민등록번호 뒷자리 보기 토글"
+                          aria-pressed="false"></button>
                       </div>
-                      <!-- <button
-                          type="button"
-                          class="btn btn-primary resident-btn-submit"
-                        >
-                          실명 확인
-                        </button> -->
                     </div>
 
                     <ul class="receipt-warning-list">
@@ -155,7 +152,8 @@
                 <div class="agreement-list">
                   <div class="agreement-item">
                     <label class="custom-checkbox" for="agree-terms">
-                      <input type="checkbox" id="agree-terms" name="agreeItem" class="required-agree" value="terms" required />
+                      <input type="checkbox" id="agree-terms" name="agreeItem" class="required-agree" value="terms"
+                        required />
                       <span><span class="color-primary">[필수]</span>
                         이용약관</span>
                     </label>
@@ -164,7 +162,8 @@
 
                   <div class="agreement-item">
                     <label class="custom-checkbox" for="agree-privacy">
-                      <input type="checkbox" id="agree-privacy" name="agreeItem" class="required-agree" value="privacy" required />
+                      <input type="checkbox" id="agree-privacy" name="agreeItem" class="required-agree" value="privacy"
+                        required />
                       <span><span class="color-primary">[필수]</span> 개인정보 수집
                         및 이용</span>
                     </label>

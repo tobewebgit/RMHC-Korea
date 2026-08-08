@@ -449,7 +449,7 @@ html[lang="en"] .form-label {
   border: 1px solid var(--border-gray40);
 }
 
-.join-card .receipt-resident-panel {
+.form-group > .form-field .receipt-resident-panel {
   margin: 1.6rem 0 0 16rem;
 }
 
