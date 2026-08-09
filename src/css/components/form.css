@@ -374,7 +374,7 @@ html[lang="en"] .form-label {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-gray30);
   padding-top: 3.2rem;
 }
 
@@ -449,7 +449,7 @@ html[lang="en"] .form-label {
   border: 1px solid var(--border-gray40);
 }
 
-.form-group > .form-field .receipt-resident-panel {
+.form-group>.form-field .receipt-resident-panel {
   margin: 1.6rem 0 0 16rem;
 }
 
@@ -505,10 +505,223 @@ html[lang="en"] .form-label {
   padding-left: var(--spacing-4);
 }
 
-.receipt-warning-list li {
-  list-style-type: disc;
-  font-size: var(--text-sm);
-  line-height: 1.6;
+/* ==========================================================================
+   공통 결제 정보 폼 & 결제 팝업 전역 스타일 (Payment Form & Modal Component)
+   ========================================================================== */
+
+/* 1. 현재 결제수단 요약 카드 */
+.current-payment-card {
+  background-color: var(--bg-tertiary, #f8f9fa);
+  border: 1px solid var(--border-color, #dddddd);
+  border-radius: var(--radius-md, 1.6rem);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 3.2rem;
+}
+
+.current-payment-card.pay-change {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-payment-card.pay-change .current-payment-value,
+.current-payment-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--text-gray100, #111827);
+}
+
+.current-payment-value {
+  font-size: 1.8rem;
+}
+
+/* 2. 결제 폼 섹션 타이틀 및 외부 상자 */
+.payment-form-section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+}
+
+.payment-info-form-box {
+  background-color: var(--bg-info, rgba(208, 201, 255, 0.2));
+  border: 1px solid var(--border-color, #dddddd);
+  border-radius: var(--radius-md, 1.6rem);
+  padding: 4rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.payment-form-row {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.payment-form-row.align-start {
+  align-items: flex-start;
+}
+
+.payment-form-label {
+  width: 12rem;
+  flex-shrink: 0;
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.payment-form-field {
+  flex-grow: 1;
+}
+
+.payment-form-field .form-control {
+  width: 100%;
+  height: 5.2rem;
+  padding: 0 1.6rem;
+  border: 1px solid var(--border-color, #dddddd);
+  border-radius: var(--radius-sm, 0.8rem);
+  font-size: 1.8rem;
+  background-color: var(--bg-primary, #ffffff);
+  box-sizing: border-box;
+}
+
+.payment-form-field .form-control:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* 셀렉트박스 우측 커스텀 SVG 화살표 공통 통일 */
+.payment-form-field select.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23111827' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 2.4rem center;
+  background-size: 1.4rem 0.8rem;
+  padding-right: 4.8rem;
+}
+
+/* 2열 셀렉트박스 (유효기간 등) */
+.payment-form-field.double-select {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.payment-form-field.double-select .selectbox,
+.payment-form-field.double-select .custom-select {
+  flex: 1;
+  width: 50%;
+  height: 5.2rem;
+}
+
+.form-helper-note.cms-helper {
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  margin-top: 0;
+  padding-left: 0.8rem;
+  color: var(--border-gray60)
+}
+
+/* 3. 출금동의 서명 캔버스 & 리셋 버튼 스타일 */
+.signature-pad-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+#signatureCanvas {
+  width: 100%;
+  height: 12rem;
+  box-sizing: border-box;
+  cursor: crosshair;
+  display: block;
+  background-color: rgba(208, 201, 255, 0.20);
+  border: 1px solid var(--border-color, #dddddd);
+  border-radius: var(--radius-sm, 0.8rem);
+  transition: border-color 0.2s ease;
+}
+
+#signatureCanvas:hover {
+  border-color: var(--primary, #000000);
+}
+
+.signature-action-wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1.6rem;
+}
+
+#btnSignatureClear,
+.btn-signature-clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  font-family: var(--font-pretendard);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+#btnSignatureClear .icon-reset,
+#btnSignatureClear img,
+.btn-signature-clear .icon-reset,
+.btn-signature-clear img {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* 4. 결제 유의사항 안내문 및 하단 팝업 푸터 버튼 */
+.payment-apply-notice {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text-gray80, #6b7280);
+  padding-left: 0.8rem;
+  margin-top: 3.2rem;
+  border-top: 1px solid var(--border-gray40, #e5e7eb);
+  padding-top: 3.2rem;
+  line-height: 1.4;
+  list-style: none;
+}
+
+.payment-apply-notice li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.payment-apply-notice li:last-child {
+  margin-bottom: 0;
+}
+
+.payment-apply-notice li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.9rem;
+  width: 0.3rem;
+  height: 0.3rem;
+  background-color: var(--text-gray80, #6b7280);
+  border-radius: 50%;
+}
+
+.payment-popup-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.payment-popup-footer .btn-popup-cancel,
+.payment-popup-footer .btn-popup-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* mobile */
@@ -564,9 +777,12 @@ html[lang="en"] .form-label {
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0.6rem;
-    /* margin-bottom: 1.6rem; */
     width: 100%;
     text-align: left !important;
+  }
+
+  .payment-form-row {
+    margin-bottom: 2.4rem;
   }
 
   .form-group.form:last-child,
@@ -681,5 +897,22 @@ html[lang="en"] .form-label {
     margin-left: 2.8rem;
     font-size: 1.2rem !important;
     text-decoration: none !important;
+  }
+
+  .signature-action-wrap {
+    justify-content: flex-start;
+  }
+
+  #btnSignatureClear,
+  .btn-signature-clear {
+    font-size: 1.4rem !important;
+  }
+
+  .form-helper-note.cms-helper {
+    font-size: 1.2rem !important;
+  }
+
+  .payment-apply-notice {
+    font-size: 1.2rem !important;
   }
 }

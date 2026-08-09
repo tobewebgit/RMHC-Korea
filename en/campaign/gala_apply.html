@@ -244,30 +244,30 @@
                   </p>
                 </div>
 
-                <!-- 결제 수단 칩 그리드 (로고 아이콘 포함) -->
+                <!-- 결제 수단 칩 그리드 (공통화 payment-tabs-grid 적용) -->
                 <div class="form-group">
                   <div class="form-field">
-                    <div class="chip-grid cols-3" id="paymentChips" role="radiogroup" aria-label="결제수단 선택">
-                      <button type="button" class="btn btn-primary" data-toggle-chip="galaPaymentMethod"
+                    <div class="payment-tabs-grid" id="paymentChips" role="radiogroup" aria-label="결제수단 선택">
+                      <button type="button" class="btn btn-primary payment-tab-btn active" data-toggle-chip="galaPaymentMethod"
                         data-chip-value="kakaopay" role="radio" aria-checked="true">
-                        <img src="/src/images/common/icon_kakao_pay.png" alt="카카오페이" class="payment-logo" />
+                        <img src="/src/images/common/icon_kakao_pay.png" alt="카카오페이" class="payment-tab-icon" />
                         <span>카카오페이</span>
                       </button>
-                      <button type="button" class="btn btn-outline" data-toggle-chip="galaPaymentMethod"
+                      <button type="button" class="btn btn-outline payment-tab-btn" data-toggle-chip="galaPaymentMethod"
                         data-chip-value="naverpay" role="radio" aria-checked="false">
-                        <img src="/src/images/common/icon_naver_pay.png" alt="네이버페이" class="payment-logo" />
+                        <img src="/src/images/common/icon_naver_pay.png" alt="네이버페이" class="payment-tab-icon" />
                         <span>네이버페이</span>
                       </button>
-                      <button type="button" class="btn btn-outline" data-toggle-chip="galaPaymentMethod"
+                      <button type="button" class="btn btn-outline payment-tab-btn" data-toggle-chip="galaPaymentMethod"
                         data-chip-value="toss" role="radio" aria-checked="false">
-                        <img src="/src/images/common/icon_toss_pay.png" alt="토스페이" class="payment-logo" />
+                        <img src="/src/images/common/icon_toss_pay.png" alt="토스페이" class="payment-tab-icon" />
                         <span>토스페이</span>
                       </button>
-                      <button type="button" class="btn btn-outline" data-toggle-chip="galaPaymentMethod"
+                      <button type="button" class="btn btn-outline payment-tab-btn" data-toggle-chip="galaPaymentMethod"
                         data-chip-value="card" role="radio" aria-checked="false">
                         <span>신용카드</span>
                       </button>
-                      <button type="button" class="btn btn-outline" data-toggle-chip="galaPaymentMethod"
+                      <button type="button" class="btn btn-outline payment-tab-btn" data-toggle-chip="galaPaymentMethod"
                         data-chip-value="transfer" role="radio" aria-checked="false">
                         <span>계좌이체</span>
                       </button>

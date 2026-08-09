@@ -106,6 +106,7 @@
     transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
     background-color 0.3s ease;
 }
+
 .foreign-card-banner .banner-link:hover img {
   transform: translateX(0.4rem);
 }
@@ -197,6 +198,7 @@
     margin 0.45s cubic-bezier(0.25, 1, 0.5, 1),
     border-color 0.45s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
 html[lang="en"] .accordion-card .card-title-wrap {
   cursor: text;
 }
@@ -232,9 +234,11 @@ html[lang="en"] .accordion-card .card-title-wrap {
 .accordion-card.is-active .card-body {
   opacity: 1;
 }
+
 html[lang="en"] .accordion-card.is-active .card-body {
   max-height: none;
 }
+
 .accordion-card.is-active .card-body h3,
 .accordion-card.is-active .radio-label {
   font-family: var(--font-pretendard);
@@ -437,11 +441,9 @@ html[lang="en"] .accordion-card.is-active .card-body {
   line-height: 1.5;
 }
 
-.receipt-helper__primary {
-}
+.receipt-helper__primary {}
 
-.receipt-helper__secondary {
-}
+.receipt-helper__secondary {}
 
 .inner-form-group .receipt-helper-text {
   margin-top: 0.8rem;
@@ -459,8 +461,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 /* 9. 반응형 브레이크포인트 보정 */
-@media (max-width: 1024px) {
-}
+@media (max-width: 1024px) {}
 
 @media (max-width: 768px) {
   .donate-page {
@@ -627,6 +628,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
     margin-bottom: 1.6rem;
     font-weight: 600;
   }
+
   .receipt-helper-text {
     font-size: 1.2rem;
   }
@@ -642,7 +644,8 @@ html[lang="en"] .accordion-card.is-active .card-body {
     height: 5.2rem;
     padding: 0 1rem;
   }
-  .auth-intro-text + .chip-grid .btn {
+
+  .auth-intro-text+.chip-grid .btn {
     font-size: 1.2rem;
   }
 
@@ -689,7 +692,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
     margin-top: 2.8rem;
   }
 
-  .auth-intro-text + .chip-grid.cols-2 {
+  .auth-intro-text+.chip-grid.cols-2 {
     grid-template-columns: 1fr;
   }
 
@@ -768,6 +771,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
     margin-bottom: 0 !important;
   }
 
+  /* 
   .donate-page .payment-form-row {
     display: flex;
     flex-direction: column;
@@ -796,95 +800,13 @@ html[lang="en"] .accordion-card.is-active .card-body {
   .donate-page .payment-form-field.double-select .custom-select {
     flex: 1;
     width: 50%;
-  }
+  } */
   .donate-payment-same {
     font-size: 1.4rem;
   }
 }
 
-/* 결제 정보 입력 폼 */
-.payment-info-form-box {
-  background-color: var(--bg-info);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 4rem 2.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-.payment-form-row {
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-}
-
-.payment-form-row.align-start {
-  align-items: flex-start;
-}
-
-.payment-form-label {
-  width: 12rem;
-  flex-shrink: 0;
-  font-size: 1.8rem;
-  line-height: 1.4;
-}
-
-.payment-form-field {
-  flex-grow: 1;
-}
-
-.payment-form-field .form-control {
-  background-color: var(--bg-primary);
-}
-
-.payment-form-field select.form-control {
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23111827' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 2.4rem center;
-  background-size: 1.4rem 0.8rem;
-  padding-right: 4.8rem;
-}
-
-.payment-form-field.double-select {
-  display: flex;
-  gap: 0.8rem;
-}
-
-.payment-form-field.double-select .selectbox {
-  height: 5.2rem;
-}
-
-.payment-form-field .form-control:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.custom-select.disabled,
-.custom-select[disabled] {
-  opacity: 0.4;
-  pointer-events: none;
-  cursor: not-allowed;
-}
-
-/* 🖋️ 출금동의 서명 캔버스 및 결제 폼 개별 스타일 추가 */
-#signatureCanvas {
-  transition: border-color var(--transition-fast);
-  user-select: none;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  background-color: rgba(208, 201, 255, 0.2);
-}
-
-#signatureCanvas:hover {
-  border-color: var(--primary);
-}
-
-#btnSignatureClear:hover {
-  color: var(--primary);
-}
+/* 결제 정보 입력 폼 & 서명 캔버스 (form.css 공통 컴포넌트 참조) */
 
 /* 후원자와 동일 체크박스 정렬 보정 */
 #sameAsDonorCheckboxLabel {
@@ -933,6 +855,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   line-height: 1.3;
   word-break: keep-all;
 }
+
 .goods-header__desc span {
   font-weight: 600;
 }
@@ -1039,6 +962,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
     height: 24rem;
     margin: 2rem auto 0;
   }
+
   .goods-kv .kv-text-wrap {
     position: absolute;
     inset: 0;
@@ -1049,6 +973,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
     color: #fffde9;
     text-align: center;
   }
+
   .goods-section {
     padding: 6rem 2.4rem 0;
   }
@@ -1082,6 +1007,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   .goods-card {
     height: auto;
   }
+
   .goods-card__header {
     height: 8rem;
   }
@@ -1117,6 +1043,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   overflow: hidden;
   margin-top: 5rem;
 }
+
 .vol-kv__img-wrap {
   position: relative;
   width: 100%;
@@ -1125,6 +1052,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   margin: 0 auto;
   overflow: hidden;
 }
+
 .vol-kv__img,
 .vol-kv__img-wrap img {
   position: absolute;
@@ -1274,6 +1202,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   opacity: 0.3;
   pointer-events: none;
 }
+
 /* ── Section 2: 이런 분들과 함께합니다 ─────────────── */
 
 .vol-impact {
@@ -1420,12 +1349,14 @@ html[lang="en"] .accordion-card.is-active .card-body {
   line-height: 1.5;
   letter-spacing: -0.2rem;
 }
+
 .vol-apply__list li::before {
   content: "·";
   position: absolute;
   top: 0;
   left: 0;
 }
+
 .vol-apply__list li span {
   display: inline-block;
   margin-left: 8rem;
@@ -1497,6 +1428,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   flex-direction: column;
   gap: 1rem;
 }
+
 html[lang="en"] .vol-act-card__body {
   height: 28rem;
 }
@@ -1627,15 +1559,19 @@ html[lang="en"] .vol-act-card__body {
 .vol-process__icon--01 {
   background-color: #ff6e0d;
 }
+
 .vol-process__icon--02 {
   background-color: #ffbc0d;
 }
+
 .vol-process__icon--03 {
   background-color: #9cd83e;
 }
+
 .vol-process__icon--04 {
   background-color: #8ee7f8;
 }
+
 .vol-process__icon--05 {
   background-color: #d0c9ff;
 }
@@ -1713,10 +1649,12 @@ html[lang="en"] .vol-act-card__body {
   display: block;
   transition: all 0.3s ease-in-out;
 }
+
 .vol-news-card:hover .vol-news-card__img {
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
 }
+
 .vol-news-card__body {
   padding: 2.4rem 0;
   display: flex;
@@ -1735,6 +1673,7 @@ html[lang="en"] .vol-act-card__body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .vol-news-card:hover .vol-news-card__title {
   text-decoration: underline;
 }
@@ -1752,6 +1691,7 @@ html[lang="en"] .vol-act-card__body {
 /* ── volunteer 반응형 ───────────────────────────── */
 
 @media (max-width: 768px) {
+
   /* Common */
   .vol-intro,
   .vol-impact,
@@ -1760,6 +1700,7 @@ html[lang="en"] .vol-act-card__body {
   .vol-news {
     padding-top: 10rem;
   }
+
   .vol-intro__title,
   .vol-impact__title,
   .vol-apply__title,
@@ -1768,6 +1709,7 @@ html[lang="en"] .vol-act-card__body {
   .vol-news__title {
     font-size: 2.4rem;
   }
+
   .vol-intro__desc,
   .vol-impact__desc,
   .vol-activities__desc,
@@ -1780,23 +1722,28 @@ html[lang="en"] .vol-act-card__body {
   .vol-kv {
     margin-top: 2rem;
   }
+
   .vol-kv__img-wrap,
   .vol-kv__img,
   .vol-kv__img-wrap img {
     width: 31.2rem;
     height: 54rem;
   }
+
   .vol-kv__text-wrap {
     padding: 0 2.4rem;
     text-align: center;
     align-items: center;
   }
+
   .vol-kv__title {
     font-size: 2.8rem;
   }
+
   .vol-kv__desc {
     font-size: 1.4rem;
   }
+
   .vol-kv__cta {
     width: auto;
     font-size: 1.6rem;
@@ -1807,6 +1754,7 @@ html[lang="en"] .vol-act-card__body {
     flex-direction: column;
     gap: 4rem;
   }
+
   .vol-intro__text {
     flex: none;
     width: 100%;
@@ -1814,19 +1762,23 @@ html[lang="en"] .vol-act-card__body {
     text-align: center;
     word-break: keep-all;
   }
+
   .vol-intro__title {
     font-size: 2.4rem;
   }
+
   .vol-intro__slide-caption {
     font-size: 1.4rem;
     padding-right: 8rem;
   }
+
   .vol-intro-swiper .vol-swiper-prev,
   .vol-intro-swiper .vol-swiper-next {
     top: -1rem;
   }
-  .vol-intro-swiper .vol-swiper-next {
-  }
+
+  .vol-intro-swiper .vol-swiper-next {}
+
   .vol-intro-swiper .vol-swiper-prev {
     right: 4.4rem;
   }
@@ -1835,19 +1787,24 @@ html[lang="en"] .vol-act-card__body {
   .vol-impact__inner {
     gap: 4rem;
   }
+
   .vol-impact__header {
     gap: 1.6rem;
   }
+
   .vol-impact__cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem 1.6rem;
   }
+
   .vol-impact__card {
     gap: 0;
   }
+
   .vol-impact__icon {
     height: 6rem;
   }
+
   .vol-impact__label {
     margin-top: 1.2rem;
     font-size: 1.4rem;
@@ -1861,6 +1818,7 @@ html[lang="en"] .vol-act-card__body {
     background-image: url(/src/images/donate/img_volunteer_section_3_bg_mo.png);
     background-size: cover;
   }
+
   .vol-apply__inner {
     align-items: flex-start;
     gap: 1.2rem;
@@ -1873,25 +1831,30 @@ html[lang="en"] .vol-act-card__body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
+
   .vol-apply__title {
     margin-top: 0;
   }
+
   .vol-apply__box-wrap {
     flex-direction: column;
     height: 33.9rem;
     padding: 2rem 0;
     gap: 2rem;
   }
+
   .vol-apply__box {
     gap: 1.2rem;
     padding: 0 1.6rem;
   }
+
   .vol-apply__box:first-child {
     border-right: none;
     border-bottom: none;
     padding-bottom: 2.4rem;
     position: relative;
   }
+
   .vol-apply__box:first-child::after {
     content: "";
     position: absolute;
@@ -1900,23 +1863,29 @@ html[lang="en"] .vol-act-card__body {
     right: 1.6rem;
     border-bottom: 1px dashed #000000;
   }
+
   .vol-apply__box-title {
     font-size: 1.8rem;
   }
+
   .vol-apply__box-title--nanum {
     font-size: 2rem;
   }
+
   .vol-apply__list {
     gap: 0;
   }
+
   .vol-apply__list li {
     font-size: 1.4rem;
     line-height: 1.5;
   }
+
   .vol-apply__list li span {
     margin-left: 0;
     display: block;
   }
+
   .vol-apply__cta {
     width: 100%;
     font-size: 1.6rem;
@@ -1926,17 +1895,21 @@ html[lang="en"] .vol-act-card__body {
   .vol-activities__inner {
     gap: 4rem;
   }
+
   .vol-activities__cards {
     flex-direction: column;
     gap: 2.4rem;
   }
+
   .vol-act-card__body {
     padding: 2rem 1.6rem;
     height: auto !important;
   }
+
   .vol-act-card__title {
     font-size: 1.8rem;
   }
+
   .vol-act-card__desc {
     font-size: 1.4rem;
   }
@@ -1946,6 +1919,7 @@ html[lang="en"] .vol-act-card__body {
     margin-top: 10rem;
     padding: 4rem 0;
   }
+
   .vol-process__inner {
     gap: 4rem;
     width: 31.1rem;
@@ -1956,20 +1930,25 @@ html[lang="en"] .vol-act-card__body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
+
   .vol-process__header {
     gap: 0;
   }
+
   .vol-process__desc {
     margin: 2.4rem 0 1.6rem;
   }
+
   .vol-process__note {
     font-size: 1.4rem;
   }
+
   .vol-process__steps {
     flex-direction: column;
     align-items: stretch;
     gap: 6rem;
   }
+
   .vol-process__step {
     flex-direction: row;
     width: 100%;
@@ -1978,6 +1957,7 @@ html[lang="en"] .vol-act-card__body {
     position: relative;
     padding-left: 4rem;
   }
+
   .vol-process__step::after {
     content: "";
     position: absolute;
@@ -1989,34 +1969,43 @@ html[lang="en"] .vol-act-card__body {
     background-position: center;
     background-size: 100% 100%;
   }
+
   .vol-process__step:nth-child(1)::after {
     background: url(/src/images/donate/line_section_5_1_mo.png);
   }
+
   .vol-process__step:nth-child(3)::after {
     background: url(/src/images/donate/line_section_5_2_mo.png);
   }
+
   .vol-process__step:nth-child(5)::after {
     background: url(/src/images/donate/line_section_5_3_mo.png);
   }
+
   .vol-process__step:nth-child(7)::after {
     background: url(/src/images/donate/line_section_5_4_mo.png);
   }
+
   .vol-process__line {
     display: none;
   }
+
   .vol-process__icon {
     width: 6rem;
     height: 6rem;
     border-radius: 1.6rem;
     flex-shrink: 0;
   }
+
   .vol-process__num {
     font-size: 2rem;
   }
+
   .vol-process__label {
     font-size: 1.8rem;
     text-align: left;
   }
+
   .vol-process__cta {
     width: 100%;
     font-size: 1.6rem;
@@ -2026,20 +2015,25 @@ html[lang="en"] .vol-act-card__body {
   .vol-news__inner {
     gap: 4rem;
   }
+
   .vol-news__cards {
     flex-direction: column;
     gap: 3.2rem;
   }
+
   .vol-news-card__body {
     gap: 1.2rem;
     padding: 2.4rem 0 0;
   }
+
   .vol-news-card__title {
     font-size: 1.8rem;
   }
+
   .vol-news-card__date {
     font-size: 1.4rem;
   }
+
   .vol-news__cta {
     width: 100%;
     font-size: 1.6rem;
@@ -2114,9 +2108,11 @@ html[lang="en"] .vol-act-card__body {
   border-top: 1px solid var(--border-gray30);
   margin: 3.2rem 0;
 }
+
 .vol-popup-panel .vol-popup-sep {
   margin: 3.2rem -4rem;
 }
+
 .vol-popup-section--house .vol-popup-sep {
   border-top: 1px solid var(--border-gray80);
 }
@@ -2129,9 +2125,11 @@ html[lang="en"] .vol-act-card__body {
 .vol-popup-body .donate-type-tabs {
   margin-bottom: 0;
 }
+
 .vol-popup-body .donate-type-tabs .donate-tab-indicator {
   width: 31rem;
 }
+
 .vol-popup-section__title {
   font-size: 2.8rem;
   margin: 0;
@@ -2527,39 +2525,7 @@ html[lang="en"] .vol-act-card__body {
   margin-top: 0.8rem;
 }
 
-.form-helper-note.cms-helper {
-  line-height: 1.5;
-  margin-bottom: 1.2rem;
-  margin-top: 0;
-}
-
-.signature-pad-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-#signatureCanvas {
-  width: 100%;
-  height: 12rem;
-  box-sizing: border-box;
-  cursor: crosshair;
-  display: block;
-}
-
-.signature-action-wrap {
-  text-align: right;
-  margin-top: 0.8rem;
-}
-
-#btnSignatureClear {
-  background: none;
-  border: none;
-  font-family: var(--font-pretendard);
-  font-size: 1.4rem;
-  color: var(--text-gray60);
-  text-decoration: underline;
-  cursor: pointer;
-}
+/* 출금동의 서명 캔버스/패널 (form.css 공통 컴포넌트 참조) */
 
 .cms-payment-spacer {
   margin-top: 4rem;
@@ -2592,7 +2558,7 @@ html[lang="en"] .vol-act-card__body {
   gap: 2rem;
 }
 
-.en-form-card-box + .en-form-card-title {
+.en-form-card-box+.en-form-card-title {
   margin-top: 5.2rem;
 }
 
@@ -2638,8 +2604,7 @@ html[lang="en"] .vol-act-card__body {
   margin-top: 1.6rem;
 }
 
-.en-payment-btn {
-}
+.en-payment-btn {}
 
 .en-payment-btn img {
   width: 2.4rem;
@@ -2658,6 +2623,7 @@ html[lang="en"] .vol-act-card__body {
 .en-accordion-wrap {
   margin: 5.2rem 0;
 }
+
 .en-accordion-header {
   display: flex;
   align-items: center;

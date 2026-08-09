@@ -2,6 +2,7 @@
  * RMHC Korea 일시후원 (one-time.html) 페이지 전용 스크립트 모듈
  * 동적 scrollHeight 실시간 계산 기반 60fps 크로스 슬라이딩 아코디언 제어 로직 탑재
  */
+import { setupSignature } from '../components/form-signature.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // --- DOM Elements ---
@@ -398,8 +399,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const pmExpYearInput = document.getElementById('pm_exp_year');
       if (pmExpYearInput) pmExpYearInput.value = '';
 
-      if (ctx && signatureCanvas) {
-        ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+      if (signatureCanvas) {
+        const signatureCtx = signatureCanvas.getContext('2d');
+        if (signatureCtx) {
+          signatureCtx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+        }
       }
 
       // 5. 아코디언 상태 초기화 (1단계 오픈, 2/3단계 비활성 및 닫힘)
@@ -899,109 +903,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 서명 캔버스 드로잉 엔진
-  let isDrawing = false;
-  let isSignatureCanvasBound = false;
-  const ctx = signatureCanvas ? signatureCanvas.getContext('2d') : null;
-
+  // 서명 캔버스 드로잉 엔진 (common form-signature.js 연동)
   function initSignatureCanvas() {
-    if (!signatureCanvas || !ctx) return;
-
-    // 캔버스 크기를 렌더링된 크기와 강제 동기화
-    const rect = signatureCanvas.getBoundingClientRect();
-    if (rect.width === 0) return; // 미노출 상태 방지
-    
-    const nextWidth = Math.round(rect.width);
-    const nextHeight = Math.round(rect.height);
-    if (signatureCanvas.width !== nextWidth || signatureCanvas.height !== nextHeight) {
-      signatureCanvas.width = nextWidth;
-      signatureCanvas.height = nextHeight;
-      signatureDrawn = false;
-    }
-
-    ctx.strokeStyle = '#1f2937';
-    ctx.lineWidth = 3;
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
-
-    if (isSignatureCanvasBound) return;
-    isSignatureCanvasBound = true;
-
-    // 마우스 드로잉
-    signatureCanvas.addEventListener('mousedown', startDrawing);
-    signatureCanvas.addEventListener('mousemove', draw);
-    signatureCanvas.addEventListener('mouseup', stopDrawing);
-    signatureCanvas.addEventListener('mouseleave', stopDrawing);
-
-    // 모바일 터치 드로잉
-    signatureCanvas.addEventListener('touchstart', startDrawingTouch, { passive: false });
-    signatureCanvas.addEventListener('touchmove', drawTouch, { passive: false });
-    signatureCanvas.addEventListener('touchend', stopDrawing);
-  }
-
-  function getMousePos(e) {
-    const rect = signatureCanvas.getBoundingClientRect();
-    return {
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
-    };
-  }
-
-  function getTouchPos(e) {
-    const rect = signatureCanvas.getBoundingClientRect();
-    if (e.touches.length === 0) return { x: 0, y: 0 };
-    return {
-      x: e.touches[0].clientX - rect.left,
-      y: e.touches[0].clientY - rect.top
-    };
-  }
-
-  function startDrawing(e) {
-    isDrawing = true;
-    const pos = getMousePos(e);
-    ctx.beginPath();
-    ctx.moveTo(pos.x, pos.y);
-  }
-
-  function startDrawingTouch(e) {
-    e.preventDefault();
-    isDrawing = true;
-    const pos = getTouchPos(e);
-    ctx.beginPath();
-    ctx.moveTo(pos.x, pos.y);
-  }
-
-  function draw(e) {
-    if (!isDrawing) return;
-    const pos = getMousePos(e);
-    ctx.lineTo(pos.x, pos.y);
-    ctx.stroke();
-    signatureDrawn = true;
-    updateDonateFlowUI();
-  }
-
-  function drawTouch(e) {
-    e.preventDefault();
-    if (!isDrawing) return;
-    const pos = getTouchPos(e);
-    ctx.lineTo(pos.x, pos.y);
-    ctx.stroke();
-    signatureDrawn = true;
-    updateDonateFlowUI();
-  }
-
-  function stopDrawing() {
-    isDrawing = false;
-  }
-
-  if (btnSignatureClear) {
-    btnSignatureClear.addEventListener('click', () => {
-      if (ctx && signatureCanvas) {
-        ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-        signatureDrawn = false;
-        updateDonateFlowUI();
-      }
-    });
+    setupSignature();
   }
 
   // 이전 버튼 클릭 시 2단계로 크로스 슬라이딩 회귀

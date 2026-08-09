@@ -956,185 +956,9 @@
   font-size: 2.2rem;
 }
 
-.current-payment-card {
-  background-color: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 3.2rem;
-}
+/* 결제 폼, 현재 결제수단 카드, 유의사항 및 팝업 푸터 (form.css 공통 컴포넌트 참조) */
 
-.current-payment-card.pay-change {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.current-payment-card.pay-change .current-payment-value,
-.current-payment-title {
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: var(--text-gray100);
-}
-
-.current-payment-value {
-  font-size: 1.8rem;
-}
-
-
-.payment-form-section-title {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 2.4rem;
-}
-
-/* 폼 외부 상자 배경색 피그마 fills 적용 */
-.payment-info-form-box {
-  background-color: rgba(208, 201, 255, 0.2) !important;
-  /* 옅은 보라/회색 opacity 20% */
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 4rem 2.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-.payment-form-row {
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-}
-
-.payment-form-row.align-start {
-  align-items: flex-start;
-}
-
-.payment-form-label {
-  width: 12rem;
-  flex-shrink: 0;
-  font-size: 1.8rem;
-  line-height: 1.4;
-}
-
-.payment-form-field {
-  flex-grow: 1;
-}
-
-/* 인풋창들의 배경색 연노랑(#fffde9) 적용 */
-.payment-form-field .form-control {
-  width: 100%;
-  height: 5.2rem;
-  padding: 0 1.6rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  font-size: 1.8rem;
-  background-color: var(--bg-primary) !important;
-  /* 연노랑 배경 */
-  box-sizing: border-box;
-}
-
-/* 셀렉트박스 우측 화살표 여백 및 커스텀 화살표 복원 */
-.payment-form-field select.form-control {
-  appearance: none !important;
-  -webkit-appearance: none !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23111827' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
-  background-repeat: no-repeat !important;
-  background-position: right 2.4rem center !important;
-  background-size: 1.4rem 0.8rem !important;
-  padding-right: 4.8rem !important;
-  /* 우측 여백 24px 이상 완벽 확보 */
-}
-
-.payment-form-field.double-select {
-  display: flex;
-  gap: 0.8rem;
-}
-
-.payment-form-field.double-select .selectbox {
-  height: 5.2rem;
-}
-
-.form-helper-note {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: var(--text-secondary);
-}
-
-/* 안내문구 위쪽에 보더 구분선(라인) 추가 */
-.payment-apply-notice {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: var(--text-gray80);
-  padding-left: 0.8rem;
-  margin-top: 3.2rem;
-  border-top: 1px solid var(--border-gray40);
-  padding-top: 3.2rem;
-  line-height: 1.4;
-  list-style: none;
-}
-
-.payment-apply-notice li {
-  position: relative;
-  padding-left: 1rem;
-  margin-bottom: 0.6rem;
-}
-
-.payment-apply-notice li:last-child {
-  margin-bottom: 0;
-}
-
-.payment-apply-notice li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.9rem;
-  width: 0.3rem;
-  height: 0.3rem;
-  background-color: var(--text-gray80);
-  border-radius: 50%;
-}
-
-.payment-popup-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.8rem;
-  width: 100%;
-}
-
-.payment-popup-footer .btn-popup-cancel {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* .payment-popup-footer .btn-popup-cancel:hover {
-  background-color: var(--primary-glow);
-} */
-
-.payment-popup-footer .btn-popup-submit {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 출금동의 서명 캔버스/패널 스타일 */
-.signature-pad-canvas-box {
-  transition: var(--transition-fast);
-  user-select: none;
-  background-color: rgba(208, 201, 255, 0.20);
-}
-
-.signature-pad-canvas-box:hover {
-  border-color: var(--primary) !important;
-}
-
-.btn-signature-clear:hover {
-  color: var(--primary) !important;
-}
+/* 출금동의 서명 캔버스/패널 (form.css 공통 컴포넌트 참조) */
 
 /* 하단 배너 */
 /* 공통 하단 배너 (PC) */
@@ -1939,4 +1763,15 @@
     color: #1f2937;
     margin: 0;
   }
+
+  .current-payment-value,
+  .current-payment-title {
+    font-size: 1.4rem;
+  }
+
+  .payment-form-section-title {
+    font-size: 1.4rem;
+    margin-top: 3.2rem;
+  }
+
 }
