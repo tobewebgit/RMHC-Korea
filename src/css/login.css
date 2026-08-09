@@ -546,8 +546,6 @@
 .mypage-info-title {
   font-family: var(--font-title);
   font-size: var(--text-4xl);
-  font-weight: 800;
-  color: #000000;
 }
 
 .mypage-info-grid {
@@ -575,8 +573,6 @@
 
 .info-card-title {
   font-size: 2.2rem;
-  font-weight: 800;
-  color: #000000;
 }
 
 .info-card-body {
@@ -601,12 +597,10 @@
 
 .info-label {
   font-size: var(--text-lg);
-  color: #000000;
 }
 
 .info-label.required::before {
   content: "* ";
-  color: #000000;
   margin-right: 0.2rem;
 }
 
@@ -813,7 +807,7 @@
 }
 
 /* ==========================================================================
-   마이페이지 회원탈퇴 (withdraw.html) 스타일
+   마이페이지 회원탈퇴
    ========================================================================== */
 
 .withdraw-section {
@@ -1360,9 +1354,92 @@
 
 
 
-  /*  */
+  /* ==========================================================================
+     마이페이지 나의 정보 탭
+     ========================================================================== */
+  .mypage-info-title-wrap {
+    justify-content: center;
+  }
+
+  .mypage-info-title {
+    font-size: 2rem;
+  }
+
+  .mypage-info-grid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  .mypage-info-grid .info-card-title {
+    font-size: 1.4rem;
+  }
+
+  .mypage-info-grid .info-label {
+    font-size: 1.4rem;
+  }
+
   .info-card {
-    padding: 3rem 2rem;
+    padding: 2.4rem 1.6rem;
+    border-radius: 0.8rem;
+  }
+
+  .info-card-header {
+    padding-bottom: 2.6rem;
+    margin-bottom: 2.6rem;
+  }
+
+  .info-card-title {
+    font-size: 1.8rem;
+  }
+
+  .info-action-btn-wrap {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .info-action-btn {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .pw-change-box {
+    padding: 2.0rem 1.6rem;
+    gap: 1.6rem;
+    border-radius: 0.8rem;
+  }
+
+  .pw-change-title {
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  .info-form-group.flex-row-layout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .info-form-group.flex-row-layout .custom-checkbox {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+
+  .receipt-consent-card {
+    padding: 2.4rem 1.6rem;
+    margin-top: 2.4rem;
+    border-radius: 0.8rem;
+  }
+
+  .receipt-consent-title {
+    font-size: 1.8rem;
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .receipt-consent-desc {
+    font-size: 1.4rem;
+    line-height: 1.5;
   }
 
   .receipt-consent-content {
@@ -1372,17 +1449,47 @@
   }
 
   .receipt-consent-btn {
+    width: 100%;
     max-width: 100%;
   }
 
   .info-action-buttons {
     flex-direction: row;
     width: 100%;
+    margin-top: 3.2rem;
+    gap: 0.8rem;
   }
 
   .info-action-buttons .btn {
     flex: 1;
     max-width: none;
+  }
+
+  /* 회원 탈퇴 */
+  .withdraw-section {
+    padding: 0;
+  }
+
+  .withdraw-link-container {
+    margin-top: 2.4rem;
+  }
+
+  .withdraw-title {
+    font-size: 2rem;
+  }
+
+  .withdraw-confirm-card .card-section-title {
+    margin-bottom: 2.6rem;
+    padding-bottom: 2.6rem;
+    font-size: 1.4rem;
+  }
+
+  .withdraw-notice-desc p {
+    font-size: 1.4rem;
+  }
+
+  .withdraw-actions {
+    martgin-top: 4rem;
   }
 
   .withdraw-form-grid {
@@ -1404,10 +1511,14 @@
     max-width: none;
   }
 
+  .sns-connect-wrap .sns-connect-item,
+  .sns-connect-wrap .sns-status.action {
+    font-size: 1.4rem;
+  }
+
 
   /* ==========================================================================
-     비회원 후원 조회 & 마이페이지 공통 요약 박스 (.summary-box) 모바일 세로 정렬 반응형
-     (Frame 1010107166.pdf 모바일 시안 스펙 100% 반영)
+     비회원 후원 조회 & 마이페이지 공통
      ========================================================================== */
   .summary-box,
   .donation-detail-section .summary-box {
@@ -1481,7 +1592,7 @@
   }
 
   /* ==========================================================================
-     후원 현황 테이블 모바일 카드 UI (table.pdf & table (1).pdf 디자인 공통화 - 넘버 생략 및 버튼 가로 1줄 배치)
+     후원 현황 테이블 모바일 카드 UI
      ========================================================================== */
   .table-wrap {
     overflow-x: visible;
@@ -1625,6 +1736,10 @@
     padding: 3rem 2.4rem;
   }
 
+  .card-title-wrap {
+    justify-content: center;
+  }
+
   .donation-detail-section .card-title,
   .card-title-wrap .card-title {
     font-size: 2.0rem;
@@ -1705,9 +1820,9 @@
      마이페이지 후원 상세 정보 요약 표 모바일 카드 UI (Frame 1010107327.pdf 100% 반영)
      ========================================================================== */
   .donation-detail-section .detail-info-table {
-    border-top: 2px solid #000000;
-    border-bottom: 1px solid #000000;
-    margin-bottom: 3.2rem;
+    border-top: 2px solid var(--border-black);
+    border-bottom: 1px solid var(--border-gray40);
+    margin-bottom: 1.6rem;
     overflow: hidden;
   }
 
@@ -1729,10 +1844,10 @@
     font-weight: 700;
     color: #1f2937;
     text-align: center;
-    padding: 1.2rem 1.6rem;
-    min-height: 4.8rem;
+    padding: 1.2rem 1.2rem;
+    height: auto;
     box-sizing: border-box;
-    border-bottom: 1px solid var(--border-gray40, #e5e7eb);
+    border-bottom: 1px solid var(--border-gray40);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1745,13 +1860,17 @@
     font-weight: 500;
     text-align: left;
     padding: 1.2rem 1.6rem;
-    min-height: 4.8rem;
+    height: auto;
     box-sizing: border-box;
-    border-bottom: 1px solid var(--border-gray40, #e5e7eb);
+    border-bottom: 1px solid var(--border-gray40);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     word-break: keep-all;
+  }
+
+  .detail-info-table+.card-title-wrap {
+    margin-top: 6rem;
   }
 
   /* 테이블 1 (기본 정보) 순서 교정: Frame 1010107327.pdf 시안 순서 일치 */
