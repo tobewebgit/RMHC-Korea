@@ -7,24 +7,26 @@
   aria-labelledby="vol-popup-title"
 >
   <div class="modal-container vol-popup-container">
-    <!-- S: 팝업 헤더 -->
-    <div class="vol-popup-header">
-      <h3 class="vol-popup-title font-nanum" id="vol-popup-title">
-        Volunteer application form
-      </h3>
-      <p class="vol-popup-subtitle">This is the Volunteer Application Form.</p>
-      <button
-        type="button"
-        class="modal-close-btn-circle"
-        aria-label="팝업 닫기"
-      >
-        <span class="close-icon"></span>
-      </button>
-    </div>
-    <!-- E: 팝업 헤더 -->
+    <!-- S: 팝업 전폭 스크롤 래퍼 (라운드 이탈 방지 및 1체형 스크롤) -->
+    <div class="modal-scroll-wrap">
+      <!-- S: 팝업 헤더 -->
+      <div class="vol-popup-header">
+        <h3 class="vol-popup-title font-nanum" id="vol-popup-title">
+          Volunteer application form
+        </h3>
+        <p class="vol-popup-subtitle">This is the Volunteer Application Form.</p>
+        <button
+          type="button"
+          class="modal-close-btn-circle"
+          aria-label="팝업 닫기"
+        >
+          <span class="close-icon"></span>
+        </button>
+      </div>
+      <!-- E: 팝업 헤더 -->
 
-    <!-- S: 팝업 본문 (스크롤 영역) -->
-    <div class="vol-popup-body">
+      <!-- S: 팝업 본문 (스크롤 영역) -->
+      <div class="vol-popup-body">
       <!-- S: 하우스 선택 섹션 -->
       <div class="vol-popup-section vol-popup-section--house">
         <h4 class="vol-popup-section__title font-nanum">House choice</h4>
@@ -1618,8 +1620,11 @@
         </div>
         <!-- E: 기업·단체 탭 패널 -->
       </form>
+      </div>
+      <!-- E: 팝업 본문 -->
+
     </div>
-    <!-- E: 팝업 본문 -->
+    <!-- E: 팝업 전폭 스크롤 래퍼 -->
   </div>
 </div>
 

@@ -2,7 +2,7 @@
    donate.css — 후원 관련 페이지 전용 스타일
    ========================================================================== */
 
-/* 1. 후원 메인 레이아웃 (gala_apply.html 및 campaign.css 패턴 완벽 계승) */
+/* 1. 후원 메인 레이아웃 */
 .donate-page {
   padding-top: 15rem;
 }
@@ -111,7 +111,7 @@
   transform: translateX(0.4rem);
 }
 
-/* 3. 후원 구분 탭 버튼 (정기/일시) */
+/* 3. 후원 구분 탭 버튼 */
 .donate-type-tabs {
   position: relative;
   display: inline-flex;
@@ -133,12 +133,12 @@
   border-radius: 0.8rem;
   z-index: 0;
 
-  /* 애니메이션 및 트랜지션 (레퍼런스와 동일) */
+  /* 애니메이션 및 트랜지션 */
   transition: transform 0.3s ease;
   transform: translateX(0);
 }
 
-/* 두 번째 탭 활성화 시 (is-one-time 은 후원용, is-second-active 는 범용) */
+/* 두 번째 탭 활성화 시 */
 .donate-type-tabs.is-one-time .donate-tab-indicator,
 .donate-type-tabs.is-second-active .donate-tab-indicator {
   transform: translateX(100%);
@@ -158,7 +158,6 @@
   outline: none;
 }
 
-/* 활성화된 탭에 배경색을 주어 슬라이더와 섞이게 하는 착시 효과 */
 .donate-type-tabs .btn-tab:not(.disabled) {
   color: var(--text-white);
   font-weight: 400;
@@ -170,7 +169,7 @@
   opacity: 1;
 }
 
-/* 4. 아코디언 카드 디자인 (gala_apply.html의 .common-card 사양 100% 동기화) */
+/* 4. 아코디언 카드 디자인 */
 .accordion-card {
   margin-bottom: 2rem;
   overflow: hidden;
@@ -183,7 +182,7 @@
   pointer-events: none;
 }
 
-/* 아코디언 기동용 헤더 (.card-title-wrap 활용하여 100% 동일한 패딩/마진 구현) */
+/* 아코디언 기동용 헤더 */
 .accordion-card .card-title-wrap {
   display: flex;
   justify-content: space-between;
@@ -203,7 +202,6 @@ html[lang="en"] .accordion-card .card-title-wrap {
   cursor: text;
 }
 
-/* 카드가 열렸을 때 하단 마진 복원 및 라인 노출 */
 .accordion-card.is-active .card-title-wrap {
   margin-bottom: 4rem;
   padding: 0 4rem 3.2rem;
@@ -299,7 +297,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   border-color: var(--primary);
 }
 
-/* 후원자 유형 칩 전용 활성화 (굵기 가속) */
+/* 후원자 유형 칩 전용 활성화 */
 #donorTypeGrid .chip-btn.active {
   font-weight: 700;
 }
@@ -461,350 +459,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 /* 9. 반응형 브레이크포인트 보정 */
-@media (max-width: 1024px) {}
 
-@media (max-width: 768px) {
-  .donate-page {
-    padding-top: 11rem;
-  }
-
-  .donate-page .apply-wrapper {
-    flex-direction: column;
-    gap: 4rem;
-    padding: 0 var(--spacing-4) 6rem;
-  }
-
-  .donate-page .apply-left-col {
-    position: static;
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .donate-page .apply-right-col {
-    max-width: 100%;
-  }
-
-  .donate-page .apply-wrapper {
-    gap: 4rem;
-    padding: 0 2rem 0;
-    font-size: 1.4rem;
-  }
-
-  .donate-page .page-header-wrap {
-    text-align: center;
-  }
-
-  .donate-page .page-title {
-    font-size: 2.8rem;
-    line-height: 1.3;
-    margin-bottom: 2.4rem;
-    text-align: center;
-    word-break: keep-all;
-  }
-
-  .donate-page .page-desc {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    text-align: center;
-  }
-
-  /* 모바일 시안에서는 포스터 이미지 비노출 */
-  .donate-page .poster-wrap {
-    display: none;
-  }
-
-  /* 해외 발급카드 배너 - 피그마 시안 100% 완벽 동기화 */
-  .foreign-card-banner {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 2.4rem 4.8rem 2.4rem 1.6rem;
-    border-radius: 0.8rem;
-    margin-bottom: 2rem;
-    background-color: #d2d0fc;
-  }
-
-  .foreign-card-banner .banner-text {
-    display: block;
-    width: 100%;
-  }
-
-  .foreign-card-banner .banner-text img {
-    position: absolute;
-    left: 1.6rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 3.6rem;
-    height: 3.6rem;
-  }
-
-  .foreign-card-banner .banner-text span {
-    display: block;
-    font-size: 1.2rem;
-    padding-left: 5.2rem;
-  }
-
-  .foreign-card-banner .banner-link {
-    display: block;
-    width: 100%;
-    padding-left: 5.2rem;
-    font-size: 1.4rem;
-    text-decoration: none;
-  }
-
-  .foreign-card-banner .banner-link img {
-    position: absolute;
-    right: 1.6rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2.4rem;
-    height: 2.4rem;
-    transition: transform 0.3s ease;
-  }
-
-  /* 정기 / 일시 후원 탭 */
-  .donate-type-tabs {
-    padding: 0.8rem;
-    border-radius: 0.8rem;
-    margin-bottom: 2rem;
-  }
-
-  .donate-tab-indicator {
-    top: 0.8rem;
-    left: 0.8rem;
-    width: calc(50% - 0.8rem);
-    height: 4.8rem;
-    border-radius: 1rem;
-  }
-
-  .donate-type-tabs .btn-tab {
-    width: 50%;
-    height: 4.8rem;
-    font-size: 1.6rem;
-  }
-
-  /* 아코디언 카드 (Step 1 공통 및 1단계) */
-  .accordion-card {
-    padding: 2.8rem 2.4rem 3.2rem;
-    margin-bottom: 1.6rem;
-  }
-
-  .accordion-card.is-disabled {
-    min-height: 7.1rem;
-    padding-bottom: 0;
-  }
-
-  .accordion-card .card-title-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0rem;
-    margin: -0.8rem -2.4rem 0;
-    padding: 0 2.4rem 0rem;
-    line-height: 1.6;
-  }
-
-  .accordion-card.is-active .card-title-wrap {
-    margin-bottom: 2.8rem;
-    padding: 0 2.4rem 1.4rem;
-  }
-
-  .accordion-card .donate-section-title {
-    font-size: 1.8rem;
-    top: 0;
-  }
-
-  .accordion-card .header-summary {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-top: 0;
-    color: var(--text-black);
-  }
-
-  .accordion-card.is-active .card-body h3,
-  .accordion-card .card-subtitle {
-    font-size: 1.4rem;
-    margin-bottom: 1.6rem;
-    font-weight: 600;
-  }
-
-  .receipt-helper-text {
-    font-size: 1.2rem;
-  }
-
-  /* Step 1 금액 칩 - 모바일 시안 2열 배치 */
-  .chip-grid.cols-3 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
-    margin-bottom: 0;
-  }
-
-  .chip-grid .btn {
-    height: 5.2rem;
-    padding: 0 1rem;
-  }
-
-  .auth-intro-text+.chip-grid .btn {
-    font-size: 1.2rem;
-  }
-
-  .direct-input-chip {
-    min-height: 5.2rem;
-    padding: 0 1.6rem;
-    border-radius: 0.8rem;
-  }
-
-  .direct-input-chip input {
-    font-size: 1.6rem;
-  }
-
-  .direct-input-chip .unit {
-    font-size: 1.6rem;
-    margin-left: 0.4rem;
-  }
-
-  .direct-amount-warning {
-    font-size: 1.4rem;
-    margin-top: 0.8rem;
-  }
-
-  /* Step 1 헬퍼 옐로우 박스 */
-  .notice-yellow-box {
-    padding: 2rem 2.4rem;
-    gap: 1.4rem;
-    margin-top: 2rem;
-    border-radius: 1.2rem;
-  }
-
-  .notice-yellow-box img {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  .notice-yellow-box span {
-    font-size: 1.5rem;
-    line-height: 1.45;
-  }
-
-  /* Step 1 다음 버튼 */
-  #step1NextWrap {
-    margin-top: 2.8rem;
-  }
-
-  .auth-intro-text+.chip-grid.cols-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .donate-page .card-body .chip-grid.cols-2 {
-    margin-top: 2.4rem;
-  }
-
-  .sep-line {
-    margin: 2.4rem 0;
-  }
-
-  .auth-intro-text {
-    font-size: 1.4rem;
-  }
-
-  .donate-payment-same {
-    font-size: var(--text-lg);
-  }
-
-  /* Step 2 폼 박스 & 입력 컨트롤 모바일 반응형 */
-  .donate-page .form-group.form {
-    gap: 0.8rem;
-  }
-
-  .donate-page .form-label {
-    width: 100%;
-    min-height: auto;
-    margin-bottom: 0;
-  }
-
-  .donate-page .form-field {
-    width: 100%;
-  }
-
-  .donate-page .inner-form-group .inner-form-box {
-    padding: 2.4rem 1.6rem;
-  }
-
-  /* 기부금 영수증 신청 여부 */
-  .donate-page .receipt-toggle-group {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-  }
-
-
-
-  .gender-text {
-    font-size: 1.4rem;
-  }
-
-  .agree-terms-container {
-    margin-top: 2.6rem;
-  }
-
-  /* Step 3 결제 정보 입력 폼 (신용카드, CMS 자동이체) 모바일 반응형 정밀 튜닝 */
-  .donate-page .payment-info-form-box {
-    padding: 2.4rem 1.6rem;
-    gap: 0;
-    border-radius: 1.2rem;
-    background-color: rgba(208, 201, 255, 0.2);
-  }
-
-  .donate-page .payment-detail-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.6rem;
-    width: 100%;
-    text-align: left !important;
-  }
-
-  .donate-page .payment-detail-header .form-subtitle {
-    font-size: 1.6rem !important;
-    font-weight: 700 !important;
-    margin-bottom: 0 !important;
-  }
-
-  /* 
-  .donate-page .payment-form-row {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 0.6rem;
-    margin-bottom: 1.6rem;
-    width: 100%;
-    text-align: left !important;
-  }
-
-  .donate-page .payment-form-row:last-child {
-    margin-bottom: 0;
-  }
-
-  .donate-page .payment-form-field {
-    width: 100%;
-    text-align: left !important;
-  }
-
-  .donate-page .payment-form-field.double-select {
-    display: flex;
-    gap: 0.8rem;
-  }
-
-  .donate-page .payment-form-field.double-select .custom-select {
-    flex: 1;
-    width: 50%;
-  } */
-  .donate-payment-same {
-    font-size: 1.4rem;
-  }
-}
 
 /* 결제 정보 입력 폼 & 서명 캔버스 (form.css 공통 컴포넌트 참조) */
 
@@ -877,7 +532,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   overflow: hidden;
 }
 
-/* 5. 카드 헤더 (카테고리 뱃지 영역) */
+/* 5. 카드 헤더 */
 .goods-card__header {
   height: 12rem;
   display: flex;
@@ -895,7 +550,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   word-break: keep-all;
 }
 
-/* 6. 카드 바디 (물품 리스트 영역) */
+/* 6. 카드 바디 */
 .goods-card__body {
   flex: 1;
   padding: var(--spacing-8) var(--spacing-10);
@@ -921,7 +576,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   position: relative;
 }
 
-/* 글머리 점(•) */
+/* 글머리 점 */
 .goods-card__item::before {
   content: "•";
   position: absolute;
@@ -950,72 +605,6 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 /* 10. 반응형 브레이크포인트 */
-@media (max-width: 1024px) {
-  /* .goods-grid {
-    grid-template-columns: repeat(2, 1fr);
-  } */
-}
-
-@media (max-width: 768px) {
-  .goods-kv {
-    width: 31.2rem;
-    height: 24rem;
-    margin: 2rem auto 0;
-  }
-
-  .goods-kv .kv-text-wrap {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fffde9;
-    text-align: center;
-  }
-
-  .goods-section {
-    padding: 6rem 2.4rem 0;
-  }
-
-  .goods-header {
-    margin-bottom: 4rem;
-  }
-
-  .goods-header__title {
-    font-size: 2.4rem;
-  }
-
-  .goods-header__desc {
-    font-size: 1.4rem;
-  }
-
-  .goods-grid {
-    padding: 0;
-    grid-template-columns: 1fr;
-  }
-
-  .goods-card__title {
-    font-size: 1.8rem;
-  }
-
-  .goods-card__item {
-    text-align: left;
-    font-size: 1.4rem;
-  }
-
-  .goods-card {
-    height: auto;
-  }
-
-  .goods-card__header {
-    height: 8rem;
-  }
-
-  .goods-card__body {
-    padding: 2.4rem;
-  }
-}
 
 /* ==========================================================================
    volunteer — 자원봉사 신청 페이지 전용 스타일 (donate.css 내 모듈)
@@ -1197,7 +786,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
   background-size: 4rem 4rem;
 }
 
-/* Swiper 네비게이션 버튼 비활성화 (끝 도달 시) 상태 */
+/* Swiper 네비게이션 버튼 비활성화 상태 */
 .vol-intro-swiper .swiper-button-disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -1690,7 +1279,952 @@ html[lang="en"] .vol-act-card__body {
 
 /* ── volunteer 반응형 ───────────────────────────── */
 
+
+/* ==========================================================================
+   DN_04P — 자원봉사 신청 팝업 전용 스타일
+   피그마 실측 기준: node 2531:48751 / 2531:48895 / 2531:49006
+   ========================================================================== */
+
+/* ── 유틸리티 ─────────────────────────────────────────────── */
+.mt-2 {
+  margin-top: 0.8rem;
+}
+
+/* ── 팝업 컨테이너 ──────────────────────────────────────────── */
+
+.vol-popup-container {
+  width: 80rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.vol-popup-header {
+  text-align: center;
+  padding: 1.6rem 4rem 2.4rem;
+  flex-shrink: 0;
+}
+
+.vol-popup-title {
+  font-size: 3.8rem;
+  line-height: 1.3;
+  margin: 0 0 1.6rem;
+}
+
+.vol-popup-subtitle {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* ── 팝업 본문 ────────────────────────────────────── */
+.vol-popup-body {
+  flex: 1;
+  padding: 1.6rem 0 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+/* ── 섹션 박스 ─────────────────────────────────────────────── */
+.vol-popup-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 3rem 4rem;
+  border-radius: 1.6rem;
+  background: var(--bg-primary);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.08);
+  border: none;
+}
+
+.vol-popup-sep {
+  border: 0;
+  border-top: 1px solid var(--border-gray30);
+  margin: 3.2rem 0;
+}
+
+.vol-popup-panel .vol-popup-sep {
+  margin: 3.2rem -4rem;
+}
+
+.vol-popup-section--house .vol-popup-sep {
+  border-top: 1px solid var(--border-gray80);
+}
+
+.vol-popup-section--house {
+  background-color: var(--bg-kv);
+  border-color: transparent;
+}
+
+.vol-popup-body .donate-type-tabs {
+  margin-bottom: 0;
+}
+
+.vol-popup-body .donate-type-tabs .donate-tab-indicator {
+  width: 31rem;
+}
+
+.vol-popup-section__title {
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+.vol-popup-section__sep {
+  border: none;
+  border-top: 1px solid var(--bg-primary);
+  margin: 0;
+}
+
+/* ── 탭 패널 ────────────────────────────────────────────────── */
+.vol-popup-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.vol-popup-panel[hidden] {
+  display: none;
+}
+
+/* ── 팝업 폼 요소 오버라이드 ────────────────────── */
+.vol-popup-body .form-control[readonly],
+.vol-popup-body .form-control:disabled {
+  background-color: rgba(208, 201, 255, 0.2) !important;
+  border-color: var(--border-gray40) !important;
+  color: var(--text-secondary) !important;
+  cursor: not-allowed;
+}
+
+/* ── 폼 레이블 상단 정렬 ────────────────────── */
+.form-label--top {
+  align-items: flex-start;
+  padding-top: 1.4rem;
+}
+
+/* ── textarea ───────────────────────────────────────────────── */
+.vol-textarea {
+  height: 5.2rem;
+  resize: vertical;
+}
+
+/* ── 개인정보 동의 박스 ─────────────────────────────────────── */
+.vol-privacy-box {
+  background-color: rgba(208, 201, 255, 0.2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 2rem 2.4rem;
+  font-size: var(--text-lg);
+  line-height: 1.7;
+}
+
+.vol-privacy-box p {
+  margin: 0 0 1.2rem;
+}
+
+.vol-privacy-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.vol-privacy-check {
+  margin-top: 1.6rem;
+  font-size: var(--text-lg);
+}
+
+/* ── 신청 버튼 ──────────────────────────────────────────────── */
+.vol-popup-submit {
+  position: relative;
+  top: 2rem;
+}
+
+/* ── 날짜 인풋 + 캘린더 아이콘 래퍼 ───────────────────────── */
+.vol-date-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.vol-date-wrap .form-control {
+  padding-right: 4.8rem;
+}
+
+.vol-calendar-trigger {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+}
+
+.vol-calendar-trigger:hover {
+  color: var(--primary);
+}
+
+/* ── 캘린더 레이어 ─────────────────────────────────────────── */
+/*
+  표시 제어:
+  기본: 숨김 (display: none)
+  개발팀 JS에서 .vol-calendar-layer에 .is-open 클래스 추가 시 표시
+*/
+
+.vol-calendar-layer {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.8rem);
+  left: 0;
+  z-index: 1000;
+  width: 48rem;
+  background-color: var(--bg-primary);
+  border-radius: 0.8rem;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.vol-calendar-layer.is-open {
+  display: block;
+}
+
+/* ── 캘린더 패널 영역 ──────────────────────────── */
+
+.vol-cal-panels {
+  display: flex;
+}
+
+.vol-cal-panel {
+  flex: 1;
+  padding: 2.4rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* ── 캘린더 헤더 ─────────────────────── */
+
+.vol-cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vol-cal-yearmonth {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 1.4rem;
+}
+
+.vol-cal-nav {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.vol-cal-nav:hover {
+  color: var(--primary);
+}
+
+.vol-cal-nav[aria-hidden="true"] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ── 캘린더 그리드 ──────────────────────────── */
+
+.vol-cal-grid {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.8rem;
+}
+
+.vol-cal-grid th {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+  padding: 0.4rem 0 1.2rem;
+}
+
+.vol-cal-grid th:first-child,
+.vol-cal-day.is-sunday {
+  color: #ffa500;
+}
+
+.vol-cal-grid th:last-child,
+.vol-cal-day.is-saturday {
+  color: #ffc72c;
+}
+
+.vol-cal-grid td {
+  text-align: center;
+  padding: 0;
+}
+
+.vol-cal-grid td.is-prev-month {
+  color: #ccc;
+  font-size: 1.4rem;
+}
+
+.vol-cal-day {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  width: 100%;
+  height: 3.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.vol-cal-day:hover {
+  background-color: rgba(209, 33, 41, 0.05);
+}
+
+/* 선택 범위 시작/끝 및 중간 스타일 */
+.vol-cal-day.is-in-range {
+  background-color: rgba(209, 33, 41, 0.15);
+  color: var(--primary);
+}
+
+.vol-cal-day.is-in-range.is-sunday {
+  color: #ffa500;
+}
+
+.vol-cal-day.is-in-range.is-saturday {
+  color: #ffc72c;
+}
+
+.vol-cal-day.is-selected {
+  background-color: var(--primary);
+  color: #ffffff !important;
+  border-radius: 0.4rem;
+  font-weight: 700;
+}
+
+.vol-cal-day.is-range-start {
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+
+.vol-cal-day.is-range-end {
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+
+/* ── 캘린더 CTA 바 ─────────────────────────────────────── */
+
+.vol-cal-cta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1.6rem 2.4rem;
+  background-color: transparent;
+  border-top: 1px solid var(--border-gray40);
+  margin-top: 1.6rem;
+}
+
+.vol-cal-cta-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.vol-cal-btn-cancel {
+  width: 6rem;
+  height: 3.2rem;
+  background: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primary);
+  transition: background-color 0.15s;
+}
+
+.vol-cal-btn-cancel:hover {
+  background-color: rgba(209, 33, 41, 0.05);
+}
+
+/* ── 반응형 ────────────────────────────────────── */
+
+
+/* ==========================================================================
+   일시후원/정기후원 폼 (one-time.html)
+   ========================================================================== */
+
+#amountWarningText {
+  display: none;
+  color: var(--primary);
+  margin-top: -1.2rem;
+  text-align: left;
+}
+
+#step1NextWrap,
+#authInfoArea,
+#groupInfoArea,
+#step2CommonArea,
+#receiptDetailArea,
+#receiptResidentNumArea,
+#withdrawDayArea,
+#paymentDetailFormArea,
+#cardPaymentForm,
+#cmsPaymentForm {
+  display: none;
+}
+
+.color-primary {
+  color: var(--primary);
+}
+
+.withdraw-day-box .receipt-warning-list {
+  margin-top: 1.2rem;
+  margin-bottom: 2.4rem;
+  padding-left: 0;
+}
+
+.withdraw-day-box .receipt-warning-list li {
+  list-style: none;
+  color: var(--text-helper);
+}
+
+.payment-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.payment-detail-header .form-subtitle {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: var(--font-pretendard);
+}
+
+.form-helper-note {
+  color: var(--text-helper);
+}
+
+.form-helper-note.mt-2 {
+  margin-top: 0.8rem;
+}
+
+/* 출금동의 서명 캔버스/패널 (form.css 공통 컴포넌트 참조) */
+
+.cms-payment-spacer {
+  margin-top: 4rem;
+}
+
+.group-email-helper {
+  color: var(--text-gray60);
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+}
+
+/* ==========================================================================
+   영문 일시후원 (Foreign Card Donation / EN Form) 전용 스타일
+   ========================================================================== */
+
+.en-form-card-box {
+  background-color: var(--bg-info);
+  border: 1px solid var(--border-color);
+  border-radius: 0.8rem;
+  padding: 4rem 2.4rem;
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.en-check-area {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.en-form-card-box+.en-form-card-title {
+  margin-top: 5.2rem;
+}
+
+.en-form-card-title {
+  font-size: 2rem;
+}
+
+.form-group.label-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 0;
+}
+
+.form-group.label-top .form-label {
+  width: 100%;
+  text-align: left;
+  font-size: 1.6rem;
+}
+
+.form-group.label-top .form-field {
+  width: 100%;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.en-field-note {
+  margin-top: -2.2rem;
+  font-size: 1.4rem;
+  color: var(--text-gray60);
+}
+
+.en-payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+}
+
+.en-payment-btn {}
+
+.en-payment-btn img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 1rem;
+  object-fit: contain;
+}
+
+.en-payment-note {
+  font-size: 1.5rem;
+  color: #767676;
+  margin-top: 5.2rem;
+  text-align: left;
+}
+
+.en-accordion-wrap {
+  margin: 5.2rem 0;
+}
+
+.en-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.en-accordion-header .en-accordion-arrow {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.en-accordion-header .accordion-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: transform 0.3s ease;
+}
+
+.en-accordion-body {
+  margin-top: 0.8rem;
+}
+
+.en-donate-submit-wrap {
+  width: 100%;
+}
+
+/* ==========================================================================
+   donate.css 전역 모바일 반응형 통합 브레이크포인트 (@media (max-width: 768px))
+   ========================================================================== */
 @media (max-width: 768px) {
+
+  /* ── 1. 기부 신청 페이지 모바일 ── */
+  .donate-page {
+    padding-top: 11rem;
+  }
+
+  .donate-page .apply-wrapper {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .donate-page .apply-left-col {
+    position: static;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .donate-page .apply-right-col {
+    max-width: 100%;
+  }
+
+  .donate-page .apply-wrapper {
+    gap: 4rem;
+    padding: 0 2rem 0;
+    font-size: 1.4rem;
+  }
+
+  .donate-page .page-header-wrap {
+    text-align: center;
+  }
+
+  .donate-page .page-title {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin-bottom: 2.4rem;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  .donate-page .page-desc {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* 모바일 시안에서는 포스터 이미지 비노출 */
+  .donate-page .poster-wrap {
+    display: none;
+  }
+
+  /* 해외 발급카드 배너 - 피그마 시안 100% 완벽 동기화 */
+  .foreign-card-banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2.4rem 4.8rem 2.4rem 1.6rem;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+    background-color: #d2d0fc;
+  }
+
+  .foreign-card-banner .banner-text {
+    display: block;
+    width: 100%;
+  }
+
+  .foreign-card-banner .banner-text img {
+    position: absolute;
+    left: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .foreign-card-banner .banner-text span {
+    display: block;
+    font-size: 1.2rem;
+    padding-left: 5.2rem;
+  }
+
+  .foreign-card-banner .banner-link {
+    display: block;
+    width: 100%;
+    padding-left: 5.2rem;
+    font-size: 1.4rem;
+    text-decoration: none;
+  }
+
+  .foreign-card-banner .banner-link img {
+    position: absolute;
+    right: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.4rem;
+    height: 2.4rem;
+    transition: transform 0.3s ease;
+  }
+
+  /* 정기 / 일시 후원 탭 */
+  .donate-type-tabs {
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+
+
+  .donate-type-tabs .btn-tab {
+    width: 50%;
+    height: 4.8rem;
+    font-size: 1.6rem;
+  }
+
+  /* 아코디언 카드 */
+  .accordion-card {
+    padding: 2.8rem 2.4rem 3.2rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .accordion-card.is-disabled {
+    min-height: 7.1rem;
+    padding-bottom: 0;
+  }
+
+  .accordion-card .card-title-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0rem;
+    margin: -0.8rem -2.4rem 0;
+    padding: 0 2.4rem 0rem;
+    line-height: 1.6;
+  }
+
+  .accordion-card.is-active .card-title-wrap {
+    margin-bottom: 2.8rem;
+    padding: 0 2.4rem 1.4rem;
+  }
+
+  .accordion-card .donate-section-title {
+    font-size: 1.8rem;
+    top: 0;
+  }
+
+  .accordion-card .header-summary {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 0;
+    color: var(--text-black);
+  }
+
+  .accordion-card.is-active .card-body h3,
+  .accordion-card .card-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 1.6rem;
+    font-weight: 600;
+  }
+
+  .receipt-helper-text {
+    font-size: 1.2rem;
+  }
+
+  /* Step 1 금액 칩 - 모바일 시안 2열 배치 */
+  .chip-grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  .chip-grid .btn {
+    height: 5.2rem;
+    padding: 0 1rem;
+  }
+
+  .auth-intro-text+.chip-grid .btn {
+    font-size: 1.2rem;
+  }
+
+  .direct-input-chip {
+    min-height: 5.2rem;
+    padding: 0 1.6rem;
+    border-radius: 0.8rem;
+  }
+
+  .direct-input-chip input {
+    font-size: 1.6rem;
+  }
+
+  .direct-input-chip .unit {
+    font-size: 1.6rem;
+    margin-left: 0.4rem;
+  }
+
+  .direct-amount-warning {
+    font-size: 1.4rem;
+    margin-top: 0.8rem;
+  }
+
+  /* Step 1 헬퍼 옐로우 박스 */
+  .notice-yellow-box {
+    padding: 2rem 2.4rem;
+    gap: 1.4rem;
+    margin-top: 2rem;
+    border-radius: 1.2rem;
+  }
+
+  .notice-yellow-box img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .notice-yellow-box span {
+    font-size: 1.5rem;
+    line-height: 1.45;
+  }
+
+  /* Step 1 다음 버튼 */
+  #step1NextWrap {
+    margin-top: 2.8rem;
+  }
+
+  .auth-intro-text+.chip-grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .donate-page .card-body .chip-grid.cols-2 {
+    margin-top: 2.4rem;
+  }
+
+  .sep-line {
+    margin: 2.4rem 0;
+  }
+
+  .auth-intro-text {
+    font-size: 1.4rem;
+  }
+
+  .donate-payment-same {
+    font-size: var(--text-lg);
+  }
+
+  /* Step 2 폼 박스 & 입력 컨트롤 모바일 반응형 */
+  .donate-page .form-group.form {
+    gap: 0.8rem;
+  }
+
+  .donate-page .form-label {
+    width: 100%;
+    min-height: auto;
+    margin-bottom: 0;
+  }
+
+  .donate-page .form-field {
+    width: 100%;
+  }
+
+  .donate-page .inner-form-group .inner-form-box {
+    padding: 2.4rem 1.6rem;
+  }
+
+  /* 기부금 영수증 신청 여부 */
+  .donate-page .receipt-toggle-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+
+
+  .gender-text {
+    font-size: 1.4rem;
+  }
+
+  .agree-terms-container {
+    margin-top: 2.6rem;
+  }
+
+  /* Step 3 결제 정보 입력 폼 모바일 반응형 정밀 튜닝 */
+  .donate-page .payment-info-form-box {
+    padding: 2.4rem 1.6rem;
+    gap: 0;
+    border-radius: 1.2rem;
+    background-color: rgba(208, 201, 255, 0.2);
+  }
+
+  .donate-page .payment-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+    width: 100%;
+    text-align: left !important;
+  }
+
+  .donate-page .payment-detail-header .form-subtitle {
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* 
+
+  /* ── 2. 기부 굿즈 페이지 모바일 ── */
+  .goods-kv {
+    width: 31.2rem;
+    height: 24rem;
+    margin: 2rem auto 0;
+  }
+
+  .goods-kv .kv-text-wrap {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fffde9;
+    text-align: center;
+  }
+
+  .goods-section {
+    padding: 6rem 2.4rem 0;
+  }
+
+  .goods-header {
+    margin-bottom: 4rem;
+  }
+
+  .goods-header__title {
+    font-size: 2.4rem;
+  }
+
+  .goods-header__desc {
+    font-size: 1.4rem;
+  }
+
+  .goods-grid {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .goods-card__title {
+    font-size: 1.8rem;
+  }
+
+  .goods-card__item {
+    text-align: left;
+    font-size: 1.4rem;
+  }
+
+  .goods-card {
+    height: auto;
+  }
+
+  .goods-card__header {
+    height: 8rem;
+  }
+
+  .goods-card__body {
+    padding: 2.4rem;
+  }
+
+  /* ── 3. 자원봉사 소개 메인 페이지 모바일 ── */
 
   /* Common */
   .vol-intro,
@@ -2038,616 +2572,114 @@ html[lang="en"] .vol-act-card__body {
     width: 100%;
     font-size: 1.6rem;
   }
-}
 
-/* ==========================================================================
-   DN_04P — 자원봉사 신청 팝업 전용 스타일
-   피그마 실측 기준: node 2531:48751 / 2531:48895 / 2531:49006
-   ========================================================================== */
-
-/* ── 유틸리티 ─────────────────────────────────────────────── */
-.mt-2 {
-  margin-top: 0.8rem;
-}
-
-/* ── 팝업 컨테이너 ──────────────────────────────────────────── */
-
-.vol-popup-container {
-  width: 80rem;
-  max-height: 90dvh;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  background-color: var(--bg-primary);
-}
-
-/* ── 팝업 헤더 (고정) ──────────────────────────────────────── */
-.vol-popup-header {
-  position: relative;
-  text-align: center;
-  padding: 4rem 4rem 2.4rem;
-  flex-shrink: 0;
-}
-
-.vol-popup-title {
-  font-size: 3.8rem;
-  line-height: 1.3;
-  margin: 0 0 1.6rem;
-}
-
-.vol-popup-subtitle {
-  font-size: 2rem;
-  margin: 0;
-}
-
-/* ── 팝업 본문 (스크롤) ────────────────────────────────────── */
-.vol-popup-body {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1.6rem 6rem 8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-}
-
-/* ── 섹션 박스 ─────────────────────────────────────────────── */
-.vol-popup-section {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  padding: 4rem;
-  border-radius: 1.6rem;
-  background: var(--bg-primary);
-  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.08);
-  border: none;
-}
-
-.vol-popup-sep {
-  border: 0;
-  border-top: 1px solid var(--border-gray30);
-  margin: 3.2rem 0;
-}
-
-.vol-popup-panel .vol-popup-sep {
-  margin: 3.2rem -4rem;
-}
-
-.vol-popup-section--house .vol-popup-sep {
-  border-top: 1px solid var(--border-gray80);
-}
-
-.vol-popup-section--house {
-  background-color: var(--bg-kv);
-  border-color: transparent;
-}
-
-.vol-popup-body .donate-type-tabs {
-  margin-bottom: 0;
-}
-
-.vol-popup-body .donate-type-tabs .donate-tab-indicator {
-  width: 31rem;
-}
-
-.vol-popup-section__title {
-  font-size: 2.8rem;
-  margin: 0;
-}
-
-.vol-popup-section__sep {
-  border: none;
-  border-top: 1px solid var(--bg-primary);
-  margin: 0;
-}
-
-/* ── 탭 패널 ────────────────────────────────────────────────── */
-.vol-popup-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-}
-
-.vol-popup-panel[hidden] {
-  display: none;
-}
-
-/* ── 팝업 폼 요소 오버라이드 (비활성 필드 등) ────────────────────── */
-.vol-popup-body .form-control[readonly],
-.vol-popup-body .form-control:disabled {
-  background-color: rgba(208, 201, 255, 0.2) !important;
-  border-color: var(--border-gray40) !important;
-  color: var(--text-secondary) !important;
-  cursor: not-allowed;
-}
-
-/* ── 폼 레이블 상단 정렬 (textarea 행) ────────────────────── */
-.form-label--top {
-  align-items: flex-start;
-  padding-top: 1.4rem;
-}
-
-/* ── textarea ───────────────────────────────────────────────── */
-.vol-textarea {
-  height: 5.2rem;
-  resize: vertical;
-}
-
-/* ── 개인정보 동의 박스 ─────────────────────────────────────── */
-.vol-privacy-box {
-  background-color: rgba(208, 201, 255, 0.2);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  padding: 2rem 2.4rem;
-  font-size: var(--text-lg);
-  line-height: 1.7;
-}
-
-.vol-privacy-box p {
-  margin: 0 0 1.2rem;
-}
-
-.vol-privacy-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.vol-privacy-check {
-  margin-top: 1.6rem;
-  font-size: var(--text-lg);
-}
-
-/* ── 신청 버튼 ──────────────────────────────────────────────── */
-.vol-popup-submit {
-  position: relative;
-  top: 2rem;
-}
-
-/* ── 날짜 인풋 + 캘린더 아이콘 래퍼 ───────────────────────── */
-.vol-date-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.vol-date-wrap .form-control {
-  padding-right: 4.8rem;
-}
-
-.vol-calendar-trigger {
-  position: absolute;
-  right: 1.2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4rem;
-}
-
-.vol-calendar-trigger:hover {
-  color: var(--primary);
-}
-
-/* ── 캘린더 레이어 ─────────────────────────────────────────── */
-/*
-  표시 제어:
-  기본: 숨김 (display: none)
-  개발팀 JS에서 .vol-calendar-layer에 .is-open 클래스 추가 시 표시
-*/
-
-.vol-calendar-layer {
-  display: none;
-  position: absolute;
-  top: calc(100% + 0.8rem);
-  left: 0;
-  z-index: 1000;
-  width: 48rem;
-  background-color: var(--bg-primary);
-  border-radius: 0.8rem;
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-}
-
-.vol-calendar-layer.is-open {
-  display: block;
-}
-
-/* ── 캘린더 패널 영역 (2열 구성) ──────────────────────────── */
-
-.vol-cal-panels {
-  display: flex;
-}
-
-.vol-cal-panel {
-  flex: 1;
-  padding: 2.4rem 0.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-/* ── 캘린더 헤더 (연/월 + 이전/다음) ─────────────────────── */
-
-.vol-cal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.vol-cal-yearmonth {
-  display: flex;
-  gap: 0.4rem;
-  font-size: 1.4rem;
-}
-
-.vol-cal-nav {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 2rem;
-  line-height: 1;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  transition: color 0.2s;
-}
-
-.vol-cal-nav:hover {
-  color: var(--primary);
-}
-
-.vol-cal-nav[aria-hidden="true"] {
-  visibility: hidden;
-  pointer-events: none;
-}
-
-/* ── 캘린더 그리드 (날짜 테이블) ──────────────────────────── */
-
-.vol-cal-grid {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 0.8rem;
-}
-
-.vol-cal-grid th {
-  font-size: 1.4rem;
-  font-weight: 700;
-  text-align: center;
-  color: var(--text-primary);
-  padding: 0.4rem 0 1.2rem;
-}
-
-/* 요일별 색상 (헤더 및 날짜 공통 적용을 위한 클래스 활용) */
-.vol-cal-grid th:first-child,
-.vol-cal-day.is-sunday {
-  color: #ffa500;
-}
-
-.vol-cal-grid th:last-child,
-.vol-cal-day.is-saturday {
-  color: #ffc72c;
-}
-
-.vol-cal-grid td {
-  text-align: center;
-  padding: 0;
-}
-
-.vol-cal-grid td.is-prev-month {
-  color: #ccc;
-  font-size: 1.4rem;
-}
-
-.vol-cal-day {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 1.4rem;
-  width: 100%;
-  height: 3.6rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-primary);
-  transition:
-    background-color 0.15s,
-    color 0.15s;
-}
-
-.vol-cal-day:hover {
-  background-color: rgba(209, 33, 41, 0.05);
-}
-
-/* 선택 범위 시작/끝 및 중간 스타일 */
-.vol-cal-day.is-in-range {
-  background-color: rgba(209, 33, 41, 0.15);
-  color: var(--primary);
-}
-
-.vol-cal-day.is-in-range.is-sunday {
-  color: #ffa500;
-}
-
-.vol-cal-day.is-in-range.is-saturday {
-  color: #ffc72c;
-}
-
-.vol-cal-day.is-selected {
-  background-color: var(--primary);
-  color: #ffffff !important;
-  border-radius: 0.4rem;
-  font-weight: 700;
-}
-
-.vol-cal-day.is-range-start {
-  border-radius: 0.4rem 0 0 0.4rem;
-}
-
-.vol-cal-day.is-range-end {
-  border-radius: 0 0.4rem 0.4rem 0;
-}
-
-/* ── 캘린더 CTA 바 ─────────────────────────────────────── */
-
-.vol-cal-cta {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 1.6rem 2.4rem;
-  background-color: transparent;
-  border-top: 1px solid var(--border-gray40);
-  margin-top: 1.6rem;
-}
-
-.vol-cal-cta-actions {
-  display: flex;
-  gap: 0.8rem;
-}
-
-.vol-cal-btn-cancel {
-  width: 6rem;
-  height: 3.2rem;
-  background: transparent;
-  border: 1px solid var(--primary);
-  border-radius: 0.4rem;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--primary);
-  transition: background-color 0.15s;
-}
-
-.vol-cal-btn-cancel:hover {
-  background-color: rgba(209, 33, 41, 0.05);
-}
-
-/* ── 반응형 (768px 이하) ────────────────────────────────────── */
-
-@media (max-width: 768px) {
-  .vol-popup-container {
-    width: 95vw;
-    max-height: 95dvh;
-  }
+  /* ── 4. 자원봉사자 신청 팝업 모바일 ── */
 
   .vol-popup-header {
-    padding: 3.2rem 2.4rem 2rem;
+    padding: 0 2rem 2.4rem;
   }
 
   .vol-popup-title {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .vol-popup-subtitle {
+    font-size: 1.4rem;
   }
 
   .vol-popup-body {
-    padding: 0 2.4rem 3.2rem;
+    padding: 0 0 3.2rem;
+    gap: 1.6rem;
   }
 
   .vol-popup-section {
-    padding: 2.4rem 2rem;
+    padding: 2rem 1.6rem;
+    border-radius: 1.2rem;
   }
 
+  .vol-popup-section__title {
+    font-size: 1.8rem;
+  }
+
+  .vol-popup-sep {
+    margin: 2rem 0;
+  }
+
+  .vol-popup-panel .vol-popup-sep {
+    margin: 2rem -1.6rem;
+  }
+
+  .vol-popup-body .donate-type-tabs {
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+  }
+
+  .vol-popup-body .donate-type-tabs .donate-tab-indicator {
+    top: 0.8rem;
+    left: 0.8rem;
+    width: calc((100% - 1.6rem) / 2);
+  }
+
+  .vol-popup-body .donate-type-tabs .btn-tab {
+    height: 4.8rem;
+    font-size: 1.6rem;
+  }
+
+  .vol-popup-body .form-group.form {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .vol-popup-body .form-label {
+    width: 100%;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+
+  .vol-popup-body .form-field {
+    width: 100%;
+  }
+
+  .vol-popup-body .form-control {
+    height: 4.8rem;
+    font-size: 1.4rem;
+  }
+
+  .vol-privacy-box {
+    padding: 1.6rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .vol-privacy-check {
+    font-size: 1.4rem;
+    margin-top: 1.2rem;
+  }
+
+  .vol-popup-submit {
+    top: 0;
+    width: 100% !important;
+    height: 5.2rem;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+  }
+
+  /* 달력 팝오버 레이어 모바일 터치 반응형 */
   .vol-calendar-layer {
-    width: 34rem;
+    width: calc(100vw - 4.8rem);
+    max-width: 34rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .vol-cal-panels {
+    flex-direction: column;
   }
 
   .vol-cal-panel {
-    padding: 1.6rem 0.4rem;
+    padding: 1.6rem 0.8rem;
   }
-}
-
-/* ==========================================================================
-   일시후원/정기후원 폼 (one-time.html)
-   ========================================================================== */
-
-#amountWarningText {
-  display: none;
-  color: var(--primary);
-  margin-top: -1.2rem;
-  text-align: left;
-}
-
-#step1NextWrap,
-#authInfoArea,
-#groupInfoArea,
-#step2CommonArea,
-#receiptDetailArea,
-#receiptResidentNumArea,
-#withdrawDayArea,
-#paymentDetailFormArea,
-#cardPaymentForm,
-#cmsPaymentForm {
-  display: none;
-}
-
-.color-primary {
-  color: var(--primary);
-}
-
-.withdraw-day-box .receipt-warning-list {
-  margin-top: 1.2rem;
-  margin-bottom: 2.4rem;
-  padding-left: 0;
-}
-
-.withdraw-day-box .receipt-warning-list li {
-  list-style: none;
-  color: var(--text-helper);
-}
-
-.payment-detail-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-
-.payment-detail-header .form-subtitle {
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: bold;
-  font-family: var(--font-pretendard);
-}
-
-.form-helper-note {
-  color: var(--text-helper);
-}
-
-.form-helper-note.mt-2 {
-  margin-top: 0.8rem;
-}
-
-/* 출금동의 서명 캔버스/패널 (form.css 공통 컴포넌트 참조) */
-
-.cms-payment-spacer {
-  margin-top: 4rem;
-}
-
-.group-email-helper {
-  color: var(--text-gray60);
-  margin-top: 0.8rem;
-  font-size: 1.4rem;
-}
-
-/* ==========================================================================
-   영문 일시후원 (Foreign Card Donation / EN Form) 전용 스타일
-   ========================================================================== */
-
-.en-form-card-box {
-  background-color: var(--bg-info);
-  border: 1px solid var(--border-color);
-  border-radius: 0.8rem;
-  padding: 4rem 2.4rem;
-  margin-top: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
-}
-
-.en-check-area {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.en-form-card-box+.en-form-card-title {
-  margin-top: 5.2rem;
-}
-
-.en-form-card-title {
-  font-size: 2rem;
-}
-
-.form-group.label-top {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  margin-top: 0;
-}
-
-.form-group.label-top .form-label {
-  width: 100%;
-  text-align: left;
-  font-size: 1.6rem;
-}
-
-.form-group.label-top .form-field {
-  width: 100%;
-}
-
-.form-row-2col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.6rem;
-  width: 100%;
-}
-
-.en-field-note {
-  margin-top: -2.2rem;
-  font-size: 1.4rem;
-  color: var(--text-gray60);
-}
-
-.en-payment-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
-  margin-top: 1.6rem;
-}
-
-.en-payment-btn {}
-
-.en-payment-btn img {
-  width: 2.4rem;
-  height: 2.4rem;
-  margin-right: 1rem;
-  object-fit: contain;
-}
-
-.en-payment-note {
-  font-size: 1.5rem;
-  color: #767676;
-  margin-top: 5.2rem;
-  text-align: left;
-}
-
-.en-accordion-wrap {
-  margin: 5.2rem 0;
-}
-
-.en-accordion-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  cursor: pointer;
-  user-select: none;
-}
-
-.en-accordion-header .en-accordion-arrow {
-  width: 2.4rem;
-  height: 2.4rem;
-}
-
-.en-accordion-header .accordion-icon {
-  width: 2.4rem;
-  height: 2.4rem;
-  transition: transform 0.3s ease;
-}
-
-.en-accordion-body {
-  margin-top: 0.8rem;
-}
-
-.en-donate-submit-wrap {
-  width: 100%;
 }

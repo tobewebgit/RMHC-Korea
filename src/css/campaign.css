@@ -88,7 +88,7 @@
   padding: 20rem 0 0;
 }
 
-/* 타임라인 각 행 정렬 (높이 488px, 간격 100px) */
+/* 타임라인 각 행 정렬 */
 .timeline-row {
   display: flex;
   align-items: center;
@@ -119,7 +119,7 @@
   flex-direction: row;
 }
 
-/* 이미지 카드 (680px x 488px, radius 16px) */
+/* 이미지 카드 */
 .timeline-img-card {
   width: 68rem;
   height: 48.8rem;
@@ -133,7 +133,7 @@
   object-fit: cover;
 }
 
-/* 타이틀 텍스트 스타일 (NanumSquareNeo ExtraBold, Size 38px, lineHeight 130%) */
+/* 타이틀 텍스트 스타일 */
 .timeline-title {
   font-size: 3.8rem;
   line-height: 1.3;
@@ -144,7 +144,7 @@
   margin: 0;
 }
 
-/* 중앙 물결선 SVG 래퍼 (801px x 1821px) */
+/* 중앙 물결선 SVG 래퍼 */
 .campaign-svg-line-wrap {
   position: absolute;
   top: 2.4rem;
@@ -165,7 +165,7 @@
   opacity: 0;
 }
 
-/* 하단 완료 하트 마크 (90px x 93px, 35도 회전) */
+/* 하단 완료 하트 마크 */
 .timeline-heart-marker {
   position: absolute;
   left: 64rem;
@@ -183,7 +183,7 @@
   height: 100%;
 }
 
-/* 갈라디너 자선 모금 버튼 영역 (피그마 Spacing 가이드) */
+/* 갈라디너 자선 모금 버튼 영역 */
 .campaign-container .button-wrap {
   margin-top: 10rem;
 }
@@ -224,7 +224,6 @@
   margin-bottom: -2.5rem;
 }
 
-/* 4열 그리드 (피그마 갭 2.4rem 적용) */
 .award-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -280,33 +279,33 @@
   line-height: 1;
 }
 
-/* 최우수상 뱃지 (#FFBC0D) */
+/* 최우수상 뱃지 */
 .award-badge.badge-grand {
   background-color: #ffbc0d;
 }
 
-/* 우수상 뱃지 (#8EE7F8) */
+/* 우수상 뱃지 */
 .award-badge.badge-excellent {
   background-color: #8ee7f8;
 }
 
-/* 장려상 뱃지 (#9CD83E) */
+/* 장려상 뱃지 */
 .award-badge.badge-participation {
   background-color: #9cd83e;
 }
 
-/* 입상 뱃지 (#D0C9FF) */
+/* 입상 뱃지 */
 .award-badge.badge-runnerup {
   background-color: #d0c9ff;
 }
 
-/* 특별상 뱃지 (#FF6E0D) */
+/* 특별상 뱃지 */
 .award-badge.badge-special {
   color: var(--text-white);
   background-color: #ff6e0d;
 }
 
-/* 웜 페이지네이션 도트 커스텀 (슬라이더 외곽 독립 배치 구조) */
+/* 웜 페이지네이션 도트 커스텀 */
 .award-swiper-pagination {
   position: relative !important;
   bottom: auto !important;
@@ -551,7 +550,6 @@
   margin-top: var(--spacing-8);
 }
 
-/* 후원자 유형 선택 라벨 수직 정밀 정렬 및 세로 간격 24px 복원 */
 .apply-page .donor-type-group .form-label {
   display: block;
   width: 100%;
@@ -894,7 +892,7 @@ html[lang="en"] .kcr-card {
     border-radius: 1.2rem;
   }
 
-  /* 총 결제 금액 모바일 레이아웃 (우측 정렬) */
+  /* 총 결제 금액 모바일 레이아웃 */
   .apply-page .total-payment-wrap {
     display: flex;
     flex-direction: row;
@@ -924,7 +922,7 @@ html[lang="en"] .kcr-card {
     font-size: 1.2rem;
   }
 
-  /* 결제 수단 칩 그리드 2컬럼 (one-time.html 동일) */
+  /* 결제 수단 칩 그리드 2컬럼 */
   .apply-page .chip-grid.cols-3 {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -945,7 +943,7 @@ html[lang="en"] .kcr-card {
     width: 100% !important;
   }
 
-  /* 수상작 카드 모바일 가로 1개 (1줄에 1개씩 2줄 = 총 2개 묶음) */
+  /* 수상작 카드 모바일 가로 1개 */
   .award-grid {
     grid-template-columns: 1fr;
     gap: 1.6rem;
@@ -978,7 +976,7 @@ html[lang="en"] .kcr-card {
     margin-top: 5rem !important;
   }
 
-  /* 추가 캠페인 (add_campaign.html) 모바일 반응형 스타일 */
+  /* 추가 캠페인 모바일 반응형 스타일 */
   .campaign-container .campaign-section {
     margin-top: 6rem;
   }

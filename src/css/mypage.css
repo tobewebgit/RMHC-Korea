@@ -4,13 +4,13 @@
 
 /* 마이페이지 레이아웃 */
 .mypage-wrapper {
-  padding-top: 10rem; /* 헤더 높이만큼 여백 */
-  background-color: var(--bg-secondary); /* 크림/연베이지 톤 */
+  padding-top: 10rem;
+  background-color: var(--bg-secondary);
   min-height: calc(100vh - 8.4rem);
 }
 
 .mypage-hero {
-  background-color: var(--kv-bg); /* #D0C9FF 브랜드 퍼플/블루 톤 */
+  background-color: var(--kv-bg);
   padding: var(--spacing-12) 0 var(--spacing-8);
   text-align: center;
 }
@@ -40,7 +40,7 @@
   align-items: flex-start;
 }
 
-/* 마이페이지 LNB (데스크톱) */
+/* 마이페이지 LNB */
 .mypage-lnb {
   width: 28rem;
   background-color: var(--bg-primary);
@@ -652,7 +652,7 @@
   color: var(--text-muted);
 }
 
-/* Empty State (내역이 없는 경우) */
+/* Empty State */
 .empty-state {
   text-align: center;
   padding: var(--spacing-16) var(--spacing-8);
@@ -854,18 +854,18 @@
   }
   
   .mypage-lnb__profile {
-    display: none; /* 모바일에서 프로필 제거 */
+    display: none;
   }
   
   .mypage-lnb__nav {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
   }
   
   .mypage-lnb__nav::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
   }
   
   .mypage-lnb__list {
@@ -898,7 +898,7 @@
   }
   
   .mypage-lnb__link-arrow {
-    display: none; /* 모바일에서 화살표 숨김 */
+    display: none;
   }
   
   /* 콘텐츠 패널 모바일 */
@@ -920,7 +920,7 @@
   }
   
   .mypage-dashboard {
-    grid-template-columns: 1fr; /* 1컬럼화 */
+    grid-template-columns: 1fr;
     gap: var(--spacing-3);
   }
   
@@ -929,7 +929,7 @@
   }
   
   .mypage-quick-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2컬럼화 */
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-3);
   }
   

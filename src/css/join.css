@@ -5,7 +5,7 @@
 /* 1. 회원가입 공통 컨테이너 */
 .join-container {
   width: 100%;
-  max-width: 72rem; /* 720px - 가독성이 가장 뛰어난 폼 최대 너비 */
+  max-width: 72rem;
   margin: 0 auto;
   padding: var(--spacing-12) var(--spacing-4) var(--spacing-16);
 }
@@ -29,7 +29,7 @@
   line-height: 1.6;
 }
 
-/* 2. Step Indicator (단계 진행 표시기) */
+/* 2. Step Indicator */
 .step-indicator {
   display: flex;
   justify-content: center;
@@ -106,7 +106,7 @@
   color: var(--text-primary);
 }
 
-/* 3. 회원가입 메인 (join.html) */
+/* 3. 회원가입 메인 */
 .join-type-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -177,7 +177,7 @@
   position: relative;
   display: inline-block;
   padding: 0 var(--spacing-4);
-  background-color: #fffde9; /* body 배경색과 동일하게 맞춰서 구분선 가리기 */
+  background-color: #fffde9;
   z-index: 2;
 }
 
@@ -239,7 +239,7 @@
   fill: currentColor;
 }
 
-/* 4. 본인인증 (join/auth.html) */
+/* 4. 본인인증 */
 .auth-method-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -325,7 +325,7 @@
 }
 
 .auth-notice-box__text {
-  font-size: 1.3rem; /* 기획 사양 1.3rem */
+  font-size: 1.3rem;
   color: var(--text-secondary);
   line-height: 1.6;
 }
@@ -336,7 +336,7 @@
   margin-top: var(--spacing-6);
 }
 
-/* 5. 정보 입력 (join/form.html) */
+/* 5. 정보 입력 */
 /* 회원 유형 탭 */
 .join-tabs {
   display: flex;
@@ -419,7 +419,7 @@
   flex: 1;
 }
 
-/* 6. 가입 완료 (join/complete.html) */
+/* 6. 가입 완료 */
 .complete-card {
   text-align: center;
   padding: var(--spacing-12) var(--spacing-6);

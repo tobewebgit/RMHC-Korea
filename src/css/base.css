@@ -71,7 +71,7 @@
   src: url("../fonts/AudreyDisplay-Bold.woff2") format("woff2");
 }
 
-/* Audrey Text (영문 본문 폰트) */
+/* Audrey Text */
 @font-face {
   font-family: "Audrey Text";
   font-weight: 400;
@@ -86,7 +86,6 @@
 }
 
 :root {
-  /* Brand Color Palette (RMHC Warm Light Theme — 피그마 기준) */
   --primary: #db0007;
   --primary-hover: #b80006;
   --primary-glow: rgba(219, 0, 7, 0.12);
@@ -113,7 +112,7 @@
   --bg-hover: #fff0bd;
   --bg-info: rgba(208, 201, 255, 0.2);
 
-  /* Text Color Tokens (Contrast Ratio Compliant) */
+  /* Text Color Tokens */
   --text-black: #000000;
   --text-white: #ffffff;
   --text-primary: #1f2937;
@@ -178,7 +177,7 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1200px;
 
-  /* Spacing Scale (rem-based) */
+  /* Spacing Scale */
   --spacing-1: 0.4rem;
   --spacing-2: 0.8rem;
   --spacing-3: 1.2rem;
@@ -525,7 +524,6 @@ header.head,
   border-radius: 0.2rem;
 }
 
-/* JS 미실행 환경(크롤러/SSR)에서만 적용 */
 html.clarity-bot [data-aos],
 html.analytics-bot [data-aos],
 html:not(.lenis) [data-aos] {
@@ -845,14 +843,12 @@ table caption {
   }
 }
 
-/* pc 1440 기준 (16 / 1440) * 100 = 1.1111vw */
 /* @media screen and (min-width: 768px) and (max-width:1440px) {
   html { font-size: 1.1111vw } 
 } */
 /* @media screen and (min-width: 768px) and (max-width:1024px) {
   html { font-size: 1.5625vw }
 } */
-/* 아이폰14 pro max 430 기준 (16 / 430) * 100 = 3.7209vw */
 /* @media all and (max-width: 767px) {
   html { font-size: 3.7209vw } 
 } */
@@ -934,7 +930,7 @@ input:-webkit-autofill:active {
   }
 }
 
-/* 영문 페이지 (html[lang="en"]) 전용 폰트 스타일 재정의 */
+/* 영문 페이지 전용 폰트 스타일 재정의 */
 html[lang="en"] h1,
 html[lang="en"] h2,
 html[lang="en"] h3,

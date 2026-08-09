@@ -2,7 +2,7 @@
    RMHC Portal - 글로벌 공통 모달 시스템 스타일 (components/modal.css)
    ========================================================================= */
 
-/* 1. 글로벌 공통 모달 오버레이 (딤드) */
+/* 1. 글로벌 공통 모달 오버레이 */
 .modal-overlay {
   display: flex;
   align-items: center;
@@ -154,14 +154,10 @@
   cursor: pointer;
   padding: 0;
   position: absolute;
-  top: 2.4rem;
-  right: 2.4rem;
+  top: 3.2rem;
+  right: 3.2rem;
   transition: background-color 0.2s ease;
   z-index: 10;
-}
-
-.modal-close-btn-circle:hover {
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-close-btn-circle .close-icon {
@@ -345,13 +341,6 @@
   box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.08);
 }
 
-/* 백일장 팝업 내 닫기 단추: 팝업 기본 상하좌우 40px(4rem) 패딩 안쪽에 완벽히 일치되도록 절대 좌표 보정 */
-.award-detail-modal-container .modal-close-btn-circle {
-  position: absolute;
-  top: 4rem;
-  right: 4rem;
-}
-
 /* ==========================================================================
    공통 알럿(Alert / Confirm) 모달 전용 스타일 (.common-alert-container)
    ========================================================================== */
@@ -400,12 +389,6 @@
 
 .common-alert__content strong {
   font-weight: 600;
-}
-
-.common-alert-container .modal-close-btn-circle {
-  position: absolute;
-  top: 2.4rem;
-  right: 2.4rem;
 }
 
 .common-alert__body {
@@ -481,6 +464,11 @@
     padding: 2.4rem 1.6rem;
   }
 
+  .modal-close-btn-circle {
+    top: 2.4rem;
+    right: 2.4rem;
+  }
+
   .modal-content-wrapper {
     position: fixed;
     inset: 0;
@@ -509,11 +497,6 @@
 
   .modal-title {
     font-size: 1.8rem;
-  }
-
-  .modal-close-btn-circle {
-    top: 2.4rem;
-    right: 2.4rem;
   }
 
   .newsletter-modal-container {
@@ -549,7 +532,7 @@
     width: 100%;
   }
 
-  /* 백일장 동화 상세 모달 모바일 반응형 (여백 20px) */
+  /* 백일장 동화 상세 모달 모바일 반응형 */
   .award-detail-modal-container {
     padding: 3rem 2rem 2rem;
   }
@@ -559,19 +542,9 @@
     border-radius: 0.6rem;
   }
 
-  .award-detail-modal-container .modal-close-btn-circle {
-    top: 2rem;
-    right: 2rem;
-  }
-
   /* 공통 알럿 모달 모바일 반응형 */
   .common-alert-container {
     padding: 3rem 2rem;
-  }
-
-  .common-alert-container .modal-close-btn-circle {
-    top: 2rem;
-    right: 2rem;
   }
 
   .common-alert__title {

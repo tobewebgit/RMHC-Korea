@@ -14,7 +14,7 @@
   margin: 0 0 10rem 0;
 }
 
-/* 1. FAQ 탭 메뉴 커스텀 스타일 (Figma 28px 실측 반영) */
+/* 1. FAQ 탭 메뉴 커스텀 스타일 */
 .faq-tab-menu {
   margin-bottom: 4rem;
 }
@@ -66,7 +66,7 @@
 
 .faq-item {}
 
-/* 질문 (Question) 버튼 영역 */
+/* 질문 버튼 영역 */
 .faq-q {
   display: flex;
   align-items: center;
@@ -134,7 +134,7 @@
   flex-shrink: 0;
 }
 
-/* 우측 정보 묶음 (날짜 & 화살표) */
+/* 우측 정보 묶음 */
 .faq-q-right {
   margin-left: auto;
   display: flex;
@@ -153,7 +153,7 @@
   /* 다크 그레이 */
 }
 
-/* 아코디언 토글 (+, -) 아이콘 */
+/* 아코디언 토글 아이콘 */
 .faq-toggle-btn {
   display: block;
   width: 3.2rem;
@@ -177,7 +177,7 @@
   background-image: url("../images/common/icon_faq_minus.png");
 }
 
-/* 답변 (Answer) 본문 영역 */
+/* 답변 본문 영역 */
 .faq-a {
   border-top: 1px solid var(--border-black);
 }

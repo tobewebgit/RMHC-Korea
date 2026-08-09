@@ -149,7 +149,7 @@
   background-color: #e60012;
   color: #fff;
   box-shadow: 0 2.6rem 4rem rgba(0, 0, 0, 0.18);
-  opacity: 0; /* JS 모션 초기값 — initMainQuickMotion에서 제어 */
+  opacity: 0;
 }
 
 .main-quick__lead {
@@ -295,7 +295,6 @@ html[lang="en"] .reveal-word {
   opacity: 1 !important;
 }
 
-/* 동기화 전용 이미지 모션 초기 설정 */
 .main-house__sync-img {
   opacity: 0 !important;
   transform: translateY(0) scale(0.67);

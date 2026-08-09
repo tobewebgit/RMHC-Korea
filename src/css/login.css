@@ -152,7 +152,7 @@
   font-weight: 700;
 }
 
-/* 로그인 옵션 (아이디 저장 & 계정 찾기/가입) */
+/* 로그인 옵션 */
 .login-options {
   display: flex;
   justify-content: space-between;
@@ -282,7 +282,7 @@
   object-fit: contain;
 }
 
-/* 결과 노출 박스 (아이디 찾기 결과 등) */
+/* 결과 노출 박스 */
 .result-box {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -604,7 +604,6 @@
   margin-right: 0.2rem;
 }
 
-/* 수정 가능 필드 배경색 (크림색) */
 .form-control.editable {
   background-color: var(--bg-primary);
 }
@@ -925,7 +924,7 @@
   max-width: 16rem;
 }
 
-/* 비활성화 버튼 디자인 (체크 전 핑크 톤) */
+/* 비활성화 버튼 디자인 */
 .btn-primary.btn-disabled,
 .btn-primary.btn-disabled:hover,
 .btn-primary:disabled {
@@ -961,7 +960,7 @@
 /* 출금동의 서명 캔버스/패널 (form.css 공통 컴포넌트 참조) */
 
 /* 하단 배너 */
-/* 공통 하단 배너 (PC) */
+/* 공통 하단 배너 */
 .donate-banner {
   position: relative;
   display: flex;
@@ -1444,7 +1443,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
 
-  /* 카드의 상단 핑크 헤더 띠 영역 (구분 td.col-type) - order 1 */
+  /* 카드의 상단 핑크 헤더 띠 영역 - order 1 */
   .donation-table td.col-type {
     order: 1;
     flex: 0 0 100%;
@@ -1462,7 +1461,7 @@
     display: none;
   }
 
-  /* 일반 키-값 데이터 셀 (No, 구분, 버튼 제외) - order 2 */
+  /* 일반 키-값 데이터 셀 - order 2 */
   .donation-table td:not(.col-type):not(.col-no):not(.col-action):not([data-label="No"]) {
     order: 2;
     flex: 0 0 100%;
@@ -1500,14 +1499,14 @@
     font-size: 1.5rem;
   }
 
-  /* No (숫자 번호) 항목은 모바일 카드 시안에 맞춰 100% 완전 생략 */
+  /* No 항목은 모바일 카드 시안에 맞춰 100% 완전 생략 */
   .donation-table td.col-no,
   .donation-table th.col-no,
   .donation-table td[data-label="No"] {
     display: none;
   }
 
-  /* 카드의 하단 버튼 영역 (col-action) - order 3 (단일 가로 1줄 및 가운데 정렬) */
+  /* 카드의 하단 버튼 영역 - order 3 */
   .donation-table td.col-action {
     order: 3;
     flex: 0 0 auto;
@@ -1595,7 +1594,7 @@
     font-size: 1.4rem;
   }
 
-  /* 공통 하단 배너 모바일 (join/complete.html 모바일 배너 100% 동일 스펙 공통화) */
+  /* 공통 하단 배너 모바일 */
   .donate-banner {
     position: relative;
     flex-direction: column;
@@ -1747,7 +1746,6 @@
     order: 4;
   }
 
-  /* 각 테이블의 마지막 4행 th, td 하단 경계선 제거 */
   .donation-detail-section .detail-info-table tr:nth-child(2) th:nth-of-type(2),
   .donation-detail-section .detail-info-table tr:nth-child(2) td:nth-of-type(2) {
     border-bottom: none;

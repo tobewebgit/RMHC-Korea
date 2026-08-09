@@ -135,7 +135,7 @@ a.btn-primary.btn-page1:hover {
   color: var(--primary);
 }
 
-/* Tab Buttons (e.g. for donate, member type selectors) */
+/* Tab Buttons */
 .btn-tab {
   display: flex;
   max-width: 33rem;
@@ -154,7 +154,7 @@ a.btn-primary.btn-page1:hover {
   user-select: none;
 }
 
-/* Table Specific Small Button (Height 36px) */
+/* Table Specific Small Button */
 .btn-table {
   display: inline-flex;
   align-items: center;
@@ -192,13 +192,11 @@ a.btn-primary.btn-page1:hover {
   background-color: rgba(0, 0, 0, 0.05);
 } */
 
-/* 화살표 아이콘이 포함된 버튼 (피그마 수치 12x8px, 간격 4px 적용) */
 .btn.btn-arrow {
   gap: 0.8rem;
   padding: 0 1.6rem 0 2.4rem;
 }
 
-/* currentColor를 통해 자동으로 텍스트 색상으로 변경*/
 .btn.btn-arrow::after {
   content: "";
   display: inline-block;
@@ -214,7 +212,6 @@ a.btn-primary.btn-page1:hover {
     background-color 0.3s ease;
 }
 
-/* + 아이콘이 포함된 버튼 (피그마 수치 12x8px, 간격 4px 적용) */
 .btn.btn-plus {
   gap: 0.8rem;
   padding: 0 2.4rem 0 2.4rem;
@@ -240,7 +237,7 @@ a.btn-primary.btn-page1:hover {
   transform: translateX(0.4rem);
 }
 
-/* 다운로드 아이콘이 포함된 버튼 (피그마 가이드 24px 아이콘 반영) */
+/* 다운로드 아이콘이 포함된 버튼 */
 .btn.btn-down {
   gap: 0.8rem;
   padding: 0 1.6rem 0 2.4rem;

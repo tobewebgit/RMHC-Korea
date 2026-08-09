@@ -50,7 +50,6 @@ html[lang="en"] .form-label {
   gap: 4rem;
 }
 
-/* 필수값 기호 (*) 표시 자동 처리 */
 .form-label.required::before {
   content: "*";
   margin-right: 0.2rem;
@@ -134,7 +133,7 @@ html[lang="en"] .form-label {
   background-image: url("../../images/common/eye-on.png");
 }
 
-/* 폼 필드 가로 배열 (라디오 등) */
+/* 폼 필드 가로 배열 */
 .form-control-row {
   display: flex;
   flex-direction: row !important;
@@ -155,7 +154,7 @@ html[lang="en"] .form-label {
   flex: 1;
 }
 
-/* 폼 인풋 우측 기능성 소형 버튼 (중복확인, 주소검색, 실명확인 등) */
+/* 폼 인풋 우측 기능성 소형 버튼 */
 .btn-input-action {
   width: 15rem;
 }
@@ -603,7 +602,7 @@ html[lang="en"] .form-label {
   padding-right: 4.8rem;
 }
 
-/* 2열 셀렉트박스 (유효기간 등) */
+/* 2열 셀렉트박스 */
 .payment-form-field.double-select {
   display: flex;
   gap: 0.8rem;
@@ -747,7 +746,7 @@ html[lang="en"] .form-label {
     font-size: 1.4rem !important;
   }
 
-  /* 2단계 및 3단계 공통 폼 박스 모바일 반응형 (라벨 상단 좌측 배치 & 폼 요소 100%) */
+  /* 2단계 및 3단계 공통 폼 박스 모바일 반응형 */
   .payment-info-form-box,
   .inner-form-group .inner-form-box {
     padding: 2.4rem 1.6rem;
@@ -806,7 +805,7 @@ html[lang="en"] .form-label {
     text-align: left !important;
   }
 
-  /* 3단계 유효기간 (월/년) 2개 셀렉트 가로 50% 분할 */
+  /* 3단계 유효기간 2개 셀렉트 가로 50% 분할 */
   .payment-form-field.double-select {
     display: flex;
     gap: 0.8rem;
@@ -838,7 +837,7 @@ html[lang="en"] .form-label {
     height: 1.8rem !important;
   }
 
-  /* 기부금 영수증 모바일 펼침 영역 (.receipt-resident-panel) */
+  /* 기부금 영수증 모바일 펼침 영역 */
   .receipt-resident-panel,
   .join-card .receipt-resident-panel {
     margin: 1.6rem 0 0 0 !important;
