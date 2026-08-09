@@ -1827,6 +1827,39 @@ a.header__submenu-link:focus-visible,
   height: 3.2rem;
 }
 
+/* ==========================================================================
+   Section 404 Styles
+   ========================================================================== */
+.section-404 {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15rem 2rem 0;
+}
+
+.section-404 img {
+  width: 100%;
+  max-width: 25.9rem;
+  height: auto;
+}
+
+.error-title {
+  margin-top: 8rem;
+  font-family: var(--font-extrabold);
+  font-size: 5.8rem;
+}
+
+.error-subtitle {
+  font-size: 2.2rem;
+  margin: 2.4rem 0 4rem;
+  text-align: center;
+}
+
 /* Mobile FAB Bottom Bar (최하단 고정 바) */
 @media (max-width: 768px) {
   .fab-container {
@@ -1985,38 +2018,23 @@ a.header__submenu-link:focus-visible,
     width: 1.6rem;
     height: 1.6rem;
   }
-}
 
-/* ==========================================================================
-   Section 404 Styles
-   ========================================================================== */
-.section-404 {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20rem 2rem 0;
-}
+  /* 404 */
+  .section-404 {
+    padding: 10rem 2rem 0;
+    text-align: center;
+  }
 
-.section-404 img {
-  width: 100%;
-  max-width: 532px;
-  height: auto;
-  margin-bottom: 4rem;
-}
+  .section-404 img {
+    max-width: 15rem;
+  }
 
-.error-title {
-  margin-top: 8rem;
-  font-family: var(--font-extrabold);
-  font-size: 5.8rem;
-}
+  .error-title {
+    margin-top: 4rem;
+    font-size: 2.8rem;
+  }
 
-.error-subtitle {
-  font-size: 2.2rem;
-  margin: 2.4rem 0 4rem;
-  text-align: center;
+  .error-subtitle {
+    font-size: 1.4rem;
+  }
 }

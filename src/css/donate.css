@@ -1971,19 +1971,19 @@ html[lang="en"] .vol-act-card__body {
   }
 
   .vol-process__step:nth-child(1)::after {
-    background: url(/src/images/donate/line_section_5_1_mo.png);
+    background: url(/src/images/donate/line_section_5_1_mo.png) no-repeat;
   }
 
   .vol-process__step:nth-child(3)::after {
-    background: url(/src/images/donate/line_section_5_2_mo.png);
+    background: url(/src/images/donate/line_section_5_2_mo.png) no-repeat;
   }
 
   .vol-process__step:nth-child(5)::after {
-    background: url(/src/images/donate/line_section_5_3_mo.png);
+    background: url(/src/images/donate/line_section_5_3_mo.png) no-repeat;
   }
 
   .vol-process__step:nth-child(7)::after {
-    background: url(/src/images/donate/line_section_5_4_mo.png);
+    background: url(/src/images/donate/line_section_5_4_mo.png) no-repeat;
   }
 
   .vol-process__line {

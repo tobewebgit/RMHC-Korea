@@ -1766,7 +1766,7 @@
 
   .current-payment-value,
   .current-payment-title {
-    font-size: 1.4rem;
+    font-size: 1.4rem !important;
   }
 
   .payment-form-section-title {

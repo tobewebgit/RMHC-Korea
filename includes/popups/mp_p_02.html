@@ -1,71 +1,75 @@
-<!-- MP_P_01: 후원금 변경 팝업 (금액 유효성 에러 메시지 영역 포함) -->
+<!-- MP_P_02: 후원금 변경 팝업 (금액 유효성 에러 메시지 영역 포함) -->
 <div class="modal-overlay" id="modal-mp_p_02">
   <div class="modal-container modal-container--payment mypage">
     
-    <!-- S: 팝업 헤더 -->
-    <div class="modal-header">
-      <h3 class="modal-title">후원금 변경</h3>
-      <button type="button" class="modal-close-btn-circle" aria-label="닫기">
-        <span class="close-icon"></span>
-      </button>
-    </div>
-    <!-- E: 팝업 헤더 -->
-
-    <!-- S: 팝업 본문 -->
-    <div class="modal-body">
-      <div class="current-payment-card pay-change">
-        <span class="current-payment-title">현재 후원금</span>
-        <span class="current-payment-value">20,000원</span>
-      </div>
-
-      <div class="payment-tabs-grid">
-        <button type="button" class="btn btn-outline">
-          <span>10,000원</span>
-        </button>
-        <button type="button" class="btn btn-outline">
-          <span>20,000원</span>
-        </button>
-        <button type="button" class="btn btn-outline">
-          <span>30,000원</span>
-        </button>
-        <button type="button" class="btn btn-outline">
-          <span>50,000원</span>
-        </button>
-        <button type="button" class="btn btn-outline">
-          <span>70,000원</span>
-        </button>
-        <button type="button" class="btn btn-outline">
-          <span>100,000원</span>
+    <!-- S: 팝업 전폭 스크롤 래퍼 (라운드 이탈 방지 및 1체형 스크롤) -->
+    <div class="modal-scroll-wrap">
+      <!-- S: 팝업 헤더 -->
+      <div class="modal-header">
+        <h3 class="modal-title">후원금 변경</h3>
+        <button type="button" class="modal-close-btn-circle" aria-label="닫기">
+          <span class="close-icon"></span>
         </button>
       </div>
+      <!-- E: 팝업 헤더 -->
 
-      <div class="direct-input-wrap">
-        <button type="button" class="btn btn-outline btn-direct-input">
-          <span>직접 입력</span>
-        </button>
-        <div class="direct-input-chip" style="display: none;">
-          <input type="text" class="input_amount" placeholder="직접 입력" name="txt_price" id="txt_price" autocomplete="off" maxlength="9">
-          <span class="unit">원</span>
+      <!-- S: 팝업 본문 -->
+      <div class="modal-body">
+        <div class="current-payment-card pay-change">
+          <span class="current-payment-title">현재 후원금</span>
+          <span class="current-payment-value">20,000원</span>
         </div>
+
+        <div class="payment-tabs-grid">
+          <button type="button" class="btn btn-outline">
+            <span>10,000원</span>
+          </button>
+          <button type="button" class="btn btn-outline">
+            <span>20,000원</span>
+          </button>
+          <button type="button" class="btn btn-outline">
+            <span>30,000원</span>
+          </button>
+          <button type="button" class="btn btn-outline">
+            <span>50,000원</span>
+          </button>
+          <button type="button" class="btn btn-outline">
+            <span>70,000원</span>
+          </button>
+          <button type="button" class="btn btn-outline">
+            <span>100,000원</span>
+          </button>
+        </div>
+
+        <div class="direct-input-wrap">
+          <button type="button" class="btn btn-outline btn-direct-input">
+            <span>직접 입력</span>
+          </button>
+          <div class="direct-input-chip" style="display: none;">
+            <input type="text" class="input_amount" placeholder="직접 입력" name="txt_price" id="txt_price" autocomplete="off" maxlength="9">
+            <span class="unit">원</span>
+          </div>
+        </div>
+        <div class="direct-amount-warning" style="display: none;">
+          ⓘ 최소 후원 금액은 10,000원 이상 입력해 주세요.
+        </div>
+
+        <ul class="payment-apply-notice">
+          <li>변경된 결제수단은 다음 결제일부터 적용됩니다.</li>
+          <li>최소 후원 금액은 10,000원 이상 입력해 주세요.</li>
+        </ul>
       </div>
-      <div class="direct-amount-warning" style="display: none;">
-        ⓘ 최소 후원 금액은 10,000원 이상 입력해 주세요.
+
+      <!-- E: 팝업 본문 -->
+
+      <!-- S: 팝업 푸터 -->
+      <div class="modal-footer payment-popup-footer">
+        <button type="button" class="btn btn-outline primary btn-popup-cancel">취소하기</button>
+        <button type="submit" form="donationAmountForm" class="btn btn-primary btn-popup-submit">변경하기</button>
       </div>
-
-      <ul class="payment-apply-notice">
-        <li>변경된 결제수단은 다음 결제일부터 적용됩니다.</li>
-        <li>최소 후원 금액은 10,000원 이상 입력해 주세요.</li>
-      </ul>
+      <!-- E: 팝업 푸터 -->
     </div>
-
-    <!-- E: 팝업 본문 -->
-
-    <!-- S: 팝업 푸터 -->
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline primary">취소하기</button>
-      <button type="submit" form="donationAmountForm" class="btn btn-primary">변경하기</button>
-    </div>
-    <!-- E: 팝업 푸터 -->
+    <!-- E: 팝업 전폭 스크롤 래퍼 -->
 
   </div>
 </div>

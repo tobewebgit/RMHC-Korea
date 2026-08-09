@@ -904,6 +904,8 @@ html[lang="en"] .form-label {
   }
 
   #btnSignatureClear,
+  .direct-input-chip input,
+  .direct-input-chip .unit,
   .btn-signature-clear {
     font-size: 1.4rem !important;
   }
@@ -915,4 +917,5 @@ html[lang="en"] .form-label {
   .payment-apply-notice {
     font-size: 1.2rem !important;
   }
+
 }
