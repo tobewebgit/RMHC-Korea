@@ -1,282 +1,430 @@
 <!doctype html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="울림백일장"
+    />
+    <title>울림백일장 - RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/campaign.css" />
+    <!-- Swiper CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  </head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="울림백일장" />
-  <title>울림백일장 - RMHC Korea</title>
-  <link rel="stylesheet" href="/src/css/common.css" />
-  <link rel="stylesheet" href="/src/css/campaign.css" />
-  <!-- Swiper CSS CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-</head>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load ="/includes/header.html" />
 
-<body>
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <div class="page-wrapper">
+      <main id="main-content">
+        <div class="campaign-container inner-layout">
+          <div class="page-header-wrap">
+            <section>
+              <h1 class="page-title" data-motion="fade-up">울림 백일장<br class="type-pc" />마음으로 전하는 이야기, 따뜻한 울림이 됩니다.</h1>
+              <p class="" data-motion="fade-up">울림백일장은 만 18세 이하 전국의 중증 환아들이 참여하는 백일장입니다. <br class="type-pc">동시 및 그림일기 부문을 통해 아이들의 마음속 이야기를 세상에 전하며, 작은 목소리가 큰 울림이 되어 희망을 나눕니다.</p>
+            </div>
+  
+            <div class="img-top-wrap" data-motion="fade-up">
+              <div class="img-item"><img src="/src/images/campaign/img_contest_top.png" alt=""></div>
+            </div>
+  
+            <div class="button-wrap" data-motion="fade-up">
+              <button type="button" class="btn btn-primary btn-down w-auto">신청서 양식 다운로드</button>
+            </div>
+          </section>
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load src="/includes/header.html" />
-
-  <div class="page-wrapper">
-    <main id="main-content">
-      <div class="campaign-container inner-layout">
-        <div class="page-header-wrap">
-          <section>
-            <h1 class="page-title" data-motion="fade-up">울림 백일장<br class="type-pc" />마음으로 전하는 이야기, 따뜻한 울림이 됩니다.</h1>
-            <p class="" data-motion="fade-up">울림백일장은 만 18세 이하 전국의 중증 환아들이 참여하는 백일장입니다. <br class="type-pc">동시 및 그림일기 부문을
-              통해 아이들의 마음속 이야기를 세상에 전하며, 작은 목소리가 큰 울림이 되어 희망을 나눕니다.</p>
-        </div>
-
-        <div class="img-top-wrap" data-motion="fade-up">
-          <div class="img-item"><img src="/src/images/campaign/img_contest_top.png" alt=""></div>
-        </div>
-
-        <div class="button-wrap" data-motion="fade-up">
-          <button type="button" class="btn btn-primary btn-page btn-down w-auto">신청서 양식 다운로드</button>
-        </div>
-        </section>
-
-        <section class="award-section">
+          <section class="award-section">
           <div class="award-section-header">
             <h2 class="sub-title" data-motion="fade-up">작년 수상작 알아보기</h2>
             <p class="award-desc" data-motion="fade-up">함께 만드는 따뜻한 이야기를 만나보세요.</p>
           </div>
 
-          <!-- 슬라이드 컨테이너 -->
-          <div class="award-slide-wrap swiper award-slide-container">
-            <div class="swiper-wrapper">
-
-              <!-- 슬라이드 1 (1, 2번) -->
-              <div class="swiper-slide">
-                <div class="award-grid">
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="1">
-                    <div class="award-badge-wrap">
-                      <img src="/src/images/campaign/icon_award_1.png" alt="" class="badge-icon">
-                      <span class="award-badge badge-grand">최우수상</span>
+          <!-- PC 전용 3슬라이드 컨테이너 (슬라이드당 8개 4x2 그리드) -->
+          <div class="award-slide-wrap swiper award-slide-container award-slide-container--pc type-pc" data-motion="fade-up">
+              <div class="swiper-wrapper">
+                
+                <!-- 슬라이드 1 (1~8번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <!-- 최우수상 (1개) -->
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="1">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_1.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-grand">최우수상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_1.png" alt="울림백일장 수상작 1">
                     </div>
-                    <img src="/src/images/campaign/img_contest_slide_1.png" alt="울림백일장 수상작 1">
-                  </div>
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="2">
-                    <div class="award-badge-wrap">
-                      <img src="/src/images/campaign/icon_award_2.png" alt="" class="badge-icon">
-                      <span class="award-badge badge-excellent">우수상</span>
+                    <!-- 우수상 (2개) -->
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="2">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_2.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-excellent">우수상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_2.png" alt="울림백일장 수상작 2">
                     </div>
-                    <img src="/src/images/campaign/img_contest_slide_2.png" alt="울림백일장 수상작 2">
-                  </div>
-                </div>
-              </div>
-
-              <!-- 슬라이드 2 (3, 4번) -->
-              <div class="swiper-slide">
-                <div class="award-grid">
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="3">
-                    <div class="award-badge-wrap">
-                      <img src="/src/images/campaign/icon_award_2.png" alt="" class="badge-icon">
-                      <span class="award-badge badge-excellent">우수상</span>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="3">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_2.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-excellent">우수상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_3.png" alt="울림백일장 수상작 3">
                     </div>
-                    <img src="/src/images/campaign/img_contest_slide_3.png" alt="울림백일장 수상작 3">
-                  </div>
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="4">
-                    <div class="award-badge-wrap">
-                      <img src="/src/images/campaign/icon_award_3.png" alt="" class="badge-icon">
-                      <span class="award-badge badge-participation">장려상</span>
+                    <!-- 장려상 (3개) -->
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="4">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_3.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-participation">장려상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_4.png" alt="울림백일장 수상작 4">
                     </div>
-                    <img src="/src/images/campaign/img_contest_slide_4.png" alt="울림백일장 수상작 4">
-                  </div>
-                </div>
-              </div>
-
-              <!-- 슬라이드 3 (5, 6번) -->
-              <div class="swiper-slide">
-                <div class="award-grid">
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="5">
-                    <div class="award-badge-wrap">
-                      <img src="/src/images/campaign/icon_award_3.png" alt="" class="badge-icon">
-                      <span class="award-badge badge-participation">장려상</span>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="5">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_3.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-participation">장려상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_5.png" alt="울림백일장 수상작 5">
                     </div>
-                    <img src="/src/images/campaign/img_contest_slide_5.png" alt="울림백일장 수상작 5">
-                  </div>
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="6">
-                    <div class="award-badge-wrap">
-                      <img src="/src/images/campaign/icon_award_3.png" alt="" class="badge-icon">
-                      <span class="award-badge badge-participation">장려상</span>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="6">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_3.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-participation">장려상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_6.png" alt="울림백일장 수상작 6">
                     </div>
-                    <img src="/src/images/campaign/img_contest_slide_6.png" alt="울림백일장 수상작 6">
-                  </div>
-                </div>
-              </div>
-
-              <!-- 슬라이드 4 (7, 8번) -->
-              <div class="swiper-slide">
-                <div class="award-grid">
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="7">
-                    <div class="award-badge-wrap">
-                      <img src="/src/images/campaign/icon_award_3.png" alt="" class="badge-icon">
-                      <span class="award-badge badge-participation">장려상</span>
+                    <!-- 입상 (7~8번) -->
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="7">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-runnerup">입상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_7.png" alt="울림백일장 수상작 7">
                     </div>
-                    <img src="/src/images/campaign/img_contest_slide_7.png" alt="울림백일장 수상작 7">
-                  </div>
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="8">
-                    <div class="award-badge-wrap">
-                      <span class="award-badge badge-runnerup">입상</span>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="8">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-runnerup">입상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_8.png" alt="울림백일장 수상작 8">
                     </div>
-                    <img src="/src/images/campaign/img_contest_slide_8.png" alt="울림백일장 수상작 8">
                   </div>
                 </div>
-              </div>
 
-              <!-- 슬라이드 5 (9, 10번) -->
-              <div class="swiper-slide">
-                <div class="award-grid">
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="9">
-                    <div class="award-badge-wrap">
-                      <span class="award-badge badge-runnerup">입상</span>
+                <!-- 슬라이드 2 (9~16번: 모두 입상) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="9">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-runnerup">입상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_9.png" alt="울림백일장 수상작 9">
                     </div>
-                    <img src="/src/images/campaign/img_contest_slide_9.png" alt="울림백일장 수상작 9">
-                  </div>
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="10">
-                    <div class="award-badge-wrap">
-                      <span class="award-badge badge-runnerup">입상</span>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="10">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-runnerup">입상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_10.png" alt="울림백일장 수상작 10">
                     </div>
-                    <img src="/src/images/campaign/img_contest_slide_10.png" alt="울림백일장 수상작 10">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="11">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-runnerup">입상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_11.png" alt="울림백일장 수상작 11">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="12">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-runnerup">입상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_12.png" alt="울림백일장 수상작 12">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="13">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-special">특별상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_13.png" alt="울림백일장 수상작 13">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="14">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-special">특별상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_14.png" alt="울림백일장 수상작 14">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="15">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-special">특별상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_15.png" alt="울림백일장 수상작 15">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="16">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-special">특별상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_16.png" alt="울림백일장 수상작 16">
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- 슬라이드 6 (11, 12번) -->
-              <div class="swiper-slide">
-                <div class="award-grid">
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="11">
-                    <div class="award-badge-wrap">
-                      <span class="award-badge badge-runnerup">입상</span>
+                <!-- 슬라이드 3 (17번: 특별상) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="17">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-special">특별상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_17.png" alt="울림백일장 수상작 17">
                     </div>
-                    <img src="/src/images/campaign/img_contest_slide_11.png" alt="울림백일장 수상작 11">
-                  </div>
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="12">
-                    <div class="award-badge-wrap">
-                      <span class="award-badge badge-runnerup">입상</span>
-                    </div>
-                    <img src="/src/images/campaign/img_contest_slide_12.png" alt="울림백일장 수상작 12">
                   </div>
                 </div>
-              </div>
 
-              <!-- 슬라이드 7 (13, 14번) -->
-              <div class="swiper-slide">
-                <div class="award-grid">
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="13">
-                    <div class="award-badge-wrap">
-                      <span class="award-badge badge-special">특별상</span>
-                    </div>
-                    <img src="/src/images/campaign/img_contest_slide_13.png" alt="울림백일장 수상작 13">
-                  </div>
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="14">
-                    <div class="award-badge-wrap">
-                      <span class="award-badge badge-special">특별상</span>
-                    </div>
-                    <img src="/src/images/campaign/img_contest_slide_14.png" alt="울림백일장 수상작 14">
-                  </div>
-                </div>
               </div>
-
-              <!-- 슬라이드 8 (15, 16번) -->
-              <div class="swiper-slide">
-                <div class="award-grid">
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="15">
-                    <div class="award-badge-wrap">
-                      <span class="award-badge badge-special">특별상</span>
-                    </div>
-                    <img src="/src/images/campaign/img_contest_slide_15.png" alt="울림백일장 수상작 15">
-                  </div>
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="16">
-                    <div class="award-badge-wrap">
-                      <span class="award-badge badge-special">특별상</span>
-                    </div>
-                    <img src="/src/images/campaign/img_contest_slide_16.png" alt="울림백일장 수상작 16">
-                  </div>
-                </div>
-              </div>
-
-              <!-- 슬라이드 9 (17번) -->
-              <div class="swiper-slide">
-                <div class="award-grid">
-                  <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="17">
-                    <div class="award-badge-wrap">
-                      <span class="award-badge badge-special">특별상</span>
-                    </div>
-                    <img src="/src/images/campaign/img_contest_slide_17.png" alt="울림백일장 수상작 17">
-                  </div>
-                </div>
-              </div>
-
             </div>
-          </div>
+            
+            <!-- 페이지네이션 도트 (슬라이더 영역 밖으로 독립 외곽 배치) -->
 
-          <!-- 페이지네이션 도트 (슬라이더 영역 밖으로 독립 외곽 배치) -->
-          <div class="award-swiper-pagination swiper-pagination" data-motion="fade-up"></div>
+          <!-- 페이지네이션 도트 (PC 전용) -->
+          <div class="award-swiper-pagination award-swiper-pagination--pc swiper-pagination type-pc" data-motion="fade-up"></div>
+
+          <!-- 모바일 전용 9슬라이드 컨테이너 (슬라이드당 2개) -->
+          <div class="award-slide-wrap swiper award-slide-container award-slide-container--mo type-mo">
+              <div class="swiper-wrapper">
+                
+                <!-- 슬라이드 1 (1, 2번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="1">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_1.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-grand">최우수상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_1.png" alt="울림백일장 수상작 1">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="2">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_2.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-excellent">우수상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_2.png" alt="울림백일장 수상작 2">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 슬라이드 2 (3, 4번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="3">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_2.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-excellent">우수상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_3.png" alt="울림백일장 수상작 3">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="4">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_3.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-participation">장려상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_4.png" alt="울림백일장 수상작 4">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 슬라이드 3 (5, 6번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="5">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_3.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-participation">장려상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_5.png" alt="울림백일장 수상작 5">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="6">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_3.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-participation">장려상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_6.png" alt="울림백일장 수상작 6">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 슬라이드 4 (7, 8번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="7">
+                      <div class="award-badge-wrap">
+                        <img src="/src/images/campaign/icon_award_3.png" alt="" class="badge-icon">
+                        <span class="award-badge badge-participation">장려상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_7.png" alt="울림백일장 수상작 7">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="8">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-runnerup">입상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_8.png" alt="울림백일장 수상작 8">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 슬라이드 5 (9, 10번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="9">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-runnerup">입상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_9.png" alt="울림백일장 수상작 9">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="10">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-runnerup">입상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_10.png" alt="울림백일장 수상작 10">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 슬라이드 6 (11, 12번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="11">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-runnerup">입상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_11.png" alt="울림백일장 수상작 11">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="12">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-runnerup">입상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_12.png" alt="울림백일장 수상작 12">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 슬라이드 7 (13, 14번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="13">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-special">특별상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_13.png" alt="울림백일장 수상작 13">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="14">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-special">특별상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_14.png" alt="울림백일장 수상작 14">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 슬라이드 8 (15, 16번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="15">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-special">특별상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_15.png" alt="울림백일장 수상작 15">
+                    </div>
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="16">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-special">특별상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_16.png" alt="울림백일장 수상작 16">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 슬라이드 9 (17번) -->
+                <div class="swiper-slide">
+                  <div class="award-grid">
+                    <div class="award-item btn-open-popup" data-popup="modal-award-detail" data-award-id="17">
+                      <div class="award-badge-wrap">
+                        <span class="award-badge badge-special">특별상</span>
+                      </div>
+                      <img src="/src/images/campaign/img_contest_slide_17.png" alt="울림백일장 수상작 17">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            
+            <!-- 페이지네이션 도트 (슬라이더 영역 밖으로 독립 외곽 배치) -->
+
+          <!-- 페이지네이션 도트 (모바일 전용) -->
+          <div class="award-swiper-pagination award-swiper-pagination--mo swiper-pagination type-mo" data-motion="fade-up"></div>
 
           <div class="button-wrap type-pc" data-motion="fade-up">
             <button type="button" class="btn btn-primary btn-page btn-arrow w-auto">수상작 보러가기</button>
           </div>
         </section>
 
-      </div>
-    </main>
-  </div>
+        </div>
+      </main>
+    </div>
+    
+    <!-- 푸터 공통 영역 인클루드 -->
+    <load ="/includes/footer.html" />
 
-  <!-- 푸터 공통 영역 인클루드 -->
-  <load src="/includes/footer.html" />
+    <!-- 백일장 수상작 상세 팝업 인클루드 -->
+    <load ="/includes/popups/award-detail.html" />
 
-  <!-- 백일장 수상작 상세 팝업 인클루드 -->
-  <load src="/includes/popups/award-detail.html" />
+    <!-- Swiper JS CDN -->
+<script type="module">
+      import { createSwiper } from '/src/js/components/swiper-utils.js';
 
-  <!-- Swiper JS CDN -->
-  <script type="module">
-    import { createSwiper } from '/src/js/components/swiper-utils.js';
+      document.addEventListener("DOMContentLoaded", () => {
+      // PC Swiper 초기화 (100% 전폭 3슬라이드 4x2 그리드)
+      createSwiper(".award-slide-container--pc", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: false,
+        pagination: {
+          el: ".award-swiper-pagination--pc",
+          clickable: true,
+        },
+      });
 
-    document.addEventListener("DOMContentLoaded", () => {
-      // Swiper 초기화 (PC 4개 슬라이드 8개 노출 / 모바일 1개 슬라이드 2개 노출)
-      const awardSwiper = createSwiper(".award-slide-container", {
+      // Mobile Swiper 초기화 (슬라이드당 2개 9슬라이드)
+      createSwiper(".award-slide-container--mo", {
         slidesPerView: 1,
         spaceBetween: 16,
         loop: false,
         pagination: {
-          el: ".award-swiper-pagination",
+          el: ".award-swiper-pagination--mo",
           clickable: true,
         },
-        breakpoints: {
-          769: {
-            slidesPerView: 4,
-            spaceBetween: 24,
-          }
-        }
       });
 
-      // 수상작 상세 이미지 동적 매핑 핸들러
-      document.querySelectorAll('.award-item').forEach(item => {
-        item.addEventListener('click', () => {
-          const awardId = item.getAttribute('data-award-id');
-          const detailImg = document.getElementById('award-detail-img');
-          if (awardId && detailImg) {
-            const detailSrc = `/src/images/campaign/img_contest_detail_${awardId}.png`;
-            const fallbackSrc = `/src/images/campaign/img_contest_slide_${awardId}.png`;
-
-            // 임시 이미지 객체를 생성해 존재 여부 검증 후 로드 (404 깨진 이미지 방지)
-            const tempImg = new Image();
-            tempImg.onload = () => {
-              detailImg.src = detailSrc;
-            };
-            tempImg.onerror = () => {
-              detailImg.src = fallbackSrc;
-            };
-            tempImg.src = detailSrc;
-          }
+        // 수상작 상세 이미지 동적 매핑 핸들러
+        document.querySelectorAll('.award-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const awardId = item.getAttribute('data-award-id');
+            const detailImg = document.getElementById('award-detail-img');
+            if (awardId && detailImg) {
+              const detailSrc = `/src/images/campaign/img_contest_detail_${awardId}.png`;
+              const fallbackSrc = `/src/images/campaign/img_contest_slide_${awardId}.png`;
+              
+              // 임시 이미지 객체를 생성해 존재 여부 검증 후 로드 (404 깨진 이미지 방지)
+              const tempImg = new Image();
+              tempImg.onload = () => {
+                detailImg.src = detailSrc;
+              };
+              tempImg.onerror = () => {
+                detailImg.src = fallbackSrc;
+              };
+              tempImg.src = detailSrc;
+            }
+          });
         });
       });
-    });
-  </script>
+    </script>
 </body>
-
 </html>

@@ -227,7 +227,7 @@
 .award-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4rem 2.4rem;
+  gap: 2.4rem;
   width: 100%;
 }
 
@@ -253,8 +253,8 @@
 /* 수상작 뱃지 랩퍼 및 좌측 아이콘 분리 정밀 구조 */
 .award-badge-wrap {
   position: absolute;
-  top: 1rem;
-  left: 0.4rem;
+  top: 1.6rem;
+  left: 1.6rem;
   z-index: 5;
   display: flex;
   align-items: center;
@@ -262,18 +262,15 @@
 }
 
 .award-badge-wrap .badge-icon {
-  width: 6rem;
-  height: 6rem;
+  width: 6.0rem;
+  height: 6.0rem;
   object-fit: contain;
 }
 
 /* 텍스트만 포함하는 뱃지 박스 */
 .award-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.2rem;
-  padding: 0.56rem 0.4rem;
+  display: inline-block;
+  padding: 0.56rem 1.36rem;
   border-radius: 0.4rem;
   font-weight: 600;
   line-height: 1;
@@ -966,8 +963,22 @@ html[lang="en"] .kcr-card {
     font-size: 1.6rem;
   }
 
+  .award-badge-wrap {
+    top: 1rem;
+    left: 0.4rem;
+  }
+
+  .award-badge-wrap .badge-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
   .award-badge {
-    height: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2rem;
+    padding: 0.56rem 0.4rem;
     font-size: 1.2rem;
   }
 
