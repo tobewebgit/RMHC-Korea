@@ -355,17 +355,57 @@ html[lang="en"] .reveal-word {
 }
 
 .main-house__links a {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 58.8rem;
   min-height: 14rem;
-  gap: 1.6rem;
+  padding: 0 4rem;
   border-radius: 1.2rem;
   font-size: 2.8rem;
   font-weight: 800;
+  color: #111;
   text-align: left;
   text-decoration: none;
+  overflow: hidden;
+}
+
+.main-house__link-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+  will-change: transform;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.main-house__links a::after {
+  content: "";
+  position: absolute;
+  right: 4.8rem;
+  top: 50%;
+  width: 2.2rem;
+  height: 1.5rem;
+  background: url("/src/images/common/icon_arrow_right_s.png") center / contain
+    no-repeat;
+  opacity: 0;
+  transform: translateY(-50%) translateX(1rem);
+  will-change: transform, opacity;
+  transition:
+    opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.main-house__links a:hover .main-house__link-wrap,
+.main-house__links a:focus-visible .main-house__link-wrap {
+  transform: translateX(-1.6rem);
+}
+
+.main-house__links a:hover::after,
+.main-house__links a:focus-visible::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
 .main-house__links img {
@@ -611,8 +651,7 @@ html[lang="en"] .main-event-card:hover .card-text-wrap,
 /* Section 5 */
 .main-field {
   padding: 20rem 0;
-  background: #9cd83e url("/src/images/main/bg_section5.png") center center
-    repeat-x;
+  background: url("/src/images/main/bg_section5.png") left top;
 }
 
 .main-field__inner {
@@ -1169,8 +1208,23 @@ html[lang="en"] .main-event-card:hover .card-text-wrap,
   .main-house__links a {
     justify-content: flex-start;
     min-height: 7.2rem;
-    padding: 0 3rem;
+    padding: 0 2.4rem;
     font-size: 1.8rem;
+  }
+
+  .main-house__link-wrap {
+    gap: 1.2rem;
+  }
+
+  .main-house__links a:hover .main-house__link-wrap,
+  .main-house__links a:focus-visible .main-house__link-wrap {
+    transform: translateX(-0.8rem);
+  }
+
+  .main-house__links a::after {
+    right: 2.4rem;
+    width: 1.8rem;
+    height: 1.2rem;
   }
 
   .main-house__links img {
@@ -1482,5 +1536,11 @@ html[lang="en"] .main-event-card:hover .card-text-wrap,
     min-height: 5.2rem;
     margin-top: 3.2rem;
     font-size: 1.5rem;
+  }
+
+  .donate-banner__btn::before {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.6rem;
   }
 }

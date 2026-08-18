@@ -2413,7 +2413,7 @@ html[lang="en"] .model-node span {
   content: "· ";
   position: absolute;
   left: 0;
-  top: 0.14rem;
+  top: 0.12rem;
   margin-right: 0.5rem;
 }
 
@@ -2656,12 +2656,21 @@ html[lang="en"] .model-node span {
 
 .donation-report-note ul {
   margin: 0;
-  padding-left: 1.6rem;
 }
 
 .donation-report-note li {
+  position: relative;
+  padding-left: 1rem;
   font-size: 1.8rem;
   line-height: 1.55;
+}
+
+.donation-report-note li::before {
+  content: "· ";
+  position: absolute;
+  left: 0;
+  top: 0.12rem;
+  margin-right: 0.5rem;
 }
 
 @media (max-width: 1200px) {

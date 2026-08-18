@@ -409,10 +409,9 @@
             const awardId = item.getAttribute('data-award-id');
             const detailImg = document.getElementById('award-detail-img');
             if (awardId && detailImg) {
-              const detailSrc = `/src/images/campaign/img_contest_detail_${awardId}.png`;
-              const fallbackSrc = `/src/images/campaign/img_contest_slide_${awardId}.png`;
+              const detailSrc = new URL(`../src/images/campaign/img_contest_detail_${awardId}.png`, import.meta.url).href;
+              const fallbackSrc = new URL(`../src/images/campaign/img_contest_slide_${awardId}.png`, import.meta.url).href;
               
-              // 임시 이미지 객체를 생성해 존재 여부 검증 후 로드 (404 깨진 이미지 방지)
               const tempImg = new Image();
               tempImg.onload = () => {
                 detailImg.src = detailSrc;
