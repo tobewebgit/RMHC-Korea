@@ -46,7 +46,7 @@
             <span>직접 입력</span>
           </button>
           <div class="direct-input-chip" style="display: none;">
-            <input type="text" class="input_amount" placeholder="직접 입력" name="txt_price" id="txt_price" autocomplete="off" maxlength="9">
+            <input type="text" class="input_amount" name="txt_price" id="txt_price" autocomplete="off" maxlength="9">
             <span class="unit">원</span>
           </div>
         </div>
@@ -105,6 +105,13 @@
       }
     }
 
+    // 유동적 인풋 너비 조절 함수
+    function autoResizeInput(input) {
+      if (!input) return;
+      const text = input.value || '';
+      input.style.width = Math.max(1, text.length) + 'ch';
+    }
+
     // 금액 버튼 클릭 (직접 입력 버튼 제외)
     amountBtns.forEach(btn => {
       btn.addEventListener('click', function() {
@@ -120,7 +127,10 @@
         // 직접 입력 초기화 및 버튼으로 복귀
         if (directInputChip && directInputBtn) {
           directInputChip.style.display = 'none';
-          if (directInput) directInput.value = '';
+          if (directInput) {
+            directInput.value = '';
+            autoResizeInput(directInput);
+          }
           directInputBtn.style.display = ''; 
           if (amountWarning) amountWarning.style.display = 'none';
         }
@@ -141,6 +151,7 @@
         if (directInputChip) {
           directInputChip.style.display = 'inline-flex';
           if (directInput) {
+            autoResizeInput(directInput);
             directInput.focus();
             validateDirectInput();
           }
@@ -153,6 +164,7 @@
       directInput.addEventListener('input', function(e) {
         let val = e.target.value.replace(/[^0-9]/g, '');
         e.target.value = val ? formatNumber(parseInt(val, 10)) : '';
+        autoResizeInput(directInput);
         validateDirectInput();
       });
     }

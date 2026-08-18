@@ -84,8 +84,13 @@
                   <button type="button" class="btn btn-outline" data-value="100000">
                     100,000원
                   </button>
-                  <div class="direct-input-chip">
-                    <input type="text" id="directAmount" placeholder="직접 입력" maxlength="9" />
+                  <!-- 직접 입력 버튼 (초기 노출) -->
+                  <button type="button" class="btn btn-outline btn-direct-amount" id="btnDirectAmount">
+                    직접 입력
+                  </button>
+                  <!-- 직접 입력 인풋 칩 (초기 숨김) -->
+                  <div class="direct-input-chip" id="directInputChip" style="display: none">
+                    <input type="text" id="directAmount" class="input_amount" maxlength="9" />
                     <span class="unit">원</span>
                   </div>
                 </div>

@@ -872,12 +872,19 @@
   }
 
   .story-slider {
-    padding: 0 2.4rem 4rem;
+    width: 100%;
+    padding: 0 0 4rem;
+    overflow: hidden;
   }
 
   .story-slider .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     height: auto;
     min-height: 45.2rem;
+    box-sizing: border-box;
   }
 
   .story-slider .swiper-slide.type1 {

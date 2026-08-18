@@ -114,7 +114,7 @@
 /* 3. 후원 구분 탭 버튼 */
 .donate-type-tabs {
   position: relative;
-  display: inline-flex;
+  display: flex;
   gap: 0;
   width: 100%;
   margin-bottom: 2rem;
@@ -127,7 +127,7 @@
   position: absolute;
   top: 1.6rem;
   left: 1.6rem;
-  width: 33rem;
+  width: calc((100% - 3.2rem) / 2);
   height: 5.2rem;
   background-color: var(--primary);
   border-radius: 0.8rem;
@@ -144,28 +144,35 @@
   transform: translateX(100%);
 }
 
+.donate-type-tabs.initial-one-time .donate-tab-indicator {
+  transition: none;
+}
+
 .donate-type-tabs .btn-tab {
   position: relative;
-  width: 33rem;
+  flex: 1;
+  width: 50%;
+  height: 5.2rem;
   z-index: 1;
-  background-color: transparent;
+  background-color: transparent !important;
   color: var(--text-black);
   font-weight: 600;
   opacity: 1;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: color 0.3s ease;
   outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 .donate-type-tabs .btn-tab:not(.disabled) {
   color: var(--text-white);
-  font-weight: 400;
-  background-color: var(--primary);
+  font-weight: 700;
+  background-color: transparent !important;
 }
 
 .donate-type-tabs .btn-tab.disabled {
-  background-color: transparent;
+  color: var(--text-black);
+  background-color: transparent !important;
   opacity: 1;
 }
 
@@ -269,32 +276,80 @@ html[lang="en"] .accordion-card.is-active .card-body {
   position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   min-height: 5.2rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   background-color: var(--bg-primary);
-  padding: 0 2rem;
+  padding: 0 1.2rem;
   transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.direct-input-chip.en-currency {
+  padding: 0 1.2rem;
+}
+
+.direct-input-chip .currency-symbol {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-right: 0.4rem;
+  color: var(--text-primary);
+  user-select: none;
+  flex-shrink: 0;
 }
 
 .direct-input-chip input {
+  field-sizing: content;
+  min-width: 2ch;
+  max-width: 100%;
+  width: auto;
   border: none;
   background: transparent;
-  width: 100%;
   height: 100%;
   font-size: 1.8rem;
+  font-family: inherit;
+  text-align: center;
   outline: none;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .direct-input-chip .unit {
   font-size: 1.8rem;
-  margin-left: 0.8rem;
+  margin-left: 0.4rem;
+  color: var(--text-primary);
+  flex-shrink: 0;
 }
 
 .direct-input-chip:focus-within,
-.direct-input-chip.active {
+.direct-input-chip.active,
+.direct-input-chip.is-active {
+  background-color: var(--primary);
   border-color: var(--primary);
+}
+
+.direct-input-chip:focus-within input,
+.direct-input-chip.active input,
+.direct-input-chip.is-active input {
+  color: #fffde9;
+  caret-color: #fffde9;
+}
+
+.direct-input-chip:focus-within input::placeholder,
+.direct-input-chip.active input::placeholder,
+.direct-input-chip.is-active input::placeholder {
+  color: rgba(255, 253, 233, 0.7);
+}
+
+.direct-input-chip:focus-within .currency-symbol,
+.direct-input-chip.active .currency-symbol,
+.direct-input-chip.is-active .currency-symbol,
+.direct-input-chip:focus-within .unit,
+.direct-input-chip.active .unit,
+.direct-input-chip.is-active .unit {
+  color: #fffde9;
 }
 
 /* 후원자 유형 칩 전용 활성화 */
@@ -1675,8 +1730,9 @@ html[lang="en"] .vol-act-card__body {
 #amountWarningText {
   display: none;
   color: var(--primary);
-  margin-top: -1.2rem;
+  margin-top: 1.2rem;
   text-align: left;
+  font-size: 1.4rem;
 }
 
 #step1NextWrap,
@@ -1968,7 +2024,13 @@ html[lang="en"] .vol-act-card__body {
     margin-bottom: 2rem;
   }
 
-
+  .donate-type-tabs .donate-tab-indicator {
+    top: 0.8rem;
+    left: 0.8rem;
+    width: calc((100% - 1.6rem) / 2);
+    height: 4.8rem;
+    border-radius: 0.6rem;
+  }
 
   .donate-type-tabs .btn-tab {
     width: 50%;
@@ -2050,14 +2112,22 @@ html[lang="en"] .vol-act-card__body {
     font-size: 1.6rem;
   }
 
+  .direct-input-chip .currency-symbol {
+    font-size: 1.6rem;
+    margin-right: 0.4rem;
+  }
+
   .direct-input-chip .unit {
     font-size: 1.6rem;
     margin-left: 0.4rem;
   }
 
+  #amountWarningText,
   .direct-amount-warning {
     font-size: 1.4rem;
-    margin-top: 0.8rem;
+    margin-top: 1.2rem;
+    width: 100%;
+    clear: both;
   }
 
   /* Step 1 헬퍼 옐로우 박스 */

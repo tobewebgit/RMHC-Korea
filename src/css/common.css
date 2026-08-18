@@ -1630,6 +1630,28 @@ a.header__submenu-link:focus-visible,
     font-size: 2.8rem;
   }
 
+  .tab-menu {
+    margin-left: -2.4rem;
+    margin-right: -2.4rem;
+    width: calc(100% + 4.8rem);
+  }
+
+  .tab-list {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 2.4rem 0.4rem;
+  }
+
+  .tab-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-item {
+    flex-shrink: 0;
+  }
+
   .sub-tab-list {
     justify-content: center;
   }

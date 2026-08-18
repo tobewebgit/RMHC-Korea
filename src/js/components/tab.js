@@ -73,6 +73,52 @@ export function initTabs() {
       // 현재 콘텐츠만 활성화
       targetContent.classList.add('active');
       targetContent.style.display = 'block';
+
+      // 3. 모바일 가로 스크롤 탭 메뉴: 활성화된 탭을 중앙으로 부드럽고 느리게 스크롤
+      const activeItem = this.closest('.tab-item') || this;
+      let scrollContainer = this.closest('.tab-list, .sub-tab-list, .tab-menu, .sub-tab-menu, .faq-tab-menu');
+      
+      while (scrollContainer && scrollContainer !== document.body) {
+        if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
+          const targetScrollLeft = activeItem.offsetLeft - (scrollContainer.clientWidth / 2) + (activeItem.clientWidth / 2);
+          smoothScrollTo(scrollContainer, Math.max(0, targetScrollLeft), 500);
+          break;
+        }
+        scrollContainer = scrollContainer.parentElement ? scrollContainer.parentElement.closest('.tab-list, .sub-tab-list, .tab-menu, .sub-tab-menu, .faq-tab-menu') : null;
+      }
     });
   });
+}
+
+/**
+ * 부드럽고 우아한 감속 커스텀 스크롤 애니메이션 함수
+ * @param {HTMLElement} element - 스크롤할 컨테이너
+ * @param {number} target - 목표 scrollLeft 위치
+ * @param {number} duration - 애니메이션 지속 시간 (ms, 기본 500ms)
+ */
+function smoothScrollTo(element, target, duration = 500) {
+  const start = element.scrollLeft;
+  const change = target - start;
+  if (Math.abs(change) < 1) return;
+
+  const startTime = performance.now();
+
+  // 감속이 부드러운 easeOutCubic 이징 커브
+  function easeOutCubic(t) {
+    return (--t) * t * t + 1;
+  }
+
+  function animateScroll(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easeProgress = easeOutCubic(progress);
+
+    element.scrollLeft = start + change * easeProgress;
+
+    if (progress < 1) {
+      requestAnimationFrame(animateScroll);
+    }
+  }
+
+  requestAnimationFrame(animateScroll);
 }

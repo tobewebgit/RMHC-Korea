@@ -22,8 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const step3Summary = document.getElementById('step3Summary');
   
   // 1단계: 금액 설정
-  const amountChips = step1Card.querySelectorAll('.chip-grid .btn');
-  const directInputChip = step1Card.querySelector('.direct-input-chip');
+  const amountChips = step1Card.querySelectorAll('.chip-grid .btn:not(#btnDirectAmount)');
+  const btnDirectAmount = document.getElementById('btnDirectAmount');
+  const directInputChip = document.getElementById('directInputChip') || step1Card.querySelector('.direct-input-chip');
   const directAmountInput = document.getElementById('directAmount');
   const amountWarningText = document.getElementById('amountWarningText');
   const helperBoxes = step1Card.querySelectorAll('.notice-yellow-box');
@@ -234,11 +235,19 @@ document.addEventListener('DOMContentLoaded', () => {
         c.classList.remove('btn-primary');
         c.classList.add('btn-outline');
       });
-      directInputChip.classList.remove('active');
+      if (btnDirectAmount) {
+        btnDirectAmount.classList.remove('btn-primary');
+        btnDirectAmount.classList.add('btn-outline');
+        btnDirectAmount.style.display = '';
+      }
+      if (directInputChip) {
+        directInputChip.style.display = 'none';
+        directInputChip.classList.remove('active');
+      }
       
       chip.classList.remove('btn-outline');
       chip.classList.add('btn-primary');
-      directAmountInput.value = '';
+      if (directAmountInput) directAmountInput.value = '';
       
       const val = chip.getAttribute('data-value');
       selectedAmount = formatNumber(val);
@@ -255,30 +264,71 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 직접 입력 인풋 칩 제어 (포커스 및 입력 시 칩 스타일 오버라이드)
-  directAmountInput.addEventListener('focus', () => {
-    isDirectMode = true;
-    
-    // 일반 칩 선택 해제 및 직접 입력 활성화 테두리 추가
-    amountChips.forEach(c => {
-      c.classList.remove('btn-primary');
-      c.classList.add('btn-outline');
-    });
-    directInputChip.classList.add('active');
-    
-    // 6번째 헬퍼 배너(직접입력 매칭 배너) 노출
-    updateHelperBox(5);
-    
-    validateDirectInput();
-  });
+  // 유동적 인풋 너비 동적 조절 함수 (Fallback)
+  function autoResizeInput(input) {
+    if (!input) return;
+    const text = input.value || '';
+    input.style.width = Math.max(1, text.length) + 'ch';
+  }
 
-  // 직접 입력 금액 포맷팅 연동
-  directAmountInput.addEventListener('input', (e) => {
-    let val = e.target.value.replace(/[^0-9]/g, '');
-    e.target.value = val ? formatNumber(parseInt(val, 10)) : '';
-    
-    validateDirectInput();
-  });
+  // 직접 입력 버튼 클릭 시 인풋 칩으로 전환
+  if (btnDirectAmount) {
+    btnDirectAmount.addEventListener('click', () => {
+      isDirectMode = true;
+      
+      // 일반 칩 선택 해제
+      amountChips.forEach(c => {
+        c.classList.remove('btn-primary');
+        c.classList.add('btn-outline');
+      });
+
+      // 버튼 숨기고 인풋 칩 노출 및 포커스
+      btnDirectAmount.style.display = 'none';
+      if (directInputChip) {
+        directInputChip.style.display = 'inline-flex';
+        directInputChip.classList.add('active');
+      }
+      if (directAmountInput) {
+        directAmountInput.value = '';
+        autoResizeInput(directAmountInput);
+        directAmountInput.focus();
+      }
+      
+      // 6번째 헬퍼 배너(직접입력 매칭 배너) 노출
+      updateHelperBox(5);
+      
+      validateDirectInput();
+    });
+  }
+
+  // 직접 입력 인풋 칩 제어 (포커스 및 입력 시 칩 스타일 오버라이드)
+  if (directAmountInput) {
+    directAmountInput.addEventListener('focus', () => {
+      isDirectMode = true;
+      
+      // 일반 칩 선택 해제 및 직접 입력 활성화 테두리 추가
+      amountChips.forEach(c => {
+        c.classList.remove('btn-primary');
+        c.classList.add('btn-outline');
+      });
+      if (directInputChip) directInputChip.classList.add('active');
+      autoResizeInput(directAmountInput);
+      
+      // 6번째 헬퍼 배너(직접입력 매칭 배너) 노출
+      updateHelperBox(5);
+      
+      validateDirectInput();
+    });
+
+    // 직접 입력 금액 포맷팅 연동
+    directAmountInput.addEventListener('input', (e) => {
+      let val = e.target.value.replace(/[^0-9]/g, '');
+      e.target.value = val ? formatNumber(parseInt(val, 10)) : '';
+      autoResizeInput(directAmountInput);
+      
+      validateDirectInput();
+    });
+  }
 
   // 직접 입력 실시간 검증 및 다음 버튼 노출 여부 결정
   function validateDirectInput() {
@@ -333,8 +383,19 @@ document.addEventListener('DOMContentLoaded', () => {
         c.classList.remove('btn-primary');
         c.classList.add('btn-outline');
       });
-      if (directInputChip) directInputChip.classList.remove('active');
-      if (directAmountInput) directAmountInput.value = '';
+      if (btnDirectAmount) {
+        btnDirectAmount.classList.remove('btn-primary');
+        btnDirectAmount.classList.add('btn-outline');
+        btnDirectAmount.style.display = '';
+      }
+      if (directInputChip) {
+        directInputChip.style.display = 'none';
+        directInputChip.classList.remove('active');
+      }
+      if (directAmountInput) {
+        directAmountInput.value = '';
+        autoResizeInput(directAmountInput);
+      }
       if (amountWarningText) amountWarningText.style.display = 'none';
       if (step1NextWrap) step1NextWrap.style.display = 'none';
       helperBoxes.forEach(box => box.style.display = 'none');

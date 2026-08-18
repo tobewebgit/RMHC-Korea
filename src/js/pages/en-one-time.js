@@ -109,13 +109,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  function autoResizeInput(input) {
+    if (!input) return;
+    const text = input.value || '';
+    input.style.width = Math.max(1, text.length) + 'ch';
+  }
+
   if (btnOtherAmount) {
     btnOtherAmount.addEventListener('click', () => {
       amountChips.forEach((c) => c.classList.remove('is-active'));
       btnOtherAmount.style.display = 'none';
-      if (directInputChip) directInputChip.style.display = 'block';
+      if (directInputChip) directInputChip.style.display = 'inline-flex';
       if (directAmountInput) {
         directAmountInput.value = '';
+        autoResizeInput(directAmountInput);
         directAmountInput.focus();
       }
       updateEnNoticeBox('other');
@@ -124,12 +131,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (directAmountInput) {
     directAmountInput.addEventListener('focus', () => {
+      autoResizeInput(directAmountInput);
       updateEnNoticeBox('other');
     });
 
     directAmountInput.addEventListener('input', (e) => {
       let rawVal = e.target.value.replace(/[^0-9]/g, '');
-      e.target.value = rawVal ? '$' + Number(rawVal).toLocaleString('en-US') : '';
+      e.target.value = rawVal ? Number(rawVal).toLocaleString('en-US') : '';
+      autoResizeInput(directAmountInput);
       updateEnNoticeBox('other');
     });
   }

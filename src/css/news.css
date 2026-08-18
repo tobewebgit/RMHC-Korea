@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4.0rem;
+  margin-bottom: 4rem;
 }
 
 .news-list-header .list-total {
@@ -26,7 +26,7 @@
 
 .news-list-header .search-field {
   position: relative;
-  width: 36.0rem;
+  width: 36rem;
   /* 360px */
   height: 5.2rem;
   /* 52px */
@@ -36,7 +36,7 @@
   width: 100%;
   height: 100%;
   padding: 0 4.8rem 0 1.6rem;
-  border: 1px solid #BBBBBB;
+  border: 1px solid #bbbbbb;
   border-radius: var(--radius-sm);
   font-size: 1.8rem;
   /* 18px */
@@ -69,14 +69,14 @@
 
 /* 3. 공지사항 목록 */
 .notice-list-container {
-  max-width: 120.0rem;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
 .notice-list {
   display: flex;
   flex-direction: column;
-  margin-bottom: 6.0rem;
+  margin-bottom: 6rem;
 }
 
 .notice-item {
@@ -164,8 +164,8 @@
 .activity-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4.0rem;
-  margin-bottom: 6.0rem;
+  gap: 4rem;
+  margin-bottom: 6rem;
 }
 
 .activity-card {
@@ -182,7 +182,7 @@
 .activity-card .card-img-wrap {
   position: relative;
   width: 100%;
-  height: 30.0rem;
+  height: 30rem;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -208,8 +208,8 @@
   justify-content: center;
   width: 4.2rem;
   height: 2.1rem;
-  background-color: #DB0007;
-  color: #FFFDF6;
+  background-color: #db0007;
+  color: #fffdf6;
   font-family: var(--font-sans);
   font-size: 1.6rem;
   font-weight: 600;
@@ -219,8 +219,8 @@
 .activity-card .card-text-wrap {
   position: relative;
   flex: 1;
-  padding: 6.0rem 4rem 0;
-  background-color: #D0C9FF;
+  padding: 6rem 4rem 0;
+  background-color: #d0c9ff;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -240,7 +240,7 @@
 }
 
 .activity-card .card-date {
-  font-size: 2.0rem;
+  font-size: 2rem;
   line-height: 1.5;
 }
 
@@ -261,19 +261,19 @@
 }
 
 .activity-card:hover .card-text-wrap {
-  padding: 4.0rem 4rem 0;
+  padding: 4rem 4rem 0;
 }
 
 /* 5. 상세 페이지 공통 */
 .news-detail-container {
-  max-width: 120.0rem;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
 .detail-header {
   padding-bottom: 2.4rem;
   border-bottom: 1px solid var(--border-gray60);
-  margin-bottom: 4.0rem;
+  margin-bottom: 4rem;
   box-sizing: border-box;
 }
 
@@ -311,7 +311,7 @@
 }
 
 .detail-contents {
-  margin: 8rem 0 4.0rem;
+  margin: 8rem 0 4rem;
 }
 
 .detail-contents .detail-contents-title {
@@ -326,13 +326,13 @@
 
 .detail-contents dt {
   font-family: var(--font-extrabold);
-  font-size: 2.0rem;
+  font-size: 2rem;
   margin: 2.4rem 0;
 }
 
 .detail-contents .text-marker {
   color: var(--primary);
-  font-size: 2.0rem;
+  font-size: 2rem;
 }
 
 .detail-contents dd {
@@ -345,8 +345,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.0rem;
-  height: 2.0rem;
+  width: 2rem;
+  height: 2rem;
   font-size: var(--text-lg);
 }
 
@@ -374,11 +374,11 @@
   align-items: center;
   gap: 3.2rem;
   width: 100%;
-  height: 8.0rem;
-  padding: 0 4.0rem;
+  height: 8rem;
+  padding: 0 4rem;
   border: 1px solid #000000;
   border-radius: var(--radius-sm);
-  margin-bottom: 8.0rem;
+  margin-bottom: 8rem;
   box-sizing: border-box;
 }
 
@@ -404,7 +404,8 @@
   white-space: nowrap;
 }
 
-.activity-detail-page .detail-attachments .attachment-link {}
+.activity-detail-page .detail-attachments .attachment-link {
+}
 
 .detail-attachments .attachment-link:hover {
   text-decoration: underline;
@@ -415,7 +416,7 @@
   position: relative;
   height: 5.2rem;
   margin-top: 8rem;
-  margin-bottom: 12.0rem;
+  margin-bottom: 12rem;
   padding-top: 8rem;
   border-top: 1px solid var(--border-gray60);
 }
@@ -423,7 +424,7 @@
 .detail-navigation-bar .nav-btn-group {
   display: flex;
   justify-content: space-between;
-  gap: 8.0rem;
+  gap: 8rem;
   /* 이전글과 다음글 간격 */
   width: 100%;
   height: 5.2rem;
@@ -460,15 +461,13 @@
   z-index: 1;
 }
 
-
 /* ==========================================================================
    반응형 브레이크포인트 (Responsive Design - 768px 이하 모바일)
    ========================================================================== */
 @media screen and (max-width: 768px) {
-
   /* 1. 영웅 배너 모바일 */
   .news-kv {
-    height: 30.0rem;
+    height: 30rem;
     /* 높이 축소 */
     padding: 0;
     border-radius: var(--radius-md);
@@ -492,8 +491,8 @@
   .news-list-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2.0rem;
-    margin-top: 4.0rem;
+    gap: 2rem;
+    margin-top: 4rem;
     margin-bottom: 2.4rem;
   }
 
@@ -512,7 +511,7 @@
 
   /* 3. 공지사항 목록 모바일 */
   .notice-list {
-    margin-bottom: 4.0rem;
+    margin-bottom: 4rem;
   }
 
   .notice-item {
@@ -589,7 +588,7 @@
   .activity-grid {
     grid-template-columns: 1fr;
     gap: 1.6rem;
-    margin-bottom: 4.0rem;
+    margin-bottom: 4rem;
   }
 
   .activity-card {
@@ -603,7 +602,7 @@
   }
 
   .activity-card .card-img-wrap {
-    height: 24.0rem;
+    height: 24rem;
   }
 
   .activity-card .card-text-wrap {
@@ -649,7 +648,7 @@
   }
 
   .detail-header {
-    margin-top: 5.0rem;
+    margin-top: 5rem;
     margin-bottom: 2.4rem;
   }
 
@@ -657,7 +656,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1.2rem;
-    margin-bottom: 2.0rem;
+    margin-bottom: 2rem;
   }
 
   .detail-header .detail-badge {
@@ -670,13 +669,14 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.8rem;
-    font-size: 2.0rem;
+    font-size: 2rem;
     text-align: left;
     line-height: 1.3;
   }
 
   .detail-header .detail-title .notice-megaphone {
     display: block;
+    width: 2.4rem;
     margin-bottom: 0.8rem;
   }
 
@@ -702,8 +702,8 @@
   .detail-attachments {
     height: 5.6rem;
     padding: 0 2.4rem;
-    gap: 2.0rem;
-    margin-bottom: 4.0rem;
+    gap: 2rem;
+    margin-bottom: 4rem;
   }
 
   .detail-attachments .attachment-label {
