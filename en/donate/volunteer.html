@@ -28,11 +28,15 @@
       <main id="main-content">
         <section class="vol-kv" aria-label="자원봉사 히어로 영역">
           <div class="vol-kv__img-wrap">
-            <img
-              src="/src/images/donate/img_volunteer_top.png"
-              alt="RMHC Korea 자원봉사 현장 사진"
-              class="vol-kv__img"
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcset="/src/images/donate/img_volunteer_top_mo.png" />
+              <img
+                src="/src/images/donate/img_volunteer_top.png"
+                alt="RMHC Korea 자원봉사 현장 사진"
+                class="vol-kv__img"
+                fetchpriority="high"
+              />
+            </picture>
             <div class="vol-kv__text-wrap" data-motion="fade-up">
               <h1 class="vol-kv__title">
                 Just One Hour of Your Time Gives<br />Families a Chance to Rest

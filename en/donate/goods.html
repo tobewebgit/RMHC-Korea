@@ -21,7 +21,10 @@
     <main id="main-content">
       <section class="page-kv">
         <div class="kv-img-wrap">
-          <img src="/src/images/donate/img_goods_top.png" alt="" class="kv-img" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="/src/images/donate/img_goods_top_mo.png" />
+            <img src="/src/images/donate/img_goods_top.png" alt="" fetchpriority="high" />
+          </picture>
         </div>
         <div class="kv-text-wrap">
           <h1 class="kv-title" data-motion="fade-up" data-motion-once="true">

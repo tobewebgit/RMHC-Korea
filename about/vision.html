@@ -22,18 +22,14 @@
     <div class="page-wrapper">
       <main id="main-content" class="about-vision">
         <section class="about-vision-kv" aria-labelledby="aboutVisionTitle">
-          <img
-            class="about-vision-kv__image type-pc"
-            src="/src/images/about/img_about_vision_kv.png"
-            alt="아이들이 놀이 텐트 앞에서 웃고 있는 모습"
-            fetchpriority="high"
-          />
-          <img
-            class="about-vision-kv__image type-mo"
-            src="/src/images/about/img_about_vision_kv_mo.png"
-            alt="아이들이 놀이 텐트 앞에서 웃고 있는 모습"
-            fetchpriority="high"
-          />
+          <picture class="about-vision-kv__image">
+            <source media="(max-width: 768px)" srcset="/src/images/about/img_about_vision_kv_mo.png" />
+            <img
+              src="/src/images/about/img_about_vision_kv.png"
+              alt="아이들이 놀이 텐트 앞에서 웃고 있는 모습"
+              fetchpriority="high"
+            />
+          </picture>
           <div class="about-vision-kv__content inner-layout">
             <div
               class="about-vision-kv__panel"

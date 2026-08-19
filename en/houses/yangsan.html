@@ -21,7 +21,10 @@
     <main id="main-content">
       <section class="house-hero" aria-labelledby="houseHeroTitle">
         <div class="house-hero__visual">
-          <img src="/src/images/houses/hero_yangsan.png" alt="" width="1848" height="791" fetchpriority="high" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="/src/images/houses/hero_yangsan_mo.png" />
+            <img src="/src/images/houses/hero_yangsan.png" alt="" fetchpriority="high" />
+          </picture>
           <div class="house-hero__content">
             <h1 id="houseHeroTitle" data-motion="fade-up">
               A place that gives the<br class="type-pc" />
@@ -408,8 +411,10 @@
           </p>
         </div>
         <div class="location-map" data-motion="fade-up" data-motion-delay="0.1">
-          <img src="/src/images/houses/map_yangsan.jpg" alt="Ronald McDonald House: Yangsan Location Map"
-            loading="lazy" />
+          <picture>
+            <source media="(max-width: 768px)" srcset="/src/images/houses/map_yangsan_mo.jpg" />
+            <img src="/src/images/houses/map_yangsan.jpg" alt="Ronald McDonald House: Yangsan Location Map" loading="lazy" />
+          </picture>
           <div class="icon-marker"></div>
         </div>
         <ul class="location-info" data-motion="fade-up" data-motion-delay="0.2">

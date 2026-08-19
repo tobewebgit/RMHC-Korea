@@ -24,7 +24,10 @@
         <!-- KV 영역 -->
         <section class="page-kv">
           <div class="kv-img-wrap">
-            <img src="/src/images/news/img_activity_kv.png" alt="" class="kv-img" />
+            <picture>
+              <source media="(max-width: 768px)" srcset="/src/images/news/img_activity_kv_mo.png" />
+              <img src="/src/images/news/img_activity_kv.png" alt="" fetchpriority="high" />
+            </picture>
           </div>
           <div class="kv-text-wrap">
             <h1 class="kv-title" data-motion="fade-up">News & Updates</h1>
