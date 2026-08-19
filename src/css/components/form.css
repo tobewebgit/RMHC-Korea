@@ -38,10 +38,6 @@
   flex-shrink: 0;
 }
 
-html[lang="en"] .form-label {
-  min-height: 3rem;
-}
-
 .form-label.min-h-auto {
   min-height: auto;
 }

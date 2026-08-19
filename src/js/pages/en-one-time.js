@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- 3. 금액 선택 칩 & Other 버튼 / 직접 입력 & notice-yellow-box 동적 갱신 ---
   const amountGrid = document.getElementById('enAmountGrid');
-  const amountChips = amountGrid ? amountGrid.querySelectorAll('.btn-outline:not(#btnOtherAmount)') : [];
+  const amountChips = amountGrid ? amountGrid.querySelectorAll('.btn:not(#btnOtherAmount)') : [];
   const btnOtherAmount = document.getElementById('btnOtherAmount');
   const directInputChip = document.getElementById('directInputChip');
   const directAmountInput = document.getElementById('directAmount');
@@ -95,14 +95,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   amountChips.forEach((chip) => {
     chip.addEventListener('click', () => {
-      amountChips.forEach((c) => c.classList.remove('is-active'));
-      if (btnOtherAmount) btnOtherAmount.classList.remove('is-active');
-
-      chip.classList.add('is-active');
-
-      if (directInputChip) directInputChip.style.display = 'none';
-      if (btnOtherAmount) btnOtherAmount.style.display = 'inline-flex';
+      // 모든 금액 칩 및 Other 버튼 비활성화 (btn-outline)
+      amountChips.forEach((c) => {
+        c.classList.remove('btn-primary');
+        c.classList.add('btn-outline');
+      });
+      if (btnOtherAmount) {
+        btnOtherAmount.classList.remove('btn-primary');
+        btnOtherAmount.classList.add('btn-outline');
+        btnOtherAmount.style.display = 'inline-flex';
+      }
+      if (directInputChip) {
+        directInputChip.style.display = 'none';
+        directInputChip.classList.remove('active', 'is-active');
+      }
       if (directAmountInput) directAmountInput.value = '';
+
+      // 클릭한 칩 활성화 (btn-primary)
+      chip.classList.remove('btn-outline');
+      chip.classList.add('btn-primary');
 
       const val = chip.getAttribute('data-value');
       updateEnNoticeBox(val);
@@ -117,9 +128,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btnOtherAmount) {
     btnOtherAmount.addEventListener('click', () => {
-      amountChips.forEach((c) => c.classList.remove('is-active'));
+      amountChips.forEach((c) => {
+        c.classList.remove('btn-primary');
+        c.classList.add('btn-outline');
+      });
       btnOtherAmount.style.display = 'none';
-      if (directInputChip) directInputChip.style.display = 'inline-flex';
+      if (directInputChip) {
+        directInputChip.style.display = 'inline-flex';
+        directInputChip.classList.add('active', 'is-active');
+      }
       if (directAmountInput) {
         directAmountInput.value = '';
         autoResizeInput(directAmountInput);
@@ -131,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (directAmountInput) {
     directAmountInput.addEventListener('focus', () => {
+      if (directInputChip) directInputChip.classList.add('active', 'is-active');
       autoResizeInput(directAmountInput);
       updateEnNoticeBox('other');
     });
@@ -142,6 +160,19 @@ document.addEventListener('DOMContentLoaded', () => {
       updateEnNoticeBox('other');
     });
   }
+
+  // 결제 수단 선택 버튼 토글 (Apple Pay / Credit Card)
+  const paymentBtns = document.querySelectorAll('.en-payment-btn');
+  paymentBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      paymentBtns.forEach((b) => {
+        b.classList.remove('btn-primary', 'is-active');
+        b.classList.add('btn-outline');
+      });
+      btn.classList.remove('btn-outline');
+      btn.classList.add('btn-primary', 'is-active');
+    });
+  });
 
   // --- 4. Business Name 체크박스 토글 (Monthly 탭에서만 동작) ---
   if (chkBusiness) {

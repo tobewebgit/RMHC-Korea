@@ -658,27 +658,6 @@ html[lang="en"] .accordion-card.is-active .card-body {
   background-color: #d0c9ff;
 }
 
-/* 10. 반응형 브레이크포인트 */
-
-/* ==========================================================================
-   volunteer — 자원봉사 신청 페이지 전용 스타일 (donate.css 내 모듈)
-   피그마 실측 기준: node 2531:48366
-   ========================================================================== */
-
-/* ── volunteer 폰트 유틸 클래스 ──────────────────── */
-
-.font-nanum {
-  font-family: var(--font-extrabold);
-}
-
-.font-audrey {
-  font-family: "Audrey Display", serif;
-}
-
-.font-roboto {
-  font-family: "Roboto", sans-serif;
-}
-
 /* ── KV 히어로 영역 ─────────────────────────────── */
 
 .vol-kv {
@@ -928,13 +907,13 @@ html[lang="en"] .accordion-card.is-active .card-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.4rem;
+  gap: 2.8rem;
   background-image: url("/src/images/donate/img_section_3_bg.png");
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   padding: 8rem;
-  max-width: 90.5rem;
+  max-width: 99.5rem;
 }
 
 .vol-apply__title {
@@ -953,26 +932,23 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .vol-apply__box {
-  flex: 1;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  width: 45.2rem;
   padding: 0 4rem;
   background: none;
 }
 
 .vol-apply__box:first-child {
+  width: 38rem;
   border-right: 1px dashed #000000;
 }
 
 .vol-apply__box-title {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   line-height: 1.2;
-}
-
-.vol-apply__box-title--nanum {
-  font-family: var(--font-extrabold);
-  font-size: 2.8rem;
 }
 
 .vol-apply__list {
@@ -986,11 +962,10 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .vol-apply__list li {
   position: relative;
-  padding-left: 1.2rem;
+  padding-left: 0.8rem;
   font-size: 2rem;
   font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: -0.2rem;
+  line-height: 1.3;
 }
 
 .vol-apply__list li::before {
@@ -1077,13 +1052,34 @@ html[lang="en"] .vol-act-card__body {
 }
 
 .vol-act-card__title {
+  min-height: 7.2rem;
   font-size: 2.8rem;
   line-height: 1.3;
 }
 
 .vol-act-card__desc {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
   font-size: 2rem;
-  line-height: 1.5;
+  line-height: 1.3;
+}
+
+.vol-act-card__desc li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.vol-act-card__desc li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .vol-act-card--gold .vol-act-card__body {
@@ -1417,6 +1413,11 @@ html[lang="en"] .vol-act-card__body {
 .vol-popup-section__title {
   font-size: 2.8rem;
   margin: 0;
+}
+
+.vol-popup-section__title span {
+  font-family: var(--font-pretendard);
+  font-weight: 400;
 }
 
 .vol-popup-section__sep {
@@ -1836,6 +1837,7 @@ html[lang="en"] .vol-act-card__body {
 
 .form-group.label-top .form-label {
   width: 100%;
+  min-height: auto;
   text-align: left;
   font-size: 1.6rem;
 }
@@ -2331,6 +2333,7 @@ html[lang="en"] .vol-act-card__body {
   }
 
   .vol-kv__text-wrap {
+    top: 36%;
     padding: 0 2.4rem;
     text-align: center;
     align-items: center;
@@ -2426,7 +2429,7 @@ html[lang="en"] .vol-act-card__body {
     width: 30.4rem;
     height: 45.4rem;
     margin: 0 auto;
-    padding: 2.4rem;
+    padding: 2rem 2.4rem;
     background-image: url(/src/images/donate/img_section_3_bg_mo.svg);
     background-position: 50% 0;
     background-repeat: no-repeat;
@@ -2445,14 +2448,16 @@ html[lang="en"] .vol-act-card__body {
   }
 
   .vol-apply__box {
-    gap: 1.2rem;
+    gap: 0.8rem;
+    width: 100%;
     padding: 0 1.6rem;
   }
 
   .vol-apply__box:first-child {
+    width: 100%;
     border-right: none;
     border-bottom: none;
-    padding-bottom: 2.4rem;
+    padding-bottom: 2rem;
     position: relative;
   }
 
@@ -2467,10 +2472,6 @@ html[lang="en"] .vol-act-card__body {
 
   .vol-apply__box-title {
     font-size: 1.8rem;
-  }
-
-  .vol-apply__box-title--nanum {
-    font-size: 2rem;
   }
 
   .vol-apply__list {
@@ -2508,11 +2509,17 @@ html[lang="en"] .vol-act-card__body {
   }
 
   .vol-act-card__title {
+    min-height: auto;
     font-size: 1.8rem;
   }
 
   .vol-act-card__desc {
+    gap: 0.4rem;
     font-size: 1.4rem;
+  }
+
+  .vol-act-card__desc li {
+    padding-left: 1rem;
   }
 
   /* Process */

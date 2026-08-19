@@ -499,6 +499,9 @@ a.header__submenu-link:focus-visible,
   align-items: center;
   gap: 2.4rem;
 }
+.footer__links a:hover {
+  color: var(--primary);
+}
 
 .footer__link-item:nth-of-type(1) {
   font-weight: 600;
