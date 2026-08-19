@@ -138,7 +138,6 @@ a.btn-primary.btn-page1:hover {
 /* Tab Buttons */
 .btn-tab {
   display: flex;
-  max-width: 33rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;

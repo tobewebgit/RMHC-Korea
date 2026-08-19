@@ -184,6 +184,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
+      // 항상 왼쪽 카드가 오른쪽 카드 위에 올라타도록 역순 z-index 부여
+      const allSlides = Array.from(track.querySelectorAll('.swiper-slide'));
+      allSlides.forEach((slide, idx) => {
+        slide.style.zIndex = allSlides.length - idx;
+      });
+
       const unitWidth = originalWidth + gap;
       marqueeTween = gsap.to(track, {
         x: `-=${unitWidth}`,

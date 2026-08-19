@@ -494,9 +494,11 @@ html[lang="en"] .accordion-card.is-active .card-body {
   line-height: 1.5;
 }
 
-.receipt-helper__primary {}
+.receipt-helper__primary {
+}
 
-.receipt-helper__secondary {}
+.receipt-helper__secondary {
+}
 
 .inner-form-group .receipt-helper-text {
   margin-top: 0.8rem;
@@ -507,14 +509,11 @@ html[lang="en"] .accordion-card.is-active .card-body {
   margin-top: 5.2rem;
 }
 
-
-
 .donate-page .card-body .chip-grid.cols-2 {
   margin-top: 4rem;
 }
 
 /* 9. 반응형 브레이크포인트 보정 */
-
 
 /* 결제 정보 입력 폼 & 서명 캔버스 (form.css 공통 컴포넌트 참조) */
 
@@ -1334,7 +1333,6 @@ html[lang="en"] .vol-act-card__body {
 
 /* ── volunteer 반응형 ───────────────────────────── */
 
-
 /* ==========================================================================
    DN_04P — 자원봉사 신청 팝업 전용 스타일
    피그마 실측 기준: node 2531:48751 / 2531:48895 / 2531:49006
@@ -1414,10 +1412,6 @@ html[lang="en"] .vol-act-card__body {
 
 .vol-popup-body .donate-type-tabs {
   margin-bottom: 0;
-}
-
-.vol-popup-body .donate-type-tabs .donate-tab-indicator {
-  width: 31rem;
 }
 
 .vol-popup-section__title {
@@ -1720,8 +1714,14 @@ html[lang="en"] .vol-act-card__body {
   background-color: rgba(209, 33, 41, 0.05);
 }
 
-/* ── 반응형 ────────────────────────────────────── */
+.vol-cal-cta-actions button {
+  width: 5.3rem;
+  height: 3.2rem;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+}
 
+/* ── 반응형 ────────────────────────────────────── */
 
 /* ==========================================================================
    일시후원/정기후원 폼 (one-time.html)
@@ -1818,7 +1818,7 @@ html[lang="en"] .vol-act-card__body {
   gap: 2rem;
 }
 
-.en-form-card-box+.en-form-card-title {
+.en-form-card-box + .en-form-card-title {
   margin-top: 5.2rem;
 }
 
@@ -1864,7 +1864,8 @@ html[lang="en"] .vol-act-card__body {
   margin-top: 1.6rem;
 }
 
-.en-payment-btn {}
+.en-payment-btn {
+}
 
 .en-payment-btn img {
   width: 2.4rem;
@@ -1916,7 +1917,6 @@ html[lang="en"] .vol-act-card__body {
    donate.css 전역 모바일 반응형 통합 브레이크포인트 (@media (max-width: 768px))
    ========================================================================== */
 @media (max-width: 768px) {
-
   /* ── 1. 기부 신청 페이지 모바일 ── */
   .donate-page {
     padding-top: 11rem;
@@ -2098,7 +2098,7 @@ html[lang="en"] .vol-act-card__body {
     padding: 0 1rem;
   }
 
-  .auth-intro-text+.chip-grid .btn {
+  .auth-intro-text + .chip-grid .btn {
     font-size: 1.2rem;
   }
 
@@ -2153,7 +2153,7 @@ html[lang="en"] .vol-act-card__body {
     margin-top: 2.8rem;
   }
 
-  .auth-intro-text+.chip-grid.cols-2 {
+  .auth-intro-text + .chip-grid.cols-2 {
     grid-template-columns: 1fr;
   }
 
@@ -2199,8 +2199,6 @@ html[lang="en"] .vol-act-card__body {
     gap: 0.8rem;
   }
 
-
-
   .gender-text {
     font-size: 1.4rem;
   }
@@ -2231,8 +2229,6 @@ html[lang="en"] .vol-act-card__body {
     font-weight: 700 !important;
     margin-bottom: 0 !important;
   }
-
-  /* 
 
   /* ── 2. 기부 굿즈 페이지 모바일 ── */
   .goods-kv {
@@ -2381,7 +2377,8 @@ html[lang="en"] .vol-act-card__body {
     top: -1rem;
   }
 
-  .vol-intro-swiper .vol-swiper-next {}
+  .vol-intro-swiper .vol-swiper-next {
+  }
 
   .vol-intro-swiper .vol-swiper-prev {
     right: 4.4rem;

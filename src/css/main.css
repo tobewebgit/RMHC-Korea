@@ -542,7 +542,9 @@ html[lang="en"] .main-event-card .card-text-wrap {
 .main-event-card .card-text-wrap .text-2 {
   opacity: 0;
 }
-html[lang="en"] .main-event-card:hover .card-text-wrap,
+html[lang="en"] .main-event-card:hover .card-text-wrap {
+  height: 26.3rem;
+}
 .main-event-card:hover .card-text-wrap {
   height: 24.3rem;
 }
@@ -592,8 +594,13 @@ html[lang="en"] .main-event-card:hover .card-text-wrap,
 .main-thanks__marquee .swiper-slide {
   flex: 0 0 auto;
   width: 32.4rem;
+  margin-right: -1.2rem;
   margin-left: 0;
   position: relative;
+}
+
+.main-thanks__marquee .swiper-slide:hover {
+  z-index: 999 !important;
 }
 
 .main-thanks__marquee .swiper-slide:hover .thanks-card {
@@ -618,30 +625,25 @@ html[lang="en"] .main-event-card:hover .card-text-wrap,
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 8rem 4.5rem 6rem;
+  padding: 8rem 5.2rem 0;
   font-size: 2rem;
   font-family: var(--font-extrabold), sans-serif;
-  line-height: 1.5;
-  color: #111;
+  line-height: 1.3;
   word-break: keep-all;
   box-sizing: border-box;
 }
 
 .card-color-1 {
-  transform: rotate(-3deg) translateY(-1rem);
-  z-index: 4;
+  transform: rotate(-5deg);
 }
 .card-color-2 {
-  transform: rotate(2deg) translateY(2rem);
-  z-index: 3;
+  transform: rotate(5deg);
 }
 .card-color-3 {
-  transform: rotate(-2deg) translateY(-2rem);
-  z-index: 2;
+  transform: rotate(-5deg);
 }
 .card-color-4 {
-  transform: rotate(3deg) translateY(1rem);
-  z-index: 1;
+  transform: rotate(5deg);
 }
 
 .main-thanks__marquee.is-fallback-slider {
@@ -862,10 +864,10 @@ html[lang="en"] .main-event-card:hover .card-text-wrap,
 }
 
 /* Section 8 */
-.main-donate__inner {
+/* .main-donate__inner {
   width: min(144rem, calc(100% - 4.8rem));
   margin: 0 auto;
-}
+} */
 
 .donate-banner {
   position: relative;
@@ -873,7 +875,7 @@ html[lang="en"] .main-event-card:hover .card-text-wrap,
   align-items: center;
   justify-content: space-between;
   min-height: 36.4rem;
-  padding: 0 18rem;
+  padding: 0 23rem;
   overflow: hidden;
   border-radius: 1.2rem;
   background-color: #8ee7f8;
@@ -1349,19 +1351,15 @@ html[lang="en"] .main-event-card:hover .card-text-wrap,
 
   .main-thanks__marquee .card-color-1 {
     transform: rotate(-3deg) translateY(-1rem);
-    z-index: 4;
   }
   .main-thanks__marquee .card-color-2 {
     transform: rotate(2deg) translateY(1.5rem);
-    z-index: 3;
   }
   .main-thanks__marquee .card-color-3 {
     transform: rotate(-2deg) translateY(-1.5rem);
-    z-index: 2;
   }
   .main-thanks__marquee .card-color-4 {
     transform: rotate(3deg) translateY(1rem);
-    z-index: 1;
   }
 
   .main-field {

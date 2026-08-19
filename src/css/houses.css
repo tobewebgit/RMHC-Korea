@@ -57,7 +57,6 @@
   border: 0;
   border-radius: 1.6rem;
   font-size: 2.2rem;
-  font-weight: 700;
   line-height: 1.4;
 }
 
@@ -67,7 +66,8 @@
   height: 2.1rem;
   display: inline-block;
   margin-right: 1.4rem;
-  background: url("/src/images/houses/icon_btn_house.png") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/icon_btn_house.png") 50% 50% / 100% 100%
+    no-repeat;
 }
 
 .house-btn--primary {
@@ -171,19 +171,23 @@
 }
 
 .story-slider .swiper-slide.type1 {
-  background: url("/src/images/houses/yangsan_grid_1.png") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_1.png") 50% 50% / 100% 100%
+    no-repeat;
 }
 
 .story-slider .swiper-slide.type2 {
-  background: url("/src/images/houses/yangsan_grid_2.png") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_2.png") 50% 50% / 100% 100%
+    no-repeat;
 }
 
 .story-slider .swiper-slide.type3 {
-  background: url("/src/images/houses/yangsan_grid_3.png") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_3.png") 50% 50% / 100% 100%
+    no-repeat;
 }
 
 .story-slider .swiper-slide.type4 {
-  background: url("/src/images/houses/yangsan_grid_4.png") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_4.png") 50% 50% / 100% 100%
+    no-repeat;
 }
 
 .story-card {
@@ -198,19 +202,23 @@
 }
 
 .story-slider .swiper-slide.type1 .story-card {
-  background: url("/src/images/houses/yangsan_grid_card_1.svg") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_card_1.svg") 50% 50% / 100%
+    100% no-repeat;
 }
 
 .story-slider .swiper-slide.type2 .story-card {
-  background: url("/src/images/houses/yangsan_grid_card_2.svg") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_card_2.svg") 50% 50% / 100%
+    100% no-repeat;
 }
 
 .story-slider .swiper-slide.type3 .story-card {
-  background: url("/src/images/houses/yangsan_grid_card_3.svg") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_card_3.svg") 50% 50% / 100%
+    100% no-repeat;
 }
 
 .story-slider .swiper-slide.type4 .story-card {
-  background: url("/src/images/houses/yangsan_grid_card_4.svg") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/yangsan_grid_card_4.svg") 50% 50% / 100%
+    100% no-repeat;
 }
 
 .story-card__mark {
@@ -267,7 +275,8 @@
 }
 
 .story-slider__btn--prev::before {
-  background: url("/src/images/common/icon_arrow_left.png") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/common/icon_arrow_left.png") 50% 50% / 100% 100%
+    no-repeat;
 }
 
 .story-slider__btn--next {
@@ -275,7 +284,8 @@
 }
 
 .story-slider__btn--next::before {
-  background: url("/src/images/common/icon_arrow_right.png") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/common/icon_arrow_right.png") 50% 50% / 100% 100%
+    no-repeat;
 }
 
 .story-slider__pagination {
@@ -301,7 +311,8 @@
   flex-shrink: 0;
   margin: 0 auto;
   border-radius: 3rem;
-  background: url("/src/images/houses/house_value_bg.svg") 50% 50% / 100% 100% no-repeat;
+  background: url("/src/images/houses/house_value_bg.svg") 50% 50% / 100% 100%
+    no-repeat;
 }
 
 @media (max-width: 1440px) {
@@ -538,8 +549,8 @@
 }
 
 .partner-card {
-  min-height: 25.8rem;
-  padding: 3.2rem 2rem;
+  min-height: 28.5rem;
+  padding: 4rem;
   border-radius: 0.8rem;
   background-color: #ffffff;
   text-align: center;
@@ -590,6 +601,7 @@
 
 .apply-steps strong {
   display: block;
+  min-height: 7.2rem;
   margin-top: 3.2rem;
   font-size: 2.8rem;
   font-family: var(--font-extrabold);
@@ -656,17 +668,20 @@
 }
 
 .location-info li:nth-child(1)::before {
-  background: url("/src/images/houses/icon_location-info_tell.png") no-repeat center/contain;
+  background: url("/src/images/houses/icon_location-info_tell.png") no-repeat
+    center/contain;
   background-size: 100%;
 }
 
 .location-info li:nth-child(2)::before {
-  background: url("/src/images/houses/icon_location-info_mail.png") no-repeat center/contain;
+  background: url("/src/images/houses/icon_location-info_mail.png") no-repeat
+    center/contain;
   background-size: 100%;
 }
 
 .location-info li:nth-child(3)::before {
-  background: url("/src/images/houses/icon_location-info_fax.png") no-repeat center/contain;
+  background: url("/src/images/houses/icon_location-info_fax.png") no-repeat
+    center/contain;
   background-size: 100%;
 }
 
@@ -737,7 +752,7 @@
   margin: 0;
   padding: 2.4rem;
   font-size: 2.2rem;
-  line-height: 1.7;
+  line-height: 1.3;
 }
 
 /* Support */
@@ -792,6 +807,7 @@
 }
 
 .support-card p {
+  min-height: 9.6rem;
   margin: 1.6rem 0 3.2rem;
   font-size: 2rem;
   line-height: 1.6;
@@ -802,7 +818,6 @@
 }
 
 @media (max-width: 768px) {
-
   /* Common */
   .house-section {
     padding: 10rem 0;
@@ -888,19 +903,23 @@
   }
 
   .story-slider .swiper-slide.type1 {
-    background: url("/src/images/houses/yangsan_grid_1_mo.svg") 50% 1px / 100% 100% no-repeat;
+    background: url("/src/images/houses/yangsan_grid_1_mo.svg") 50% 1px / 100%
+      100% no-repeat;
   }
 
   .story-slider .swiper-slide.type2 {
-    background: url("/src/images/houses/yangsan_grid_2_mo.svg") 50% 50% / 100% 100% no-repeat;
+    background: url("/src/images/houses/yangsan_grid_2_mo.svg") 50% 50% / 100%
+      100% no-repeat;
   }
 
   .story-slider .swiper-slide.type3 {
-    background: url("/src/images/houses/yangsan_grid_3_mo.svg") 50% 50% / 100% 100% no-repeat;
+    background: url("/src/images/houses/yangsan_grid_3_mo.svg") 50% 50% / 100%
+      100% no-repeat;
   }
 
   .story-slider .swiper-slide.type4 {
-    background: url("/src/images/houses/yangsan_grid_4_mo.svg") 50% 50% / 100% 100% no-repeat;
+    background: url("/src/images/houses/yangsan_grid_4_mo.svg") 50% 50% / 100%
+      100% no-repeat;
   }
 
   .story-card {
@@ -911,19 +930,23 @@
   }
 
   .story-slider .swiper-slide.type1 .story-card {
-    background: url("/src/images/houses/yangsan_grid_card_1_mo.svg") 50% 50% / 100% 100% no-repeat;
+    background: url("/src/images/houses/yangsan_grid_card_1_mo.svg") 50% 50% /
+      100% 100% no-repeat;
   }
 
   .story-slider .swiper-slide.type2 .story-card {
-    background: url("/src/images/houses/yangsan_grid_card_2_mo.svg") 50% 50% / 100% 100% no-repeat;
+    background: url("/src/images/houses/yangsan_grid_card_2_mo.svg") 50% 50% /
+      100% 100% no-repeat;
   }
 
   .story-slider .swiper-slide.type3 .story-card {
-    background: url("/src/images/houses/yangsan_grid_card_3_mo.svg") 50% 50% / 100% 100% no-repeat;
+    background: url("/src/images/houses/yangsan_grid_card_3_mo.svg") 50% 50% /
+      100% 100% no-repeat;
   }
 
   .story-slider .swiper-slide.type4 .story-card {
-    background: url("/src/images/houses/yangsan_grid_card_4_mo.svg") 50% 50% / 100% 100% no-repeat;
+    background: url("/src/images/houses/yangsan_grid_card_4_mo.svg") 50% 50% /
+      100% 100% no-repeat;
   }
 
   .story-card__mark {
@@ -961,7 +984,8 @@
     padding: 4rem 2.4rem;
     border-radius: 1.6rem;
     aspect-ratio: auto;
-    background: url(/src/images/houses/house_value_bg_mo.svg) 50% 50% / 100% 100% no-repeat;
+    background: url(/src/images/houses/house_value_bg_mo.svg) 50% 50% / 100%
+      100% no-repeat;
   }
 
   .house-value__layout {
@@ -1167,7 +1191,7 @@
     margin-top: 1.6rem;
   }
 
-  .house-apply>.house-btn {
+  .house-apply > .house-btn {
     width: auto;
     min-width: calc(100% - 4.8rem);
   }
@@ -1278,19 +1302,22 @@
   }
 
   .support-card--yellow {
-    background: url(/src/images/houses/bg_house-support_1_mo.svg) 50% 50% no-repeat;
+    background: url(/src/images/houses/bg_house-support_1_mo.svg) 50% 50%
+      no-repeat;
     background-size: contain;
     background-position: center;
   }
 
   .support-card--sky {
-    background: url(/src/images/houses/bg_house-support_2_mo.svg) 50% 50% no-repeat;
+    background: url(/src/images/houses/bg_house-support_2_mo.svg) 50% 50%
+      no-repeat;
     background-size: contain;
     background-position: center;
   }
 
   .support-card--green {
-    background: url(/src/images/houses/bg_house-support_3_mo.svg) 50% 50% no-repeat;
+    background: url(/src/images/houses/bg_house-support_3_mo.svg) 50% 50%
+      no-repeat;
     background-size: contain;
     background-position: center;
   }
