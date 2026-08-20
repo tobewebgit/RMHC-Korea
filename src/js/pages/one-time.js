@@ -85,7 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnSubmitDonate = document.getElementById('btnSubmitDonate');
 
   // --- State Variables ---
-  let activeDonateTab = 'one-time'; // 'regular' | 'one-time'
+  const urlParams = new URLSearchParams(window.location.search);
+  const tabParam = urlParams.get('tab');
+  let activeDonateTab = (tabParam === 'regular') ? 'regular' : 'one-time'; // 'regular' | 'one-time'
   let selectedAmount = '';
   let isAmountValid = false;
   let selectedDonorType = 'individual'; // 'individual' | 'group'
@@ -505,20 +507,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      donateTypeTabs.forEach((tab, index) => {
-        const isReg = index === 0;
-        if (activeDonateTab === 'regular') {
-          if (isReg) {
-            tab.classList.remove('disabled');
-          } else {
-            tab.classList.add('disabled');
-          }
+      donateTypeTabs.forEach((tab) => {
+        const tabType = tab.getAttribute('data-tab');
+        if (tabType === activeDonateTab) {
+          tab.classList.remove('disabled');
         } else {
-          if (isReg) {
-            tab.classList.add('disabled');
-          } else {
-            tab.classList.remove('disabled');
-          }
+          tab.classList.add('disabled');
         }
       });
 
@@ -717,19 +711,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- 이벤트 리스너 리액티브 바인딩 ---
 
-  // 최상위 탭 전환 리스너
-  donateTypeTabs.forEach((tab, index) => {
+  // 최상위 탭 전환 리스너 (data-tab 속성 기반)
+  donateTypeTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      const isReg = index === 0;
-      activeDonateTab = isReg ? 'regular' : 'one-time';
+      const tabType = tab.getAttribute('data-tab');
+      activeDonateTab = (tabType === 'regular') ? 'regular' : 'one-time';
 
       // 최초 로드 시 설정된 애니메이션 방지 클래스 제거
-      const donateTypeTabsWrapper = document.querySelector('.donate-type-tabs');
+      const donateTypeTabsWrapper = document.getElementById('donateTypeTabs');
       if (donateTypeTabsWrapper && donateTypeTabsWrapper.classList.contains('initial-one-time')) {
         donateTypeTabsWrapper.classList.remove('initial-one-time');
       }
 
-      // 탭 전환 시 전체 상태 및 폼 필드 초기화 (지정 1번 요구사항 완벽 해결)
+      // 탭 전환 시 전체 상태 및 폼 필드 초기화
       resetAllSteps();
     });
   });
@@ -1034,4 +1028,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const isEnPage = window.location.pathname.includes('/en/');
     location.href = isEnPage ? '/en/donate/complete.html' : '/donate/complete.html';
   });
+
+  // --- 초기 로드 시 URL 파라미터(?tab=regular)에 따른 탭 활성화 및 초기화 ---
+  if (tabParam === 'regular') {
+    const donateTypeTabsWrapper = document.getElementById('donateTypeTabs');
+    if (donateTypeTabsWrapper) {
+      donateTypeTabsWrapper.classList.remove('initial-one-time');
+    }
+    resetAllSteps();
+  } else {
+    updateDonateFlowUI();
+  }
 });

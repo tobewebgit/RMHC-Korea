@@ -1375,6 +1375,17 @@ html[lang="en"] .vol-act-card__body {
   gap: 2.4rem;
 }
 
+.vol-popup-body .vol-house-top.form-label.required {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.vol-popup-body .vol-house-top.form-label.required::before {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+}
+
 /* ── 섹션 박스 ─────────────────────────────────────────────── */
 .vol-popup-section {
   display: flex;

@@ -52,10 +52,10 @@
           </div>
 
           <!-- 정기/일시 후원 구분 탭 버튼 -->
-          <div class="donate-type-tabs is-one-time initial-one-time">
+          <div class="donate-type-tabs is-one-time initial-one-time" id="donateTypeTabs">
             <div class="donate-tab-indicator"></div>
-            <button type="button" class="btn-tab disabled">정기 후원</button>
-            <button type="button" class="btn-tab">일시 후원</button>
+            <button type="button" class="btn-tab disabled" id="tabRegular" data-tab="regular">정기 후원</button>
+            <button type="button" class="btn-tab" id="tabOneTime" data-tab="one-time">일시 후원</button>
           </div>
 
           <form id="oneTimeDonateForm" class="gala-apply-form" novalidate>

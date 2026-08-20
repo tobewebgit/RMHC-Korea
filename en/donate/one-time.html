@@ -62,10 +62,20 @@
               id="donateTypeTabs"
             >
               <div class="donate-tab-indicator"></div>
-              <button type="button" class="btn-tab disabled" id="tabMonthly">
+              <button
+                type="button"
+                class="btn-tab disabled"
+                id="tabMonthly"
+                data-tab="monthly"
+              >
                 Monthly
               </button>
-              <button type="button" class="btn-tab" id="tabOneTime">
+              <button
+                type="button"
+                class="btn-tab"
+                id="tabOneTime"
+                data-tab="one-time"
+              >
                 One-time
               </button>
             </div>
@@ -147,9 +157,29 @@
                   </div>
 
                   <!-- 헬퍼 옐로우 박스 -->
-                  <div class="notice-yellow-box" id="enNoticeBox">
-                    <img src="/src/images/donate/icon_helper_3.png" alt="" />
+                  <div class="notice-yellow-box">
+                    <img src="/src/images/donate/icon_helper_1.png" alt="Support guide icon" />
+                    <span>Send comfort and encouragement to a family</span>
+                  </div>
+                  <div class="notice-yellow-box">
+                    <img src="/src/images/donate/icon_helper_2.png" alt="Support guide icon" />
+                    <span>Provide a warm meal for a family</span>
+                  </div>
+                  <div class="notice-yellow-box">
+                    <img src="/src/images/donate/icon_helper_3.png" alt="Support guide icon" />
                     <span>Give a family a comfortable place to rest</span>
+                  </div>
+                  <div class="notice-yellow-box">
+                    <img src="/src/images/donate/icon_helper_4.png" alt="Support guide icon" />
+                    <span>Support a family for a full day</span>
+                  </div>
+                  <div class="notice-yellow-box">
+                    <img src="/src/images/donate/icon_helper_5.png" alt="Support guide icon" />
+                    <span>Give more families a night together</span>
+                  </div>
+                  <div class="notice-yellow-box">
+                    <img src="/src/images/donate/icon_helper_6.png" alt="Support guide icon" />
+                    <span>Help a family every step of the way</span>
                   </div>
                 </div>
               </section>
@@ -507,8 +537,6 @@
 
     <!-- 푸터 공통 영역 인클루드 -->
     <load src="/includes/footer_en.html" />
-
-    <!-- 영문 기부 통합 스크립트 -->
-    <script src="/src/js/pages/en-one-time.js"></script>
+    <script type="module" src="/src/js/pages/en-one-time.js"></script>
   </body>
 </html>

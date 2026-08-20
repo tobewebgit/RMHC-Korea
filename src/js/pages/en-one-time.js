@@ -15,7 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const businessNameArea = document.getElementById('businessNameArea');
   const businessNameInput = document.getElementById('businessName');
 
-  let currentTab = 'one-time';
+  // URL 파라미터 기반 탭 감지 (?tab=monthly | ?tab=one-time | ?tab=regular)
+  const urlParams = new URLSearchParams(window.location.search);
+  const tabParam = urlParams.get('tab');
+  let currentTab = (tabParam === 'monthly' || tabParam === 'regular') ? 'monthly' : 'one-time';
 
   function updateBusinessNameVisibility() {
     if (!businessNameArea) return;
@@ -31,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function switchTab(type) {
     if (!donateTypeTabsWrapper) return;
 
-    currentTab = type;
+    currentTab = (type === 'monthly' || type === 'regular') ? 'monthly' : 'one-time';
 
     if (donateTypeTabsWrapper.classList.contains('initial-one-time')) {
       donateTypeTabsWrapper.classList.remove('initial-one-time');
     }
 
-    if (type === 'monthly') {
+    if (currentTab === 'monthly') {
       // Monthly 탭 활성화 (왼쪽 슬라이딩)
       donateTypeTabsWrapper.classList.remove('is-one-time');
       if (btnMonthlyTab) btnMonthlyTab.classList.remove('disabled');
@@ -61,39 +64,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (btnMonthlyTab) {
-    btnMonthlyTab.addEventListener('click', () => switchTab('monthly'));
+    btnMonthlyTab.addEventListener('click', () => {
+      const tabType = btnMonthlyTab.getAttribute('data-tab') || 'monthly';
+      switchTab(tabType);
+    });
   }
   if (btnOneTimeTab) {
-    btnOneTimeTab.addEventListener('click', () => switchTab('one-time'));
+    btnOneTimeTab.addEventListener('click', () => {
+      const tabType = btnOneTimeTab.getAttribute('data-tab') || 'one-time';
+      switchTab(tabType);
+    });
   }
 
-  // --- 3. 금액 선택 칩 & Other 버튼 / 직접 입력 & notice-yellow-box 동적 갱신 ---
+  // 초기 로드 시 탭 활성화 적용
+  switchTab(currentTab);
+
+  // --- 3. 금액 선택 칩 & Other 버튼 / 직접 입력 & 6종 헬퍼 박스 동적 제어 ---
+  const step1Card = document.getElementById('step1Card');
   const amountGrid = document.getElementById('enAmountGrid');
   const amountChips = amountGrid ? amountGrid.querySelectorAll('.btn:not(#btnOtherAmount)') : [];
   const btnOtherAmount = document.getElementById('btnOtherAmount');
   const directInputChip = document.getElementById('directInputChip');
   const directAmountInput = document.getElementById('directAmount');
-  const noticeBoxSpan = document.querySelector('#enNoticeBox span');
-  const noticeBoxImg = document.querySelector('#enNoticeBox img');
+  const helperBoxes = step1Card ? step1Card.querySelectorAll('.notice-yellow-box') : [];
 
-  const helperMessages = {
-    '10': { text: 'Send comfort and encouragement to a family', img: '/src/images/donate/icon_helper_1.png' },
-    '25': { text: 'Provide a warm meal for a family', img: '/src/images/donate/icon_helper_2.png' },
-    '50': { text: 'Give a family a comfortable place to rest', img: '/src/images/donate/icon_helper_3.png' },
-    '100': { text: 'Support a family for a full day', img: '/src/images/donate/icon_helper_4.png' },
-    '250': { text: 'Give more families a night together', img: '/src/images/donate/icon_helper_5.png' },
-    'other': { text: 'Help a family every step of the way', img: '/src/images/donate/icon_helper_6.png' },
-  };
-
-  function updateEnNoticeBox(key) {
-    const info = helperMessages[key] || helperMessages['other'];
-    if (noticeBoxSpan && noticeBoxImg && info) {
-      noticeBoxSpan.textContent = info.text;
-      noticeBoxImg.src = info.img;
-    }
+  // 6종 헬퍼 박스 동적 선택 노출 및 숨김 함수 (국문과 동일한 방식)
+  function updateHelperBox(activeIndex) {
+    helperBoxes.forEach((box, index) => {
+      if (index === activeIndex) {
+        box.style.display = 'flex';
+      } else {
+        box.style.display = 'none';
+      }
+    });
   }
 
-  amountChips.forEach((chip) => {
+  // 초기 상태: 기본 선택된 $50(인덱스 2) 매칭 배너 노출
+  updateHelperBox(2);
+
+  amountChips.forEach((chip, chipIndex) => {
     chip.addEventListener('click', () => {
       // 모든 금액 칩 및 Other 버튼 비활성화 (btn-outline)
       amountChips.forEach((c) => {
@@ -115,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
       chip.classList.remove('btn-outline');
       chip.classList.add('btn-primary');
 
-      const val = chip.getAttribute('data-value');
-      updateEnNoticeBox(val);
+      // 1:1 배너 매칭 노출
+      updateHelperBox(chipIndex);
     });
   });
 
@@ -142,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
         autoResizeInput(directAmountInput);
         directAmountInput.focus();
       }
-      updateEnNoticeBox('other');
+      // 6번째 헬퍼 배너 (Other/직접입력 매칭 배너) 노출
+      updateHelperBox(5);
     });
   }
 
@@ -150,14 +160,14 @@ document.addEventListener('DOMContentLoaded', () => {
     directAmountInput.addEventListener('focus', () => {
       if (directInputChip) directInputChip.classList.add('active', 'is-active');
       autoResizeInput(directAmountInput);
-      updateEnNoticeBox('other');
+      updateHelperBox(5);
     });
 
     directAmountInput.addEventListener('input', (e) => {
       let rawVal = e.target.value.replace(/[^0-9]/g, '');
       e.target.value = rawVal ? Number(rawVal).toLocaleString('en-US') : '';
       autoResizeInput(directAmountInput);
-      updateEnNoticeBox('other');
+      updateHelperBox(5);
     });
   }
 
