@@ -1353,7 +1353,6 @@ body:has(.house-coming-section) .footer,
   background-position: center center;
   background-size: 192rem auto;
   display: flex;
-  align-items: center;
   justify-content: center;
   padding: 0 2.4rem;
   overflow: hidden;
@@ -1363,8 +1362,9 @@ body:has(.house-coming-section) .footer,
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 76rem;
+  max-width: 80rem;
   margin: 0 auto;
+  padding-top: 34rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1415,8 +1415,7 @@ body:has(.house-coming-section) .footer,
 /* Card */
 .house-coming-card {
   width: 100%;
-  max-width: 58rem;
-  background-color: #fff0bd;
+  background-color: rgba(255, 188, 13, 0.2);
   border-radius: 1.6rem;
   padding: 4rem;
   text-align: center;
@@ -1424,10 +1423,10 @@ body:has(.house-coming-section) .footer,
 
 .house-coming-card__label {
   font-family: var(--font-bold);
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--text-gray100);
-  margin-bottom: 2rem;
+  margin-bottom: 2.4rem;
   line-height: 1.3;
 }
 
@@ -1437,13 +1436,11 @@ body:has(.house-coming-section) .footer,
   justify-content: center;
   gap: 1.2rem;
   width: 100%;
-  max-width: 46rem;
-  min-height: 6.4rem;
-  padding: 1.4rem 2.8rem;
-  background-color: #ffc72c;
-  color: var(--text-gray100);
+  max-width: 38.6rem;
+  min-height: 8.8rem;
+  padding: 2.4rem;
+  background-color: #ffbc0d;
   border-radius: 1.2rem;
-  font-family: var(--font-bold);
   font-size: 2rem;
   font-weight: 700;
   text-decoration: none;
@@ -1452,12 +1449,11 @@ body:has(.house-coming-section) .footer,
 
 .house-coming-btn:hover {
   background-color: #ffbe10;
-  transform: translateY(-0.2rem);
   box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.08);
 }
 
 .house-coming-btn__icon {
-  width: 2.8rem;
+  width: 4rem;
   height: auto;
   flex-shrink: 0;
 }
@@ -1467,14 +1463,23 @@ body:has(.house-coming-section) .footer,
   text-align: center;
 }
 
-.house-coming-btn__arrow {
-  font-size: 2.2rem;
-  font-style: normal;
-  line-height: 1;
-  transition: var(--transition-arrow);
+.house-coming-btn::after {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_arrow_right_white.png") no-repeat
+    center / contain;
+  mask: url("/src/images/common/icon_arrow_right_white.png") no-repeat center /
+    contain;
+  flex-shrink: 0;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    background-color 0.3s ease;
 }
 
-.house-coming-btn:hover .house-coming-btn__arrow {
+.house-coming-btn:hover::after {
   transform: translateX(0.4rem);
 }
 
@@ -1482,19 +1487,21 @@ body:has(.house-coming-section) .footer,
 @media (max-width: 768px) {
   .house-coming-section {
     height: auto;
-    min-height: calc(100vh - 6rem);
+    min-height: 53rem;
     background-image: url("/src/images/houses/img_coming_heart_mo.png");
-    background-position: center top 2rem;
-    background-size: 36rem auto;
-    padding: 8rem 2rem 10rem;
+    background-position: 60% -15rem;
+    background-size: 61rem auto;
+  }
+  .house-coming-inner {
+    padding-top: 10rem;
   }
 
   .house-coming-badge {
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.2rem;
   }
 
   .house-coming-badge__icon {
-    width: 3.2rem;
+    width: 6rem;
   }
 
   .house-coming-badge__text {
@@ -1502,24 +1509,24 @@ body:has(.house-coming-section) .footer,
   }
 
   .house-coming-title {
-    font-size: 3rem;
-    margin-bottom: 1.6rem;
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
   }
 
   .house-coming-desc {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.6;
     margin-bottom: 3.6rem;
   }
 
   .house-coming-card {
     max-width: 100%;
-    padding: 2.8rem 2rem;
+    padding: 2rem;
     border-radius: 1.6rem;
   }
 
   .house-coming-card__label {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-bottom: 1.6rem;
   }
 
