@@ -549,7 +549,9 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
   height: 24.3rem;
 }
 .main-event-card:hover .card-text-wrap .text-1 {
+  height: 1rem;
   opacity: 0;
+  overflow: hidden;
 }
 .main-event-card:hover .card-text-wrap .text-2 {
   opacity: 1;
@@ -1307,10 +1309,28 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
     padding: 2.4rem 2rem;
     font-size: 1.4rem;
   }
+  html[lang="en"] .main-event-card .card-text-wrap {
+    height: 12rem;
+  }
+  html[lang="en"] .main-event-card:hover .card-text-wrap {
+    height: 18rem;
+  }
+  .main-event-card:hover .card-text-wrap {
+    height: 17rem;
+  }
+
+  .main-event-card .card-text-wrap .text-1,
+  .main-event-card .card-text-wrap .text-2 {
+    width: 100%;
+  }
 
   .main-event-card .card-text-wrap .text-1,
   .main-event-card .card-text-wrap .text-2 {
     position: static;
+  }
+  .main-event-card .card-text-wrap .text-1 .link-text,
+  .main-event-card .card-text-wrap .text-2 .link-text {
+    font-size: 1.4rem;
   }
 
   .main-thanks {
@@ -1501,6 +1521,7 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
 
   .main-donate__inner {
     width: 100%;
+    padding: 0;
   }
 
   .donate-banner {

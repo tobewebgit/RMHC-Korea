@@ -570,10 +570,10 @@
     "depth3": "",
     "depth4": "",
     "path": "/mail/join-complete.html",
-    "status": "진행중",
+    "status": "완료",
     "lastModified": "2026-07-13",
-    "memo": "",
-    "qa": ""
+    "memo": "회원 가입 완료 메일",
+    "qa": "완료"
   },
   {
     "id": 51,
@@ -582,25 +582,13 @@
     "depth3": "",
     "depth4": "",
     "path": "/mail/donate-complete.html",
-    "status": "진행중",
+    "status": "완료",
     "lastModified": "2026-07-13",
-    "memo": "",
-    "qa": ""
+    "memo": "후원 완료 메일",
+    "qa": "완료"
   },
   {
     "id": 52,
-    "depth1": "공통",
-    "depth2": "자원봉사 완료 메일",
-    "depth3": "",
-    "depth4": "",
-    "path": "/mail/volunteer-complete.html",
-    "status": "진행중",
-    "lastModified": "2026-07-13",
-    "memo": "",
-    "qa": ""
-  },
-  {
-    "id": 53,
     "depth1": "공통",
     "depth2": "뉴스레터구독 팝업",
     "depth3": "",
@@ -612,7 +600,7 @@
     "qa": "완료"
   },
   {
-    "id": 54,
+    "id": 53,
     "depth1": "공통",
     "depth2": "뉴스레터구독 팝업 완료",
     "depth3": "",

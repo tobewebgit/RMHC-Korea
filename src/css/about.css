@@ -400,7 +400,7 @@ html[lang="en"] .house-list {
 .house-list a {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   min-height: 7.4rem;
   padding: 0 2.4rem;
@@ -705,10 +705,10 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
     display: inline;
   }
 
-  .about-vision .inner-layout {
+  /* .about-vision .inner-layout {
     padding-right: 2.4rem;
     padding-left: 2.4rem;
-  }
+  } */
 
   .about-section-head {
     margin-bottom: 4rem;

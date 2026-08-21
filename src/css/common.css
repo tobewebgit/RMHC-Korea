@@ -927,7 +927,7 @@ a.header__submenu-link:focus-visible,
     gap: 0.4rem;
     min-height: 4.8rem;
     font-size: 1.4rem;
-    color: #000000;
+    line-height: 1;
   }
 
   .mobile-utility {
@@ -959,6 +959,9 @@ a.header__submenu-link:focus-visible,
     padding: 0 2.4rem 2.4rem;
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  }
+  html[lang="en"] .mobile-nav {
+    padding: 2.4rem;
   }
 
   .mobile-nav::-webkit-scrollbar {
@@ -1049,6 +1052,10 @@ a.header__submenu-link:focus-visible,
     grid-template-columns: 1fr 1fr;
     gap: 0.8rem;
     padding: 2.4rem 2.4rem 0;
+  }
+
+  html[lang="en"] .mobile-panel-footer {
+    grid-template-columns: 1fr;
   }
 
   .btn.mobile-panel-btn {
