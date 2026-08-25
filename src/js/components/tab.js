@@ -75,17 +75,7 @@ export function initTabs() {
       targetContent.style.display = 'block';
 
       // 3. 모바일 가로 스크롤 탭 메뉴: 활성화된 탭을 중앙으로 부드럽고 느리게 스크롤
-      const activeItem = this.closest('.tab-item') || this;
-      let scrollContainer = this.closest('.tab-list, .sub-tab-list, .tab-menu, .sub-tab-menu, .faq-tab-menu');
-      
-      while (scrollContainer && scrollContainer !== document.body) {
-        if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
-          const targetScrollLeft = activeItem.offsetLeft - (scrollContainer.clientWidth / 2) + (activeItem.clientWidth / 2);
-          smoothScrollTo(scrollContainer, Math.max(0, targetScrollLeft), 500);
-          break;
-        }
-        scrollContainer = scrollContainer.parentElement ? scrollContainer.parentElement.closest('.tab-list, .sub-tab-list, .tab-menu, .sub-tab-menu, .faq-tab-menu') : null;
-      }
+      scrollTabToCenter(this);
     });
   });
 }
@@ -96,7 +86,7 @@ export function initTabs() {
  * @param {number} target - 목표 scrollLeft 위치
  * @param {number} duration - 애니메이션 지속 시간 (ms, 기본 500ms)
  */
-function smoothScrollTo(element, target, duration = 500) {
+export function smoothScrollTo(element, target, duration = 500) {
   const start = element.scrollLeft;
   const change = target - start;
   if (Math.abs(change) < 1) return;
@@ -122,3 +112,53 @@ function smoothScrollTo(element, target, duration = 500) {
 
   requestAnimationFrame(animateScroll);
 }
+
+/**
+ * 활성화된 탭 아이템을 부모 스크롤 컨테이너의 중앙으로 부드럽게 스크롤 이동
+ * @param {HTMLElement} activeElement - 활성화된 탭 버튼 또는 탭 아이템 요소
+ * @param {HTMLElement|string} [container] - 스크롤 컨테이너 요소 또는 선택자 (생략 시 부모 스크롤 컨테이너 자동 탐색)
+ */
+export function scrollTabToCenter(activeElement, container = null) {
+  if (!activeElement) return;
+
+  const activeItem = activeElement.closest('.tab-item') || activeElement;
+  let scrollContainer = null;
+
+  if (typeof container === 'string') {
+    scrollContainer = activeElement.closest(container);
+  } else if (container instanceof HTMLElement) {
+    scrollContainer = container;
+  } else {
+    scrollContainer = activeElement.closest(
+      '.tab-list, .sub-tab-list, .tab-menu, .sub-tab-menu, .faq-tab-menu, .gallery-tabs, .gallery-thumbs'
+    );
+  }
+
+  if (!scrollContainer) {
+    let parent = activeElement.parentElement;
+    while (parent && parent !== document.body) {
+      if (parent.scrollWidth > parent.clientWidth) {
+        scrollContainer = parent;
+        break;
+      }
+      parent = parent.parentElement;
+    }
+  }
+
+  while (scrollContainer && scrollContainer !== document.body) {
+    if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
+      const targetScrollLeft =
+        activeItem.offsetLeft -
+        scrollContainer.clientWidth / 2 +
+        activeItem.clientWidth / 2;
+      smoothScrollTo(scrollContainer, Math.max(0, targetScrollLeft), 500);
+      break;
+    }
+    scrollContainer = scrollContainer.parentElement
+      ? scrollContainer.parentElement.closest(
+          '.tab-list, .sub-tab-list, .tab-menu, .sub-tab-menu, .faq-tab-menu, .gallery-tabs, .gallery-thumbs'
+        )
+      : null;
+  }
+}
+

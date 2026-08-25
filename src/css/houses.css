@@ -1021,6 +1021,12 @@
     margin-bottom: 1.2rem;
   }
 
+  .impact-box {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
   .value-list strong {
     font-size: 1.8rem;
   }
@@ -1032,14 +1038,23 @@
 
   /* Impact */
   .impact-list {
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
+    display: flex;
+    flex-direction: column;
     width: calc(100% - 4.8rem);
     gap: 3.2rem 1.6rem;
     margin: 4rem auto 0;
   }
 
+  .impact-list li {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 0 2.4rem;
+  }
+
   .impact-list li:last-child {
-    grid-column: span 2;
+    /* grid-column: span 2; */
   }
 
   .impact-list img {
@@ -1048,11 +1063,12 @@
   }
 
   .impact-list strong {
-    margin-top: 1.6rem;
+    margin-top: 0;
     font-size: 4rem;
   }
 
   .impact-list span {
+    margin-top: 0;
     font-size: 1.4rem;
   }
 
@@ -1083,8 +1099,9 @@
   .gallery-tabs button {
     flex: 0 0 auto;
     min-height: 3.2rem;
-    padding: 0 1.6rem 1rem;
-    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.8rem;
+    line-height: 1.2;
   }
 
   .gallery-view {
@@ -1297,6 +1314,7 @@
   }
 
   .support-card p {
+    min-height: auto;
     margin: 1.2rem 0 2.4rem;
     font-size: 1.6rem;
   }

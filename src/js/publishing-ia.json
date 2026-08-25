@@ -294,10 +294,10 @@
     "depth3": "",
     "depth4": "",
     "path": "/houses/gangnam.html",
-    "status": "작업전",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)",
-    "qa": ""
+    "memo": "완료",
+    "qa": "완료"
   },
   {
     "id": 30,
@@ -306,10 +306,10 @@
     "depth3": "",
     "depth4": "",
     "path": "/houses/inha.html",
-    "status": "작업전",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)",
-    "qa": ""
+    "memo": "완료",
+    "qa": "완료"
   },
   {
     "id": 31,
@@ -318,10 +318,10 @@
     "depth3": "",
     "depth4": "",
     "path": "/houses/seocho.html",
-    "status": "작업전",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)",
-    "qa": ""
+    "memo": "완료",
+    "qa": "완료"
   },
   {
     "id": 32,
@@ -330,10 +330,10 @@
     "depth3": "",
     "depth4": "",
     "path": "/houses/yeonhui.html",
-    "status": "작업전",
+    "status": "완료",
     "lastModified": "",
-    "memo": "작업 대기 중 (레거시 비움)",
-    "qa": ""
+    "memo": "완료",
+    "qa": "완료"
   },
   {
     "id": 33,

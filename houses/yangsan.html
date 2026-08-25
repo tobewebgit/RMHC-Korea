@@ -228,13 +228,15 @@
                 alt=""
                 loading="lazy"
               />
-              <strong
-                data-counter-value="1.5"
-                data-counter-decimals="1"
-                data-counter-suffix="K+"
-                >1.5K+</strong
-              >
-              <span>누적 이용 환아 가족</span>
+              <div class="impact-box">
+                <strong
+                  data-counter-value="1.5"
+                  data-counter-decimals="1"
+                  data-counter-suffix="K+"
+                  >1.5K+</strong
+                >
+                <span>누적 이용 환아 가족</span>
+              </div>
             </li>
             <li data-motion="fade-up" data-motion-delay="0.2">
               <img
@@ -242,13 +244,15 @@
                 alt=""
                 loading="lazy"
               />
-              <strong
-                data-counter-value="2131"
-                data-counter-comma="true"
-                data-counter-suffix="+"
-                >2,131+</strong
-              >
-              <span>제공된 따뜻한 식사</span>
+              <div class="impact-box">
+                <strong
+                  data-counter-value="2131"
+                  data-counter-comma="true"
+                  data-counter-suffix="+"
+                  >2,131+</strong
+                >
+                <span>제공된 따뜻한 식사</span>
+              </div>
             </li>
             <li data-motion="fade-up" data-motion-delay="0.3">
               <img
@@ -256,10 +260,12 @@
                 alt=""
                 loading="lazy"
               />
-              <strong data-counter-value="100" data-counter-suffix="+"
-                >100+</strong
-              >
-              <span>함께하는 파트너 기업</span>
+              <div class="impact-box">
+                <strong data-counter-value="100" data-counter-suffix="+"
+                  >100+</strong
+                >
+                <span>함께하는 파트너 기업</span>
+              </div>
             </li>
           </ul>
           <p class="impact-note" data-motion="fade-up" data-motion-delay="0.4">
@@ -723,6 +729,7 @@
 
     <script type="module">
       import { createSwiper } from "/src/js/components/swiper-utils.js";
+      import { scrollTabToCenter } from "/src/js/components/tab.js";
 
       document.addEventListener("DOMContentLoaded", () => {
         const initImpactCounters = () => {
@@ -1159,6 +1166,9 @@
                 const isActive = index === activeIndex;
                 thumb.classList.toggle("is-active", isActive);
                 thumb.setAttribute("aria-current", isActive ? "true" : "false");
+                if (isActive) {
+                  scrollTabToCenter(thumb, thumbs);
+                }
               },
             );
           };
@@ -1262,6 +1272,7 @@
             tab.addEventListener("click", () => {
               currentCategory = tab.dataset.galleryCategory;
               renderGallery(currentCategory);
+              scrollTabToCenter(tab);
             });
           });
 
