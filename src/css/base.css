@@ -1,37 +1,4 @@
 @charset "utf-8";
-/* Pretendard: 본문 전용 (사용 weight: 400, 500, 600, 700, 800) */
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/Pretendard-Regular.woff2") format("woff2");
-}
-/*
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 500;
-  font-display: swap;
-  src: url("../fonts/Pretendard-Medium.woff2") format("woff2");
-} */
-
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 600;
-  font-display: swap;
-  src: url("../fonts/Pretendard-SemiBold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/Pretendard-Bold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 800;
-  font-display: swap;
-  src: url("../fonts/Pretendard-ExtraBold.woff2") format("woff2");
-}
 
 @font-face {
   font-family: "NanumSquareNeoLight";
@@ -63,26 +30,190 @@
   src: url("../fonts/NanumSquareNeoTTF-eHv.woff2") format("woff2");
 }
 
-/* AudreyDisplay */
+/* ==================================================
+   AudreyDisplay (영문: Audrey Display / 국문: Audrey Display KR)
+   ================================================== */
+/* 1) AudreyDisplay Bold (700) - 영문 */
 @font-face {
   font-family: "AudreyDisplay";
   font-weight: 700;
+  font-style: normal;
   font-display: swap;
-  src: url("../fonts/AudreyDisplay-Bold.woff2") format("woff2");
+  src: url("../fonts/AudreyDisplay-Bold.woff") format("woff");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074-20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* 1-2) AudreyDisplay Bold Italic (700) - 영문 */
+@font-face {
+  font-family: "AudreyDisplay";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("../fonts/AudreyDisplay-BoldItalic.woff") format("woff");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074-20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Audrey Text */
+/* 2) AudreyDisplay Bold (700) - 국문(한글) */
+@font-face {
+  font-family: "AudreyDisplay";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/AudreyDisplayKR-Bold.woff") format("woff");
+  unicode-range:
+    U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "AudreyDisplay";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("../fonts/AudreyDisplayKR-Bold.woff") format("woff");
+  unicode-range:
+    U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+}
+
+/* 3) AudreyDisplay KR 단독 명시용 패밀리 */
+@font-face {
+  font-family: "AudreyDisplay KR";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/AudreyDisplayKR-Bold.woff") format("woff");
+}
+
+/* ==================================================
+   Audrey Text (영문: Audrey Text / 국문: Audrey Text KR)
+   ================================================== */
+/* 1) Regular (400) - 영문 */
 @font-face {
   font-family: "Audrey Text";
   font-weight: 400;
+  font-style: normal;
   font-display: swap;
-  src: url("../fonts/AudreyText-Regular.woff2") format("woff2");
+  src:
+    url("../fonts/AudreyText-Regular.woff2") format("woff2"),
+    url("../fonts/AudreyText-Regular.woff") format("woff");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074-20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* 1-2) Regular Italic (400) - 영문 */
+@font-face {
+  font-family: "Audrey Text";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src:
+    url("../fonts/AudreyText-Italic.woff2") format("woff2"),
+    url("../fonts/AudreyText-Italic.woff") format("woff");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074-20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* 2) Regular (400) - 국문 */
+@font-face {
+  font-family: "Audrey Text";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("../fonts/AudreyTextKR-Regular.woff2") format("woff2"),
+    url("../fonts/AudreyTextKR-Regular.woff") format("woff");
+  unicode-range:
+    U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "Audrey Text";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src:
+    url("../fonts/AudreyTextKR-Regular.woff2") format("woff2"),
+    url("../fonts/AudreyTextKR-Regular.woff") format("woff");
+  unicode-range:
+    U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+}
+
+/* 3) Bold (700) - 영문 */
+@font-face {
+  font-family: "Audrey Text";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("../fonts/AudreyText-Bold.woff2") format("woff2"),
+    url("../fonts/AudreyText-Bold.woff") format("woff");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074-20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* 3-2) Bold Italic (700) - 영문 */
+@font-face {
+  font-family: "Audrey Text";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src:
+    url("../fonts/AudreyText-BoldItalic.woff2") format("woff2"),
+    url("../fonts/AudreyText-BoldItalic.woff") format("woff");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074-20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* 4) Bold (700) - 국문 */
+@font-face {
+  font-family: "Audrey Text";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("../fonts/AudreyTextKR-Bold.woff2") format("woff2"),
+    url("../fonts/AudreyTextKR-Bold.woff") format("woff");
+  unicode-range:
+    U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
 }
 @font-face {
   font-family: "Audrey Text";
   font-weight: 700;
+  font-style: italic;
   font-display: swap;
-  src: url("../fonts/AudreyText-Bold.woff2") format("woff2");
+  src:
+    url("../fonts/AudreyTextKR-Bold.woff2") format("woff2"),
+    url("../fonts/AudreyTextKR-Bold.woff") format("woff");
+  unicode-range:
+    U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+}
+
+/* 5) Audrey Text KR 단독 명시용 패밀리 */
+@font-face {
+  font-family: "Audrey Text KR";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("../fonts/AudreyTextKR-Regular.woff2") format("woff2"),
+    url("../fonts/AudreyTextKR-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Audrey Text KR";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("../fonts/AudreyTextKR-Bold.woff2") format("woff2"),
+    url("../fonts/AudreyTextKR-Bold.woff") format("woff");
 }
 
 :root {
@@ -102,7 +233,7 @@
   --bg-secondary: #faf8f5;
   --bg-tertiary: #f3f0ea;
   --bg-white: #ffffff;
-  --bg-violet: #d0c9ff;
+  --bg-violet: #91187d;
   --bg-kv: #d0c9ff;
   --bg-gray90: #21272a;
   --bg-gray80: #555555;
@@ -140,8 +271,12 @@
   --border-focus: #db0007;
 
   /* Typography Fonts */
+  --font-text:
+    "Audrey Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display:
+    "AudreyDisplay", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-pretendard:
-    "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    "Audrey Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-light:
     "NanumSquareNeoLight", -apple-system, BlinkMacSystemFont, system-ui,
     sans-serif;
@@ -156,8 +291,6 @@
   --font-heavy:
     "NanumSquareNeoHeavy", -apple-system, BlinkMacSystemFont, system-ui,
     sans-serif;
-  --font-display:
-    "AudreyDisplay", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 
   /* Typography Scale */
   --text-xs: 1.2rem;
@@ -350,7 +483,7 @@ body {
   min-height: 100%;
   font-size: 1.6rem;
   line-height: 1.3;
-  font-family: var(--font-pretendard);
+  font-family: var(--font-text);
   background-color: var(--bg-primary);
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -371,7 +504,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   word-break: keep-all;
 }
 ol,
@@ -451,7 +584,7 @@ textarea {
   border-radius: 0;
 }
 button {
-  font-family: var(--font-pretendard);
+  font-family: var(--font-text);
   cursor: pointer;
 }
 a:link,
@@ -459,7 +592,7 @@ a:visited,
 a:hover,
 a:active,
 a:focus {
-  font-family: var(--font-pretendard);
+  font-family: var(--font-text);
   text-decoration: none;
   color: inherit;
   -webkit-font-smoothing: antialiased;
@@ -575,6 +708,13 @@ html:not(.lenis) [data-aos] {
 
 .color-primary {
   color: var(--primary);
+}
+.font-display {
+  font-family: var(--font-display);
+}
+.font-text,
+.font-pretendard {
+  font-family: var(--font-text);
 }
 .font-title {
   font-family: var(--font-title);
@@ -931,17 +1071,20 @@ input:-webkit-autofill:active {
 }
 
 /* 영문 페이지 전용 폰트 스타일 재정의 */
-html[lang="en"] h1,
+/* html[lang="en"] h1,
 html[lang="en"] h2,
 html[lang="en"] h3,
 html[lang="en"] h4,
 html[lang="en"] h5,
 html[lang="en"] h6,
 html[lang="en"] {
+  --font-text:
+    "Audrey Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display:
+    "AudreyDisplay", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-pretendard:
-    "Audrey Text", "AudreyDisplay", -apple-system, BlinkMacSystemFont,
-    system-ui, sans-serif;
+    "Audrey Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-extrabold:
     "AudreyDisplay", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   word-break: normal;
-}
+} */

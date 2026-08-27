@@ -67,7 +67,7 @@ a.btn-primary:hover {
 }
 .btn-primary.btn-page:hover,
 a.btn-primary.btn-page:hover {
-  color: var(--text-black);
+  color: var(--text-white);
   background-color: var(--bg-violet);
 }
 .btn-primary.btn-page1:hover,

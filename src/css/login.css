@@ -951,7 +951,7 @@
 }
 
 .donation-detail-section .summary-box .summary-value .unit {
-  font-family: var(--font-pretendard);
+  font-family: var(--font-text);
   font-size: 2.2rem;
 }
 

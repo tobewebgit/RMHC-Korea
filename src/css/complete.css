@@ -89,7 +89,7 @@
 }
 
 .complete-helper-box p {
-  font-family: var(--font-pretendard);
+  font-family: var(--font-text);
   font-size: 1.6rem !important;
   margin: 0;
 }

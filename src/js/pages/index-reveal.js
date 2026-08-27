@@ -174,14 +174,14 @@ export function initIndexReveal() {
           // 이미지가 공간 내에서 비율을 유지하며 잘리지 않도록 (너비 0일 때 깨짐 방지)
           item.style.objectFit = 'contain';
         } else {
-          // 글자(reveal-char): 기존 로직 동일 (위로 0.5rem 안착, 회색 -> 검은색)
+          // 글자(reveal-char): #D0C9FF -> 검은색
           // const translateY = (1 - itemProgress) * 0.5;
           const translateY = 0;
           item.style.transform = `translateY(${translateY}rem)`;
 
-          const r = Math.round(170 - itemProgress * 170);
-          const g = Math.round(170 - itemProgress * 170);
-          const b = Math.round(170 - itemProgress * 170);
+          const r = Math.round(208 - itemProgress * 208);
+          const g = Math.round(201 - itemProgress * 201);
+          const b = Math.round(255 - itemProgress * 255);
           item.style.color = `rgb(${r}, ${g}, ${b})`;
 
           // reveal-highlight 밑줄 클래스 제어

@@ -246,7 +246,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .accordion-card.is-active .card-body h3,
 .accordion-card.is-active .radio-label {
-  font-family: var(--font-pretendard);
+  font-family: var(--font-text);
   font-weight: 600;
   font-size: 2.2rem;
 }
@@ -1427,7 +1427,7 @@ html[lang="en"] .vol-act-card__body {
 }
 
 .vol-popup-section__title span {
-  font-family: var(--font-pretendard);
+  font-family: var(--font-text);
   font-weight: 400;
 }
 
@@ -1786,7 +1786,7 @@ html[lang="en"] .vol-act-card__body {
   margin: 0;
   font-size: 1.8rem;
   font-weight: bold;
-  font-family: var(--font-pretendard);
+  font-family: var(--font-text);
 }
 
 .form-helper-note {

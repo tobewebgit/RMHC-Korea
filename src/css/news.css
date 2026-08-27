@@ -392,7 +392,7 @@
 
 /* 활동소식 상세 첨부파일 폰트 대응 */
 .activity-detail-page .detail-attachments .attachment-label {
-  font-family: Roboto, var(--font-pretendard);
+  font-family: Roboto, var(--font-text);
 }
 
 .detail-attachments .attachment-link {

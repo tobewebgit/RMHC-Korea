@@ -22,4 +22,9 @@ export default defineConfig({
       }, {}),
     },
   },
+  server: {
+    watch: {
+      ignored: ["**/src/fonts/**", "**/*.otf", "**/*.woff", "**/*.woff2"],
+    },
+  },
 });
