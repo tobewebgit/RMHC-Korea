@@ -18,7 +18,7 @@
 .mypage-hero__title {
   font-family: var(--font-title);
   font-size: var(--text-4xl);
-  font-weight: 800;
+
   color: var(--text-primary);
   margin-bottom: var(--spacing-2);
 }
@@ -160,7 +160,6 @@
   font-size: var(--text-sm);
   color: var(--text-secondary);
   margin-top: 0.6rem;
-  font-weight: 400;
 }
 
 /* 웰컴 배너 */
@@ -179,7 +178,6 @@
 .mypage-welcome__text {
   font-size: var(--text-xl);
   color: var(--text-primary);
-  line-height: 1.5;
 }
 
 .mypage-welcome__text strong {
@@ -256,7 +254,7 @@
 .mypage-dashboard__value {
   font-family: var(--font-title);
   font-size: var(--text-2xl);
-  font-weight: 800;
+
   color: var(--text-primary);
 }
 
@@ -492,7 +490,7 @@
 .withdraw-warning-box__item {
   font-size: var(--text-sm);
   color: var(--text-secondary);
-  line-height: 1.6;
+
   position: relative;
   padding-left: 1.6rem;
 }
@@ -582,7 +580,7 @@
   font-size: var(--text-sm);
   color: var(--text-secondary);
   text-align: center;
-  line-height: 1.6;
+
   margin-bottom: var(--spacing-8);
 }
 
@@ -685,7 +683,6 @@
   font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-8);
-  line-height: 1.6;
 }
 
 /* 후원 상세 정보 페이지 전용 */
@@ -758,7 +755,7 @@
 
 .auth-title {
   font-size: var(--text-2xl);
-  font-weight: 800;
+
   color: var(--text-primary);
   margin-bottom: var(--spacing-3);
 }
@@ -766,7 +763,7 @@
 .auth-desc {
   font-size: var(--text-sm);
   color: var(--text-secondary);
-  line-height: 1.6;
+
   margin-bottom: var(--spacing-8);
   max-width: 40rem;
   margin-left: auto;
@@ -817,11 +814,11 @@
   .mypage-container {
     padding: var(--spacing-8) var(--spacing-4);
   }
-  
+
   .mypage-layout {
     gap: var(--spacing-6);
   }
-  
+
   .mypage-lnb {
     width: 24rem;
   }
@@ -831,17 +828,17 @@
   .mypage-wrapper {
     padding-top: 10rem;
   }
-  
+
   .mypage-container {
     padding: var(--spacing-6) var(--spacing-4) var(--spacing-12);
   }
-  
+
   .mypage-layout {
     flex-direction: column;
     align-items: stretch;
     gap: var(--spacing-6);
   }
-  
+
   /* 모바일 LNB: 가로 스크롤 메뉴 바로 전환 */
   .mypage-lnb {
     width: 100%;
@@ -852,33 +849,33 @@
     box-shadow: none;
     padding: 0;
   }
-  
+
   .mypage-lnb__profile {
     display: none;
   }
-  
+
   .mypage-lnb__nav {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
-  
+
   .mypage-lnb__nav::-webkit-scrollbar {
     display: none;
   }
-  
+
   .mypage-lnb__list {
     flex-direction: row;
     gap: var(--spacing-4);
     padding: 0 var(--spacing-4) var(--spacing-2);
     border-bottom: 1px solid var(--border-color);
   }
-  
+
   .mypage-lnb__item {
     flex-shrink: 0;
   }
-  
+
   .mypage-lnb__link {
     padding: var(--spacing-2) var(--spacing-1);
     font-size: var(--text-base);
@@ -886,76 +883,76 @@
     border-bottom: 3px solid transparent;
     border-radius: 0;
   }
-  
+
   .mypage-lnb__link:hover {
     background-color: transparent;
   }
-  
+
   .mypage-lnb__link.is-active {
     background-color: transparent;
     border-bottom-color: var(--primary);
     color: var(--primary);
   }
-  
+
   .mypage-lnb__link-arrow {
     display: none;
   }
-  
+
   /* 콘텐츠 패널 모바일 */
   .mypage-section {
     padding: var(--spacing-6) var(--spacing-4);
     border-radius: var(--radius-md);
   }
-  
+
   .mypage-welcome {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-4);
     padding: var(--spacing-6) var(--spacing-4);
   }
-  
+
   .mypage-welcome__details {
     flex-direction: column;
     gap: var(--spacing-2);
   }
-  
+
   .mypage-dashboard {
     grid-template-columns: 1fr;
     gap: var(--spacing-3);
   }
-  
+
   .mypage-dashboard__card {
     padding: var(--spacing-4) var(--spacing-6);
   }
-  
+
   .mypage-quick-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-3);
   }
-  
+
   .mypage-quick-card {
     padding: var(--spacing-4);
   }
-  
+
   .form-row {
     flex-direction: column;
     align-items: stretch;
     gap: var(--spacing-2);
   }
-  
+
   .form-row > .btn {
     width: 100%;
   }
-  
+
   .checkbox-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-2);
   }
-  
+
   .withdraw-survey__list {
     grid-template-columns: 1fr;
   }
-  
+
   .verify-card {
     padding: var(--spacing-8) var(--spacing-4);
     border: none;

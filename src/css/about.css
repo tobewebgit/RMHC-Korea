@@ -19,22 +19,16 @@
 
 .about-section-head h2,
 .about-impact h2,
-.about-symbol h2,
-.donate-banner h2 {
+.about-symbol h2 {
   margin: 0;
-  font-size: 4.8rem;
-  line-height: 1.25;
+  font-size: 4.4rem;
+
   letter-spacing: 0;
-}
-.donate-banner h2 {
-  font-size: 3.8rem;
 }
 
 .about-section-head p {
   margin: 2.4rem 0 0;
-  font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 1.4;
+  font-size: 1.8rem;
 }
 
 /* KV */
@@ -42,7 +36,6 @@
   position: relative;
   min-height: 88rem;
   overflow: hidden;
-  background-color: #f3eee5;
 }
 
 .about-vision-kv__image {
@@ -71,8 +64,8 @@
 }
 
 .about-vision-kv__panel {
-  width: 87.5rem;
-  height: 54.2rem;
+  width: 91.4rem;
+  height: 53.2rem;
   padding: 8rem;
   background: url("/src/images/about/bg_about_vision_kv.png") 50% 50% / 100%
     100% no-repeat;
@@ -85,14 +78,12 @@ html[lang="en"] .about-vision-kv__panel {
 .about-vision-kv__panel h1 {
   margin: 0;
   font-size: 5.8rem;
-  line-height: 1.2;
   letter-spacing: 0;
 }
 
 .about-vision-kv__panel p {
-  margin: 4rem 0 0;
+  margin: 2.4rem 0 0;
   font-size: 2.2rem;
-  line-height: 1.3;
 }
 html[lang="en"] .about-vision-kv__panel p {
   margin: 2.4rem 0 0;
@@ -139,27 +130,21 @@ html[lang="en"] .about-vision-kv__panel p {
 
 .promise-card strong {
   display: block;
-  font-family: var(--font-extrabold);
-  font-size: 3.8rem;
-  font-weight: 800;
-  line-height: 1.25;
+  font-family: var(--font-display);
+  font-size: 3.6rem;
 }
 
 .promise-card p {
   margin: 1.6rem 0 0;
   font-size: 2rem;
-  font-weight: 500;
-  line-height: 1.5;
 }
 
 .promise-card em {
   display: block;
   margin-top: 1.6rem;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 3.2rem;
   font-style: normal;
-  font-weight: 800;
-  line-height: 1.25;
 }
 
 /* Support */
@@ -193,17 +178,13 @@ html[lang="en"] .about-vision-kv__panel p {
 
 .support-list strong {
   display: block;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 1.25;
 }
 
 .support-list p {
   margin: 1.6rem 0 0;
   font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.55;
 }
 
 /* History */
@@ -243,12 +224,11 @@ html[lang="en"] .about-vision-kv__panel p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 9.4rem;
-  padding: 2.4rem;
+  padding: 2.4rem 0;
   gap: 3.2rem;
-  font-family: var(--font-extrabold);
-  font-size: 2.8rem;
-  line-height: 1.3;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+
   border-bottom: 1px solid #000000;
   cursor: pointer;
   list-style: none;
@@ -277,7 +257,7 @@ html[lang="en"] .about-vision-kv__panel p {
 
 .history-panel {
   max-height: 25rem;
-  margin: 2.4rem 0 4rem;
+  margin: 2.4rem 0 0;
   padding: 0 2.4rem;
   overflow-y: auto;
 }
@@ -297,13 +277,12 @@ html[lang="en"] .about-vision-kv__panel p {
 
 .history-panel dl {
   margin: 0;
+  padding-bottom: 2.4rem;
 }
 
 .history-panel dt {
   margin: 2.2rem 0 0;
-  font-size: 2.2rem;
-  font-weight: 600;
-  line-height: 1.3;
+  font-size: 2rem;
 }
 
 .history-panel dt:first-child {
@@ -314,8 +293,7 @@ html[lang="en"] .about-vision-kv__panel p {
   position: relative;
   margin: 0.4rem 0 0;
   padding-left: 2.4rem;
-  font-size: 2.2rem;
-  line-height: 1.45;
+  font-size: 2rem;
 }
 .history-panel dd::before {
   content: "";
@@ -354,17 +332,14 @@ html[lang="en"] .about-vision-kv__panel p {
   display: block;
   font-family: var(--font-display);
   font-size: 9rem;
-  line-height: 1.05;
 }
 
 .impact-list span {
   display: block;
   margin-top: 1.6rem;
   padding: 0 2rem;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: 800;
-  line-height: 1.35;
 }
 
 /* Map */
@@ -400,62 +375,71 @@ html[lang="en"] .house-list {
 .house-list a {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   min-height: 7.4rem;
   padding: 0 2.4rem;
   border-radius: 1.2rem;
-  color: rgba(0, 0, 0, 0.45);
-  font-family: var(--font-extrabold);
-  font-size: 2.2rem;
-  font-weight: 800;
-  line-height: 1.2;
-  background-color: var(--bg-primary);
-}
-
-.house-list a.coming {
-  background-color: rgba(255, 253, 240, 0.4);
-  pointer-events: none;
-}
-
-.house-list a.is-active {
+  font-family: var(--font-display);
+  font-size: 2rem;
   color: #000000;
+  background-color: var(--bg-primary);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-.house-list a.is-active::after {
+.house-list a:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.house-list a::after {
   content: "";
   display: inline-block;
-  width: 2.4rem;
-  height: 2.4rem;
   margin-left: 0.8rem;
   background-color: currentColor;
   -webkit-mask: url("/src/images/common/icon_arrow_right_black.png") no-repeat
     center/contain;
   mask: url("/src/images/common/icon_arrow_right_black.png") no-repeat
     center/contain;
+  opacity: 0;
+  transform: translateX(-0.4rem);
   transition:
+    opacity 0.3s ease,
     transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
     background-color 0.3s ease;
 }
 
 .house-list a:hover::after {
-  transform: translateX(0.4rem);
+  width: 2.4rem;
+  height: 2.4rem;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .house-heart {
-  width: 2.4rem;
-  height: 2.1rem;
-  margin-right: 1.6rem;
-  background: url("/src/images/about/icon_heart_section_5_btn.svg") center /
+  width: 3.1rem;
+  height: 2.2rem;
+  margin-right: 1rem;
+  background: url("/src/images/common/icon_heart_section_5_btn.svg") left /
     contain no-repeat;
+}
+a:hover .house-heart {
+  background: url("/src/images/common/icon_heart_section_5_btn_hover.svg")
+    left / contain no-repeat;
 }
 
 .house-heart--coming {
   width: 3.1rem;
   height: 2.2rem;
-  background: url("/src/images/about/icon_coming_heart.svg") center / contain
+  background: url("/src/images/common/icon_coming_heart.svg") left / contain
     no-repeat;
-  opacity: 0.4;
+}
+
+a:hover .house-heart--coming {
+  background: url("/src/images/common/icon_coming_heart_hover.svg") left /
+    contain no-repeat;
 }
 
 .korea-map {
@@ -474,9 +458,9 @@ html[lang="en"] .house-list {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: 800;
+
   line-height: 1;
   cursor: pointer;
 }
@@ -592,9 +576,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
 .about-symbol p {
   margin: 3.2rem 0 0;
-  font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 1.55;
+  font-size: 1.8rem;
 }
 
 .symbol-buttons {
@@ -613,56 +595,6 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 /* Donation banner */
 .about-donate-banner {
   padding-top: 20rem;
-}
-
-.donate-banner {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 36.4rem;
-  padding: 0 23rem;
-  overflow: hidden;
-  border-radius: 1.2rem;
-  background-color: #8ee7f8;
-}
-
-.donate-banner__heart {
-  position: absolute;
-  left: 6rem;
-  top: -34rem;
-  width: 139.2rem;
-  height: 121.3rem;
-  background: url("/src/images/main/img_heart_banner.svg") center / contain
-    no-repeat;
-  will-change: transform;
-}
-
-.donate-banner__content,
-.donate-banner__btn {
-  position: relative;
-  z-index: 1;
-}
-
-.donate-banner h2 {
-  color: #fffdf0;
-  font-size: 3.8rem;
-  font-weight: 800;
-  line-height: 1.35;
-  word-break: keep-all;
-}
-
-.donate-banner p {
-  margin: 3.2rem 0 0;
-  color: #fffdf0;
-  font-size: 1.8rem;
-  font-weight: 400;
-  line-height: 1.55;
-  word-break: keep-all;
-}
-
-.donate-banner__btn {
-  max-width: 17.4rem;
 }
 
 /* @media (max-width: 1200px) {
@@ -716,21 +648,23 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
   .about-section-head h2,
   .about-impact h2,
-  .about-symbol h2,
-  .donate-banner h2 {
+  .about-symbol h2 {
     font-size: 2.4rem;
-    line-height: 1.25;
   }
 
   .about-section-head p {
     margin-top: 2.4rem;
     font-size: 1.4rem;
-    line-height: 1.45;
   }
 
-  .about-vision-kv,
+  .about-vision-kv {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
   .about-vision-kv__content {
-    min-height: 58rem;
+    min-height: auto;
   }
 
   html[lang="en"] .about-vision-kv,
@@ -739,12 +673,15 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .about-vision-kv__image {
-    object-position: 56% center;
+    order: 2;
+    position: static;
+    margin-top: 4rem;
   }
 
   .about-vision-kv__content {
+    order: 1;
     align-items: flex-start;
-    padding-top: 2.4rem;
+    padding-top: 5rem;
   }
 
   .about-vision-kv__content.inner-layout {
@@ -754,27 +691,24 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
   .about-vision-kv__panel {
     width: 34rem;
-    height: 30.6rem;
-    padding: 3.6rem 2.4rem 3.2rem;
-    background-image: url("/src/images/about/bg_about_vision_kv_mo.svg");
+    height: auto;
+    padding: 0 1.2rem 0;
+    color: var(--text-black);
+    background-image: none;
   }
 
   html[lang="en"] .about-vision-kv__panel {
     height: 43.4rem;
-    background-image: url("/src/images/about/bg_about_vision_kv_en_mo.svg");
+    background-image: none;
   }
 
   .about-vision-kv__panel h1 {
     font-size: 2.8rem;
-    line-height: 1.22;
-    text-align: center;
   }
 
   .about-vision-kv__panel p {
     margin-top: 1.2rem;
-    font-size: 1.4rem;
-    line-height: 1.45;
-    text-align: center;
+    font-size: 1.6rem;
   }
 
   .about-promise {
@@ -862,7 +796,6 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
     min-height: 10rem;
     padding: 2.4rem 0;
     font-size: 1.8rem;
-    line-height: 1.25;
   }
 
   .history-item summary::after {
@@ -883,7 +816,6 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
   .history-panel dd {
     font-size: 1.4rem;
-    line-height: 1.35;
   }
 
   .about-impact {
@@ -1039,7 +971,6 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
     order: 2;
     margin-top: 2.4rem;
     font-size: 1.4rem;
-    line-height: 1.45;
   }
 
   .symbol-logo {
@@ -1064,39 +995,6 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   .about-donate-banner {
     width: 100%;
     padding: 0;
-  }
-
-  .donate-banner {
-    display: block;
-    min-height: 45rem;
-    padding: 13.2rem 2.4rem 0;
-    border-radius: 0;
-    text-align: center;
-  }
-
-  .donate-banner__heart {
-    left: 50%;
-    top: -11rem;
-    width: 70rem;
-    height: 61rem;
-    margin-left: -35rem;
-    transform: none;
-  }
-
-  .donate-banner h2 {
-    font-size: 2rem;
-  }
-
-  .donate-banner p {
-    margin-top: 2.8rem;
-    font-size: 1.4rem;
-  }
-
-  .donate-banner__btn {
-    min-width: 15.3rem;
-    min-height: 5.2rem;
-    margin-top: 3.2rem;
-    font-size: 1.5rem;
   }
 }
 
@@ -1142,13 +1040,11 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 .greetings-kv__text h1 {
   margin: 0;
   font-size: 5.8rem;
-  line-height: 1.25;
 }
 
 .greetings-kv__text p {
   margin: 2.4rem 0 0;
   font-size: 2.2rem;
-  line-height: 1.45;
 }
 
 .greetings-message {
@@ -1171,7 +1067,6 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   line-height: 1.32;
 }
 html[lang="en"] .greetings-message__content h2 {
-  line-height: 1.2;
 }
 
 .greetings-message__body {
@@ -1181,7 +1076,6 @@ html[lang="en"] .greetings-message__content h2 {
 .greetings-message__body p {
   margin: 0;
   font-size: 2.2rem;
-  line-height: 1.3;
 }
 html[lang="en"] .greetings-message__body p {
   font-size: 2rem;
@@ -1199,11 +1093,9 @@ html[lang="en"] .greetings-message__body p {
 .greetings-sign p {
   margin: 0;
   font-size: 2.2rem;
-  line-height: 1.6;
 }
 
 .greetings-sign strong {
-  font-weight: 800;
 }
 
 .greetings-sign img {
@@ -1251,14 +1143,12 @@ html[lang="en"] .greetings-message__body p {
 
   .greetings-kv__text h1 {
     font-size: 2.8rem;
-    line-height: 1.3;
   }
 
   .greetings-kv__text p {
     margin-top: 1.6rem;
     padding: 0 2rem;
     font-size: 1.4rem;
-    line-height: 1.45;
   }
 
   .greetings-message {
@@ -1280,7 +1170,7 @@ html[lang="en"] .greetings-message__body p {
 
   .greetings-message__content h2 {
     font-size: 2.4rem;
-    line-height: 1.35;
+
     color: #000000;
   }
 
@@ -1290,7 +1180,7 @@ html[lang="en"] .greetings-message__body p {
 
   .greetings-message__body p {
     font-size: 1.4rem;
-    line-height: 1.7;
+
     color: #000000;
   }
 
@@ -1367,13 +1257,11 @@ html[lang="en"] .greetings-message__body p {
 .board-kv__text h1 {
   margin: 0;
   font-size: 5.8rem;
-  line-height: 1.25;
 }
 
 .board-kv__text p {
   margin: 2.4rem 0 0;
   font-size: 2.2rem;
-  line-height: 1.45;
 }
 
 .board-members {
@@ -1404,7 +1292,6 @@ html[lang="en"] .greetings-message__body p {
 
 .board-member figcaption {
   margin-top: 2.4rem;
-  line-height: 1.5;
 }
 .board-member__role {
   display: block;
@@ -1412,7 +1299,6 @@ html[lang="en"] .greetings-message__body p {
   color: var(--text-gray80, #666);
   font-size: 1.4rem;
   font-weight: 500;
-  line-height: 1.3;
 }
 .board-member figcaption h2 {
   display: block;
@@ -1440,14 +1326,12 @@ html[lang="en"] .greetings-message__body p {
 
   .board-kv__text h1 {
     font-size: 2.8rem;
-    line-height: 1.25;
   }
 
   .board-kv__text p {
     margin-top: 1.6rem;
     padding: 0 2rem;
     font-size: 1.4rem;
-    line-height: 1.45;
   }
 
   .board-members {
@@ -1481,22 +1365,20 @@ html[lang="en"] .greetings-message__body p {
   .board-member__role {
     margin-bottom: 0.4rem;
     font-size: 1.2rem;
-    line-height: 1.3;
   }
 
   .board-member figcaption h2 {
     display: block;
-    font-family: var(--font-extrabold);
+    font-family: var(--font-display);
     font-size: 1.8rem;
-    font-weight: 800;
-    line-height: 1.3;
+
     color: #000000;
   }
 
   .board-member figcaption p {
     margin-top: 0.8rem;
     font-size: 1.4rem;
-    line-height: 1.4;
+
     color: #666666;
     word-break: keep-all;
   }
@@ -1516,9 +1398,9 @@ html[lang="en"] .greetings-message__body p {
 }
 
 .partner-section-title {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 4.8rem;
-  line-height: 1.3;
+
   text-align: center;
 }
 
@@ -1560,13 +1442,11 @@ html[lang="en"] .greetings-message__body p {
 .partner-kv__text h1 {
   margin: 0;
   font-size: 5.8rem;
-  line-height: 1.25;
 }
 
 .partner-kv__text p {
   margin: 2.4rem 0 0;
   font-size: 2.2rem;
-  line-height: 1.45;
 }
 
 .partner-intro {
@@ -1583,13 +1463,11 @@ html[lang="en"] .greetings-message__body p {
 .partner-intro__content h2 {
   margin: 0;
   font-size: 4.8rem;
-  line-height: 1.3;
 }
 
 .partner-intro__content p {
   margin: 4rem 0 0;
   font-size: 2.2rem;
-  line-height: 1.5;
 }
 
 .partner-intro__image {
@@ -1614,7 +1492,7 @@ html[lang="en"] .greetings-message__body p {
 .partner-highlight__group h3 {
   margin: 0 0 8rem;
   font-size: 3.8rem;
-  line-height: 1.3;
+
   text-align: center;
 }
 
@@ -1650,13 +1528,11 @@ html[lang="en"] .greetings-message__body p {
 .founding-card__content h4 {
   margin: 4rem 0 0;
   font-size: 2.8rem;
-  line-height: 1.3;
 }
 
 .founding-card__content p {
   margin: 2.4rem 0 0;
   font-size: 2rem;
-  line-height: 1.5;
 }
 
 .partner-logo-grid {
@@ -1745,7 +1621,6 @@ html[lang="en"] .greetings-message__body p {
 .partner-model__head p {
   margin: 2.4rem 0 0;
   font-size: 2.2rem;
-  line-height: 1.35;
 }
 
 .partner-model__diagram {
@@ -1781,16 +1656,14 @@ html[lang="en"] .greetings-message__body p {
 
 .model-node strong {
   display: block;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
-  line-height: 1.3;
 }
 
 .model-node span {
   display: block;
   margin-top: 0.8rem;
   font-size: 1.8rem;
-  line-height: 1.35;
 }
 
 html[lang="en"] .model-node span {
@@ -1893,7 +1766,6 @@ html[lang="en"] .model-node span {
   background: #8ee7f8;
   font-size: 1.4rem;
   font-weight: 700;
-  line-height: 1.3;
 }
 
 .activity-card__badge--yellow {
@@ -1907,13 +1779,11 @@ html[lang="en"] .model-node span {
 .activity-card h3 {
   margin: 2.4rem 0 0;
   font-size: 2.2rem;
-  line-height: 1.3;
 }
 
 .activity-card p {
   margin: 1.4rem 0 0;
   font-size: 2rem;
-  line-height: 1.5;
 }
 
 .partner-activity__more {
@@ -1954,7 +1824,6 @@ html[lang="en"] .model-node span {
 @media (max-width: 768px) {
   .partner-section-title {
     font-size: 2.4rem;
-    line-height: 1.25;
   }
   .partner-activity h3.partner-section-title {
     font-size: 2rem;
@@ -1973,14 +1842,12 @@ html[lang="en"] .model-node span {
 
   .partner-kv__text h1 {
     font-size: 2.8rem;
-    line-height: 1.3;
   }
 
   .partner-kv__text p {
     margin-top: 1.6rem;
     padding: 0 2rem;
     font-size: 1.4rem;
-    line-height: 1.45;
   }
 
   .partner-intro {
@@ -1996,13 +1863,11 @@ html[lang="en"] .model-node span {
 
   .partner-intro__content h2 {
     font-size: 2.4rem;
-    line-height: 1.35;
   }
 
   .partner-intro__content p {
     margin-top: 4rem;
     font-size: 1.4rem;
-    line-height: 1.55;
   }
 
   .partner-intro__image {
@@ -2024,7 +1889,6 @@ html[lang="en"] .model-node span {
   .partner-highlight__group h3 {
     margin-bottom: 4rem;
     font-size: 2rem;
-    line-height: 1.35;
   }
 
   .founding-card {
@@ -2051,13 +1915,11 @@ html[lang="en"] .model-node span {
   .founding-card__content h4 {
     margin-top: 4rem;
     font-size: 1.8rem;
-    line-height: 1.35;
   }
 
   .founding-card__content p {
     margin-top: 2.4rem;
     font-size: 1.4rem;
-    line-height: 1.55;
   }
 
   .partner-logo-grid--mission,
@@ -2093,7 +1955,6 @@ html[lang="en"] .model-node span {
   .partner-model__head .partner-section-title + p {
     margin-top: 4rem;
     font-size: 1.3rem;
-    line-height: 1.45;
   }
 
   .partner-model__diagram {
@@ -2187,15 +2048,13 @@ html[lang="en"] .model-node span {
 .transparency-kv__text h1 {
   margin: 0;
   font-size: 5.6rem;
-  font-weight: 800;
-  line-height: 1.25;
 }
 
 .transparency-kv__text p {
   margin: 2.4rem 0 0;
   max-width: 80rem;
   font-size: 2.2rem;
-  line-height: 1.5;
+
   word-break: keep-all;
 }
 
@@ -2212,7 +2071,7 @@ html[lang="en"] .model-node span {
 .donation-history h2 {
   margin: 0;
   font-size: 4.8rem;
-  line-height: 1.3;
+
   word-break: keep-all;
 }
 .donation-history h2 {
@@ -2224,7 +2083,7 @@ html[lang="en"] .model-node span {
   max-width: 92rem;
   margin: 2.4rem auto 0;
   font-size: 2.2rem;
-  line-height: 1.6;
+
   word-break: keep-all;
 }
 
@@ -2295,17 +2154,15 @@ html[lang="en"] .model-node span {
 
 .finance-chart__total strong {
   display: block;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
-  line-height: 1.35;
 }
 
 .finance-chart__total span {
   display: block;
   margin-top: 1.2rem;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 3.8rem;
-  line-height: 1.25;
 }
 
 .finance-breakdown {
@@ -2323,14 +2180,13 @@ html[lang="en"] .model-node span {
   min-height: 9rem;
   border-bottom: 1px solid var(--border-gray40);
   font-size: 2.2rem;
-  line-height: 1.4;
 }
 
 .finance-breakdown span {
   display: inline-flex;
   align-items: center;
   gap: 1.2rem;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
 }
 
 .finance-breakdown em {
@@ -2390,7 +2246,7 @@ html[lang="en"] .model-node span {
 .offline-fund-card h3 {
   margin: 0;
   font-size: 3.8rem;
-  line-height: 1.35;
+
   word-break: keep-all;
 }
 
@@ -2411,9 +2267,8 @@ html[lang="en"] .model-node span {
 
 .offline-fund-card__amount strong {
   display: block;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
-  line-height: 1.35;
 }
 
 .offline-fund-card__amount p {
@@ -2422,7 +2277,7 @@ html[lang="en"] .model-node span {
   justify-content: center;
   gap: 0.6rem;
   margin: 4rem 0 0;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 3.8rem;
   line-height: 1;
 }
@@ -2457,7 +2312,6 @@ html[lang="en"] .model-node span {
   display: flex;
   align-items: center;
   font-size: 2.2rem;
-  line-height: 1.55;
 }
 .offline-fund-card__info li {
   padding-left: 1rem;
@@ -2506,7 +2360,7 @@ html[lang="en"] .model-node span {
 .detail-view-wrap strong {
   display: block;
   margin-bottom: 1rem;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
 }
 .detail-view-wrap ul li {
   font-size: 1.8rem;
@@ -2537,13 +2391,12 @@ html[lang="en"] .model-node span {
 .annual-report__download h2 {
   margin: 0;
   font-size: 2.2rem;
-  line-height: 1.35;
 }
 
 .annual-report__download p {
   margin: 1.2rem 0 0;
   font-size: 2.2rem;
-  line-height: 1.55;
+
   word-break: keep-all;
 }
 
@@ -2613,9 +2466,9 @@ html[lang="en"] .model-node span {
 }
 
 .donation-report-item summary span {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
-  line-height: 1.35;
+
   word-break: keep-all;
 }
 
@@ -2642,7 +2495,6 @@ html[lang="en"] .model-node span {
   padding: 2.8rem 0;
   border-bottom: 1px solid rgba(31, 41, 55, 0.18);
   font-size: 2.2rem;
-  line-height: 1.35;
 }
 
 .donation-report-table > strong {
@@ -2650,8 +2502,6 @@ html[lang="en"] .model-node span {
   padding: 3rem 0;
   border-bottom: 1px solid rgba(31, 41, 55, 0.18);
   font-size: 3.8rem;
-  font-weight: 800;
-  line-height: 1.25;
 }
 
 .donation-report-table dl {
@@ -2668,7 +2518,6 @@ html[lang="en"] .model-node span {
   border-bottom: 1px solid rgba(31, 41, 55, 0.18);
   text-align: left;
   font-size: 2.2rem;
-  line-height: 1.45;
 }
 
 .donation-report-table dt,
@@ -2694,7 +2543,7 @@ html[lang="en"] .model-node span {
   font-weight: 700;
 }
 .donation-report-table .total dd {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
 }
 
@@ -2715,7 +2564,6 @@ html[lang="en"] .model-node span {
   position: relative;
   padding-left: 1rem;
   font-size: 1.8rem;
-  line-height: 1.55;
 }
 
 .donation-report-note li::before {
@@ -2759,7 +2607,6 @@ html[lang="en"] .model-node span {
     margin-top: 1.2rem;
     max-width: 28rem;
     font-size: 1.4rem;
-    line-height: 1.45;
   }
 
   .finance-report {
@@ -2775,14 +2622,12 @@ html[lang="en"] .model-node span {
   .donation-use__head h2,
   .donation-history h2 {
     font-size: 2.4rem;
-    line-height: 1.5;
   }
 
   .finance-report__head p,
   .donation-use__head p {
     margin-top: 2.4rem;
     font-size: 1.4rem;
-    line-height: 1.6;
   }
 
   .finance-chart-list {

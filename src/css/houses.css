@@ -37,14 +37,11 @@
 .house-section__head h2 {
   margin: 0;
   font-size: 4.8rem;
-  font-weight: 800;
-  line-height: 1.3;
 }
 
 .house-section__head p {
   margin: 2.4rem auto 0;
   font-size: 2.2rem;
-  line-height: 1.6;
 }
 
 .house-btn {
@@ -57,7 +54,6 @@
   border: 0;
   border-radius: 1.6rem;
   font-size: 2.2rem;
-  line-height: 1.4;
 }
 
 .house-btn::before {
@@ -132,8 +128,7 @@
   margin: 0;
   font-family: var(--font-extrabold);
   font-size: var(--text-6xl);
-  font-weight: 800;
-  line-height: 1.3;
+
   letter-spacing: 0;
   color: var(--bg-primary);
 }
@@ -142,8 +137,7 @@
   margin: 0;
   max-width: 76rem;
   font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 1.3;
+
   color: var(--bg-primary);
 }
 
@@ -234,14 +228,11 @@
 .story-card h3 {
   margin: 0;
   font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 1.35;
 }
 
 .story-card p {
   margin: 2.4rem 0 0;
   font-size: 2rem;
-  line-height: 1.5;
 }
 
 .story-slider__btn {
@@ -340,7 +331,6 @@
   margin: 0 0 7.6rem;
   font-family: var(--font-extrabold);
   font-size: 4.8rem;
-  line-height: 1.25;
 }
 
 .value-list {
@@ -367,13 +357,11 @@
 .value-list strong {
   font-family: var(--font-extrabold);
   font-size: 2.8rem;
-  line-height: 1.3;
 }
 
 .value-list p {
   margin: 2.4rem 0 0;
   font-size: 2.2rem;
-  line-height: 1.5;
 }
 
 /* Impact */
@@ -403,7 +391,6 @@
   margin-top: 2.4rem;
   font-family: var(--font-display);
   font-size: 9rem;
-  line-height: 1.2;
 }
 
 .impact-list span {
@@ -565,7 +552,6 @@
 .partner-card p {
   margin: 2.4rem 0 0;
   font-size: 1.8rem;
-  line-height: 1.5;
 }
 
 /* Apply */
@@ -610,7 +596,6 @@
 .apply-steps p {
   margin: 1.6rem 0 0;
   font-size: 1.8rem;
-  line-height: 1.5;
 }
 
 /* Location */
@@ -716,7 +701,7 @@
   border-bottom: 1px solid var(--border-black);
   font-family: var(--font-extrabold);
   font-size: 2.8rem;
-  line-height: 1.4;
+
   cursor: pointer;
   list-style: none;
 }
@@ -752,7 +737,6 @@
   margin: 0;
   padding: 2.4rem;
   font-size: 2.2rem;
-  line-height: 1.3;
 }
 
 /* Support */
@@ -803,14 +787,12 @@
 .support-card h3 {
   margin: 2.4rem 0 0;
   font-size: 2.8rem;
-  font-weight: 800;
 }
 
 .support-card p {
   min-height: 9.6rem;
   margin: 1.6rem 0 3.2rem;
   font-size: 2rem;
-  line-height: 1.6;
 }
 
 .support-card a {
@@ -830,13 +812,11 @@
 
   .house-section__head h2 {
     font-size: 2.4rem;
-    line-height: 1.3;
   }
 
   .house-section__head p {
     margin: 2.4rem auto 0;
     font-size: 1.4rem;
-    line-height: 1.45;
   }
 
   .house-btn {
@@ -873,7 +853,6 @@
   .house-hero__content p {
     margin: 1.2rem 0 0;
     font-size: 1.4rem;
-    line-height: 1.45;
   }
 
   .house-hero__cta {
@@ -1101,7 +1080,6 @@
     min-height: 3.2rem;
     padding: 0.8rem 1.6rem;
     font-size: 1.8rem;
-    line-height: 1.2;
   }
 
   .gallery-view {
@@ -1407,7 +1385,7 @@ body:has(.house-coming-section) .footer,
 .house-coming-badge__text {
   font-family: var(--font-extrabold);
   font-size: 2.2rem;
-  font-weight: 800;
+
   color: var(--text-gray100);
   line-height: 1;
 }
@@ -1415,7 +1393,7 @@ body:has(.house-coming-section) .footer,
 /* Title */
 .house-coming-title {
   font-size: 4.4rem;
-  line-height: 1.3;
+
   color: var(--text-gray100);
   margin-bottom: 2.4rem;
   word-break: keep-all;
@@ -1424,7 +1402,7 @@ body:has(.house-coming-section) .footer,
 /* Desc */
 .house-coming-desc {
   font-size: 1.8rem;
-  line-height: 1.6;
+
   color: var(--text-gray90);
   margin-bottom: 8rem;
   word-break: keep-all;
@@ -1445,7 +1423,6 @@ body:has(.house-coming-section) .footer,
   font-weight: 700;
   color: var(--text-gray100);
   margin-bottom: 2.4rem;
-  line-height: 1.3;
 }
 
 .house-coming-btn {
@@ -1533,7 +1510,7 @@ body:has(.house-coming-section) .footer,
 
   .house-coming-desc {
     font-size: 1.4rem;
-    line-height: 1.6;
+
     margin-bottom: 3.6rem;
   }
 

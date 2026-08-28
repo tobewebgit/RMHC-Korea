@@ -20,7 +20,7 @@
 .volunteer-title {
   font-family: var(--font-title);
   font-size: var(--text-4xl);
-  font-weight: 800;
+
   color: var(--text-primary);
   margin-bottom: var(--spacing-4);
   position: relative;
@@ -38,7 +38,6 @@
 .volunteer-desc {
   font-size: var(--text-base);
   color: var(--text-secondary);
-  line-height: 1.7;
 }
 
 /* 탭 메뉴 스타일 */
@@ -407,7 +406,7 @@
   color: var(--text-secondary);
   height: 12rem;
   overflow-y: auto;
-  line-height: 1.6;
+
   margin-bottom: var(--spacing-4);
 }
 
@@ -459,7 +458,6 @@
 .vms-notice-desc {
   font-size: var(--text-sm);
   color: var(--text-secondary);
-  line-height: 1.6;
 }
 
 .vms-notice-desc strong {
@@ -543,7 +541,8 @@
     padding: 0.2rem 0;
   }
 
-  .day-btn, .day-val {
+  .day-btn,
+  .day-val {
     width: 3.2rem;
     height: 3.2rem;
     font-size: var(--text-xs);

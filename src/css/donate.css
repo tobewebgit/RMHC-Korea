@@ -37,14 +37,14 @@
 .donate-page .page-title {
   font-family: var(--font-extrabold);
   font-size: 5.8rem;
-  line-height: 1.3;
+
   margin-bottom: 2.4rem;
   text-align: left;
 }
 
 .donate-page .page-desc {
   font-size: 2.2rem;
-  line-height: 1.5;
+
   text-align: left;
 }
 
@@ -400,13 +400,12 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .notice-yellow-box span {
-  line-height: 1.4;
 }
 
 /* 7. 인증 안내 및 버튼 */
 .auth-intro-text {
   font-size: 1.8rem;
-  line-height: 1.6;
+
   margin-bottom: 2.4rem;
   word-break: keep-all;
 }
@@ -453,7 +452,6 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 /* 기부금 영수증 발급 안내 텍스트 */
 .receipt-helper-text {
-  line-height: 1.6;
   color: var(--text-gray90);
   font-size: var(--text-lg);
   margin-top: 1.6rem;
@@ -491,7 +489,6 @@ html[lang="en"] .accordion-card.is-active .card-body {
 .receipt-helper {
   margin: 1.6rem 0;
   color: var(--text-gray90);
-  line-height: 1.5;
 }
 
 .receipt-helper__primary {
@@ -533,9 +530,8 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .form-helper-note {
   font-size: 1.6rem;
-  font-weight: 400;
+
   color: var(--text-secondary);
-  line-height: 1.4;
 }
 
 /* ==========================================================================
@@ -554,14 +550,14 @@ html[lang="en"] .accordion-card.is-active .card-body {
 .goods-header__title {
   font-family: var(--font-extrabold);
   font-size: var(--text-6xl);
-  line-height: 1.3;
+
   margin-bottom: 2.4rem;
 }
 
 /* 설명: Pretendard Regular 22px */
 .goods-header__desc {
   font-size: 2.2rem;
-  line-height: 1.3;
+
   word-break: keep-all;
 }
 
@@ -599,7 +595,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 .goods-card__title {
   font-family: var(--font-extrabold);
   font-size: 2.8rem;
-  line-height: 1.3;
+
   text-align: center;
   word-break: keep-all;
 }
@@ -624,8 +620,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 /* 8. 리스트 아이템 */
 .goods-card__item {
   font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 1.3;
+
   padding-left: 1.6rem;
   position: relative;
 }
@@ -701,14 +696,13 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .vol-kv__title {
   font-size: var(--text-6xl);
-  line-height: 1.3;
+
   color: var(--bg-primary);
 }
 
 .vol-kv__desc {
   font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 1.3;
+
   color: var(--bg-primary);
 }
 
@@ -740,13 +734,10 @@ html[lang="en"] .accordion-card.is-active .card-body {
 .vol-intro__title {
   font-family: var(--font-extrabold);
   font-size: 4.8rem;
-  line-height: 1.3;
 }
 
 .vol-intro__desc {
   font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.5;
 }
 
 .vol-intro__slide-wrap {
@@ -847,13 +838,10 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .vol-impact__title {
   font-size: 4.8rem;
-  line-height: 1.3;
 }
 
 .vol-impact__desc {
   font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 1.3;
 }
 
 .vol-impact__cards {
@@ -887,7 +875,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 .vol-impact__label {
   margin-top: 4rem;
   font-size: 2.8rem;
-  line-height: 1.3;
+
   text-align: center;
 }
 
@@ -919,7 +907,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 .vol-apply__title {
   font-family: var(--font-extrabold);
   font-size: 4.8rem;
-  line-height: 1.3;
+
   text-align: center;
 }
 
@@ -948,7 +936,6 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .vol-apply__box-title {
   font-size: 2.2rem;
-  line-height: 1.2;
 }
 
 .vol-apply__list {
@@ -964,8 +951,6 @@ html[lang="en"] .accordion-card.is-active .card-body {
   position: relative;
   padding-left: 0.8rem;
   font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.3;
 }
 
 .vol-apply__list li::before {
@@ -1007,13 +992,10 @@ html[lang="en"] .accordion-card.is-active .card-body {
 .vol-activities__title {
   font-family: var(--font-extrabold);
   font-size: 4.8rem;
-  line-height: 1.3;
 }
 
 .vol-activities__desc {
   font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 1.3;
 }
 
 .vol-activities__cards {
@@ -1054,7 +1036,6 @@ html[lang="en"] .vol-act-card__body {
 .vol-act-card__title {
   min-height: 7.2rem;
   font-size: 2.8rem;
-  line-height: 1.3;
 }
 
 .vol-act-card__desc {
@@ -1065,7 +1046,6 @@ html[lang="en"] .vol-act-card__body {
   padding: 0;
   margin: 0;
   font-size: 2rem;
-  line-height: 1.3;
 }
 
 .vol-act-card__desc li {
@@ -1079,7 +1059,6 @@ html[lang="en"] .vol-act-card__body {
   left: 0;
   top: 0;
   font-weight: 700;
-  line-height: 1.4;
 }
 
 .vol-act-card--gold .vol-act-card__body {
@@ -1139,19 +1118,15 @@ html[lang="en"] .vol-act-card__body {
 .vol-process__title {
   font-family: var(--font-extrabold);
   font-size: 4.8rem;
-  line-height: 1.3;
 }
 
 .vol-process__desc {
   font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 1.3;
 }
 
 .vol-process__note {
   font-size: 1.8rem;
-  font-weight: 400;
-  line-height: 1.5;
+
   color: #555555;
 }
 
@@ -1225,7 +1200,7 @@ html[lang="en"] .vol-act-card__body {
 .vol-process__label {
   font-family: var(--font-extrabold);
   font-size: 2.2rem;
-  line-height: 1.3;
+
   text-align: center;
 }
 
@@ -1256,13 +1231,10 @@ html[lang="en"] .vol-act-card__body {
 .vol-news__title {
   font-family: var(--font-extrabold);
   font-size: var(--text-6xl);
-  line-height: 1.3;
 }
 
 .vol-news__desc {
   font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 1.3;
 }
 
 .vol-news__cards {
@@ -1304,7 +1276,7 @@ html[lang="en"] .vol-act-card__body {
 .vol-news-card__title {
   font-family: var(--font-extrabold);
   font-size: 2.8rem;
-  line-height: 1.3;
+
   word-break: keep-all;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1319,7 +1291,7 @@ html[lang="en"] .vol-act-card__body {
 
 .vol-news-card__date {
   font-size: 1.6rem;
-  font-weight: 400;
+
   color: #555555;
 }
 
@@ -1357,7 +1329,7 @@ html[lang="en"] .vol-act-card__body {
 
 .vol-popup-title {
   font-size: 3.8rem;
-  line-height: 1.3;
+
   margin: 0 0 1.6rem;
 }
 
@@ -1428,7 +1400,6 @@ html[lang="en"] .vol-act-card__body {
 
 .vol-popup-section__title span {
   font-family: var(--font-text);
-  font-weight: 400;
 }
 
 .vol-popup-section__sep {
@@ -1476,7 +1447,6 @@ html[lang="en"] .vol-act-card__body {
   border-radius: var(--radius-sm);
   padding: 2rem 2.4rem;
   font-size: var(--text-lg);
-  line-height: 1.7;
 }
 
 .vol-privacy-box p {
@@ -1962,7 +1932,7 @@ html[lang="en"] .vol-act-card__body {
 
   .donate-page .page-title {
     font-size: 2.8rem;
-    line-height: 1.3;
+
     margin-bottom: 2.4rem;
     text-align: center;
     word-break: keep-all;
@@ -1970,7 +1940,7 @@ html[lang="en"] .vol-act-card__body {
 
   .donate-page .page-desc {
     font-size: 1.4rem;
-    line-height: 1.5;
+
     text-align: center;
   }
 
@@ -2068,7 +2038,6 @@ html[lang="en"] .vol-act-card__body {
     gap: 0rem;
     margin: -0.8rem -2.4rem 0;
     padding: 0 2.4rem 0rem;
-    line-height: 1.6;
   }
 
   .accordion-card.is-active .card-title-wrap {
@@ -2158,7 +2127,6 @@ html[lang="en"] .vol-act-card__body {
 
   .notice-yellow-box span {
     font-size: 1.5rem;
-    line-height: 1.45;
   }
 
   /* Step 1 다음 버튼 */
@@ -2491,7 +2459,6 @@ html[lang="en"] .vol-act-card__body {
 
   .vol-apply__list li {
     font-size: 1.4rem;
-    line-height: 1.5;
   }
 
   .vol-apply__list li span {
@@ -2736,7 +2703,6 @@ html[lang="en"] .vol-act-card__body {
   .vol-privacy-box {
     padding: 1.6rem;
     font-size: 1.2rem;
-    line-height: 1.6;
   }
 
   .vol-privacy-check {
