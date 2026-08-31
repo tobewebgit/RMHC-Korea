@@ -299,7 +299,7 @@ html[lang="en"] .about-vision-kv__panel p {
   content: "";
   position: absolute;
   left: 1rem;
-  top: 1.4rem;
+  top: 0.8rem;
   width: 0.3rem;
   height: 0.3rem;
   background-color: var(--text-black);
@@ -722,7 +722,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
   .promise-card {
     min-height: 18rem;
-    padding: 4rem 2.4rem;
+    padding: 3rem 2rem;
   }
   .promise-card--mission {
     background-image: url("/src/images/about/bg_section_1_mo.svg");
@@ -737,12 +737,12 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .promise-card strong {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .promise-card p {
     margin-top: 2rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .promise-card em {
@@ -758,7 +758,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
   .support-list {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
+    gap: 1.2rem;
   }
 
   .support-list li {
@@ -772,12 +772,12 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .support-list strong {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .support-list p {
     margin-top: 1.6rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .about-history {
@@ -804,18 +804,18 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
   .history-panel {
     max-height: none;
-    margin: 2.4rem 0;
+    margin: 2.4rem 0 0;
     padding: 0;
     overflow: visible;
   }
 
   .history-panel dt {
     margin-top: 2.4rem;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
   .history-panel dd {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .about-impact {
@@ -823,29 +823,52 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .about-impact .impact-note {
+    margin-top: 4.8rem;
     font-size: 1.4rem;
   }
 
   .impact-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4rem 1.6rem;
-    margin-top: 4.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    width: fit-content;
+    max-width: 100%;
+    margin: 4.8rem auto 0;
+  }
+
+  .impact-list li {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    column-gap: 2rem;
+    align-items: center;
+    text-align: left;
   }
 
   .impact-list img {
+    grid-row: 1 / 3;
+    grid-column: 1;
     width: 6rem;
     height: 6rem;
-    margin-bottom: 1.6rem;
+    margin: 0;
+    object-fit: contain;
+    justify-self: center;
   }
 
   .impact-list strong {
-    font-size: 3.2rem;
+    grid-row: 1;
+    grid-column: 2;
+    font-size: 4rem;
+    text-align: left;
   }
 
   .impact-list span {
-    margin-top: 1.2rem;
+    grid-row: 2;
+    grid-column: 2;
+    margin-top: 0.6rem;
     padding: 0;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    text-align: left;
+    white-space: nowrap;
   }
 
   .about-map {
@@ -856,6 +879,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
     display: flex;
     flex-direction: column-reverse;
     gap: 2rem;
+    margin-top: 4rem;
   }
 
   .korea-map {
@@ -923,12 +947,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   .house-list a {
     min-height: 7.2rem;
     padding: 0 2.4rem;
-    font-size: 1.4rem;
-  }
-
-  .house-heart {
-    width: 2.4rem;
-    height: 2.1rem;
+    font-size: 1.6rem;
   }
 
   .house-heart--coming {
@@ -1044,7 +1063,7 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
 .greetings-kv__text p {
   margin: 2.4rem 0 0;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .greetings-message {
@@ -1063,14 +1082,14 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 
 .greetings-message__content h2 {
   margin: 0;
-  font-size: 4.8rem;
-  line-height: 1.32;
+  font-size: 4.4rem;
 }
 html[lang="en"] .greetings-message__content h2 {
 }
 
 .greetings-message__body {
   margin-top: 4rem;
+  font-size: 1.8rem;
 }
 
 .greetings-message__body p {
@@ -1136,8 +1155,8 @@ html[lang="en"] .greetings-message__body p {
 
 @media (max-width: 768px) {
   .greetings-kv {
-    width: 31.2rem;
-    height: 24rem;
+    width: 30.5rem;
+    height: 34.6rem;
     margin: 2rem auto 0;
   }
 
@@ -1148,7 +1167,7 @@ html[lang="en"] .greetings-message__body p {
   .greetings-kv__text p {
     margin-top: 1.6rem;
     padding: 0 2rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .greetings-message {
@@ -1170,8 +1189,6 @@ html[lang="en"] .greetings-message__body p {
 
   .greetings-message__content h2 {
     font-size: 2.4rem;
-
-    color: #000000;
   }
 
   .greetings-message__body {
@@ -1180,8 +1197,6 @@ html[lang="en"] .greetings-message__body p {
 
   .greetings-message__body p {
     font-size: 1.4rem;
-
-    color: #000000;
   }
 
   .greetings-message__body p + p {
@@ -1194,7 +1209,10 @@ html[lang="en"] .greetings-message__body p {
 
   .greetings-sign p {
     font-size: 1.4rem;
-    color: #000000;
+  }
+
+  .greetings-sign strong {
+    font-weight: 700;
   }
 
   .greetings-sign img {
@@ -1261,7 +1279,7 @@ html[lang="en"] .greetings-message__body p {
 
 .board-kv__text p {
   margin: 2.4rem 0 0;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .board-members {
@@ -1298,7 +1316,6 @@ html[lang="en"] .greetings-message__body p {
   margin-bottom: 0.8rem;
   color: var(--text-gray80, #666);
   font-size: 1.4rem;
-  font-weight: 500;
 }
 .board-member figcaption h2 {
   display: block;
@@ -1307,7 +1324,7 @@ html[lang="en"] .greetings-message__body p {
 .board-member figcaption p {
   margin-top: 1.6rem;
   color: var(--text-gray80);
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 @media (max-width: 1200px) {
@@ -1319,8 +1336,8 @@ html[lang="en"] .greetings-message__body p {
 
 @media (max-width: 768px) {
   .board-kv {
-    width: 31.2rem;
-    height: 24rem;
+    width: 30.5rem;
+    height: 34.6rem;
     margin: 2rem auto 0;
   }
 
@@ -1345,7 +1362,7 @@ html[lang="en"] .greetings-message__body p {
 
   .board-members__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2.4rem 1.6rem;
+    gap: 3.2rem 1.6rem;
     max-width: none;
   }
 
@@ -1370,9 +1387,11 @@ html[lang="en"] .greetings-message__body p {
   .board-member figcaption h2 {
     display: block;
     font-family: var(--font-display);
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
 
-    color: #000000;
+  .board-member:nth-child(2) figcaption h2 {
+    min-height: 4.8rem;
   }
 
   .board-member figcaption p {
@@ -1399,7 +1418,7 @@ html[lang="en"] .greetings-message__body p {
 
 .partner-section-title {
   font-family: var(--font-display);
-  font-size: 4.8rem;
+  font-size: 4.4rem;
 
   text-align: center;
 }
@@ -1446,7 +1465,7 @@ html[lang="en"] .greetings-message__body p {
 
 .partner-kv__text p {
   margin: 2.4rem 0 0;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .partner-intro {
@@ -1462,12 +1481,12 @@ html[lang="en"] .greetings-message__body p {
 
 .partner-intro__content h2 {
   margin: 0;
-  font-size: 4.8rem;
+  font-size: 4.4rem;
 }
 
 .partner-intro__content p {
   margin: 4rem 0 0;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 .partner-intro__image {
@@ -1491,7 +1510,7 @@ html[lang="en"] .greetings-message__body p {
 
 .partner-highlight__group h3 {
   margin: 0 0 8rem;
-  font-size: 3.8rem;
+  font-size: 3.6rem;
 
   text-align: center;
 }
@@ -1532,7 +1551,7 @@ html[lang="en"] .greetings-message__body p {
 
 .founding-card__content p {
   margin: 2.4rem 0 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .partner-logo-grid {
@@ -1620,7 +1639,7 @@ html[lang="en"] .greetings-message__body p {
 
 .partner-model__head p {
   margin: 2.4rem 0 0;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 .partner-model__diagram {
@@ -1663,7 +1682,7 @@ html[lang="en"] .greetings-message__body p {
 .model-node span {
   display: block;
   margin-top: 0.8rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 html[lang="en"] .model-node span {
@@ -1705,7 +1724,10 @@ html[lang="en"] .model-node span {
   background: none;
 }
 .model-node.model-node--consumer strong {
-  font-size: 3.8rem;
+  font-size: 3.6rem;
+}
+.model-node.model-node--consumer strong + span {
+  font-size: 1.8rem;
 }
 
 .model-node--consumer img {
@@ -1718,7 +1740,7 @@ html[lang="en"] .model-node span {
   padding: 12rem 0 0;
 }
 .partner-activity .partner-section-title {
-  font-size: 3.8rem;
+  font-size: 3.6rem;
 }
 
 .partner-activity__list {
@@ -1764,7 +1786,7 @@ html[lang="en"] .model-node span {
   padding: 0.4rem 1.2rem 0;
   border-radius: 0.4rem;
   background: #8ee7f8;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
@@ -1783,7 +1805,7 @@ html[lang="en"] .model-node span {
 
 .activity-card p {
   margin: 1.4rem 0 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .partner-activity__more {
@@ -2047,13 +2069,13 @@ html[lang="en"] .model-node span {
 
 .transparency-kv__text h1 {
   margin: 0;
-  font-size: 5.6rem;
+  font-size: 5.8rem;
 }
 
 .transparency-kv__text p {
   margin: 2.4rem 0 0;
   max-width: 80rem;
-  font-size: 2.2rem;
+  font-size: 2rem;
 
   word-break: keep-all;
 }
@@ -2070,7 +2092,7 @@ html[lang="en"] .model-node span {
 .donation-use__head h2,
 .donation-history h2 {
   margin: 0;
-  font-size: 4.8rem;
+  font-size: 4.4rem;
 
   word-break: keep-all;
 }
@@ -2083,8 +2105,10 @@ html[lang="en"] .model-node span {
   max-width: 92rem;
   margin: 2.4rem auto 0;
   font-size: 2.2rem;
-
   word-break: keep-all;
+}
+.donation-use__head p {
+  font-size: 1.8rem;
 }
 
 .finance-chart-list {
@@ -2162,7 +2186,7 @@ html[lang="en"] .model-node span {
   display: block;
   margin-top: 1.2rem;
   font-family: var(--font-display);
-  font-size: 3.8rem;
+  font-size: 3.6rem;
 }
 
 .finance-breakdown {
@@ -2245,7 +2269,7 @@ html[lang="en"] .model-node span {
 
 .offline-fund-card h3 {
   margin: 0;
-  font-size: 3.8rem;
+  font-size: 3.6rem;
 
   word-break: keep-all;
 }
@@ -2311,7 +2335,7 @@ html[lang="en"] .model-node span {
   position: relative;
   display: flex;
   align-items: center;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 .offline-fund-card__info li {
   padding-left: 1rem;
@@ -2329,7 +2353,7 @@ html[lang="en"] .model-node span {
   align-items: center;
   margin-left: 1rem;
   color: #db0007;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   vertical-align: middle;
 }
@@ -2395,7 +2419,7 @@ html[lang="en"] .model-node span {
 
 .annual-report__download p {
   margin: 1.2rem 0 0;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 
   word-break: keep-all;
 }
@@ -2438,8 +2462,9 @@ html[lang="en"] .model-node span {
   margin-top: 12rem;
 }
 
-.donation-history h2 {
+.donation-history h3 {
   text-align: center;
+  font-size: 3.6rem;
 }
 
 .donation-report-list {
@@ -2501,7 +2526,8 @@ html[lang="en"] .model-node span {
   display: block;
   padding: 3rem 0;
   border-bottom: 1px solid rgba(31, 41, 55, 0.18);
-  font-size: 3.8rem;
+  font-family: var(--font-display);
+  font-size: 3.6rem;
 }
 
 .donation-report-table dl {

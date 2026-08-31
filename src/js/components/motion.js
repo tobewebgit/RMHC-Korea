@@ -69,15 +69,10 @@ export const initScrollMotions = () => {
             // 화면 밖으로 나갔고, 반복 모션 옵션(once: false)일 경우
             if (!once) {
               const rect = entry.boundingClientRect;
-              const root = entry.rootBounds;
+              const viewportBottom = entry.rootBounds ? entry.rootBounds.bottom : window.innerHeight;
               
-              // threshold(0.15) 환경에서 이탈 감지 시점의 오차를 보정하기 위해 요소와 뷰포트의 Y축 중심점 비교
-              const elementCenterY = rect.top + rect.height / 2;
-              const viewportHeight = root ? root.height : window.innerHeight;
-              const viewportTop = root ? root.top : 0;
-              const viewportCenterY = viewportTop + viewportHeight / 2;
-              
-              const isBelowViewport = elementCenterY > viewportCenterY;
+              // 요소의 상단이 뷰포트 하단 밖으로 완전히 내려갔을 때만 리셋
+              const isBelowViewport = rect.top >= viewportBottom;
 
               if (isBelowViewport) {
                 gsap.killTweensOf(el);
@@ -101,7 +96,7 @@ export const initScrollMotions = () => {
       },
       {
         root: null, // 뷰포트 기준
-        threshold: 0.15, // 15% 정도 감지 영역 진입 시
+        threshold: 0.05, // 진입 감지 임계값 완화
       }
     );
 

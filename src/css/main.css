@@ -336,7 +336,6 @@ html[lang="en"] .reveal-word {
   margin: 12rem 0 8rem;
   font-size: 4.8rem;
 
-  line-height: 1.32;
   word-break: keep-all;
 }
 
@@ -1020,7 +1019,6 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
 
   .main-kv__title {
     font-size: 2.8rem;
-    line-height: 1.28;
   }
 
   .main-kv__desc {
@@ -1479,6 +1477,4 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
     width: 100%;
     padding: 0;
   }
-
 }
-
