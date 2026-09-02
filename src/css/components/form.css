@@ -320,12 +320,12 @@
   justify-content: space-between;
 }
 
-.agreement-link {
+a.agreement-link {
   color: var(--text-gray60);
   transition: var(--transition-fast);
 }
 
-.agreement-link:hover {
+a.agreement-link:hover {
   color: var(--primary);
 }
 

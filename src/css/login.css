@@ -37,7 +37,7 @@
 
 .login-title {
   margin-bottom: var(--spacing-4);
-  font-size: var(--text-4xl);
+  font-size: 3.6rem;
   text-align: center;
   letter-spacing: var(--letter-spacing-tight);
 }
@@ -52,7 +52,7 @@
 
 .login-desc {
   margin-bottom: var(--spacing-10);
-  font-size: var(--text-xl);
+  font-size: 1.8rem;
   text-align: center;
 }
 
@@ -140,13 +140,11 @@
 
 .login-guide {
   margin-top: var(--spacing-4);
-  color: var(--text-gray80);
-  font-size: var(--text-lg);
+  font-size: 1.6rem;
   text-align: center;
 }
 
 .login-guide a {
-  color: var(--text-gray80);
   font-weight: 700;
 }
 
@@ -177,7 +175,7 @@
 
 .login-links a {
   position: relative;
-  color: var(--text-gray80);
+  color: var(--text-gray70);
 }
 
 .login-guide a:hover,
@@ -197,7 +195,7 @@
 
 .login-info {
   margin-top: var(--spacing-10);
-  color: var(--text-gray60);
+  color: var(--text-gray70);
   text-align: center;
 }
 
@@ -291,7 +289,7 @@
 }
 
 .result-box__value {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
 }
 
@@ -315,7 +313,7 @@
 }
 
 .join-title {
-  font-size: var(--text-6xl);
+  font-size: 3.6rem;
   text-align: center;
   margin-bottom: var(--spacing-8);
   letter-spacing: var(--letter-spacing-tight);
@@ -414,7 +412,7 @@
 }
 
 .summary-label {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.2rem;
   align-self: flex-start;
 }
@@ -428,7 +426,7 @@
 }
 
 .summary-value .number {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
   line-height: 1;
 }
@@ -479,7 +477,7 @@
 }
 
 .receipt-title {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 3.8rem;
   color: #000000;
   margin-bottom: var(--spacing-4);
@@ -497,7 +495,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.2rem;
   margin-bottom: var(--spacing-2);
 }
@@ -668,7 +666,7 @@
 }
 
 .receipt-consent-title {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.2rem;
 
   color: #000000;
@@ -810,7 +808,7 @@
 }
 
 .withdraw-title {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: var(--text-4xl);
   margin-bottom: var(--spacing-8);
   text-align: left;
@@ -933,12 +931,12 @@
 }
 
 .donation-detail-section .summary-box .summary-label {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.2rem;
 }
 
 .donation-detail-section .summary-box .summary-value .number {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
 }
 
@@ -985,9 +983,9 @@
 }
 
 .join-banner-section .donate-banner__heart {
-  left: -2rem;
-  top: -24rem;
-  width: 70rem;
+  left: 1rem;
+  top: -26.5rem;
+  width: 60rem;
 }
 
 .donate-banner__content,
@@ -996,17 +994,22 @@
   z-index: 1;
 }
 
+.donate-banner__content {
+  width: 49rem;
+}
+
 .donate-banner h2 {
   color: #fffdf0;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
+  text-align: center;
 }
 
 .join-banner-section .donate-banner h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 .donate-banner__btn {
-  max-width: 19rem;
+  max-width: 21rem;
 }
 
 .donate-banner__btn.btn-arrow:hover {
@@ -1020,12 +1023,13 @@
     padding: 2rem 2.4rem;
   }
 
-  .login-title.small {
-    font-size: 2rem;
+  .login-title {
+    font-size: 2.2rem;
   }
 
   .login-desc {
     margin-bottom: 2.4rem;
+    font-size: 1.4rem;
   }
 
   .login-desc.small {
@@ -1044,6 +1048,10 @@
     font-size: 1.2rem;
   }
 
+  .join-actions {
+    gap: 0.8rem;
+  }
+
   .join-actions .btn {
     width: 100%;
   }
@@ -1051,7 +1059,7 @@
   .login-guide span {
     display: block;
     margin-bottom: 0.8rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .login-guide a {
@@ -1086,7 +1094,7 @@
   }
 
   .result-box__value {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .line {
@@ -1094,7 +1102,7 @@
   }
 
   .user-info {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .helper-text {
@@ -1113,7 +1121,7 @@
 
   .join-title {
     margin-bottom: 2.4rem;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .join-form {
@@ -1127,7 +1135,7 @@
   .join-card__title {
     margin-bottom: 2.4rem;
     padding-bottom: 2.4rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .form-group.form + .form-group.form {
@@ -1442,7 +1450,7 @@
     width: 100%;
     background-color: rgba(219, 0, 7, 0.1);
     padding: 1.5rem 1.6rem;
-    font-family: var(--font-extrabold);
+    font-family: var(--font-display);
     font-size: 1.6rem;
     text-align: left;
     border-bottom: 1px solid var(--border-gray40);
@@ -1615,13 +1623,21 @@
     box-sizing: border-box;
   }
 
+  .join-banner-section .donate-banner {
+    padding: 0;
+  }
+
+  .donate-banner__content {
+    width: 100%;
+  }
+
   .donate-banner__heart {
     display: none;
   }
 
+  .join-banner-section .donate-banner h2,
   .donate-banner h2 {
-    font-size: 1.6rem;
-
+    font-size: 1.8rem;
     color: #fffdf0;
     text-align: center;
     margin: 0;
@@ -1629,13 +1645,12 @@
 
   .donate-banner__btn {
     width: 100%;
-    max-width: 24rem;
-    min-height: 4.8rem;
+    margin-top: 0;
   }
 
   .join-banner-section {
     width: 100%;
-    margin-top: 0;
+    margin-top: 2rem;
   }
 
   /* ==========================================================================
