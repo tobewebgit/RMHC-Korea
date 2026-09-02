@@ -305,7 +305,7 @@
 
 .agree-terms-content {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 2.4rem;
 }
 
 .agreement-all {
@@ -333,7 +333,6 @@
 
 .agreement-link {
   color: var(--text-gray60) !important;
-  text-decoration: underline !important;
   transition: var(--transition-fast);
 }
 

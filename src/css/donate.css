@@ -15,12 +15,12 @@
   width: 100%;
   max-width: 144rem;
   margin: 0 auto;
-  padding: 10rem var(--spacing-4) 0;
+  padding: 10rem 0;
 }
 
 .donate-page .apply-left-col {
   flex: 1;
-  max-width: 70.6rem;
+  max-width: 67.6rem;
 }
 
 .donate-page .apply-right-col {
@@ -35,7 +35,6 @@
 }
 
 .donate-page .page-title {
-  font-family: var(--font-extrabold);
   font-size: 5.8rem;
 
   margin-bottom: 2.4rem;
@@ -156,7 +155,6 @@
   z-index: 1;
   background-color: transparent !important;
   color: var(--text-black);
-  font-weight: 600;
   opacity: 1;
   transition: color 0.3s ease;
   outline: none;
@@ -166,7 +164,6 @@
 
 .donate-type-tabs .btn-tab:not(.disabled) {
   color: var(--text-white);
-  font-weight: 700;
   background-color: transparent !important;
 }
 
@@ -185,7 +182,7 @@
 }
 
 .accordion-card.is-disabled {
-  min-height: 10rem;
+  min-height: 8.4rem;
   pointer-events: none;
 }
 
@@ -218,7 +215,7 @@ html[lang="en"] .accordion-card .card-title-wrap {
 .accordion-card .donate-section-title {
   position: relative;
   top: 0.6rem;
-  font-size: 2.8rem;
+  font-size: 2.2rem;
 }
 
 .accordion-card .header-summary {
@@ -246,15 +243,13 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .accordion-card.is-active .card-body h3,
 .accordion-card.is-active .radio-label {
-  font-family: var(--font-text);
-  font-weight: 600;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .accordion-card .card-subtitle {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2.4rem;
 }
 
 /* 5. 금액 및 정보 칩 그리드 */
@@ -404,7 +399,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 /* 7. 인증 안내 및 버튼 */
 .auth-intro-text {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 
   margin-bottom: 2.4rem;
   word-break: keep-all;
@@ -494,11 +489,13 @@ html[lang="en"] .accordion-card.is-active .card-body {
 .receipt-helper__primary {
 }
 
-.receipt-helper__secondary {
+.agree-terms-container .form-subtitle,
+.inner-form-group .form-subtitle {
+  font-size: 2rem;
 }
 
 .inner-form-group .receipt-helper-text {
-  margin-top: 0.8rem;
+  margin-top: 1.6rem;
   margin-bottom: 2rem;
 }
 
@@ -508,6 +505,10 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .donate-page .card-body .chip-grid.cols-2 {
   margin-top: 4rem;
+}
+
+.accordion-card .card-subtitle + .chip-grid.cols-2 {
+  margin-top: 2.4rem;
 }
 
 /* 9. 반응형 브레이크포인트 보정 */
@@ -548,21 +549,14 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 /* 제목: NanumSquare Neo OTF ExtraBold 58px */
 .goods-header__title {
-  font-family: var(--font-extrabold);
-  font-size: var(--text-6xl);
-
   margin-bottom: 2.4rem;
+  font-size: 4.4rem;
 }
 
 /* 설명: Pretendard Regular 22px */
 .goods-header__desc {
   font-size: 2.2rem;
-
   word-break: keep-all;
-}
-
-.goods-header__desc span {
-  font-weight: 600;
 }
 
 /* 3. 카드 그리드: 4열 × 2행 */
@@ -593,7 +587,6 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 /* 카테고리명: NanumSquare Neo ExtraBold 28px */
 .goods-card__title {
-  font-family: var(--font-extrabold);
   font-size: 2.8rem;
 
   text-align: center;
@@ -657,59 +650,64 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .vol-kv {
   position: relative;
-  overflow: hidden;
-  margin-top: 5rem;
-}
-
-.vol-kv__img-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 184.8rem;
-  height: 79.1rem;
-  margin: 0 auto;
+  min-height: 88rem;
   overflow: hidden;
 }
 
-.vol-kv__img,
-.vol-kv__img-wrap img {
+.vol-kv__image {
   position: absolute;
-  top: 0;
-  left: 50%;
-  width: 184.8rem;
-  max-width: none;
-  height: 79.1rem;
-  transform: translateX(-50%);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.vol-kv__image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-.vol-kv__text-wrap {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  padding: 0 20rem 0;
+.vol-kv__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  max-width: 160rem;
+  min-height: 88rem;
+}
+
+.vol-kv__panel {
+  width: 91.4rem;
+  height: 53.2rem;
+  padding: 8rem;
+  color: #fffde9;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  transform: translateY(-50%);
+  align-items: flex-start;
 }
 
-.vol-kv__title {
-  font-size: var(--text-6xl);
-
-  color: var(--bg-primary);
+html[lang="en"] .vol-kv__panel {
+  height: 69.1rem;
 }
 
-.vol-kv__desc {
+.vol-kv__panel h1 {
+  margin: 0;
+  font-size: 5.8rem;
+  letter-spacing: 0;
+  color: #fffde9;
+}
+
+.vol-kv__panel p {
+  margin: 2.4rem 0 0;
   font-size: 2.2rem;
-
-  color: var(--bg-primary);
+  color: #fffde9;
 }
 
-.vol-kv__cta {
-  width: 20.5rem;
-  margin: 1rem 0 0;
-  font-size: 2rem;
+.vol-kv__panel .btn {
+  margin-top: 3.2rem;
 }
 
 /* ── Section 1: 소개 텍스트 + 슬라이드 이미지 ──────── */
@@ -732,12 +730,11 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .vol-intro__title {
-  font-family: var(--font-extrabold);
-  font-size: 4.8rem;
+  font-size: 4.4rem;
 }
 
 .vol-intro__desc {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .vol-intro__slide-wrap {
@@ -763,8 +760,8 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .vol-intro__slide-caption {
-  font-family: var(--font-extrabold);
-  font-size: 2.4rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
   order: -1;
 }
 
@@ -837,7 +834,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .vol-impact__title {
-  font-size: 4.8rem;
+  font-size: 4.4rem;
 }
 
 .vol-impact__desc {
@@ -874,8 +871,8 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .vol-impact__label {
   margin-top: 4rem;
-  font-size: 2.8rem;
-
+  font-family: var(--font-display);
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -905,9 +902,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .vol-apply__title {
-  font-family: var(--font-extrabold);
-  font-size: 4.8rem;
-
+  font-size: 4.4rem;
   text-align: center;
 }
 
@@ -935,7 +930,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .vol-apply__box-title {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
 }
 
 .vol-apply__list {
@@ -990,8 +985,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .vol-activities__title {
-  font-family: var(--font-extrabold);
-  font-size: 4.8rem;
+  font-size: 4.4rem;
 }
 
 .vol-activities__desc {
@@ -1034,8 +1028,10 @@ html[lang="en"] .vol-act-card__body {
 }
 
 .vol-act-card__title {
-  min-height: 7.2rem;
   font-size: 2.8rem;
+}
+html[lang="en"] .vol-act-card__title {
+  min-height: 7.2rem;
 }
 
 .vol-act-card__desc {
@@ -1116,17 +1112,15 @@ html[lang="en"] .vol-act-card__body {
 }
 
 .vol-process__title {
-  font-family: var(--font-extrabold);
-  font-size: 4.8rem;
+  font-size: 4.4rem;
 }
 
 .vol-process__desc {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 .vol-process__note {
-  font-size: 1.8rem;
-
+  font-size: 1.6rem;
   color: #555555;
 }
 
@@ -1191,14 +1185,14 @@ html[lang="en"] .vol-act-card__body {
 }
 
 .vol-process__num {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 3.8rem;
   color: #fff;
   line-height: 1;
 }
 
 .vol-process__label {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.2rem;
 
   text-align: center;
@@ -1229,12 +1223,11 @@ html[lang="en"] .vol-act-card__body {
 }
 
 .vol-news__title {
-  font-family: var(--font-extrabold);
-  font-size: var(--text-6xl);
+  font-size: 4.4rem;
 }
 
 .vol-news__desc {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 .vol-news__cards {
@@ -1274,9 +1267,7 @@ html[lang="en"] .vol-act-card__body {
 }
 
 .vol-news-card__title {
-  font-family: var(--font-extrabold);
-  font-size: 2.8rem;
-
+  font-size: 2.2rem;
   word-break: keep-all;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1291,8 +1282,7 @@ html[lang="en"] .vol-act-card__body {
 
 .vol-news-card__date {
   font-size: 1.6rem;
-
-  color: #555555;
+  color: var(--border-gray80);
 }
 
 .vol-news__cta {
@@ -1328,13 +1318,12 @@ html[lang="en"] .vol-act-card__body {
 }
 
 .vol-popup-title {
-  font-size: 3.8rem;
-
+  font-size: 2.8rem;
   margin: 0 0 1.6rem;
 }
 
 .vol-popup-subtitle {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0;
 }
 
@@ -1373,7 +1362,7 @@ html[lang="en"] .vol-act-card__body {
 .vol-popup-sep {
   border: 0;
   border-top: 1px solid var(--border-gray30);
-  margin: 3.2rem 0;
+  margin: 2.4rem 0;
 }
 
 .vol-popup-panel .vol-popup-sep {
@@ -1394,7 +1383,7 @@ html[lang="en"] .vol-act-card__body {
 }
 
 .vol-popup-section__title {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   margin: 0;
 }
 
@@ -2242,7 +2231,7 @@ html[lang="en"] .vol-act-card__body {
   }
 
   .goods-header__desc {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .goods-grid {
@@ -2251,12 +2240,12 @@ html[lang="en"] .vol-act-card__body {
   }
 
   .goods-card__title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .goods-card__item {
     text-align: left;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .goods-card {
@@ -2301,34 +2290,68 @@ html[lang="en"] .vol-act-card__body {
 
   /* KV */
   .vol-kv {
-    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    margin-top: 0;
   }
 
-  .vol-kv__img-wrap,
-  .vol-kv__img,
-  .vol-kv__img-wrap img {
-    width: 31.2rem;
-    height: 54rem;
+  .vol-kv__content {
+    order: 1;
+    align-items: flex-start;
+    padding-top: 5rem;
+    min-height: auto;
   }
 
-  .vol-kv__text-wrap {
-    top: 36%;
-    padding: 0 2.4rem;
-    text-align: center;
-    align-items: center;
+  .vol-kv__content.inner-layout {
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
   }
 
-  .vol-kv__title {
+  .vol-kv__image {
+    order: 2;
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 4rem;
+  }
+
+  .vol-kv__image img {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .vol-kv__panel {
+    width: 100%;
+    max-width: 34rem;
+    height: auto;
+    padding: 0 1.2rem;
+    color: var(--text-black);
+    background-image: none;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  html[lang="en"] .vol-kv__panel {
+    height: auto;
+    background-image: none;
+  }
+
+  .vol-kv__panel h1 {
     font-size: 2.8rem;
+    color: var(--text-black);
   }
 
-  .vol-kv__desc {
-    font-size: 1.4rem;
-  }
-
-  .vol-kv__cta {
-    width: auto;
+  .vol-kv__panel p {
+    margin-top: 1.2rem;
     font-size: 1.6rem;
+    color: var(--text-black);
+  }
+
+  .vol-kv__panel .btn {
+    margin-top: 2.4rem;
   }
 
   /* Intro */
@@ -2350,7 +2373,7 @@ html[lang="en"] .vol-act-card__body {
   }
 
   .vol-intro__slide-caption {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     padding-right: 8rem;
   }
 
@@ -2376,67 +2399,81 @@ html[lang="en"] .vol-act-card__body {
   }
 
   .vol-impact__cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem 1.6rem;
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+    width: 100%;
+    max-width: 32rem;
+    margin: 0 auto;
   }
 
   .vol-impact__card {
-    gap: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 0 2.4rem;
+    text-align: left;
   }
 
   .vol-impact__icon {
+    width: 6rem;
     height: 6rem;
+    flex-shrink: 0;
   }
 
   .vol-impact__label {
-    margin-top: 1.2rem;
-    font-size: 1.4rem;
+    margin-top: 0;
+    font-size: 1.6rem;
+    text-align: left;
   }
 
   /* Apply */
   .vol-apply {
-    height: 58rem;
+    height: auto;
     margin-top: 10rem;
-    padding: 2rem 0 0;
-    background-image: url(/src/images/donate/img_volunteer_section_3_bg_mo.png);
-    background-size: cover;
+    padding: 5rem 0 45rem;
+    background: #ffbc0d
+      url("/src/images/donate/img_volunteer_section_3_bg_mo.png") no-repeat
+      bottom center / 100% auto;
   }
 
   .vol-apply__inner {
-    align-items: flex-start;
-    gap: 1.2rem;
-    width: 30.4rem;
-    height: 45.4rem;
+    align-items: center;
+    gap: 2.4rem;
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
     margin: 0 auto;
-    padding: 2rem 2.4rem;
-    background-image: url(/src/images/donate/img_section_3_bg_mo.svg);
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    padding: 0 0.8rem;
+    background-image: none;
   }
 
   .vol-apply__title {
     margin-top: 0;
+    font-size: 2.8rem;
+    color: var(--text-black);
+    text-align: center;
   }
 
   .vol-apply__box-wrap {
     flex-direction: column;
-    height: 33.9rem;
-    padding: 2rem 0;
-    gap: 2rem;
+    height: auto;
+    padding: 3.2rem 2.4rem;
+    gap: 2.4rem;
+    background-color: #ffffff;
+    border-radius: 1.6rem;
   }
 
   .vol-apply__box {
-    gap: 0.8rem;
+    gap: 1.6rem;
     width: 100%;
-    padding: 0 1.6rem;
+    padding: 0;
   }
 
   .vol-apply__box:first-child {
     width: 100%;
     border-right: none;
     border-bottom: none;
-    padding-bottom: 2rem;
+    padding-bottom: 2.4rem;
     position: relative;
   }
 
@@ -2444,21 +2481,21 @@ html[lang="en"] .vol-act-card__body {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 1.6rem;
-    right: 1.6rem;
+    left: 0;
+    right: 0;
     border-bottom: 1px dashed #000000;
   }
 
   .vol-apply__box-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .vol-apply__list {
-    gap: 0;
+    gap: 0.8rem;
   }
 
   .vol-apply__list li {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .vol-apply__list li span {
@@ -2468,7 +2505,11 @@ html[lang="en"] .vol-act-card__body {
 
   .vol-apply__cta {
     width: 100%;
+    height: 5.4rem;
     font-size: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Activities */
@@ -2488,12 +2529,12 @@ html[lang="en"] .vol-act-card__body {
 
   .vol-act-card__title {
     min-height: auto;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .vol-act-card__desc {
     gap: 0.4rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .vol-act-card__desc li {
@@ -2503,18 +2544,22 @@ html[lang="en"] .vol-act-card__body {
   /* Process */
   .vol-process {
     margin-top: 10rem;
-    padding: 4rem 0;
+    padding: 6rem 0 6rem;
+    background-color: #ffbc0d;
   }
 
   .vol-process__inner {
-    gap: 4rem;
+    justify-content: flex-start;
+    aspect-ratio: auto;
+    gap: 3.2rem;
     width: 31.1rem;
-    height: 89.6rem;
-    padding: 4rem 2.4rem;
-    background-image: url(/src/images/donate/img_section_5_bg_mo.svg);
-    background-position: 50% 0;
-    background-repeat: no-repeat;
+    max-width: calc(100% - 4.8rem);
+    height: auto;
+    min-height: auto;
+    padding: 4rem 1.6rem 4rem;
+    background: url(/src/images/donate/img_section_5_bg_mo.svg) 50% 0 no-repeat;
     background-size: 100% 100%;
+    margin: 0 auto;
   }
 
   .vol-process__header {
@@ -2526,60 +2571,45 @@ html[lang="en"] .vol-act-card__body {
   }
 
   .vol-process__note {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .vol-process__steps {
     flex-direction: column;
-    align-items: stretch;
-    gap: 6rem;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
   }
 
   .vol-process__step {
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     align-items: center;
-    gap: 2rem;
-    position: relative;
-    padding-left: 4rem;
-  }
-
-  .vol-process__step::after {
-    content: "";
-    position: absolute;
-    left: 13.5rem;
-    top: 6.5rem;
-    width: 0.8rem;
-    height: 4.8rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-  }
-
-  .vol-process__step:nth-child(1)::after {
-    background: url(/src/images/donate/line_section_5_1_mo.png) no-repeat;
-  }
-
-  .vol-process__step:nth-child(3)::after {
-    background: url(/src/images/donate/line_section_5_2_mo.png) no-repeat;
-  }
-
-  .vol-process__step:nth-child(5)::after {
-    background: url(/src/images/donate/line_section_5_3_mo.png) no-repeat;
-  }
-
-  .vol-process__step:nth-child(7)::after {
-    background: url(/src/images/donate/line_section_5_4_mo.png) no-repeat;
+    gap: 1.2rem;
+    padding: 0;
+    text-align: center;
   }
 
   .vol-process__line {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .vol-process__line picture,
+  .vol-process__line img {
+    width: 0.8rem;
+    height: 4.8rem;
+    display: block;
+    object-fit: contain;
   }
 
   .vol-process__icon {
-    width: 6rem;
-    height: 6rem;
-    border-radius: 1.6rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.8rem;
     flex-shrink: 0;
   }
 
@@ -2589,12 +2619,11 @@ html[lang="en"] .vol-act-card__body {
 
   .vol-process__label {
     font-size: 1.8rem;
-    text-align: left;
+    text-align: center;
   }
 
   .vol-process__cta {
     width: 100%;
-    font-size: 1.6rem;
   }
 
   /* News */
@@ -2620,11 +2649,6 @@ html[lang="en"] .vol-act-card__body {
     font-size: 1.4rem;
   }
 
-  .vol-news__cta {
-    width: 100%;
-    font-size: 1.6rem;
-  }
-
   /* ── 4. 자원봉사자 신청 팝업 모바일 ── */
 
   .vol-popup-header {
@@ -2632,7 +2656,7 @@ html[lang="en"] .vol-act-card__body {
   }
 
   .vol-popup-title {
-    font-size: 2.4rem;
+    font-size: 2rem;
     margin-bottom: 0.8rem;
   }
 
@@ -2663,6 +2687,7 @@ html[lang="en"] .vol-act-card__body {
   }
 
   .vol-popup-body .donate-type-tabs {
+    margin-top: 4rem;
     padding: 0.8rem;
     border-radius: 0.8rem;
   }
@@ -2712,7 +2737,6 @@ html[lang="en"] .vol-act-card__body {
 
   .vol-popup-submit {
     top: 0;
-    width: 100% !important;
     height: 5.2rem;
     font-size: 1.6rem;
     margin-top: 2rem;

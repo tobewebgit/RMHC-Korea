@@ -36,12 +36,12 @@
 
 .house-section__head h2 {
   margin: 0;
-  font-size: 4.8rem;
+  font-size: 4.4rem;
 }
 
 .house-section__head p {
   margin: 2.4rem auto 0;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 .house-btn {
@@ -53,7 +53,8 @@
   padding: 0 2.4rem;
   border: 0;
   border-radius: 1.6rem;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
+  line-height: 1;
 }
 
 .house-btn::before {
@@ -86,65 +87,64 @@
 /* Hero */
 .house-hero {
   position: relative;
-  overflow: hidden;
-  margin-top: 5rem;
-}
-
-.house-hero__visual {
-  position: relative;
-  width: 100%;
-  max-width: 184.8rem;
-  height: 79.1rem;
-  margin: 0 auto;
+  min-height: 88rem;
   overflow: hidden;
 }
 
-.house-hero__visual img {
+.house-hero__image {
   position: absolute;
-  top: 0;
-  left: 50%;
-  width: 184.8rem;
-  max-width: none;
-  height: 79.1rem;
-  transform: translateX(-50%);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.house-hero__image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .house-hero__content {
-  position: absolute;
-  top: 50%;
-  left: 0;
+  position: relative;
   z-index: 1;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  max-width: 160rem;
+  min-height: 88rem;
+}
+
+.house-hero__panel {
+  width: 91.4rem;
+  height: 53.2rem;
+  padding: 8rem;
+  color: #fffde9;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2.4rem;
-  padding: 0 20rem;
-  transform: translateY(-50%);
 }
 
-.house-hero__content h1 {
-  margin: 0;
-  font-family: var(--font-extrabold);
-  font-size: var(--text-6xl);
+html[lang="en"] .house-hero__panel {
+  height: 69.1rem;
+}
 
+.house-hero__panel h1 {
+  margin: 0;
+  font-size: 5.8rem;
   letter-spacing: 0;
-  color: var(--bg-primary);
+  color: #fffde9;
 }
 
-.house-hero__content p {
-  margin: 0;
-  max-width: 76rem;
+.house-hero__panel p {
+  margin: 2.4rem 0 0;
   font-size: 2.2rem;
-
-  color: var(--bg-primary);
+  color: #fffde9;
 }
 
-.house-hero__cta {
-  width: 20.5rem;
-  margin: 1rem 0 0;
-  font-size: 2rem;
+.house-hero__panel .btn {
+  margin-top: 3.2rem;
 }
 
 /* Story */
@@ -220,7 +220,7 @@
   height: 4rem;
   margin-bottom: 1.6rem;
   color: var(--primary);
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 8rem;
   line-height: 0.7;
 }
@@ -232,7 +232,7 @@
 
 .story-card p {
   margin: 2.4rem 0 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .story-slider__btn {
@@ -329,8 +329,7 @@
 
 .house-value__content h2 {
   margin: 0 0 7.6rem;
-  font-family: var(--font-extrabold);
-  font-size: 4.8rem;
+  font-size: 4.4rem;
 }
 
 .value-list {
@@ -355,13 +354,13 @@
 }
 
 .value-list strong {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
 }
 
 .value-list p {
   margin: 2.4rem 0 0;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 /* Impact */
@@ -396,7 +395,7 @@
 .impact-list span {
   display: block;
   margin-top: 0.8rem;
-  font-family: var(--font-extrabold);
+  font-weight: 700;
   font-size: 2.4rem;
 }
 
@@ -426,7 +425,7 @@
   padding: 1.6rem 2.4rem;
   border: 0;
   background: transparent;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.2rem;
   line-height: 1;
   cursor: pointer;
@@ -587,10 +586,9 @@
 
 .apply-steps strong {
   display: block;
-  min-height: 7.2rem;
   margin-top: 3.2rem;
   font-size: 2.8rem;
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
 }
 
 .apply-steps p {
@@ -672,8 +670,7 @@
 
 .location-info strong {
   margin-right: 2.4rem;
-  font-family: var(--font-extrabold);
-  font-size: 2.8rem;
+  font-family: var(--font-display);
 }
 
 .location-actions {
@@ -699,8 +696,8 @@
   min-height: 7.2rem;
   padding: 2.4rem 5rem 2.4rem 2.4rem;
   border-bottom: 1px solid var(--border-black);
-  font-family: var(--font-extrabold);
-  font-size: 2.8rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
 
   cursor: pointer;
   list-style: none;
@@ -736,7 +733,7 @@
 .faq-list p {
   margin: 0;
   padding: 2.4rem;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 /* Support */
@@ -790,7 +787,6 @@
 }
 
 .support-card p {
-  min-height: 9.6rem;
   margin: 1.6rem 0 3.2rem;
   font-size: 2rem;
 }
@@ -828,35 +824,68 @@
 
   /* Hero */
   .house-hero {
-    position: relative;
-    overflow: hidden;
-    margin-top: 2rem;
-  }
-
-  .house-hero__visual,
-  .house-hero__visual img {
-    width: 31.2rem;
-    height: 54rem;
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    margin-top: 0;
   }
 
   .house-hero__content {
-    padding: 0 2.4rem;
-    align-items: center;
-    text-align: center;
+    order: 1;
+    align-items: flex-start;
+    padding-top: 5rem;
+    min-height: auto;
   }
 
-  .house-hero__content h1 {
+  .house-hero__content.inner-layout {
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+  }
+
+  .house-hero__image {
+    order: 2;
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 4rem;
+  }
+
+  .house-hero__image img {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .house-hero__panel {
+    width: 100%;
+    max-width: 34rem;
+    height: auto;
+    padding: 0 1.2rem;
+    color: var(--text-black);
+    background-image: none;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  html[lang="en"] .house-hero__panel {
+    height: auto;
+    background-image: none;
+  }
+
+  .house-hero__panel h1 {
     font-size: 2.8rem;
+    color: var(--text-black);
   }
 
-  .house-hero__content p {
-    margin: 1.2rem 0 0;
-    font-size: 1.4rem;
-  }
-
-  .house-hero__cta {
-    width: 20.5rem;
+  .house-hero__panel p {
+    margin-top: 1.2rem;
     font-size: 1.6rem;
+    color: var(--text-black);
+  }
+
+  .house-hero__panel .btn {
+    margin-top: 2.4rem;
   }
 
   /* Story */
@@ -934,7 +963,7 @@
   }
 
   .story-card h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .story-card p {
@@ -1006,7 +1035,7 @@
   }
 
   .value-list strong {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .value-list p {
@@ -1047,7 +1076,7 @@
 
   .impact-list span {
     margin-top: 0;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   /* Gallery */
@@ -1149,7 +1178,7 @@
   }
 
   .partner-card p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-top: 1.6rem;
   }
 
@@ -1177,7 +1206,7 @@
   }
 
   .apply-steps strong {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .apply-steps p {
@@ -1247,7 +1276,7 @@
   .faq-list summary {
     min-height: 6rem;
     padding: 1.8rem 4rem 1.8rem 0;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .faq-list summary::after {
@@ -1258,7 +1287,7 @@
   }
 
   .faq-list p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 1.6rem 0;
   }
 
@@ -1382,7 +1411,7 @@ body:has(.house-coming-section) .footer,
 }
 
 .house-coming-badge__text {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.2rem;
 
   color: var(--text-gray100);

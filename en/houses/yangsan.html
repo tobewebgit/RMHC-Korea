@@ -24,25 +24,29 @@
     <div class="page-wrapper house-page">
       <main id="main-content">
         <section class="house-hero" aria-labelledby="houseHeroTitle">
-          <div class="house-hero__visual">
-            <picture>
-              <source
-                media="(max-width: 768px)"
-                srcset="/src/images/houses/hero_yangsan_mo.png"
-              />
-              <img
-                src="/src/images/houses/hero_yangsan.png"
-                alt=""
-                fetchpriority="high"
-              />
-            </picture>
-            <div class="house-hero__content">
-              <h1 id="houseHeroTitle" data-motion="fade-up">
+          <picture class="house-hero__image">
+            <source
+              media="(max-width: 768px)"
+              srcset="/src/images/houses/hero_yangsan_mo.png"
+            />
+            <img
+              src="/src/images/houses/hero_yangsan.png"
+              alt=""
+              fetchpriority="high"
+            />
+          </picture>
+          <div class="house-hero__content inner-layout">
+            <div
+              class="house-hero__panel"
+              data-motion="fade-up"
+              data-motion-once="true"
+            >
+              <h1 id="houseHeroTitle">
                 A place that gives the<br class="type-pc" />
                 comfort of your house.<br />
                 Ronald McDonald House: Yangsan
               </h1>
-              <p data-motion="fade-up" data-motion-delay="0.15">
+              <p>
                 This is a family support space designed to help families of
                 child patients stay comfortably close to the hospital and focus
                 on their child's treatment.
@@ -50,8 +54,6 @@
               <a
                 href="#applyGuide"
                 class="btn btn-primary btn-page btn-arrow w-left"
-                data-motion="fade-up"
-                data-motion-delay="0.3"
                 >View How to Use</a
               >
             </div>

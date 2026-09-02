@@ -19,21 +19,35 @@
 
   <div class="page-wrapper">
     <main id="main-content">
-      <section class="vol-kv" aria-label="자원봉사 히어로 영역">
-        <div class="vol-kv__img-wrap">
-          <picture>
-            <source media="(max-width: 768px)" srcset="/src/images/donate/img_volunteer_top_mo.png" />
-            <img src="/src/images/donate/img_volunteer_top.png" alt="" fetchpriority="high" />
-          </picture>
-
-          <div class="vol-kv__text-wrap">
-            <h1 class="vol-kv__title font-nanum" data-motion="fade-up">
-              당신의 1시간이 환아 가족에게<br />따뜻한 쉼이 됩니다.
+      <section class="vol-kv" aria-labelledby="volKvTitle">
+        <picture class="vol-kv__image">
+          <source
+            media="(max-width: 768px)"
+            srcset="/src/images/donate/img_volunteer_top_mo.png"
+          />
+          <img
+            src="/src/images/donate/img_volunteer_top.png"
+            alt=""
+            fetchpriority="high"
+          />
+        </picture>
+        <div class="vol-kv__content inner-layout">
+          <div
+            class="vol-kv__panel"
+            data-motion="fade-up"
+            data-motion-once="true"
+          >
+            <h1 id="volKvTitle">
+              당신의 1시간이 환아 가족에게<br class="type-pc" />따뜻한 쉼이 됩니다.
             </h1>
-            <p class="vol-kv__desc" data-motion="fade-up">
+            <p>
               나눔이 아이와 가족에게 큰 힘이 됩니다
             </p>
-            <a href="#vol-apply" class="btn btn-primary btn-page btn-kv vol-kv__cta" data-motion="fade-up">자원봉사 알아보기</a>
+            <a
+              href="#vol-apply"
+              class="btn btn-primary btn-page btn-arrow w-left"
+              >자원봉사 알아보기</a
+            >
           </div>
         </div>
       </section>
@@ -178,7 +192,7 @@
               </div>
             </div>
             <button type="button"
-              class="btn btn-primary btn-page btn-arrow w-auto vol-apply__cta btn-open-popup type-pc"
+              class="btn btn-primary btn-page btn-arrow w-auto vol-apply__cta btn-open-popup"
               data-popup="modal-dn_04p" aria-haspopup="dialog" data-motion="fade-up" data-motion-delay="0.3">
               자원봉사 신청하기
             </button>
@@ -269,7 +283,18 @@
             </li>
 
             <li class="vol-process__line">
-              <img src="/src/images/donate/line_section_5_1.png" alt="" aria-hidden="true" loading="lazy" />
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/src/images/donate/line_section_5_1_mo.png"
+                />
+                <img
+                  src="/src/images/donate/line_section_5_1.png"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                />
+              </picture>
             </li>
 
             <!-- Step 02: 봉사 신청 -->
@@ -281,7 +306,18 @@
             </li>
 
             <li class="vol-process__line">
-              <img src="/src/images/donate/line_section_5_2.png" alt="" aria-hidden="true" loading="lazy" />
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/src/images/donate/line_section_5_2_mo.png"
+                />
+                <img
+                  src="/src/images/donate/line_section_5_2.png"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                />
+              </picture>
             </li>
 
             <!-- Step 03: 담당 부서 확인 -->
@@ -295,7 +331,18 @@
             </li>
 
             <li class="vol-process__line">
-              <img src="/src/images/donate/line_section_5_3.png" alt="" aria-hidden="true" loading="lazy" />
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/src/images/donate/line_section_5_3_mo.png"
+                />
+                <img
+                  src="/src/images/donate/line_section_5_3.png"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                />
+              </picture>
             </li>
 
             <!-- Step 04: 봉사 진행 -->
@@ -307,7 +354,18 @@
             </li>
 
             <li class="vol-process__line">
-              <img src="/src/images/donate/line_section_5_4.png" alt="" aria-hidden="true" loading="lazy" />
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/src/images/donate/line_section_5_4_mo.png"
+                />
+                <img
+                  src="/src/images/donate/line_section_5_4.png"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                />
+              </picture>
             </li>
 
             <!-- Step 05: 활동 인증 -->

@@ -1346,9 +1346,9 @@ html[lang="en"] .greetings-message__body p {
   }
 
   .board-kv__text p {
-    margin-top: 1.6rem;
+    margin-top: 1.2rem;
     padding: 0 2rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .board-members {
@@ -1976,7 +1976,7 @@ html[lang="en"] .model-node span {
 
   .partner-model__head .partner-section-title + p {
     margin-top: 4rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .partner-model__diagram {
@@ -2063,7 +2063,7 @@ html[lang="en"] .model-node span {
   align-items: center;
   justify-content: center;
   padding: 0 4rem;
-  color: #fff;
+  color: #fffde9;
   text-align: center;
 }
 
@@ -2615,8 +2615,8 @@ html[lang="en"] .model-node span {
 
 @media (max-width: 768px) {
   .transparency-kv {
-    width: 31.2rem;
-    height: 24rem;
+    width: 30.5rem;
+    height: 34.6rem;
     margin: 2rem auto 0;
     border-radius: 0.8rem;
   }
@@ -2626,13 +2626,13 @@ html[lang="en"] .model-node span {
   }
 
   .transparency-kv__text h1 {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
   }
 
   .transparency-kv__text p {
     margin-top: 1.2rem;
     max-width: 28rem;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .finance-report {
@@ -2667,12 +2667,12 @@ html[lang="en"] .model-node span {
   }
 
   .finance-chart__total strong {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .finance-chart__total span {
     margin-top: 0.8rem;
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .finance-breakdown {
@@ -2683,8 +2683,9 @@ html[lang="en"] .model-node span {
     flex-direction: column;
     justify-content: center;
     gap: 1.2rem;
-    min-height: 7.9rem;
-    font-size: 1.4rem;
+    min-height: auto;
+    padding: 1.6rem 0;
+    font-size: 1.8rem;
     text-align: center;
   }
 
@@ -2707,7 +2708,7 @@ html[lang="en"] .model-node span {
 
   .donation-history h3,
   .offline-fund-card h3 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
   }
 
@@ -2717,7 +2718,7 @@ html[lang="en"] .model-node span {
   }
 
   .offline-fund-card__amount strong {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .offline-fund-card__amount p {
@@ -2736,7 +2737,7 @@ html[lang="en"] .model-node span {
     display: inline-flex;
     align-items: center;
     height: auto;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     vertical-align: middle;
   }
 
@@ -2759,6 +2760,9 @@ html[lang="en"] .model-node span {
   .detail-view-wrap ul li,
   .offline-fund-card__info li,
   .offline-fund-card__info p {
+    font-size: 1.6rem;
+  }
+  .offline-fund-card__info p {
     font-size: 1.4rem;
   }
   .offline-fund-card__info p {
@@ -2776,7 +2780,7 @@ html[lang="en"] .model-node span {
   }
 
   .annual-report__download h2 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     text-align: center;
   }
 
@@ -2806,7 +2810,7 @@ html[lang="en"] .model-node span {
   }
 
   .donation-report-item summary span {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .donation-report-panel {
@@ -2833,13 +2837,13 @@ html[lang="en"] .model-node span {
   .donation-report-table h3 {
     height: 5.7rem;
     padding: 2rem 0;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .donation-report-table > strong {
     height: 6.6rem;
     padding: 2.4rem 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .donation-report-table dl div {
@@ -2867,6 +2871,6 @@ html[lang="en"] .model-node span {
     font-size: 1.6rem;
   }
   .donation-report-table .total dd {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }

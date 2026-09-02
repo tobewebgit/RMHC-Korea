@@ -1484,7 +1484,7 @@ a.header__submenu-link:focus-visible,
 }
 
 .sub-title {
-  font-size: var(--text-5xl);
+  font-size: 4.4rem;
 }
 
 /* 2. 탭 네비게이션 */
@@ -1647,8 +1647,8 @@ a.header__submenu-link:focus-visible,
   }
 
   .page-kv .kv-img-wrap {
-    width: 31.2rem;
-    height: 24rem;
+    width: 30.5rem;
+    height: 34.6rem;
     margin: 2rem auto 0;
   }
 
@@ -1671,7 +1671,7 @@ a.header__submenu-link:focus-visible,
   .page-kv .kv-desc {
     margin-top: 1.2rem;
     padding: 0 2rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .page-container {
@@ -2157,4 +2157,3 @@ a.header__submenu-link:focus-visible,
     margin-left: 0.6rem;
   }
 }
-

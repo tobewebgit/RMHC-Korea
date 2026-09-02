@@ -24,13 +24,13 @@
 }
 
 .complete-title {
-  font-size: 3.8rem;
+  font-size: 3.6rem;
   margin: 0 0 1.8rem 0;
   letter-spacing: -0.05rem;
 }
 
 .complete-desc {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0;
 }
 
@@ -90,7 +90,6 @@
 
 .complete-helper-box p {
   font-family: var(--font-text);
-  font-size: 1.6rem !important;
   margin: 0;
 }
 
