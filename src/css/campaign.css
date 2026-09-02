@@ -204,12 +204,12 @@
 }
 
 .award-section-header .sub-title {
-  font-size: 4.8rem;
+  font-size: 4.4rem;
   margin-bottom: 1.6rem;
 }
 
 .award-desc {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 .award-slide-wrap {
@@ -271,7 +271,7 @@
   display: inline-block;
   padding: 0.56rem 1.36rem;
   border-radius: 0.4rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -302,37 +302,38 @@
 }
 
 /* 웜 페이지네이션 도트 커스텀 */
-.award-swiper-pagination {
-  position: relative !important;
-  bottom: auto !important;
-  left: auto !important;
-  transform: none !important;
-  margin-top: 10rem !important;
+.award-swiper-pagination.swiper-pagination {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  margin-top: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+  /* gap: 0.4rem; */
   width: 100%;
 }
 
-.award-swiper-pagination .swiper-pagination-bullet {
+.award-swiper-pagination.swiper-pagination .swiper-pagination-bullet {
   background-color: var(--bg-gray30);
   opacity: 1;
   width: 1rem;
   height: 1rem;
-  margin: 0 !important;
+  margin: 0;
   border-radius: 0.5rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.award-swiper-pagination .swiper-pagination-bullet-active {
+.award-swiper-pagination.swiper-pagination .swiper-pagination-bullet-active {
   position: relative;
   background-color: var(--bg-gray30);
   height: 1rem;
   border-radius: 0.5rem;
 }
 
-.award-swiper-pagination .swiper-pagination-bullet-active::after {
+.award-swiper-pagination.swiper-pagination
+  .swiper-pagination-bullet-active::after {
   content: "";
   position: absolute;
   top: 0;
@@ -385,14 +386,11 @@
 }
 
 .apply-page .page-title {
-  font-family: var(--font-extrabold);
-
   text-align: left;
 }
 
 .apply-page .page-desc {
-  font-size: 2.2rem;
-
+  font-size: 2rem;
   text-align: left;
 }
 
@@ -421,18 +419,18 @@
 }
 
 .apply-page .payment-intro {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .apply-page .donate-section-title {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
 
   margin-bottom: 0;
 }
 
 /* 신청서 기본 정보 입력 회색 상자 */
 .apply-page .inner-wrap {
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
 }
 
 /* 구분선 */
@@ -444,8 +442,7 @@
 
 /* 신청서 기본 정보 소제목 */
 .apply-page .form-subtitle {
-  font-size: 2.2rem;
-  font-weight: 600;
+  font-size: 2rem;
   margin-bottom: var(--spacing-6);
 }
 
@@ -464,7 +461,7 @@
 }
 
 .apply-page .total-amount {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
 }
 
@@ -475,7 +472,7 @@
 
 /* 셀렉트 박스 및 폼 요소 둥글기 오버라이드 */
 .apply-page .form-control {
-  border-radius: 0.8rem !important;
+  border-radius: 0.8rem;
 }
 .apply-page .helper-text {
   margin-top: 1.6rem;
@@ -485,8 +482,7 @@
   color: var(--text-gray60);
 }
 .apply-page .form-label {
-  font-size: 2.2rem;
-  font-weight: 600;
+  font-size: 2rem;
 }
 
 /* 결제수단 칩 그리드 전용 스타일 */
@@ -506,7 +502,7 @@
 
 /* 결제수단 로고 이미지 크기 및 간격 */
 .apply-page .payment-logo {
-  width: auto !important;
+  width: auto;
   height: 2.2rem;
   margin-right: 0.8rem;
   object-fit: contain;
@@ -531,11 +527,13 @@
 }
 .campaign-container .campaign-row .campaign-col .campaign-title {
   margin-bottom: 6rem;
-  font-family: var(--font-extrabold);
-  font-size: 4.8rem;
+  font-size: 4.4rem;
 }
-.campaign-container .campaign-row .campaign-col .text-col p {
-  font-size: 2.2rem;
+.campaign-container .campaign-row .campaign-col .campaign-title + p {
+  font-size: 1.8rem;
+}
+.campaign-container .campaign-row .campaign-col.text-col p {
+  font-size: 1.8rem;
 }
 .campaign-container .campaign-section .btn {
   margin-top: 10rem;
@@ -560,7 +558,7 @@
    ========================================================================== */
 @media (max-width: 1500px) and (min-width: 769px) {
   html:has(.apply-page) {
-    font-size: 0.66667vw !important;
+    font-size: 0.66667vw;
   }
 }
 
@@ -612,7 +610,7 @@ html[lang="en"] .kcr-card {
 
 .kcr-card-icon img {
   height: 100%;
-  width: auto !important;
+  width: auto;
   object-fit: contain;
 }
 
@@ -622,7 +620,7 @@ html[lang="en"] .kcr-card {
 }
 
 .kcr-card-desc {
-  font-size: 2.2rem;
+  font-size: 2rem;
 
   word-break: keep-all;
 }
@@ -662,20 +660,20 @@ html[lang="en"] .kcr-card {
 
   /* SVG 라인 및 하트 마크 모바일 노출 & 정밀 뷰포트 배치 */
   .campaign-svg-line.type-pc {
-    display: none !important;
+    display: none;
   }
 
   .campaign-svg-line.type-mo {
-    display: block !important;
+    display: block;
     width: 100%;
     height: 100%;
   }
 
   .campaign-svg-line-wrap {
-    display: block !important;
+    display: block;
     position: absolute;
-    width: 36rem !important;
-    height: 142rem !important;
+    width: 36rem;
+    height: 142rem;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -684,7 +682,7 @@ html[lang="en"] .kcr-card {
   }
 
   .timeline-heart-marker {
-    display: block !important;
+    display: block;
     left: auto;
     right: 16rem;
     top: auto;
@@ -695,9 +693,11 @@ html[lang="en"] .kcr-card {
     transform: scale(0.6);
   }
 
-  .timeline-row {
+  .timeline-row,
+  .timeline-row.type-left,
+  .timeline-row.type-right {
     display: flex;
-    flex-direction: column !important;
+    flex-direction: column;
     gap: 4rem;
     margin-bottom: 10rem;
     align-items: center;
@@ -705,17 +705,22 @@ html[lang="en"] .kcr-card {
     z-index: 2;
   }
 
+  .timeline-row .timeline-col {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .timeline-row .img-col {
-    order: 1 !important;
-    width: 100% !important;
+    order: 1;
+    width: 100%;
     max-width: 100%;
     position: relative;
     z-index: 2;
   }
 
   .timeline-row .text-col {
-    order: 2 !important;
-    width: 100% !important;
+    order: 2;
+    width: 100%;
     max-width: 100%;
     text-align: center;
     position: relative;
@@ -723,14 +728,14 @@ html[lang="en"] .kcr-card {
   }
 
   .timeline-img-card {
-    width: 100% !important;
+    width: 100%;
     height: auto;
     aspect-ratio: 680 / 488;
     border-radius: 1.2rem;
   }
 
   .timeline-title {
-    width: 100% !important;
+    width: 100%;
     font-size: 2.2rem;
     text-align: center;
     word-break: keep-all;
@@ -763,23 +768,19 @@ html[lang="en"] .kcr-card {
   }
 
   .kcr-card-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-align: center;
   }
 
   .kcr-card-desc {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: center;
   }
 
   /* Gala 신청 페이지 */
-  .apply-page .page-title,
-  .apply-page .page-desc {
-    text-align: center;
-  }
 
   .apply-page .gala-top-btn-wrap {
-    display: block !important;
+    display: block;
     margin-top: 5rem;
   }
 
@@ -794,6 +795,7 @@ html[lang="en"] .kcr-card {
   }
 
   .apply-page .apply-left-col {
+    width: 100%;
     max-width: 68rem;
     position: relative;
     top: 0;
@@ -827,7 +829,7 @@ html[lang="en"] .kcr-card {
   }
 
   .apply-page .sep-line {
-    margin: 3.2rem 0;
+    margin: 2.4rem 0;
   }
 
   .apply-page .gala-apply-form {
@@ -846,28 +848,23 @@ html[lang="en"] .kcr-card {
   }
 
   .apply-page .chip-grid .btn {
-    width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-    padding: 1.2rem 0.8rem !important;
-    font-size: 1.4rem !important;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 1.2rem 0.8rem;
+    font-size: 1.4rem;
   }
 
   .apply-page .form-subtitle {
     margin-bottom: 1.6rem;
-    font-size: 1.4rem;
-  }
-
-  /* 폼 그룹 라벨 상단 좌측 배치 & 1.4rem */
-  .apply-page .form-group.form {
-    margin-top: 0;
+    font-size: 1.6rem;
   }
 
   .apply-page .form-label {
     width: 100%;
     min-height: auto;
-
     margin-bottom: 0;
+    font-size: 1.6rem;
   }
 
   .apply-page .form-field {
@@ -877,8 +874,8 @@ html[lang="en"] .kcr-card {
   .apply-page .custom-select summary,
   .apply-page .helper-text,
   .apply-page .payment-notice-text {
-    font-size: 1.4rem !important;
-    text-align: left !important;
+    font-size: 1.4rem;
+    text-align: left;
   }
 
   .apply-page .inner-form-group .inner-form-box {
@@ -898,7 +895,7 @@ html[lang="en"] .kcr-card {
   }
 
   .apply-page .total-payment-wrap .form-label {
-    width: auto !important;
+    width: auto;
   }
 
   .apply-page .total-payment-content {
@@ -909,7 +906,7 @@ html[lang="en"] .kcr-card {
   }
 
   .apply-page .total-amount {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .apply-page .amount-detail {
@@ -919,21 +916,21 @@ html[lang="en"] .kcr-card {
 
   /* 결제 수단 칩 그리드 2컬럼 */
   .apply-page .chip-grid.cols-3 {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.8rem !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* CTA 신청 완료 버튼 100% 풀 너비 */
-  .apply-btn-wrap {
-    display: block !important;
-    margin-top: 3.2rem !important;
-    width: 100% !important;
+  .apply-page .apply-btn-wrap {
+    display: block;
+    margin-top: 3.2rem;
+    width: 100%;
   }
-  .apply-btn-wrap .btn {
-    width: 100% !important;
+  .apply-page .apply-btn-wrap .btn {
+    width: 100%;
   }
 
   /* 수상작 카드 모바일 가로 1개 */
@@ -956,7 +953,7 @@ html[lang="en"] .kcr-card {
   }
 
   .award-desc {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .award-badge-wrap {
@@ -979,8 +976,8 @@ html[lang="en"] .kcr-card {
   }
 
   /* swipe */
-  .award-swiper-pagination {
-    margin-top: 5rem !important;
+  .award-swiper-pagination.swiper-pagination {
+    margin-top: 5rem;
   }
 
   /* 추가 캠페인 모바일 반응형 스타일 */
@@ -1007,6 +1004,9 @@ html[lang="en"] .kcr-card {
 
   .campaign-container .campaign-row .campaign-col {
     width: 100%;
+    font-size: 1.4rem;
+  }
+  .campaign-container .campaign-row .campaign-col.text-col p {
     font-size: 1.4rem;
   }
 

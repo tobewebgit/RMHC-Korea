@@ -156,8 +156,8 @@
 }
 
 .header__nav-item {
+  color: var(--text-black);
   font-size: 2rem;
-
   position: relative;
   z-index: 2;
   height: 100%;
@@ -310,8 +310,8 @@ a.header__submenu-link:focus-visible,
 
 .header__util-link {
   display: flex;
+  color: var(--text-black);
   font-size: 1.8rem;
-
   line-height: 1;
   align-items: center;
   gap: 0.4rem;
@@ -530,7 +530,6 @@ a.header__submenu-link:focus-visible,
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  font-family: var(--font-text);
 }
 
 .footer__info-text {
@@ -576,7 +575,6 @@ a.header__submenu-link:focus-visible,
 /* ── footer__copyright: 가장 하단 별도 줄 ── */
 .footer__copyright {
   margin-top: 2.4rem;
-  font-family: var(--font-text);
   font-size: 1.4rem;
   color: var(--text-gray80);
 }
@@ -1228,7 +1226,6 @@ a.header__submenu-link:focus-visible,
 }
 
 .donation-table td {
-  font-family: var(--font-text);
   font-size: 1.8rem;
 
   padding: var(--spacing-8) 0;
@@ -1279,7 +1276,6 @@ a.header__submenu-link:focus-visible,
 
 .detail-info-table td {
   width: 32%;
-  font-family: var(--font-text);
   font-size: 1.8rem;
   font-weight: 500;
 
@@ -1406,7 +1402,6 @@ a.header__submenu-link:focus-visible,
     font-size: 1.6rem;
     font-weight: 500;
     color: #000000;
-    font-family: var(--font-text);
   }
 
   .pagination .page-btn.page-arrow.page-prev::after {
@@ -1427,7 +1422,6 @@ a.header__submenu-link:focus-visible,
     font-size: 1.6rem;
     font-weight: 500;
     color: #000000;
-    font-family: var(--font-text);
   }
 
   .pagination .page-btn.page-arrow.page-next::before {
@@ -1446,10 +1440,8 @@ a.header__submenu-link:focus-visible,
     border: none;
     background: transparent;
     font-size: 1.6rem;
-
     color: var(--primary);
     padding: 0;
-    font-family: var(--font-text);
   }
 
   .pagination .page-group-numbers .page-btn.active::after {

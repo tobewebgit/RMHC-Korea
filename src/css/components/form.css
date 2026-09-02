@@ -33,7 +33,6 @@
   min-height: 5.2rem;
   display: inline-flex;
   align-items: center;
-  font-family: var(--font-text);
   font-size: var(--text-lg);
   flex-shrink: 0;
 }
@@ -66,7 +65,6 @@
   padding: 1.2rem var(--spacing-4);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  font-family: var(--font-text);
   font-size: var(--text-lg);
   background-color: var(--bg-primary);
 }
@@ -74,10 +72,10 @@
 .form-control.disabled,
 .form-control:disabled,
 .form-control[disabled] {
-  background: rgba(208, 201, 255, 0.2) !important;
-  color: var(--text-secondary) !important;
+  background: rgba(208, 201, 255, 0.2);
+  color: var(--text-secondary);
   cursor: not-allowed;
-  border-color: var(--border-gray40) !important;
+  border-color: var(--border-gray40);
 }
 
 .form-control::placeholder {
@@ -132,7 +130,7 @@
 /* 폼 필드 가로 배열 */
 .form-control-row {
   display: flex;
-  flex-direction: row !important;
+  flex-direction: row;
   align-items: center;
   gap: var(--spacing-8);
   min-height: 5.2rem;
@@ -162,7 +160,6 @@
   align-items: center;
   gap: var(--spacing-2);
   cursor: pointer;
-  font-family: var(--font-text);
   font-size: var(--text-lg);
   user-select: none;
 }
@@ -180,8 +177,6 @@
 
 .custom-checkbox input[type="checkbox"] {
   border-radius: 0.4rem;
-  background: url("../../images/common/icon_checkbox.svg") 50% 50% no-repeat;
-  background-size: 1.1rem 0.8rem;
 }
 
 .custom-radio input[type="radio"] {
@@ -189,28 +184,23 @@
   display: grid;
   place-content: center;
 }
-
-.custom-radio input[type="radio"]::before {
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  border-radius: var(--radius-full);
-  background-color: var(--border-color);
-}
-
 .custom-checkbox input[type="checkbox"]:checked {
-  border-color: var(--primary);
-  background: var(--primary)
+  border-color: var(--border-black);
+  background: var(--border-black)
     url("../../images/common/icon_checkbox_checked.svg") 50% 50% no-repeat;
   background-size: 1.1rem 0.8rem;
 }
 
 .custom-radio input[type="radio"]:checked {
-  border-color: var(--primary);
+  border-color: var(--text-black);
 }
 
 .custom-radio input[type="radio"]:checked::before {
-  background-color: var(--primary);
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--radius-full);
+  background-color: var(--text-black);
 }
 
 /* ==========================================================================
@@ -219,7 +209,6 @@
 .custom-select {
   position: relative;
   font-size: 1.8rem;
-  font-family: var(--font-text);
   width: 100%;
 }
 
@@ -332,7 +321,7 @@
 }
 
 .agreement-link {
-  color: var(--text-gray60) !important;
+  color: var(--text-gray60);
   transition: var(--transition-fast);
 }
 
@@ -368,7 +357,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
-  border-top: 1px solid var(--border-gray30);
   padding-top: 3.2rem;
 }
 
@@ -472,8 +460,8 @@
 }
 
 .payment-tab-btn .payment-tab-icon {
-  width: 2rem !important;
-  height: 2rem !important;
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -698,7 +686,6 @@
   gap: 0.4rem;
   background: none;
   border: none;
-  font-family: var(--font-text);
   font-size: 1.8rem;
   cursor: pointer;
   padding: 0;
@@ -781,7 +768,8 @@
   .receipt-helper__secondary,
   .resident-label,
   .custom-select ul li {
-    font-size: 1.4rem !important;
+    font-size: 1.4rem;
+    line-height: 1;
   }
 
   /* 2단계 및 3단계 공통 폼 박스 모바일 반응형 */
@@ -798,13 +786,13 @@
     justify-content: space-between;
     margin-bottom: 1.6rem;
     width: 100%;
-    text-align: left !important;
+    text-align: left;
   }
 
   .payment-detail-header .form-subtitle {
-    font-size: 1.6rem !important;
-    font-weight: 600 !important;
-    margin-bottom: 0 !important;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0;
   }
 
   .form-group.form,
@@ -815,7 +803,7 @@
     justify-content: flex-start;
     gap: 0.6rem;
     width: 100%;
-    text-align: left !important;
+    text-align: left;
   }
 
   .payment-form-row {
@@ -833,14 +821,14 @@
     min-height: auto;
 
     margin-bottom: 0;
-    text-align: left !important;
-    font-size: 1.4rem !important;
+    text-align: left;
+    font-size: 1.4rem;
   }
 
   .form-field,
   .payment-form-field {
     width: 100%;
-    text-align: left !important;
+    text-align: left;
   }
 
   /* 3단계 유효기간 2개 셀렉트 가로 50% 분할 */
@@ -866,25 +854,25 @@
     padding: 0 0.8rem;
     gap: 0.4rem;
     justify-content: center;
-    font-size: 1.3rem !important;
+    font-size: 1.3rem;
     box-sizing: border-box;
   }
 
   .payment-tabs-grid .payment-tab-btn .payment-tab-icon {
-    width: 1.8rem !important;
-    height: 1.8rem !important;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   /* 기부금 영수증 모바일 펼침 영역 */
   .receipt-resident-panel,
   .join-card .receipt-resident-panel {
-    margin: 1.6rem 0 0 0 !important;
+    margin: 1.6rem 0 0 0;
     padding: 2rem 1.6rem;
     border-radius: 1.2rem;
   }
 
   .resident-label {
-    font-size: 1.4rem !important;
+    font-size: 1.4rem;
     margin-bottom: 1.2rem;
   }
 
@@ -899,7 +887,7 @@
   .resident-front-wrap,
   .resident-pw-wrap {
     flex: 1;
-    min-width: 0 !important;
+    min-width: 0;
     width: 100%;
   }
 
@@ -914,14 +902,14 @@
   }
 
   .receipt-warning-list li {
-    font-size: 1.4rem !important;
+    font-size: 1.4rem;
 
     word-break: keep-all;
   }
 
   /* 약관 동의 모바일 반응형 수직 정렬 공통화 */
   .agree-terms-container {
-    margin-top: 3.2rem !important;
+    margin-top: 3.2rem;
   }
 
   .agreement-item {
@@ -929,11 +917,14 @@
     align-items: flex-start;
     gap: 0.4rem;
   }
+  .agreement-item label {
+    line-height: 1.3;
+  }
 
   .agreement-link {
     margin-left: 2.8rem;
-    font-size: 1.2rem !important;
-    text-decoration: none !important;
+    font-size: 1.2rem;
+    text-decoration: none;
   }
 
   .signature-action-wrap {
@@ -944,14 +935,14 @@
   .direct-input-chip input,
   .direct-input-chip .unit,
   .btn-signature-clear {
-    font-size: 1.4rem !important;
+    font-size: 1.4rem;
   }
 
   .form-helper-note.cms-helper {
-    font-size: 1.2rem !important;
+    font-size: 1.2rem;
   }
 
   .payment-apply-notice {
-    font-size: 1.2rem !important;
+    font-size: 1.2rem;
   }
 }
