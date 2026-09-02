@@ -1,157 +1,265 @@
 <!doctype html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RMHC Korea - 활동소식" />
+    <title>활동소식 | RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/news.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RMHC Korea - 활동소식" />
-  <title>활동소식 | RMHC Korea</title>
-  <link rel="stylesheet" href="/src/css/common.css" />
-  <link rel="stylesheet" href="/src/css/news.css" />
-</head>
+  <body>
+    <!-- S: Skip Navigation -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- E: Skip Navigation -->
 
-<body>
-  <!-- S: Skip Navigation -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
-  <!-- E: Skip Navigation -->
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load src="/includes/header.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load src="/includes/header.html" />
-
-  <div class="page-wrapper">
-    <main id="main-content">
-      <div class="inner-container">
-        <!-- KV 영역 -->
-        <section class="page-kv">
-          <div class="kv-img-wrap">
-            <picture>
-              <source media="(max-width: 768px)" srcset="/src/images/news/img_activity_kv_mo.png" />
-              <img src="/src/images/news/img_activity_kv.png" alt="" fetchpriority="high" />
-            </picture>
-          </div>
-          <div class="kv-text-wrap">
-            <h1 class="kv-title" data-motion="fade-up">활동 소식</h1>
-            <p class="kv-desc" data-motion="fade-up">아이들의 미소를 지켜온 RMHC의 발걸음과&#10;따뜻한 변화의 기록들을 전해드립니다.</p>
-          </div>
-        </section>
-
-        <!-- 리스트 및 검색/페이지네이션 컨테이너 -->
-        <div class="activity-list-container page-container inner-layout">
-          <div class="news-list-header" data-motion="fade-up">
-            <p class="list-total">총 게시물 <span>20</span>개</p>
-            <div class="search-field">
-              <input type="text" class="search-input" placeholder="검색어를 입력하세요" aria-label="검색어 입력" />
-              <button type="button" class="search-btn" aria-label="검색"></button>
+    <div class="page-wrapper">
+      <main id="main-content">
+        <div class="inner-container">
+          <!-- KV 영역 -->
+          <section class="page-kv">
+            <div class="kv-img-wrap">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/src/images/news/img_activity_kv_mo.png"
+                />
+                <img
+                  src="/src/images/news/img_activity_kv.png"
+                  alt=""
+                  fetchpriority="high"
+                />
+              </picture>
             </div>
-          </div>
-
-          <!-- 카드 리스트 그리드 (3열) -->
-          <div class="activity-grid">
-            <!-- Card 1 -->
-            <a href="/news/activity/detail.html" class="activity-card">
-              <div class="card-img-wrap">
-                <img src="/src/images/news/img_activity_list_1.png" alt="핸드크래프트 클래스 참가 가족 단체사진" width="464" height="300"
-                  loading="lazy" />
-                <span class="card-badge"><img src="/src/images/common/icon_badge_new.png" alt="New"
-                    class="notice-new-badge" /></span>
-              </div>
-              <div class="card-text-wrap">
-                <h3 class="card-title">양산하우스 1월 핸드크래프트 클래스</h3>
-                <span class="card-date">2025.10.02</span>
-                <img src="/src/images/common/icon_arrow_right.png" class="arrow" alt="상세보기" />
-              </div>
-            </a>
-
-            <!-- Card 2 -->
-            <a href="/news/activity/detail.html" class="activity-card">
-              <div class="card-img-wrap">
-                <img src="/src/images/news/img_activity_list_2.png" alt="파트너스데이 행사 진행 사진" width="464" height="300"
-                  loading="lazy" />
-              </div>
-              <div class="card-text-wrap">
-                <h3 class="card-title">제 5회 RMHC Korea 파트너스데이</h3>
-                <span class="card-date">2025.04.23</span>
-                <img src="/src/images/common/icon_arrow_right.png" class="arrow" alt="상세보기" />
-              </div>
-            </a>
-
-            <!-- Card 3 -->
-            <a href="/news/activity/detail.html" class="activity-card">
-              <div class="card-img-wrap">
-                <img src="/src/images/news/img_activity_list_3.png" alt="핸드크래프트 클래스 다과회 사진" width="464" height="300"
-                  loading="lazy" />
-              </div>
-              <div class="card-text-wrap">
-                <h3 class="card-title">양산하우스 1월 핸드크래프트 클래스</h3>
-                <span class="card-date">2024.10.11</span>
-                <img src="/src/images/common/icon_arrow_right.png" class="arrow" alt="상세보기" />
-              </div>
-            </a>
-
-            <!-- Card 4 -->
-            <a href="/news/activity/detail.html" class="activity-card">
-              <div class="card-img-wrap">
-                <img src="/src/images/news/img_activity_list_4.png" alt="파트너스데이 기념 촬영 사진" width="464" height="300"
-                  loading="lazy" />
-              </div>
-              <div class="card-text-wrap">
-                <h3 class="card-title">제 5회 RMHC Korea 파트너스데이</h3>
-                <span class="card-date">2025.04.23</span>
-                <img src="/src/images/common/icon_arrow_right.png" class="arrow" alt="상세보기" />
-              </div>
-            </a>
-
-            <!-- Card 5 -->
-            <a href="/news/activity/detail.html" class="activity-card">
-              <div class="card-img-wrap">
-                <img src="/src/images/news/img_activity_list_5.png" alt="양산하우스 클래스 정경" width="464" height="300"
-                  loading="lazy" />
-              </div>
-              <div class="card-text-wrap">
-                <h3 class="card-title">양산하우스 1월 핸드크래프트 클래스</h3>
-                <span class="card-date">2025.10.02</span>
-                <img src="/src/images/common/icon_arrow_right.png" class="arrow" alt="상세보기" />
-              </div>
-            </a>
-
-            <!-- Card 6 -->
-            <a href="/news/activity/detail.html" class="activity-card">
-              <div class="card-img-wrap">
-                <img src="/src/images/news/img_activity_list_6.png" alt="파트너스데이 축하 무대 사진" width="464" height="300"
-                  loading="lazy" />
-              </div>
-              <div class="card-text-wrap">
-                <h3 class="card-title">제 5회 RMHC Korea 파트너스데이</h3>
-                <span class="card-date">2025.04.23</span>
-                <img src="/src/images/common/icon_arrow_right.png" class="arrow" alt="상세보기" />
-              </div>
-            </a>
-          </div>
-
-          <!-- 페이지네이션 (마이페이지 공통 코드 재사용) -->
-          <div class="pagination" data-motion="fade-up">
-            <div class="page-group-arrow">
-              <button type="button" class="page-btn page-arrow page-first" aria-label="처음 페이지"></button>
-              <button type="button" class="page-btn page-arrow page-prev" aria-label="이전 페이지"></button>
+            <div class="kv-text-wrap">
+              <h1 class="kv-title" data-motion="fade-up">활동 소식</h1>
+              <p class="kv-desc" data-motion="fade-up">
+                아이들의 미소를 지켜온 RMHC의 발걸음과&#10;따뜻한 변화의
+                기록들을 전해드립니다.
+              </p>
             </div>
-            <div class="page-group-numbers">
-              <button type="button" class="page-btn active"><span>1</span></button>
-              <button type="button" class="page-btn"><span>2</span></button>
-              <button type="button" class="page-btn"><span>3</span></button>
-              <button type="button" class="page-btn"><span>4</span></button>
-              <button type="button" class="page-btn"><span>5</span></button>
+          </section>
+
+          <!-- 리스트 및 검색/페이지네이션 컨테이너 -->
+          <div class="activity-list-container page-container inner-layout">
+            <div class="news-list-header" data-motion="fade-up">
+              <p class="list-total">총 게시물 <span>20</span>개</p>
+              <div class="search-field">
+                <input
+                  type="text"
+                  class="search-input"
+                  placeholder="검색어를 입력하세요"
+                  aria-label="검색어 입력"
+                />
+                <button
+                  type="button"
+                  class="search-btn"
+                  aria-label="검색"
+                ></button>
+              </div>
             </div>
-            <div class="page-group-arrow">
-              <button type="button" class="page-btn page-arrow page-next" aria-label="다음 페이지"></button>
-              <button type="button" class="page-btn page-arrow page-last" aria-label="마지막 페이지"></button>
+
+            <!-- 카드 리스트 그리드 (3열) -->
+            <div class="activity-grid">
+              <!-- Card 1 -->
+              <a href="/news/activity/detail.html" class="activity-card">
+                <div class="card-img-wrap">
+                  <img
+                    src="/src/images/news/img_activity_list_1.png"
+                    alt="핸드크래프트 클래스 참가 가족 단체사진"
+                    width="464"
+                    height="300"
+                    loading="lazy"
+                  />
+                  <span class="card-badge"
+                    ><img
+                      src="/src/images/common/icon_badge_new.png"
+                      alt="New"
+                      class="notice-new-badge"
+                  /></span>
+                </div>
+                <div class="card-text-wrap">
+                  <h3 class="card-title">
+                    [RMHC 소식]양산하우스 1월 핸드크래프트 클래스
+                  </h3>
+                  <span class="card-date">2025.10.02</span>
+                  <img
+                    src="/src/images/common/icon_arrow_right.png"
+                    class="arrow"
+                    alt="상세보기"
+                  />
+                </div>
+              </a>
+
+              <!-- Card 2 -->
+              <a href="/news/activity/detail.html" class="activity-card">
+                <div class="card-img-wrap">
+                  <img
+                    src="/src/images/news/img_activity_list_2.png"
+                    alt="파트너스데이 행사 진행 사진"
+                    width="464"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-text-wrap">
+                  <h3 class="card-title">
+                    [RMHC 소식]양산하우스 12월 핸드크래프트 클래스
+                  </h3>
+                  <span class="card-date">2025.04.23</span>
+                  <img
+                    src="/src/images/common/icon_arrow_right.png"
+                    class="arrow"
+                    alt="상세보기"
+                  />
+                </div>
+              </a>
+
+              <!-- Card 3 -->
+              <a href="/news/activity/detail.html" class="activity-card">
+                <div class="card-img-wrap">
+                  <img
+                    src="/src/images/news/img_activity_list_3.png"
+                    alt="핸드크래프트 클래스 다과회 사진"
+                    width="464"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-text-wrap">
+                  <h3 class="card-title">
+                    [RMHC 소식]레페리·민스코와 함께한 ‘민스코 박스’ 기부
+                    프로젝트 성료
+                  </h3>
+                  <span class="card-date">2024.10.11</span>
+                  <img
+                    src="/src/images/common/icon_arrow_right.png"
+                    class="arrow"
+                    alt="상세보기"
+                  />
+                </div>
+              </a>
+
+              <!-- Card 4 -->
+              <a href="/news/activity/detail.html" class="activity-card">
+                <div class="card-img-wrap">
+                  <img
+                    src="/src/images/news/img_activity_list_4.png"
+                    alt="파트너스데이 기념 촬영 사진"
+                    width="464"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-text-wrap">
+                  <h3 class="card-title">
+                    [RMHC 소식]RMHC Korea, 양산부산대학교 어린이병원과 환아
+                    대상으로 함께 크리스마스 카드 만들기 행사 진행
+                  </h3>
+                  <span class="card-date">2025.04.23</span>
+                  <img
+                    src="/src/images/common/icon_arrow_right.png"
+                    class="arrow"
+                    alt="상세보기"
+                  />
+                </div>
+              </a>
+
+              <!-- Card 5 -->
+              <a href="/news/activity/detail.html" class="activity-card">
+                <div class="card-img-wrap">
+                  <img
+                    src="/src/images/news/img_activity_list_5.png"
+                    alt="양산하우스 클래스 정경"
+                    width="464"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-text-wrap">
+                  <h3 class="card-title">
+                    [RMHC 소식]2025 양산하우스 사랑의 김장담기 행사 진행
+                  </h3>
+                  <span class="card-date">2025.10.02</span>
+                  <img
+                    src="/src/images/common/icon_arrow_right.png"
+                    class="arrow"
+                    alt="상세보기"
+                  />
+                </div>
+              </a>
+
+              <!-- Card 6 -->
+              <a href="/news/activity/detail.html" class="activity-card">
+                <div class="card-img-wrap">
+                  <img
+                    src="/src/images/news/img_activity_list_6.png"
+                    alt="파트너스데이 축하 무대 사진"
+                    width="464"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-text-wrap">
+                  <h3 class="card-title">
+                    [RMHC 소식]국내 최대 규모 갈라 행사 2025 RMHC Gala Charity
+                    Dinner 개최
+                  </h3>
+                  <span class="card-date">2025.04.23</span>
+                  <img
+                    src="/src/images/common/icon_arrow_right.png"
+                    class="arrow"
+                    alt="상세보기"
+                  />
+                </div>
+              </a>
+            </div>
+
+            <!-- 페이지네이션 (마이페이지 공통 코드 재사용) -->
+            <div class="pagination" data-motion="fade-up">
+              <div class="page-group-arrow">
+                <button
+                  type="button"
+                  class="page-btn page-arrow page-first"
+                  aria-label="처음 페이지"
+                ></button>
+                <button
+                  type="button"
+                  class="page-btn page-arrow page-prev"
+                  aria-label="이전 페이지"
+                ></button>
+              </div>
+              <div class="page-group-numbers">
+                <button type="button" class="page-btn active">
+                  <span>1</span>
+                </button>
+                <button type="button" class="page-btn"><span>2</span></button>
+                <button type="button" class="page-btn"><span>3</span></button>
+                <button type="button" class="page-btn"><span>4</span></button>
+                <button type="button" class="page-btn"><span>5</span></button>
+              </div>
+              <div class="page-group-arrow">
+                <button
+                  type="button"
+                  class="page-btn page-arrow page-next"
+                  aria-label="다음 페이지"
+                ></button>
+                <button
+                  type="button"
+                  class="page-btn page-arrow page-last"
+                  aria-label="마지막 페이지"
+                ></button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
-  </div>
+      </main>
+    </div>
 
-  <load src="/includes/footer.html" />
-</body>
-
+    <load src="/includes/footer.html" />
+  </body>
 </html>

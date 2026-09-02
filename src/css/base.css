@@ -592,7 +592,7 @@ a:visited,
 a:hover,
 a:active,
 a:focus {
-  font-family: var(--font-text);
+  color: var(--text-black);
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

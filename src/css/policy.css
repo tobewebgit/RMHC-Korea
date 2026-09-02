@@ -4,7 +4,7 @@
    RMHC Korea 정책 및 약관 전용 스타일 (policy.css)
    ========================================================================== */
 
-/* 1. 레이아웃 & 공통 컨테이너 (플랫화: 기존 디자인시스템 패턴과 일관성 유지) */
+/* 1. 레이아웃 & 공통 컨테이너 */
 .policy-container {
   max-width: 144rem;
   margin: 15rem auto 0;
@@ -15,18 +15,19 @@
   box-shadow: none;
 }
 
-/* 2. 타이포그래피 (디자인시스템 변수와 피그마 실측 1:1 완벽 맵핑) */
+/* 2. 타이포그래피 */
+.policy-container .page-title {
+  font-size: 3.6rem;
+}
 .policy-main-title {
   font-size: 3.2rem;
-
   margin-bottom: 5rem;
   padding-bottom: 2rem;
 }
 
 .policy-intro-text {
-  font-family: var(--font-extrabold);
+  font-family: var(--font-display);
   font-size: 2.8rem;
-
   margin-top: 10rem;
   margin-bottom: 6rem;
   word-break: keep-all;
@@ -34,14 +35,12 @@
 
 .policy-chapter-title {
   font-size: 2.8rem;
-
   margin-top: 5rem;
   margin-bottom: 2.5rem;
 }
 
 .policy-subtitle {
-  font-size: 2.4rem;
-
+  font-size: 2.2rem;
   margin-top: 4.5rem;
   margin-bottom: 1rem;
 }
@@ -49,14 +48,12 @@
 .policy-term-title {
   font-size: 2rem;
   font-weight: 600;
-
   margin-top: 3rem;
   margin-bottom: 1.5rem;
 }
 
 .policy-text {
   font-size: 2rem;
-
   margin-bottom: 3rem;
   word-break: keep-all;
 }
@@ -68,7 +65,6 @@
 /* 3. 이메일 무단 수집 거부 전용 스타일 (시안 정밀 동기화: 테두리 없는 회색 면 박스) */
 .policy-lead-text {
   font-size: 2.8rem;
-
   margin-bottom: 5rem;
   text-align: center;
   word-break: keep-all;
@@ -107,6 +103,10 @@
 
 /* mobile */
 @media (max-width: 768px) {
+  .policy-container .page-title {
+    font-size: 2.2rem;
+  }
+
   .policy-container {
     margin: 3rem auto;
     padding: 0;
@@ -123,6 +123,9 @@
     margin-bottom: 3rem;
     font-size: 1.8rem;
   }
+  .page-title + p {
+    font-size: 2rem;
+  }
 
   .policy-chapter-title {
     font-size: 1.8rem;
@@ -130,18 +133,19 @@
   }
 
   .policy-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin-top: 4rem;
   }
 
   .policy-term-title {
     margin-top: 1.6rem;
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-family: var(--font-text);
+    font-size: 1.6rem;
   }
 
   .policy-text {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin-bottom: 2rem;
   }
 

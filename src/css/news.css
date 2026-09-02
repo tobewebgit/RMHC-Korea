@@ -14,8 +14,6 @@
 
 .news-list-header .list-total {
   font-size: 1.8rem;
-  font-weight: 600;
-
   margin: 0;
 }
 
@@ -107,10 +105,7 @@
 }
 
 .notice-item .notice-title {
-  font-family: var(--font-extrabold);
-  font-size: 2.8rem;
-
-  letter-spacing: -0.03em;
+  font-size: 2.2rem;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -171,8 +166,9 @@
 .activity-card {
   display: flex;
   flex-direction: column;
-  width: 46.4rem;
+  width: 100%;
   height: 53.4rem;
+  color: var(--text-black);
   text-decoration: none;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -229,10 +225,8 @@
 }
 
 .activity-card .card-title {
-  min-height: 6.4rem;
-  font-size: 2.4rem;
-
-  letter-spacing: -0.03em;
+  min-height: 5.4rem;
+  font-size: 2.2rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -290,12 +284,7 @@
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  font-family: var(--font-extrabold);
-  /* NanumSquare Neo */
-  font-size: 3.8rem;
-  /* 38px */
-
-  letter-spacing: -0.03em;
+  font-size: 3.6rem;
   margin: 0;
 }
 
@@ -311,6 +300,7 @@
 
 .detail-contents {
   margin: 8rem 0 4rem;
+  font-size: 1.8rem;
 }
 
 .detail-contents .detail-contents-title {
@@ -318,15 +308,15 @@
 }
 
 .detail-contents .detail-contents-desc {
-  font-family: var(--font-extrabold);
-  font-size: 2.2rem;
   margin-top: 2.4rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
 }
 
 .detail-contents dt {
-  font-family: var(--font-extrabold);
-  font-size: 2rem;
   margin: 2.4rem 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
 }
 
 .detail-contents .text-marker {
@@ -335,17 +325,18 @@
 }
 
 .detail-contents dd {
+  position: relative;
+  padding-left: 1.6rem;
   font-size: var(--text-lg);
+  line-height: 1.6;
 }
 
 .detail-contents dd::before {
   content: "•";
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  font-size: var(--text-lg);
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;
 }
 
 .detail-contents dd a {
@@ -382,8 +373,7 @@
 
 .detail-attachments .attachment-label {
   font-size: var(--text-lg);
-  font-weight: 600;
-
+  font-weight: 700;
   flex-shrink: 0;
 }
 
@@ -432,8 +422,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
+  color: var(--text-black);
   font-size: var(--text-lg);
-
   text-decoration: none;
 }
 
@@ -495,7 +485,7 @@
   }
 
   .news-list-header .list-total {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .news-list-header .search-field {
@@ -524,33 +514,30 @@
 
   .notice-item .notice-left {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
+    display: block;
     text-align: left;
   }
 
   .notice-item .notice-megaphone {
-    width: 2.4rem;
-    height: 2.4rem;
-    margin-right: 0;
-    display: block;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-right: 0.6rem;
+    display: inline-block;
+    vertical-align: -0.3rem;
   }
 
   .notice-item .notice-title {
     font-size: 1.8rem;
     white-space: normal;
-    display: inline-block;
+    display: inline;
     word-break: keep-all;
-
+    line-height: 1.4;
     text-align: left;
   }
 
-  .notice-item .notice-right {
-    width: 100%;
-    display: flex;
-    align-items: center;
+  .notice-item .notice-title span {
+    display: inline;
+    margin-right: 0.6rem;
   }
 
   .notice-item .notice-title .notice-new-badge {
@@ -566,20 +553,15 @@
     width: auto;
   }
 
-  /* 플러스 버튼: 상단 여백(top: 2.4rem) 기준 absolute 고정 */
+  /* 우측 화살표 아이콘: 모바일 위치 조정 */
   .notice-item .notice-arrow {
     position: absolute;
     right: 0;
-    top: 2.4rem;
-    content: url("../images/common/icon_faq_plus.png");
-    width: 3.2rem;
-    height: 3.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.4rem;
+    height: 1rem;
     margin: 0;
-  }
-
-  /* 메가폰 아이콘이 존재할 때: 타이틀 첫 줄 라인 위치(5.6rem)에 정렬 */
-  .notice-item:has(.notice-megaphone) .notice-arrow {
-    top: 5.6rem;
   }
 
   /* 4. 활동소식 목록 모바일 */
@@ -614,10 +596,8 @@
   }
 
   .activity-card .card-title {
-    font-size: 1.6rem;
-    /* 16px */
+    font-size: 1.8rem;
     min-height: auto;
-
     text-align: left;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -664,10 +644,9 @@
   }
 
   .detail-header .detail-title {
-    flex-direction: column;
     align-items: flex-start;
     gap: 0.8rem;
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: left;
   }
 
@@ -736,13 +715,19 @@
     font-size: 1.4rem;
   }
 
-  .detail-contents .detail-text-title,
-  .detail-contents .detail-contents-desc,
-  .detail-contents .detail-contents-title {
+  .detail-contents .detail-text-title {
+    font-size: 1.6rem;
+  }
+  .detail-contents .detail-contents-desc {
     font-size: 1.8rem;
+  }
+  .detail-contents .detail-contents-title {
+    font-size: 2rem;
   }
 
   .detail-contents dd {
+    padding-left: 1.4rem;
     font-size: 1.4rem;
+    line-height: 1.6;
   }
 }
