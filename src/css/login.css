@@ -412,8 +412,7 @@
 }
 
 .summary-label {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: 2rem;
   align-self: flex-start;
 }
 
@@ -427,7 +426,7 @@
 
 .summary-value .number {
   font-family: var(--font-display);
-  font-size: 2.8rem;
+  font-size: 3.6rem;
   line-height: 1;
 }
 
@@ -450,12 +449,9 @@
 }
 
 /* 기부금 영수증 확인 탭 */
-.receipt-card {
-}
 
 .receipt-notice {
-  font-size: 2rem;
-  color: #000000;
+  font-size: 1.8rem;
   margin-bottom: var(--spacing-10);
   word-break: keep-all;
 }
@@ -477,15 +473,13 @@
 }
 
 .receipt-title {
-  font-family: var(--font-display);
-  font-size: 3.8rem;
-  color: #000000;
+  font-size: 2.8rem;
   margin-bottom: var(--spacing-4);
   word-break: keep-all;
 }
 
 .receipt-desc {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: var(--spacing-10);
   word-break: keep-all;
 }
@@ -538,7 +532,7 @@
 
 .mypage-info-title {
   font-family: var(--font-title);
-  font-size: var(--text-4xl);
+  font-size: 2.8rem;
 }
 
 .mypage-info-grid {
@@ -642,12 +636,11 @@
   gap: 0.8rem;
 }
 
-/* 눈 아이콘 토글 처리는 form.css에서 공통 관리됩니다 */
-
 /* 5. 알림 수신동의 체크박스 색상 커스텀 */
 .info-form-group .custom-checkbox {
-  width: 24rem;
+  width: 26.4rem;
   font-size: var(--text-lg);
+  text-align: right;
 }
 
 /* 6. 기부금 영수증 신청 여부 카드 */
@@ -666,10 +659,7 @@
 }
 
 .receipt-consent-title {
-  font-family: var(--font-display);
   font-size: 2.2rem;
-
-  color: #000000;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 1.6rem;
   margin-bottom: 0.8rem;
@@ -684,8 +674,6 @@
 
 .receipt-consent-desc {
   font-size: var(--text-lg);
-  color: #000000;
-
   flex: 1;
 }
 
@@ -770,6 +758,7 @@
 
 .sns-status.connected {
   display: flex;
+  align-items: center;
 }
 
 .sns-status.connected::before {
@@ -808,8 +797,7 @@
 }
 
 .withdraw-title {
-  font-family: var(--font-display);
-  font-size: var(--text-4xl);
+  font-size: 2.8rem;
   margin-bottom: var(--spacing-8);
   text-align: left;
 }
@@ -822,13 +810,13 @@
 }
 
 .withdraw-notice-desc p {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--text-gray90);
 }
 
 .withdraw-notice-desc p strong {
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-gray90);
 }
 
 .withdraw-notice-desc p.warning-highlight {
@@ -924,20 +912,13 @@
   cursor: not-allowed;
   box-shadow: none;
 }
-
-/* 후원상세 타이틀 및 요약 박스 피그마 폰트 스케일 정밀 연동 */
-.donation-detail-section .card-title {
-  font-size: 3.8rem;
-}
-
 .donation-detail-section .summary-box .summary-label {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .donation-detail-section .summary-box .summary-value .number {
   font-family: var(--font-display);
-  font-size: 2.8rem;
+  font-size: 3.6rem;
 }
 
 .donation-detail-section .summary-box .summary-value .unit {
@@ -945,12 +926,6 @@
   font-size: 2.2rem;
 }
 
-/* 결제 폼, 현재 결제수단 카드, 유의사항 및 팝업 푸터 (form.css 공통 컴포넌트 참조) */
-
-/* 출금동의 서명 캔버스/패널 (form.css 공통 컴포넌트 참조) */
-
-/* 하단 배너 */
-/* 공통 하단 배너 */
 .donate-banner {
   position: relative;
   display: flex;
@@ -1019,6 +994,14 @@
 
 /* 모바일 */
 @media screen and (max-width: 768px) {
+  .form-group-col .form-label {
+    font-size: 1.4rem;
+  }
+
+  .withdraw-link {
+    font-size: 1.4rem;
+  }
+
   .login-section {
     padding: 2rem 2.4rem;
   }
@@ -1191,7 +1174,7 @@
   }
 
   .mypage-info-grid .info-card-title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .mypage-info-grid .info-label {
@@ -1299,7 +1282,7 @@
   .withdraw-confirm-card .card-section-title {
     margin-bottom: 2.6rem;
     padding-bottom: 2.6rem;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .withdraw-notice-desc p {
@@ -1307,7 +1290,7 @@
   }
 
   .withdraw-actions {
-    martgin-top: 4rem;
+    margin-top: 4rem;
   }
 
   .withdraw-form-grid {
@@ -1315,6 +1298,9 @@
     gap: var(--spacing-4);
   }
 
+  .withdraw-agree-wrap .custom-checkbox {
+    font-size: 1.4rem;
+  }
   .withdraw-confirm-card {
     padding: 3rem var(--spacing-4);
   }
@@ -1385,7 +1371,7 @@
 
   .summary-label,
   .donation-detail-section .summary-box .summary-label {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     align-self: center;
     margin-bottom: 0;
   }
@@ -1398,12 +1384,12 @@
 
   .summary-value .number,
   .donation-detail-section .summary-box .summary-value .number {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 
   .summary-value .unit,
   .donation-detail-section .summary-box .summary-value .unit {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   /* 세로 가로 분리선 */
@@ -1470,8 +1456,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.6rem;
-    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.2rem;
     border-bottom: none;
     text-align: right;
     box-sizing: border-box;
@@ -1483,27 +1469,21 @@
   }
 
   /* 데이터 셀 중 마지막 td: 아래쪽 패딩 16px (1.6rem) */
-  .donation-table
+  /* .donation-table
     td:not(.col-type):not(.col-no):not(.col-action):not(
       [data-label="No"]
     ):last-of-type {
     padding-bottom: 1.6rem;
-  }
+  } */
 
   .donation-table
     td:not(.col-type):not(.col-no):not(.col-action):not(
       [data-label="No"]
     )::before {
     content: attr(data-label);
-    font-weight: 600;
     text-align: left;
-    font-size: 1.4rem;
-  }
-
-  .donation-table td.col-amount,
-  .donation-table td[data-label="금액"] {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   /* No 항목은 모바일 카드 시안에 맞춰 100% 완전 생략 */
@@ -1521,7 +1501,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1.2rem 0.4rem;
+    padding: 1.6rem 0.4rem;
     border-bottom: none;
     box-sizing: border-box;
   }
@@ -1534,20 +1514,24 @@
     display: none;
   }
 
+  .donation-table td.line-bottom {
+    padding-bottom: 1.6rem !important;
+    border-bottom: 1px solid var(--border-gray40) !important;
+  }
+
+  .donation-table td.line-top {
+    padding-top: 1.6rem !important;
+  }
+
   .donation-table td.col-action .btn-table {
     min-width: 7.2rem;
     height: 3.6rem;
     padding: 0 1.2rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     border-radius: 0.8rem;
     border: 1px solid #1f2937;
     margin: 0;
   }
-
-  .donation-table td.col-action .btn-table.secondary {
-    border-color: #d1d5db;
-  }
-
   /* 비회원 후원 조회 페이지 제목, 탭, 카드 모바일 반응형 */
   .page-title.mypage {
     padding: 5rem 0;
@@ -1558,8 +1542,8 @@
   }
 
   .tab-btn {
-    font-size: 1.4rem;
-    padding: 1.2rem 0.8rem;
+    font-size: 1.8rem;
+    padding: 1.6rem;
   }
 
   .content-card {
@@ -1677,9 +1661,8 @@
     flex: 0 0 50%;
     width: 50%;
     background-color: rgba(208, 201, 255, 0.2);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: #1f2937;
     text-align: center;
     padding: 1.2rem 1.2rem;
     height: auto;
@@ -1694,7 +1677,6 @@
     flex: 0 0 50%;
     width: 50%;
     font-size: 1.4rem;
-    font-weight: 500;
     text-align: left;
     padding: 1.2rem 1.6rem;
     height: auto;
@@ -1833,7 +1815,7 @@
   }
 
   .payment-form-section-title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-top: 3.2rem;
   }
 }

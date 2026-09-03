@@ -681,7 +681,7 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
   display: block;
 }
 
-.main-field__featured img {
+.main-field__media > img {
   display: block;
   width: 100%;
   height: auto;
@@ -691,22 +691,22 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
   position: absolute;
   left: 50%;
   top: 50%;
-  display: block;
-  width: 9rem;
-  height: 9rem;
-  border-radius: 50%;
-  background-color: #e60012;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transform: translate(-50%, -50%);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.main-field__play::after {
-  content: "";
-  position: absolute;
-  left: 3.6rem;
-  top: 2.7rem;
-  border-top: 1.8rem solid transparent;
-  border-bottom: 1.8rem solid transparent;
-  border-left: 2.6rem solid #fff;
+.main-field__featured .main-field__play img {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+}
+
+.main-field__featured:hover .main-field__play {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .main-field__featured strong {
@@ -1355,17 +1355,9 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
     border-radius: 0.6rem;
   }
 
-  .main-field__play {
-    width: 7rem;
-    height: 7rem;
-  }
-
-  .main-field__play::after {
-    left: 2.8rem;
-    top: 2.1rem;
-    border-top-width: 1.4rem;
-    border-bottom-width: 1.4rem;
-    border-left-width: 2.1rem;
+  .main-field__featured .main-field__play img {
+    width: 5rem;
+    height: 5rem;
   }
 
   .main-field__featured strong {

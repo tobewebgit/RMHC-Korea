@@ -58,6 +58,10 @@
   overflow-y: visible;
 }
 
+.modal-scroll-wrap .modal-body .payment-tabs-grid {
+  border-top: 1px solid var(--border-gray40);
+}
+
 .modal-scroll-wrap::-webkit-scrollbar {
   width: 0.4rem;
 }
@@ -490,7 +494,7 @@
   }
 
   .modal-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .newsletter-modal-container {
