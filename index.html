@@ -3,537 +3,789 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RMHC Korea 퍼블리싱 검수 현황판 (IA Index)</title>
-    <link rel="stylesheet" href="./src/css/common.css" />
-    <style>
-      /* Custom Harness Specific Styles - Isolated from standard style.css */
-      body {
-        background-color: #0f172a; /* Sleek Dark Slate Developer Theme */
-        color: #f1f5f9;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        font-family: "Audrey Text", sans-serif;
-        overflow: hidden;
-      }
-
-      .harness-header {
-        background-color: #1e293b;
-        border-bottom: 1px solid #334155;
-        padding: 1rem 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 70px;
-      }
-
-      .harness-title {
-        font-family: "Outfit", sans-serif;
-        /* font-size: 1.25rem; */
-
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .harness-title span {
-        color: #ffc72c;
-        /* font-size: 0.85rem; */
-        background-color: rgba(255, 199, 44, 0.1);
-        padding: 0.2rem 0.5rem;
-        border-radius: 4px;
-        border: 1px solid rgba(255, 199, 44, 0.2);
-      }
-
-      .harness-metrics {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-      }
-
-      .metric-card {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        /* font-size: 0.875rem; */
-      }
-
-      .metric-value {
-        font-weight: 700;
-        font-family: "Outfit", sans-serif;
-        /* font-size: 1.1rem; */
-      }
-
-      .metric-progress-outer {
-        width: 120px;
-        height: 12px;
-        background-color: #334155;
-        border-radius: 9999px;
-        overflow: hidden;
-        display: inline-block;
-      }
-
-      .metric-progress-inner {
-        height: 100%;
-        background: linear-gradient(90deg, #d1232a 0%, #ffc72c 100%);
-        width: 0%;
-        transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .harness-main {
-        flex: 1;
-        display: flex;
-        overflow: hidden;
-      }
-
-      /* Left Sidebar: IA Board */
-      .harness-sidebar {
-        width: 48rem;
-        border-right: 1px solid #334155;
-        background-color: #0f172a;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-      }
-
-      .sidebar-list {
-        flex: 1;
-        overflow-y: auto;
-        padding: 0.5rem;
-      }
-
-      .sidebar-item {
-        padding: 0.75rem 1rem;
-        border-radius: 8px;
-        cursor: pointer;
-        margin-bottom: 0.4rem;
-        border: 1px solid transparent;
-        transition: all 0.2s ease;
-      }
-      .sidebar-item:hover {
-        background-color: #1e293b;
-      }
-      .sidebar-item.active {
-        background-color: #1e293b;
-        border-color: rgba(255, 199, 44, 0.3);
-      }
-
-      .item-meta {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 0.25rem;
-      }
-
-      .item-badge {
-        /* font-size: 0.7rem; */
-        padding: 0.15rem 0.45rem;
-        border-radius: 4px;
-        font-weight: 700;
-      }
-      .item-qa {
-        padding: 0.15rem 0.45rem;
-        border-radius: 4px;
-        background-color: #d1232a;
-        color: #fff;
-      }
-      .badge-ready {
-        background-color: #475569;
-        color: #cbd5e1;
-      }
-      .badge-progress {
-        background-color: #2563eb;
-        color: #ffffff;
-      }
-      .badge-done {
-        background-color: #16a34a;
-        color: #ffffff;
-      }
-      .badge-edit {
-        background-color: #d97706;
-        color: #ffffff;
-      }
-
-      .item-depth {
-        /* font-size: 0.75rem; */
-        color: #94a3b8;
-      }
-
-      .item-title {
-        font-weight: 600;
-        /* font-size: 0.9rem; */
-        color: #e2e8f0;
-      }
-      .sidebar-item.active .item-title {
-        color: #ffc72c;
-      }
-
-      .item-path {
-        font-family: monospace;
-        /* font-size: 0.75rem; */
-        color: #64748b;
-        word-break: break-all;
-      }
-
-      /* Right Preview Area */
-      .harness-preview {
-        flex: 1;
-        background-color: #1e293b;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-      }
-
-      .preview-toolbar {
-        background-color: #0f172a;
-        border-bottom: 1px solid #334155;
-        padding: 0.5rem 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 50px;
-      }
-
-      .preview-info {
-        /* font-size: 0.85rem; */
-        color: #94a3b8;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-      .preview-info a {
-        color: #38bdf8;
-        text-decoration: underline;
-      }
-
-      .viewport-controls {
-        display: flex;
-        gap: 0.5rem;
-      }
-
-      .viewport-btn {
-        height: 32px;
-        padding: 0 0.75rem;
-        background-color: #1e293b;
-        border: 1px solid #475569;
-        border-radius: 4px;
-        color: #94a3b8;
-        /* font-size: 0.75rem; */
-        font-weight: 600;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        transition: all 0.2s ease;
-      }
-      .viewport-btn:hover {
-        background-color: #334155;
-        color: #ffffff;
-      }
-      .viewport-btn.active {
-        background-color: #d1232a;
-        border-color: #d1232a;
-        color: #ffffff;
-      }
-
-      .iframe-wrapper {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: auto;
-        background: radial-gradient(circle, #334155 0%, #0f172a 100%);
-      }
-
-      .preview-iframe {
-        height: 100%;
-        background-color: #ffffff;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      /* Scrollbars for Sidebar */
-      .sidebar-list::-webkit-scrollbar {
-        width: 6px;
-      }
-      .sidebar-list::-webkit-scrollbar-track {
-        background: #0f172a;
-      }
-      .sidebar-list::-webkit-scrollbar-thumb {
-        background: #334155;
-        border-radius: 3px;
-      }
-
-      /* Group Header styling */
-      .group-header {
-        padding: 1.5rem 1rem 0.5rem;
-        font-size: 1.4rem;
-
-        color: #ffc72c; /* Brand yellow */
-        border-bottom: 2px solid rgba(255, 199, 44, 0.2);
-        margin-top: 1.5rem;
-        margin-bottom: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-      }
-      .group-header:first-of-type {
-        margin-top: 0.5rem;
-      }
-    </style>
+    <meta
+      name="description"
+      content="한국로날드맥도날드하우스는 아픈 아이와 가족이 병원 근처에서 함께 머물 수 있도록 지원합니다."
+    />
+    <title>RMHC Korea - 한국로날드맥도날드하우스</title>
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
-  <body>
-    <!-- Harness Top Header -->
-    <header class="harness-header">
-      <div class="harness-title">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM17 11H7V9H17V11ZM17 15H7V13H17V15Z"
-            fill="#ffc72c"
-          />
-        </svg>
-        RMHC Korea Publishing Index
-        <span>v0.1 IA Board</span>
-      </div>
 
-      <div class="harness-metrics">
-        <div class="metric-card">
-          <span>완료율:</span>
-          <div class="metric-progress-outer">
-            <div class="metric-progress-inner" id="completionProgressBar"></div>
+  <body class="main">
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+
+    <load src="/includes/header.html" />
+
+    <div class="page-wrapper">
+      <main id="main-content">
+        <section class="main-kv" aria-labelledby="mainKvTitle">
+          <div class="main-kv__inner">
+            <div class="main-kv__content">
+              <h1 id="mainKvTitle" class="main-kv__title">
+                아이의 곁을 지키는 <br class="type-mo" />따뜻한<br
+                  class="type-pc"
+                />
+                하루를 <br class="type-mo" />선물해 주세요
+              </h1>
+              <p class="main-kv__desc">
+                환아 가족이 치료에 집중할 수 있도록, 가족이 다함께 머물 수 있는
+                공간을 만듭니다.
+              </p>
+            </div>
+            <div class="main-kv__visual" aria-hidden="true">
+              <img
+                src="/src/images/main/kv_image.jpg"
+                alt=""
+                fetchpriority="high"
+              />
+            </div>
           </div>
-          <span class="metric-value" id="completionRateText">0%</span>
-        </div>
-        <div
-          class="metric-card"
-          style="border-left: 1px solid #334155; padding-left: 1.5rem"
-        >
-          <span>진척 상황:</span>
-          <span class="metric-value"
-            ><span id="doneCountText" style="color: #10b981">0</span> /
-            <span id="totalCountText">0</span> Page</span
+        </section>
+
+        <nav class="main-quick" aria-label="후원 바로가기">
+          <div class="main-quick__lead">
+            <img src="/src/images/main/icon-quick-bar__symbol.png" alt="" />
+            <strong
+              >지금 아이들에게 전하고 싶은<br class="type-pc" />마음은
+              무엇인가요?</strong
+            >
+          </div>
+          <ul class="main-quick__list">
+            <li>
+              <a href="#">
+                <img src="/src/images/main/ico_quick_bar_1.png" alt="" />
+                <span>일시후원</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="/src/images/main/ico_quick_bar_2.png" alt="" />
+                <span>정기후원</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="/src/images/main/ico_quick_bar_3.png" alt="" />
+                <span>물품후원</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="/src/images/main/ico_quick_bar_4.png" alt="" />
+                <span>자원봉사</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <section class="main-house" aria-labelledby="mainHouseTitle">
+          <div class="main-house__inner">
+            <div class="main-house__copy reveal-trigger">
+              <h2 id="mainHouseTitle" class="main-house__title">
+                <span class="reveal-line">
+                  가족의
+                  <img
+                    class="inline-icon icon-1"
+                    src="/src/images/main/icon_section1_text_1.svg"
+                    data-width="70"
+                    alt=""
+                  />
+                  곁이 가장 큰 치료제라는 믿음으로,
+                </span>
+                <span class="reveal-line"
+                  >한국로날드맥도날드하우스는 아픈 아이와 가족이</span
+                >
+                <span class="reveal-line">
+                  떨어지지 않고 함께 할 수 있는
+                  <span class="reveal-highlight">
+                    보금자리를
+                    <img
+                      class="inline-icon icon-2"
+                      src="/src/images/main/icon_section1_text_2.svg"
+                      data-width="60"
+                      alt=""
+                    />
+                    병원 근처에
+                  </span>
+                </span>
+                <span class="reveal-line">
+                  <span class="reveal-highlight">
+                    마련하여 아이들의 건강한 회복을
+                    <img
+                      class="inline-icon icon-3"
+                      src="/src/images/main/icon_section1_text_3.svg"
+                      data-width="60"
+                      alt=""
+                    />
+                    돕습니다
+                  </span>
+                </span>
+              </h2>
+            </div>
+
+            <div class="main-house__visual cascade-trigger">
+              <div class="main-house__photo">
+                <img
+                  src="/src/images/main/img_section1.png"
+                  alt="침대 위에서 보호자가 아이에게 책을 읽어주는 모습"
+                  class="type-pc main-house__sync-img"
+                  loading="lazy"
+                />
+                <img
+                  src="/src/images/main/img_section1_mo.png"
+                  alt="침대 위에서 보호자가 아이에게 책을 읽어주는 모습"
+                  class="type-mo main-house__sync-img"
+                  loading="lazy"
+                />
+                <div
+                  class="main-house__label"
+                  aria-label="양산부산대학교병원 부지 내 운영중인 로날드 맥도날드 하우스 양산"
+                >
+                  <div class="motion-floating">
+                    <img
+                      src="/src/images/main/bg_section_1.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                    <span
+                      >양산부산대학교병원<br />부지 내 운영중인<br />로날드
+                      맥도날드 하우스 양산</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="main-house__sub" data-motion="fade-up">
+              더 많은 아이와 가족이 <br class="type-mo" />함께할 수 있도록,<br />
+              한국로날드맥도날드하우스는 새로운 하우스를 준비합니다
+            </p>
+
+            <ul
+              class="main-house__links"
+              aria-label="하우스 바로가기"
+              data-motion="fade-up"
+              data-motion-delay="0.1"
+            >
+              <li>
+                <a class="is-blue" href="#"
+                  ><span class="main-house__link-wrap"
+                    ><img
+                      src="/src/images/main/icon_section1_text_2.svg"
+                      alt=""
+                    />로날드 맥도날드 하우스 강남</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a class="is-purple" href="#"
+                  ><span class="main-house__link-wrap"
+                    ><img
+                      src="/src/images/main/icon_section1_text_2.svg"
+                      alt=""
+                    />로날드 맥도날드 하우스 인천</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a class="is-yellow" href="#"
+                  ><span class="main-house__link-wrap"
+                    ><img
+                      src="/src/images/main/icon_section1_text_2.svg"
+                      alt=""
+                    />로날드 맥도날드 하우스 서초</span
+                  ></a
+                >
+              </li>
+              <li>
+                <a class="is-green" href="#"
+                  ><span class="main-house__link-wrap"
+                    ><img
+                      src="/src/images/main/icon_section1_text_2.svg"
+                      alt=""
+                    />로날드 맥도날드 하우스 연희</span
+                  ></a
+                >
+              </li>
+            </ul>
+
+            <a
+              class="btn btn-primary btn-page btn-arrow w-auto"
+              href="#"
+              data-motion="fade-up"
+              data-motion-delay="0.2"
+              >한국로날드맥도날드하우스</a
+            >
+          </div>
+        </section>
+
+        <section class="main-impact" aria-labelledby="mainImpactTitle">
+          <div class="main-impact__inner">
+            <h2
+              id="mainImpactTitle"
+              class="main-section-title"
+              data-motion="fade-up"
+            >
+              여러분의 따뜻한 후원이 만든 변화의 기록
+            </h2>
+            <p
+              class="main-section-desc"
+              data-motion="fade-up"
+              data-motion-delay="0.1"
+            >
+              함께 나눈 마음이 아이들의 내일이 되었습니다.
+            </p>
+            <ul class="main-impact__list">
+              <li data-motion="fade-up" data-motion-delay="0.15">
+                <img
+                  src="/src/images/main/icon_section2_1.svg"
+                  alt=""
+                  width="100"
+                  height="100"
+                  loading="lazy"
+                />
+                <strong
+                  class="main-impact__value"
+                  data-counter-value="1.7"
+                  data-counter-decimals="1"
+                  data-counter-suffix="k+"
+                  >0.0k+</strong
+                >
+                <span>하우스 총 이용인원</span>
+              </li>
+              <li data-motion="fade-up" data-motion-delay="0.25">
+                <img
+                  src="/src/images/main/icon_section2_2.svg"
+                  alt=""
+                  width="100"
+                  height="100"
+                  loading="lazy"
+                />
+                <strong
+                  class="main-impact__value"
+                  data-counter-value="100"
+                  data-counter-suffix="+"
+                  >0+</strong
+                >
+                <span>함께하는 파트너 기업</span>
+              </li>
+              <li data-motion="fade-up" data-motion-delay="0.35">
+                <img
+                  src="/src/images/main/icon_section2_3.svg"
+                  alt=""
+                  width="100"
+                  height="100"
+                  loading="lazy"
+                />
+                <strong
+                  class="main-impact__value"
+                  data-counter-value="13300"
+                  data-counter-comma="true"
+                  data-counter-suffix="+"
+                  >0+</strong
+                >
+                <span>하우스 총 누적 숙박일</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="main-events" aria-labelledby="mainEventsTitle">
+          <div class="main-events__inner">
+            <div class="main-events__head" data-motion="fade-up">
+              <h2 id="mainEventsTitle" class="main-section-title">
+                평범한 일상이 가장 소중한 <br class="type-mo" />환아
+                가족에게,<br class="type-pc" />
+                당신의 참여는 <br class="type-mo" />가장 따뜻한 위로입니다
+              </h2>
+              <div
+                class="main-events__nav gallery-nav"
+                aria-label="캠페인 이동"
+              >
+                <button
+                  type="button"
+                  class="gallery-nav__btn gallery-nav__btn--prev main-events-swiper-prev"
+                  aria-label="이전 캠페인"
+                ></button>
+                <button
+                  type="button"
+                  class="gallery-nav__btn gallery-nav__btn--next main-events-swiper-next"
+                  aria-label="다음 캠페인"
+                ></button>
+              </div>
+            </div>
+
+            <div class="swiper main-events-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div
+                    class="main-event-card no-motion-mo"
+                    href="#"
+                    data-motion="fade-up"
+                    data-motion-delay="0.15"
+                  >
+                    <img
+                      src="/src/images/main/img_section3_1.png"
+                      alt="갈라디너 행사장"
+                      loading="lazy"
+                    />
+                    <div class="card-text-wrap">
+                      <strong>갈라디너</strong>
+                      <div class="text-1">희망을 나누는 특별한 밤</div>
+                      <div class="text-2">
+                        <p>
+                          아이들이 하룻밤 머물며, 새로운 에너지를 얻고 꿈을
+                          키우는 소중한 시간입니다.
+                        </p>
+                        <a href="#" class="link-text link-arrow">참여하기</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div
+                    class="main-event-card no-motion-mo"
+                    data-motion="fade-up"
+                    data-motion-delay="0.25"
+                  >
+                    <img
+                      src="/src/images/main/img_section3_2.png"
+                      alt="울림 백일장에 참여한 아이"
+                      loading="lazy"
+                    />
+                    <div class="card-text-wrap">
+                      <strong>울림 백일장</strong>
+                      <div class="text-1">환아들의 마음이 담긴 이야기</div>
+                      <div class="text-2">
+                        <p>
+                          아이들이 하룻밤 머물며, 새로운 에너지를 얻고 꿈을
+                          키우는 소중한 시간입니다.
+                        </p>
+                        <a href="#" class="link-text link-arrow">참여하기</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div
+                    class="main-event-card no-motion-mo"
+                    data-motion="fade-up"
+                    data-motion-delay="0.35"
+                  >
+                    <img
+                      src="/src/images/main/img_section3_3.png"
+                      alt="맥도날드 해피워크 참가자들"
+                      loading="lazy"
+                    />
+                    <div class="card-text-wrap">
+                      <strong>맥도날드 해피워크</strong>
+                      <div class="text-1">가족이 함께하는 특별한 걸음</div>
+                      <div class="text-2">
+                        <p>
+                          아이들이 하룻밤 머물며, 새로운 에너지를 얻고 꿈을
+                          키우는 소중한 시간입니다.
+                        </p>
+                        <a href="#" class="link-text link-arrow">참여하기</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div
+                    class="main-event-card no-motion-mo"
+                    data-motion="fade-up"
+                    data-motion-delay="0.45"
+                  >
+                    <img
+                      src="/src/images/main/img_section3_4.png"
+                      alt="코리아채리티라이드 참가자들"
+                      loading="lazy"
+                    />
+                    <div class="card-text-wrap">
+                      <strong>코리아채리티라이드(KCR)</strong>
+                      <div class="text-1">열정으로 세우는 따뜻한 쉼터</div>
+                      <div class="text-2">
+                        <p>
+                          아이들이 하룻밤 머물며, 새로운 에너지를 얻고 꿈을
+                          키우는 소중한 시간입니다.
+                        </p>
+                        <a href="#" class="link-text link-arrow">참여하기</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide no-motion-mo">
+                  <div class="main-event-card">
+                    <img
+                      src="/src/images/main/img_section3_1.png"
+                      alt="갈라디너 행사장"
+                      loading="lazy"
+                    />
+                    <div class="card-text-wrap">
+                      <strong>갈라디너</strong>
+                      <div class="text-1">희망을 나누는 특별한 밤</div>
+                      <div class="text-2">
+                        <p>
+                          아이들이 하룻밤 머물며, 새로운 에너지를 얻고 꿈을
+                          키우는 소중한 시간입니다.
+                        </p>
+                        <a href="#" class="link-text link-arrow">참여하기</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="main-thanks" aria-labelledby="mainThanksTitle">
+          <h2
+            id="mainThanksTitle"
+            class="main-section-title"
+            data-motion="fade-up"
           >
-        </div>
-      </div>
-    </header>
-
-    <!-- Harness Layout -->
-    <div class="harness-main">
-      <!-- Sidebar: IA Directory table list -->
-      <aside class="harness-sidebar">
-        <div class="sidebar-list" id="iaListContainer">
-          <!-- JS inserts rows here -->
-        </div>
-      </aside>
-
-      <!-- Preview Panel -->
-      <main class="harness-preview">
-        <div class="preview-toolbar">
-          <div class="preview-info">
-            <span>검수 대상:</span>
-            <strong id="activePageName" style="color: #ffffff">메인 홈</strong>
-            <span id="activePagePathContainer" style="display: none">
-              (<a href="#" id="activePageLink" target="_blank"
-                >새창열기 &nearr;</a
-              >)
-            </span>
+            하우스 이용 가족이 직접 <br class="type-mo" />전하는 감사의 이야기
+          </h2>
+          <div
+            class="main-thanks__marquee js-main-story"
+            data-motion="fade-up"
+            data-motion-delay="0.15"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="thanks-card card-color-1">
+                  <img
+                    class="thanks-card__bg"
+                    src="/src/images/main/bg_section4_1.svg"
+                    alt=""
+                    loading="lazy"
+                    aria-hidden="true"
+                  />
+                  <p class="thanks-card__text">
+                    며칠의 입원 기간 동안<br class="type-pc" />편하게 쉬다
+                    갑니다.<br class="type-pc" />힘든 병원 생활 중에 이렇게<br
+                      class="type-pc"
+                    />안락한 곳에서 잠시나마<br class="type-pc" />몸을 뉘이고
+                    씻을 수 있어서<br class="type-pc" />감사했습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="thanks-card card-color-2">
+                  <img
+                    class="thanks-card__bg"
+                    src="/src/images/main/bg_section4_2.svg"
+                    alt=""
+                    loading="lazy"
+                    aria-hidden="true"
+                  />
+                  <p class="thanks-card__text">
+                    맥도날드 하우스가 있어<br class="type-pc" />편안하게 잘 쉬다
+                    갑니다.<br class="type-pc" />제공해주신 것들도 감사히<br
+                      class="type-pc"
+                    />잘 이용하고 아이가 놀이방<br class="type-pc" />도
+                    좋아하고, 시설이 깨끗하<br class="type-pc" />고 좋았습니다.
+                    친절하게 반<br class="type-pc" />갑게 맞아주셔서 너무<br
+                      class="type-pc"
+                    />감사합니다. ♡
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="thanks-card card-color-3">
+                  <img
+                    class="thanks-card__bg"
+                    src="/src/images/main/bg_section4_3.svg"
+                    alt=""
+                    loading="lazy"
+                    aria-hidden="true"
+                  />
+                  <p class="thanks-card__text">
+                    먼 거리에 와서 병원 진료를<br class="type-pc" />받고 몸도
+                    마음도<br class="type-pc" />힘들었는데 잠시나마 쉴<br
+                      class="type-pc"
+                    />곳과 먹을 것을 제공해주신<br class="type-pc" />것에 대해
+                    감사합니다.<br class="type-pc" />저희 집처럼 편안하게<br
+                      class="type-pc"
+                    />머물렀다가 갑니다. 정말<br class="type-pc" />감사합니다.
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="thanks-card card-color-4">
+                  <img
+                    class="thanks-card__bg"
+                    src="/src/images/main/bg_section4_4.svg"
+                    alt=""
+                    loading="lazy"
+                    aria-hidden="true"
+                  />
+                  <p class="thanks-card__text">
+                    갑작스럽게 찾게 된 병원...<br class="type-pc" />RMHC는
+                    걱정스러운<br class="type-pc" />보호자를 안아주는<br
+                      class="type-pc"
+                    />곳이었네요. 너무나<br class="type-pc" />감사하고 또
+                    고맙습니다.<br class="type-pc" />마음 편안히 머물다
+                    완쾌된<br class="type-pc" />아이와 같이 떠납니다.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="viewport-controls">
-            <button class="viewport-btn active" data-width="100%">
-              💻 PC (100%)
-            </button>
-            <button class="viewport-btn" data-width="1024px">
-              💻 Desktop (1024px)
-            </button>
-            <button class="viewport-btn" data-width="768px">
-              📟 Tablet (768px)
-            </button>
-            <button class="viewport-btn" data-width="375px">
-              📱 Mobile (375px)
-            </button>
+        </section>
+
+        <section class="main-field" aria-labelledby="mainFieldTitle">
+          <div class="main-field__inner">
+            <h2
+              id="mainFieldTitle"
+              class="main-section-title"
+              data-motion="fade-up"
+            >
+              현장에서 전하는 <br class="type-mo" />따뜻한 기록
+            </h2>
+            <p
+              class="main-section-desc"
+              data-motion="fade-up"
+              data-motion-delay="0.1"
+            >
+              아이들이 웃음을 되찾는 순간, 한국로날드맥도날드하우스가 늘
+              함께합니다.
+            </p>
+            <div
+              class="main-field__grid"
+              data-motion="fade-up"
+              data-motion-delay="0.15"
+            >
+              <a class="main-field__featured" href="#">
+                <span class="main-field__media">
+                  <img
+                    src="/src/images/main/img_section5_youtube.png"
+                    alt="RMHC 양산하우스와 함께한 사람들의 이야기 영상"
+                    width="800"
+                    height="440"
+                    loading="lazy"
+                  />
+                  <span class="main-field__play" aria-hidden="true">
+                    <img src="/src/images/common/btn_play.png" alt="재생 아이콘" />
+                  </span>
+                </span>
+                <strong
+                  >[RMHC Korea] RMHC 양산하우스와 함께한 사람들의 이야기</strong
+                >
+              </a>
+              <ul class="main-field__list">
+                <li>
+                  <a href="#">
+                    <img
+                      src="/src/images/main/img_section5_1.png"
+                      class="type-pc"
+                      alt="핸드크래프트 클래스 현장"
+                      loading="lazy"
+                    />
+                    <img
+                      src="/src/images/main/img_section5_1_mo.png"
+                      class="type-mo"
+                      alt="핸드크래프트 클래스 현장"
+                      loading="lazy"
+                    />
+                    <span
+                      ><strong
+                        >[RMHC 소식]양산하우스 1월 핸드크래프트 클래스</strong
+                      ><time datetime="2026-02-02">2026.02.02</time></span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="/src/images/main/img_section5_2.png"
+                      class="type-pc"
+                      alt="핸드크래프트 클래스 참가자들"
+                      loading="lazy"
+                    />
+                    <img
+                      src="/src/images/main/img_section5_2_mo.png"
+                      class="type-mo"
+                      alt="핸드크래프트 클래스 참가자들"
+                      loading="lazy"
+                    />
+                    <span
+                      ><strong
+                        >[RMHC 소식]양산하우스 12월 핸드크래프트 클래스</strong
+                      ><time datetime="2026-02-02">2026.02.02</time></span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="/src/images/main/img_section5_3.png"
+                      class="type-pc"
+                      alt="선물을 전달하는 모습"
+                      loading="lazy"
+                    />
+                    <img
+                      src="/src/images/main/img_section5_3_mo.png"
+                      class="type-mo"
+                      alt="선물을 전달하는 모습"
+                      loading="lazy"
+                    />
+                    <span
+                      ><strong
+                        >[RMHC 소식]레페리·민스코와 함께한 기부 프로젝트</strong
+                      ><time datetime="2026-02-02">2026.02.02</time></span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <a
+              class="btn btn-primary btn-page btn-arrow w-auto"
+              href="#"
+              data-motion="fade-up"
+              data-motion-delay="0.25"
+              >활동 소식 더 보기</a
+            >
           </div>
-        </div>
-        <div class="iframe-wrapper">
-          <iframe
-            src="/index.html"
-            class="preview-iframe"
-            id="previewIframe"
-            width="100%"
-          ></iframe>
-        </div>
+        </section>
+
+        <section class="main-notice" aria-labelledby="mainNoticeTitle">
+          <div class="main-notice__inner">
+            <h2
+              id="mainNoticeTitle"
+              class="main-section-title"
+              data-motion="fade-up"
+            >
+              한국로날드맥도날드하우스의 따뜻한 소식
+            </h2>
+            <ul
+              class="main-notice__list"
+              data-motion="fade-up"
+              data-motion-delay="0.15"
+            >
+              <li>
+                <a href="#"
+                  ><strong
+                    >제 11회 울림 백일장 심사 결과 발표 제 11회 울림 백일장 심사
+                    결과 발표 제 11회 울림 백일장 심사 결과 발표</strong
+                  ><time datetime="2025-10-02">2025-10-02</time></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><strong>제 11회 울림 백일장 공고</strong
+                  ><time datetime="2025-04-23">2025-04-23</time></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><strong>제 10회 울림 백일장 심사 결과 발표</strong
+                  ><time datetime="2024-10-11">2024-10-11</time></a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><strong>제 10회 울림 백일장 공고</strong
+                  ><time datetime="2024-05-10">2024-05-10</time></a
+                >
+              </li>
+            </ul>
+            <a
+              class="btn btn-primary btn-page btn-arrow w-auto"
+              href="#"
+              data-motion="fade-up"
+              data-motion-delay="0.25"
+              >공지 더 보기</a
+            >
+          </div>
+        </section>
+
+        <section class="main-partners" aria-labelledby="mainPartnersTitle">
+          <div class="main-partners__inner">
+            <h2
+              id="mainPartnersTitle"
+              class="main-section-title"
+              data-motion="fade-up"
+            >
+              나눔으로 더 커지는 내일, 함께하는 기업들
+            </h2>
+            <p
+              class="main-section-desc"
+              data-motion="fade-up"
+              data-motion-delay="0.1"
+            >
+              한국로날드맥도날드하우스는 기업 파트너와 함께 환아 가족의 더 나은
+              일상을 만들어갑니다.
+            </p>
+            <div
+              class="swiper main-partner-slider"
+              data-main-partner-slider
+              data-motion="fade-up"
+              data-motion-delay="0.15"
+            >
+              <div class="swiper-wrapper"></div>
+            </div>
+            <div
+              class="partner-swiper-pagination motion-swiper-pagination swiper-pagination"
+            ></div>
+            <a
+              class="btn btn-primary btn-page btn-arrow w-auto"
+              href="#"
+              data-motion="fade-up"
+              data-motion-delay="0.25"
+              >파트너 자세히 보기</a
+            >
+          </div>
+        </section>
+
+        <section class="main-donate" aria-labelledby="mainDonateTitle">
+          <div class="main-donate__inner inner-layout">
+            <div class="donate-banner">
+              <span class="donate-banner__heart" aria-hidden="true"></span>
+              <div class="donate-banner__content">
+                <h2
+                  id="mainDonateTitle"
+                  data-motion="fade-up"
+                  data-motion-delay="0.25"
+                >
+                  아이와 가족이 함께할 수 있도록,<br />
+                  지금 따뜻한 마음을 전해주세요
+                </h2>
+                <p data-motion="fade-up" data-motion-delay="0.3">
+                  환아 가족이 안심하고 머물 수 있도록,<br />
+                  후원금은 하우스 운영과 생활 지원에 소중히 사용됩니다.
+                </p>
+              </div>
+              <a
+                href="#"
+                class="btn btn-white btn-heart donate-banner__btn"
+                data-motion="fade-up"
+                data-motion-delay="0.75"
+                >지금 후원하기</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- S: 메인 공지 팝업 -->
+        <load src="/includes/popups/ma_01p.html" />
+        <!-- E: 메인 공지 팝업 -->
       </main>
+
+      <load src="/includes/footer.html" />
     </div>
 
+    <script type="module" src="/src/js/pages/index-reveal.js"></script>
     <script type="module">
-      import iaDataUrl from "./src/js/publishing-ia.json?url";
-
-      // State management
-      let iaItems = [];
-      let currentFilter = "all";
-      let searchQuery = "";
-
-      const previewIframe = document.getElementById("previewIframe");
-      const activePageName = document.getElementById("activePageName");
-      const activePageLink = document.getElementById("activePageLink");
-      const activePagePathContainer = document.getElementById(
-        "activePagePathContainer",
-      );
-
-      // Load publishing IA from JSON
-      async function loadIAData() {
-        try {
-          const response = await fetch(iaDataUrl);
-          iaItems = await response.json();
-
-          calculateMetrics();
-          renderList();
-
-          // Load first item automatically
-          if (iaItems.length > 0) {
-            selectItem(iaItems[0]);
-          }
-        } catch (error) {
-          console.error("Failed to load publishing-ia.json", error);
-        }
-      }
-
-      // Progress math
-      function calculateMetrics() {
-        const total = iaItems.length;
-        const done = iaItems.filter((item) => item.status === "완료").length;
-        const rate = total > 0 ? Math.round((done / total) * 100) : 0;
-
-        document.getElementById("totalCountText").textContent = total;
-        document.getElementById("doneCountText").textContent = done;
-        document.getElementById("completionRateText").textContent = rate + "%";
-        document.getElementById("completionProgressBar").style.width =
-          rate + "%";
-      }
-
-      // Render left board
-      function renderList() {
-        const container = document.getElementById("iaListContainer");
-        container.innerHTML = "";
-
-        const filtered = iaItems.filter((item) => {
-          const matchesFilter =
-            currentFilter === "all" || item.status === currentFilter;
-          const query = searchQuery.toLowerCase();
-          const matchesSearch =
-            item.depth1.toLowerCase().includes(query) ||
-            item.depth2.toLowerCase().includes(query) ||
-            item.depth3.toLowerCase().includes(query) ||
-            item.depth4.toLowerCase().includes(query) ||
-            item.path.toLowerCase().includes(query) ||
-            (item.memo && item.memo.toLowerCase().includes(query));
-
-          return matchesFilter && matchesSearch;
-        });
-
-        let lastDepth1 = "";
-
-        filtered.forEach((item) => {
-          // depth1이 변경될 때마다 그룹 헤더 생성
-          if (item.depth1 !== lastDepth1) {
-            const header = document.createElement("div");
-            header.className = "group-header";
-            header.innerHTML = `
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -1px;">
-                <path d="M10 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6H12L10 4Z" fill="#ffc72c"/>
-              </svg>
-              ${item.depth1}
-            `;
-            container.appendChild(header);
-            lastDepth1 = item.depth1;
-          }
-
-          const element = document.createElement("div");
-          element.className = "sidebar-item";
-          element.id = `item-${item.id}`;
-
-          let badgeClass = "badge-ready";
-          if (item.status === "진행") badgeClass = "badge-progress";
-          if (item.status === "완료") badgeClass = "badge-done";
-          if (item.status === "수정") badgeClass = "badge-edit";
-
-          const pathDisplay =
-            item.depth1 +
-            " &gt; " +
-            item.depth2 +
-            (item.depth3 ? " &gt; " + item.depth3 : "") +
-            (item.depth4 ? " &gt; " + item.depth4 : "");
-
-          element.innerHTML = `
-          <div class="item-meta">
-            <span class="item-depth">${pathDisplay}</span>
-            <div>
-              <span class="item-badge ${badgeClass}">${item.status}</span>
-              ${
-                item.qa === "완료"
-                  ? `
-                <span class="item-qa">${item.qa}</span>
-              `
-                  : "<span></span>"
-              }
-            </div>
-            
-          </div>
-          <div class="item-title">${item.depth2 || item.depth1}</div>
-          <div class="item-path">${item.path}</div>
-          ${item.memo ? `<div style="font-size: 0.75rem; color: #eab308; margin-top: 0.25rem;">📝 ${item.memo}</div>` : ""}
-        `;
-
-          element.addEventListener("click", () => selectItem(item));
-          container.appendChild(element);
-        });
-      }
-
-      // Select row
-      function selectItem(item) {
-        // Remove active class from previous items
-        document
-          .querySelectorAll(".sidebar-item")
-          .forEach((el) => el.classList.remove("active"));
-
-        const element = document.getElementById(`item-${item.id}`);
-        if (element) {
-          element.classList.add("active");
-        }
-
-        const displayName =
-          `${item.depth1} &gt; ${item.depth2}` +
-          (item.depth3 ? ` &gt; ${item.depth3}` : "");
-        activePageName.innerHTML = displayName;
-        activePageLink.href = item.path;
-        activePagePathContainer.style.display = "inline";
-
-        previewIframe.src = item.path;
-      }
-
-      // Wire up events
-
-      document.querySelectorAll(".viewport-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document
-            .querySelectorAll(".viewport-btn")
-            .forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          const width = btn.getAttribute("data-width");
-          previewIframe.style.width = width;
-        });
-      });
-
-      // Start
-      loadIAData();
+      import { initCounters } from "/src/js/components/counter.js";
+      initCounters(".main-impact", ".main-impact__value[data-counter-value]");
     </script>
+    <script type="module" src="/src/js/pages/main-page.js"></script>
   </body>
 </html>
