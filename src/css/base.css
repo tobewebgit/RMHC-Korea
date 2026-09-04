@@ -730,7 +730,7 @@ html:not(.lenis) [data-aos] {
   color: var(--text-secondary);
 }
 .text-muted-color {
-  color: var(--text-muted);
+  color: var(--text-gray70);
 }
 
 /* Spacing Helpers */

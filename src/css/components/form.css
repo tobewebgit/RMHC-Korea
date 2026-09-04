@@ -160,7 +160,7 @@
   align-items: center;
   gap: var(--spacing-2);
   cursor: pointer;
-  font-size: var(--text-lg);
+  font-size: 1.6rem;
   user-select: none;
 }
 
@@ -360,6 +360,9 @@ a.agreement-link:hover {
   gap: 1.2rem;
   padding-top: 2.4rem;
 }
+.payment-tabs-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
 
 .payment-tabs-grid + .payment-tab-contents {
   margin-top: 3.2rem;
@@ -478,13 +481,17 @@ a.agreement-link:hover {
   border: 1px solid var(--border-gray40);
 }
 
+.join-card .receipt-resident-panel {
+  margin-left: 16rem;
+}
+
 .form-group > .form-field .receipt-resident-panel {
   margin: 1.6rem 0 0 16rem;
 }
 
 .resident-label {
-  font-size: var(--text-lg);
-  margin-bottom: 1.6rem;
+  font-size: 1.6rem;
+  margin-bottom: 2.4rem;
 }
 
 .resident-input-group {
@@ -531,13 +538,14 @@ a.agreement-link:hover {
 
 .receipt-warning-list {
   margin-top: var(--spacing-6);
-  padding-left: var(--spacing-4);
+  padding-left: var(--spacing-3);
 }
 
 .receipt-warning-list li {
   position: relative;
   padding-left: 1.2rem;
-  line-height: 1.5;
+  font-size: 1.4rem;
+  line-height: 1.3;
 }
 
 .receipt-warning-list li::before {
@@ -570,9 +578,12 @@ a.agreement-link:hover {
   align-items: center;
 }
 
-.current-payment-card.pay-change .current-payment-value,
+.current-payment-card.pay-change .current-payment-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-gray90);
+}
 .current-payment-title {
-  font-family: var(--font-display);
   font-size: 2rem;
   color: var(--text-gray90);
 }
@@ -611,6 +622,9 @@ a.agreement-link:hover {
   width: 12rem;
   flex-shrink: 0;
   font-size: 1.8rem;
+}
+.payment-form-row.align-start .payment-form-label {
+  margin-top: 1rem;
 }
 
 .payment-form-field {
@@ -662,6 +676,31 @@ a.agreement-link:hover {
   margin-top: 0;
   padding-left: 0.8rem;
   color: var(--text-gray60);
+  list-style: none;
+}
+
+ul.form-helper-note.cms-helper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-helper-note.cms-helper li {
+  position: relative;
+  padding-left: 1.2rem;
+  line-height: 1.4;
+}
+
+.form-helper-note.cms-helper li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;
+}
+
+.form-helper-note.cms-helper li:last-child {
+  font-weight: 700;
 }
 
 .form-helper-note {
@@ -839,6 +878,10 @@ a.agreement-link:hover {
   .form-group.form:last-child,
   .payment-form-row:last-child {
     margin-bottom: 0;
+  }
+
+  .payment-form-row.align-start .payment-form-label {
+    margin-top: 0;
   }
 
   .form-label,
