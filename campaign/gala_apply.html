@@ -161,7 +161,7 @@
                             role="radio"
                             aria-checked="true"
                           >
-                            기업 / 단체
+                            기업
                           </button>
                         </div>
                         <input
@@ -178,15 +178,12 @@
                     <!-- 후원자 기본 정보 입력 박스 (가로 정렬 폼) -->
                     <div class="inner-form-group">
                       <div class="form-subtitle">후원자 기본 정보</div>
-                      <p class="form-helper-sub">
-                        정보를 확인한 후 결제를 진행해 주세요.
-                      </p>
 
                       <div class="inner-form-box">
                         <!-- 기업/단체명 -->
                         <div class="form-group form" id="groupCorporateName">
                           <label for="corporateName" class="form-label required"
-                            >기업/단체명</label
+                            >기업명</label
                           >
                           <div class="form-field">
                             <input
@@ -199,7 +196,7 @@
 
                         <!-- 사업자등록번호 -->
                         <div class="form-group form" id="groupBusinessNo">
-                          <label for="businessNo" class="form-label"
+                          <label for="businessNo" class="form-label required"
                             >사업자등록번호</label
                           >
                           <div class="form-field">
@@ -378,58 +375,13 @@
                       >
                         <button
                           type="button"
-                          class="btn btn-primary payment-tab-btn active"
-                          data-toggle-chip="galaPaymentMethod"
-                          data-chip-value="kakaopay"
-                          role="radio"
-                          aria-checked="true"
-                        >
-                          <img
-                            src="/src/images/common/icon_kakao_pay.png"
-                            alt="카카오페이"
-                            class="payment-tab-icon"
-                          />
-                          <span>카카오페이</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-outline payment-tab-btn"
-                          data-toggle-chip="galaPaymentMethod"
-                          data-chip-value="naverpay"
-                          role="radio"
-                          aria-checked="false"
-                        >
-                          <img
-                            src="/src/images/common/icon_naver_pay.png"
-                            alt="네이버페이"
-                            class="payment-tab-icon"
-                          />
-                          <span>네이버페이</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-outline payment-tab-btn"
-                          data-toggle-chip="galaPaymentMethod"
-                          data-chip-value="toss"
-                          role="radio"
-                          aria-checked="false"
-                        >
-                          <img
-                            src="/src/images/common/icon_toss_pay.png"
-                            alt="토스페이"
-                            class="payment-tab-icon"
-                          />
-                          <span>토스페이</span>
-                        </button>
-                        <button
-                          type="button"
                           class="btn btn-outline payment-tab-btn"
                           data-toggle-chip="galaPaymentMethod"
                           data-chip-value="card"
                           role="radio"
                           aria-checked="false"
                         >
-                          <span>신용카드</span>
+                          <span>신용카드/간편결제</span>
                         </button>
                         <button
                           type="button"

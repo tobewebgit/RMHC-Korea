@@ -7,7 +7,7 @@
 }
 
 .campaign-container .page-title {
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.2rem;
 }
 .campaign-container .page-title + p {
   font-size: 2rem;
@@ -269,8 +269,9 @@
 /* 텍스트만 포함하는 뱃지 박스 */
 .award-badge {
   display: inline-block;
-  padding: 0.56rem 1.36rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 0.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   line-height: 1;
 }
@@ -449,8 +450,13 @@
 /* 총 결제 금액 스타일 */
 .apply-page .total-payment-wrap {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+}
+
+.apply-page .total-payment-wrap .form-label {
+  min-height: auto;
+  height: 3.36rem;
 }
 
 .apply-page .total-payment-content {
@@ -463,6 +469,7 @@
 .apply-page .total-amount {
   font-family: var(--font-display);
   font-size: 2.8rem;
+  line-height: 1.2;
 }
 
 .apply-page .amount-detail {
@@ -864,7 +871,7 @@ html[lang="en"] .kcr-card {
     width: 100%;
     min-height: auto;
     margin-bottom: 0;
-    font-size: 1.6rem;
+    font-size: 1.4rem !important;
   }
 
   .apply-page .form-field {
@@ -877,10 +884,12 @@ html[lang="en"] .kcr-card {
     font-size: 1.4rem;
     text-align: left;
   }
+  .apply-page .helper-text {
+    font-size: 1.2rem;
+  }
 
   .apply-page .inner-form-group .inner-form-box {
     padding: 2.4rem 1.6rem;
-    gap: 1.6rem;
     border-radius: 1.2rem;
   }
 
@@ -896,6 +905,7 @@ html[lang="en"] .kcr-card {
 
   .apply-page .total-payment-wrap .form-label {
     width: auto;
+    height: auto;
   }
 
   .apply-page .total-payment-content {

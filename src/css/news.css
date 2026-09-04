@@ -553,15 +553,19 @@
     width: auto;
   }
 
-  /* 우측 화살표 아이콘: 모바일 위치 조정 */
+  /* 우측 화살표 아이콘: 모바일 위치 조정 (좌측 첫 줄 텍스트 중앙과 일치) */
   .notice-item .notice-arrow {
     position: absolute;
     right: 0;
-    top: 50%;
+    top: calc(2.4rem + (1.8rem * 1.4 / 2));
     transform: translateY(-50%);
     width: 1.4rem;
     height: 1rem;
     margin: 0;
+  }
+
+  .notice-item:hover .notice-arrow {
+    transform: translate(0.5rem, -50%);
   }
 
   /* 4. 활동소식 목록 모바일 */
