@@ -195,21 +195,21 @@ html[lang="en"] .about-vision-kv__panel p {
 
 .history-layout {
   display: grid;
-  grid-template-columns: 63rem minmax(0, 1fr);
+  grid-template-columns: 62rem minmax(0, 1fr);
   gap: 8rem;
   align-items: start;
 }
 
 .history-image {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 62rem;
   border-radius: 1.2rem;
 }
 
 .history-accordion {
   display: flex;
   flex-direction: column;
+  width: 74rem;
 }
 
 /* .history-item {
@@ -224,7 +224,7 @@ html[lang="en"] .about-vision-kv__panel p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.4rem 0;
+  padding: 3.05rem 0;
   gap: 3.2rem;
   font-family: var(--font-display);
   font-size: 2.2rem;
@@ -1094,7 +1094,7 @@ html[lang="en"] .greetings-message__content h2 {
 
 .greetings-message__body p {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 html[lang="en"] .greetings-message__body p {
   font-size: 2rem;
@@ -1111,10 +1111,11 @@ html[lang="en"] .greetings-message__body p {
 
 .greetings-sign p {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .greetings-sign strong {
+  font-weight: 700;
 }
 
 .greetings-sign img {
@@ -1424,7 +1425,7 @@ html[lang="en"] .greetings-message__body p {
 }
 
 .partner-model__head .partner-section-title + p {
-  margin-top: 6.4rem;
+  /* margin-top: 6.4rem; */
 }
 
 .partner-kv {
@@ -2418,6 +2419,7 @@ html[lang="en"] .model-node span {
 }
 
 .annual-report__download p {
+  max-width: 80rem;
   margin: 1.2rem 0 0;
   font-size: 1.8rem;
 

@@ -168,6 +168,7 @@
 .custom-radio input[type="radio"] {
   appearance: none;
   -webkit-appearance: none;
+  flex-shrink: 0;
   width: 2rem;
   height: 2rem;
   border: 1px solid var(--border-gray60);
@@ -208,7 +209,7 @@
    ========================================================================== */
 .custom-select {
   position: relative;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   width: 100%;
 }
 
@@ -355,9 +356,9 @@ a.agreement-link:hover {
    ========================================================================== */
 .payment-tabs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
-  padding-top: 3.2rem;
+  padding-top: 2.4rem;
 }
 
 .payment-tabs-grid + .payment-tab-contents {
@@ -533,6 +534,20 @@ a.agreement-link:hover {
   padding-left: var(--spacing-4);
 }
 
+.receipt-warning-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  line-height: 1.5;
+}
+
+.receipt-warning-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;
+}
+
 /* ==========================================================================
    공통 결제 정보 폼 & 결제 팝업 전역 스타일 (Payment Form & Modal Component)
    ========================================================================== */
@@ -608,7 +623,7 @@ a.agreement-link:hover {
   padding: 0 1.6rem;
   border: 1px solid var(--border-color, #dddddd);
   border-radius: var(--radius-sm, 0.8rem);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   background-color: var(--bg-primary, #ffffff);
   box-sizing: border-box;
 }
@@ -755,6 +770,10 @@ a.agreement-link:hover {
 /* mobile */
 @media (max-width: 768px) {
   .form-control,
+  .custom-select summary {
+    min-height: 4.4rem;
+  }
+  .form-control,
   .form-label,
   .payment-form-label,
   .donate-page .form-label,
@@ -773,6 +792,10 @@ a.agreement-link:hover {
   .custom-select ul li {
     font-size: 1.2rem;
     line-height: 1;
+  }
+
+  .form-group + .form-group {
+    margin-top: 2.4rem;
   }
 
   /* 2단계 및 3단계 공통 폼 박스 모바일 반응형 */
@@ -867,6 +890,7 @@ a.agreement-link:hover {
   }
 
   .payment-form-field .form-control {
+    height: 4.4rem;
     font-size: 1.2rem;
   }
 

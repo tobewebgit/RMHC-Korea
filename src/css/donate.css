@@ -221,7 +221,6 @@ html[lang="en"] .accordion-card .card-title-wrap {
 .accordion-card .header-summary {
   margin-top: 0.8rem;
   font-size: 1.8rem;
-  font-weight: 600;
 }
 
 .accordion-card .card-body {
@@ -264,6 +263,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .chip-grid.cols-3 {
   grid-template-columns: repeat(3, 1fr);
+  margin-top: 2.4rem;
 }
 
 .direct-input-chip {
@@ -503,7 +503,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .donate-page .card-body .chip-grid.cols-2 {
-  margin-top: 4rem;
+  margin-top: 5.2rem;
 }
 
 .accordion-card .card-subtitle + .chip-grid.cols-2 {
@@ -556,6 +556,11 @@ html[lang="en"] .accordion-card.is-active .card-body {
 .goods-header__desc {
   font-size: 2.2rem;
   word-break: keep-all;
+}
+
+.goods-header__mail {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 /* 3. 카드 그리드: 4열 × 2행 */
@@ -725,7 +730,7 @@ html[lang="en"] .vol-kv__panel {
   flex: 0 0 68rem;
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 2.4rem;
 }
 
 .vol-intro__title {
@@ -1329,7 +1334,7 @@ html[lang="en"] .vol-act-card__title {
 /* ── 팝업 본문 ────────────────────────────────────── */
 .vol-popup-body {
   flex: 1;
-  padding: 1.6rem 0 8rem;
+  padding: 1.6rem 0 0;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -1447,6 +1452,22 @@ html[lang="en"] .vol-act-card__title {
   margin: 0;
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
+}
+
+.vol-privacy-box li {
+  position: relative;
+  padding-left: 0.8rem;
+  line-height: 1.5;
+}
+
+.vol-privacy-box li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;
+  font-weight: bold;
 }
 
 .vol-privacy-check {
@@ -1725,12 +1746,23 @@ html[lang="en"] .vol-act-card__title {
 .withdraw-day-box .receipt-warning-list {
   margin-top: 1.2rem;
   margin-bottom: 2.4rem;
-  padding-left: 0;
+  padding-left: 16rem;
 }
 
 .withdraw-day-box .receipt-warning-list li {
+  position: relative;
+  padding-left: 1.2rem;
   list-style: none;
-  color: var(--text-helper);
+  color: var(--text-gray60);
+  line-height: 1.5;
+}
+
+.withdraw-day-box .receipt-warning-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;
 }
 
 .payment-detail-header {
@@ -1743,8 +1775,6 @@ html[lang="en"] .vol-act-card__title {
 .payment-detail-header .form-subtitle {
   margin: 0;
   font-size: 1.8rem;
-  font-weight: bold;
-  font-family: var(--font-text);
 }
 
 .form-helper-note {
@@ -1762,9 +1792,9 @@ html[lang="en"] .vol-act-card__title {
 }
 
 .group-email-helper {
-  color: var(--text-gray60);
+  color: var(--text-gray70);
   margin-top: 0.8rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 /* ==========================================================================
@@ -2176,6 +2206,10 @@ html[lang="en"] .vol-act-card__title {
     margin-top: 2.6rem;
   }
 
+  .withdraw-day-box .receipt-warning-list {
+    padding-left: 0;
+  }
+
   /* Step 3 결제 정보 입력 폼 모바일 반응형 정밀 튜닝 */
   .donate-page .payment-info-form-box {
     padding: 2.4rem 1.6rem;
@@ -2230,7 +2264,13 @@ html[lang="en"] .vol-act-card__title {
   }
 
   .goods-header__desc {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+
+  .goods-header__mail {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.4rem;
   }
 
   .goods-grid {
@@ -2664,7 +2704,6 @@ html[lang="en"] .vol-act-card__title {
   }
 
   .vol-popup-body {
-    padding: 0 0 3.2rem;
     gap: 1.6rem;
   }
 
@@ -2681,12 +2720,16 @@ html[lang="en"] .vol-act-card__title {
     margin: 2rem 0;
   }
 
+  .vol-textarea {
+    min-height: 9rem;
+  }
+
   .vol-popup-panel .vol-popup-sep {
-    margin: 2rem -1.6rem;
+    margin: 2.4rem -1.6rem;
   }
 
   .vol-popup-body .donate-type-tabs {
-    margin-top: 4rem;
+    margin-top: 2rem;
     padding: 0.8rem;
     border-radius: 0.8rem;
   }
@@ -2699,13 +2742,13 @@ html[lang="en"] .vol-act-card__title {
 
   .vol-popup-body .donate-type-tabs .btn-tab {
     height: 4.8rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .vol-popup-body .form-group.form {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.6rem;
+    gap: 0.8rem;
     width: 100%;
   }
 
@@ -2719,23 +2762,19 @@ html[lang="en"] .vol-act-card__title {
     width: 100%;
   }
 
-  .vol-popup-body .form-control {
-    height: 4.8rem;
-    font-size: 1.4rem;
-  }
-
   .vol-privacy-box {
     padding: 1.6rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .vol-privacy-check {
-    font-size: 1.4rem;
+    align-items: flex-start;
     margin-top: 1.2rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
   }
 
   .vol-popup-submit {
-    top: 0;
     height: 5.2rem;
     font-size: 1.6rem;
     margin-top: 2rem;

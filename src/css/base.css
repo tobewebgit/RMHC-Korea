@@ -1,35 +1,5 @@
 @charset "utf-8";
 
-@font-face {
-  font-family: "NanumSquareNeoLight";
-  font-display: swap;
-  src: url("../fonts/NanumSquareNeoTTF-aLt.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "NanumSquareNeo";
-  font-display: swap;
-  src: url("../fonts/NanumSquareNeoTTF-bRg.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "NanumSquareNeoBold";
-  font-display: swap;
-  src: url("../fonts/NanumSquareNeoTTF-cBd.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "NanumSquareNeoExtraBold";
-  font-display: swap;
-  src: url("../fonts/NanumSquareNeoTTF-dEb.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "NanumSquareNeoHeavy";
-  font-display: swap;
-  src: url("../fonts/NanumSquareNeoTTF-eHv.woff2") format("woff2");
-}
-
 /* ==================================================
    AudreyDisplay (영문: Audrey Display / 국문: Audrey Display KR)
    ================================================== */
@@ -277,20 +247,6 @@
     "AudreyDisplay", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-pretendard:
     "Audrey Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  --font-light:
-    "NanumSquareNeoLight", -apple-system, BlinkMacSystemFont, system-ui,
-    sans-serif;
-  --font-sans:
-    "NanumSquareNeo", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  --font-bold:
-    "NanumSquareNeoBold", -apple-system, BlinkMacSystemFont, system-ui,
-    sans-serif;
-  --font-extrabold:
-    "NanumSquareNeoExtraBold", -apple-system, BlinkMacSystemFont, system-ui,
-    sans-serif;
-  --font-heavy:
-    "NanumSquareNeoHeavy", -apple-system, BlinkMacSystemFont, system-ui,
-    sans-serif;
 
   /* Typography Scale */
   --text-xs: 1.2rem;
@@ -587,12 +543,14 @@ button {
   font-family: var(--font-text);
   cursor: pointer;
 }
+a {
+  color: var(--text-black);
+}
 a:link,
 a:visited,
 a:hover,
 a:active,
 a:focus {
-  color: var(--text-black);
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

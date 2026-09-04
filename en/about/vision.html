@@ -400,31 +400,34 @@
                 data-motion-delay="0.1"
               >
                 <li>
-                  <a href="/en/houses/yangsan.html" class="is-active"
+                  <a
+                    href="/en/houses/yangsan.html"
+                    class="is-active"
+                    data-pin="yangsan"
                     ><span class="house-heart"></span>Ronald McDonald House:
                     Yangsan</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="coming"
+                  <a href="#" class="coming" data-pin="gangnam"
                     ><span class="house-heart house-heart--coming"></span>Ronald
                     McDonald House: Gangnam</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="coming"
+                  <a href="#" class="coming" data-pin="inha"
                     ><span class="house-heart house-heart--coming"></span>Ronald
                     McDonald House: Inha</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="coming"
+                  <a href="#" class="coming" data-pin="seocho"
                     ><span class="house-heart house-heart--coming"></span>Ronald
                     McDonald House: Seocho</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="coming"
+                  <a href="#" class="coming" data-pin="yeonhui"
                     ><span class="house-heart house-heart--coming"></span>Ronald
                     McDonald House: Yeonhui</a
                   >
@@ -660,21 +663,50 @@
         };
 
         const initMapHover = () => {
-          const activeHouseBtn = document.querySelector(
-            ".about-map .house-list a.is-active",
-          );
-          const heartYangsan = document.querySelector(
-            ".about-map .map-pin--yangsan .icon-heart",
+          const pinKeyMap = {
+            양산: "yangsan",
+            강남: "gangnam",
+            인천: "inha",
+            인하: "inha",
+            서초: "seocho",
+            연희: "yeonhui",
+            yangsan: "yangsan",
+            gangnam: "gangnam",
+            inha: "inha",
+            seocho: "seocho",
+            yeonhui: "yeonhui",
+          };
+
+          const houseLinks = document.querySelectorAll(
+            ".about-map .house-list a",
           );
 
-          if (activeHouseBtn && heartYangsan) {
-            activeHouseBtn.addEventListener("mouseenter", () => {
-              heartYangsan.classList.add("motion-pulse");
-            });
-            activeHouseBtn.addEventListener("mouseleave", () => {
-              heartYangsan.classList.remove("motion-pulse");
-            });
-          }
+          houseLinks.forEach((link) => {
+            let pinKey = link.dataset.pin;
+            if (!pinKey) {
+              const text = link.textContent.toLowerCase();
+              for (const [name, key] of Object.entries(pinKeyMap)) {
+                if (text.includes(name.toLowerCase())) {
+                  pinKey = key;
+                  break;
+                }
+              }
+            }
+
+            const targetPin = pinKey
+              ? document.querySelector(`.about-map .map-pin--${pinKey}`)
+              : null;
+            const heartIcon = targetPin?.querySelector(".icon-heart");
+
+            if (heartIcon) {
+              link.addEventListener("mouseenter", () => {
+                heartIcon.classList.add("motion-pulse");
+              });
+              link.addEventListener("mouseleave", () => {
+                heartIcon.classList.remove("motion-pulse");
+              });
+            }
+          });
 
           const mapPins = document.querySelectorAll(".about-map .map-pin");
           mapPins.forEach((pin) => {

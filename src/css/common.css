@@ -50,8 +50,8 @@
   width: 100%;
   max-width: 147.2rem;
   margin: 0 auto;
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
 }
 
 .page-container {
@@ -69,6 +69,10 @@
   font-size: 1.8rem;
   color: var(--text-gray80);
   text-align: center;
+}
+
+.line-height-1-3 {
+  line-height: 1.3;
 }
 
 /* ==========================================================================
@@ -157,7 +161,7 @@
 
 .header__nav-item {
   color: var(--text-black);
-  font-size: 2rem;
+  font-size: 1.8rem;
   position: relative;
   z-index: 2;
   height: 100%;
@@ -483,7 +487,6 @@ a.header__submenu-link:focus-visible,
 
 .footer__newsletter-btn {
   width: 15rem;
-  height: 5.2rem;
 }
 
 /* ── footer__middle: 링크(좌) + SNS(우) ── */
@@ -541,8 +544,12 @@ a.header__submenu-link:focus-visible,
   display: flex;
   align-items: center;
   gap: 2.4rem;
+  margin-top: 0.6rem;
   font-size: 1.4rem;
   color: var(--text-gray80);
+}
+.footer__info-row:last-child {
+  margin-bottom: 0;
 }
 
 /* Family site: 푸터 전용 커스텀 셀렉트 오버라이드 (위로 열림, 너비 조정) */
@@ -706,11 +713,12 @@ a.header__submenu-link:focus-visible,
 
   .footer__newsletter-input-wrapper {
     width: 100%;
-    height: 5rem;
+    height: 4.4rem;
   }
 
   .footer__newsletter-input,
   .footer__newsletter-input::placeholder {
+    height: 4.4rem;
     font-size: 1.4rem;
   }
 

@@ -247,7 +247,7 @@
                       class="btn btn-outline"
                       data-type="group"
                     >
-                      기업 / 단체
+                      기업
                     </button>
                   </div>
 
@@ -266,7 +266,7 @@
                         class="btn btn-outline btn-auth-action kakao"
                       >
                         <img
-                          src="/src/images/common/icon_kakao_check_pay.svg"
+                          src="/src/images/common/icon_kakao_pay.svg"
                           alt="카카오 로고"
                           class="payment-logo"
                         />
@@ -348,7 +348,7 @@
                               class="form-control"
                               placeholder="rmhc@gmail.com"
                             />
-                            <p class="receipt-helper-text">
+                            <p class="group-email-helper">
                               후원 관련 안내를 받을 이메일을 입력해 주세요.
                             </p>
                           </div>
@@ -357,7 +357,7 @@
                     </div>
                   </div>
 
-                  <!-- 기업/단체 정보 입력 영역 (기본 숨김) -->
+                  <!-- 기업 정보 입력 영역 (기본 숨김) -->
                   <div id="groupInfoArea">
                     <hr class="sep-line" />
 
@@ -366,10 +366,10 @@
                       <h3 class="form-subtitle">후원자 기본 정보</h3>
 
                       <div class="inner-form-box">
-                        <!-- 기업/단체명 -->
+                        <!-- 기업 -->
                         <div class="form-group form">
                           <label for="groupName" class="form-label required"
-                            >기업/단체명</label
+                            >기업명</label
                           >
                           <div class="form-field">
                             <input
@@ -688,52 +688,16 @@
                     <button
                       type="button"
                       class="btn btn-outline payment-tab-btn"
-                      data-pay="kakaopay"
-                    >
-                      <img
-                        src="/src/images/common/icon_kakao_pay.svg"
-                        alt="카카오페이 로고"
-                        class="payment-tab-icon"
-                      />
-                      <span>카카오페이</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-outline payment-tab-btn"
-                      data-pay="naverpay"
-                    >
-                      <img
-                        src="/src/images/common/icon_naver_pay.png"
-                        alt="네이버페이 로고"
-                        class="payment-tab-icon"
-                      />
-                      <span>네이버페이</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-outline payment-tab-btn"
-                      data-pay="tosspay"
-                    >
-                      <img
-                        src="/src/images/common/icon_toss_pay.png"
-                        alt="토스페이 로고"
-                        class="payment-tab-icon"
-                      />
-                      <span>토스페이</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-outline payment-tab-btn"
                       data-pay="card"
                     >
-                      <span>신용카드</span>
+                      <span>신용카드 / 간편결제</span>
                     </button>
                     <button
                       type="button"
                       class="btn btn-outline payment-tab-btn"
                       data-pay="cms"
                     >
-                      <span>CMS 자동이체</span>
+                      <span>계좌이체</span>
                     </button>
                   </div>
 
@@ -741,7 +705,7 @@
                   <div id="withdrawDayArea" class="withdraw-day-box">
                     <hr class="sep-line" />
                     <div class="form-group form">
-                      <label class="form-label required form-label font-bold"
+                      <label class="form-label required form-label"
                         >출금일 선택</label
                       >
                       <div class="form-field">
@@ -761,9 +725,9 @@
                       </div>
                     </div>
                     <ul class="receipt-warning-list">
-                      <li>• 매월 선택한 날짜에 자동으로 결제가 진행됩니다.</li>
+                      <li>매월 선택한 날짜에 자동으로 결제가 진행됩니다.</li>
                       <li>
-                        • 정기후원은 마이페이지에서 언제든지 변경 및 해지하실 수
+                        정기후원은 마이페이지에서 언제든지 변경 및 해지하실 수
                         있습니다.
                       </li>
                     </ul>
@@ -773,7 +737,7 @@
                   <div id="paymentDetailFormArea">
                     <hr class="sep-line" />
                     <div class="payment-detail-header">
-                      <h3 class="form-subtitle">결제정보를 입력해주세요.</h3>
+                      <div class="form-subtitle">결제정보를 입력해주세요.</div>
                       <label
                         class="custom-checkbox"
                         id="sameAsDonorCheckboxLabel"
@@ -879,7 +843,7 @@
                             type="text"
                             id="pm_owner_name"
                             class="form-control"
-                            placeholder="이름을 입력해 주세요."
+                            placeholder=""
                           />
                         </div>
                       </div>

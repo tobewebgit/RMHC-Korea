@@ -69,7 +69,7 @@
 /* 질문 버튼 영역 */
 .faq-q {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   padding: 2.8rem 0;
   background: none;
@@ -99,6 +99,7 @@
 .faq-q-text {
   font-family: var(--font-display);
   font-size: 2.2rem;
+  line-height: 1.45;
 }
 
 /* New 뱃지 */
@@ -219,13 +220,14 @@
   .faq-q {
     padding: 2rem 0;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 0.8rem;
   }
 
   .faq-q-text {
     font-size: 1.8rem;
+    line-height: 1.35;
     word-break: keep-all;
     width: auto;
     flex: 1;
