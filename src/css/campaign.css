@@ -269,6 +269,7 @@
 /* 텍스트만 포함하는 뱃지 박스 */
 .award-badge {
   display: inline-block;
+  margin-left: -0.5rem;
   padding: 0.6rem 1.2rem;
   border-radius: 0.4rem;
   font-size: 1.2rem;
@@ -706,7 +707,7 @@ html[lang="en"] .kcr-card {
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    margin-bottom: 10rem;
+    /* margin-bottom: 10rem; */
     align-items: center;
     position: relative;
     z-index: 2;
@@ -798,7 +799,7 @@ html[lang="en"] .kcr-card {
   .apply-page .apply-wrapper {
     flex-direction: column;
     align-items: center;
-    gap: 10rem;
+    gap: 5rem;
   }
 
   .apply-page .apply-left-col {
@@ -871,7 +872,7 @@ html[lang="en"] .kcr-card {
     width: 100%;
     min-height: auto;
     margin-bottom: 0;
-    font-size: 1.4rem !important;
+    font-size: 1.6rem;
   }
 
   .apply-page .form-field {
@@ -881,7 +882,7 @@ html[lang="en"] .kcr-card {
   .apply-page .custom-select summary,
   .apply-page .helper-text,
   .apply-page .payment-notice-text {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: left;
   }
   .apply-page .helper-text {

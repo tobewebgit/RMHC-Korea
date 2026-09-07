@@ -280,8 +280,6 @@
 
 .newsletter-modal__cta-btn {
   max-width: 15rem;
-  height: 5.2rem;
-  min-height: auto;
 }
 
 .newsletter-modal__cta-btn:disabled {
@@ -455,7 +453,7 @@
   .modal-overlay {
     width: 100vw;
     height: 100vh;
-    padding: 2.4rem 1.6rem;
+    padding: 2.4rem 0.8rem;
   }
 
   .modal-close-btn-circle {
@@ -495,7 +493,7 @@
 
   .newsletter-modal-container {
     width: 90%;
-    padding: 3rem 2rem;
+    padding: 5rem 2rem 3rem;
   }
 
   .newsletter-modal-container.step-1-active,
@@ -512,7 +510,7 @@
   .newsletter-modal__agreement-text,
   .newsletter-modal__checkbox-text,
   .newsletter-modal__cta-btn span {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 2.4rem;
   }
 
@@ -554,7 +552,7 @@
   }
 
   .newsletter-modal__content {
-    /* padding: 1.6rem 0 0; */
+    padding: 1.6rem 0 0;
   }
 
   .common-alert__content,

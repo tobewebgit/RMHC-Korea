@@ -222,12 +222,13 @@ html[lang="en"] .about-vision-kv__panel p {
 
 .history-item summary {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 3.05rem 0;
   gap: 3.2rem;
   font-family: var(--font-display);
   font-size: 2.2rem;
+  line-height: 1.4;
 
   border-bottom: 1px solid #000000;
   cursor: pointer;
@@ -242,6 +243,7 @@ html[lang="en"] .about-vision-kv__panel p {
   content: "";
   width: 3.2rem;
   height: 3.2rem;
+  margin-top: calc((2.2rem * 1.4 - 3.2rem) / 2);
   margin-left: auto;
   flex-shrink: 0;
   background-image: url("../images/common/icon_faq_plus.png");
@@ -789,17 +791,24 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
   }
 
   .history-image {
+    width: 100%;
+    height: auto;
     margin-bottom: 4rem;
+  }
+
+  .history-accordion {
+    width: 100%;
   }
 
   .history-item summary {
     min-height: 10rem;
     padding: 2.4rem 0;
     font-size: 1.8rem;
+    line-height: 1.4;
   }
 
   .history-item summary::after {
-    font-size: 3.6rem;
+    margin-top: calc((1.8rem * 1.4 - 3.2rem) / 2);
   }
 
   .history-panel {
@@ -1486,7 +1495,7 @@ html[lang="en"] .greetings-message__body p {
 }
 
 .partner-intro__content p {
-  margin: 4rem 0 0;
+  margin: 2.4rem 0 0;
   font-size: 1.8rem;
 }
 
@@ -1752,14 +1761,16 @@ html[lang="en"] .model-node span {
   padding: 0;
   list-style: none;
 }
+.partner-activity__list li {
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
 .activity-card__logo {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 12rem;
   background: #ffffff;
-  border-top-left-radius: 1.6rem;
-  border-top-right-radius: 1.6rem;
   overflow: hidden;
 }
 
@@ -1858,8 +1869,8 @@ html[lang="en"] .model-node span {
   }
 
   .partner-kv {
-    width: 31.2rem;
-    height: 24rem;
+    width: 30.5rem;
+    height: 34.6rem;
     margin: 2rem auto 0;
   }
 
@@ -1870,7 +1881,7 @@ html[lang="en"] .model-node span {
   .partner-kv__text p {
     margin-top: 1.6rem;
     padding: 0 2rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .partner-intro {
@@ -1889,7 +1900,7 @@ html[lang="en"] .model-node span {
   }
 
   .partner-intro__content p {
-    margin-top: 4rem;
+    margin-top: 1.2rem;
     font-size: 1.4rem;
   }
 
@@ -1941,7 +1952,7 @@ html[lang="en"] .model-node span {
   }
 
   .founding-card__content p {
-    margin-top: 2.4rem;
+    margin-top: 1.2rem;
     font-size: 1.4rem;
   }
 
@@ -1976,7 +1987,7 @@ html[lang="en"] .model-node span {
   }
 
   .partner-model__head .partner-section-title + p {
-    margin-top: 4rem;
+    margin-top: 1.2rem;
     font-size: 1.4rem;
   }
 
@@ -2435,6 +2446,9 @@ html[lang="en"] .model-node span {
   content: "";
   width: 3.2rem;
   height: 3.2rem;
+  margin-top: calc((2.8rem * 1.4 - 3.2rem) / 2);
+  margin-left: auto;
+  flex-shrink: 0;
   background: url(/src/images/common/icon_arrow_bottom.png) 50% 50% no-repeat;
   background-size: 100% 100%;
 }
@@ -2483,11 +2497,11 @@ html[lang="en"] .model-node span {
 
 .donation-report-item summary {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
   min-height: 8.8rem;
-  padding: 0 2.4rem 0 0;
+  padding: 2.4rem 2.4rem 2.4rem 0;
   cursor: pointer;
   list-style: none;
 }
@@ -2495,6 +2509,7 @@ html[lang="en"] .model-node span {
 .donation-report-item summary span {
   font-family: var(--font-display);
   font-size: 2.8rem;
+  line-height: 1.4;
 
   word-break: keep-all;
 }
@@ -2634,7 +2649,7 @@ html[lang="en"] .model-node span {
   .transparency-kv__text p {
     margin-top: 1.2rem;
     max-width: 28rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .finance-report {
@@ -2762,7 +2777,7 @@ html[lang="en"] .model-node span {
   .detail-view-wrap ul li,
   .offline-fund-card__info li,
   .offline-fund-card__info p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   .offline-fund-card__info p {
     font-size: 1.4rem;
@@ -2808,11 +2823,18 @@ html[lang="en"] .model-node span {
 
   .donation-report-item summary {
     min-height: 9.4rem;
-    padding-right: 0.8rem;
+    padding: 2.4rem 0.8rem 2.4rem 0;
   }
 
   .donation-report-item summary span {
     font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  .donation-report-item summary::after {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-top: calc((2rem * 1.4 - 2.4rem) / 2);
   }
 
   .donation-report-panel {

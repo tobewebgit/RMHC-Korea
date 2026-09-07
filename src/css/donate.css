@@ -405,9 +405,9 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .btn-auth-action.kakao {
-  background-color: #fee500;
+  background-color: #ffeb00;
   color: #191919;
-  border-color: #fee500 !important;
+  border-color: #ffeb00 !important;
 }
 
 .btn-auth-action.kakao:hover {
@@ -428,8 +428,8 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .btn-auth-action .payment-logo {
   width: auto !important;
-  height: 2.2rem;
-  margin-right: 0.8rem;
+  height: 2.4rem;
+  margin-right: 1rem;
   object-fit: contain;
   vertical-align: middle;
 }
@@ -1421,6 +1421,18 @@ html[lang="en"] .vol-act-card__title {
   cursor: not-allowed;
 }
 
+.vol-popup-body .form-control.zipcode[readonly],
+.vol-popup-body .form-control.zipcode:disabled {
+  color: var(--text-black) !important;
+}
+
+.vol-popup-body .form-control.zipcode[readonly]::placeholder,
+.vol-popup-body .form-control.zipcode:disabled::placeholder,
+.vol-popup-body .form-control.zipcode::placeholder {
+  color: var(--text-black) !important;
+  opacity: 1;
+}
+
 /* ── 폼 레이블 상단 정렬 ────────────────────── */
 .form-label--top {
   align-items: flex-start;
@@ -1939,7 +1951,7 @@ html[lang="en"] .vol-act-card__title {
   }
 
   .donate-page .apply-wrapper {
-    gap: 4rem;
+    gap: 5rem;
     padding: 0 2rem 0;
     font-size: 1.4rem;
   }
@@ -1950,24 +1962,23 @@ html[lang="en"] .vol-act-card__title {
 
   .donate-page .page-title {
     font-size: 2.8rem;
-
-    margin-bottom: 2.4rem;
-    text-align: center;
+    margin-bottom: 1.2rem;
     word-break: keep-all;
   }
 
   .donate-page .page-desc {
-    font-size: 1.4rem;
-
-    text-align: center;
+    font-size: 1.8rem;
   }
 
-  /* 모바일 시안에서는 포스터 이미지 비노출 */
   .donate-page .poster-wrap {
-    display: none;
+    margin-top: 2.4rem;
   }
 
-  /* 해외 발급카드 배너 - 피그마 시안 100% 완벽 동기화 */
+  .agree-terms-container .form-subtitle,
+  .inner-form-group .form-subtitle {
+    font-size: 1.6rem;
+  }
+
   .foreign-card-banner {
     position: relative;
     display: flex;
@@ -2029,19 +2040,20 @@ html[lang="en"] .vol-act-card__title {
     top: 0.8rem;
     left: 0.8rem;
     width: calc((100% - 1.6rem) / 2);
-    height: 4.8rem;
+    height: 4.4rem;
     border-radius: 0.6rem;
   }
 
   .donate-type-tabs .btn-tab {
     width: 50%;
-    height: 4.8rem;
-    font-size: 1.6rem;
+    height: 4.4rem;
+    min-height: 4.4rem;
+    font-size: 1.4rem;
   }
 
   /* 아코디언 카드 */
   .accordion-card {
-    padding: 2.8rem 2.4rem 3.2rem;
+    padding: 2.4rem 2.4rem;
     margin-bottom: 1.6rem;
   }
 
@@ -2054,7 +2066,7 @@ html[lang="en"] .vol-act-card__title {
     flex-direction: column;
     align-items: flex-start;
     gap: 0rem;
-    margin: -0.8rem -2.4rem 0;
+    margin: 0 -2.4rem 0;
     padding: 0 2.4rem 0rem;
   }
 
@@ -2064,26 +2076,24 @@ html[lang="en"] .vol-act-card__title {
   }
 
   .accordion-card .donate-section-title {
-    font-size: 1.8rem;
     top: 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
   }
 
   .accordion-card .header-summary {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-top: 0;
-    color: var(--text-black);
+    font-size: 1.4rem;
+    margin-top: 1.2rem;
   }
 
   .accordion-card.is-active .card-body h3,
   .accordion-card .card-subtitle {
     font-size: 1.4rem;
     margin-bottom: 1.6rem;
-    font-weight: 600;
   }
 
   .receipt-helper-text {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   /* Step 1 금액 칩 - 모바일 시안 2열 배치 */
@@ -2094,14 +2104,8 @@ html[lang="en"] .vol-act-card__title {
   }
 
   .chip-grid .btn {
-    height: 5.2rem;
     padding: 0 1rem;
   }
-
-  .auth-intro-text + .chip-grid .btn {
-    font-size: 1.2rem;
-  }
-
   .direct-input-chip {
     min-height: 5.2rem;
     padding: 0 1.6rem;
@@ -2144,7 +2148,7 @@ html[lang="en"] .vol-act-card__title {
   }
 
   .notice-yellow-box span {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   /* Step 1 다음 버튼 */
@@ -2189,6 +2193,18 @@ html[lang="en"] .vol-act-card__title {
 
   .donate-page .inner-form-group .inner-form-box {
     padding: 2.4rem 1.6rem;
+  }
+
+  .group-email-helper {
+    font-size: 1.2rem;
+  }
+
+  .accordion-card.is-active .card-body h3,
+  .accordion-card.is-active .radio-label {
+    font-size: 1.6rem;
+  }
+  .receipt-helper__secondary {
+    line-height: 1.3;
   }
 
   /* 기부금 영수증 신청 여부 */
@@ -2544,8 +2560,6 @@ html[lang="en"] .vol-act-card__title {
 
   .vol-apply__cta {
     width: 100%;
-    height: 5.4rem;
-    font-size: 1.6rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -2775,8 +2789,6 @@ html[lang="en"] .vol-act-card__title {
   }
 
   .vol-popup-submit {
-    height: 5.2rem;
-    font-size: 1.6rem;
     margin-top: 2rem;
   }
 

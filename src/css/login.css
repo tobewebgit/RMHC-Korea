@@ -373,7 +373,7 @@
   display: inline-flex;
   justify-content: center;
   gap: var(--spacing-4);
-  /* margin-top: var(--spacing-5); */
+  margin-top: 1.6rem;
   /* margin-bottom: var(--spacing-16); */
 }
 
@@ -970,6 +970,7 @@
 }
 
 .donate-banner__content {
+  width: 100%;
   max-width: 54rem;
 }
 
@@ -1636,6 +1637,7 @@
 
   .donate-banner__btn {
     width: 100%;
+    max-width: 18rem;
     margin-top: 0;
   }
 
