@@ -1021,4 +1021,8 @@ ul.form-helper-note.cms-helper {
   .payment-apply-notice {
     font-size: 1.2rem;
   }
+
+  .btn-input-action {
+    width: 10.8rem;
+  }
 }

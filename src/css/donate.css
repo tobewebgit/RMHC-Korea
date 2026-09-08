@@ -404,31 +404,57 @@ html[lang="en"] .accordion-card.is-active .card-body {
   word-break: keep-all;
 }
 
+.btn-auth-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+/* 인증 버튼 아이콘 공통 (::before 의사 요소 활용) */
+.btn-auth-action::before {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+/* 1. 카카오 인증 전 아이콘 -> 인증 후 아이콘 */
 .btn-auth-action.kakao {
   background-color: #ffeb00;
   border-color: #ffeb00;
+  color: var(--text-black);
 }
 
+.btn-auth-action.kakao::before {
+  background-image: url('/src/images/common/icon_kakao_pay.svg');
+}
+
+.btn-auth-action.kakao.complete::before,
+.btn-auth-action.kakao.is-complete::before {
+  background-image: url('/src/images/common/icon_kakao_check_pay_ok.svg');
+}
+
+/* 2. 휴대폰 인증 전 아이콘 없음 -> 인증 후 아이콘 있음 */
 .btn-auth-action.pass {
   background-color: var(--primary);
   color: #ffffff;
   border-color: var(--primary) !important;
 }
 
-.btn-auth-action .payment-logo {
-  width: 2.4rem;
-  height: 2.4rem;
-  margin-right: 1rem;
-  object-fit: contain;
-  vertical-align: middle;
+.btn-auth-action.pass::before {
+  display: none;
+  background-image: none;
 }
 
-.btn-auth-action.complete {
-  background-color: #e0deda !important;
-  color: var(--text-muted) !important;
-  border-color: #e0deda !important;
-  cursor: not-allowed;
-  pointer-events: none;
+.btn-auth-action.pass.complete::before,
+.btn-auth-action.pass.is-complete::before {
+  display: inline-block;
+  background-image: url('/src/images/common/icon_phone_check_pay_ok.svg');
 }
 
 /* 8. 최종 이전 / 후원하기 버튼 */
@@ -2170,7 +2196,7 @@ html[lang="en"] .vol-act-card__title {
     font-size: var(--text-lg);
   }
 
-  .btn-auth-action .payment-logo.complete {
+  .btn-auth-action::before {
     width: 1.9rem;
     height: 1.9rem;
   }
