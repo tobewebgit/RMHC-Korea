@@ -2773,8 +2773,9 @@ html[lang="en"] .model-node span {
     max-width: 100%;
     text-align: left;
   }
-
-  .detail-view-wrap ul li,
+  .detail-view-wrap ul li {
+    font-size: 1.4rem;
+  }
   .offline-fund-card__info li {
     font-size: 1.6rem;
   }

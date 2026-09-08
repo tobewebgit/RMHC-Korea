@@ -915,7 +915,7 @@ ul.form-helper-note.cms-helper {
 
   .payment-tabs-grid {
     grid-template-columns: repeat(1, 1fr);
-    gap: 0.8rem;
+    gap: 1.2rem;
     width: 100%;
     box-sizing: border-box;
   }
