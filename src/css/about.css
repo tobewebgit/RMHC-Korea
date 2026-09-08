@@ -2775,14 +2775,11 @@ html[lang="en"] .model-node span {
   }
 
   .detail-view-wrap ul li,
-  .offline-fund-card__info li,
-  .offline-fund-card__info p {
-    font-size: 1.4rem;
+  .offline-fund-card__info li {
+    font-size: 1.6rem;
   }
   .offline-fund-card__info p {
     font-size: 1.4rem;
-  }
-  .offline-fund-card__info p {
     margin-top: 2.4rem;
   }
 

@@ -2092,6 +2092,10 @@ html[lang="en"] .vol-act-card__title {
     margin-bottom: 1.6rem;
   }
 
+  .accordion-card .card-subtitle {
+    margin-bottom: 0;
+  }
+
   .receipt-helper-text {
     font-size: 1.4rem;
   }
@@ -2169,7 +2173,7 @@ html[lang="en"] .vol-act-card__title {
   }
 
   .auth-intro-text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .donate-payment-same {

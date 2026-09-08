@@ -482,7 +482,6 @@ a.header__submenu-link:focus-visible,
 
 .footer__newsletter-input::placeholder {
   color: var(--text-gray70);
-  font-size: 1.4rem;
 }
 
 .footer__newsletter-btn {
@@ -667,6 +666,7 @@ a.header__submenu-link:focus-visible,
   .footer__container {
     display: flex;
     flex-direction: column;
+    padding: 0 2.4rem;
   }
 
   /* 부모 래퍼 지오메트리 해제하여 자식 요소 직계 승격 */
@@ -680,7 +680,7 @@ a.header__submenu-link:focus-visible,
     order: 1;
     flex-direction: column;
     width: 31.2rem;
-    height: 29.2rem;
+    height: 28.6rem;
     padding: 2.4rem 1.6rem;
     background: url("../images/common/footer__top_bg_mo.svg") 0 0 no-repeat;
     background-size: 100% auto;
