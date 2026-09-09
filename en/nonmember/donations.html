@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -12,10 +12,10 @@
 
 <body>
   <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
-  <load src="/includes/header.html" />
+  <load src="/includes/header_en.html" />
 
   <div class="page-wrapper">
     <main id="main-content" class="nonmember-wrapper">
@@ -87,56 +87,68 @@
                     <tr>
                       <td data-label="No">6</td>
                       <td class="col-type" data-label="구분">정기</td>
-                      <td data-label="캠페인">&nbsp;</td>
+                      <td class="line-top" data-label="캠페인">&nbsp;</td>
                       <td data-label="결제방법">신용카드(하나/1234)</td>
-                      <td class="col-amount" data-label="금액">50,000원</td>
+                      <td class="col-amount" data-label="금액">
+                        <span class="price-bold">50,000원</span>
+                      </td>
                       <td data-label="기부일">2026.03.18</td>
-                      <td data-label="기부종료일">&nbsp;</td>
+                      <td class="line-bottom" data-label="기부종료일">&nbsp;</td>
                     </tr>
                     <tr>
                       <td data-label="No">5</td>
                       <td class="col-type" data-label="구분">정기</td>
-                      <td data-label="캠페인">&nbsp;</td>
+                      <td class="line-top" data-label="캠페인">&nbsp;</td>
                       <td data-label="결제방법">신용카드(하나/1234)</td>
-                      <td class="col-amount" data-label="금액">50,000원</td>
+                      <td class="col-amount" data-label="금액">
+                        <span class="price-bold">50,000원</span>
+                      </td>
                       <td data-label="기부일">2026.02.18</td>
-                      <td data-label="기부종료일">&nbsp;</td>
+                      <td class="line-bottom" data-label="기부종료일">&nbsp;</td>
                     </tr>
                     <tr>
                       <td data-label="No">4</td>
                       <td class="col-type" data-label="구분">정기</td>
-                      <td data-label="캠페인">&nbsp;</td>
+                      <td class="line-top" data-label="캠페인">&nbsp;</td>
                       <td data-label="결제방법">신용카드(하나/1234)</td>
-                      <td class="col-amount" data-label="금액">50,000원</td>
+                      <td class="col-amount" data-label="금액">
+                        <span class="price-bold">50,000원</span>
+                      </td>
                       <td data-label="기부일">2026.01.18</td>
-                      <td data-label="기부종료일">&nbsp;</td>
+                      <td class="line-bottom" data-label="기부종료일">&nbsp;</td>
                     </tr>
                     <tr>
                       <td data-label="No">3</td>
                       <td class="col-type" data-label="구분">일시</td>
-                      <td data-label="캠페인">&nbsp;</td>
+                      <td class="line-top" data-label="캠페인">&nbsp;</td>
                       <td data-label="결제방법">카카오Pay</td>
-                      <td class="col-amount" data-label="금액">50,000원</td>
+                      <td class="col-amount" data-label="금액">
+                        <span class="price-bold">50,000원</span>
+                      </td>
                       <td data-label="기부일">2026.02.03</td>
-                      <td data-label="기부종료일">&nbsp;</td>
+                      <td class="line-bottom" data-label="기부종료일">&nbsp;</td>
                     </tr>
                     <tr>
                       <td data-label="No">2</td>
                       <td class="col-type" data-label="구분">일시</td>
-                      <td data-label="캠페인">갈라 디너</td>
+                      <td class="line-top" data-label="캠페인">갈라 디너</td>
                       <td data-label="결제방법">신용카드(하나/1234)</td>
-                      <td class="col-amount" data-label="금액">500,000원</td>
+                      <td class="col-amount" data-label="금액">
+                        <span class="price-bold">500,000원</span>
+                      </td>
                       <td data-label="기부일">2025.12.15</td>
-                      <td data-label="기부종료일">&nbsp;</td>
+                      <td class="line-bottom" data-label="기부종료일">&nbsp;</td>
                     </tr>
                     <tr>
                       <td data-label="No">1</td>
                       <td class="col-type" data-label="구분">정기</td>
-                      <td data-label="캠페인">&nbsp;</td>
+                      <td class="line-top" data-label="캠페인">&nbsp;</td>
                       <td data-label="결제방법">실시간계좌이체(국민/5678)</td>
-                      <td class="col-amount" data-label="금액">20,000원</td>
+                      <td class="col-amount" data-label="금액">
+                        <span class="price-bold">20,000원</span>
+                      </td>
                       <td data-label="기부일">2024.01.18</td>
-                      <td data-label="기부종료일">2025.04.02</td>
+                      <td class="line-bottom" data-label="기부종료일">2025.04.02</td>
                     </tr>
                   </tbody>
                 </table>
@@ -145,8 +157,8 @@
               <!-- 페이지네이션 (공지/마이페이지 공통 코드 적용) -->
               <div class="pagination">
                 <div class="page-group-arrow">
-                  <button type="button" class="page-btn page-arrow page-first" aria-label="처음 페이지"></button>
-                  <button type="button" class="page-btn page-arrow page-prev" aria-label="이전 페이지"></button>
+                  <button type="button" class="page-btn page-arrow page-first" aria-label="First page"></button>
+                  <button type="button" class="page-btn page-arrow page-prev" aria-label="Previous page"></button>
                 </div>
                 <div class="page-group-numbers">
                   <button type="button" class="page-btn active"><span>1</span></button>
@@ -156,8 +168,8 @@
                   <button type="button" class="page-btn">5</button>
                 </div>
                 <div class="page-group-arrow">
-                  <button type="button" class="page-btn page-arrow page-next" aria-label="다음 페이지"></button>
-                  <button type="button" class="page-btn page-arrow page-last" aria-label="마지막 페이지"></button>
+                  <button type="button" class="page-btn page-arrow page-next" aria-label="Next page"></button>
+                  <button type="button" class="page-btn page-arrow page-last" aria-label="Last page"></button>
                 </div>
               </div>
             </section>
@@ -283,7 +295,7 @@
     </script>
 
     <!-- 푸터 공통 영역 인클루드 -->
-    <load src="/includes/footer.html" />
+    <load src="/includes/footer_en.html" />
   </div>
 
 </body>

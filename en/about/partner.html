@@ -18,7 +18,7 @@
 
   <body>
     <!-- 웹 접근성 스킵 네비게이션 -->
-    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
 
     <!-- 헤더 공통 영역 인클루드 -->
     <load src="/includes/header_en.html" />
@@ -888,7 +888,7 @@
               </p>
             </div>
             <div
-              class="partner-model__diagram"
+              class="partner-model__diagram type-pc"
               aria-label="제품 생산자, 판매처 제공자, 소비자, 비영리 재단으로 이어지는 파트너십 모델"
               data-motion="fade-up"
               data-motion-delay="0.15"
@@ -929,21 +929,29 @@
                 <span>Meaningful <br />Participation <br />Through Giving</span>
               </div>
             </div>
+            <div class="partner-model__diagram type-mo">
+              <img
+                src="/src/images/about/bg_partner_model_diagram_mo.svg"
+                alt="제품 생산자, 판매처 제공자, 소비자, 비영리 재단으로 이어지는 파트너십 모델"
+                data-motion="fade-up"
+                data-motion-delay="0.15"
+                loading="lazy"
+              />
+            </div>
           </div>
-        </section>
 
-        <section
-          class="partner-activity"
-          aria-labelledby="partnerActivityTitle"
-        >
-          <div class="inner-layout">
-            <h2
-              id="partnerActivityTitle"
-              class="partner-section-title"
-              data-motion="fade-up"
-            >
-              Partnership Activities
-            </h2>
+          <div
+            class="partner-activity"
+            aria-labelledby="partnerActivityTitle"
+          >
+            <div class="inner-layout">
+              <h3
+                id="partnerActivityTitle"
+                class="partner-section-title"
+                data-motion="fade-up"
+              >
+                Partnership Activities
+              </h3>
             <ul class="partner-activity__list">
               <li
                 class="activity-card"
@@ -1604,18 +1612,23 @@
               </li>
             </ul>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+    </main>
 
-      <div
-        class="partner-activity__more"
-        data-motion="fade-up"
-        data-motion-delay="0.25"
+    <div
+      class="partner-activity__more"
+      data-motion="fade-up"
+      data-motion-delay="0.25"
+    >
+      <button
+        type="button"
+        class="btn btn-primary btn-plus btn-page w-auto"
+        data-partner-more
       >
-        <button type="button" class="btn btn-primary w-auto" data-partner-more>
-          View More +
-        </button>
-      </div>
+        View More +
+      </button>
+    </div>
     </div>
 
     <!-- 푸터 공통 영역 인클루드 -->

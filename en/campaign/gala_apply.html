@@ -12,7 +12,7 @@
 
 <body>
   <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
 
   <!-- 헤더 공통 영역 인클루드 -->
   <load src="/includes/header_en.html" />
@@ -24,10 +24,11 @@
           <!-- [좌측 영역] 타이틀 및 포스터 이미지 -->
           <div class="apply-left-col">
             <div class="page-header-wrap">
-              <h1 class="page-title font-nanum">
-                2026<br />한국로날드맥도날드하우스<br />Gala Dinner에<br />초대합니다.
+              <h1 class="page-title">
+                2026 <br />한국로날드맥도날드하우스 <br class="type-pc" />Gala
+                Dinner에 <br class="type-pc" />초대합니다.
               </h1>
-              <p class="page-desc font-pretendard">
+              <p class="page-desc">
                 Gala Dinner는 치료 중인 아이와 가족이 함께 머물 수 있는 로날드
                 맥도날드 하우스의 설립과 운영을 지원하는 대표 자선 모금
                 행사입니다.
@@ -46,7 +47,7 @@
               <!-- 1. 참석 신청 정보 -->
               <section class="common-card">
                 <div class="card-title-wrap">
-                  <h2 class="donate-section-title font-nanum">참석 신청</h2>
+                  <h2 class="donate-section-title">참석 신청</h2>
                 </div>
 
                 <!-- 신청 방식 -->
@@ -95,9 +96,9 @@
 
                 <!-- 총 결제 금액 -->
                 <div class="total-payment-wrap">
-                  <span class="form-label font-bold">총 결제 금액</span>
+                  <span class="form-label">총 결제 금액</span>
                   <div class="total-payment-content">
-                    <strong class="total-amount font-nanum" id="totalAmount">1,000,000원</strong>
+                    <strong class="total-amount" id="totalAmount">1,000,000원</strong>
                     <span class="amount-detail" id="amountDetail">(1명 X 500,000원)</span>
                   </div>
                 </div>
@@ -106,7 +107,7 @@
               <!-- 2. 후원자 정보입력 및 약관동의 -->
               <section class="common-card">
                 <div class="card-title-wrap">
-                  <h2 class="donate-section-title font-nanum">
+                  <h2 class="donate-section-title">
                     후원자 정보입력 및 약관동의
                   </h2>
                 </div>
@@ -134,7 +135,7 @@
 
                   <!-- 후원자 기본 정보 입력 박스 (가로 정렬 폼) -->
                   <div class="inner-form-group">
-                    <h3 class="form-subtitle">후원자 기본 정보</h3>
+                    <div class="form-subtitle">후원자 기본 정보</div>
 
                     <div class="inner-form-box">
                       <!-- 기업/단체명 -->
@@ -147,7 +148,7 @@
 
                       <!-- 사업자등록번호 -->
                       <div class="form-group form" id="groupBusinessNo">
-                        <label for="businessNo" class="form-label">사업자등록번호</label>
+                        <label for="businessNo" class="form-label required">사업자등록번호</label>
                         <div class="form-field">
                           <input type="text" id="businessNo" class="form-control" placeholder="사업자번호 10자리 (숫자만 입력)"
                             maxlength="10" />
@@ -188,9 +189,9 @@
 
                   <!-- 이용약관 및 수신 동의 -->
                   <div class="agree-terms-container" style="margin-top: 5.2rem">
-                    <h3 class="form-subtitle">
+                    <div class="form-subtitle">
                       이용약관, 개인정보 수집 및 이용 활동 안내 수신동의
-                    </h3>
+                    </div>
                     <div class="agree-terms-content">
                       <div class="agreement-all">
                         <label class="custom-checkbox" for="agree-all">
@@ -234,7 +235,7 @@
               <!-- 3. 결제수단 -->
               <section class="common-card">
                 <div class="card-title-wrap">
-                  <h2 class="donate-section-title font-nanum">결제수단</h2>
+                  <h2 class="donate-section-title">결제수단</h2>
                 </div>
 
                 <div class="payment-intro">
@@ -248,24 +249,9 @@
                 <div class="form-group">
                   <div class="form-field">
                     <div class="payment-tabs-grid" id="paymentChips" role="radiogroup" aria-label="결제수단 선택">
-                      <button type="button" class="btn btn-primary payment-tab-btn active" data-toggle-chip="galaPaymentMethod"
-                        data-chip-value="kakaopay" role="radio" aria-checked="true">
-                        <img src="/src/images/common/icon_kakao_pay.png" alt="카카오페이" class="payment-tab-icon" />
-                        <span>카카오페이</span>
-                      </button>
-                      <button type="button" class="btn btn-outline payment-tab-btn" data-toggle-chip="galaPaymentMethod"
-                        data-chip-value="naverpay" role="radio" aria-checked="false">
-                        <img src="/src/images/common/icon_naver_pay.png" alt="네이버페이" class="payment-tab-icon" />
-                        <span>네이버페이</span>
-                      </button>
-                      <button type="button" class="btn btn-outline payment-tab-btn" data-toggle-chip="galaPaymentMethod"
-                        data-chip-value="toss" role="radio" aria-checked="false">
-                        <img src="/src/images/common/icon_toss_pay.png" alt="토스페이" class="payment-tab-icon" />
-                        <span>토스페이</span>
-                      </button>
                       <button type="button" class="btn btn-outline payment-tab-btn" data-toggle-chip="galaPaymentMethod"
                         data-chip-value="card" role="radio" aria-checked="false">
-                        <span>신용카드</span>
+                        <span>신용카드/간편결제</span>
                       </button>
                       <button type="button" class="btn btn-outline payment-tab-btn" data-toggle-chip="galaPaymentMethod"
                         data-chip-value="transfer" role="radio" aria-checked="false">
@@ -274,9 +260,9 @@
                     </div>
                     <input type="hidden" name="paymentMethod" id="galaPaymentMethod" value="kakaopay" />
 
-                    <!-- CTA 신청 완료 버튼 -->
-                    <div class="button-wrap apply-btn-wrap">
-                      <button type="submit" class="btn btn-primary">
+                    <!-- CTA 신청 완료 버튼 (100% 너비 적용) -->
+                    <div class="button-wrap apply-btn-wrap" style="margin-top: 3.2rem">
+                      <button type="submit" class="btn btn-primary w-100">
                         갈라 디너 신청하기
                       </button>
                     </div>

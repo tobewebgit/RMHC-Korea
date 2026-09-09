@@ -516,6 +516,12 @@ a:hover .house-heart--coming {
   left: 4.2rem;
   top: -0.8rem;
 }
+html[lang="en"] .map-pin--inha {
+  left: 1rem;
+}
+html[lang="en"] .map-pin--inha .inner-heart {
+  left: 7.3rem;
+}
 
 .map-pin--yeonhui {
   left: 11.1rem;
@@ -669,11 +675,6 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
     min-height: auto;
   }
 
-  html[lang="en"] .about-vision-kv,
-  html[lang="en"] .about-vision-kv__content {
-    min-height: 70rem;
-  }
-
   .about-vision-kv__image {
     order: 2;
     position: static;
@@ -698,10 +699,8 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
     color: var(--text-black);
     background-image: none;
   }
-
   html[lang="en"] .about-vision-kv__panel {
-    height: 43.4rem;
-    background-image: none;
+    height: auto;
   }
 
   .about-vision-kv__panel h1 {
@@ -1106,7 +1105,7 @@ html[lang="en"] .greetings-message__content h2 {
   font-size: 1.8rem;
 }
 html[lang="en"] .greetings-message__body p {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .greetings-message__body p + p {
@@ -1219,6 +1218,9 @@ html[lang="en"] .greetings-message__body p {
 
   .greetings-sign p {
     font-size: 1.4rem;
+  }
+  html[lang="en"] .greetings-sign p {
+    font-size: 1.6rem;
   }
 
   .greetings-sign strong {
@@ -1902,6 +1904,9 @@ html[lang="en"] .model-node span {
   .partner-intro__content p {
     margin-top: 1.2rem;
     font-size: 1.4rem;
+  }
+  html[lang="en"] .partner-intro__content p {
+    font-size: 1.6rem;
   }
 
   .partner-intro__image {

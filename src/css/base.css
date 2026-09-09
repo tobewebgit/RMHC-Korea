@@ -66,9 +66,7 @@
 
   font-style: normal;
   font-display: swap;
-  src:
-    url("../fonts/AudreyText-Regular.woff2") format("woff2"),
-    url("../fonts/AudreyText-Regular.woff") format("woff");
+  src: url("../fonts/AudreyText-Regular.woff") format("woff");
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
     U+0304, U+0308, U+0329, U+2000-206F, U+2074-20AC, U+2122, U+2191, U+2193,
@@ -80,9 +78,7 @@
 
   font-style: italic;
   font-display: swap;
-  src:
-    url("../fonts/AudreyText-Italic.woff2") format("woff2"),
-    url("../fonts/AudreyText-Italic.woff") format("woff");
+  src: url("../fonts/AudreyText-Italic.woff") format("woff");
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
     U+0304, U+0308, U+0329, U+2000-206F, U+2074-20AC, U+2122, U+2191, U+2193,
@@ -95,9 +91,7 @@
 
   font-style: normal;
   font-display: swap;
-  src:
-    url("../fonts/AudreyTextKR-Regular.woff2") format("woff2"),
-    url("../fonts/AudreyTextKR-Regular.woff") format("woff");
+  src: url("../fonts/AudreyTextKR-Regular.woff") format("woff");
   unicode-range:
     U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
 }
@@ -106,9 +100,7 @@
 
   font-style: italic;
   font-display: swap;
-  src:
-    url("../fonts/AudreyTextKR-Regular.woff2") format("woff2"),
-    url("../fonts/AudreyTextKR-Regular.woff") format("woff");
+  src: url("../fonts/AudreyTextKR-Regular.woff") format("woff");
   unicode-range:
     U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
 }
@@ -119,9 +111,7 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src:
-    url("../fonts/AudreyText-Bold.woff2") format("woff2"),
-    url("../fonts/AudreyText-Bold.woff") format("woff");
+  src: url("../fonts/AudreyText-Bold.woff") format("woff");
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
     U+0304, U+0308, U+0329, U+2000-206F, U+2074-20AC, U+2122, U+2191, U+2193,
@@ -133,9 +123,7 @@
   font-weight: 700;
   font-style: italic;
   font-display: swap;
-  src:
-    url("../fonts/AudreyText-BoldItalic.woff2") format("woff2"),
-    url("../fonts/AudreyText-BoldItalic.woff") format("woff");
+  src: url("../fonts/AudreyText-BoldItalic.woff") format("woff");
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
     U+0304, U+0308, U+0329, U+2000-206F, U+2074-20AC, U+2122, U+2191, U+2193,
@@ -148,9 +136,7 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src:
-    url("../fonts/AudreyTextKR-Bold.woff2") format("woff2"),
-    url("../fonts/AudreyTextKR-Bold.woff") format("woff");
+  src: url("../fonts/AudreyTextKR-Bold.woff") format("woff");
   unicode-range:
     U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
 }
@@ -159,9 +145,7 @@
   font-weight: 700;
   font-style: italic;
   font-display: swap;
-  src:
-    url("../fonts/AudreyTextKR-Bold.woff2") format("woff2"),
-    url("../fonts/AudreyTextKR-Bold.woff") format("woff");
+  src: url("../fonts/AudreyTextKR-Bold.woff") format("woff");
   unicode-range:
     U+AC00-D7A3, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
 }
@@ -172,18 +156,14 @@
 
   font-style: normal;
   font-display: swap;
-  src:
-    url("../fonts/AudreyTextKR-Regular.woff2") format("woff2"),
-    url("../fonts/AudreyTextKR-Regular.woff") format("woff");
+  src: url("../fonts/AudreyTextKR-Regular.woff") format("woff");
 }
 @font-face {
   font-family: "Audrey Text KR";
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src:
-    url("../fonts/AudreyTextKR-Bold.woff2") format("woff2"),
-    url("../fonts/AudreyTextKR-Bold.woff") format("woff");
+  src: url("../fonts/AudreyTextKR-Bold.woff") format("woff");
 }
 
 :root {

@@ -14,7 +14,7 @@
 
   <body>
     <!-- 웹 접근성 스킵 네비게이션 -->
-    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
 
     <!-- 헤더 공통 영역 인클루드 -->
     <load src="/includes/header_en.html" />
@@ -23,7 +23,10 @@
       <main id="main-content" class="about-vision">
         <section class="about-vision-kv" aria-labelledby="aboutVisionTitle">
           <picture class="about-vision-kv__image">
-            <source media="(max-width: 768px)" srcset="/src/images/about/img_about_vision_kv_mo.png" />
+            <source
+              media="(max-width: 768px)"
+              srcset="/src/images/about/img_about_vision_kv_mo.png"
+            />
             <img
               src="/src/images/about/img_about_vision_kv.png"
               alt="아이들이 놀이 텐트 앞에서 웃고 있는 모습"
@@ -31,7 +34,11 @@
             />
           </picture>
           <div class="about-vision-kv__content inner-layout">
-            <div class="about-vision-kv__panel">
+            <div
+              class="about-vision-kv__panel"
+              data-motion="fade-up"
+              data-motion-once="true"
+            >
               <h1 id="aboutVisionTitle">
                 Ronald McDonald House Korea is a strong source of support that
                 helps protect the everyday lives of families with pediatric
@@ -417,7 +424,7 @@
                 <li>
                   <a href="#" class="coming" data-pin="inha"
                     ><span class="house-heart house-heart--coming"></span>Ronald
-                    McDonald House: Inha</a
+                    McDonald House: Incheon</a
                   >
                 </li>
                 <li>
@@ -447,7 +454,7 @@
                   loading="lazy"
                 />
                 <div class="map-pin map-pin--inha">
-                  <span>Inha</span>
+                  <span>Incheon</span>
                   <div class="inner-heart">
                     <i class="map-pin__heart js-motion" aria-hidden="true"
                       ><span class="icon-heart"></span
@@ -542,20 +549,28 @@
           class="about-donate-banner inner-layout"
           aria-labelledby="donateBannerTitle"
         >
-          <div class="donate-banner" data-motion="fade-up">
+          <div class="donate-banner">
             <span class="donate-banner__heart" aria-hidden="true"></span>
             <div class="donate-banner__content">
-              <h2 id="donateBannerTitle">
+              <h2
+                id="donateBannerTitle"
+                data-motion="fade-up"
+                data-motion-delay="0.25"
+              >
                 Help Families Stay Together<br class="type-pc" />
                 Through Every Step of Treatment
               </h2>
-              <p>
+              <p data-motion="fade-up" data-motion-delay="0.3">
                 Your donation helps provide a welcoming home and essential
                 support, <br class="type-pc" />so families can stay close to
                 their child throughout treatment.
               </p>
             </div>
-            <a href="#" class="btn btn-white btn-heart donate-banner__btn"
+            <a
+              href="/en/donate/one-time.html?tab=regular"
+              class="btn btn-white btn-heart donate-banner__btn"
+              data-motion="fade-up"
+              data-motion-delay="0.75"
               >Donate Now</a
             >
           </div>

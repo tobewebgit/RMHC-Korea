@@ -1160,7 +1160,7 @@ a.header__submenu-link:focus-visible,
   width: 100%;
   margin-top: 8rem !important;
   margin-bottom: 7.8rem;
-  gap: 0.4rem;
+  gap: 0rem;
   transform: none !important;
 }
 
@@ -1413,6 +1413,10 @@ a.header__submenu-link:focus-visible,
     font-size: 1.4rem;
   }
 
+  html[lang="en"] .pagination .page-btn.page-arrow.page-prev::after {
+    content: "Prev";
+  }
+
   .pagination .page-btn.page-arrow.page-next {
     width: auto;
     height: auto;
@@ -1431,6 +1435,10 @@ a.header__submenu-link:focus-visible,
     content: "다음";
     margin-right: 0.6rem;
     font-size: 1.4rem;
+  }
+
+  html[lang="en"] .pagination .page-btn.page-arrow.page-next::before {
+    content: "Next";
   }
 
   .pagination .page-group-numbers .page-btn:not(.active) {

@@ -1,29 +1,86 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="RMHC Yeonhui House is being prepared to provide a warm shelter for seriously ill children receiving long-term treatment and their families within Severance Hospital."
+    />
+    <title>Ronald McDonald House: Yeonhui - RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/houses.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="세브란스 어린이병원 인근 연희동에 위치하여 소아암 등 중증 환아와 가족들에게 편안한 쉼터를 제공하는 RMHC 연희 하우스입니다." />
-  <title>연희 하우스 - 한국로날드맥도날드하우스</title>
-  <link rel="stylesheet" href="/src/css/common.css" />
-</head>
+  <body>
+    <!-- 웹 접근성 스킵 네비게이션 -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
 
-<body>
-  <!-- 웹 접근성 스킵 네비게이션 -->
-  <a href="#main-content" class="skip-nav">본문 바로가기</a>
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load src="/includes/header_en.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load src="/includes/header.html" />
+    <div class="page-wrapper house-page">
+      <main id="main-content">
+        <section
+          class="house-coming-section"
+          aria-labelledby="houseComingTitle"
+        >
+          <div class="house-coming-inner">
+            <!-- 오픈 예정 뱃지 -->
+            <div class="house-coming-badge" data-motion="fade-up">
+              <img
+                src="/src/images/houses/icon_coming.png"
+                alt="coming"
+                class="house-coming-badge__icon"
+              />
+              <span class="house-coming-badge__text">Coming Soon</span>
+            </div>
 
-  <div class="page-wrapper">
-    <main id="main-content">
-      <!-- [작업 전 레거시 비움] 사용자 요청 시 순서대로 퍼블리싱 진행 예정 -->
-    </main>
-  </div>
+            <!-- 메인 타이틀 -->
+            <h1
+              id="houseComingTitle"
+              class="house-coming-title"
+              data-motion="fade-up"
+              data-motion-delay="0.1"
+            >
+              Ronald McDonald House: Yeonhui
+            </h1>
 
-  <!-- 푸터 공통 영역 인클루드 -->
-  <load src="/includes/footer.html" />
-</body>
+            <!-- 안내 설명 문구 -->
+            <p
+              class="house-coming-desc"
+              data-motion="fade-up"
+              data-motion-delay="0.2"
+            >
+              We are preparing Ronald McDonald House: Yeonhui so that more child patients and their families can be together.<br />
+              Opening schedules and guidelines for use will be announced on our website in the future.
+            </p>
 
+            <!-- 현재 운영중인 하우스 카드 -->
+            <div
+              class="house-coming-card"
+              data-motion="fade-up"
+              data-motion-delay="0.3"
+            >
+              <p class="house-coming-card__label">Currently Operating House</p>
+              <a href="/en/houses/yangsan.html" class="house-coming-btn">
+                <img
+                  src="/src/images/main/icon_section1_text_2.svg"
+                  alt=""
+                  class="house-coming-btn__icon"
+                />
+                <span class="house-coming-btn__text"
+                  >Ronald McDonald House<br class="type-mo" />
+                  Yangsan</span
+                >
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- 푸터 공통 영역 인클루드 -->
+    <load src="/includes/footer_en.html" />
+  </body>
 </html>

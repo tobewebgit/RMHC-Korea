@@ -21,7 +21,7 @@
 
     <load src="/includes/header_en.html" />
 
-    <div class="page-wrapper house-page">
+    <div class="page-wrapper">
       <main id="main-content">
         <section class="house-hero" aria-labelledby="houseHeroTitle">
           <picture class="house-hero__image">
@@ -142,11 +142,13 @@
               class="story-slider__btn story-slider__btn--next"
               aria-label="Next story"
             ></button>
-            <div class="story-slider__pagination"></div>
+            <div
+              class="story-slider__pagination motion-swiper-pagination swiper-pagination"
+            ></div>
           </div>
         </section>
 
-        <section class="house-section house-value" aria-labelledby="valueTitle">
+        <section class="house-value" aria-labelledby="valueTitle">
           <div class="house-value__inner">
             <div class="house-value__layout inner-layout">
               <div class="house-value__image" data-motion="fade-up">
@@ -225,7 +227,7 @@
               The numbers behind the miracles<br />we created together with the
               families
             </h2>
-            <p>
+            <p class="space-12">
               Thanks to the generous support of our sponsors and partners, the
               House provided comfort and a sense of everyday life for families
               of seriously ill children.
@@ -283,16 +285,13 @@
           </p>
         </section>
 
-        <section
-          class="house-section house-gallery"
-          aria-labelledby="galleryTitle"
-        >
+        <section class="house-gallery" aria-labelledby="galleryTitle">
           <div class="house-section__head" data-motion="fade-up">
             <h2 id="galleryTitle">
               Introducing Ronald McDonald House: Yangsan,<br />a place filled
               with childrens laughter and family happiness
             </h2>
-            <p>
+            <p class="space-12">
               The Ronald McDonald House is designed to provide families of sick
               children with the comfort of home.
             </p>
@@ -367,44 +366,9 @@
             </div>
           </div>
           <div class="gallery-view swiper js-house-gallery">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="/src/images/houses/gallery_yangsan_tab1_1.jpg"
-                  alt="Ronald McDonald House: Yangsan Living Room"
-                  width="1440"
-                  height="810"
-                />
-              </div>
-            </div>
+            <div class="swiper-wrapper"></div>
           </div>
-          <div class="gallery-thumbs" aria-label="Gallery thumbnails">
-            <button
-              type="button"
-              class="gallery-thumb is-active"
-              aria-label="1st image view"
-              aria-current="true"
-            >
-              <img
-                src="/src/images/houses/gallery_yangsan_tab1_1.jpg"
-                alt=""
-                width="144"
-                height="81"
-              />
-            </button>
-            <button
-              type="button"
-              class="gallery-thumb"
-              aria-label="2nd image view"
-            >
-              <img
-                src="/src/images/houses/gallery_yangsan_tab1_2.jpg"
-                alt=""
-                width="144"
-                height="81"
-              />
-            </button>
-          </div>
+          <div class="gallery-thumbs" aria-label="Gallery thumbnails"></div>
         </section>
 
         <section class="house-partner" aria-labelledby="partnerTitle">

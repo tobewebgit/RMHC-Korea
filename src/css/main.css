@@ -794,6 +794,16 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
   white-space: nowrap;
 }
 
+html[lang="en"] .main-notice__list strong {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-height: 1.35;
+}
+
 .main-notice__list time {
   color: #222;
   font-size: 1.8rem;
@@ -1178,8 +1188,8 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
-    width: fit-content;
-    max-width: 100%;
+    width: 100%;
+    max-width: 34rem;
     margin: 4.8rem auto 0;
   }
 
@@ -1213,9 +1223,11 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
     grid-column: 2;
     margin-top: 0.6rem;
     font-size: 1.6rem;
-
+    line-height: 1.35;
     text-align: left;
-    white-space: nowrap;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   .main-events {
@@ -1410,7 +1422,7 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
   }
 
   .main-notice__list {
-    margin: 5.2rem 0 4.8rem;
+    margin: 4rem 0 4.8rem;
   }
 
   .main-notice__list a {
@@ -1426,7 +1438,7 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
   .main-notice__list time {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    margin-top: 0rem;
+    margin-top: 0.8rem;
     font-size: 1.2rem;
   }
 
