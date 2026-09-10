@@ -8,6 +8,15 @@ let alertCallback = null;
 let confirmCallback = null;
 let cancelCallback = null;
 
+// 현재 페이지가 영문인지 판별
+function isEnglishPage() {
+  return (
+    document.documentElement.lang === 'en' ||
+    window.location.pathname.startsWith('/en/') ||
+    window.location.pathname === '/en'
+  );
+}
+
 export function initAlert() {
   const modal = document.getElementById('modal-common-alert');
   if (!modal) return;
@@ -15,6 +24,19 @@ export function initAlert() {
   const closeBtn = document.getElementById('btn-common-alert-close');
   const cancelBtn = document.getElementById('btn-common-alert-cancel');
   const confirmBtn = document.getElementById('btn-common-alert-confirm');
+
+  // 영문 페이지일 경우 초기 기본 텍스트 및 aria-label 적용
+  if (isEnglishPage()) {
+    if (closeBtn) closeBtn.setAttribute('aria-label', 'Close');
+    if (cancelBtn) {
+      const cancelSpan = cancelBtn.querySelector('span');
+      if (cancelSpan) cancelSpan.innerText = 'Cancel';
+    }
+    if (confirmBtn) {
+      const confirmSpan = confirmBtn.querySelector('span');
+      if (confirmSpan) confirmSpan.innerText = 'OK';
+    }
+  }
 
   // X 닫기 버튼 (기본 동작: 콜백 없이 닫거나 cancel 콜백 실행)
   if (closeBtn) {
@@ -51,8 +73,8 @@ export function initAlert() {
  * @param {string} [options.type='alert'] - 'alert' 또는 'confirm'
  * @param {string} options.title - 모달 제목 (필요 시)
  * @param {string} options.message - 모달 메시지 (줄바꿈 시 <br> 사용 가능)
- * @param {string} [options.confirmText='확인'] - 확인 버튼 텍스트
- * @param {string} [options.cancelText='취소하기'] - 취소 버튼 텍스트 (confirm일 경우)
+ * @param {string} [options.confirmText] - 확인 버튼 텍스트 (생략 시 언어별 기본값 '확인' 또는 'OK'/'Confirm')
+ * @param {string} [options.cancelText] - 취소 버튼 텍스트 (생략 시 언어별 기본값 '취소하기' 또는 'Cancel')
  * @param {Function} [options.onConfirm] - 확인 버튼 클릭 시 콜백
  * @param {Function} [options.onCancel] - 취소 버튼 또는 X 버튼 클릭 시 콜백
  */
@@ -63,12 +85,16 @@ export function showAlert(options = {}) {
     return;
   }
 
+  const isEn = isEnglishPage();
+  const defaultConfirm = isEn ? (options.type === 'confirm' ? 'Confirm' : 'OK') : '확인';
+  const defaultCancel = isEn ? 'Cancel' : '취소하기';
+
   const {
     type = 'alert',
     title = '',
     message = '',
-    confirmText = '확인',
-    cancelText = '취소하기',
+    confirmText = defaultConfirm,
+    cancelText = defaultCancel,
     onConfirm = null,
     onCancel = null,
     className = '',

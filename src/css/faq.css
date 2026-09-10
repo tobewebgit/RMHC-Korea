@@ -15,6 +15,10 @@
   font-size: 3.6rem;
 }
 
+html[lang="en"] .faq-container .page-title {
+  font-size: 5.8rem;
+}
+
 /* 1. FAQ 탭 메뉴 커스텀 스타일 */
 .faq-tab-menu {
   margin-bottom: 4rem;
@@ -35,6 +39,10 @@
   border: none;
   cursor: pointer;
   position: relative;
+}
+
+html[lang="en"] .faq-tab-menu .tab-btn {
+  font-size: 2.2rem;
 }
 
 .faq-tab-menu .tab-btn:hover {
@@ -185,6 +193,10 @@
     font-size: 2.2rem;
   }
 
+  html[lang="en"] .faq-container .page-title {
+    font-size: 2.8rem;
+  }
+
   .faq-tab-menu {
     margin-left: -2.4rem;
     margin-right: -2.4rem;
@@ -217,6 +229,10 @@
     white-space: nowrap;
   }
 
+  html[lang="en"] .faq-tab-menu .tab-btn {
+    font-size: 1.8rem;
+  }
+
   .faq-q {
     padding: 2rem 0;
     flex-wrap: nowrap;
@@ -233,6 +249,10 @@
     flex: 1;
   }
 
+  html[lang="en"] .faq-q-text {
+    font-size: 2.2rem;
+  }
+
   .faq-toggle-btn {
     width: 2.4rem;
     height: 2.4rem;
@@ -246,5 +266,9 @@
 
   .faq-a-text {
     font-size: 1.4rem;
+  }
+
+  html[lang="en"] .faq-a-text {
+    font-size: 2rem;
   }
 }

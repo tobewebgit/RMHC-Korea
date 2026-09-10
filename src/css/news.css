@@ -97,9 +97,15 @@
   flex-shrink: 0;
 }
 
+.notice-item .notice-title.has-megaphone::before,
 .notice-item .notice-megaphone {
+  content: "";
+  display: inline-block;
   width: 2.4rem;
   height: 2.4rem;
+  background: url("/src/images/common/icon_megaphone.svg") no-repeat center /
+    contain;
+  vertical-align: -0.3rem;
   margin-right: 0.8rem;
   flex-shrink: 0;
 }
@@ -278,18 +284,29 @@
   height: 2.1rem;
   margin-left: 1rem;
   flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .detail-header .detail-title {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
+  display: block;
   font-size: 3.6rem;
+  line-height: 1.35;
   margin: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
+.detail-header .detail-title.has-megaphone::before,
 .detail-header .detail-title .notice-megaphone {
+  content: "";
+  display: inline-block;
   width: 3.2rem;
+  height: 3.2rem;
+  background: url("/src/images/common/icon_megaphone.svg") no-repeat center /
+    contain;
+  vertical-align: -0.5rem;
+  margin-right: 1.4rem;
+  flex-shrink: 0;
 }
 
 .detail-header .detail-date {
@@ -518,12 +535,16 @@
     text-align: left;
   }
 
+  .notice-item .notice-title.has-megaphone::before,
   .notice-item .notice-megaphone {
+    content: "";
     width: 2.2rem;
     height: 2.2rem;
     margin-right: 0.6rem;
     display: inline-block;
     vertical-align: -0.3rem;
+    background: url("/src/images/common/icon_megaphone.svg") no-repeat center /
+      contain;
   }
 
   .notice-item .notice-title {
@@ -591,7 +612,7 @@
 
   .activity-card .card-text-wrap {
     padding: 2.4rem;
-    gap: 4rem;
+    gap: 1.6rem;
     text-align: left;
   }
 
@@ -648,16 +669,21 @@
   }
 
   .detail-header .detail-title {
-    align-items: flex-start;
-    gap: 0.8rem;
+    display: block;
     font-size: 2.2rem;
+    line-height: 1.35;
     text-align: left;
   }
 
+  .detail-header .detail-title.has-megaphone::before,
   .detail-header .detail-title .notice-megaphone {
-    display: block;
-    width: 2.4rem;
-    margin-bottom: 0.8rem;
+    display: inline-block;
+    width: 2.2rem;
+    height: 2.2rem;
+    vertical-align: -0.35rem;
+    margin-right: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .detail-header .detail-date {

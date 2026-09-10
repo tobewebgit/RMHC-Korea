@@ -43,6 +43,9 @@
   margin: 2.4rem auto 0;
   font-size: 1.8rem;
 }
+html[lang="en"] .house-section__head p {
+  font-size: 2rem;
+}
 
 .house-btn {
   display: inline-flex;
@@ -55,6 +58,9 @@
   border-radius: 1.6rem;
   font-size: 1.8rem;
   line-height: 1;
+}
+html[lang="en"] .house-btn {
+  font-size: 2.2rem;
 }
 
 .house-btn::before {
@@ -141,6 +147,9 @@ html[lang="en"] .house-hero__panel {
   margin: 2.4rem 0 0;
   font-size: 2rem;
   color: #fffde9;
+}
+html[lang="en"] .house-hero__panel p {
+  font-size: 2.2rem;
 }
 
 .house-hero__panel .btn {
@@ -233,6 +242,9 @@ html[lang="en"] .house-hero__panel {
 .story-card p {
   margin: 2.4rem 0 0;
   font-size: 1.8rem;
+}
+html[lang="en"] .story-card p {
+  font-size: 2rem;
 }
 
 .story-slider__btn {
@@ -362,6 +374,9 @@ html[lang="en"] .house-hero__panel {
   margin: 2.4rem 0 0;
   font-size: 1.8rem;
 }
+html[lang="en"] .value-list p {
+  font-size: 2.2rem;
+}
 
 /* Impact */
 .house-impact {
@@ -397,6 +412,9 @@ html[lang="en"] .house-hero__panel {
   margin-top: 0.8rem;
   font-weight: 700;
   font-size: 2.4rem;
+}
+html[lang="en"] .impact-list span {
+  font-size: 2rem;
 }
 
 /* Gallery */
@@ -590,6 +608,9 @@ html[lang="en"] .house-hero__panel {
   font-size: 2.8rem;
   font-family: var(--font-display);
 }
+html[lang="en"] .apply-steps strong {
+  min-height: 6.8rem;
+}
 
 .apply-steps p {
   margin: 1.6rem 0 0;
@@ -632,16 +653,15 @@ html[lang="en"] .house-hero__panel {
   margin: 6rem auto 0;
   padding: 0;
   list-style: none;
-  font-size: 2.2rem;
 }
 
 .location-info li {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 39.3rem;
+  max-width: 39.4rem;
   text-align: center;
 }
 
@@ -650,38 +670,40 @@ html[lang="en"] .house-hero__panel {
   display: inline-block;
   width: 4rem;
   height: 4rem;
-  margin-right: 0.8rem;
+  margin-right: 1.2rem;
+  flex-shrink: 0;
 }
 
 .location-info li:nth-child(1)::before {
   background: url("/src/images/houses/icon_location-info_tell.png") no-repeat
     center/contain;
-  background-size: 100%;
 }
 
 .location-info li:nth-child(2)::before {
   background: url("/src/images/houses/icon_location-info_mail.png") no-repeat
     center/contain;
-  background-size: 100%;
 }
 
 .location-info li:nth-child(3)::before {
   background: url("/src/images/houses/icon_location-info_fax.png") no-repeat
     center/contain;
-  background-size: 100%;
 }
 
 .location-info strong {
   margin-right: 0;
   font-family: var(--font-display);
+  font-size: 2.8rem;
+  white-space: nowrap;
 }
 
 .location-info span {
-  display: block;
-  width: 100%;
-  margin-top: 1rem;
-  text-align: center;
-  word-break: break-all;
+  display: inline-block;
+  width: auto;
+  margin-top: 0;
+  margin-left: 2.4rem;
+  font-size: 2.2rem;
+  white-space: nowrap;
+  color: var(--text-gray100);
 }
 
 .location-actions {
@@ -710,9 +732,11 @@ html[lang="en"] .house-hero__panel {
   font-family: var(--font-display);
   font-size: 2.2rem;
   line-height: 1.4;
-
   cursor: pointer;
   list-style: none;
+}
+html[lang="en"] .faq-list summary {
+  font-size: 2.8rem;
 }
 
 .faq-list summary::-webkit-details-marker {
@@ -802,6 +826,9 @@ html[lang="en"] .house-hero__panel {
   margin: 1.6rem 0 3.2rem;
   font-size: 2rem;
 }
+html[lang="en"] .support-card p {
+  min-height: 7.2rem;
+}
 
 .support-card a {
   width: auto;
@@ -825,6 +852,9 @@ html[lang="en"] .house-hero__panel {
   .house-section__head p {
     margin: 2.4rem auto 0;
     font-size: 1.4rem;
+  }
+  html[lang="en"] .house-section__head p {
+    font-size: 1.6rem;
   }
   .house-section__head p.space-12 {
     margin: 1.2rem auto 0;
@@ -897,6 +927,9 @@ html[lang="en"] .house-hero__panel {
     margin-top: 1.2rem;
     font-size: 1.6rem;
     color: var(--text-black);
+  }
+  html[lang="en"] .house-hero__panel p {
+    font-size: 1.6rem;
   }
 
   .house-hero__panel .btn {
@@ -981,6 +1014,9 @@ html[lang="en"] .house-hero__panel {
     font-size: 2rem;
   }
 
+  html[lang="en"] .story-card p {
+    font-size: 1.6rem;
+  }
   .story-card p {
     font-size: 1.4rem;
   }
@@ -1001,6 +1037,7 @@ html[lang="en"] .house-hero__panel {
   }
 
   .house-value__inner {
+    align-items: flex-start;
     width: 31.2rem;
     height: 117.4rem;
     padding: 4rem 2.4rem;
@@ -1009,10 +1046,18 @@ html[lang="en"] .house-hero__panel {
     background: url(/src/images/houses/house_value_bg_mo.svg) 50% 50% / 100%
       100% no-repeat;
   }
+  html[lang="en"] .house-value__inner {
+    height: 141.6rem;
+    background: url(/src/images/houses/house_value_bg_mo_en.svg) 50% 50% / 100%
+      100% no-repeat;
+  }
 
   .house-value__layout {
     grid-template-columns: 1fr;
     gap: 4rem;
+  }
+  html[lang="en"] .house-value__layout {
+    gap: 3rem;
   }
 
   .house-value__image img {
@@ -1030,6 +1075,9 @@ html[lang="en"] .house-hero__panel {
   .value-list {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  html[lang="en"] .value-list {
+    gap: 2.5rem;
   }
 
   .value-list li {
@@ -1056,6 +1104,9 @@ html[lang="en"] .house-hero__panel {
   .value-list p {
     margin-top: 1rem;
     font-size: 1.4rem;
+  }
+  html[lang="en"] .value-list p {
+    font-size: 1.8rem;
   }
 
   /* Impact */
@@ -1089,6 +1140,7 @@ html[lang="en"] .house-hero__panel {
     font-size: 4rem;
   }
 
+  html[lang="en"] .impact-list span,
   .impact-list span {
     margin-top: 0;
     font-size: 1.6rem;
@@ -1123,6 +1175,9 @@ html[lang="en"] .house-hero__panel {
     min-height: 3.2rem;
     padding: 0.8rem 1.6rem;
     font-size: 1.8rem;
+  }
+  html[lang="en"] .gallery-tabs button {
+    font-size: 1.6rem;
   }
 
   .gallery-view {
@@ -1223,6 +1278,9 @@ html[lang="en"] .house-hero__panel {
   .apply-steps strong {
     font-size: 2rem;
   }
+  html[lang="en"] .apply-steps strong {
+    min-height: auto;
+  }
 
   .apply-steps p {
     font-size: 1.4rem;
@@ -1243,31 +1301,52 @@ html[lang="en"] .house-hero__panel {
     width: calc(100% - 4.8rem);
     flex-direction: column;
     align-items: center;
-    gap: 2.4rem;
-    margin-top: 4rem;
-    font-size: 1.4rem;
+    gap: 3.2rem;
+    margin: 4rem auto 0;
+    font-size: 2rem;
   }
 
   .location-info li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: none;
-    justify-content: center;
-    font-size: 1.4rem;
+    font-size: 2rem;
+    text-align: left;
   }
 
   .location-info li::before {
     width: 3.2rem;
     height: 3.2rem;
-    margin-right: 0.6rem;
+    margin-right: 1.2rem;
+    flex-shrink: 0;
   }
 
   .location-info strong {
     margin-right: 0;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+    white-space: nowrap;
+    color: var(--text-gray100);
   }
 
   .location-info span {
-    margin-top: 0.6rem;
+    display: inline-block;
+    width: auto;
+    margin-top: 0;
+    margin-left: 2.4rem;
+    font-size: 2rem;
+    text-align: left;
+    white-space: nowrap;
+    word-break: normal;
+    color: var(--text-gray100);
+  }
+  html[lang="en"] .location-info span {
+    font-size: 1.8rem;
   }
 
   .location-actions {
@@ -1282,6 +1361,9 @@ html[lang="en"] .house-hero__panel {
     min-height: 5.2rem;
     font-size: 1.4rem;
     border-radius: 0.8rem;
+  }
+  html[lang="en"] .location-actions .house-btn {
+    font-size: 1.8rem;
   }
 
   /* FAQ */
@@ -1298,6 +1380,9 @@ html[lang="en"] .house-hero__panel {
     padding: 1.8rem 4rem 1.8rem 0;
     font-size: 1.8rem;
     line-height: 1.4;
+  }
+  html[lang="en"] .faq-list summary {
+    font-size: 2rem;
   }
 
   .faq-list summary::after {
@@ -1345,6 +1430,9 @@ html[lang="en"] .house-hero__panel {
     min-height: auto;
     margin: 1.2rem 0 2.4rem;
     font-size: 1.6rem;
+  }
+  html[lang="en"] .support-card p {
+    min-height: auto;
   }
 
   .support-card--yellow {

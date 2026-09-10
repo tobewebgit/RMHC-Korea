@@ -87,6 +87,9 @@
   padding-left: 2rem;
   margin: 0;
 }
+html[lang="en"] .policy-box-list {
+  font-size: 1.8rem;
+}
 
 .policy-box-list li {
   font-size: 1.8rem;

@@ -7,10 +7,13 @@
 }
 
 .campaign-container .page-title {
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.4rem;
 }
 .campaign-container .page-title + p {
   font-size: 2rem;
+}
+html[lang="en"] .campaign-container .page-title + p {
+  font-size: 2.2rem;
 }
 
 .campaign-container .page-header-wrap {
@@ -210,6 +213,9 @@
 
 .award-desc {
   font-size: 1.8rem;
+}
+html[lang="en"] .award-desc {
+  font-size: 2rem;
 }
 
 .award-slide-wrap {
@@ -642,6 +648,9 @@ html[lang="en"] .kcr-card {
   .campaign-container .page-title + p {
     font-size: 1.6rem;
   }
+  html[lang="en"] .campaign-container .page-title + p {
+    font-size: 1.8rem;
+  }
 
   .campaign-container .img-top-wrap {
     margin-top: 4rem;
@@ -754,8 +763,7 @@ html[lang="en"] .kcr-card {
     grid-template-columns: 1fr;
     gap: 2.4rem;
     max-width: 50rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 4rem auto 0;
   }
 
   .kcr-card {
@@ -768,6 +776,11 @@ html[lang="en"] .kcr-card {
     justify-content: center;
     text-align: center;
     margin: 0 auto;
+  }
+  html[lang="en"] .kcr-card {
+    width: 31.2rem;
+    height: 27rem;
+    padding: 3rem;
   }
 
   .kcr-card-icon {
@@ -967,6 +980,10 @@ html[lang="en"] .kcr-card {
     font-size: 1.4rem;
   }
 
+  html[lang="en"] .award-desc {
+    font-size: 1.6rem;
+  }
+
   .award-badge-wrap {
     top: 1rem;
     left: 0.4rem;
@@ -1054,5 +1071,17 @@ html[lang="en"] .kcr-card {
 
   .campaign-container .campaign-section .btn {
     margin-top: 5rem;
+  }
+
+  .kcr-card--cheer {
+    background-image: url("/src/images/campaign/bg_kcr_1_mo.svg");
+  }
+
+  .kcr-card--hope {
+    background-image: url("/src/images/campaign/bg_kcr_2_mo.svg");
+  }
+
+  .kcr-card--change {
+    background-image: url("/src/images/campaign/bg_kcr_3_mo.svg");
   }
 }
