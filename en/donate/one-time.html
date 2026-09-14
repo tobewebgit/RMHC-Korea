@@ -220,9 +220,48 @@
                     id="chkRecurringWrap"
                     style="display: none"
                   >
-                    <input type="checkbox" id="chkRecurring" checked />
-                    <span>I authorize recurring monthly donations</span>
+                    <input
+                      type="checkbox"
+                      id="chkRecurring"
+                      name="chkRecurring"
+                      required
+                    />
+                    <span>* I authorize recurring monthly donations</span>
                   </label>
+
+                  <!-- Monthly 결제일 선택 영역 (공통 커스텀 셀렉트박스) -->
+                  <div
+                    id="recurringDayArea"
+                    class="recurring-day-wrap"
+                    style="display: none"
+                  >
+                    <div class="form-group form">
+                      <label for="recurringDaySelect" class="form-label"
+                        >Monthly payment day</label
+                      >
+                      <div class="form-field">
+                        <details
+                          class="custom-select selectbox"
+                          id="recurringDaySelect"
+                        >
+                          <summary id="recurringDaySelectLabel">
+                            Select payment day
+                          </summary>
+                          <ul>
+                            <li data-value="05">5th of every month</li>
+                            <li data-value="15">15th of every month</li>
+                            <li data-value="25">25th of every month</li>
+                          </ul>
+                          <input
+                            type="hidden"
+                            name="paymentDay"
+                            id="paymentDay"
+                            value=""
+                          />
+                        </details>
+                      </div>
+                    </div>
+                  </div>
 
                   <label class="custom-checkbox">
                     <input type="checkbox" id="chkAnonymous" />
@@ -254,299 +293,193 @@
                 </div>
               </section>
 
-              <!-- [Monthly 탭 전용 결제 영역] -->
-              <div id="monthlySectionWrap" style="display: none">
-                <section class="common-card accordion-card is-active">
-                  <div class="card-title-wrap">
-                    <h2 class="donate-section-title font-nanum">
-                      Payment method
-                    </h2>
-                  </div>
-                  <div class="card-body">
-                    <div class="en-donate-submit-wrap">
-                      <button type="submit" class="btn btn-primary">
-                        Donate With Card
-                      </button>
-                    </div>
-                  </div>
-                </section>
-              </div>
+              <!-- [카드 3] 카드 정보 (Card Information - Monthly 전용) -->
+              <section
+                id="cardInfoCard"
+                class="common-card accordion-card is-active"
+                style="display: none;"
+              >
+                <div class="card-title-wrap">
+                  <h2 class="donate-section-title font-nanum">
+                    Card Information
+                  </h2>
+                </div>
 
-              <!-- [One-time 탭 전용 결제 영역] -->
-              <div id="oneTimeSectionWrap">
-                <!-- [카드 3] 결제 수단 선택 (Choose your payment method) -->
-                <section
-                  id="step3Card"
-                  class="common-card accordion-card is-active"
-                >
-                  <div class="card-title-wrap">
-                    <h2 class="donate-section-title font-nanum">
-                      Choose your payment method
-                    </h2>
-                  </div>
-
-                  <div class="card-body">
-                    <div class="en-payment-grid">
-                      <button
-                        type="button"
-                        class="btn btn-outline en-payment-btn"
-                        id="btnApplePay"
+                <div class="card-body">
+                  <div class="en-form-card-box">
+                    <!-- Name on card -->
+                    <div class="form-group label-top">
+                      <label for="cardName" class="form-label"
+                        >* Name on card</label
                       >
-                        <img
-                          src="/src/images/common/icon_apple_pay.svg"
-                          alt="Apple Pay"
+                      <div class="form-field">
+                        <input
+                          type="text"
+                          id="cardName"
+                          name="cardName"
+                          class="form-control"
+                          placeholder=""
                         />
-                        <span>Apple Pay</span>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary en-payment-btn is-active"
-                        id="btnDonateCard"
-                      >
-                        <span>Donate With Card</span>
-                      </button>
+                      </div>
                     </div>
-                    <p class="en-payment-note">
-                      Dedicate this donation or send an e-card after checkout.
+
+                    <!-- Card number -->
+                    <div class="form-group label-top">
+                      <label for="cardNumber" class="form-label"
+                        >* Card number</label
+                      >
+                      <div class="form-field card-number-field-wrap">
+                        <input
+                          type="text"
+                          id="cardNumber"
+                          name="cardNumber"
+                          class="form-control"
+                          placeholder="1234 1234 1234 1234"
+                          maxlength="19"
+                        />
+                        <div class="card-brand-icons">
+                          <img
+                            src="/src/images/donate/icon_visa.png"
+                            alt="Visa"
+                          />
+                          <img
+                            src="/src/images/donate/icon_master-card.png"
+                            alt="Mastercard"
+                          />
+                          <img
+                            src="/src/images/donate/icon_jcb.png"
+                            alt="JCB"
+                          />
+                          <img
+                            src="/src/images/donate/icon_amex.png"
+                            alt="AMEX"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Expiration date -->
+                    <div class="form-group label-top">
+                      <label for="cardExp" class="form-label"
+                        >* Expiration date</label
+                      >
+                      <div class="form-field">
+                        <input
+                          type="text"
+                          id="cardExp"
+                          name="cardExp"
+                          class="form-control"
+                          placeholder="MM / YY"
+                          maxlength="7"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- [카드 4] 청구 정보 (Billing Information - 공통) -->
+              <section
+                id="step4Card"
+                class="common-card accordion-card is-active"
+              >
+                <div class="card-title-wrap">
+                  <h2 class="donate-section-title font-nanum">
+                    Billing Information
+                  </h2>
+                </div>
+
+                <div class="card-body">
+                  <h3 class="en-form-card-title">Donor Information</h3>
+                  <div class="en-form-card-box">
+                    <!-- First Name / Last Name -->
+                    <div class="form-row-2col">
+                      <div class="form-group label-top">
+                        <label for="firstName" class="form-label"
+                          >* First Name</label
+                        >
+                        <div class="form-field">
+                          <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            class="form-control"
+                            placeholder=""
+                          />
+                        </div>
+                      </div>
+
+                      <div class="form-group label-top">
+                        <label for="lastName" class="form-label"
+                          >* Last Name</label
+                        >
+                        <div class="form-field">
+                          <input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            class="form-control"
+                            placeholder=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="form-group label-top">
+                      <label for="userEmail" class="form-label"
+                        >* Email</label
+                      >
+                      <div class="form-field">
+                        <input
+                          type="email"
+                          id="userEmail"
+                          name="userEmail"
+                          class="form-control"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                    <p class="en-field-note">
+                      A tax receipt will be emailed to you after your donation.
                     </p>
-                  </div>
-                </section>
 
-                <!-- [카드 4] 청구 정보 (Billing Information) -->
-                <section
-                  id="step4Card"
-                  class="common-card accordion-card is-active"
-                >
-                  <div class="card-title-wrap">
-                    <h2 class="donate-section-title font-nanum">
-                      Billing Information
-                    </h2>
-                  </div>
-
-                  <div class="card-body">
-                    <!-- 1. Information 카드 박스 (형제 1) -->
-                    <h3 class="en-form-card-title">Information</h3>
-                    <div class="en-form-card-box">
-                      <!-- First Name / Last Name -->
-                      <div class="form-row-2col">
-                        <div class="form-group label-top">
-                          <label for="firstName" class="form-label"
-                            >* First Name</label
-                          >
-                          <div class="form-field">
-                            <input
-                              type="text"
-                              id="firstName"
-                              name="firstName"
-                              class="form-control"
-                              placeholder=""
-                            />
-                          </div>
-                        </div>
-
-                        <div class="form-group label-top">
-                          <label for="lastName" class="form-label"
-                            >* Last Name</label
-                          >
-                          <div class="form-field">
-                            <input
-                              type="text"
-                              id="lastName"
-                              name="lastName"
-                              class="form-control"
-                              placeholder=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Email Address -->
-                      <div class="form-group label-top">
-                        <label for="userEmail" class="form-label"
-                          >* Email</label
-                        >
-                        <div class="form-field">
-                          <input
-                            type="email"
-                            id="userEmail"
-                            name="userEmail"
-                            class="form-control"
-                            placeholder=""
-                          />
-                        </div>
-                      </div>
-                      <p class="en-field-note">
-                        A tax receipt will be emailed to you after your
-                        donation.
-                      </p>
-
-                      <!-- Country -->
-                      <div class="form-group label-top">
-                        <label for="countrySelect" class="form-label"
-                          >* Country</label
-                        >
-                        <details
-                          class="custom-select selectbox"
-                          id="countrySelect"
-                        >
-                          <summary>United States</summary>
-                          <ul>
-                            <li data-value="US">United States</li>
-                            <li data-value="KR">Korea, Republic of</li>
-                            <li data-value="CA">Canada</li>
-                            <li data-value="GB">United Kingdom</li>
-                            <li data-value="AU">Australia</li>
-                            <li data-value="JP">Japan</li>
-                          </ul>
-                          <input type="hidden" name="country" value="US" />
-                        </details>
-                      </div>
-
-                      <!-- Postal Code -->
-                      <div class="form-group label-top">
-                        <label for="postalCode" class="form-label"
-                          >* Postal Code</label
-                        >
-                        <div class="form-field">
-                          <input
-                            type="text"
-                            id="postalCode"
-                            name="postalCode"
-                            class="form-control"
-                            placeholder=""
-                          />
-                        </div>
-                      </div>
-
-                      <!-- Phone Number (Optional) -->
-                      <div class="form-group label-top">
-                        <label for="userPhone" class="form-label"
-                          >* Phone Number (Optional)</label
-                        >
-                        <div class="form-field">
-                          <input
-                            type="text"
-                            id="userPhone"
-                            name="userPhone"
-                            class="form-control"
-                            placeholder=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <h3 class="en-form-card-title">Add billing address</h3>
-
-                    <div class="en-form-card-box">
-                      <!-- Address Line 1 -->
-                      <div class="form-group label-top">
-                        <label for="addressLine1" class="form-label"
-                          >* Address Line 1</label
-                        >
-                        <div class="form-field">
-                          <input
-                            type="text"
-                            id="addressLine1"
-                            name="addressLine1"
-                            class="form-control"
-                            placeholder=""
-                          />
-                        </div>
-                      </div>
-
-                      <!-- Address Line 2 -->
-                      <div class="form-group label-top">
-                        <label for="addressLine2" class="form-label"
-                          >* Address Line 2 (Optional)</label
-                        >
-                        <div class="form-field">
-                          <input
-                            type="text"
-                            id="addressLine2"
-                            name="addressLine2"
-                            class="form-control"
-                            placeholder=""
-                          />
-                        </div>
-                      </div>
-
-                      <!-- City / State -->
-                      <div class="form-group label-top">
-                        <label for="city" class="form-label">* City</label>
-                        <div class="form-field">
-                          <input
-                            type="text"
-                            id="city"
-                            name="city"
-                            class="form-control"
-                            placeholder=""
-                          />
-                        </div>
-                      </div>
-
-                      <div class="form-group label-top">
-                        <label for="stateProvince" class="form-label"
-                          >* State / Province</label
-                        >
-                        <div class="form-field">
-                          <input
-                            type="text"
-                            id="stateProvince"
-                            name="stateProvince"
-                            class="form-control"
-                            placeholder=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- 3. Add tax receipt information -->
-                    <div class="en-accordion-wrap" id="taxReceiptAccordion">
-                      <div class="en-accordion-header" id="taxReceiptHeader">
-                        <h3 class="en-form-card-title">
-                          Add tax receipt information
-                        </h3>
-                        <img
-                          src="/src/images/common/icon_nav_arrow_down.svg"
-                          alt="Toggle accordion"
-                          class="en-accordion-arrow"
-                          id="taxAccordionIcon"
-                        />
-                      </div>
-
-                      <div
-                        class="en-accordion-body"
-                        id="taxReceiptBody"
-                        style="display: none; margin-top: 1.6rem"
+                    <!-- Country -->
+                    <div class="form-group label-top">
+                      <label for="countrySelect" class="form-label"
+                        >* Country</label
                       >
-                        <div class="en-form-card-box">
-                          <div class="form-group label-top">
-                            <label for="taxId" class="form-label"
-                              >Tax ID / Business Number</label
-                            >
-                            <div class="form-field">
-                              <input
-                                type="text"
-                                id="taxId"
-                                name="taxId"
-                                class="form-control"
-                                placeholder="Enter your Tax ID or Business Number"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- 4. Donate Now 버튼 -->
-                    <div class="en-donate-submit-wrap">
-                      <button type="submit" class="btn btn-primary">
-                        Donate Now
-                      </button>
+                      <details
+                        class="custom-select selectbox"
+                        id="countrySelect"
+                      >
+                        <summary id="countrySelectLabel">Select Country</summary>
+                        <ul>
+                          <li data-value="US">United States</li>
+                          <li data-value="KR">Korea, Republic of</li>
+                          <li data-value="CA">Canada</li>
+                          <li data-value="GB">United Kingdom</li>
+                          <li data-value="AU">Australia</li>
+                          <li data-value="JP">Japan</li>
+                        </ul>
+                        <input
+                          type="hidden"
+                          name="country"
+                          id="countryInput"
+                          value=""
+                        />
+                      </details>
                     </div>
                   </div>
-                </section>
-              </div>
+
+                  <!-- Donate Now 제출 버튼 (마지막 카드 섹션 내부 하단에 포함) -->
+                  <div class="en-donate-submit-wrap">
+                    <button type="submit" class="btn btn-primary" id="btnDonateNow">
+                      Donate Now
+                    </button>
+                  </div>
+                </div>
+              </section>
             </form>
           </div>
         </div>

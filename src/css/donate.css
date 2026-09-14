@@ -202,6 +202,10 @@
     border-color 0.45s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+html[lang="en"] .accordion-card {
+  overflow: visible;
+}
+
 html[lang="en"] .accordion-card .card-title-wrap {
   cursor: text;
 }
@@ -238,6 +242,7 @@ html[lang="en"] .accordion-card .card-title-wrap {
 
 html[lang="en"] .accordion-card.is-active .card-body {
   max-height: none;
+  overflow: visible;
 }
 
 .accordion-card.is-active .card-body h3,
@@ -431,12 +436,12 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .btn-auth-action.kakao::before {
-  background-image: url('/src/images/common/icon_kakao_pay.svg');
+  background-image: url("/src/images/common/icon_kakao_pay.svg");
 }
 
 .btn-auth-action.kakao.complete::before,
 .btn-auth-action.kakao.is-complete::before {
-  background-image: url('/src/images/common/icon_kakao_check_pay_ok.svg');
+  background-image: url("/src/images/common/icon_kakao_check_pay_ok.svg");
 }
 
 /* 2. 휴대폰 인증 전 아이콘 없음 -> 인증 후 아이콘 있음 */
@@ -454,7 +459,7 @@ html[lang="en"] .accordion-card.is-active .card-body {
 .btn-auth-action.pass.complete::before,
 .btn-auth-action.pass.is-complete::before {
   display: inline-block;
-  background-image: url('/src/images/common/icon_phone_check_pay_ok.svg');
+  background-image: url("/src/images/common/icon_phone_check_pay_ok.svg");
 }
 
 /* 8. 최종 이전 / 후원하기 버튼 */
@@ -1845,6 +1850,75 @@ html[lang="en"] .vol-act-card__title {
   gap: 2rem;
 }
 
+/* 영문 정기 후원 결제일 선택 영역 */
+.recurring-day-wrap {
+  width: 100%;
+}
+
+.recurring-day-wrap .form-group.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.recurring-day-wrap .form-label {
+  width: auto;
+  min-width: 18rem;
+  white-space: nowrap;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-gray90, #1f2937);
+  min-height: 5.2rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.recurring-day-wrap .form-field {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .recurring-day-wrap .form-group.form {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .recurring-day-wrap .form-label {
+    min-height: auto;
+    font-size: 1.4rem;
+  }
+}
+
+/* Card Information 인풋 내 카드사 아이콘 4종 */
+.card-number-field-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.card-number-field-wrap .form-control {
+  padding-right: 14rem;
+}
+
+.card-brand-icons {
+  position: absolute;
+  right: 1.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  pointer-events: none;
+}
+
+.card-brand-icons img {
+  height: 2rem;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
 .en-form-card-box + .en-form-card-title {
   margin-top: 5.2rem;
 }
@@ -1865,7 +1939,6 @@ html[lang="en"] .vol-act-card__title {
   width: 100%;
   min-height: auto;
   text-align: left;
-  font-size: 1.6rem;
 }
 
 .form-group.label-top .form-field {
@@ -1939,6 +2012,7 @@ html[lang="en"] .vol-act-card__title {
 
 .en-donate-submit-wrap {
   width: 100%;
+  margin-top: 5.2rem;
 }
 
 /* ==========================================================================
@@ -1948,6 +2022,23 @@ html[lang="en"] .vol-act-card__title {
   /* ── 1. 기부 신청 페이지 모바일 ── */
   .donate-page {
     padding-top: 11rem;
+  }
+
+  .en-donate-submit-wrap {
+    margin-top: 3.2rem;
+  }
+
+  .card-brand-icons {
+    gap: 0rem;
+  }
+
+  .card-brand-icons img {
+    width: 1.6rem;
+    height: auto;
+  }
+
+  .card-number-field-wrap .form-control {
+    padding-right: 10rem;
   }
 
   .donate-page .apply-wrapper {
@@ -2230,6 +2321,11 @@ html[lang="en"] .vol-act-card__title {
   }
   .receipt-helper__secondary {
     line-height: 1.3;
+  }
+
+  .en-form-card-box {
+    gap: 2.4rem;
+    padding: 2.4rem 1.6rem;
   }
 
   /* 기부금 영수증 신청 여부 */

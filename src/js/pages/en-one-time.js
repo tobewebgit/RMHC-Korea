@@ -1,16 +1,21 @@
 /**
  * RMHC Korea 영문 기부 (en/donate/one-time.html) 단일 페이지 통합 스크립트 모듈
  */
+import { initCustomSelect } from '../components/form-select.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 공통 커스텀 셀렉트박스 초기화
+  initCustomSelect();
+
   // --- 1. 정기 / 일시 후원 최상위 탭 전환 (한 페이지 내 인디케이터 슬라이딩 및 뷰 전환) ---
   const donateTypeTabsWrapper = document.getElementById('donateTypeTabs');
   const btnMonthlyTab = document.getElementById('tabMonthly');
   const btnOneTimeTab = document.getElementById('tabOneTime');
 
   const chkRecurringWrap = document.getElementById('chkRecurringWrap');
-  const monthlySectionWrap = document.getElementById('monthlySectionWrap');
-  const oneTimeSectionWrap = document.getElementById('oneTimeSectionWrap');
+  const chkRecurring = document.getElementById('chkRecurring');
+  const recurringDayArea = document.getElementById('recurringDayArea');
+  const cardInfoCard = document.getElementById('cardInfoCard');
   const chkBusiness = document.getElementById('chkBusiness');
   const businessNameArea = document.getElementById('businessNameArea');
   const businessNameInput = document.getElementById('businessName');
@@ -31,6 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function updateRecurringDayVisibility() {
+    if (!recurringDayArea) return;
+    if (currentTab === 'monthly' && chkRecurring && chkRecurring.checked) {
+      recurringDayArea.style.display = 'block';
+    } else {
+      recurringDayArea.style.display = 'none';
+    }
+  }
+
   function switchTab(type) {
     if (!donateTypeTabsWrapper) return;
 
@@ -47,8 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btnOneTimeTab) btnOneTimeTab.classList.add('disabled');
 
       if (chkRecurringWrap) chkRecurringWrap.style.display = 'flex';
-      if (monthlySectionWrap) monthlySectionWrap.style.display = 'block';
-      if (oneTimeSectionWrap) oneTimeSectionWrap.style.display = 'none';
+      if (cardInfoCard) cardInfoCard.style.display = 'block';
     } else {
       // One-time 탭 활성화 (오른쪽 슬라이딩)
       donateTypeTabsWrapper.classList.add('is-one-time');
@@ -56,11 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btnMonthlyTab) btnMonthlyTab.classList.add('disabled');
 
       if (chkRecurringWrap) chkRecurringWrap.style.display = 'none';
-      if (monthlySectionWrap) monthlySectionWrap.style.display = 'none';
-      if (oneTimeSectionWrap) oneTimeSectionWrap.style.display = 'block';
+      if (recurringDayArea) recurringDayArea.style.display = 'none';
+      if (cardInfoCard) cardInfoCard.style.display = 'none';
     }
 
     updateBusinessNameVisibility();
+    updateRecurringDayVisibility();
   }
 
   if (btnMonthlyTab) {
@@ -79,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 초기 로드 시 탭 활성화 적용
   switchTab(currentTab);
 
-  // --- 3. 금액 선택 칩 & Other 버튼 / 직접 입력 & 6종 헬퍼 박스 동적 제어 ---
+  // --- 2. 금액 선택 칩 & Other 버튼 / 직접 입력 & 6종 헬퍼 박스 동적 제어 ---
   const step1Card = document.getElementById('step1Card');
   const amountGrid = document.getElementById('enAmountGrid');
   const amountChips = amountGrid ? amountGrid.querySelectorAll('.btn:not(#btnOtherAmount)') : [];
@@ -88,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const directAmountInput = document.getElementById('directAmount');
   const helperBoxes = step1Card ? step1Card.querySelectorAll('.notice-yellow-box') : [];
 
-  // 6종 헬퍼 박스 동적 선택 노출 및 숨김 함수 (국문과 동일한 방식)
+  // 6종 헬퍼 박스 동적 선택 노출 및 숨김 함수
   function updateHelperBox(activeIndex) {
     helperBoxes.forEach((box, index) => {
       if (index === activeIndex) {
@@ -104,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   amountChips.forEach((chip, chipIndex) => {
     chip.addEventListener('click', () => {
-      // 모든 금액 칩 및 Other 버튼 비활성화 (btn-outline)
       amountChips.forEach((c) => {
         c.classList.remove('btn-primary');
         c.classList.add('btn-outline');
@@ -120,11 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (directAmountInput) directAmountInput.value = '';
 
-      // 클릭한 칩 활성화 (btn-primary)
       chip.classList.remove('btn-outline');
       chip.classList.add('btn-primary');
 
-      // 1:1 배너 매칭 노출
       updateHelperBox(chipIndex);
     });
   });
@@ -151,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
         autoResizeInput(directAmountInput);
         directAmountInput.focus();
       }
-      // 6번째 헬퍼 배너 (Other/직접입력 매칭 배너) 노출
       updateHelperBox(5);
     });
   }
@@ -171,49 +181,119 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 결제 수단 선택 버튼 토글 (Apple Pay / Credit Card)
-  const paymentBtns = document.querySelectorAll('.en-payment-btn');
-  paymentBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      paymentBtns.forEach((b) => {
-        b.classList.remove('btn-primary', 'is-active');
-        b.classList.add('btn-outline');
-      });
-      btn.classList.remove('btn-outline');
-      btn.classList.add('btn-primary', 'is-active');
+  // --- 3. Recurring Checkbox & Business Name 체크박스 토글 ---
+  if (chkRecurring) {
+    chkRecurring.addEventListener('change', () => {
+      updateRecurringDayVisibility();
     });
-  });
+  }
 
-  // --- 4. Business Name 체크박스 토글 (Monthly 탭에서만 동작) ---
   if (chkBusiness) {
     chkBusiness.addEventListener('change', () => {
       updateBusinessNameVisibility();
     });
   }
 
-  // --- 5. Tax Receipt Accordion Toggle (Billing Information 카드) ---
-  const taxReceiptHeader = document.getElementById('taxReceiptHeader');
-  const taxReceiptBody = document.getElementById('taxReceiptBody');
-  const taxAccordionIcon = document.getElementById('taxAccordionIcon');
+  // --- 4. 카드 번호 및 유효기간 입력 포맷팅 제어 ---
+  const cardNumberInput = document.getElementById('cardNumber');
+  if (cardNumberInput) {
+    cardNumberInput.addEventListener('input', (e) => {
+      let val = e.target.value.replace(/\D/g, '').substring(0, 16);
+      let formatted = val.match(/.{1,4}/g)?.join(' ') || val;
+      e.target.value = formatted;
+    });
+  }
 
-  if (taxReceiptHeader && taxReceiptBody) {
-    taxReceiptHeader.addEventListener('click', () => {
-      const isHidden = taxReceiptBody.style.display === 'none' || getComputedStyle(taxReceiptBody).display === 'none';
-      if (isHidden) {
-        taxReceiptBody.style.display = 'block';
-        if (taxAccordionIcon) taxAccordionIcon.src = '/src/images/common/icon_nav_arrow_up.svg';
+  const cardExpInput = document.getElementById('cardExp');
+  if (cardExpInput) {
+    cardExpInput.addEventListener('input', (e) => {
+      let val = e.target.value.replace(/\D/g, '').substring(0, 4);
+      if (val.length >= 3) {
+        e.target.value = val.substring(0, 2) + ' / ' + val.substring(2);
       } else {
-        taxReceiptBody.style.display = 'none';
-        if (taxAccordionIcon) taxAccordionIcon.src = '/src/images/common/icon_nav_arrow_down.svg';
+        e.target.value = val;
       }
     });
   }
 
-  // --- 6. 폼 제출 기본 방지 ---
+  // --- 5. 폼 제출 처리 및 유효성 검사 ---
   const form = document.getElementById('enDonateForm');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      // Monthly 정기 후원인 경우 유효성 검사
+      if (currentTab === 'monthly') {
+        if (!chkRecurring || !chkRecurring.checked) {
+          alert('Please authorize recurring monthly donations to proceed.');
+          if (chkRecurring) chkRecurring.focus();
+          return;
+        }
+
+        const paymentDayInput = document.getElementById('paymentDay');
+        if (!paymentDayInput || !paymentDayInput.value) {
+          alert('Please select a monthly payment day.');
+          const selectElem = document.getElementById('recurringDaySelect');
+          if (selectElem) {
+            selectElem.setAttribute('open', '');
+            selectElem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          return;
+        }
+
+        const cardName = document.getElementById('cardName');
+        if (cardName && !cardName.value.trim()) {
+          alert('Please enter the name on your card.');
+          cardName.focus();
+          return;
+        }
+
+        const cardNumber = document.getElementById('cardNumber');
+        if (cardNumber && cardNumber.value.replace(/\s/g, '').length < 15) {
+          alert('Please enter a valid card number.');
+          cardNumber.focus();
+          return;
+        }
+
+        const cardExp = document.getElementById('cardExp');
+        if (cardExp && cardExp.value.trim().length < 5) {
+          alert('Please enter the card expiration date (MM / YY).');
+          cardExp.focus();
+          return;
+        }
+      }
+
+      // 공통 Billing Information 유효성 검사
+      const firstName = document.getElementById('firstName');
+      if (firstName && !firstName.value.trim()) {
+        alert('Please enter your first name.');
+        firstName.focus();
+        return;
+      }
+
+      const lastName = document.getElementById('lastName');
+      if (lastName && !lastName.value.trim()) {
+        alert('Please enter your last name.');
+        lastName.focus();
+        return;
+      }
+
+      const userEmail = document.getElementById('userEmail');
+      if (userEmail && !userEmail.value.trim()) {
+        alert('Please enter your email address.');
+        userEmail.focus();
+        return;
+      }
+
+      const countryInput = document.getElementById('countryInput');
+      if (countryInput && !countryInput.value) {
+        alert('Please select your country.');
+        const countrySelect = document.getElementById('countrySelect');
+        if (countrySelect) countrySelect.setAttribute('open', '');
+        return;
+      }
+
+      location.href = '/en/donate/complete.html';
     });
   }
 });

@@ -248,6 +248,10 @@
   margin-bottom: 0.4rem;
 }
 
+.custom-select[open] {
+  z-index: 20;
+}
+
 .custom-select[open] summary {
   border-radius: 0.8rem 0.8rem 0 0;
 }
