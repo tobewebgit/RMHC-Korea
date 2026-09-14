@@ -695,6 +695,7 @@ html[lang="en"] .footer__newsletter-input {
   html[lang="en"] .footer__top {
     width: 31.2rem;
     height: 32.9rem;
+    background: url("../images/common/footer__top_bg_mo_en.svg") 0 0 no-repeat;
   }
 
   .footer__slogan {
