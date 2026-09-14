@@ -1,137 +1,215 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RMHC Korea - 공지" />
+    <title>공지사항 | RMHC Korea</title>
+    <link rel="stylesheet" href="/src/css/common.css" />
+    <link rel="stylesheet" href="/src/css/news.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RMHC Korea - 공지" />
-  <title>공지사항 | RMHC Korea</title>
-  <link rel="stylesheet" href="/src/css/common.css" />
-  <link rel="stylesheet" href="/src/css/news.css" />
-</head>
+  <body>
+    <!-- S: Skip Navigation -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    <!-- E: Skip Navigation -->
 
-<body>
-  <!-- S: Skip Navigation -->
-  <a href="#main-content" class="skip-nav">Skip to main content</a>
-  <!-- E: Skip Navigation -->
+    <!-- 헤더 공통 영역 인클루드 -->
+    <load src="/includes/header_en.html" />
 
-  <!-- 헤더 공통 영역 인클루드 -->
-  <load src="/includes/header_en.html" />
-
-  <div class="page-wrapper">
-    <main id="main-content">
-      <div class="inner-container">
-        <!-- KV 영역 -->
-        <section class="page-kv">
-          <div class="kv-img-wrap">
-            <picture>
-              <source media="(max-width: 768px)" srcset="/src/images/news/img_notice_kv_mo.png" />
-              <img src="/src/images/news/img_notice_kv.png" alt="" fetchpriority="high" />
-            </picture>
-          </div>
-          <div class="kv-text-wrap">
-            <h1 class="kv-title" data-motion="fade-up">Notice</h1>
-            <p class="kv-desc" data-motion="fade-up">
-              Explore the Foundation's latest news and updates
-              <br class="type-pc" />
-              as we work toward a better tomorrow.
-            </p>
-          </div>
-        </section>
-
-        <!-- 리스트 및 검색/페이지네이션 컨테이너 -->
-        <div class="notice-list-container page-container inner-layout">
-          <div class="news-list-header" data-motion="fade-up">
-            <p class="list-total">Total <span>8</span>Posts</p>
-            <div class="search-field">
-              <input type="text" class="search-input" placeholder="Search" aria-label="Search" />
-              <button type="button" class="search-btn" aria-label="Search"></button>
+    <div class="page-wrapper">
+      <main id="main-content">
+        <div class="inner-container">
+          <!-- KV 영역 -->
+          <section class="page-kv">
+            <div class="kv-img-wrap">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="/src/images/news/img_notice_kv_mo.png"
+                />
+                <img
+                  src="/src/images/news/img_notice_kv.png"
+                  alt=""
+                  fetchpriority="high"
+                />
+              </picture>
             </div>
-          </div>
-
-          <!-- 공지 리스트 -->
-          <div class="notice-list" data-motion="fade-up">
-            <!-- Item 1 -->
-            <a href="/en/news/notice/detail.html" class="notice-item">
-              <div class="notice-left">
-                <h3 class="notice-title has-megaphone">
-                  <span>Announcements of the winners of the 11th Woolim Writing Contest</span>
-                  <img src="/src/images/common/icon_badge_new.png" alt="New" class="notice-new-badge" />
-                </h3>
-              </div>
-              <div class="notice-right">
-                <span class="notice-date">2025-10-02</span>
-                <img src="/src/images/common/icon_arrow_right.png" alt="" class="notice-arrow" width="22" height="16" />
-              </div>
-            </a>
-
-            <!-- Item 2 -->
-            <a href="/en/news/notice/detail.html" class="notice-item">
-              <div class="notice-left">
-                <h3 class="notice-title">
-                  <span>11th Woolim Writing Contest Notice</span>
-                  <img src="/src/images/common/icon_badge_new.png" alt="New" class="notice-new-badge" />
-                </h3>
-              </div>
-              <div class="notice-right">
-                <span class="notice-date">2025-04-23</span>
-                <img src="/src/images/common/icon_arrow_right.png" alt="" class="notice-arrow" width="22" height="16" />
-              </div>
-            </a>
-
-            <!-- Item 3 -->
-            <a href="/en/news/notice/detail.html" class="notice-item">
-              <div class="notice-left">
-                <h3 class="notice-title">
-                  <span>Announcements of the Winners of the 10th Woolim writing contest results</span>
-                  <img src="/src/images/common/icon_badge_new.png" alt="New" class="notice-new-badge" />
-                </h3>
-              </div>
-              <div class="notice-right">
-                <span class="notice-date">2024-10-11</span>
-                <img src="/src/images/common/icon_arrow_right.png" alt="" class="notice-arrow" width="22" height="16" />
-              </div>
-            </a>
-
-            <!-- Item 4 -->
-            <a href="/en/news/notice/detail.html" class="notice-item">
-              <div class="notice-left">
-                <h3 class="notice-title">
-                  <span>10th Woolim Writing contest notice</span>
-                  <img src="/src/images/common/icon_badge_new.png" alt="New" class="notice-new-badge" />
-                </h3>
-              </div>
-              <div class="notice-right">
-                <span class="notice-date">2025-04-23</span>
-                <img src="/src/images/common/icon_arrow_right.png" alt="" class="notice-arrow" width="22" height="16" />
-              </div>
-            </a>
-          </div>
-
-          <!-- 페이지네이션 (마이페이지 공통 코드 재사용) -->
-          <div class="pagination" data-motion="fade-up">
-            <div class="page-group-arrow">
-              <button type="button" class="page-btn page-arrow page-first" aria-label="First page"></button>
-              <button type="button" class="page-btn page-arrow page-prev" aria-label="Previous page"></button>
+            <div class="kv-text-wrap">
+              <h1 class="kv-title" data-motion="fade-up">Notice</h1>
+              <p class="kv-desc" data-motion="fade-up">
+                Explore the Foundation's latest news and updates
+                <br class="type-pc" />
+                as we work toward a better tomorrow.
+              </p>
             </div>
-            <div class="page-group-numbers">
-              <button type="button" class="page-btn active"><span>1</span></button>
-              <button type="button" class="page-btn">2</button>
-              <button type="button" class="page-btn">3</button>
-              <button type="button" class="page-btn">4</button>
-              <button type="button" class="page-btn">5</button>
+          </section>
+
+          <!-- 리스트 및 검색/페이지네이션 컨테이너 -->
+          <div class="notice-list-container page-container inner-layout">
+            <div class="news-list-header" data-motion="fade-up">
+              <p class="list-total">Total <span>8</span> Posts</p>
+              <div class="search-field">
+                <input
+                  type="text"
+                  class="search-input"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  type="button"
+                  class="search-btn"
+                  aria-label="Search"
+                ></button>
+              </div>
             </div>
-            <div class="page-group-arrow">
-              <button type="button" class="page-btn page-arrow page-next" aria-label="Next page"></button>
-              <button type="button" class="page-btn page-arrow page-last" aria-label="Last page"></button>
+
+            <!-- 공지 리스트 -->
+            <div class="notice-list" data-motion="fade-up">
+              <!-- Item 1 -->
+              <a href="/en/news/notice/detail.html" class="notice-item">
+                <div class="notice-left">
+                  <h3 class="notice-title has-megaphone">
+                    <span
+                      >Announcements of the winners of the 11th Woolim Writing
+                      Contest</span
+                    >
+                    <img
+                      src="/src/images/common/icon_badge_new.png"
+                      alt="New"
+                      class="notice-new-badge"
+                    />
+                  </h3>
+                </div>
+                <div class="notice-right">
+                  <span class="notice-date">2025-10-02</span>
+                  <img
+                    src="/src/images/common/icon_arrow_right.png"
+                    alt=""
+                    class="notice-arrow"
+                    width="22"
+                    height="16"
+                  />
+                </div>
+              </a>
+
+              <!-- Item 2 -->
+              <a href="/en/news/notice/detail.html" class="notice-item">
+                <div class="notice-left">
+                  <h3 class="notice-title">
+                    <span>11th Woolim Writing Contest Notice</span>
+                    <img
+                      src="/src/images/common/icon_badge_new.png"
+                      alt="New"
+                      class="notice-new-badge"
+                    />
+                  </h3>
+                </div>
+                <div class="notice-right">
+                  <span class="notice-date">2025-04-23</span>
+                  <img
+                    src="/src/images/common/icon_arrow_right.png"
+                    alt=""
+                    class="notice-arrow"
+                    width="22"
+                    height="16"
+                  />
+                </div>
+              </a>
+
+              <!-- Item 3 -->
+              <a href="/en/news/notice/detail.html" class="notice-item">
+                <div class="notice-left">
+                  <h3 class="notice-title">
+                    <span
+                      >Announcements of the Winners of the 10th Woolim writing
+                      contest results</span
+                    >
+                    <img
+                      src="/src/images/common/icon_badge_new.png"
+                      alt="New"
+                      class="notice-new-badge"
+                    />
+                  </h3>
+                </div>
+                <div class="notice-right">
+                  <span class="notice-date">2024-10-11</span>
+                  <img
+                    src="/src/images/common/icon_arrow_right.png"
+                    alt=""
+                    class="notice-arrow"
+                    width="22"
+                    height="16"
+                  />
+                </div>
+              </a>
+
+              <!-- Item 4 -->
+              <a href="/en/news/notice/detail.html" class="notice-item">
+                <div class="notice-left">
+                  <h3 class="notice-title">
+                    <span>10th Woolim Writing contest notice</span>
+                    <img
+                      src="/src/images/common/icon_badge_new.png"
+                      alt="New"
+                      class="notice-new-badge"
+                    />
+                  </h3>
+                </div>
+                <div class="notice-right">
+                  <span class="notice-date">2025-04-23</span>
+                  <img
+                    src="/src/images/common/icon_arrow_right.png"
+                    alt=""
+                    class="notice-arrow"
+                    width="22"
+                    height="16"
+                  />
+                </div>
+              </a>
+            </div>
+
+            <!-- 페이지네이션 (마이페이지 공통 코드 재사용) -->
+            <div class="pagination" data-motion="fade-up">
+              <div class="page-group-arrow">
+                <button
+                  type="button"
+                  class="page-btn page-arrow page-first"
+                  aria-label="First page"
+                ></button>
+                <button
+                  type="button"
+                  class="page-btn page-arrow page-prev"
+                  aria-label="Previous page"
+                ></button>
+              </div>
+              <div class="page-group-numbers">
+                <button type="button" class="page-btn active">
+                  <span>1</span>
+                </button>
+                <button type="button" class="page-btn">2</button>
+                <button type="button" class="page-btn">3</button>
+                <button type="button" class="page-btn">4</button>
+                <button type="button" class="page-btn">5</button>
+              </div>
+              <div class="page-group-arrow">
+                <button
+                  type="button"
+                  class="page-btn page-arrow page-next"
+                  aria-label="Next page"
+                ></button>
+                <button
+                  type="button"
+                  class="page-btn page-arrow page-last"
+                  aria-label="Last page"
+                ></button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
-  </div>
+      </main>
+    </div>
 
-  <load src="/includes/footer_en.html" />
-</body>
-
+    <load src="/includes/footer_en.html" />
+  </body>
 </html>

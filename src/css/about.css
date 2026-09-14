@@ -201,7 +201,7 @@ html[lang="en"] .about-vision-kv__panel p {
   display: grid;
   grid-template-columns: 62rem minmax(0, 1fr);
   gap: 8rem;
-  align-items: start;
+  align-items: center;
 }
 
 .history-image {
@@ -228,7 +228,7 @@ html[lang="en"] .about-vision-kv__panel p {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 3.05rem 0;
+  padding: 2.4rem 0;
   gap: 3.2rem;
   font-family: var(--font-display);
   font-size: 2.2rem;
@@ -262,10 +262,13 @@ html[lang="en"] .about-vision-kv__panel p {
 }
 
 .history-panel {
-  max-height: 25rem;
+  max-height: 30rem;
   margin: 2.4rem 0 0;
   padding: 0 2.4rem;
   overflow-y: auto;
+}
+html[lang="en"] .history-panel {
+  max-height: 25rem;
 }
 
 .history-panel::-webkit-scrollbar {
@@ -596,6 +599,9 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
 .about-symbol p {
   margin: 3.2rem 0 0;
   font-size: 1.8rem;
+}
+html[lang="en"] .about-symbol p {
+  font-size: 2rem;
 }
 
 .symbol-buttons {
@@ -1033,6 +1039,9 @@ html[lang="en"] .map-pin--yangsan .inner-heart {
     order: 2;
     margin-top: 2.4rem;
     font-size: 1.4rem;
+  }
+  html[lang="en"] .about-symbol p {
+    font-size: 1.6rem;
   }
 
   .symbol-logo {

@@ -25,9 +25,7 @@
 .news-list-header .search-field {
   position: relative;
   width: 36rem;
-  /* 360px */
   height: 5.2rem;
-  /* 52px */
 }
 
 .news-list-header .search-input {
@@ -37,10 +35,11 @@
   border: 1px solid #bbbbbb;
   border-radius: var(--radius-sm);
   font-size: 1.8rem;
-  /* 18px */
-
   outline: none;
   box-sizing: border-box;
+}
+html[lang="en"] .news-list-header .search-input {
+  font-size: 1.6rem;
 }
 
 .news-list-header .search-input::placeholder {

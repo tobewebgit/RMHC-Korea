@@ -704,17 +704,12 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .vol-kv__panel {
-  width: 91.4rem;
-  height: 53.2rem;
+  width: 105rem;
   padding: 8rem;
   color: #fffde9;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-html[lang="en"] .vol-kv__panel {
-  height: 69.1rem;
 }
 
 .vol-kv__panel h1 {
@@ -760,6 +755,9 @@ html[lang="en"] .vol-kv__panel {
 .vol-intro__desc {
   font-size: 1.8rem;
 }
+html[lang="en"] .vol-intro__desc {
+  font-size: 2rem;
+}
 
 .vol-intro__slide-wrap {
   flex: 1;
@@ -797,7 +795,7 @@ html[lang="en"] .vol-kv__panel {
 
 .vol-intro-swiper .vol-swiper-prev,
 .vol-intro-swiper .vol-swiper-next {
-  top: 0;
+  top: -0.6rem;
   width: 4rem;
   height: 4rem;
   margin: 0;
@@ -922,6 +920,9 @@ html[lang="en"] .vol-kv__panel {
   background-position: center;
   background-repeat: no-repeat;
   padding: 8rem;
+  max-width: 84.9rem;
+}
+html[lang="en"] .vol-apply__inner {
   max-width: 99.5rem;
 }
 
@@ -943,18 +944,27 @@ html[lang="en"] .vol-kv__panel {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  width: 45.2rem;
+  width: 43.2rem;
   padding: 0 4rem;
   background: none;
 }
+html[lang="en"] .vol-apply__box {
+  width: 45.2rem;
+}
 
 .vol-apply__box:first-child {
-  width: 38rem;
+  width: 29.6rem;
   border-right: 1px dashed #000000;
+}
+html[lang="en"] .vol-apply__box:first-child {
+  width: 38rem;
 }
 
 .vol-apply__box-title {
   font-size: 2.8rem;
+}
+html[lang="en"] .vol-apply__box-title {
+  font-size: 2.2rem;
 }
 
 .vol-apply__list {
@@ -981,7 +991,7 @@ html[lang="en"] .vol-kv__panel {
 
 .vol-apply__list li span {
   display: inline-block;
-  margin-left: 8rem;
+  margin-left: 10rem;
 }
 
 .vol-apply__cta {
@@ -1142,10 +1152,16 @@ html[lang="en"] .vol-act-card__title {
 .vol-process__desc {
   font-size: 1.8rem;
 }
+html[lang="en"] .vol-process__desc {
+  font-size: 2rem;
+}
 
 .vol-process__note {
   font-size: 1.6rem;
   color: #555555;
+}
+html[lang="en"] .vol-process__note {
+  font-size: 1.8rem;
 }
 
 .vol-process__steps {
@@ -1253,6 +1269,9 @@ html[lang="en"] .vol-act-card__title {
 .vol-news__desc {
   font-size: 1.8rem;
 }
+html[lang="en"] .vol-news__desc {
+  font-size: 2rem;
+}
 
 .vol-news__cards {
   display: flex;
@@ -1298,6 +1317,9 @@ html[lang="en"] .vol-act-card__title {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+html[lang="en"] .vol-news-card__title {
+  font-size: 2.8rem;
 }
 
 .vol-news-card:hover .vol-news-card__title {
@@ -2463,6 +2485,13 @@ html[lang="en"] .vol-act-card__title {
   .vol-news__desc {
     font-size: 1.4rem;
   }
+  html[lang="en"] .vol-intro__desc,
+  html[lang="en"] .vol-impact__desc,
+  html[lang="en"] .vol-activities__desc,
+  html[lang="en"] .vol-process__desc,
+  html[lang="en"] .vol-news__desc {
+    font-size: 1.4rem;
+  }
 
   /* KV */
   .vol-kv {
@@ -2629,6 +2658,9 @@ html[lang="en"] .vol-act-card__title {
     color: var(--text-black);
     text-align: center;
   }
+  html[lang="en"] .vol-apply__title {
+    font-size: 2.4rem;
+  }
 
   .vol-apply__box-wrap {
     flex-direction: column;
@@ -2652,6 +2684,10 @@ html[lang="en"] .vol-act-card__title {
     padding-bottom: 2.4rem;
     position: relative;
   }
+  html[lang="en"] .vol-apply__box:first-child,
+  html[lang="en"] .vol-apply__box {
+    width: 100%;
+  }
 
   .vol-apply__box:first-child::after {
     content: "";
@@ -2664,6 +2700,9 @@ html[lang="en"] .vol-act-card__title {
 
   .vol-apply__box-title {
     font-size: 2rem;
+  }
+  html[lang="en"] .vol-apply__box-title {
+    font-size: 1.8rem;
   }
 
   .vol-apply__list {
@@ -2704,6 +2743,9 @@ html[lang="en"] .vol-act-card__title {
   .vol-act-card__title {
     min-height: auto;
     font-size: 2rem;
+  }
+  html[lang="en"] .vol-act-card__title {
+    min-height: auto;
   }
 
   .vol-act-card__desc {

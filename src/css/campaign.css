@@ -666,7 +666,7 @@ html[lang="en"] .kcr-card {
   }
 
   .campaign-container .button-wrap {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 
   .campaign-timeline {
@@ -781,6 +781,9 @@ html[lang="en"] .kcr-card {
     width: 31.2rem;
     height: 27rem;
     padding: 3rem;
+  }
+  html[lang="en"] .kcr-card:nth-child(1) {
+    height: 29.1rem;
   }
 
   .kcr-card-icon {

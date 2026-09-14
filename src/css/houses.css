@@ -1422,17 +1422,17 @@ html[lang="en"] .support-card p {
   }
 
   .support-card h3 {
-    margin-top: 1.6rem;
+    margin-top: 2.4rem;
     font-size: 2rem;
   }
 
   .support-card p {
     min-height: auto;
-    margin: 1.2rem 0 2.4rem;
+    margin: 1.6rem 0 2.4rem;
     font-size: 1.6rem;
   }
   html[lang="en"] .support-card p {
-    min-height: auto;
+    min-height: 5.7rem;
   }
 
   .support-card--yellow {
@@ -1496,7 +1496,7 @@ body:has(.house-coming-section) .footer,
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 80rem;
+  max-width: 93rem;
   margin: 0 auto;
   padding-top: 34rem;
   text-align: center;
@@ -1523,15 +1523,16 @@ body:has(.house-coming-section) .footer,
 .house-coming-badge__text {
   font-family: var(--font-display);
   font-size: 2.2rem;
-
   color: var(--text-gray100);
   line-height: 1;
+}
+html[lang="en"] .house-coming-badge__text {
+  font-size: 2.4rem;
 }
 
 /* Title */
 .house-coming-title {
   font-size: 4.4rem;
-
   color: var(--text-gray100);
   margin-bottom: 2.4rem;
   word-break: keep-all;
@@ -1549,6 +1550,8 @@ body:has(.house-coming-section) .footer,
 /* Card */
 .house-coming-card {
   width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
   background-color: rgba(255, 188, 13, 0.2);
   border-radius: 1.6rem;
   padding: 4rem;
@@ -1567,7 +1570,7 @@ body:has(.house-coming-section) .footer,
   justify-content: center;
   gap: 0.8rem;
   width: 100%;
-  max-width: 38.6rem;
+  max-width: 44.8rem;
   min-height: 8.8rem;
   padding: 2.4rem;
   background-color: #ffbc0d;
@@ -1624,7 +1627,7 @@ body:has(.house-coming-section) .footer,
     background-size: 61rem auto;
   }
   .house-coming-inner {
-    padding-top: 10rem;
+    padding: 10rem 0;
   }
 
   .house-coming-badge {
@@ -1635,6 +1638,7 @@ body:has(.house-coming-section) .footer,
     width: 6rem;
   }
 
+  html[lang="en"] .house-coming-badge__text,
   .house-coming-badge__text {
     font-size: 1.8rem;
   }
@@ -1663,7 +1667,7 @@ body:has(.house-coming-section) .footer,
 
   .house-coming-btn {
     min-height: 5.6rem;
-    padding: 1.2rem 2rem;
+    padding: 1.2rem 1.2rem;
     font-size: 1.6rem;
     gap: 0.8rem;
   }

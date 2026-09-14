@@ -1698,6 +1698,9 @@ html[lang="en"] .page-kv .kv-desc {
     padding: 0 2rem;
     font-size: 1.6rem;
   }
+  html[lang="en"] .page-kv .kv-desc {
+    font-size: 1.6rem;
+  }
 
   .page-container {
     margin-top: 0 !important;
