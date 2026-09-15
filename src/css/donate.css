@@ -2493,6 +2493,10 @@ html[lang="en"] .vol-news-card__title {
     font-size: 1.4rem;
   }
 
+  html[lang="en"] .vol-intro__desc {
+    font-size: 1.6rem;
+  }
+
   /* KV */
   .vol-kv {
     display: flex;

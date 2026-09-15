@@ -836,6 +836,9 @@ html[lang="en"] .about-symbol p {
     padding: 0;
     overflow: visible;
   }
+  html[lang="en"] .history-panel {
+    max-height: none;
+  }
 
   .history-panel dt {
     margin-top: 2.4rem;
@@ -1124,7 +1127,7 @@ html[lang="en"] .partner-kv__text p {
 }
 
 .greetings-message {
-  padding: 20rem 0;
+  padding: 20rem 0 10rem;
 }
 
 .greetings-message__inner {
@@ -1154,7 +1157,7 @@ html[lang="en"] .greetings-message__content h2 {
   font-size: 1.8rem;
 }
 html[lang="en"] .greetings-message__body p {
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 .greetings-message__body p + p {
@@ -1229,7 +1232,7 @@ html[lang="en"] .greetings-message__body p {
   }
 
   .greetings-message {
-    padding: 6rem 0 10rem;
+    padding: 6rem 0 0;
   }
 
   .greetings-message__inner {
@@ -1255,6 +1258,9 @@ html[lang="en"] .greetings-message__body p {
 
   .greetings-message__body p {
     font-size: 1.4rem;
+  }
+  html[lang="en"] .greetings-message__body p {
+    font-size: 1.6rem;
   }
 
   .greetings-message__body p + p {
@@ -1464,6 +1470,9 @@ html[lang="en"] .board-member figcaption p {
 
     color: #666666;
     word-break: keep-all;
+  }
+  html[lang="en"] .board-member figcaption p {
+    font-size: 1.6rem;
   }
 
   .board-member figcaption span {
@@ -1928,6 +1937,9 @@ html[lang="en"] .activity-card p {
   }
   .partner-activity h3.partner-section-title {
     font-size: 2rem;
+  }
+  html[lang="en"] .partner-activity h3.partner-section-title {
+    font-size: 2.2rem;
   }
 
   .about-partner .inner-layout {
@@ -2440,6 +2452,9 @@ html[lang="en"] .donation-use__head p {
 .offline-fund-card__info li {
   padding-left: 1rem;
 }
+html[lang="en"] .offline-fund-card__info li {
+  font-size: 2.2rem;
+}
 .offline-fund-card__info li::before {
   content: "· ";
   position: absolute;
@@ -2750,6 +2765,9 @@ html[lang="en"] .donation-report-table .total dt {
     max-width: 28rem;
     font-size: 1.6rem;
   }
+  html[lang="en"] .transparency-kv__text p {
+    font-size: 1.6rem;
+  }
 
   .finance-report {
     padding: 6rem 0 0;
@@ -2824,6 +2842,9 @@ html[lang="en"] .donation-report-table .total dt {
   .finance-breakdown em {
     font-size: 1.4rem;
   }
+  html[lang="en"] .finance-breakdown em {
+    font-size: 1.8rem;
+  }
 
   .donation-use {
     padding: 10rem 0 0;
@@ -2896,6 +2917,9 @@ html[lang="en"] .donation-report-table .total dt {
   }
   html[lang="en"] .offline-fund-card__info li {
     font-size: 1.8rem;
+  }
+  html[lang="en"] .detail-view-wrap li {
+    font-size: 1.4rem;
   }
   html[lang="en"] .offline-fund-card__info li:last-child {
     flex-direction: column;

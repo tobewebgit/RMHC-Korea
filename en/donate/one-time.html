@@ -297,7 +297,7 @@
               <section
                 id="cardInfoCard"
                 class="common-card accordion-card is-active"
-                style="display: none;"
+                style="display: none"
               >
                 <div class="card-title-wrap">
                   <h2 class="donate-section-title font-nanum">
@@ -390,7 +390,6 @@
                 </div>
 
                 <div class="card-body">
-                  <h3 class="en-form-card-title">Donor Information</h3>
                   <div class="en-form-card-box">
                     <!-- First Name / Last Name -->
                     <div class="form-row-2col">
@@ -427,9 +426,7 @@
 
                     <!-- Email Address -->
                     <div class="form-group label-top">
-                      <label for="userEmail" class="form-label"
-                        >* Email</label
-                      >
+                      <label for="userEmail" class="form-label">* Email</label>
                       <div class="form-field">
                         <input
                           type="email"
@@ -453,7 +450,9 @@
                         class="custom-select selectbox"
                         id="countrySelect"
                       >
-                        <summary id="countrySelectLabel">Select Country</summary>
+                        <summary id="countrySelectLabel">
+                          Select Country
+                        </summary>
                         <ul>
                           <li data-value="US">United States</li>
                           <li data-value="KR">Korea, Republic of</li>
@@ -474,7 +473,19 @@
 
                   <!-- Donate Now 제출 버튼 (마지막 카드 섹션 내부 하단에 포함) -->
                   <div class="en-donate-submit-wrap">
-                    <button type="submit" class="btn btn-primary" id="btnDonateNow">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      id="btnDonateNow"
+                    >
+                      Donate With Card
+                    </button>
+                    <div class="en-donate-submit-wrap">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      id="btnDonateNow"
+                    >
                       Donate Now
                     </button>
                   </div>

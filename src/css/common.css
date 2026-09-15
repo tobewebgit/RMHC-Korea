@@ -734,6 +734,10 @@ html[lang="en"] .footer__newsletter-input {
     height: 4.4rem;
     font-size: 1.4rem;
   }
+  html[lang="en"] .footer__newsletter-input,
+  html[lang="en"] .footer__newsletter-input::placeholder {
+    font-size: 1.2rem;
+  }
 
   .footer__newsletter-btn {
     width: 100%;
