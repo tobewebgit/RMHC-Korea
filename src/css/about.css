@@ -500,8 +500,8 @@ a:hover .house-heart--coming {
 
 .map-pin__heart .icon-heart {
   display: block;
-  width: 2.6rem;
-  height: 2.2rem;
+  width: 1.6rem;
+  height: 1.4rem;
   background: url("/src/images/about/icon_heart_section_5_btn.svg") center /
     contain no-repeat;
   transform-origin: center center;
@@ -514,12 +514,12 @@ a:hover .house-heart--coming {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.25);
+    transform: scale(1.7);
   }
 }
 
 .motion-pulse {
-  animation: motionPulse 1.2s ease-in-out infinite;
+  animation: motionPulse 1s ease-in-out infinite;
 }
 
 .map-pin--inha {

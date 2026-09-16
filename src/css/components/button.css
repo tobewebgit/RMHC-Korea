@@ -65,6 +65,8 @@ a.btn-primary:hover {
   color: #fffde9;
   background-color: var(--primary);
 }
+.btn-page:hover,
+a.btn-page:hover,
 .btn-primary.btn-page:hover,
 a.btn-primary.btn-page:hover {
   color: var(--text-white);

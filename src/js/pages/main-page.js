@@ -47,9 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 0)
       .to(visual, {
         '--kv-heart-mask-size': '100%',
-        duration: 1.35,
+        duration: 0.675,
         ease: 'power2.out',
-      }, '-=0.05');
+      }, '-=0.65');
   };
 
   const initMainQuickMotion = () => {

@@ -599,7 +599,6 @@
 
 .info-input-desc {
   color: var(--text-gray60);
-
   margin-top: 0.2rem;
 }
 
@@ -988,10 +987,10 @@
   max-width: 21rem;
 }
 
-.donate-banner__btn.btn-arrow:hover {
+/* .donate-banner__btn.btn-arrow:hover {
   color: #fffdf0;
   background-color: var(--primary);
-}
+} */
 
 /* 모바일 */
 @media screen and (max-width: 768px) {
