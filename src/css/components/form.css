@@ -65,7 +65,7 @@
   padding: 1.2rem var(--spacing-4);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  font-size: var(--text-lg);
+  font-size: 1.6rem;
   background-color: var(--bg-primary);
 }
 
@@ -814,8 +814,8 @@ ul.form-helper-note.cms-helper {
   .form-control,
   .custom-select summary {
     min-height: 4.4rem;
+    font-size: 1.2rem;
   }
-  .form-control,
   .form-label,
   .payment-form-label,
   .donate-page .form-label,
