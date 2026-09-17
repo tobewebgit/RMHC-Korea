@@ -449,13 +449,13 @@ a:hover .house-heart {
 .house-heart--coming {
   width: 3.1rem;
   height: 2.2rem;
-  background: url("/src/images/common/icon_coming_heart.svg") left / contain
-    no-repeat;
+  background: url("/src/images/common/icon_heart_section_5_btn.svg") left /
+    contain no-repeat;
 }
 
 a:hover .house-heart--coming {
-  background: url("/src/images/common/icon_coming_heart_hover.svg") left /
-    contain no-repeat;
+  background: url("/src/images/common/icon_heart_section_5_btn_hover.svg")
+    left / contain no-repeat;
 }
 
 .korea-map {

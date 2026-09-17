@@ -1388,6 +1388,10 @@ html[lang="en"] .footer__newsletter-input {
   background-size: 1.8rem;
 }
 
+.line-height0 {
+  line-height: 0 !important;
+}
+
 @media (max-width: 768px) {
   .pagination {
     position: relative;

@@ -62,6 +62,25 @@
   font-weight: 600;
 }
 
+.policy-bullet-text {
+  padding-left: 0.9rem;
+  text-indent: -0.9rem;
+}
+
+.policy-num-list {
+  margin-bottom: 3rem;
+}
+
+.policy-num-text {
+  padding-left: 1.8rem;
+  text-indent: -1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.policy-num-text:last-child {
+  margin-bottom: 0;
+}
+
 /* 3. 이메일 무단 수집 거부 전용 스타일 (시안 정밀 동기화: 테두리 없는 회색 면 박스) */
 .policy-lead-text {
   font-size: 2.8rem;
@@ -147,6 +166,21 @@ html[lang="en"] .policy-box-list {
   .policy-text {
     font-size: 1.4rem;
     margin-bottom: 2rem;
+  }
+
+  .policy-bullet-text {
+    padding-left: 0.7rem;
+    text-indent: -0.7rem;
+  }
+
+  .policy-num-list {
+    margin-bottom: 2rem;
+  }
+
+  .policy-num-text {
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+    margin-bottom: 0.6rem;
   }
 
   .policy-lead-text {

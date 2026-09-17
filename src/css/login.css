@@ -1130,7 +1130,7 @@
   }
 
   .form-control-row {
-    min-height: 3rem;
+    min-height: 4.4rem;
   }
 
   .form-check-wrap {
@@ -1643,6 +1643,15 @@
   .join-banner-section {
     width: 100%;
     margin-top: 2rem;
+  }
+
+  .receipt-helper {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .join-card__content .receipt-helper {
+    margin-top: 1.6rem;
   }
 
   /* ==========================================================================
