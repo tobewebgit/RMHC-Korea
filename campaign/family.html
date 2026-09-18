@@ -159,6 +159,11 @@
       if (!paths.length || !heart || rows.length < 3) return;
 
       const offsetAdjustment = 20;
+      const pathDuration = 18;
+      const finalPathRatio = 0.1;
+      const mainPathDuration = pathDuration * (1 - finalPathRatio);
+      const finalPathSpeedFactor = 0.75;
+      const finalPathDuration = pathDuration * finalPathRatio * finalPathSpeedFactor;
 
       paths.forEach(path => {
         const pathLength = path.getTotalLength();
@@ -181,6 +186,13 @@
       });
 
       const startViewportRatio = "85%";
+      const resetLineAtTop = scrollTrigger => {
+        if (window.scrollY > 0) return;
+
+        if (scrollTrigger?.animation) scrollTrigger.animation.progress(0);
+        gsap.set(paths, { opacity: 0 });
+        gsap.set(heart, { scale: 0 });
+      };
 
       const tlLine = gsap.timeline({
         scrollTrigger: {
@@ -189,24 +201,45 @@
           end: "bottom+=300px 90%",
           scrub: 4.5,
           markers: false,
-          onEnter: () => gsap.to(paths, { opacity: 1, duration: 0.2 }),
-          onLeaveBack: () => gsap.to(paths, { opacity: 0, duration: 0.2 })
+          onEnter: () => {
+            if (window.scrollY > 0) gsap.to(paths, { opacity: 1, duration: 0.2 });
+          },
+          onLeaveBack: () => gsap.to(paths, { opacity: 0, duration: 0.2 }),
+          onRefresh: resetLineAtTop,
+          onUpdate: self => {
+            if (window.scrollY <= 0) {
+              resetLineAtTop(self);
+            } else if (self.progress > 0) {
+              gsap.set(paths, { opacity: 1 });
+            }
+          }
         }
       });
 
       paths.forEach(path => {
+        const pathLength = path.getTotalLength();
+        const finalPathStartOffset = pathLength * finalPathRatio + offsetAdjustment;
+
         tlLine.to(path, {
-          strokeDashoffset: 0,
-          duration: 20,
+          strokeDashoffset: finalPathStartOffset,
+          duration: mainPathDuration,
           ease: "none"
         }, 0);
+
+        tlLine.to(path, {
+          strokeDashoffset: 0,
+          duration: finalPathDuration,
+          ease: "none"
+        }, mainPathDuration);
       });
 
       tlLine.to(heart, {
         scale: 1,
-        duration: 0.5,
+        duration: 0.25,
         ease: "back.out(1.7)"
       });
+
+      resetLineAtTop(tlLine.scrollTrigger);
 
       // 3. [단독] 각 타임라인 행(카드 세트)별 개별 리빌 트리거 (화면에 30%가 나타났을 때 개별 격발)
       rows.forEach(row => {

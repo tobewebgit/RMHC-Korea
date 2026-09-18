@@ -247,10 +247,13 @@
 
 .newsletter-modal__desc {
   font-size: 1.8rem;
-
   line-height: 2.7rem;
   color: var(--text-gray90);
   margin: 0;
+}
+
+html[lang="en"] .newsletter-modal__desc {
+  font-size: 2rem;
 }
 
 .newsletter-modal__agreement-box {
@@ -511,13 +514,26 @@
   .newsletter-modal__checkbox-text,
   .newsletter-modal__cta-btn span {
     font-size: 1.4rem;
-    line-height: 2.4rem;
+    line-height: 1.3;
+  }
+  html[lang="en"] .newsletter-modal__desc {
+    font-size: 1.6rem;
   }
 
   .newsletter-modal__agreement-box {
     width: 100%;
     height: auto;
     padding: 2rem 1.6rem;
+  }
+
+  .newsletter-modal__body .newsletter-modal__checkbox-label {
+    position: relative;
+    padding-left: 3rem;
+  }
+  .newsletter-modal__body .newsletter-modal__checkbox-label input {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .newsletter-modal__cta-btn {
@@ -562,5 +578,10 @@
 
   .common-alert__body {
     padding: 2.4rem 0;
+  }
+
+  html[lang="en"] .custom-checkbox,
+  html[lang="en"] .custom-radio {
+    font-size: 1.4rem;
   }
 }

@@ -2455,7 +2455,7 @@ html[lang="en"] .donation-use__head p {
   padding-left: 1rem;
 }
 html[lang="en"] .offline-fund-card__info li {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 .offline-fund-card__info li::before {
   content: "· ";

@@ -164,6 +164,11 @@
   user-select: none;
 }
 
+html[lang="en"] .custom-checkbox,
+html[lang="en"] .custom-radio {
+  font-size: 1.8rem;
+}
+
 .custom-checkbox input[type="checkbox"],
 .custom-radio input[type="radio"] {
   appearance: none;

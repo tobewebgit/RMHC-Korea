@@ -633,7 +633,7 @@ html[lang="en"] .impact-list span {
 .apply-steps li {
   min-height: 33.8rem;
   padding: 6rem 4rem;
-  border-radius: 0.8rem;
+  border-radius: 1.6rem;
   background-color: #ffffff;
 }
 
@@ -1222,7 +1222,7 @@ html[lang="en"] .support-card p {
     font-size: 1.8rem;
   }
   html[lang="en"] .gallery-tabs button {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .gallery-view {

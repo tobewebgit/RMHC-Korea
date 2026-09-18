@@ -968,6 +968,7 @@ html[lang="en"] .main-notice__list time {
   align-items: center;
   gap: 1.6rem;
   padding: 2.4rem;
+  font-size: 1.6rem;
   background-color: #ffffff;
 }
 
@@ -979,7 +980,6 @@ html[lang="en"] .main-notice__list time {
 
 .main-popup__today-close {
   min-height: 5.2rem;
-  font-size: 1.8rem;
 }
 
 /* 모바일 */
