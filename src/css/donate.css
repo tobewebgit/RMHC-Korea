@@ -549,8 +549,6 @@ html[lang="en"] .accordion-card.is-active .card-body {
 }
 
 .form-helper-note {
-  font-size: 1.6rem;
-
   color: var(--text-secondary);
 }
 
@@ -574,8 +572,11 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 /* 설명: Pretendard Regular 22px */
 .goods-header__desc {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   word-break: keep-all;
+}
+html[lang="en"] .goods-header__desc {
+  font-size: 2rem;
 }
 
 .goods-header__mail {
@@ -721,8 +722,11 @@ html[lang="en"] .accordion-card.is-active .card-body {
 
 .vol-kv__panel p {
   margin: 2.4rem 0 0;
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #fffde9;
+}
+html[lang="en"] .vol-kv__panel p {
+  font-size: 2.2rem;
 }
 
 .vol-kv__panel .btn {
@@ -2240,13 +2244,13 @@ html[lang="en"] .vol-news-card__title {
     padding: 0 1rem;
   }
   .direct-input-chip {
-    min-height: 5.2rem;
+    min-height: 4.4rem;
     padding: 0 1.6rem;
     border-radius: 0.8rem;
   }
 
   .direct-input-chip input {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .direct-input-chip .currency-symbol {
@@ -2255,7 +2259,7 @@ html[lang="en"] .vol-news-card__title {
   }
 
   .direct-input-chip .unit {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-left: 0.4rem;
   }
 
@@ -2306,7 +2310,7 @@ html[lang="en"] .vol-news-card__title {
   }
 
   .donate-payment-same {
-    font-size: var(--text-lg);
+    font-size: 1.4rem;
   }
 
   .btn-auth-action::before {
@@ -2387,9 +2391,9 @@ html[lang="en"] .vol-news-card__title {
   }
 
   .donate-page .payment-detail-header .form-subtitle {
-    font-size: 1.6rem !important;
-    font-weight: 700 !important;
-    margin-bottom: 0 !important;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 0;
   }
 
   /* ── 2. 기부 굿즈 페이지 모바일 ── */
@@ -2423,6 +2427,9 @@ html[lang="en"] .vol-news-card__title {
   }
 
   .goods-header__desc {
+    font-size: 1.4rem;
+  }
+  html[lang="en"] .goods-header__desc {
     font-size: 1.6rem;
   }
 

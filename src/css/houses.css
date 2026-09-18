@@ -93,22 +93,31 @@ html[lang="en"] .house-btn {
 /* Hero */
 .house-hero {
   position: relative;
-  min-height: 88rem;
+  min-height: 80rem;
   overflow: hidden;
 }
 
 .house-hero__image {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  max-width: 192rem;
   height: 100%;
   display: block;
+  overflow: hidden;
 }
 
 .house-hero__image img {
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 192rem;
+  min-width: 192rem;
+  max-width: none;
   height: 100%;
-  object-fit: cover;
   object-position: center;
   display: block;
 }
@@ -119,7 +128,7 @@ html[lang="en"] .house-btn {
   display: flex;
   align-items: center;
   max-width: 160rem;
-  min-height: 88rem;
+  min-height: 80rem;
 }
 
 .house-hero__panel {
@@ -319,6 +328,38 @@ html[lang="en"] .story-card p {
 }
 
 @media (max-width: 1440px) {
+  .house-hero {
+    min-height: calc(80rem * (100vw / 1440));
+  }
+
+  .house-hero__content {
+    min-height: calc(80rem * (100vw / 1440));
+  }
+
+  .house-hero__image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .house-hero__image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100vw * (1920 / 1440));
+    min-width: 0;
+    max-width: none;
+    height: 100%;
+    object-position: center;
+    display: block;
+  }
+
   .house-value__inner {
     width: 100%;
     flex-shrink: 1;
@@ -657,7 +698,7 @@ html[lang="en"] .apply-steps strong {
 
 .location-info li {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -670,7 +711,7 @@ html[lang="en"] .apply-steps strong {
   display: inline-block;
   width: 4rem;
   height: 4rem;
-  margin-right: 1.2rem;
+  margin-right: 0.8rem;
   flex-shrink: 0;
 }
 
@@ -697,12 +738,13 @@ html[lang="en"] .apply-steps strong {
 }
 
 .location-info span {
-  display: inline-block;
-  width: auto;
-  margin-top: 0;
-  margin-left: 2.4rem;
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  margin-left: 0;
   font-size: 2.2rem;
-  white-space: nowrap;
+  text-align: center;
+  word-break: break-all;
   color: var(--text-gray100);
 }
 
@@ -890,6 +932,9 @@ html[lang="en"] .support-card p {
   .house-hero__image {
     order: 2;
     position: static;
+    left: auto;
+    transform: none;
+    max-width: none;
     width: 100%;
     height: auto;
     margin-top: 4rem;
@@ -1308,20 +1353,19 @@ html[lang="en"] .support-card p {
 
   .location-info li {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 100%;
     max-width: none;
     font-size: 2rem;
-    text-align: left;
+    text-align: center;
   }
 
   .location-info li::before {
     width: 3.2rem;
     height: 3.2rem;
-    margin-right: 1.2rem;
+    margin-right: 0.8rem;
     flex-shrink: 0;
   }
 
@@ -1335,13 +1379,12 @@ html[lang="en"] .support-card p {
   }
 
   .location-info span {
-    display: inline-block;
-    width: auto;
-    margin-top: 0;
-    margin-left: 2.4rem;
+    display: block;
+    width: 100%;
+    margin-top: 0.8rem;
+    margin-left: 0;
     font-size: 2rem;
-    text-align: left;
-    white-space: nowrap;
+    text-align: center;
     word-break: normal;
     color: var(--text-gray100);
   }

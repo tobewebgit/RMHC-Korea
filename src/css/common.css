@@ -732,10 +732,6 @@ html[lang="en"] .footer__newsletter-input {
   .footer__newsletter-input,
   .footer__newsletter-input::placeholder {
     height: 4.4rem;
-    font-size: 1.4rem;
-  }
-  html[lang="en"] .footer__newsletter-input,
-  html[lang="en"] .footer__newsletter-input::placeholder {
     font-size: 1.2rem;
   }
 
@@ -1391,6 +1387,9 @@ html[lang="en"] .footer__newsletter-input {
 .line-height0 {
   line-height: 0 !important;
 }
+.min-h-auto {
+  min-height: auto;
+}
 
 @media (max-width: 768px) {
   .pagination {
@@ -1708,7 +1707,7 @@ html[lang="en"] .page-kv .kv-desc {
     font-size: 1.6rem;
   }
   html[lang="en"] .page-kv .kv-desc {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .page-container {

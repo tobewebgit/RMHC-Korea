@@ -87,10 +87,11 @@ html[lang="en"] .about-vision-kv__panel {
 
 .about-vision-kv__panel p {
   margin: 2.4rem 0 0;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 html[lang="en"] .about-vision-kv__panel p {
   margin: 2.4rem 0 0;
+  font-size: 2.2rem;
 }
 
 /* Promise */
@@ -1960,11 +1961,12 @@ html[lang="en"] .activity-card p {
   .partner-kv__text p {
     margin-top: 1.6rem;
     padding: 0 2rem;
+    font-size: 1.6rem;
   }
   html[lang="en"] .greetings-kv__text p,
   html[lang="en"] .board-kv__text p,
   html[lang="en"] .partner-kv__text p {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .partner-intro {
@@ -2766,7 +2768,7 @@ html[lang="en"] .donation-report-table .total dt {
     font-size: 1.6rem;
   }
   html[lang="en"] .transparency-kv__text p {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .finance-report {

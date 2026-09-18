@@ -300,6 +300,9 @@
   width: 100%;
   margin-top: 2.4rem;
 }
+.join-section .agree-terms-content {
+  margin-top: 0;
+}
 
 .agreement-all {
   background-color: transparent;
@@ -541,7 +544,7 @@ a.agreement-link:hover {
 
 .receipt-warning-list {
   margin-top: var(--spacing-6);
-  padding-left: var(--spacing-3);
+  /* padding-left: var(--spacing-3); */
 }
 
 .receipt-warning-list li {
@@ -825,9 +828,7 @@ ul.form-helper-note.cms-helper {
   .custom-checkbox,
   .custom-radio,
   .agreement-all .text-lg,
-  .custom-select summary,
   .receipt-warning-list,
-  .form-helper-note,
   .receipt-helper__primary,
   .receipt-helper__secondary,
   .resident-label,
@@ -835,6 +836,7 @@ ul.form-helper-note.cms-helper {
     font-size: 1.4rem;
     line-height: 1;
   }
+  .form-helper-note,
   html[lang="en"] .form-control,
   html[lang="en"] .custom-select summary {
     font-size: 1.2rem;
@@ -980,10 +982,10 @@ ul.form-helper-note.cms-helper {
     flex-shrink: 0;
   }
 
-  .receipt-warning-list {
+  /* .receipt-warning-list {
     margin-top: 1.6rem;
     padding-left: 1.6rem;
-  }
+  } */
 
   .receipt-warning-list li {
     font-size: 1.4rem;

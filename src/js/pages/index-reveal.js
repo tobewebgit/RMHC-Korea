@@ -220,24 +220,24 @@ export function initIndexReveal() {
     }
   };
 
+  const calculateProgress = () => {
+    if (!revealTrigger) return 0;
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    if (scrollY <= 5) return 0;
+
+    const rect = revealTrigger.getBoundingClientRect();
+    const viewHeight = window.innerHeight;
+    const start = viewHeight * 0.90;
+    // 기존 유효 범위(0.90 - 0.10 = 0.80) 대비 30% 단축(0.56)하여 약 30% 빠르게 채워지도록 종료 지점을 0.34로 조정
+    const end = viewHeight * 0.34;
+
+    const progress = (start - rect.top) / (start - end);
+    return Math.max(0, Math.min(1, progress));
+  };
+
   const handleTextScrollReveal = () => {
     if (!revealTrigger) return;
-
-    // 페이지 전체 스크롤이 최상단(0) 근처일 때는 진행률을 강제로 0으로 고정하여 첫 글자조차 켜지지 않도록 함
-    const scrollY = window.scrollY || document.documentElement.scrollTop;
-    let progress = 0;
-    
-    if (scrollY > 5) {
-      const rect = revealTrigger.getBoundingClientRect();
-      const viewHeight = window.innerHeight;
-      const start = viewHeight * 0.90;
-      const end = viewHeight * 0.10; // 종료 지점을 화면 상단 10% 지점으로 설정하여 유효 범위를 약 80% 수준으로 정밀 감속 조율
-
-      progress = (start - rect.top) / (start - end);
-      progress = Math.max(0, Math.min(1, progress));
-    }
-
-    targetProgress = progress;
+    targetProgress = calculateProgress();
 
     if (!rafId) {
       rafId = requestAnimationFrame(tick);
@@ -249,18 +249,7 @@ export function initIndexReveal() {
   
   const handleResize = () => {
     if (!revealTrigger) return;
-    const scrollY = window.scrollY || document.documentElement.scrollTop;
-    let progress = 0;
-    
-    if (scrollY > 5) {
-      const rect = revealTrigger.getBoundingClientRect();
-      const viewHeight = window.innerHeight;
-      const start = viewHeight * 0.90;
-      const end = viewHeight * 0.10;
-      progress = (start - rect.top) / (start - end);
-      progress = Math.max(0, Math.min(1, progress));
-    }
-    
+    const progress = calculateProgress();
     targetProgress = progress;
     currentProgress = progress;
     updateTextReveal(progress);
@@ -270,18 +259,7 @@ export function initIndexReveal() {
   // 초기 1회 즉시 실행
   const initTextReveal = () => {
     if (!revealTrigger) return;
-    const scrollY = window.scrollY || document.documentElement.scrollTop;
-    let progress = 0;
-    
-    if (scrollY > 5) {
-      const rect = revealTrigger.getBoundingClientRect();
-      const viewHeight = window.innerHeight;
-      const start = viewHeight * 0.90;
-      const end = viewHeight * 0.10;
-      progress = (start - rect.top) / (start - end);
-      progress = Math.max(0, Math.min(1, progress));
-    }
-    
+    const progress = calculateProgress();
     targetProgress = progress;
     currentProgress = progress;
     updateTextReveal(progress);

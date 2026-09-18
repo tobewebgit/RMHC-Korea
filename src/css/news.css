@@ -506,11 +506,11 @@ html[lang="en"] .news-list-header .search-input {
 
   .news-list-header .search-field {
     width: 100%;
-    height: 5.2rem;
+    height: 4.4rem;
   }
 
   .news-list-header .search-input {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   /* 3. 공지사항 목록 모바일 */

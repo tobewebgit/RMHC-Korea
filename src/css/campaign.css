@@ -891,16 +891,12 @@ html[lang="en"] .kcr-card {
     font-size: 1.6rem;
   }
 
-  .apply-page .form-field {
-  }
-
-  .apply-page .form-control,
-  .apply-page .custom-select summary,
+  /* .apply-page .form-control,
   .apply-page .helper-text,
   .apply-page .payment-notice-text {
     font-size: 1.6rem;
     text-align: left;
-  }
+  } */
   .apply-page .helper-text {
     font-size: 1.2rem;
   }
