@@ -2805,6 +2805,9 @@ html[lang="en"] .vol-news-card__title {
   .vol-process__note {
     font-size: 1.2rem;
   }
+  html[lang="en"] .vol-process__note {
+    font-size: 1.4rem;
+  }
 
   .vol-process__steps {
     flex-direction: column;

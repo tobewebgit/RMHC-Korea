@@ -24,6 +24,22 @@
   box-shadow: var(--shadow-lg);
 }
 
+/* 비밀번호 재설정 회원 유형 탭 */
+.reset-member-tabs {
+  margin-bottom: var(--spacing-10);
+}
+
+.reset-member-panel[hidden] {
+  display: none;
+}
+
+.reset-member-guide {
+  margin-top: var(--spacing-10);
+  color: var(--text-gray60);
+  font-size: 1.6rem;
+  text-align: center;
+}
+
 .login-logo {
   display: flex;
   justify-content: center;
@@ -1025,6 +1041,11 @@
 
   .login-card {
     padding: 4rem 2.4rem;
+  }
+
+  .reset-member-guide {
+    margin-top: 2.4rem;
+    font-size: 1.2rem;
   }
 
   .btn-social {

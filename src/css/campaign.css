@@ -690,24 +690,33 @@ html[lang="en"] .kcr-card {
     display: block;
     position: absolute;
     width: 36rem;
-    height: 142rem;
-    top: 0;
+    height: 137.7rem;
+    top: 1rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
     overflow: visible;
   }
 
+  html[lang="en"] .campaign-svg-line-wrap {
+    height: 145.5rem;
+  }
+
   .timeline-heart-marker {
     display: block;
     left: auto;
-    right: 16rem;
+    right: 14.4rem;
     top: auto;
-    bottom: 6.2rem;
+    bottom: 2.7rem;
     width: 5.2rem;
     height: 4.5rem;
     z-index: 1;
     transform: scale(0.6);
+  }
+
+  html[lang="en"] .timeline-heart-marker {
+    right: 13.2rem;
+    bottom: 2.8rem;
   }
 
   .timeline-row,
