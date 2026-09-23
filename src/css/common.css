@@ -1562,6 +1562,55 @@ html[lang="en"] .footer__newsletter-input {
   padding: var(--spacing-60);
 }
 
+.content-card + .content-card {
+  margin-top: 4rem;
+}
+
+.content-card.receipt-list .btn-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+.content-card.receipt-list .user-info {
+  height: 5.5rem;
+  margin-bottom: 0;
+  padding: 2rem 1.6rem 0;
+  font-size: 1.8rem;
+  line-height: 1;
+  border-radius: 0.8rem;
+  border: 1px solid var(--border-gray40);
+  background: rgba(208, 201, 255, 0.2);
+}
+
+.content-card.receipt-list .receipt-notice span {
+  display: block;
+}
+.content-card.receipt-list .receipt-notice span:last-child {
+  margin-top: 2.4rem;
+}
+
+@media (max-width: 768px) {
+  .content-card.receipt-list .btn-wrap {
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 100%;
+  }
+  .content-card.receipt-list .user-info {
+    width: 100%;
+    height: auto;
+    padding: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+  .content-card.receipt-list .receipt-notice span:last-child {
+    margin-top: 2.4rem;
+  }
+  .content-card.receipt-list .card-title-wrap,
+  .content-card.receipt-list .receipt-notice {
+    text-align: center;
+  }
+}
+
 .card-title-wrap {
   display: flex;
   align-items: center;

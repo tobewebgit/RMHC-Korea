@@ -991,10 +991,12 @@
         groupSelector: ".finance-chart",
         lineSelector: ".finance-chart__draw-line",
         totalDuration: 2.0,
+        observeGroups: true,
       });
       initCounters(
         ".finance-chart-list",
         ".finance-chart__total span[data-counter-value]",
+        { groupSelector: ".finance-chart", threshold: 0.2 },
       );
       initCounters(
         ".offline-fund-card",

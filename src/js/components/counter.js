@@ -8,6 +8,9 @@
  * 사용법:
  *  import { initCounters } from '/src/js/components/counter.js';
  *  initCounters('.섹션-셀렉터', 'strong[data-counter-value]');
+ *  initCounters('.섹션-셀렉터', 'strong[data-counter-value]', {
+ *    groupSelector: '.카드-셀렉터',
+ *  });
  *
  * data 속성:
  *  data-counter-value     : 목표 숫자 (필수)
@@ -15,13 +18,15 @@
  *  data-counter-decimals  : 소수점 자리수 (기본 0)
  *  data-counter-comma     : "true" 이면 천 단위 콤마 삽입
  */
-export function initCounters(sectionSelector, counterSelector) {
+export function initCounters(sectionSelector, counterSelector, options = {}) {
   const section = document.querySelector(sectionSelector);
   const counters = section
     ? Array.from(section.querySelectorAll(counterSelector))
     : [];
 
   if (!section || counters.length === 0) return;
+
+  const { groupSelector = null, threshold = 0.35 } = options;
 
   /* ── 포맷 헬퍼 ───────────────────────────────────────── */
   const formatValue = (el, value) => {
@@ -95,46 +100,94 @@ export function initCounters(sectionSelector, counterSelector) {
     el.dataset.counterFrame = requestAnimationFrame(tick);
   };
 
-  /* ── 초기화(0으로 리셋) ──────────────────────────────── */
-  const reset = () => {
-    counters.forEach((el) => {
-      if (el.dataset.counterFrame) {
-        cancelAnimationFrame(Number(el.dataset.counterFrame));
-        delete el.dataset.counterFrame;
-      }
-      if (el.dataset.counterSplit === 'true') {
-        const strVal = formatValue(el, 0);
-        let html = '';
-        for (const char of strVal) {
-          if (/[0-9]/.test(char)) {
-            html += `<span>${char}</span>`;
-          } else if (char === ',') {
-            html += `<em>${char}</em>`;
-          } else {
-            html += char;
-          }
+  const createController = (targetCounters) => {
+    const reset = () => {
+      targetCounters.forEach((el) => {
+        if (el.dataset.counterFrame) {
+          cancelAnimationFrame(Number(el.dataset.counterFrame));
+          delete el.dataset.counterFrame;
         }
-        el.innerHTML = html;
-      } else {
-        el.textContent = formatValue(el, 0);
-      }
-    });
+        if (el.dataset.counterSplit === 'true') {
+          const strVal = formatValue(el, 0);
+          let html = '';
+          for (const char of strVal) {
+            if (/[0-9]/.test(char)) {
+              html += `<span>${char}</span>`;
+            } else if (char === ',') {
+              html += `<em>${char}</em>`;
+            } else {
+              html += char;
+            }
+          }
+          el.innerHTML = html;
+        } else {
+          el.textContent = formatValue(el, 0);
+        }
+      });
+    };
+
+    return {
+      animateAll: () => targetCounters.forEach(animate),
+      reset,
+    };
   };
 
-  reset();
+  if (groupSelector) {
+    const groups = Array.from(section.querySelectorAll(groupSelector));
+
+    groups.forEach((group) => {
+      const groupCounters = Array.from(group.querySelectorAll(counterSelector));
+      if (groupCounters.length === 0) return;
+
+      const controller = createController(groupCounters);
+      controller.reset();
+      let isVisible = false;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (isVisible) return;
+              isVisible = true;
+              controller.animateAll();
+              return;
+            }
+
+            if (!isVisible) return;
+            isVisible = false;
+            controller.reset();
+          });
+        },
+        { threshold },
+      );
+
+      observer.observe(group);
+    });
+
+    return;
+  }
+
+  const controller = createController(counters);
+  controller.reset();
+  let isVisible = false;
 
   /* ── IntersectionObserver ────────────────────────────── */
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          counters.forEach(animate);
-        } else {
-          reset();
+          if (isVisible) return;
+          isVisible = true;
+          controller.animateAll();
+          return;
         }
+
+        if (!isVisible) return;
+        isVisible = false;
+        controller.reset();
       });
     },
-    { threshold: 0.35 },
+    { threshold },
   );
 
   observer.observe(section);

@@ -35,7 +35,7 @@
 
 .reset-member-guide {
   margin-top: var(--spacing-10);
-  color: var(--text-gray60);
+  color: var(--text-gray70);
   font-size: 1.6rem;
   text-align: center;
 }
@@ -193,7 +193,7 @@
 
 .login-links a {
   position: relative;
-  color: var(--text-gray70);
+  color: var(--text-gray80);
 }
 
 .login-guide a:hover,
@@ -513,21 +513,45 @@
 }
 
 .status-dot {
+  display: inline-block;
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .status-dot.yellow {
-  background-color: #ffc72c;
+  background-color: #ffbc0d;
+  box-shadow: 0 0 0 0.4rem rgba(255, 188, 13, 0.2);
 }
 
 .status-dot.green {
-  background-color: #7cb342;
+  background-color: #9cd83e;
+  box-shadow: 0 0 0 0.4rem rgba(156, 216, 62, 0.2);
 }
 
 .status-dot.red {
-  background-color: #e00000;
+  background-color: #db0007;
+  box-shadow: 0 0 0 0.4rem rgba(219, 0, 7, 0.2);
+}
+
+.status-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 기부금영수증 신청 내역 카드 헤더 및 셀렉트 (PC) */
+.content-card.receipt-list .card-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-card.receipt-list .select-wrap {
+  width: 24rem;
+  flex-shrink: 0;
 }
 
 .desc-note {
@@ -1512,6 +1536,7 @@
     content: attr(data-label);
     text-align: left;
     font-size: 1.2rem;
+    font-weight: 700;
   }
 
   /* No 항목은 모바일 카드 시안에 맞춰 100% 완전 생략 */
@@ -1582,6 +1607,31 @@
     justify-content: center;
   }
 
+  .content-card.receipt-list .card-title-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .content-card.receipt-list .card-title-wrap .card-title {
+    text-align: center;
+    width: 100%;
+  }
+
+  .content-card.receipt-list .select-wrap {
+    width: 100%;
+    text-align: left;
+  }
+
+  .content-card.receipt-list .select-wrap .custom-select,
+  .content-card.receipt-list .select-wrap .custom-select summary,
+  .content-card.receipt-list .select-wrap .custom-select ul,
+  .content-card.receipt-list .select-wrap .custom-select ul li {
+    text-align: left;
+  }
+
   .donation-detail-section .card-title,
   .card-title-wrap .card-title {
     font-size: 2rem;
@@ -1611,6 +1661,11 @@
 
   .receipt-status {
     font-size: 1.4rem;
+  }
+
+  .status-dot {
+    width: 0.6rem;
+    height: 0.6rem;
   }
 
   /* 공통 하단 배너 모바일 */

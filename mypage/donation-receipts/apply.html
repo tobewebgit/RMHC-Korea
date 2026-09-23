@@ -22,7 +22,7 @@
     <div class="page-wrapper">
       <main id="main-content" class="main-content">
         <section class="join-section">
-          <h1 class="join-title">기부금영수증 신청</h1>
+          <h1 class="join-title">기부 금영수증 신청</h1>
 
           <form
             action="/join/complete.html"
@@ -188,64 +188,40 @@
             <!-- 4. 약관 동의 카드 -->
             <section class="join-card" aria-labelledby="sec-agreement">
               <h2 id="sec-agreement" class="join-card__title">
-                이용약관, 개인정보 수집 및 이용 활동 안내 수신동의
+                기부금영수증 발급을 위한 개인정보 처리 안내
               </h2>
 
               <div class="join-card__content">
                 <div class="agree-terms-content">
-                  <div class="agreement-all">
-                    <label class="custom-checkbox" for="agree-all">
-                      <input type="checkbox" id="agree-all" />
-                      <span class="text-lg">모두 동의합니다.</span>
+                  <div class="receipt-resident-panel-agree">
+                    <ul class="receipt-warning-list">
+                      <li>
+                        수집 항목: 성명, 생년월일, 휴대전화번호, 주민등록번호
+                      </li>
+                      <li>이용 목적: 기부금영수증 발급 및 국세청 등록</li>
+                      <li>
+                        보유기간: 개인정보처리방침 및 관련 법령에 따른 기간
+                      </li>
+                      <li>
+                        안내 확인을 거부할 수 있으나, 기부금영수증 신청이
+                        제한됩니다.
+                      </li>
+                    </ul>
+
+                    <label class="custom-checkbox" for="agree-privacy">
+                      <input
+                        type="checkbox"
+                        id="agree-privacy"
+                        name="agreeItem"
+                        class="required-agree"
+                        value="privacy"
+                        required
+                      />
+                      <span
+                        ><span class="color-primary">[필수]</span> 개인정보 수집
+                        및 이용 안내를 확인했습니다.</span
+                      >
                     </label>
-                  </div>
-
-                  <div class="agreement-list">
-                    <div class="agreement-item">
-                      <label class="custom-checkbox" for="agree-terms">
-                        <input
-                          type="checkbox"
-                          id="agree-terms"
-                          name="agreeItem"
-                          class="required-agree"
-                          value="terms"
-                          required
-                        />
-                        <span
-                          ><span class="color-primary">[필수]</span>
-                          이용약관</span
-                        >
-                      </label>
-                      <a
-                        href="/policy/terms.html"
-                        target="_blank"
-                        class="agreement-link"
-                        >자세히 보기</a
-                      >
-                    </div>
-
-                    <div class="agreement-item">
-                      <label class="custom-checkbox" for="agree-privacy">
-                        <input
-                          type="checkbox"
-                          id="agree-privacy"
-                          name="agreeItem"
-                          class="required-agree"
-                          value="privacy"
-                          required
-                        />
-                        <span
-                          ><span class="color-primary">[필수]</span> 개인정보
-                          수집 및 이용</span
-                        >
-                      </label>
-                      <a
-                        href="/policy/privacy.html"
-                        target="_blank"
-                        class="agreement-link"
-                        >자세히 보기</a
-                      >
-                    </div>
                   </div>
                 </div>
               </div>

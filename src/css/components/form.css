@@ -487,9 +487,9 @@ a.agreement-link:hover {
 .receipt-resident-panel {
   margin: 1.6rem 0 0 0;
   padding: 3.2rem 2.4rem;
-  background-color: rgba(208, 201, 255, 0.15);
+  background-color: rgba(208, 201, 255, 0.2);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--border-gray40);
+  border: 1px solid var(--border-gray50);
 }
 
 .join-card .receipt-resident-panel {
@@ -565,6 +565,26 @@ a.agreement-link:hover {
   left: 0;
   top: 0;
   line-height: inherit;
+}
+
+.receipt-resident-panel-agree {
+  padding: 4rem;
+  background-color: rgba(208, 201, 255, 0.2);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-gray50);
+}
+.receipt-resident-panel-agree .custom-checkbox {
+  font-size: 1.8rem;
+}
+.receipt-resident-panel-agree .receipt-warning-list {
+  margin-top: 0;
+}
+.receipt-resident-panel-agree .receipt-warning-list li {
+  font-size: 1.8rem;
+}
+
+.receipt-resident-panel-agree .receipt-warning-list + .custom-checkbox {
+  margin-top: 2.4rem;
 }
 
 /* ==========================================================================
@@ -836,9 +856,12 @@ ul.form-helper-note.cms-helper {
   .receipt-warning-list,
   .receipt-helper__primary,
   .receipt-helper__secondary,
-  .resident-label,
-  .custom-select ul li {
+  .resident-label {
     font-size: 1.4rem;
+    line-height: 1;
+  }
+  .custom-select ul li {
+    font-size: 1.2rem;
     line-height: 1;
   }
   .form-helper-note,
@@ -1039,5 +1062,26 @@ ul.form-helper-note.cms-helper {
 
   .btn-input-action {
     width: 10.8rem;
+  }
+
+  .receipt-resident-panel-agree {
+    padding: 1.6rem;
+  }
+  .receipt-resident-panel-agree .custom-checkbox {
+    font-size: 1.4rem;
+  }
+  .receipt-resident-panel-agree .receipt-warning-list {
+    margin-top: 0;
+    padding-left: 0.8rem;
+  }
+  .receipt-resident-panel-agree .receipt-warning-list li {
+    font-size: 1.4rem;
+  }
+
+  .receipt-resident-panel-agree .receipt-warning-list + .custom-checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2.4rem;
+    line-height: 1.3;
   }
 }

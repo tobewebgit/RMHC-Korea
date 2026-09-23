@@ -7,13 +7,14 @@ export function initSvgLineReveal({
   totalDuration = null,
   threshold = 0.2,
   offsetAdjustment = 20,
+  observeGroups = false,
 }) {
   const section = document.querySelector(sectionSelector);
   const groups = section ? Array.from(section.querySelectorAll(groupSelector)) : [];
   const lines = section ? Array.from(section.querySelectorAll(lineSelector)) : [];
   if (!section || groups.length === 0 || lines.length === 0) return;
 
-  let activeAnimations = [];
+  const activeAnimationsByTarget = new Map();
 
   const getDrawMetrics = (line) => {
     const pathLength = line.getTotalLength();
@@ -27,62 +28,80 @@ export function initSvgLineReveal({
     };
   };
 
-  const cancelAnimations = () => {
-    activeAnimations.forEach((animation) => {
-      if (animation && typeof animation.kill === 'function') {
-        animation.kill();
-        return;
-      }
+  const cancelAnimations = (target = null) => {
+    const targets = target ? [target] : Array.from(activeAnimationsByTarget.keys());
 
-      if (animation && typeof animation.cancel === 'function') {
-        animation.cancel();
-      }
+    targets.forEach((currentTarget) => {
+      const activeAnimations = activeAnimationsByTarget.get(currentTarget) || [];
+      activeAnimations.forEach((animation) => {
+        if (animation && typeof animation.kill === 'function') {
+          animation.kill();
+          return;
+        }
+
+        if (animation && typeof animation.cancel === 'function') {
+          animation.cancel();
+        }
+      });
+      activeAnimationsByTarget.delete(currentTarget);
     });
-    activeAnimations = [];
   };
 
   const setLineStart = (line) => {
     const { drawLength, hiddenLength, hiddenOffset } = getDrawMetrics(line);
+    line.style.transition = '';
     line.style.strokeDasharray = `${drawLength} ${hiddenLength}`;
     line.style.strokeDashoffset = hiddenOffset;
     line.style.opacity = '0';
   };
 
-  const reset = () => {
-    cancelAnimations();
-    lines.forEach(setLineStart);
+  const getTargetGroups = (target) => (target ? [target] : groups);
+
+  const reset = (target = null) => {
+    cancelAnimations(target);
+    getTargetGroups(target).forEach((group) => {
+      group.querySelectorAll(lineSelector).forEach(setLineStart);
+    });
   };
 
-  const fadeOut = () => {
-    cancelAnimations();
+  const fadeOut = (target = null) => {
+    cancelAnimations(target);
+    const targetLines = getTargetGroups(target).flatMap((group) =>
+      Array.from(group.querySelectorAll(lineSelector)),
+    );
 
     if (window.gsap) {
-      const tween = gsap.to(lines, {
+      const tween = gsap.to(targetLines, {
         opacity: 0,
         duration: 0.5,
         ease: 'power1.in',
         onComplete: () => {
-          lines.forEach(setLineStart);
+          targetLines.forEach(setLineStart);
         },
       });
-      activeAnimations.push(tween);
+      activeAnimationsByTarget.set(target || section, [tween]);
       return;
     }
 
     // GSAP 없을 때: CSS transition으로 페이드아웃
-    lines.forEach((line) => {
+    targetLines.forEach((line) => {
       line.style.transition = 'opacity 0.45s ease';
       line.style.opacity = '0';
     });
-    setTimeout(() => {
-      lines.forEach((line) => {
+    const fadeOutTimer = setTimeout(() => {
+      targetLines.forEach((line) => {
         line.style.transition = '';
         setLineStart(line);
       });
     }, 480);
+    activeAnimationsByTarget.set(target || section, [
+      { cancel: () => clearTimeout(fadeOutTimer) },
+    ]);
   };
 
-  const drawLine = (line, delay, lineDuration) => {
+  const drawLine = (line, delay, lineDuration, target) => {
+    const animationList = activeAnimationsByTarget.get(target) || [];
+
     if (window.gsap) {
       const tween = gsap.to(line, {
         strokeDashoffset: 0,
@@ -91,7 +110,8 @@ export function initSvgLineReveal({
         delay,
         ease: 'none',
       });
-      activeAnimations.push(tween);
+      animationList.push(tween);
+      activeAnimationsByTarget.set(target, animationList);
       return;
     }
 
@@ -107,12 +127,13 @@ export function initSvgLineReveal({
         fill: 'forwards',
       },
     );
-    activeAnimations.push(animation);
+    animationList.push(animation);
+    activeAnimationsByTarget.set(target, animationList);
   };
 
-  const play = () => {
-    reset();
-    groups.forEach((group) => {
+  const play = (target = null) => {
+    reset(target);
+    getTargetGroups(target).forEach((group) => {
       const groupLines = Array.from(group.querySelectorAll(lineSelector));
       const n = groupLines.length;
       if (n === 0) return;
@@ -126,7 +147,7 @@ export function initSvgLineReveal({
       }
 
       groupLines.forEach((line, index) => {
-        drawLine(line, index * calcDelayStep, calcDuration);
+        drawLine(line, index * calcDelayStep, calcDuration, target || section);
       });
     });
   };
@@ -138,19 +159,28 @@ export function initSvgLineReveal({
     return;
   }
 
+  const visibleTargets = new Set();
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
+        const target = observeGroups ? entry.target : null;
+        const targetKey = target || section;
+
         if (entry.isIntersecting) {
-          play();
+          if (visibleTargets.has(targetKey)) return;
+          visibleTargets.add(targetKey);
+          play(target);
           return;
         }
 
-        fadeOut();
+        if (!visibleTargets.has(targetKey)) return;
+        visibleTargets.delete(targetKey);
+        fadeOut(target);
       });
     },
     { threshold },
   );
 
-  observer.observe(section);
+  (observeGroups ? groups : [section]).forEach((target) => observer.observe(target));
 }
