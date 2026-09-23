@@ -488,7 +488,7 @@ a.agreement-link:hover {
   margin: 1.6rem 0 0 0;
   padding: 3.2rem 2.4rem;
   background-color: rgba(208, 201, 255, 0.2);
-  border-radius: var(--radius-lg);
+  border-radius: 0.8rem;
   border: 1px solid var(--border-gray50);
 }
 
@@ -570,7 +570,7 @@ a.agreement-link:hover {
 .receipt-resident-panel-agree {
   padding: 4rem;
   background-color: rgba(208, 201, 255, 0.2);
-  border-radius: var(--radius-lg);
+  border-radius: 0.8rem;
   border: 1px solid var(--border-gray50);
 }
 .receipt-resident-panel-agree .custom-checkbox {
@@ -982,7 +982,7 @@ ul.form-helper-note.cms-helper {
   .join-card .receipt-resident-panel {
     margin: 1.6rem 0 0 0;
     padding: 2rem 1.6rem;
-    border-radius: 1.2rem;
+    border-radius: 0.8rem;
   }
 
   .resident-label {
