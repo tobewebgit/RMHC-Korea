@@ -427,8 +427,8 @@ html[lang="en"] .value-list p {
 .impact-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
-  width: min(100% - 8rem, 120rem);
+  gap: 12rem;
+  width: min(100% - 8rem, 144rem);
   margin: 0 auto;
   padding: 0;
   list-style: none;
