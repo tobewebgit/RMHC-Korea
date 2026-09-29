@@ -346,16 +346,16 @@
                 Kitchen
               </button>
             </div>
-            <div class="gallery-nav" aria-label="Gallery navigation">
+            <div class="gallery-nav" aria-label="Gallery tab navigation">
               <button
                 type="button"
                 class="gallery-nav__btn gallery-nav__btn--prev"
-                aria-label="Previous image"
+                aria-label="Previous tab"
               ></button>
               <button
                 type="button"
                 class="gallery-nav__btn gallery-nav__btn--next"
-                aria-label="Next image"
+                aria-label="Next tab"
               ></button>
             </div>
           </div>
@@ -1281,19 +1281,9 @@
                 slides.forEach((slide, index) => {
                   slide.hidden = index !== activeIndex;
                 });
-                prevButton.disabled = activeIndex === 0;
-                nextButton.disabled = activeIndex === slides.length - 1;
                 updateThumbs(activeIndex);
               };
 
-              prevButton.onclick = () => {
-                activeIndex = Math.max(0, activeIndex - 1);
-                updateFallback();
-              };
-              nextButton.onclick = () => {
-                activeIndex = Math.min(slides.length - 1, activeIndex + 1);
-                updateFallback();
-              };
               Array.from(thumbs.querySelectorAll(".gallery-thumb")).forEach(
                 (thumb, index) => {
                   thumb.addEventListener("click", () => {
@@ -1314,10 +1304,6 @@
               fadeEffect: {
                 crossFade: true,
               },
-              navigation: {
-                prevEl: prevButton,
-                nextEl: nextButton,
-              },
               on: {
                 slideChange(swiper) {
                   updateThumbs(swiper.realIndex);
@@ -1334,15 +1320,49 @@
             );
           };
 
-          tabs.forEach((tab) => {
+          const updateNavButtons = () => {
+            const currentIndex = tabs.findIndex(
+              (tab) => tab.dataset.galleryCategory === currentCategory,
+            );
+            prevButton.disabled = currentIndex <= 0;
+            nextButton.disabled = currentIndex >= tabs.length - 1;
+          };
+
+          const selectTabByIndex = (index) => {
+            if (index < 0 || index >= tabs.length) return;
+            const targetTab = tabs[index];
+            currentCategory = targetTab.dataset.galleryCategory;
+            renderGallery(currentCategory);
+            scrollTabToCenter(targetTab);
+            updateNavButtons();
+          };
+
+          prevButton.addEventListener("click", () => {
+            const currentIndex = tabs.findIndex(
+              (tab) => tab.dataset.galleryCategory === currentCategory,
+            );
+            if (currentIndex > 0) {
+              selectTabByIndex(currentIndex - 1);
+            }
+          });
+
+          nextButton.addEventListener("click", () => {
+            const currentIndex = tabs.findIndex(
+              (tab) => tab.dataset.galleryCategory === currentCategory,
+            );
+            if (currentIndex < tabs.length - 1) {
+              selectTabByIndex(currentIndex + 1);
+            }
+          });
+
+          tabs.forEach((tab, index) => {
             tab.addEventListener("click", () => {
-              currentCategory = tab.dataset.galleryCategory;
-              renderGallery(currentCategory);
-              scrollTabToCenter(tab);
+              selectTabByIndex(index);
             });
           });
 
           renderGallery(currentCategory);
+          updateNavButtons();
         };
 
         initImpactCounters();
