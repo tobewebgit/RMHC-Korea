@@ -529,7 +529,9 @@ html[lang="en"] .main-event-card .card-text-wrap {
   position: absolute;
   top: 8rem;
   padding-right: 4rem;
-  transition: opacity 0.4s ease;
+  transition:
+    height 0.4s ease,
+    opacity 0.4s ease;
 }
 
 .main-event-card .card-text-wrap .text-2 {
@@ -542,7 +544,7 @@ html[lang="en"] .main-event-card:hover .card-text-wrap {
   height: 22rem;
 }
 .main-event-card:hover .card-text-wrap .text-1 {
-  height: 1rem;
+  /* height: 1rem; */
   opacity: 0;
   overflow: hidden;
 }
