@@ -407,6 +407,9 @@ html[lang="en"] .newsletter-modal__desc {
   font-family: var(--font-extra-bold);
   font-size: 2.8rem;
 }
+html[lang="en"] .common-alert__title {
+  font-size: 2.2rem;
+}
 
 .common-alert__desc {
   font-size: 1.8rem;
@@ -577,7 +580,7 @@ html[lang="en"] .newsletter-modal__desc {
   }
 
   .common-alert__body {
-    padding: 2.4rem 0;
+    padding: 1.6rem 0;
   }
 
   html[lang="en"] .custom-checkbox,
