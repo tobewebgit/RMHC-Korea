@@ -586,7 +586,9 @@
           <button
             type="button"
             id="btn-house-inquiry"
-            class="btn btn-primary btn-page btn-plus w-auto"
+            class="btn btn-primary btn-page btn-plus w-auto btn-open-popup"
+            data-popup="modal-house-inquiry"
+            aria-haspopup="dialog"
             data-motion="fade-up"
             data-motion-delay="0.5"
           >
@@ -790,6 +792,8 @@
         </section>
       </main>
     </div>
+    <!-- House Application Guide Popup Include -->
+    <load src="/includes/popups/house-inquiry-yangsan_en.html" />
 
     <load src="/includes/footer_en.html" />
 
@@ -1393,31 +1397,6 @@
           document
             .querySelector(".js-house-partner")
             ?.classList.add("is-fallback-slider");
-        }
-
-        const inquiryBtn = document.getElementById("btn-house-inquiry");
-        if (inquiryBtn) {
-          inquiryBtn.addEventListener("click", async () => {
-            if (window.showAlert) {
-              try {
-                const response = await fetch(
-                  "/includes/popups/house-inquiry-yangsan_en.html",
-                );
-                if (!response.ok)
-                  throw new Error("Network response was not ok");
-                const htmlContent = await response.text();
-
-                window.showAlert({
-                  title: "Ronald McDonald House: Yangsan Application Guide",
-                  message: htmlContent,
-                  className: "w-660",
-                  hideFooter: true,
-                });
-              } catch (error) {
-                console.error(error);
-              }
-            }
-          });
         }
       });
 

@@ -1,16 +1,71 @@
-<div style="text-align: left">
-  <strong>이용 요금</strong> : 전액 무료<br />
-  <strong>신청 대상</strong> : 양산부산대 어린이병원에서 치료 중인 만 18세 이하
-  중증 질환 환아 가족<br />
-  <strong>신청 장소</strong> : 어린이병원 1층 원무과 (신청서 비치)<br />
-  <strong>이용 기간</strong> : 입원 시: 최대 4주 (2회 연장 가능) / 외래 시: 최대
-  2주 (5회 연장 가능)<br /><br />
+<!-- S: 로날드 맥도날드 하우스 양산 신청 안내 팝업 -->
+<div
+  class="modal-overlay"
+  id="modal-house-inquiry"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="house-inquiry-title"
+>
+  <div class="modal-container house-inquiry-container">
+    <!-- S: 팝업 전폭 스크롤 래퍼 (라운드 이탈 방지 및 1체형 스크롤) -->
+    <div class="modal-scroll-wrap">
+      <!-- S: 팝업 헤더 -->
+      <div class="house-inquiry-header">
+        <h3 class="house-inquiry-title font-nanum" id="house-inquiry-title">
+          로날드 맥도날드 하우스 양산 신청 안내
+        </h3>
+        <button
+          type="button"
+          class="modal-close-btn-circle"
+          aria-label="팝업 닫기"
+        >
+          <span class="close-icon"></span>
+        </button>
+      </div>
+      <!-- E: 팝업 헤더 -->
 
-  <strong>입실 선정 기준 (우선순위)</strong><br />
-  선착순이 아닌 아래 항목을 종합적으로 검토해 선정합니다.<br /><br />
+      <!-- S: 팝업 본문 (스크롤 영역) -->
+      <div class="house-inquiry-body">
+        <div class="house-inquiry-content">
+          <ul class="inquiry-guide-list">
+            <li><strong>이용 요금</strong> : 전액 무료</li>
+            <li>
+              <strong>신청 대상</strong> : 양산부산대 어린이병원에서 치료 중인 만 18세 이하 중증 질환 환아 가족
+            </li>
+            <li>
+              <strong>신청 장소</strong> : 어린이병원 1층 원무과 (신청서 비치)
+            </li>
+            <li>
+              <strong>이용 기간</strong> :
+              <ul class="inquiry-guide-sublist">
+                <li>입원 시: 최대 4주 (2회 연장 가능)</li>
+                <li>외래 시: 최대 2주 (5회 연장 가능)</li>
+              </ul>
+            </li>
+          </ul>
 
-  · <strong>의학적 기준</strong> : 질환 평가, 입원 기간, 외래 진료 빈도(주 2회
-  이상) 확인<br />
-  · <strong>지리적 기준</strong> : 통원 거리 확인<br />
-  · <strong>환경적 기준</strong> : 국가, 지자체 차원의 지원 수급 유무 확인
+          <div class="inquiry-guide-section">
+            <strong class="inquiry-guide-subtitle">입실 선정 기준 (우선순위)</strong>
+            <p class="inquiry-guide-desc">
+              선착순이 아닌 아래 항목을 종합적으로 검토해 선정합니다.
+            </p>
+          </div>
+
+          <ul class="inquiry-guide-list">
+            <li>
+              <strong>의학적 기준</strong> : 질환 평가, 입원 기간, 외래 진료 빈도(주 2회 이상) 확인
+            </li>
+            <li>
+              <strong>지리적 기준</strong> : 통원 거리 확인
+            </li>
+            <li>
+              <strong>환경적 기준</strong> : 국가, 지자체 차원의 지원 수급 유무 확인
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- E: 팝업 본문 -->
+    </div>
+  </div>
 </div>
+<!-- E: 로날드 맥도날드 하우스 양산 신청 안내 팝업 -->

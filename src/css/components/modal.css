@@ -339,6 +339,112 @@ html[lang="en"] .newsletter-modal__desc {
 }
 
 /* ==========================================================================
+   하우스 이용 안내 팝업 전용 스타일 (.house-inquiry-container)
+   ========================================================================== */
+.house-inquiry-container {
+  width: 100%;
+  max-width: 66rem;
+}
+
+.house-inquiry-header {
+  text-align: center;
+  padding: 0 4rem;
+  margin-bottom: 4rem;
+  flex-shrink: 0;
+}
+
+.house-inquiry-title {
+  margin: 0;
+  font-family: var(--font-extra-bold);
+  font-size: 2.8rem;
+  line-height: 1.35;
+}
+
+html[lang="en"] .house-inquiry-title {
+  font-size: 2.2rem;
+}
+
+.house-inquiry-body {
+  padding: 0 1.6rem 1.6rem;
+}
+
+.house-inquiry-content {
+  text-align: left;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.house-inquiry-content strong {
+  font-weight: 600;
+}
+
+.inquiry-guide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inquiry-guide-list > li {
+  position: relative;
+  padding-left: 0.8rem;
+  line-height: 1.6;
+}
+
+.inquiry-guide-list > li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.inquiry-guide-sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.4rem 0 0;
+  padding: 0 0 0 1.4rem;
+  list-style: none;
+}
+
+.inquiry-guide-sublist > li {
+  position: relative;
+  padding-left: 0.8rem;
+  line-height: 1.6;
+}
+
+.inquiry-guide-sublist > li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.inquiry-guide-section {
+  margin: 2.4rem 0 1.6rem;
+}
+
+.inquiry-guide-subtitle {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+
+.inquiry-guide-desc {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
    공통 알럿(Alert / Confirm) 모달 전용 스타일 (.common-alert-container)
    ========================================================================== */
 .common-alert-container {
@@ -586,5 +692,19 @@ html[lang="en"] .common-alert__title {
   html[lang="en"] .custom-checkbox,
   html[lang="en"] .custom-radio {
     font-size: 1.4rem;
+  }
+
+  /* 하우스 이용 안내 팝업 모바일 반응형 */
+  .house-inquiry-container {
+    padding: 6rem 0.4rem 2rem;
+  }
+
+  .house-inquiry-header {
+    padding: 0;
+    margin-bottom: 4rem;
+  }
+
+  .house-inquiry-body {
+    padding: 0 0 1.6rem;
   }
 }
