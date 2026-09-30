@@ -1383,13 +1383,10 @@ html[lang="en"] .support-card p {
     width: 100%;
     margin-top: 0.8rem;
     margin-left: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
     word-break: normal;
     color: var(--text-gray100);
-  }
-  html[lang="en"] .location-info span {
-    font-size: 1.8rem;
   }
 
   .location-actions {
