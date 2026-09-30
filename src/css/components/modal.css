@@ -357,11 +357,7 @@ html[lang="en"] .newsletter-modal__desc {
   margin: 0;
   font-family: var(--font-extra-bold);
   font-size: 2.8rem;
-  line-height: 1.35;
-}
-
-html[lang="en"] .house-inquiry-title {
-  font-size: 2.2rem;
+  line-height: 1.3;
 }
 
 .house-inquiry-body {
@@ -706,5 +702,13 @@ html[lang="en"] .common-alert__title {
 
   .house-inquiry-body {
     padding: 0 0 1.6rem;
+  }
+
+  .house-inquiry-title {
+    font-size: 2rem;
+  }
+
+  .house-inquiry-content {
+    font-size: 1.4rem;
   }
 }
