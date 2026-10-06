@@ -1145,6 +1145,309 @@ html[lang="en"] .footer__newsletter-input {
   }
 }
 
+/*
+ * 모바일 가로모드 전용 헤더
+ * 본문은 viewport.js가 769px 기준으로 전환해 PC 레이아웃을 유지하고,
+ * 헤더와 모바일 메뉴만 모바일 형태로 표시한다.
+ */
+@media screen and (min-width: 769px) and (max-width: 1279px) and (orientation: landscape) {
+  html.is-mobile-landscape .header {
+    height: 8rem;
+    position: fixed;
+    background-color: var(--bg-primary);
+  }
+
+  html.is-mobile-landscape .header__container {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+
+  html.is-mobile-landscape .header__logo {
+    width: 8rem;
+    height: 4.4rem;
+  }
+
+  html.is-mobile-landscape .header__nav,
+  html.is-mobile-landscape .header__util,
+  html.is-mobile-landscape .header__donate-btn {
+    display: none;
+  }
+
+  html.is-mobile-landscape .header__right {
+    gap: 1.6rem;
+  }
+
+  html.is-mobile-landscape .mobile-nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  html.is-mobile-landscape .hamburger-bar {
+    display: block;
+    width: 2.2rem;
+    height: 0.2rem;
+    margin-left: auto;
+    background-color: #000000;
+  }
+
+  html.is-mobile-landscape .mobile-menu-panel {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10005;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    padding: 0 0 2.4rem;
+    background-color: var(--bg-primary);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow-x: hidden;
+    transform: translateX(100%);
+    transition:
+      transform 0.24s ease,
+      opacity 0.24s ease,
+      visibility 0.24s ease;
+  }
+
+  html.is-mobile-landscape .mobile-menu-panel.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+
+  html.is-mobile-landscape .mobile-menu-overlay {
+    display: block !important;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.24s ease,
+      visibility 0.24s ease;
+  }
+
+  html.is-mobile-landscape .mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  html.is-mobile-landscape body.menu-open {
+    overflow: hidden;
+  }
+
+  html.is-mobile-landscape .mobile-menu-close {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  html.is-mobile-landscape .mobile-menu-close .hamburger-bar {
+    position: absolute;
+    width: 2.2rem;
+    height: 0.2rem;
+    margin-left: 0;
+    background-color: #000000;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+  html.is-mobile-landscape .mobile-menu-close .hamburger-bar:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  html.is-mobile-landscape .mobile-menu-close .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  html.is-mobile-landscape .mobile-menu-close .hamburger-bar:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  html.is-mobile-landscape .mobile-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 8rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 1.6rem;
+    border-bottom: 1px solid var(--border-gray40);
+  }
+
+  html.is-mobile-landscape .mobile-panel-header .logo-link {
+    display: block;
+    width: 8rem;
+    height: 4.4rem;
+  }
+
+  html.is-mobile-landscape .mobile-panel-header .logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  html.is-mobile-landscape .mobile-panel-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  html.is-mobile-landscape .mobile-panel-lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 4.8rem;
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  html.is-mobile-landscape .mobile-utility {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 2.4rem;
+  }
+
+  html.is-mobile-landscape .mobile-utility-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 3.2rem;
+    font-size: 1.4rem;
+    color: #000000;
+  }
+
+  html.is-mobile-landscape .mobile-nav {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 2.4rem 2.4rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  }
+
+  html[lang="en"].is-mobile-landscape .mobile-nav {
+    padding: 2.4rem;
+  }
+
+  html.is-mobile-landscape .mobile-nav::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  html.is-mobile-landscape .mobile-nav::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+
+  html.is-mobile-landscape .m-gnb-depth1 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  html.is-mobile-landscape .m-gnb-item {
+    border-bottom: 1px solid var(--border-gray30);
+  }
+
+  html.is-mobile-landscape .m-gnb-item.active {
+    border-bottom: none;
+  }
+
+  html.is-mobile-landscape .m-gnb-trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 4.8rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  html.is-mobile-landscape .m-gnb-trigger::after {
+    content: "";
+    width: 0.9rem;
+    height: 0.9rem;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+  }
+
+  html.is-mobile-landscape .m-gnb-item.active .m-gnb-trigger::after {
+    transform: rotate(225deg);
+  }
+
+  html.is-mobile-landscape .m-gnb-depth2 {
+    display: none;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 2.4rem 1.6rem;
+    background-color: rgba(255, 188, 13, 0.2);
+  }
+
+  html.is-mobile-landscape .m-gnb-item.active .m-gnb-depth2 {
+    display: flex;
+    border-top: 1px solid var(--border-gray30);
+  }
+
+  html.is-mobile-landscape .m-gnb-depth2 a {
+    display: flex;
+    align-items: center;
+    min-height: 2.4rem;
+    font-size: 1.4rem;
+    color: var(--text-gray80);
+  }
+
+  html.is-mobile-landscape .mobile-panel-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    padding: 2.4rem 2.4rem 0;
+  }
+
+  html.is-mobile-landscape .mobile-panel-footer a.btn {
+    width: 15.2rem;
+  }
+
+  html[lang="en"].is-mobile-landscape .mobile-panel-footer {
+    grid-template-columns: 1fr;
+  }
+
+  html[lang="en"].is-mobile-landscape .mobile-panel-footer a.btn {
+    width: 100%;
+  }
+}
+
 /* 갤러리 우상단 다음/이전 버튼 */
 .gallery-nav {
   display: flex;
@@ -2069,8 +2372,8 @@ html[lang="en"] .page-kv .kv-desc {
   }
 
   .fab-icon-heart {
-    width: 2.8rem;
-    height: 2.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 
   /* 2. SNS 토글 & 팝업 */

@@ -12,6 +12,10 @@ import { initFab } from './components/fab.js';
 import { initDonateBannerHeart } from './components/donate-banner.js';
 import { initEyeButtons } from './components/form-eye.js';
 import { initSignatureCanvas } from './components/form-signature.js';
+import { initViewportControl } from './components/viewport.js';
+
+// 페이지별 HTML에 중복 구현하지 않고 공통 viewport를 한 곳에서 제어한다.
+initViewportControl();
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. 공통 레이아웃 및 컴포넌트 기능 초기화
@@ -35,4 +39,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log('RMHC Portal template initialized successfully.');
 });
-
