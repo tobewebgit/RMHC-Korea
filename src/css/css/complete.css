@@ -1,0 +1,187 @@
+/* 후원 완료 페이지 전용 스타일시트 */
+
+.complete-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10rem auto 0;
+}
+
+/* 완료 카드 박스 디자인 */
+.complete-card {
+  width: 100%;
+  max-width: 80rem;
+  padding: 7.2rem 6rem;
+  text-align: center;
+}
+
+/* 완료 인트로 영역 */
+.page-wrapper .complete-icon {
+  width: 8rem;
+  height: auto;
+  margin-bottom: 1.6rem;
+}
+
+.complete-title {
+  font-size: 3.6rem;
+  margin: 0 0 1.8rem 0;
+  letter-spacing: -0.05rem;
+}
+
+.complete-desc {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.complete-divider-thin {
+  height: 0.1rem;
+  background-color: #e5e7eb;
+  margin: 4.8rem 0 3.2rem 0;
+}
+
+/* 후원 정보 섹션 */
+.complete-info-section {
+  text-align: left;
+}
+
+.info-section-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-top: 4rem;
+  padding: 3.2rem 0;
+  border-top: 2px solid #000000;
+}
+
+.info-table {
+  border-top: 1px solid var(--border-gray40);
+  border-bottom: 1px solid var(--border-gray40);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 9rem;
+  padding: 2.2rem 0;
+  border-bottom: 1px solid var(--border-gray40);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 2rem;
+}
+
+.info-value {
+  font-size: 2rem;
+  text-align: right;
+}
+
+/* 영수증 및 링크 안내 */
+.complete-helper-box {
+  text-align: left;
+  padding: 2.4rem 0 0;
+  margin-bottom: 4rem;
+  color: var(--text-gray80);
+}
+
+.complete-helper-box p {
+  font-family: var(--font-text);
+  margin: 0;
+}
+
+.complete-helper-box p.highlight-link {
+  margin-top: 0.6rem;
+}
+
+.complete-helper-box p.highlight-link a {
+  color: var(--text-gray80, #1f2937);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* 액션 버튼 영역 */
+.complete-action-area {
+  display: flex;
+  justify-content: center;
+}
+html[lang="en"] .complete-action-area {
+  margin-top: 4rem;
+}
+
+.complete-action-area .btn {
+  width: 18.2rem;
+}
+
+/* 비회원용 텍스트 가이드 */
+.nonmember-guide-text {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--border-gray40);
+  text-align: center;
+  line-height: 1.6rem;
+}
+
+/* 모바일 반응형 최적화 */
+@media (max-width: 768px) {
+  .bg-soft-beige {
+    padding: 3.2rem 0;
+  }
+
+  .complete-container {
+    margin: 2rem auto 0;
+    padding: 0 2.4rem;
+  }
+
+  .complete-card {
+    padding: 4.8rem 2.4rem;
+    border-radius: 1.6rem;
+  }
+
+  .page-wrapper .complete-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .complete-title {
+    font-size: 2rem !important;
+  }
+
+  html[lang="en"] .complete-title {
+    font-size: 2.2rem !important;
+  }
+
+  .complete-desc {
+    font-size: 1.4rem;
+  }
+
+  .btn-complete-action {
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .info-section-title {
+    height: 6.8rem;
+    padding: 2rem 0;
+    font-size: 2rem;
+  }
+  html[lang="en"] .info-section-title {
+    font-size: 1.8rem;
+  }
+
+  .info-row {
+    height: 6.8rem;
+    font-size: 1.4rem;
+  }
+  .info-row .info-label,
+  .info-row .info-value {
+    font-size: 1.4rem;
+  }
+
+  .complete-helper-box p {
+    font-size: 1.4rem !important;
+  }
+}

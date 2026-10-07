@@ -1,0 +1,1095 @@
+/* ==========================================================================
+   RMHC Korea 캠페인 전용 CSS (src/css/campaign.css)
+   ========================================================================== */
+
+.campaign-container {
+  padding-top: 15rem;
+}
+
+.campaign-container .page-title {
+  margin-bottom: 2.4rem;
+}
+.campaign-container .page-title + p {
+  font-size: 2rem;
+}
+html[lang="en"] .campaign-container .page-title + p {
+  font-size: 2.2rem;
+}
+
+.campaign-container .page-header-wrap {
+  margin: 0 auto;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.campaign-container .img-top-wrap {
+  position: relative;
+  width: 100%;
+  margin-top: 8rem;
+  border-radius: 1.6rem;
+  overflow: hidden;
+}
+
+/* 16:9 반응형 동영상 비율 고정용 */
+.campaign-container .video-embed-wrap {
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.campaign-container .video-embed-wrap .img-item,
+.campaign-container .video-embed-wrap .img-item img,
+.campaign-container .video-embed-wrap iframe,
+.campaign-container .video-embed-wrap #youtube-player-target {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+/* 커스텀 재생 버튼 정중앙 배치 및 호버 트랜지션 효과 */
+.campaign-container .btn-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.campaign-container .btn-play:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.campaign-container .btn-play img {
+  width: 8rem;
+  height: 8rem;
+}
+
+/* 재생 상태일 때는 포인터 및 커서 초기화 */
+.campaign-container .img-top-wrap.is-playing {
+  cursor: default;
+}
+
+.campaign-container .line-path-wrap {
+  margin-top: 20rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   3행 지그재그 타임라인 및 SVG 라인 드로잉 스타일 (피그마 정밀 실측 반영)
+   ========================================================================== */
+.campaign-timeline {
+  max-width: 144rem;
+  margin: 0 auto;
+  position: relative;
+  padding: 20rem 0 0;
+}
+
+/* 타임라인 각 행 정렬 */
+.timeline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.timeline-row:last-child {
+  margin-bottom: 0;
+}
+
+/* 좌우 열 구조 */
+.timeline-col {
+  width: 68rem;
+  flex-shrink: 0;
+}
+
+/* 1행, 3행: 좌측 이미지 / 우측 텍스트 */
+.timeline-row.type-left {
+  flex-direction: row;
+}
+
+/* 2행: 좌측 텍스트 / 우측 이미지 (HTML의 선언 순서대로 텍스트-이미지 배치 보존) */
+.timeline-row.type-right {
+  flex-direction: row;
+}
+
+/* 이미지 카드 */
+.timeline-img-card {
+  width: 68rem;
+  height: 48.8rem;
+  border-radius: 1.6rem;
+  overflow: hidden;
+}
+
+.timeline-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 타이틀 텍스트 스타일 */
+.timeline-title {
+  font-size: 3.6rem;
+  color: var(--text-gray90);
+  text-align: center;
+  width: 68rem;
+  word-break: keep-all;
+  margin: 0;
+}
+
+/* 중앙 물결선 SVG 래퍼 */
+.campaign-svg-line-wrap {
+  position: absolute;
+  top: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80.1rem;
+  height: 182.1rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.campaign-svg-line {
+  width: 100%;
+  height: 100%;
+}
+
+.campaign-svg-line .svg-path {
+  opacity: 0;
+}
+
+/* 하단 완료 하트 마크 */
+.timeline-heart-marker {
+  position: absolute;
+  left: 64rem;
+  top: 169.5rem;
+  transform: scale(0);
+  width: 9rem;
+  height: 9.3rem;
+  z-index: 3;
+  transform-origin: center center;
+  pointer-events: none;
+}
+
+.timeline-heart-marker svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 갈라디너 자선 모금 버튼 영역 */
+.campaign-container .button-wrap {
+  margin-top: 10rem;
+}
+
+.gala-top-btn-wrap {
+  display: none;
+}
+
+/* ==========================================================================
+   울림백일장 수상작 Swiper 슬라이드
+   ========================================================================== */
+.award-section {
+  margin-top: 15rem;
+}
+
+.award-section-header {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.award-section-header .sub-title {
+  font-size: 4.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.award-desc {
+  font-size: 1.8rem;
+}
+html[lang="en"] .award-desc {
+  font-size: 2rem;
+}
+
+.award-slide-wrap {
+  position: relative;
+}
+
+.award-slide-wrap .swiper-wrapper {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  margin-top: -1.5rem;
+  margin-bottom: -2.5rem;
+}
+
+.award-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+  width: 100%;
+}
+
+.award-item {
+  position: relative;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.award-item:hover {
+  transform: translateY(-0.6rem);
+}
+
+.award-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 342/420;
+}
+
+/* 수상작 뱃지 랩퍼 및 좌측 아이콘 분리 정밀 구조 */
+.award-badge-wrap {
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.award-badge-wrap .badge-icon {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+}
+
+/* 텍스트만 포함하는 뱃지 박스 */
+.award-badge {
+  display: inline-block;
+  margin-left: -0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* 최우수상 뱃지 */
+.award-badge.badge-grand {
+  background-color: #ffbc0d;
+}
+
+/* 우수상 뱃지 */
+.award-badge.badge-excellent {
+  background-color: #8ee7f8;
+}
+
+/* 장려상 뱃지 */
+.award-badge.badge-participation {
+  background-color: #9cd83e;
+}
+
+/* 입상 뱃지 */
+.award-badge.badge-runnerup {
+  background-color: #d0c9ff;
+}
+
+/* 특별상 뱃지 */
+.award-badge.badge-special {
+  color: var(--text-white);
+  background-color: #ff6e0d;
+}
+
+/* 웜 페이지네이션 도트 커스텀 */
+.award-swiper-pagination.swiper-pagination {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 0.4rem; */
+  width: 100%;
+}
+
+.award-swiper-pagination.swiper-pagination .swiper-pagination-bullet {
+  background-color: var(--bg-gray30);
+  opacity: 1;
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  border-radius: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.award-swiper-pagination.swiper-pagination .swiper-pagination-bullet-active {
+  position: relative;
+  background-color: var(--bg-gray30);
+  height: 1rem;
+  border-radius: 0.5rem;
+}
+
+.award-swiper-pagination.swiper-pagination
+  .swiper-pagination-bullet-active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary);
+  transition: left 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ==========================================================================
+   갈라디너 신청 페이지 전용 스타일 (campaign.css 하단 추가)
+   ========================================================================== */
+
+.apply-page .apply-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 9rem;
+  width: 100%;
+  max-width: 150rem;
+  margin: 0 auto;
+}
+
+.apply-page .apply-left-col {
+  flex: 1;
+  max-width: 70.6rem;
+}
+
+.apply-page .apply-right-col {
+  flex: 1;
+  max-width: 70.4rem;
+  width: 100%;
+}
+
+.apply-page .gala-apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.apply-page .common-card {
+  padding: 4rem;
+}
+
+.apply-page .page-header-wrap {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.apply-page .page-title {
+  text-align: left;
+}
+
+.apply-page .page-desc {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.apply-page .poster-wrap {
+  margin-top: 4rem;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+.apply-page .poster-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 신청서 폼 카드 */
+.apply-page .card-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -0.8rem -4rem 4rem;
+  padding: 0 4rem 3.2rem;
+  border-bottom: 1px solid var(--border-gray30);
+}
+
+.apply-page .payment-intro {
+  font-size: 2rem;
+}
+
+.apply-page .donate-section-title {
+  font-size: 2.2rem;
+
+  margin-bottom: 0;
+}
+
+/* 신청서 기본 정보 입력 회색 상자 */
+.apply-page .inner-wrap {
+  /* padding: 4rem 0; */
+}
+
+/* 구분선 */
+.apply-page .sep-line {
+  border: 0;
+  border-top: 1px solid var(--border-gray30);
+  margin: 5.2rem 0;
+}
+
+/* 신청서 기본 정보 소제목 */
+.apply-page .form-subtitle {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-6);
+}
+
+/* 총 결제 금액 스타일 */
+.apply-page .total-payment-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.apply-page .total-payment-wrap .form-label {
+  min-height: auto;
+  height: 3.36rem;
+}
+
+.apply-page .total-payment-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-1);
+}
+
+.apply-page .total-amount {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.apply-page .amount-detail {
+  margin-top: 1.6rem;
+  color: var(--text-gray60);
+}
+
+/* 셀렉트 박스 및 폼 요소 둥글기 오버라이드 */
+.apply-page .form-control {
+  border-radius: 0.8rem;
+}
+.apply-page .helper-text {
+  margin-top: 1.6rem;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 0;
+  color: var(--text-gray60);
+}
+.apply-page .form-label {
+  font-size: 2rem;
+}
+
+/* 결제수단 칩 그리드 전용 스타일 */
+.apply-page .chip-grid {
+  display: grid;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-6);
+}
+
+.apply-page .chip-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.apply-page .chip-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 결제수단 로고 이미지 크기 및 간격 */
+.apply-page .payment-logo {
+  width: auto;
+  height: 2.2rem;
+  margin-right: 0.8rem;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* 추가 캠페인 */
+.campaign-container .campaign-section {
+  margin-top: 10rem;
+}
+.campaign-container .campaign-row {
+  display: flex;
+  gap: 8rem;
+  align-items: center;
+  text-align: left;
+}
+.campaign-container .campaign-row + .campaign-row {
+  margin-top: 10rem;
+}
+.campaign-container .campaign-row .campaign-col {
+  width: 50%;
+}
+.campaign-container .campaign-row .campaign-col .campaign-title {
+  margin-bottom: 6rem;
+  font-size: 4.4rem;
+}
+.campaign-container .campaign-row .campaign-col .campaign-title + p {
+  font-size: 1.8rem;
+}
+.campaign-container .campaign-row .campaign-col.text-col p {
+  font-size: 1.8rem;
+}
+.campaign-container .campaign-section .btn {
+  margin-top: 10rem;
+}
+
+/* CTA 버튼 간격 */
+.apply-page .apply-btn-wrap {
+  margin-top: var(--spacing-8);
+}
+
+.apply-page .donor-type-group .form-label {
+  display: block;
+  width: 100%;
+  min-height: auto;
+  line-height: 2.9rem;
+}
+
+/* ==========================================================================
+   디너 신청 페이지 전용 반응형 비율 축소 제어 (1500px 해상도 기준)
+   - 계산공식: (목표 html 폰트 크기 10px / 디너신청 페이지 기준 너비 1500px) * 100 = 0.66667vw
+   - 1500px 이하 해상도부터 비율에 비례하여 부드럽게 전체 스케일 축소
+   ========================================================================== */
+@media (max-width: 1500px) and (min-width: 769px) {
+  html:has(.apply-page) {
+    font-size: 0.66667vw;
+  }
+}
+
+/* ==========================================================================
+   KCR 캠페인 카드 그리드 및 카드 스타일 (100% 원본 사양 상속)
+   ========================================================================== */
+.kcr-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+  margin: 6rem auto 0;
+}
+
+.kcr-card {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  padding: 8rem 4rem 0 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 46.4rem;
+  height: 39.2rem;
+  text-align: left;
+  box-sizing: border-box;
+}
+html[lang="en"] .kcr-card {
+  padding: 6rem;
+}
+
+.kcr-card--cheer {
+  background-image: url("/src/images/campaign/bg_kcr_1.svg");
+}
+
+.kcr-card--hope {
+  background-image: url("/src/images/campaign/bg_kcr_2.svg");
+}
+
+.kcr-card--change {
+  background-image: url("/src/images/campaign/bg_kcr_3.svg");
+}
+
+.kcr-card-icon {
+  height: 6rem;
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.kcr-card-icon img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.kcr-card-title {
+  font-size: 2.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.kcr-card-desc {
+  font-size: 2rem;
+
+  word-break: keep-all;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .campaign-container {
+    padding: 5rem 2.4rem 0;
+  }
+
+  .campaign-container .page-title + p {
+    font-size: 1.6rem;
+  }
+  html[lang="en"] .campaign-container .page-title + p {
+    font-size: 1.8rem;
+  }
+
+  .campaign-container .img-top-wrap {
+    margin-top: 4rem;
+  }
+
+  .campaign-container .btn-play img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .campaign-container .line-path-wrap {
+    margin-top: 10rem;
+  }
+
+  .campaign-container .button-wrap {
+    margin-top: 4rem;
+  }
+
+  .campaign-timeline {
+    max-width: 100%;
+    padding: 10rem 0 0;
+    position: relative;
+  }
+
+  /* SVG 라인 및 하트 마크 모바일 노출 & 정밀 뷰포트 배치 */
+  .campaign-svg-line.type-pc {
+    display: none;
+  }
+
+  .campaign-svg-line.type-mo {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .campaign-svg-line-wrap {
+    display: block;
+    position: absolute;
+    width: 36rem;
+    height: 137.7rem;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    overflow: visible;
+  }
+
+  html[lang="en"] .campaign-svg-line-wrap {
+    height: 145.5rem;
+  }
+
+  .timeline-heart-marker {
+    display: block;
+    left: auto;
+    right: 14.4rem;
+    top: auto;
+    bottom: 2.7rem;
+    width: 5.2rem;
+    height: 4.5rem;
+    z-index: 1;
+    transform: scale(0.6);
+  }
+
+  html[lang="en"] .timeline-heart-marker {
+    right: 13.2rem;
+    bottom: 2.8rem;
+  }
+
+  .timeline-row,
+  .timeline-row.type-left,
+  .timeline-row.type-right {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    /* margin-bottom: 10rem; */
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-row .timeline-col {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .timeline-row .img-col {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-row .text-col {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-img-card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 680 / 488;
+    border-radius: 1.2rem;
+  }
+
+  .timeline-title {
+    width: 100%;
+    font-size: 2.2rem;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  /* kcr */
+  .kcr-card-grid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+    max-width: 50rem;
+    margin: 4rem auto 0;
+  }
+
+  .kcr-card {
+    width: 31.2rem;
+    height: 26rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+  html[lang="en"] .kcr-card {
+    width: 31.2rem;
+    height: 27rem;
+    padding: 3rem;
+  }
+  html[lang="en"] .kcr-card:nth-child(1) {
+    height: 29.1rem;
+  }
+
+  .kcr-card-icon {
+    margin-bottom: 2.4rem;
+    justify-content: center;
+  }
+
+  .kcr-card-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .kcr-card-desc {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  /* Gala 신청 페이지 */
+
+  .apply-page .gala-top-btn-wrap {
+    display: block;
+    margin-top: 5rem;
+  }
+
+  .apply-page .donate-card {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+
+  .apply-page .apply-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .apply-page .apply-left-col {
+    width: 100%;
+    max-width: 68rem;
+    position: relative;
+    top: 0;
+  }
+
+  .apply-page .apply-right-col {
+    max-width: 68rem;
+    width: 100%;
+  }
+
+  .apply-page .poster-wrap {
+    margin-top: 4rem;
+  }
+
+  .apply-page .common-card {
+    padding: 2.4rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .apply-page .donate-section-title {
+    font-size: 1.8rem;
+  }
+
+  .apply-page .card-title-wrap {
+    margin: 0 -2.4rem 2.4rem;
+    padding: 0 2.4rem 2.4rem;
+    box-sizing: border-box;
+  }
+
+  .apply-page .sep-line {
+    margin: 2.4rem 0;
+  }
+
+  .apply-page .gala-apply-form {
+    gap: 1rem;
+  }
+
+  .apply-page .inner-wrap {
+    padding: 0;
+  }
+
+  .apply-page .chip-grid {
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .apply-page .chip-grid .btn {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 1.2rem 0.8rem;
+    font-size: 1.4rem;
+  }
+
+  .apply-page .form-subtitle {
+    margin-bottom: 1.6rem;
+    font-size: 1.6rem;
+  }
+
+  .apply-page .form-label {
+    width: 100%;
+    min-height: auto;
+    margin-bottom: 0;
+    font-size: 1.6rem;
+  }
+
+  /* .apply-page .form-control,
+  .apply-page .helper-text,
+  .apply-page .payment-notice-text {
+    font-size: 1.6rem;
+    text-align: left;
+  } */
+  .apply-page .helper-text {
+    font-size: 1.2rem;
+  }
+
+  .apply-page .inner-form-group .inner-form-box {
+    padding: 2.4rem 1.6rem;
+    border-radius: 1.2rem;
+  }
+
+  /* 총 결제 금액 모바일 레이아웃 */
+  .apply-page .total-payment-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.6rem;
+    width: 100%;
+  }
+
+  .apply-page .total-payment-wrap .form-label {
+    width: auto;
+    height: auto;
+  }
+
+  .apply-page .total-payment-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 5rem;
+  }
+
+  .apply-page .total-amount {
+    font-size: 2rem;
+  }
+
+  .apply-page .amount-detail {
+    margin-top: 0.4rem;
+    font-size: 1.2rem;
+  }
+
+  /* 결제 수단 칩 그리드 2컬럼 */
+  .apply-page .chip-grid.cols-3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* CTA 신청 완료 버튼 100% 풀 너비 */
+  .apply-page .apply-btn-wrap {
+    display: block;
+    margin-top: 3.2rem;
+    width: 100%;
+  }
+  .apply-page .apply-btn-wrap .btn {
+    width: 100%;
+  }
+
+  /* 수상작 카드 모바일 가로 1개 */
+  .award-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .award-section {
+    margin-top: 8rem;
+  }
+
+  .award-section-header {
+    margin-bottom: 4rem;
+  }
+
+  .award-section-header .sub-title {
+    margin-bottom: 2.4rem;
+    font-size: 2.4rem;
+  }
+
+  .award-desc {
+    font-size: 1.4rem;
+  }
+
+  html[lang="en"] .award-desc {
+    font-size: 1.6rem;
+  }
+
+  .award-badge-wrap {
+    top: 1rem;
+    left: 0.4rem;
+  }
+
+  .award-badge-wrap .badge-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .award-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2rem;
+    padding: 0.56rem 0.4rem;
+    font-size: 1.2rem;
+  }
+
+  /* swipe */
+  .award-swiper-pagination.swiper-pagination {
+    margin-top: 5rem;
+  }
+
+  /* 추가 캠페인 모바일 반응형 스타일 */
+  .campaign-container .campaign-section {
+    margin-top: 6rem;
+  }
+
+  .campaign-container .campaign-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* type-right 구역: 모바일에서 텍스트 상단 -> 이미지 하단 순서 세로 스택 */
+  .campaign-container .campaign-row.type-right {
+    flex-direction: column-reverse;
+  }
+
+  .campaign-container .campaign-row + .campaign-row {
+    margin-top: 10rem;
+  }
+
+  .campaign-container .campaign-row .campaign-col {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  .campaign-container .campaign-row .campaign-col.text-col p {
+    font-size: 1.4rem;
+  }
+
+  .campaign-container .campaign-row .campaign-col .campaign-title {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  .campaign-container .campaign-row .campaign-col .campaign-title + p {
+    font-size: 1.4rem;
+  }
+
+  .campaign-container .campaign-row .campaign-col .text-col p {
+    font-size: 1.4rem;
+
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  .campaign-container .campaign-img-card {
+    width: 100%;
+    border-radius: 1.2rem;
+    overflow: hidden;
+  }
+
+  .campaign-container .campaign-img-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .campaign-container .campaign-section .btn {
+    margin-top: 5rem;
+  }
+
+  .kcr-card--cheer {
+    background-image: url("/src/images/campaign/bg_kcr_1_mo.svg");
+  }
+
+  .kcr-card--hope {
+    background-image: url("/src/images/campaign/bg_kcr_2_mo.svg");
+  }
+
+  .kcr-card--change {
+    background-image: url("/src/images/campaign/bg_kcr_3_mo.svg");
+  }
+}

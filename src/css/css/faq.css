@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   RMHC Korea FAQ 전용 스타일 (faq.css)
+   ========================================================================== */
+
+.faq-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 15rem 0 0;
+}
+
+.faq-container .page-title {
+  margin: 0 0 10rem 0;
+  font-size: 3.6rem;
+}
+
+html[lang="en"] .faq-container .page-title {
+  font-size: 5.8rem;
+}
+
+/* 1. FAQ 탭 메뉴 커스텀 스타일 */
+.faq-tab-menu {
+  margin-bottom: 4rem;
+}
+
+.faq-tab-menu .tab-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.faq-tab-menu .tab-btn {
+  display: block;
+  height: 6.8rem;
+  padding: 1.6rem 2.4rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+html[lang="en"] .faq-tab-menu .tab-btn {
+  font-size: 2.2rem;
+}
+
+.faq-tab-menu .tab-btn:hover {
+  color: #000000;
+}
+
+.faq-tab-menu .tab-btn.active {
+  color: #000000;
+}
+
+/* common.css 내 활성 탭 인디케이터 라인 스타일 보완 */
+.faq-tab-menu .tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+/* 2. FAQ 아코디언 리스트 스타일 */
+.faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faq-item {
+}
+
+/* 질문 버튼 영역 */
+.faq-q {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding: 2.8rem 0;
+  background: none;
+  border-bottom: 1px solid var(--border-black);
+  cursor: pointer;
+  text-align: left;
+  gap: 1.6rem;
+  transition: background-color 0.2s ease;
+}
+
+/* Q 아이콘 */
+.faq-q-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  background-color: var(--primary);
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* 질문 텍스트 */
+.faq-q-text {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1.45;
+}
+
+/* New 뱃지 */
+.faq-badge-new {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.9rem;
+  height: 2.1rem;
+  padding: 0 0.4rem;
+  background-color: #db0007;
+  color: #fffde9;
+  font-family: var(--font-semibold);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 0.3rem;
+  flex-shrink: 0;
+}
+
+/* 우측 정보 묶음 */
+.faq-q-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+  flex-shrink: 0;
+}
+
+.faq-date {
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  color: #3d3d3d;
+}
+
+/* 아코디언 토글 아이콘 */
+.faq-toggle-btn {
+  display: block;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-left: auto;
+  flex-shrink: 0;
+  background-image: url("../images/common/icon_faq_plus.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.4rem;
+}
+
+/* 질문 활성화 시 마이너스 기호로 변경 */
+.faq-q.active {
+  border-bottom: 1px solid transparent;
+}
+
+.faq-q.active .faq-toggle-btn {
+  background-image: url("../images/common/icon_faq_minus.png");
+}
+
+/* 답변 본문 영역 */
+.faq-a {
+  border-top: 1px solid var(--border-black);
+}
+
+.faq-a-inner {
+  padding: 2.4rem;
+  /* L:24 T:24 B:24 */
+  display: flex;
+  gap: 2.4rem;
+}
+
+.faq-a-text {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* 반응형 모바일 대응 */
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 0;
+  }
+
+  .faq-container .page-title {
+    margin: 5rem 0;
+    font-size: 2.2rem;
+  }
+
+  html[lang="en"] .faq-container .page-title {
+    font-size: 2.8rem;
+  }
+
+  .faq-tab-menu {
+    margin-left: -2.4rem;
+    margin-right: -2.4rem;
+    width: calc(100% + 4.8rem);
+    margin-bottom: 4rem;
+  }
+
+  .faq-tab-menu .tab-list {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.8rem;
+    padding: 0 2.4rem 0.4rem;
+  }
+
+  .faq-tab-menu .tab-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .faq-tab-menu .tab-item {
+    flex-shrink: 0;
+  }
+
+  .faq-tab-menu .tab-btn {
+    font-size: 1.8rem;
+    padding: 1.2rem 1.6rem;
+    height: auto;
+    white-space: nowrap;
+  }
+
+  html[lang="en"] .faq-tab-menu .tab-btn {
+    font-size: 1.8rem;
+  }
+
+  .faq-q {
+    padding: 2rem 0;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+
+  .faq-q-text {
+    font-size: 1.8rem;
+    line-height: 1.35;
+    word-break: keep-all;
+    width: auto;
+    flex: 1;
+  }
+
+  html[lang="en"] .faq-q-text {
+    font-size: 1.8rem;
+  }
+
+  .faq-toggle-btn {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .faq-a-inner {
+    padding: 2rem 0 2.4rem;
+  }
+
+  .faq-a-text {
+    font-size: 1.4rem;
+  }
+
+  html[lang="en"] .faq-a-text {
+    font-size: 1.6rem;
+  }
+}

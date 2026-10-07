@@ -1,0 +1,305 @@
+/* ==========================================================================
+   button.css — 공통 버튼 컴포넌트 스타일 (style.css에서 모듈 분리)
+   ========================================================================== */
+
+/* Interactive Action Target - Min-Height 48px to prevent touch target warnings */
+.button-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 5.2rem;
+  padding: 1rem 2.4rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-lg);
+  line-height: 1;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  user-select: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+.btn.w-auto {
+  width: auto;
+  margin: 0 auto;
+}
+.btn.w-left {
+  width: auto;
+  margin-left: 0;
+}
+.btn.btn-small {
+  height: 3.2rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+}
+
+/* Disabled State */
+.btn:disabled,
+.btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.btn-tab:disabled,
+.btn-tab.disabled {
+  opacity: 0.4;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* RMHC Red Button (Contrast: white on red = 5.34:1, PASSES AA) */
+.btn-primary,
+a.btn-primary,
+.btn-primary:hover,
+a.btn-primary:hover {
+  color: #fffde9;
+  background-color: var(--primary);
+}
+.btn-page:hover,
+a.btn-page:hover,
+.btn-primary.btn-page:hover,
+a.btn-primary.btn-page:hover {
+  color: var(--text-white);
+  background-color: var(--bg-violet);
+}
+.btn-primary.btn-page1:hover,
+a.btn-primary.btn-page1:hover {
+  color: var(--text-black);
+  background-color: var(--bg-primary);
+}
+
+/* RMHC Yellow Button (Contrast: Dark Charcoal on Gold = 7.8:1, PASSES AA) */
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--text-primary);
+  box-shadow: 0 4px 12px var(--secondary-glow);
+}
+/* .btn-secondary:hover {
+  background-color: var(--secondary-hover);
+  transform: translateY(-0.2rem);
+  box-shadow: 0 8px 20px rgba(255, 199, 44, 0.35);
+}
+.btn-secondary:active {
+  transform: translateY(0);
+} */
+
+/* Outline Button */
+.btn-outline {
+  text-align: center;
+  border: 1px solid var(--border-gray40);
+  line-height: 1;
+  background-color: transparent;
+  transition:
+    border 0.3s ease,
+    color 0.3s ease,
+    background-color 0.3s ease;
+}
+.btn-outline:hover {
+  border-color: var(--primary);
+}
+
+.btn-outline.primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-outline.primary:hover {
+  color: var(--secondary);
+  background-color: var(--primary);
+}
+.btn-outline span + span {
+  display: inline-block;
+  margin-left: 0.8rem;
+}
+
+/* white Button */
+.btn-white {
+  color: var(--text-black);
+  background-color: #fffde9;
+}
+
+/* Text-only Button */
+.btn-text {
+  min-height: auto;
+  padding: var(--spacing-2) var(--spacing-3);
+  color: var(--text-secondary);
+}
+.btn-text:hover {
+  color: var(--primary);
+}
+
+/* Tab Buttons */
+.btn-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-Redius8, 0.8rem);
+  background: var(--color-brand-red, #db0007);
+  color: #ffffff;
+  border: none;
+  min-height: 5.2rem;
+  font-size: var(--text-lg);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Table Specific Small Button */
+.btn-table {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.6rem;
+  min-height: auto;
+  padding: 0 0.8rem;
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  background-color: transparent;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+}
+
+.btn-table.btn-outline.primary {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.btn-table:hover {
+  border-color: var(--primary);
+}
+
+/* .btn-table.btn-outline.primary:hover {
+  background-color: rgba(224, 0, 0, 0.05);
+} */
+
+.btn-table.btn-outline.secondary {
+  color: #000000;
+}
+
+/* .btn-table.btn-outline.secondary:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+} */
+
+.btn.btn-arrow {
+  gap: 0.8rem;
+  padding: 0 1.6rem 0 2.4rem;
+}
+
+.btn.btn-arrow::after {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_arrow_right_white.png") no-repeat
+    center/contain;
+  mask: url("/src/images/common/icon_arrow_right_white.png") no-repeat
+    center/contain;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    background-color 0.3s ease;
+}
+
+.btn.btn-plus {
+  gap: 0.4rem;
+  padding: 0 2.4rem 0 2.4rem;
+}
+
+.btn.btn-plus::after {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_btn_plus.png") no-repeat center;
+  mask: url("/src/images/common/icon_btn_plus.png") no-repeat center;
+  background-size: 1.2rem auto;
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* btn-white 또한 텍스트 색상을 따라가도록 둡니다. */
+/* .btn.btn-white.btn-arrow::after { ... } */
+
+.btn.btn-white.btn-arrow:hover::after,
+.btn.btn-arrow:hover::after {
+  transform: translateX(0.4rem);
+}
+
+/* 다운로드 아이콘이 포함된 버튼 */
+.btn.btn-down {
+  gap: 0.8rem;
+  padding: 0 1.6rem 0 2.4rem;
+}
+
+.btn-down::after {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: 1.2rem;
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_download_white.svg") no-repeat
+    center;
+  mask: url("/src/images/common/icon_download_white.svg") no-repeat center;
+  background-size: contain;
+  transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-down:hover::after {
+  /* transform: translateY(0.4rem); */
+}
+
+/* 하트 버튼 */
+.btn-heart::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_btn_heart_black.svg") no-repeat
+    center;
+  mask: url("/src/images/common/icon_btn_heart_black.svg") no-repeat center;
+  background-size: contain;
+  transition: all 0.2s ease;
+}
+.btn-heart:hover {
+  background-color: var(--bg-violet);
+}
+.btn-heart:hover::after,
+.btn-heart:focus-visible::after {
+  content: "";
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: 0.5rem;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    height: 4.4rem;
+    font-size: 1.4rem;
+  }
+  .payment-tab-btn,
+  .btn.btn-kv {
+    height: 4.4rem;
+  }
+  .btn.btn-down {
+    gap: 0.4rem;
+  }
+  .btn-down::after {
+    margin-left: 0;
+  }
+}

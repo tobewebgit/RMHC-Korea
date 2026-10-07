@@ -1,0 +1,1725 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   houses.css - RMHC 하우스 찾기 상세 페이지
+   ========================================================================== */
+
+.house-page main {
+  overflow: hidden;
+}
+
+.house-page .swiper {
+  overflow: hidden;
+}
+
+.house-page .swiper-wrapper {
+  display: flex;
+  box-sizing: content-box;
+  transition-property: transform;
+}
+
+.house-page .swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+}
+
+.house-section {
+  padding: 20rem 0;
+}
+
+.house-section__head {
+  width: min(100% - 8rem, 144rem);
+  margin: 0 auto 8rem;
+  text-align: center;
+}
+
+.house-section__head h2 {
+  margin: 0;
+  font-size: 4.4rem;
+}
+
+.house-section__head p {
+  margin: 2.4rem auto 0;
+  font-size: 1.8rem;
+}
+html[lang="en"] .house-section__head p {
+  font-size: 2rem;
+}
+
+.house-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 39.3rem;
+  min-height: 9.3rem;
+  padding: 0 2.4rem;
+  border: 0;
+  border-radius: 1.6rem;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+html[lang="en"] .house-btn {
+  font-size: 2.2rem;
+}
+
+.house-btn::before {
+  content: "";
+  width: 1.5rem;
+  height: 2.1rem;
+  display: inline-block;
+  margin-right: 1.4rem;
+  background: url("/src/images/houses/icon_btn_house.png") 50% 50% / 100% 100%
+    no-repeat;
+}
+
+.house-btn--primary {
+  color: #ffffff;
+  background-color: var(--primary);
+}
+
+.house-btn--yellow {
+  background-color: #ffc72c;
+}
+
+.house-btn--green {
+  background-color: #9cd83e;
+}
+
+.house-btn--sky {
+  background-color: #8ee7f8;
+}
+
+/* Hero */
+.house-hero {
+  position: relative;
+  min-height: 80rem;
+  overflow: hidden;
+}
+
+.house-hero__image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 192rem;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.house-hero__image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 192rem;
+  min-width: 192rem;
+  max-width: none;
+  height: 100%;
+  object-position: center;
+  display: block;
+}
+
+.house-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  max-width: 160rem;
+  min-height: 80rem;
+}
+
+.house-hero__panel {
+  width: 91.4rem;
+  height: 53.2rem;
+  padding: 8rem;
+  color: #fffde9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+html[lang="en"] .house-hero__panel {
+  height: 69.1rem;
+}
+
+.house-hero__panel h1 {
+  margin: 0;
+  font-size: 5.8rem;
+  letter-spacing: 0;
+  color: #fffde9;
+}
+
+.house-hero__panel p {
+  margin: 2.4rem 0 0;
+  font-size: 2rem;
+  color: #fffde9;
+}
+html[lang="en"] .house-hero__panel p {
+  font-size: 2.2rem;
+}
+
+.house-hero__panel .btn {
+  margin-top: 3.2rem;
+}
+
+/* Story */
+.house-story {
+  position: relative;
+  background-color: var(--bg-primary);
+}
+
+.story-slider {
+  margin: 0 auto;
+}
+
+.story-slider .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 68.8rem;
+}
+
+.story-slider .swiper-slide.type1 {
+  background: url("/src/images/houses/yangsan_grid_1.png") 50% 50% / 100% 100%
+    no-repeat;
+}
+
+.story-slider .swiper-slide.type2 {
+  background: url("/src/images/houses/yangsan_grid_2.png") 50% 50% / 100% 100%
+    no-repeat;
+}
+
+.story-slider .swiper-slide.type3 {
+  background: url("/src/images/houses/yangsan_grid_3.png") 50% 50% / 100% 100%
+    no-repeat;
+}
+
+.story-slider .swiper-slide.type4 {
+  background: url("/src/images/houses/yangsan_grid_4.png") 50% 50% / 100% 100%
+    no-repeat;
+}
+
+.story-card {
+  position: relative;
+  width: 100%;
+  max-width: 100rem;
+  min-height: 50.8rem;
+  margin: 0 auto;
+  padding: 8rem;
+  border-radius: 0.8rem;
+  text-align: center;
+}
+
+.story-slider .swiper-slide.type1 .story-card {
+  background: url("/src/images/houses/yangsan_grid_card_1.svg") 50% 50% / 100%
+    100% no-repeat;
+}
+
+.story-slider .swiper-slide.type2 .story-card {
+  background: url("/src/images/houses/yangsan_grid_card_2.svg") 50% 50% / 100%
+    100% no-repeat;
+}
+
+.story-slider .swiper-slide.type3 .story-card {
+  background: url("/src/images/houses/yangsan_grid_card_3.svg") 50% 50% / 100%
+    100% no-repeat;
+}
+
+.story-slider .swiper-slide.type4 .story-card {
+  background: url("/src/images/houses/yangsan_grid_card_4.svg") 50% 50% / 100%
+    100% no-repeat;
+}
+
+.story-card__mark {
+  display: block;
+  height: 4rem;
+  margin-bottom: 1.6rem;
+  color: var(--primary);
+  font-family: var(--font-display);
+  font-size: 8rem;
+  line-height: 0.7;
+}
+
+.story-card h3 {
+  margin: 0;
+  font-size: 2.8rem;
+}
+
+.story-card p {
+  margin: 2.4rem 0 0;
+  font-size: 1.8rem;
+}
+html[lang="en"] .story-card p {
+  font-size: 2rem;
+}
+
+.story-slider__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 6.4rem;
+  height: 6.4rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: #ffc72c;
+  cursor: pointer;
+}
+
+.story-slider__btn:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.story-slider__btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 2.2rem;
+  height: 1.6rem;
+}
+
+.story-slider__btn--prev {
+  left: 7.8rem;
+}
+
+.story-slider__btn--prev::before {
+  background: url("/src/images/common/icon_arrow_left.png") 50% 50% / 100% 100%
+    no-repeat;
+}
+
+.story-slider__btn--next {
+  right: 7.8rem;
+}
+
+.story-slider__btn--next::before {
+  background: url("/src/images/common/icon_arrow_right.png") 50% 50% / 100% 100%
+    no-repeat;
+}
+
+.story-slider__pagination {
+  display: none !important;
+}
+
+/* Value */
+.house-value {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0 2.6rem;
+  background-color: #ffbc0d;
+  overflow: hidden;
+}
+
+.house-value__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 186.7rem;
+  max-width: none;
+  aspect-ratio: 1867 / 1019;
+  flex-shrink: 0;
+  margin: 0 auto;
+  border-radius: 3rem;
+  background: url("/src/images/houses/house_value_bg.svg") 50% 50% / 100% 100%
+    no-repeat;
+}
+
+@media (max-width: 1440px) {
+  .house-hero {
+    min-height: calc(80rem * (100vw / 1440));
+  }
+
+  .house-hero__content {
+    min-height: calc(80rem * (100vw / 1440));
+  }
+
+  .house-hero__image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .house-hero__image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100vw * (1920 / 1440));
+    min-width: 0;
+    max-width: none;
+    height: 100%;
+    object-position: center;
+    display: block;
+  }
+
+  .house-value__inner {
+    width: 100%;
+    flex-shrink: 1;
+  }
+}
+
+.house-value__layout {
+  display: grid;
+  grid-template-columns: 50rem minmax(0, 1fr);
+  gap: 12rem;
+  align-items: center;
+}
+
+.house-value__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.6rem;
+}
+
+.house-value__content h2 {
+  margin: 0 0 7.6rem;
+  font-size: 4.4rem;
+}
+
+.value-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6.4rem 8.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.value-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.value-list img {
+  width: 8rem;
+  height: 8rem;
+  margin-bottom: 2.4rem;
+}
+
+.value-list strong {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+}
+
+.value-list p {
+  margin: 2.4rem 0 0;
+  font-size: 1.8rem;
+}
+html[lang="en"] .value-list p {
+  font-size: 2.2rem;
+}
+
+/* Impact */
+.house-impact {
+  background-color: var(--bg-primary);
+}
+
+.impact-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rem;
+  width: min(100% - 8rem, 144rem);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.impact-list img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+}
+
+.impact-list strong {
+  display: block;
+  margin-top: 2.4rem;
+  font-family: var(--font-display);
+  font-size: 9rem;
+}
+
+.impact-list span {
+  display: block;
+  margin-top: 0.8rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+html[lang="en"] .impact-list span {
+  font-size: 2rem;
+}
+
+/* Gallery */
+.house-gallery {
+  padding-top: 4rem;
+  background-color: var(--bg-primary);
+}
+
+.gallery-control {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4rem;
+  width: min(100% - 8rem, 144rem);
+  margin: 0 auto 2.4rem;
+}
+
+.gallery-tabs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery-tabs button {
+  position: relative;
+  min-height: 4.8rem;
+  padding: 1.6rem 2.4rem;
+  border: 0;
+  background: transparent;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gallery-tabs button.is-active {
+  color: var(--text-primary);
+}
+
+.gallery-tabs button.is-active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.3rem;
+  background-color: var(--primary);
+}
+
+.gallery-view {
+  width: min(100% - 8rem, 144rem);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.gallery-view .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 1.2rem;
+  width: min(100% - 8rem, 144rem);
+  margin: 2.2rem auto 0;
+  padding: 0.2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.gallery-thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-thumb {
+  flex: 0 0 auto;
+  width: 19.7rem;
+  height: 11.1rem;
+  padding: 0;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+.gallery-thumb.is-active {
+  opacity: 1;
+}
+
+.gallery-thumb img {
+  display: block;
+  width: 19.7rem;
+  height: 11.1rem;
+  object-fit: cover;
+}
+
+/* Partner */
+.house-partner {
+  margin-top: 20rem;
+  padding: 20rem 0;
+  background-color: #d0c9ff;
+}
+
+.partner-slider {
+  width: 100%;
+  padding-left: max(4rem, calc((100vw - 144rem) / 2));
+  padding-right: 4rem;
+  overflow: hidden;
+}
+
+.partner-slider .swiper-slide {
+  width: 28rem;
+}
+
+.partner-slider .swiper-wrapper {
+  align-items: stretch;
+  gap: 3.2rem;
+  width: max-content;
+  transition-timing-function: linear;
+  will-change: transform;
+}
+
+.partner-slider.is-fallback-slider {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.partner-slider.is-fallback-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.partner-slider.is-fallback-slider .swiper-slide {
+  scroll-snap-align: start;
+}
+
+.partner-card {
+  min-height: 28.5rem;
+  padding: 4rem;
+  border-radius: 0.8rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.partner-card img {
+  width: 20rem;
+  height: 10rem;
+  /* object-fit: contain; */
+}
+
+.partner-card p {
+  margin: 2.4rem 0 0;
+  font-size: 1.8rem;
+}
+
+/* Apply */
+.house-apply {
+  padding: 20rem 0;
+  background-color: #8ee7f8;
+  text-align: center;
+}
+
+.apply-steps.inner-layout,
+.apply-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+  width: min(100% - 8rem, 144rem);
+  margin: 0 auto 8rem;
+  padding: 0;
+  list-style: none;
+}
+
+.apply-steps li {
+  min-height: 33.8rem;
+  padding: 6rem 4rem;
+  border-radius: 1.6rem;
+  background-color: #ffffff;
+}
+
+.apply-steps img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+}
+
+.apply-steps strong {
+  display: block;
+  margin-top: 3.2rem;
+  font-size: 2.8rem;
+  font-family: var(--font-display);
+}
+html[lang="en"] .apply-steps strong {
+  min-height: 6.8rem;
+}
+
+.apply-steps p {
+  margin: 1.6rem 0 0;
+  font-size: 1.8rem;
+}
+
+/* Location */
+.house-location {
+  background-color: var(--bg-primary);
+}
+
+.location-map {
+  position: relative;
+  width: min(100% - 8rem, 144rem);
+  margin: 0 auto;
+}
+
+.location-map img {
+  display: block;
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+.location-map .icon-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3.2rem;
+  height: 4rem;
+  background: url("/src/images/houses/icon_marker.png") no-repeat center/contain;
+  z-index: 999;
+}
+
+.location-info {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  width: min(100% - 8rem, 120rem);
+  margin: 6rem auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.location-info li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 39.4rem;
+  text-align: center;
+}
+
+.location-info li::before {
+  content: "";
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  margin-right: 0.8rem;
+  flex-shrink: 0;
+}
+
+.location-info li:nth-child(1)::before {
+  background: url("/src/images/houses/icon_location-info_tell.png") no-repeat
+    center/contain;
+}
+
+.location-info li:nth-child(2)::before {
+  background: url("/src/images/houses/icon_location-info_mail.png") no-repeat
+    center/contain;
+}
+
+.location-info li:nth-child(3)::before {
+  background: url("/src/images/houses/icon_location-info_fax.png") no-repeat
+    center/contain;
+}
+
+.location-info strong {
+  margin-right: 0;
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  white-space: nowrap;
+}
+
+.location-info span {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  margin-left: 0;
+  font-size: 2.2rem;
+  text-align: center;
+  word-break: break-all;
+  color: var(--text-gray100);
+}
+
+.location-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 6rem;
+}
+
+/* FAQ */
+.house-faq {
+  padding: 20rem 0;
+  background-color: #ffbc0d;
+}
+
+.faq-list {
+  width: min(100% - 8rem, 120rem);
+  margin: 0 auto;
+}
+
+.faq-list summary {
+  position: relative;
+  min-height: 7.2rem;
+  padding: 2.4rem 0 2.4rem 0;
+  border-bottom: 1px solid var(--border-black);
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1.4;
+  cursor: pointer;
+  list-style: none;
+}
+html[lang="en"] .faq-list summary {
+  font-size: 2.8rem;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  content: "";
+  position: absolute;
+  top: calc(2.4rem + (2.2rem * 1.4) / 2);
+  right: 0;
+  width: 3.2rem;
+  /* 32px */
+  height: 3.2rem;
+  /* 32px */
+  margin-left: auto;
+  flex-shrink: 0;
+  background-image: url("../images/common/icon_faq_plus.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.4rem;
+  transform: translateY(-50%);
+}
+
+.faq-list details[open] summary::after {
+  content: "";
+  background-image: url("../images/common/icon_faq_minus.png");
+}
+
+.faq-list p {
+  margin: 0;
+  padding: 2.4rem;
+  font-size: 2rem;
+}
+
+/* Support */
+.house-support {
+  padding: 20rem 0 0;
+}
+
+.support-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+  width: min(100% - 8rem, 144rem);
+  margin: 0 auto;
+}
+
+.support-card {
+  width: 100%;
+  max-width: 46.4rem;
+  min-height: 39.2rem;
+  padding: 6rem;
+  border-radius: 0.8rem;
+}
+
+.support-card--yellow {
+  background: url(/src/images/houses/bg_house-support_1.svg) 50% 50% no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.support-card--sky {
+  background: url(/src/images/houses/bg_house-support_2.svg) 50% 50% no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.support-card--green {
+  background: url(/src/images/houses/bg_house-support_3.svg) 50% 50% no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.support-card img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+}
+
+.support-card h3 {
+  margin: 2.4rem 0 0;
+  font-size: 2.8rem;
+}
+
+.support-card p {
+  margin: 1.6rem 0 3.2rem;
+  font-size: 2rem;
+}
+html[lang="en"] .support-card p {
+  min-height: 7.2rem;
+}
+
+.support-card a {
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  /* Common */
+  .house-section {
+    padding: 10rem 0;
+  }
+
+  .house-section__head {
+    width: calc(100% - 4.8rem);
+    margin: 0 auto 4rem;
+  }
+
+  .house-section__head h2 {
+    font-size: 2.4rem;
+  }
+
+  .house-section__head p {
+    margin: 2.4rem auto 0;
+    font-size: 1.4rem;
+  }
+  html[lang="en"] .house-section__head p {
+    font-size: 1.6rem;
+  }
+  .house-section__head p.space-12 {
+    margin: 1.2rem auto 0;
+  }
+
+  .house-btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 4.8rem;
+    font-size: 1.6rem;
+  }
+
+  /* Hero */
+  .house-hero {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    margin-top: 0;
+  }
+
+  .house-hero__content {
+    order: 1;
+    align-items: flex-start;
+    padding-top: 5rem;
+    min-height: auto;
+  }
+
+  .house-hero__content.inner-layout {
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+  }
+
+  .house-hero__image {
+    order: 2;
+    position: static;
+    left: auto;
+    transform: none;
+    max-width: none;
+    width: 100%;
+    height: auto;
+    margin-top: 4rem;
+  }
+
+  .house-hero__image img {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .house-hero__panel {
+    width: 100%;
+    max-width: 34rem;
+    height: auto;
+    padding: 0 1.2rem;
+    color: var(--text-black);
+    background-image: none;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  html[lang="en"] .house-hero__panel {
+    height: auto;
+    background-image: none;
+  }
+
+  .house-hero__panel h1 {
+    font-size: 2.8rem;
+    color: var(--text-black);
+  }
+
+  .house-hero__panel p {
+    margin-top: 1.2rem;
+    font-size: 1.6rem;
+    color: var(--text-black);
+  }
+  html[lang="en"] .house-hero__panel p {
+    font-size: 1.6rem;
+  }
+
+  .house-hero__panel .btn {
+    margin-top: 2.4rem;
+  }
+
+  /* Story */
+  .house-story {
+    padding-top: 10rem;
+  }
+
+  .story-slider {
+    width: 100%;
+    padding: 0 0 4rem;
+    overflow: hidden;
+  }
+
+  .story-slider .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    min-height: 45.2rem;
+    box-sizing: border-box;
+  }
+
+  .story-slider .swiper-slide.type1 {
+    background: url("/src/images/houses/yangsan_grid_1_mo.svg") 50% 1px / 100%
+      100% no-repeat;
+  }
+
+  .story-slider .swiper-slide.type2 {
+    background: url("/src/images/houses/yangsan_grid_2_mo.svg") 50% 50% / 100%
+      100% no-repeat;
+  }
+
+  .story-slider .swiper-slide.type3 {
+    background: url("/src/images/houses/yangsan_grid_3_mo.svg") 50% 50% / 100%
+      100% no-repeat;
+  }
+
+  .story-slider .swiper-slide.type4 {
+    background: url("/src/images/houses/yangsan_grid_4_mo.svg") 50% 50% / 100%
+      100% no-repeat;
+  }
+
+  .story-card {
+    width: 31.2rem;
+    min-height: 40.4rem;
+    padding: 4.8rem 2.4rem 4rem;
+    text-align: center;
+  }
+
+  .story-slider .swiper-slide.type1 .story-card {
+    background: url("/src/images/houses/yangsan_grid_card_1_mo.svg") 50% 50% /
+      100% 100% no-repeat;
+  }
+
+  .story-slider .swiper-slide.type2 .story-card {
+    background: url("/src/images/houses/yangsan_grid_card_2_mo.svg") 50% 50% /
+      100% 100% no-repeat;
+  }
+
+  .story-slider .swiper-slide.type3 .story-card {
+    background: url("/src/images/houses/yangsan_grid_card_3_mo.svg") 50% 50% /
+      100% 100% no-repeat;
+  }
+
+  .story-slider .swiper-slide.type4 .story-card {
+    background: url("/src/images/houses/yangsan_grid_card_4_mo.svg") 50% 50% /
+      100% 100% no-repeat;
+  }
+
+  .story-card__mark {
+    height: 3rem;
+    font-size: 5.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .story-card h3 {
+    font-size: 2rem;
+  }
+
+  html[lang="en"] .story-card p {
+    font-size: 1.6rem;
+  }
+  .story-card p {
+    font-size: 1.4rem;
+  }
+
+  .story-slider__btn {
+    display: none;
+  }
+
+  .story-slider__pagination.motion-swiper-pagination {
+    display: flex !important;
+    margin-top: 4rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Value */
+  .house-value {
+    padding: 6rem 0;
+  }
+
+  .house-value__inner {
+    align-items: flex-start;
+    width: 31.2rem;
+    height: 117.4rem;
+    padding: 4rem 2.4rem;
+    border-radius: 1.6rem;
+    aspect-ratio: auto;
+    background: url(/src/images/houses/house_value_bg_mo.svg) 50% 50% / 100%
+      100% no-repeat;
+  }
+  html[lang="en"] .house-value__inner {
+    height: 141.6rem;
+    background: url(/src/images/houses/house_value_bg_mo_en.svg) 50% 50% / 100%
+      100% no-repeat;
+  }
+
+  .house-value__layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  html[lang="en"] .house-value__layout {
+    gap: 3rem;
+  }
+
+  .house-value__image img {
+    width: 100%;
+    max-width: 22rem;
+    margin: 0 auto;
+  }
+
+  .house-value__content h2 {
+    margin: 0 0 4rem;
+    font-size: 2.4rem;
+    text-align: center;
+  }
+
+  .value-list {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  html[lang="en"] .value-list {
+    gap: 2.5rem;
+  }
+
+  .value-list li {
+    align-items: center;
+    text-align: center;
+  }
+
+  .value-list img {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .impact-box {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .value-list strong {
+    font-size: 2rem;
+  }
+
+  .value-list p {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+  }
+  html[lang="en"] .value-list p {
+    font-size: 1.8rem;
+  }
+
+  /* Impact */
+  .impact-list {
+    /* grid-template-columns: repeat(2, 1fr); */
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 4.8rem);
+    gap: 3.2rem 1.6rem;
+    margin: 4rem auto 0;
+  }
+
+  .impact-list li {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 0 2.4rem;
+  }
+
+  .impact-list li:last-child {
+    /* grid-column: span 2; */
+  }
+
+  .impact-list img {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .impact-list strong {
+    margin-top: 0;
+    font-size: 4rem;
+  }
+
+  html[lang="en"] .impact-list span,
+  .impact-list span {
+    margin-top: 0;
+    font-size: 1.6rem;
+  }
+
+  /* Gallery */
+  .house-gallery {
+    padding-top: 0;
+  }
+
+  .gallery-control {
+    width: 100%;
+    flex-direction: column;
+    gap: 1.6rem;
+    align-items: stretch;
+    margin-bottom: 1.6rem;
+  }
+
+  .gallery-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0 2.4rem;
+  }
+
+  .gallery-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-tabs button {
+    flex: 0 0 auto;
+    min-height: 3.2rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.8rem;
+  }
+  html[lang="en"] .gallery-tabs button {
+    font-size: 1.8rem;
+  }
+
+  .gallery-view {
+    width: calc(100% - 4.8rem);
+  }
+
+  .gallery-thumbs {
+    width: calc(100% - 4.8rem);
+    margin-top: 1.6rem;
+  }
+
+  .gallery-thumb {
+    width: 7.5rem;
+    height: 4.2rem;
+    flex: 0 0 7.5rem;
+    border-radius: 0.4rem;
+  }
+
+  .gallery-thumb img {
+    width: 7.5rem;
+    height: 4.2rem;
+  }
+
+  .gallery-nav {
+    display: flex;
+    gap: 1.2rem;
+    padding: 0 2.4rem;
+  }
+
+  .gallery-nav__btn {
+    width: 2.8rem;
+    height: 2.8rem;
+    background-size: 2.8rem;
+  }
+
+  /* Partner */
+  .house-partner {
+    margin-top: 10rem;
+    padding: 10rem 0;
+  }
+
+  .house-partner .house-section__head {
+    margin-bottom: 8rem;
+  }
+
+  .partner-slider {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+
+  .partner-slider .swiper-wrapper {
+    gap: 1.6rem;
+  }
+
+  .partner-slider .swiper-slide {
+    width: 23rem;
+  }
+
+  .partner-card {
+    min-height: 19rem;
+    padding: 2.4rem 1.6rem;
+  }
+
+  .partner-card img {
+    width: 14rem;
+    height: 6.8rem;
+    margin: 0 auto;
+  }
+
+  .partner-card p {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+  }
+
+  /* Apply */
+  .house-apply {
+    padding: 10rem 0;
+  }
+
+  .apply-steps.inner-layout,
+  .apply-steps {
+    grid-template-columns: 1fr;
+    width: calc(100% - 4.8rem);
+    gap: 2.4rem;
+    margin-bottom: 4rem;
+  }
+
+  .apply-steps li {
+    min-height: auto;
+    padding: 3rem 2rem;
+  }
+
+  .apply-steps img {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .apply-steps strong {
+    font-size: 2rem;
+  }
+  html[lang="en"] .apply-steps strong {
+    min-height: auto;
+  }
+
+  .apply-steps p {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+  }
+
+  .house-apply > .house-btn {
+    width: auto;
+    min-width: calc(100% - 4.8rem);
+  }
+
+  /* Location */
+  .location-map {
+    width: calc(100% - 4.8rem);
+  }
+
+  .location-info {
+    width: calc(100% - 4.8rem);
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+    margin: 4rem auto 0;
+    font-size: 2rem;
+  }
+
+  .location-info li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .location-info li::before {
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .location-info strong {
+    margin-right: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+    white-space: nowrap;
+    color: var(--text-gray100);
+  }
+
+  .location-info span {
+    display: block;
+    width: 100%;
+    margin-top: 0.8rem;
+    margin-left: 0;
+    font-size: 2rem;
+    text-align: center;
+    word-break: normal;
+    color: var(--text-gray100);
+  }
+  html[lang="en"] .location-info span {
+    font-size: 1.8rem;
+  }
+
+  .location-actions {
+    width: calc(100% - 4.8rem);
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 4rem auto 0;
+  }
+
+  .location-actions .house-btn {
+    width: 100%;
+    min-height: 5.2rem;
+    font-size: 1.4rem;
+    border-radius: 0.8rem;
+  }
+  html[lang="en"] .location-actions .house-btn {
+    font-size: 1.8rem;
+  }
+
+  /* FAQ */
+  .house-faq {
+    padding: 10rem 0;
+  }
+
+  .faq-list {
+    width: calc(100% - 4.8rem);
+  }
+
+  .faq-list summary {
+    min-height: 6rem;
+    padding: 1.8rem 4rem 1.8rem 0;
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+  html[lang="en"] .faq-list summary {
+    font-size: 2rem;
+  }
+
+  .faq-list summary::after {
+    top: calc(1.8rem + (1.8rem * 1.4) / 2);
+    right: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-size: 2rem;
+  }
+
+  .faq-list p {
+    font-size: 1.6rem;
+    padding: 1.6rem 0;
+  }
+
+  /* Support */
+  .house-support {
+    padding: 10rem 0 0;
+  }
+
+  .support-cards {
+    grid-template-columns: 1fr;
+    width: calc(100% - 4.8rem);
+    gap: 2.4rem;
+  }
+
+  .support-card {
+    max-width: 31.2rem;
+    min-height: 30.7rem;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .support-card img {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .support-card h3 {
+    margin-top: 2.4rem;
+    font-size: 2rem;
+  }
+
+  .support-card p {
+    min-height: auto;
+    margin: 1.6rem 0 2.4rem;
+    font-size: 1.6rem;
+  }
+  html[lang="en"] .support-card p {
+    min-height: 5.7rem;
+  }
+
+  .support-card--yellow {
+    background: url(/src/images/houses/bg_house-support_1_mo.svg) 50% 50%
+      no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .support-card--sky {
+    background: url(/src/images/houses/bg_house-support_2_mo.svg) 50% 50%
+      no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .support-card--green {
+    background: url(/src/images/houses/bg_house-support_3_mo.svg) 50% 50%
+      no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+/* ==========================================================================
+   House Coming Soon Section
+   ========================================================================== */
+body:has(.house-coming-section) .footer,
+.house-page:has(.house-coming-section) + .footer,
+.house-page:has(.house-coming-section) ~ .footer {
+  margin-top: -4rem !important;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  body:has(.house-coming-section) .footer,
+  .house-page:has(.house-coming-section) + .footer,
+  .house-page:has(.house-coming-section) ~ .footer {
+    margin-top: -3rem !important;
+  }
+}
+
+.house-coming-section {
+  position: relative;
+  width: 100%;
+  height: 108rem;
+  min-height: 108rem;
+  background-color: var(--primary, #db0007);
+  background-image: url("/src/images/houses/img_coming_heart.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 192rem auto;
+  display: flex;
+  justify-content: center;
+  padding: 0 2.4rem;
+  overflow: hidden;
+}
+
+.house-coming-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 93rem;
+  margin: 0 auto;
+  padding-top: 34rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Badge */
+.house-coming-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.house-coming-badge__icon {
+  width: 3.8rem;
+  height: auto;
+  display: block;
+}
+
+.house-coming-badge__text {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--text-gray100);
+  line-height: 1;
+}
+html[lang="en"] .house-coming-badge__text {
+  font-size: 2.4rem;
+}
+
+/* Title */
+.house-coming-title {
+  font-size: 4.4rem;
+  color: var(--text-gray100);
+  margin-bottom: 2.4rem;
+  word-break: keep-all;
+}
+
+/* Desc */
+.house-coming-desc {
+  font-size: 1.8rem;
+
+  color: var(--text-gray90);
+  margin-bottom: 8rem;
+  word-break: keep-all;
+}
+
+/* Card */
+.house-coming-card {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  background-color: rgba(255, 188, 13, 0.2);
+  border-radius: 1.6rem;
+  padding: 4rem;
+  text-align: center;
+}
+
+.house-coming-card__label {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+}
+
+.house-coming-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  max-width: 44.8rem;
+  min-height: 8.8rem;
+  padding: 2.4rem;
+  background-color: #ffbc0d;
+  border-radius: 1.2rem;
+  font-size: 2rem;
+  font-family: var(--font-display);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.house-coming-btn:hover {
+  background-color: #ffbe10;
+  box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.08);
+}
+
+.house-coming-btn__icon {
+  width: 4rem;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.house-coming-btn__text {
+  flex: 1;
+  text-align: center;
+}
+
+.house-coming-btn::after {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: currentColor;
+  -webkit-mask: url("/src/images/common/icon_arrow_right_white.png") no-repeat
+    center / contain;
+  mask: url("/src/images/common/icon_arrow_right_white.png") no-repeat center /
+    contain;
+  flex-shrink: 0;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    background-color 0.3s ease;
+}
+
+.house-coming-btn:hover::after {
+  transform: translateX(0.4rem);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .house-coming-section {
+    height: auto;
+    min-height: 53rem;
+    background-image: url("/src/images/houses/img_coming_heart_mo.png");
+    background-position: 60% -15rem;
+    background-size: 61rem auto;
+  }
+  .house-coming-inner {
+    padding: 10rem 0;
+  }
+
+  .house-coming-badge {
+    margin-bottom: 1.2rem;
+  }
+
+  .house-coming-badge__icon {
+    width: 6rem;
+  }
+
+  html[lang="en"] .house-coming-badge__text,
+  .house-coming-badge__text {
+    font-size: 1.8rem;
+  }
+
+  .house-coming-title {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .house-coming-desc {
+    font-size: 1.4rem;
+
+    margin-bottom: 3.6rem;
+  }
+
+  .house-coming-card {
+    max-width: 100%;
+    padding: 2rem;
+    border-radius: 1.6rem;
+  }
+
+  .house-coming-card__label {
+    font-size: 1.4rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .house-coming-btn {
+    min-height: 5.6rem;
+    padding: 1.2rem 1.2rem;
+    font-size: 1.6rem;
+    gap: 0.8rem;
+  }
+
+  .house-coming-btn__icon {
+    width: 2.4rem;
+  }
+
+  .house-coming-btn__arrow {
+    font-size: 1.8rem;
+  }
+}

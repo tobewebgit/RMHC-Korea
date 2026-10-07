@@ -839,9 +839,6 @@ ul.form-helper-note.cms-helper {
 
 /* mobile */
 @media (max-width: 768px) {
-  .form-control {
-    padding: 1.2rem 0.8rem;
-  }
   .form-control,
   .custom-select summary {
     min-height: 4.4rem;
@@ -863,7 +860,6 @@ ul.form-helper-note.cms-helper {
     font-size: 1.4rem;
     line-height: 1;
   }
-  .receipt-helper__secondary,
   .custom-select ul li {
     font-size: 1.2rem;
     line-height: 1;
@@ -961,9 +957,6 @@ ul.form-helper-note.cms-helper {
     width: 100%;
     box-sizing: border-box;
   }
-  .payment-tabs-grid.cols-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   .payment-tabs-grid .payment-tab-btn {
     width: 100%;
@@ -1023,7 +1016,8 @@ ul.form-helper-note.cms-helper {
   } */
 
   .receipt-warning-list li {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+
     word-break: keep-all;
   }
 

@@ -1,0 +1,2995 @@
+/* ==========================================================================
+   donate.css — 후원 관련 페이지 전용 스타일
+   ========================================================================== */
+
+/* 1. 후원 메인 레이아웃 */
+.donate-page {
+  padding-top: 15rem;
+}
+
+.donate-page .apply-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 6rem;
+  width: 100%;
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 10rem 0;
+}
+
+.donate-page .apply-left-col {
+  flex: 1;
+  max-width: 67.6rem;
+}
+
+.donate-page .apply-right-col {
+  flex: 1;
+  max-width: 70.4rem;
+  width: 100%;
+}
+
+.donate-page .page-header-wrap {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.donate-page .page-title {
+  font-size: 5.8rem;
+
+  margin-bottom: 2.4rem;
+  text-align: left;
+}
+
+.donate-page .page-desc {
+  font-size: 2.2rem;
+
+  text-align: left;
+}
+
+.donate-page .poster-wrap {
+  margin-top: 4rem;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.donate-page .poster-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 2. 해외 발급카드 배너 */
+.foreign-card-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8rem;
+  padding: 0 4rem;
+  background-color: #d2d0fc;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+}
+
+.foreign-card-banner .banner-text {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.foreign-card-banner .banner-text img {
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: contain;
+}
+
+.foreign-card-banner .banner-text span {
+  font-size: 1.6rem;
+  color: var(--text-gray90);
+}
+
+.foreign-card-banner .banner-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.foreign-card-banner .banner-link img {
+  width: 2.4rem;
+  height: 2.4rem;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    background-color 0.3s ease;
+}
+
+.foreign-card-banner .banner-link:hover img {
+  transform: translateX(0.4rem);
+}
+
+/* 3. 후원 구분 탭 버튼 */
+.donate-type-tabs {
+  position: relative;
+  display: flex;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 1.6rem;
+  border-radius: 1.6rem;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.donate-tab-indicator {
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
+  width: calc((100% - 3.2rem) / 2);
+  height: 5.2rem;
+  background-color: var(--primary);
+  border-radius: 0.8rem;
+  z-index: 0;
+
+  /* 애니메이션 및 트랜지션 */
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+/* 두 번째 탭 활성화 시 */
+.donate-type-tabs.is-one-time .donate-tab-indicator,
+.donate-type-tabs.is-second-active .donate-tab-indicator {
+  transform: translateX(100%);
+}
+
+.donate-type-tabs.initial-one-time .donate-tab-indicator {
+  transition: none;
+}
+
+.donate-type-tabs .btn-tab {
+  position: relative;
+  flex: 1;
+  width: 50%;
+  height: 5.2rem;
+  z-index: 1;
+  background-color: transparent !important;
+  color: var(--text-black);
+  opacity: 1;
+  transition: color 0.3s ease;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.donate-type-tabs .btn-tab:not(.disabled) {
+  color: var(--text-white);
+  background-color: transparent !important;
+}
+
+.donate-type-tabs .btn-tab.disabled {
+  color: var(--text-black);
+  background-color: transparent !important;
+  opacity: 1;
+}
+
+/* 4. 아코디언 카드 디자인 */
+.accordion-card {
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 3.2rem 4rem;
+}
+
+.accordion-card.is-disabled {
+  min-height: 8.4rem;
+  pointer-events: none;
+}
+
+/* 아코디언 기동용 헤더 */
+.accordion-card .card-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -0.8rem -4rem 0;
+  padding: 0 4rem 0rem;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    padding 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+    margin 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html[lang="en"] .accordion-card {
+  overflow: visible;
+}
+
+html[lang="en"] .accordion-card .card-title-wrap {
+  cursor: text;
+}
+
+.accordion-card.is-active .card-title-wrap {
+  margin-bottom: 4rem;
+  padding: 0 4rem 3.2rem;
+  border-bottom: 1px solid var(--border-gray30);
+}
+
+.accordion-card .donate-section-title {
+  position: relative;
+  top: 0.6rem;
+  font-size: 2.2rem;
+}
+
+.accordion-card .header-summary {
+  margin-top: 0.8rem;
+  font-size: 1.8rem;
+}
+
+.accordion-card .card-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.35s ease;
+}
+
+.accordion-card.is-active .card-body {
+  opacity: 1;
+}
+
+html[lang="en"] .accordion-card.is-active .card-body {
+  max-height: none;
+  overflow: visible;
+}
+
+.accordion-card.is-active .card-body h3,
+.accordion-card.is-active .radio-label {
+  font-size: 2rem;
+}
+
+.accordion-card .card-subtitle {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+/* 5. 금액 및 정보 칩 그리드 */
+.chip-grid {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.chip-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.chip-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2.4rem;
+}
+
+.direct-input-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 5.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-primary);
+  padding: 0 1.2rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.direct-input-chip.en-currency {
+  padding: 0 1.2rem;
+}
+
+.direct-input-chip .currency-symbol {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-right: 0.4rem;
+  color: var(--text-primary);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.direct-input-chip input {
+  field-sizing: content;
+  min-width: 2ch;
+  max-width: 100%;
+  width: auto;
+  border: none;
+  background: transparent;
+  height: 100%;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  outline: none;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.direct-input-chip .unit {
+  font-size: 1.8rem;
+  margin-left: 0.4rem;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.direct-input-chip:focus-within,
+.direct-input-chip.active,
+.direct-input-chip.is-active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.direct-input-chip:focus-within input,
+.direct-input-chip.active input,
+.direct-input-chip.is-active input {
+  color: #fffde9;
+  caret-color: #fffde9;
+}
+
+.direct-input-chip:focus-within input::placeholder,
+.direct-input-chip.active input::placeholder,
+.direct-input-chip.is-active input::placeholder {
+  color: rgba(255, 253, 233, 0.7);
+}
+
+.direct-input-chip:focus-within .currency-symbol,
+.direct-input-chip.active .currency-symbol,
+.direct-input-chip.is-active .currency-symbol,
+.direct-input-chip:focus-within .unit,
+.direct-input-chip.active .unit,
+.direct-input-chip.is-active .unit {
+  color: #fffde9;
+}
+
+/* 후원자 유형 칩 전용 활성화 */
+#donorTypeGrid .chip-btn.active {
+  font-weight: 700;
+}
+
+/* 직접 입력 필드 및 구분선 */
+.direct-input-wrap {
+  margin-top: 1.6rem;
+}
+
+.direct-input-wrap .helper-text {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-top: 0.8rem;
+}
+
+.direct-input-wrap .helper-text img {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.sep-line {
+  border: 0;
+  border-top: 1px solid var(--border-gray40);
+  margin: 5.2rem 0;
+}
+
+/* 6. 환아 지원 안내 헬퍼 박스 */
+.notice-yellow-box {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  background-color: rgba(255, 188, 13, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 2.4rem 4rem;
+  margin-top: 2.4rem;
+}
+
+.notice-yellow-box img {
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: contain;
+}
+
+.notice-yellow-box span {
+}
+
+/* 7. 인증 안내 및 버튼 */
+.auth-intro-text {
+  font-size: 1.6rem;
+
+  margin-bottom: 2.4rem;
+  word-break: keep-all;
+}
+
+.btn-auth-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+/* 인증 버튼 아이콘 공통 (::before 의사 요소 활용) */
+.btn-auth-action::before {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+/* 1. 카카오 인증 전 아이콘 -> 인증 후 아이콘 */
+.btn-auth-action.kakao {
+  background-color: #ffeb00;
+  border-color: #ffeb00;
+  color: var(--text-black);
+}
+
+.btn-auth-action.kakao::before {
+  background-image: url("/src/images/common/icon_kakao_pay.svg");
+}
+
+.btn-auth-action.kakao.complete::before,
+.btn-auth-action.kakao.is-complete::before {
+  background-image: url("/src/images/common/icon_kakao_check_pay_ok.svg");
+}
+
+/* 2. 휴대폰 인증 전 아이콘 없음 -> 인증 후 아이콘 있음 */
+.btn-auth-action.pass {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary) !important;
+}
+
+.btn-auth-action.pass::before {
+  display: none;
+  background-image: none;
+}
+
+.btn-auth-action.pass.complete::before,
+.btn-auth-action.pass.is-complete::before {
+  display: inline-block;
+  background-image: url("/src/images/common/icon_phone_check_pay_ok.svg");
+}
+
+/* 8. 최종 이전 / 후원하기 버튼 */
+
+/* 기부금 영수증 발급 안내 텍스트 */
+.receipt-helper-text {
+  color: var(--text-gray90);
+  font-size: var(--text-lg);
+  margin-top: 1.6rem;
+  word-break: keep-all;
+}
+
+/* 기부금 영수증 및 주민번호 인증 영역 (form.css 공통 모듈 상속) */
+.donate-page .receipt-resident-panel {
+  margin-left: 0;
+}
+
+/* 인라인 스타일의 클래스화 규격화 */
+.form-field.gender-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 5.2rem;
+  text-align: left;
+}
+
+.gender-text {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.next-btn-wrap {
+  margin-top: 5.2rem;
+}
+
+.next-btn-wrap .btn-primary {
+  width: 100%;
+}
+
+.receipt-helper {
+  margin: 1.6rem 0;
+  color: var(--text-gray90);
+}
+
+.receipt-helper__primary {
+}
+
+.agree-terms-container .form-subtitle,
+.inner-form-group .form-subtitle {
+  font-size: 2rem;
+}
+
+.inner-form-group .receipt-helper-text {
+  margin-top: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.agree-terms-container {
+  margin-top: 5.2rem;
+}
+
+.donate-page .card-body .chip-grid.cols-2 {
+  margin-top: 5.2rem;
+}
+
+.accordion-card .card-subtitle + .chip-grid.cols-2 {
+  margin-top: 2.4rem;
+}
+
+/* 9. 반응형 브레이크포인트 보정 */
+
+/* 결제 정보 입력 폼 & 서명 캔버스 (form.css 공통 컴포넌트 참조) */
+
+/* 후원자와 동일 체크박스 정렬 보정 */
+#sameAsDonorCheckboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.6rem;
+}
+
+.payment-form-field.double-select .custom-select {
+  width: 50%;
+}
+
+.form-helper-note {
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   goods.css — 물품후원 페이지 전용 스타일 (donate.css 내 모듈)
+   피그마 실측 기준: node 2531:48628
+   ========================================================================== */
+
+/* 2. 섹션 헤더: 제목 + 설명 */
+.goods-header {
+  max-width: 120rem;
+  margin: 0 auto 8rem;
+  text-align: center;
+}
+
+/* 제목: NanumSquare Neo OTF ExtraBold 58px */
+.goods-header__title {
+  margin-bottom: 2.4rem;
+  font-size: 4.4rem;
+}
+
+/* 설명: Pretendard Regular 22px */
+.goods-header__desc {
+  font-size: 1.8rem;
+  word-break: keep-all;
+}
+html[lang="en"] .goods-header__desc {
+  font-size: 2rem;
+}
+
+.goods-header__mail {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* 3. 카드 그리드: 4열 × 2행 */
+.goods-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+  padding: 0 var(--spacing-4);
+}
+
+/* 4. 카드 공통 스타일 */
+.goods-card {
+  display: flex;
+  flex-direction: column;
+  height: 41.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* 5. 카드 헤더 */
+.goods-card__header {
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--spacing-10);
+}
+
+/* 카테고리명: NanumSquare Neo ExtraBold 28px */
+.goods-card__title {
+  font-size: 2.8rem;
+
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* 6. 카드 바디 */
+.goods-card__body {
+  flex: 1;
+  padding: var(--spacing-8) var(--spacing-10);
+  background-color: rgba(255, 188, 13, 0.2);
+}
+
+/* 7. 리스트 초기화 */
+.goods-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* 8. 리스트 아이템 */
+.goods-card__item {
+  font-size: 2.2rem;
+
+  padding-left: 1.6rem;
+  position: relative;
+}
+
+/* 글머리 점 */
+.goods-card__item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
+/* 9. 카드 헤더 배경색 4종 */
+/* 골드: #ffbc0d */
+.goods-card--gold .goods-card__header {
+  background-color: #ffbc0d;
+}
+
+/* 스카이블루: #8ee7f8 */
+.goods-card--blue .goods-card__header {
+  background-color: #8ee7f8;
+}
+
+/* 라임그린: #9cd83e */
+.goods-card--green .goods-card__header {
+  background-color: #9cd83e;
+}
+
+/* 라벤더: #d0c9ff */
+.goods-card--lavender .goods-card__header {
+  background-color: #d0c9ff;
+}
+
+/* ── KV 히어로 영역 ─────────────────────────────── */
+
+.vol-kv {
+  position: relative;
+  min-height: 88rem;
+  overflow: hidden;
+}
+
+.vol-kv__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.vol-kv__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.vol-kv__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  max-width: 160rem;
+  min-height: 88rem;
+}
+
+.vol-kv__panel {
+  width: 105rem;
+  padding: 8rem;
+  color: #fffde9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.vol-kv__panel h1 {
+  margin: 0;
+  font-size: 5.8rem;
+  letter-spacing: 0;
+  color: #fffde9;
+}
+
+.vol-kv__panel p {
+  margin: 2.4rem 0 0;
+  font-size: 2rem;
+  color: #fffde9;
+}
+html[lang="en"] .vol-kv__panel p {
+  font-size: 2.2rem;
+}
+
+.vol-kv__panel .btn {
+  margin-top: 3.2rem;
+}
+
+/* ── Section 1: 소개 텍스트 + 슬라이드 이미지 ──────── */
+
+.vol-intro {
+  padding-top: 20rem;
+}
+
+.vol-intro__inner {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.vol-intro__text {
+  flex: 0 0 68rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.vol-intro__title {
+  font-size: 4.4rem;
+}
+
+.vol-intro__desc {
+  font-size: 1.8rem;
+}
+html[lang="en"] .vol-intro__desc {
+  font-size: 2rem;
+}
+
+.vol-intro__slide-wrap {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.vol-intro__slide {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.vol-intro__slide-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+.vol-intro__slide-caption {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  order: -1;
+}
+
+/* Swiper 네비게이션 버튼 커스텀 */
+.vol-intro-swiper {
+  position: relative;
+  width: 100%;
+}
+
+.vol-intro-swiper .vol-swiper-prev,
+.vol-intro-swiper .vol-swiper-next {
+  top: -0.6rem;
+  width: 4rem;
+  height: 4rem;
+  margin: 0;
+}
+
+.vol-intro-swiper .vol-swiper-prev {
+  right: 6rem;
+  left: auto;
+}
+
+.vol-intro-swiper .vol-swiper-next {
+  right: 0;
+}
+
+.vol-intro-swiper .vol-swiper-prev::after,
+.vol-intro-swiper .vol-swiper-next::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 4rem;
+}
+
+.vol-intro-swiper .vol-swiper-prev::after {
+  background: url(/src/images/donate/icon_slide_next.png) 50% 50% no-repeat;
+  background-size: 4rem 4rem;
+  transform: rotate(180deg);
+}
+
+.vol-intro-swiper .vol-swiper-next::after {
+  background: url(/src/images/donate/icon_slide_next.png) 50% 50% no-repeat;
+  background-size: 4rem 4rem;
+}
+
+/* Swiper 네비게이션 버튼 비활성화 상태 */
+.vol-intro-swiper .swiper-button-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ── Section 2: 이런 분들과 함께합니다 ─────────────── */
+
+.vol-impact {
+  padding-top: 20rem;
+}
+
+.vol-impact__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+}
+
+.vol-impact__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.vol-impact__title {
+  font-size: 4.4rem;
+}
+
+.vol-impact__desc {
+  font-size: 2.2rem;
+}
+
+.vol-impact__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+  width: 100%;
+}
+
+.vol-impact__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  text-align: center;
+}
+
+.vol-impact__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+}
+
+.vol-impact__icon img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.vol-impact__label {
+  margin-top: 4rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* ── Section 3: 함께하기 전에 확인해주세요 ───────────── */
+
+.vol-apply {
+  height: 88rem;
+  margin-top: 20rem;
+  padding: 14rem 0 0;
+  background-image: url("/src/images/donate/img_volunteer_section_3_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.vol-apply__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.8rem;
+  background-image: url("/src/images/donate/img_section_3_bg.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 8rem;
+  max-width: 84.9rem;
+}
+html[lang="en"] .vol-apply__inner {
+  max-width: 99.5rem;
+}
+
+.vol-apply__title {
+  font-size: 4.4rem;
+  text-align: center;
+}
+
+.vol-apply__box-wrap {
+  display: flex;
+  width: 100%;
+  background-color: #fffde9;
+  border-radius: 0.8rem;
+  padding: 4rem 0;
+}
+
+.vol-apply__box {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  width: 43.2rem;
+  padding: 0 4rem;
+  background: none;
+}
+html[lang="en"] .vol-apply__box {
+  width: 45.2rem;
+}
+
+.vol-apply__box:first-child {
+  width: 29.6rem;
+  border-right: 1px dashed #000000;
+}
+html[lang="en"] .vol-apply__box:first-child {
+  width: 38rem;
+}
+
+.vol-apply__box-title {
+  font-size: 2.8rem;
+}
+html[lang="en"] .vol-apply__box-title {
+  font-size: 2.2rem;
+}
+
+.vol-apply__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.vol-apply__list li {
+  position: relative;
+  padding-left: 0.8rem;
+  font-size: 2rem;
+}
+
+.vol-apply__list li::before {
+  content: "·";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.vol-apply__list li span {
+  display: inline-block;
+  margin-left: 10rem;
+}
+
+.vol-apply__cta {
+  width: 20.5rem;
+}
+
+/* ── Section 4: 이렇게 함께할 수 있어요 ─────────────── */
+
+.vol-activities {
+  padding-top: 20rem;
+}
+
+.vol-activities__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+}
+
+.vol-activities__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.vol-activities__title {
+  font-size: 4.4rem;
+}
+
+.vol-activities__desc {
+  font-size: 2.2rem;
+}
+
+.vol-activities__cards {
+  display: flex;
+  gap: 2.4rem;
+  width: 100%;
+}
+
+.vol-act-card {
+  flex: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.vol-act-card__img-wrap {
+  overflow: hidden;
+}
+
+.vol-act-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vol-act-card__body {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+html[lang="en"] .vol-act-card__body {
+  height: 28rem;
+}
+
+.vol-act-card__title {
+  font-size: 2.8rem;
+}
+html[lang="en"] .vol-act-card__title {
+  min-height: 7.2rem;
+}
+
+.vol-act-card__desc {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.vol-act-card__desc li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.vol-act-card__desc li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+}
+
+.vol-act-card--gold .vol-act-card__body {
+  background-color: #ffbc0d;
+}
+
+.vol-act-card--blue .vol-act-card__body {
+  background-color: #8ee7f8;
+}
+
+.vol-act-card--green .vol-act-card__body {
+  background-color: #9cd83e;
+}
+
+/* ── Section 5: 봉사 참여 방법 ───────────────────── */
+
+.vol-process {
+  margin-top: 20rem;
+  padding: 3.8rem 0 4.6rem;
+  background-color: #ffbc0d;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.vol-process__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  background-image: url("/src/images/donate/img_section_5_bg.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 1867 / 921;
+  width: 186.7rem;
+  max-width: none;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+  .vol-process__inner {
+    width: 100%;
+    flex-shrink: 1;
+  }
+}
+
+.vol-process__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.vol-process__title {
+  font-size: 4.4rem;
+}
+
+.vol-process__desc {
+  font-size: 1.8rem;
+}
+html[lang="en"] .vol-process__desc {
+  font-size: 2rem;
+}
+
+.vol-process__note {
+  font-size: 1.6rem;
+  color: #555555;
+}
+html[lang="en"] .vol-process__note {
+  font-size: 1.8rem;
+}
+
+.vol-process__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.vol-process__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  width: 18rem;
+}
+
+.vol-process__line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+.vol-process__line img {
+  max-width: 100%;
+  height: auto;
+}
+
+.vol-process__icon {
+  width: 10.9rem;
+  height: 10.9rem;
+  border-radius: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vol-process__icon--01 {
+  background-color: #ff6e0d;
+}
+
+.vol-process__icon--02 {
+  background-color: #ffbc0d;
+}
+
+.vol-process__icon--03 {
+  background-color: #9cd83e;
+}
+
+.vol-process__icon--04 {
+  background-color: #8ee7f8;
+}
+
+.vol-process__icon--05 {
+  background-color: #d0c9ff;
+}
+
+.vol-process__num {
+  font-family: var(--font-display);
+  font-size: 3.8rem;
+  color: #fff;
+  line-height: 1;
+}
+
+.vol-process__label {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+
+  text-align: center;
+}
+
+.vol-process__cta {
+  width: 20.5rem;
+}
+
+/* ── Section 6: 현장에서 전하는 따뜻한 기록 ──────────── */
+
+.vol-news {
+  padding-top: 20rem;
+}
+
+.vol-news__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5.2rem;
+}
+
+.vol-news__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.vol-news__title {
+  font-size: 4.4rem;
+}
+
+.vol-news__desc {
+  font-size: 1.8rem;
+}
+html[lang="en"] .vol-news__desc {
+  font-size: 2rem;
+}
+
+.vol-news__cards {
+  display: flex;
+  gap: 3.2rem;
+  width: 100%;
+}
+
+.vol-news-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.vol-news-card__img-wrap {
+  overflow: hidden;
+  border-radius: 1.2rem;
+}
+
+.vol-news-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
+.vol-news-card:hover .vol-news-card__img {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.vol-news-card__body {
+  padding: 2.4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.vol-news-card__title {
+  font-size: 2.2rem;
+  word-break: keep-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+html[lang="en"] .vol-news-card__title {
+  font-size: 2.8rem;
+}
+
+.vol-news-card:hover .vol-news-card__title {
+  text-decoration: underline;
+}
+
+.vol-news-card__date {
+  font-size: 1.6rem;
+  color: var(--border-gray80);
+}
+
+.vol-news__cta {
+  width: 19.9rem;
+}
+
+/* ── volunteer 반응형 ───────────────────────────── */
+
+/* ==========================================================================
+   DN_04P — 자원봉사 신청 팝업 전용 스타일
+   피그마 실측 기준: node 2531:48751 / 2531:48895 / 2531:49006
+   ========================================================================== */
+
+/* ── 유틸리티 ─────────────────────────────────────────────── */
+.mt-2 {
+  margin-top: 0.8rem;
+}
+
+/* ── 팝업 컨테이너 ──────────────────────────────────────────── */
+
+.vol-popup-container {
+  width: 80rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.vol-popup-header {
+  text-align: center;
+  padding: 1.6rem 4rem 2.4rem;
+  flex-shrink: 0;
+}
+
+.vol-popup-title {
+  font-size: 2.8rem;
+  margin: 0 0 1.6rem;
+}
+
+.vol-popup-subtitle {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* ── 팝업 본문 ────────────────────────────────────── */
+.vol-popup-body {
+  flex: 1;
+  padding: 1.6rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.vol-popup-body .vol-house-top.form-label.required {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.vol-popup-body .vol-house-top.form-label.required::before {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+}
+
+/* ── 섹션 박스 ─────────────────────────────────────────────── */
+.vol-popup-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 3rem 4rem;
+  border-radius: 1.6rem;
+  background: var(--bg-primary);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.08);
+  border: none;
+}
+
+.vol-popup-sep {
+  border: 0;
+  border-top: 1px solid var(--border-gray30);
+  margin: 2.4rem 0;
+}
+
+.vol-popup-panel .vol-popup-sep {
+  margin: 3.2rem -4rem;
+}
+
+.vol-popup-section--house .vol-popup-sep {
+  border-top: 1px solid var(--border-gray80);
+}
+
+.vol-popup-section--house {
+  background-color: var(--bg-kv);
+  border-color: transparent;
+}
+
+.vol-popup-body .donate-type-tabs {
+  margin-bottom: 0;
+}
+
+.vol-popup-section__title {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.vol-popup-section__title span {
+  font-family: var(--font-text);
+}
+
+.vol-popup-section__sep {
+  border: none;
+  border-top: 1px solid var(--bg-primary);
+  margin: 0;
+}
+
+/* ── 탭 패널 ────────────────────────────────────────────────── */
+.vol-popup-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.vol-popup-panel[hidden] {
+  display: none;
+}
+
+/* ── 팝업 폼 요소 오버라이드 ────────────────────── */
+.vol-popup-body .form-control[readonly],
+.vol-popup-body .form-control:disabled {
+  background-color: rgba(208, 201, 255, 0.2) !important;
+  border-color: var(--border-gray40) !important;
+  color: var(--text-secondary) !important;
+  cursor: not-allowed;
+}
+
+.vol-popup-body .form-control.zipcode[readonly],
+.vol-popup-body .form-control.zipcode:disabled {
+  color: var(--text-black) !important;
+}
+
+.vol-popup-body .form-control.zipcode[readonly]::placeholder,
+.vol-popup-body .form-control.zipcode:disabled::placeholder,
+.vol-popup-body .form-control.zipcode::placeholder {
+  color: var(--text-black) !important;
+  opacity: 1;
+}
+
+/* ── 폼 레이블 상단 정렬 ────────────────────── */
+.form-label--top {
+  align-items: flex-start;
+  padding-top: 1.4rem;
+}
+
+/* ── textarea ───────────────────────────────────────────────── */
+.vol-textarea {
+  height: 5.2rem;
+  resize: vertical;
+}
+
+/* ── 개인정보 동의 박스 ─────────────────────────────────────── */
+.vol-privacy-box {
+  background-color: rgba(208, 201, 255, 0.2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 2rem 2.4rem;
+  font-size: var(--text-lg);
+}
+
+.vol-privacy-box p {
+  margin: 0 0 1.2rem;
+}
+
+.vol-privacy-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.vol-privacy-box li {
+  position: relative;
+  padding-left: 0.8rem;
+  line-height: 1.5;
+}
+
+.vol-privacy-box li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;
+  font-weight: bold;
+}
+
+.vol-privacy-check {
+  margin-top: 1.6rem;
+  font-size: var(--text-lg);
+}
+
+/* ── 신청 버튼 ──────────────────────────────────────────────── */
+.vol-popup-submit {
+  position: relative;
+  top: 2rem;
+}
+
+/* ── 날짜 인풋 + 캘린더 아이콘 래퍼 ───────────────────────── */
+.vol-date-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.vol-date-wrap .form-control {
+  padding-right: 4.8rem;
+}
+
+.vol-calendar-trigger {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+}
+
+.vol-calendar-trigger:hover {
+  color: var(--primary);
+}
+
+/* ── 캘린더 레이어 ─────────────────────────────────────────── */
+/*
+  표시 제어:
+  기본: 숨김 (display: none)
+  개발팀 JS에서 .vol-calendar-layer에 .is-open 클래스 추가 시 표시
+*/
+
+.vol-calendar-layer {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.8rem);
+  left: 0;
+  z-index: 1000;
+  width: 48rem;
+  background-color: var(--bg-primary);
+  border-radius: 0.8rem;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.vol-calendar-layer.is-open {
+  display: block;
+}
+
+/* ── 캘린더 패널 영역 ──────────────────────────── */
+
+.vol-cal-panels {
+  display: flex;
+}
+
+.vol-cal-panel {
+  flex: 1;
+  padding: 2.4rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* ── 캘린더 헤더 ─────────────────────── */
+
+.vol-cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vol-cal-yearmonth {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 1.4rem;
+}
+
+.vol-cal-nav {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.vol-cal-nav:hover {
+  color: var(--primary);
+}
+
+.vol-cal-nav[aria-hidden="true"] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ── 캘린더 그리드 ──────────────────────────── */
+
+.vol-cal-grid {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.8rem;
+}
+
+.vol-cal-grid th {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+  padding: 0.4rem 0 1.2rem;
+}
+
+.vol-cal-grid th:first-child,
+.vol-cal-day.is-sunday {
+  color: #ffa500;
+}
+
+.vol-cal-grid th:last-child,
+.vol-cal-day.is-saturday {
+  color: #ffc72c;
+}
+
+.vol-cal-grid td {
+  text-align: center;
+  padding: 0;
+}
+
+.vol-cal-grid td.is-prev-month {
+  color: #ccc;
+  font-size: 1.4rem;
+}
+
+.vol-cal-day {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  width: 100%;
+  height: 3.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.vol-cal-day:hover {
+  background-color: rgba(209, 33, 41, 0.05);
+}
+
+/* 선택 범위 시작/끝 및 중간 스타일 */
+.vol-cal-day.is-in-range {
+  background-color: rgba(209, 33, 41, 0.15);
+  color: var(--primary);
+}
+
+.vol-cal-day.is-in-range.is-sunday {
+  color: #ffa500;
+}
+
+.vol-cal-day.is-in-range.is-saturday {
+  color: #ffc72c;
+}
+
+.vol-cal-day.is-selected {
+  background-color: var(--primary);
+  color: #ffffff !important;
+  border-radius: 0.4rem;
+  font-weight: 700;
+}
+
+.vol-cal-day.is-range-start {
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+
+.vol-cal-day.is-range-end {
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+
+/* ── 캘린더 CTA 바 ─────────────────────────────────────── */
+
+.vol-cal-cta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1.6rem 2.4rem;
+  background-color: transparent;
+  border-top: 1px solid var(--border-gray40);
+  margin-top: 1.6rem;
+}
+
+.vol-cal-cta-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.vol-cal-btn-cancel {
+  width: 6rem;
+  height: 3.2rem;
+  background: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primary);
+  transition: background-color 0.15s;
+}
+
+.vol-cal-btn-cancel:hover {
+  background-color: rgba(209, 33, 41, 0.05);
+}
+
+.vol-cal-cta-actions button {
+  width: 5.3rem;
+  height: 3.2rem;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+}
+
+/* ── 반응형 ────────────────────────────────────── */
+
+/* ==========================================================================
+   일시후원/정기후원 폼 (one-time.html)
+   ========================================================================== */
+
+#amountWarningText {
+  display: none;
+  color: var(--primary);
+  margin-top: 1.2rem;
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+#step1NextWrap,
+#authInfoArea,
+#groupInfoArea,
+#step2CommonArea,
+#receiptDetailArea,
+#receiptResidentNumArea,
+#withdrawDayArea,
+#paymentDetailFormArea,
+#cardPaymentForm,
+#cmsPaymentForm {
+  display: none;
+}
+
+.color-primary {
+  color: var(--primary);
+}
+
+.withdraw-day-box .receipt-warning-list {
+  margin-top: 1.2rem;
+  margin-bottom: 2.4rem;
+  padding-left: 16rem;
+}
+
+.withdraw-day-box .receipt-warning-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  list-style: none;
+  color: var(--text-gray60);
+  line-height: 1.5;
+}
+
+.withdraw-day-box .receipt-warning-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;
+}
+
+.payment-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.payment-detail-header .form-subtitle {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.form-helper-note {
+  color: var(--text-helper);
+}
+
+.form-helper-note.mt-2 {
+  margin-top: 0.8rem;
+}
+
+/* 출금동의 서명 캔버스/패널 (form.css 공통 컴포넌트 참조) */
+
+.cms-payment-spacer {
+  margin-top: 4rem;
+}
+
+.group-email-helper {
+  color: var(--text-gray70);
+  margin-top: 0.8rem;
+  font-size: 1.6rem;
+}
+
+/* ==========================================================================
+   영문 일시후원 (Foreign Card Donation / EN Form) 전용 스타일
+   ========================================================================== */
+
+.en-form-card-box {
+  background-color: var(--bg-info);
+  border: 1px solid var(--border-color);
+  border-radius: 0.8rem;
+  padding: 4rem 2.4rem;
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.en-check-area {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* 영문 정기 후원 결제일 선택 영역 */
+.recurring-day-wrap {
+  width: 100%;
+}
+
+.recurring-day-wrap .form-group.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.recurring-day-wrap .form-label {
+  width: auto;
+  min-width: 18rem;
+  white-space: nowrap;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-gray90, #1f2937);
+  min-height: 5.2rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.recurring-day-wrap .form-field {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .recurring-day-wrap .form-group.form {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .recurring-day-wrap .form-label {
+    min-height: auto;
+    font-size: 1.4rem;
+  }
+}
+
+/* Card Information 인풋 내 카드사 아이콘 4종 */
+.card-number-field-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.card-number-field-wrap .form-control {
+  padding-right: 14rem;
+}
+
+.card-brand-icons {
+  position: absolute;
+  right: 1.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  pointer-events: none;
+}
+
+.card-brand-icons img {
+  height: 2rem;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.en-form-card-box + .en-form-card-title {
+  margin-top: 5.2rem;
+}
+
+.en-form-card-title {
+  font-size: 2rem;
+}
+
+.form-group.label-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 0;
+}
+
+.form-group.label-top .form-label {
+  width: 100%;
+  min-height: auto;
+  text-align: left;
+}
+
+.form-group.label-top .form-field {
+  width: 100%;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.en-field-note {
+  margin-top: -2.2rem;
+  font-size: 1.4rem;
+  color: var(--text-gray60);
+}
+
+.en-payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+}
+
+.en-payment-btn {
+}
+
+.en-payment-btn img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 1rem;
+  object-fit: contain;
+}
+
+.en-payment-note {
+  font-size: 1.5rem;
+  color: #767676;
+  margin-top: 5.2rem;
+  text-align: left;
+}
+
+.en-accordion-wrap {
+  margin: 5.2rem 0;
+}
+
+.en-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.en-accordion-header .en-accordion-arrow {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.en-accordion-header .accordion-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: transform 0.3s ease;
+}
+
+.en-accordion-body {
+  margin-top: 0.8rem;
+}
+
+.en-donate-submit-wrap {
+  width: 100%;
+  margin-top: 5.2rem;
+}
+
+/* ==========================================================================
+   donate.css 전역 모바일 반응형 통합 브레이크포인트 (@media (max-width: 768px))
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* ── 1. 기부 신청 페이지 모바일 ── */
+  .donate-page {
+    padding-top: 11rem;
+  }
+
+  .en-donate-submit-wrap {
+    margin-top: 3.2rem;
+  }
+
+  .card-brand-icons {
+    gap: 0rem;
+  }
+
+  .card-brand-icons img {
+    width: 1.6rem;
+    height: auto;
+  }
+
+  .card-number-field-wrap .form-control {
+    padding-right: 10rem;
+  }
+
+  .donate-page .apply-wrapper {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .donate-page .apply-left-col {
+    position: static;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .donate-page .apply-right-col {
+    max-width: 100%;
+  }
+
+  .donate-page .apply-wrapper {
+    gap: 5rem;
+    padding: 0 2rem 0;
+    font-size: 1.4rem;
+  }
+
+  .donate-page .page-header-wrap {
+    text-align: center;
+  }
+
+  .donate-page .page-title {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    word-break: keep-all;
+  }
+
+  .donate-page .page-desc {
+    font-size: 1.8rem;
+  }
+
+  .donate-page .poster-wrap {
+    margin-top: 2.4rem;
+  }
+
+  .agree-terms-container .form-subtitle,
+  .inner-form-group .form-subtitle {
+    font-size: 1.6rem;
+  }
+
+  .foreign-card-banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2.4rem 4.8rem 2.4rem 1.6rem;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+    background-color: #d2d0fc;
+  }
+
+  .foreign-card-banner .banner-text {
+    display: block;
+    width: 100%;
+  }
+
+  .foreign-card-banner .banner-text img {
+    position: absolute;
+    left: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .foreign-card-banner .banner-text span {
+    display: block;
+    font-size: 1.2rem;
+    padding-left: 5.2rem;
+  }
+
+  .foreign-card-banner .banner-link {
+    display: block;
+    width: 100%;
+    padding-left: 5.2rem;
+    font-size: 1.4rem;
+    text-decoration: none;
+  }
+
+  .foreign-card-banner .banner-link img {
+    position: absolute;
+    right: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.4rem;
+    height: 2.4rem;
+    transition: transform 0.3s ease;
+  }
+
+  /* 정기 / 일시 후원 탭 */
+  .donate-type-tabs {
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .donate-type-tabs .donate-tab-indicator {
+    top: 0.8rem;
+    left: 0.8rem;
+    width: calc((100% - 1.6rem) / 2);
+    height: 4.4rem;
+    border-radius: 0.6rem;
+  }
+
+  .donate-type-tabs .btn-tab {
+    width: 50%;
+    height: 4.4rem;
+    min-height: 4.4rem;
+    font-size: 1.4rem;
+  }
+
+  /* 아코디언 카드 */
+  .accordion-card {
+    padding: 2.4rem 2.4rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .accordion-card.is-disabled {
+    min-height: 7.1rem;
+    padding-bottom: 0;
+  }
+
+  .accordion-card .card-title-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0rem;
+    margin: 0 -2.4rem 0;
+    padding: 0 2.4rem 0rem;
+  }
+
+  .accordion-card.is-active .card-title-wrap {
+    margin-bottom: 2.8rem;
+    padding: 0 2.4rem 1.4rem;
+  }
+
+  .accordion-card .donate-section-title {
+    top: 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  html[lang="en"] .accordion-card .donate-section-title {
+    font-size: 2rem;
+  }
+
+  .accordion-card .header-summary {
+    font-size: 1.4rem;
+    margin-top: 1.2rem;
+  }
+
+  .accordion-card.is-active .card-body h3,
+  .accordion-card .card-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .accordion-card .card-subtitle {
+    margin-bottom: 0;
+    font-size: 1.6rem;
+  }
+
+  .receipt-helper-text {
+    font-size: 1.4rem;
+  }
+
+  /* Step 1 금액 칩 - 모바일 시안 2열 배치 */
+  .chip-grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  .chip-grid .btn {
+    padding: 0 1rem;
+  }
+  .direct-input-chip {
+    min-height: 4.4rem;
+    padding: 0 1.6rem;
+    border-radius: 0.8rem;
+  }
+
+  .direct-input-chip input {
+    font-size: 1.4rem;
+  }
+
+  .direct-input-chip .currency-symbol {
+    font-size: 1.6rem;
+    margin-right: 0.4rem;
+  }
+
+  .direct-input-chip .unit {
+    font-size: 1.4rem;
+    margin-left: 0.4rem;
+  }
+
+  #amountWarningText,
+  .direct-amount-warning {
+    font-size: 1.4rem;
+    margin-top: 1.2rem;
+    width: 100%;
+    clear: both;
+  }
+
+  /* Step 1 헬퍼 옐로우 박스 */
+  .notice-yellow-box {
+    padding: 2rem 2.4rem;
+    gap: 1.4rem;
+    margin-top: 2rem;
+    border-radius: 1.2rem;
+  }
+
+  .notice-yellow-box img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .notice-yellow-box span {
+    font-size: 1.2rem;
+  }
+
+  /* Step 1 다음 버튼 */
+  #step1NextWrap {
+    margin-top: 2.8rem;
+  }
+
+  .auth-intro-text + .chip-grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .donate-page .card-body .chip-grid.cols-2 {
+    margin-top: 2.4rem;
+  }
+
+  .sep-line {
+    margin: 2.4rem 0;
+  }
+
+  .auth-intro-text {
+    font-size: 1.2rem;
+  }
+
+  .donate-payment-same {
+    font-size: 1.4rem;
+  }
+
+  .btn-auth-action::before {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  /* Step 2 폼 박스 & 입력 컨트롤 모바일 반응형 */
+  .donate-page .form-group.form {
+    gap: 0.8rem;
+  }
+
+  .donate-page .form-label {
+    width: 100%;
+    min-height: auto;
+    margin-bottom: 0;
+  }
+
+  .donate-page .form-field {
+    width: 100%;
+  }
+
+  .donate-page .inner-form-group .inner-form-box {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .group-email-helper {
+    font-size: 1.2rem;
+  }
+
+  .accordion-card.is-active .card-body h3,
+  .accordion-card.is-active .radio-label {
+    font-size: 1.6rem;
+  }
+  .receipt-helper__secondary {
+    line-height: 1.3;
+  }
+
+  .en-form-card-box {
+    gap: 2.4rem;
+    padding: 2.4rem 1.6rem;
+  }
+
+  /* 기부금 영수증 신청 여부 */
+  .donate-page .receipt-toggle-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .gender-text {
+    font-size: 1.4rem;
+  }
+
+  .agree-terms-container {
+    margin-top: 2.6rem;
+  }
+
+  .withdraw-day-box .receipt-warning-list {
+    padding-left: 0;
+  }
+
+  /* Step 3 결제 정보 입력 폼 모바일 반응형 정밀 튜닝 */
+  .donate-page .payment-info-form-box {
+    padding: 2.4rem 1.6rem;
+    gap: 0;
+    border-radius: 1.2rem;
+    background-color: rgba(208, 201, 255, 0.2);
+  }
+
+  .donate-page .payment-detail-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2.4rem;
+    margin-bottom: 1.6rem;
+    width: 100%;
+    text-align: left !important;
+  }
+
+  .donate-page .payment-detail-header .form-subtitle {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  /* ── 2. 기부 굿즈 페이지 모바일 ── */
+  .goods-kv {
+    width: 31.2rem;
+    height: 24rem;
+    margin: 2rem auto 0;
+  }
+
+  .goods-kv .kv-text-wrap {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fffde9;
+    text-align: center;
+  }
+
+  .goods-section {
+    padding: 6rem 2.4rem 0;
+  }
+
+  .goods-header {
+    margin-bottom: 4rem;
+  }
+
+  .goods-header__title {
+    font-size: 2.4rem;
+  }
+
+  .goods-header__desc {
+    font-size: 1.4rem;
+  }
+  html[lang="en"] .goods-header__desc {
+    font-size: 1.6rem;
+  }
+
+  .goods-header__mail {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.4rem;
+  }
+
+  .goods-grid {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .goods-card__title {
+    font-size: 2rem;
+  }
+
+  .goods-card__item {
+    text-align: left;
+    font-size: 1.8rem;
+  }
+
+  .goods-card {
+    height: auto;
+  }
+
+  .goods-card__header {
+    height: 8rem;
+  }
+
+  .goods-card__body {
+    padding: 2.4rem;
+  }
+
+  /* ── 3. 자원봉사 소개 메인 페이지 모바일 ── */
+
+  /* Common */
+  .vol-intro,
+  .vol-impact,
+  .vol-activities,
+  .vol-process,
+  .vol-news {
+    padding-top: 10rem;
+  }
+
+  .vol-intro__title,
+  .vol-impact__title,
+  .vol-apply__title,
+  .vol-activities__title,
+  .vol-process__title,
+  .vol-news__title {
+    font-size: 2.4rem;
+  }
+
+  .vol-intro__desc,
+  .vol-impact__desc,
+  .vol-activities__desc,
+  .vol-process__desc,
+  .vol-news__desc {
+    font-size: 1.4rem;
+  }
+  html[lang="en"] .vol-intro__desc,
+  html[lang="en"] .vol-impact__desc,
+  html[lang="en"] .vol-activities__desc,
+  html[lang="en"] .vol-process__desc,
+  html[lang="en"] .vol-news__desc {
+    font-size: 1.4rem;
+  }
+
+  html[lang="en"] .vol-intro__desc {
+    font-size: 1.6rem;
+  }
+
+  /* KV */
+  .vol-kv {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    margin-top: 0;
+  }
+
+  .vol-kv__content {
+    order: 1;
+    align-items: flex-start;
+    padding-top: 5rem;
+    min-height: auto;
+  }
+
+  .vol-kv__content.inner-layout {
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+  }
+
+  .vol-kv__image {
+    order: 2;
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 4rem;
+  }
+
+  .vol-kv__image img {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .vol-kv__panel {
+    width: 100%;
+    max-width: 34rem;
+    height: auto;
+    padding: 0 1.2rem;
+    color: var(--text-black);
+    background-image: none;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  html[lang="en"] .vol-kv__panel {
+    height: auto;
+    background-image: none;
+  }
+
+  .vol-kv__panel h1 {
+    font-size: 2.8rem;
+    color: var(--text-black);
+  }
+
+  .vol-kv__panel p {
+    margin-top: 1.2rem;
+    font-size: 1.6rem;
+    color: var(--text-black);
+  }
+
+  .vol-kv__panel .btn {
+    margin-top: 2.4rem;
+  }
+
+  /* Intro */
+  .vol-intro__inner {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .vol-intro__text {
+    flex: none;
+    width: 100%;
+    gap: 2.4rem;
+    text-align: center;
+    word-break: keep-all;
+  }
+
+  .vol-intro__title {
+    font-size: 2.4rem;
+  }
+
+  .vol-intro__slide-caption {
+    font-size: 1.8rem;
+    padding-right: 8rem;
+  }
+
+  .vol-intro-swiper .vol-swiper-prev,
+  .vol-intro-swiper .vol-swiper-next {
+    top: -1rem;
+  }
+
+  .vol-intro-swiper .vol-swiper-next {
+  }
+
+  .vol-intro-swiper .vol-swiper-prev {
+    right: 4.4rem;
+  }
+
+  /* Impact */
+  .vol-impact__inner {
+    gap: 4rem;
+  }
+
+  .vol-impact__header {
+    gap: 1.6rem;
+  }
+
+  .vol-impact__cards {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+    width: 100%;
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+
+  .vol-impact__card {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 0 2.4rem;
+    text-align: left;
+  }
+
+  .vol-impact__icon {
+    width: 6rem;
+    height: 6rem;
+    flex-shrink: 0;
+  }
+
+  .vol-impact__label {
+    margin-top: 0;
+    font-size: 1.6rem;
+    text-align: left;
+  }
+
+  /* Apply */
+  .vol-apply {
+    height: auto;
+    margin-top: 10rem;
+    padding: 5rem 0 45rem;
+    background: #ffbc0d
+      url("/src/images/donate/img_volunteer_section_3_bg_mo.png") no-repeat
+      bottom center / 100% auto;
+  }
+
+  .vol-apply__inner {
+    align-items: center;
+    gap: 2.4rem;
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 0.8rem;
+    background-image: none;
+  }
+
+  .vol-apply__title {
+    margin-top: 0;
+    font-size: 2.8rem;
+    color: var(--text-black);
+    text-align: center;
+  }
+  html[lang="en"] .vol-apply__title {
+    font-size: 2.4rem;
+  }
+
+  .vol-apply__box-wrap {
+    flex-direction: column;
+    height: auto;
+    padding: 3.2rem 2.4rem;
+    gap: 2.4rem;
+    background-color: #ffffff;
+    border-radius: 1.6rem;
+  }
+
+  .vol-apply__box {
+    gap: 1.6rem;
+    width: 100%;
+    padding: 0;
+  }
+
+  .vol-apply__box:first-child {
+    width: 100%;
+    border-right: none;
+    border-bottom: none;
+    padding-bottom: 2.4rem;
+    position: relative;
+  }
+  html[lang="en"] .vol-apply__box:first-child,
+  html[lang="en"] .vol-apply__box {
+    width: 100%;
+  }
+
+  .vol-apply__box:first-child::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px dashed #000000;
+  }
+
+  .vol-apply__box-title {
+    font-size: 2rem;
+  }
+  html[lang="en"] .vol-apply__box-title {
+    font-size: 1.8rem;
+  }
+
+  .vol-apply__list {
+    gap: 0.8rem;
+  }
+
+  .vol-apply__list li {
+    font-size: 1.6rem;
+  }
+
+  .vol-apply__list li span {
+    margin-left: 0;
+    display: block;
+  }
+
+  .vol-apply__cta {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Activities */
+  .vol-activities__inner {
+    gap: 4rem;
+  }
+
+  .vol-activities__cards {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .vol-act-card__body {
+    padding: 2rem 1.6rem;
+    height: auto !important;
+  }
+
+  .vol-act-card__title {
+    min-height: auto;
+    font-size: 2rem;
+  }
+  html[lang="en"] .vol-act-card__title {
+    min-height: auto;
+  }
+
+  .vol-act-card__desc {
+    gap: 0.4rem;
+    font-size: 1.6rem;
+  }
+
+  .vol-act-card__desc li {
+    padding-left: 1rem;
+  }
+
+  /* Process */
+  .vol-process {
+    margin-top: 10rem;
+    padding: 6rem 0 6rem;
+    background-color: #ffbc0d;
+  }
+
+  .vol-process__inner {
+    justify-content: flex-start;
+    aspect-ratio: auto;
+    gap: 3.2rem;
+    width: 31.1rem;
+    max-width: calc(100% - 4.8rem);
+    height: auto;
+    min-height: auto;
+    padding: 4rem 1.6rem 4rem;
+    background: url(/src/images/donate/img_section_5_bg_mo.svg) 50% 0 no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+  }
+
+  .vol-process__header {
+    gap: 0;
+  }
+
+  .vol-process__desc {
+    margin: 2.4rem 0 1.6rem;
+  }
+
+  .vol-process__note {
+    font-size: 1.2rem;
+  }
+  html[lang="en"] .vol-process__note {
+    font-size: 1.4rem;
+  }
+
+  .vol-process__steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .vol-process__step {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0;
+    text-align: center;
+  }
+
+  .vol-process__line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .vol-process__line picture,
+  .vol-process__line img {
+    width: 0.8rem;
+    height: 4.8rem;
+    display: block;
+    object-fit: contain;
+  }
+
+  .vol-process__icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .vol-process__num {
+    font-size: 2rem;
+  }
+
+  .vol-process__label {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .vol-process__cta {
+    width: 100%;
+  }
+
+  /* News */
+  .vol-news__inner {
+    gap: 4rem;
+  }
+
+  .vol-news__cards {
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  .vol-news-card__body {
+    gap: 1.2rem;
+    padding: 2.4rem 0 0;
+  }
+
+  .vol-news-card__title {
+    font-size: 1.8rem;
+  }
+  html[lang="en"] .vol-news-card__title {
+    font-size: 2rem;
+  }
+
+  .vol-news-card__date {
+    font-size: 1.4rem;
+  }
+
+  /* ── 4. 자원봉사자 신청 팝업 모바일 ── */
+
+  .vol-popup-header {
+    padding: 0 2rem 2.4rem;
+  }
+
+  .vol-popup-title {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .vol-popup-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .vol-popup-body {
+    gap: 1.6rem;
+  }
+
+  .vol-popup-section {
+    padding: 2rem 1.6rem;
+    border-radius: 1.2rem;
+  }
+
+  .vol-popup-section__title {
+    font-size: 1.8rem;
+  }
+
+  .vol-popup-sep {
+    margin: 2rem 0;
+  }
+
+  .vol-textarea {
+    min-height: 9rem;
+  }
+
+  .vol-popup-panel .vol-popup-sep {
+    margin: 2.4rem -1.6rem;
+  }
+
+  .vol-popup-body .donate-type-tabs {
+    margin-top: 2rem;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+  }
+
+  .vol-popup-body .donate-type-tabs .donate-tab-indicator {
+    top: 0.8rem;
+    left: 0.8rem;
+    width: calc((100% - 1.6rem) / 2);
+  }
+
+  .vol-popup-body .donate-type-tabs .btn-tab {
+    height: 4.8rem;
+    font-size: 1.4rem;
+  }
+
+  .vol-popup-body .form-group.form {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  .vol-popup-body .form-label {
+    width: 100%;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+
+  .vol-popup-body .form-field {
+    width: 100%;
+  }
+
+  .vol-privacy-box {
+    padding: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .vol-privacy-check {
+    align-items: flex-start;
+    margin-top: 1.2rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .vol-popup-submit {
+    margin-top: 2rem;
+  }
+
+  /* 달력 팝오버 레이어 모바일 터치 반응형 */
+  .vol-calendar-layer {
+    width: calc(100vw - 4.8rem);
+    max-width: 34rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .vol-cal-panels {
+    flex-direction: column;
+  }
+
+  .vol-cal-panel {
+    padding: 1.6rem 0.8rem;
+  }
+}

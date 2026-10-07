@@ -1,0 +1,762 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   RMHC Korea 소식 (공지 및 활동 소식) 전용 스타일 (news.css)
+   ========================================================================== */
+
+/* 2. 리스트 헤더 */
+.news-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.news-list-header .list-total {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.news-list-header .list-total span {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.news-list-header .search-field {
+  position: relative;
+  width: 36rem;
+  height: 5.2rem;
+}
+
+.news-list-header .search-input {
+  width: 100%;
+  height: 100%;
+  padding: 0 4.8rem 0 1.6rem;
+  border: 1px solid #bbbbbb;
+  border-radius: var(--radius-sm);
+  font-size: 1.6rem;
+  outline: none;
+  box-sizing: border-box;
+}
+html[lang="en"] .news-list-header .search-input {
+  font-size: 1.6rem;
+}
+
+.news-list-header .search-input::placeholder {
+  color: #555555;
+}
+
+.news-list-header .search-input:focus {
+  border-color: var(--primary);
+}
+
+.news-list-header .search-btn {
+  position: absolute;
+  right: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("../images/common/icon_search.png") no-repeat center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* 3. 공지사항 목록 */
+.notice-list-container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.notice-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6rem;
+}
+
+.notice-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem;
+  border-bottom: 1px solid #000000;
+  text-decoration: none;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.notice-item .notice-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  max-width: 97rem;
+  flex-shrink: 0;
+}
+
+.notice-item .notice-title.has-megaphone::before,
+.notice-item .notice-megaphone {
+  content: "";
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("/src/images/common/icon_megaphone.svg") no-repeat center /
+    contain;
+  vertical-align: -0.3rem;
+  margin-right: 0.8rem;
+  flex-shrink: 0;
+}
+
+.notice-item .notice-title {
+  font-size: 2.2rem;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notice-item .notice-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.notice-item .notice-title span {
+  display: inline-block;
+  margin-right: 0.8rem;
+}
+
+.notice-item .notice-title .notice-new-badge {
+  display: inline-block;
+  vertical-align: middle;
+  width: 4.2rem;
+  height: 2.1rem;
+  flex-shrink: 0;
+}
+
+.notice-item .notice-date {
+  width: 9.4rem;
+  margin: 0 4.8rem 0 2rem;
+
+  color: var(--text-gray90);
+}
+
+.notice-item .notice-arrow {
+  width: 2.2rem;
+  height: 1.6rem;
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.notice-item:hover .notice-arrow {
+  transform: translateX(0.5rem);
+}
+
+/* 4. 활동소식 목록 */
+.activity-list-container {
+  max-width: 147.2rem;
+  margin: 0 auto;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  margin-bottom: 6rem;
+}
+
+.activity-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 53.4rem;
+  color: var(--text-black);
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.activity-card .card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 30rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.activity-card .card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.activity-card:hover .card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.activity-card .card-badge {
+  position: absolute;
+  left: 1.6rem;
+  top: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.2rem;
+  height: 2.1rem;
+  background-color: #db0007;
+  color: #fffdf6;
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 0.2rem;
+}
+
+.activity-card .card-text-wrap {
+  position: relative;
+  flex: 1;
+  padding: 6rem 4rem 0;
+  background-color: #d0c9ff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  box-sizing: border-box;
+  transition: padding 0.3s ease;
+}
+
+.activity-card .card-title {
+  min-height: 5.4rem;
+  font-size: 2.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.activity-card .card-date {
+  font-size: 2rem;
+}
+
+.activity-card .arrow {
+  position: absolute;
+  left: 4rem;
+  bottom: 4rem;
+  width: 2.2rem;
+  height: 1.6rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateX(-1rem);
+}
+
+.activity-card:hover .arrow {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.activity-card:hover .card-text-wrap {
+  padding: 4rem 4rem 0;
+}
+
+/* 5. 상세 페이지 공통 */
+.news-detail-container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.detail-header {
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid var(--border-gray60);
+  margin-bottom: 4rem;
+  box-sizing: border-box;
+}
+
+.detail-header .detail-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.2rem;
+  height: 2.1rem;
+  margin-left: 1rem;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.detail-header .detail-title {
+  display: block;
+  font-size: 3.6rem;
+  line-height: 1.35;
+  margin: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.detail-header .detail-title.has-megaphone::before,
+.detail-header .detail-title .notice-megaphone {
+  content: "";
+  display: inline-block;
+  width: 3.2rem;
+  height: 3.2rem;
+  background: url("/src/images/common/icon_megaphone.svg") no-repeat center /
+    contain;
+  vertical-align: -0.5rem;
+  margin-right: 1.4rem;
+  flex-shrink: 0;
+}
+
+.detail-header .detail-date {
+  margin: 3.2rem 0 0;
+  color: var(--text-gray80);
+  font-size: var(--text-lg);
+}
+
+.detail-contents {
+  margin: 8rem 0 4rem;
+  font-size: 1.8rem;
+}
+
+.detail-contents .detail-contents-title {
+  font-size: 2.8rem;
+}
+
+.detail-contents .detail-contents-desc {
+  margin-top: 2.4rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+}
+
+.detail-contents dt {
+  margin: 2.4rem 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+}
+
+.detail-contents .text-marker {
+  color: var(--primary);
+  font-size: 2rem;
+}
+
+.detail-contents dd {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: var(--text-lg);
+  line-height: 1.6;
+}
+
+.detail-contents dd::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;
+}
+
+.detail-contents dd a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.detail-contents .detail-img-wrap {
+  width: 100%;
+  max-width: 80rem;
+  margin: 4.8rem 0;
+}
+
+.detail-contents .detail-img-wrap img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 첨부파일 */
+.detail-attachments {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  width: 100%;
+  height: 8rem;
+  padding: 0 4rem;
+  border: 1px solid #000000;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8rem;
+  box-sizing: border-box;
+}
+
+.detail-attachments .attachment-label {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* 활동소식 상세 첨부파일 폰트 대응 */
+.activity-detail-page .detail-attachments .attachment-label {
+  font-family: Roboto, var(--font-text);
+}
+
+.detail-attachments .attachment-link {
+  font-size: var(--text-lg);
+
+  color: #121619;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.activity-detail-page .detail-attachments .attachment-link {
+}
+
+.detail-attachments .attachment-link:hover {
+  text-decoration: underline;
+}
+
+/* 상세이동 및 목록 액션바 */
+.detail-navigation-bar {
+  position: relative;
+  height: 5.2rem;
+  margin-top: 8rem;
+  margin-bottom: 12rem;
+  padding-top: 8rem;
+  border-top: 1px solid var(--border-gray60);
+}
+
+.detail-navigation-bar .nav-btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 8rem;
+  /* 이전글과 다음글 간격 */
+  width: 100%;
+  height: 5.2rem;
+}
+
+.detail-navigation-bar .nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--text-black);
+  font-size: var(--text-lg);
+  text-decoration: none;
+}
+
+.detail-navigation-bar .nav-btn.disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.detail-navigation-bar .nav-btn img {
+  width: 2.2rem;
+  height: 1.6rem;
+  display: block;
+}
+
+.detail-navigation-bar .btn-wrap {
+  position: absolute;
+  top: 8rem;
+  left: 50%;
+  width: 100%;
+  max-width: 15rem;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* ==========================================================================
+   반응형 브레이크포인트 (Responsive Design - 768px 이하 모바일)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  /* 1. 영웅 배너 모바일 */
+  .news-kv {
+    height: 30rem;
+    /* 높이 축소 */
+    padding: 0;
+    border-radius: var(--radius-md);
+  }
+
+  .news-kv .kv-text-wrap {
+    gap: 1.6rem;
+  }
+
+  .news-kv .kv-title {
+    font-size: 2.8rem;
+    /* 28px */
+  }
+
+  .news-kv .kv-desc {
+    font-size: 1.4rem;
+    /* 14px */
+  }
+
+  /* 2. 리스트 헤더 모바일 */
+  .news-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .news-list-header .list-total {
+    font-size: 1.4rem;
+  }
+
+  .news-list-header .search-field {
+    width: 100%;
+    height: 4.4rem;
+  }
+
+  .news-list-header .search-input {
+    font-size: 1.2rem;
+  }
+
+  /* 3. 공지사항 목록 모바일 */
+  .notice-list {
+    margin-bottom: 4rem;
+  }
+
+  .notice-item {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.4rem 3.6rem 2.4rem 0;
+    gap: 1.2rem;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .notice-item .notice-left {
+    width: 100%;
+    display: block;
+    text-align: left;
+  }
+
+  .notice-item .notice-title.has-megaphone::before,
+  .notice-item .notice-megaphone {
+    content: "";
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-right: 0.6rem;
+    display: inline-block;
+    vertical-align: -0.3rem;
+    background: url("/src/images/common/icon_megaphone.svg") no-repeat center /
+      contain;
+  }
+
+  .notice-item .notice-title {
+    font-size: 1.8rem;
+    white-space: normal;
+    display: inline;
+    word-break: keep-all;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .notice-item .notice-title span {
+    display: inline;
+    margin-right: 0.6rem;
+  }
+
+  .notice-item .notice-title .notice-new-badge {
+    width: 3.3rem;
+    height: 1.6rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .notice-item .notice-date {
+    font-size: 1.2rem;
+    margin: 0;
+    width: auto;
+  }
+
+  /* 우측 화살표 아이콘: 모바일 위치 조정 (좌측 첫 줄 텍스트 중앙과 일치) */
+  .notice-item .notice-arrow {
+    position: absolute;
+    right: 0;
+    top: calc(2.4rem + (1.8rem * 1.4 / 2));
+    transform: translateY(-50%);
+    width: 1.4rem;
+    height: 1rem;
+    margin: 0;
+  }
+
+  .notice-item:hover .notice-arrow {
+    transform: translate(0.5rem, -50%);
+  }
+
+  /* 4. 활동소식 목록 모바일 */
+  .activity-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    margin-bottom: 4rem;
+  }
+
+  .activity-card {
+    width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+  }
+
+  .activity-card:hover .card-img-wrap img {
+    transform: none;
+  }
+
+  .activity-card .card-img-wrap {
+    height: 24rem;
+  }
+
+  .activity-card .card-text-wrap {
+    padding: 2.4rem;
+    gap: 1.6rem;
+    text-align: left;
+  }
+
+  .activity-card:hover .card-text-wrap {
+    padding: 2.4rem;
+  }
+
+  .activity-card .card-title {
+    font-size: 1.8rem;
+    min-height: auto;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .activity-card .card-date {
+    font-size: 1.4rem;
+    /* 14px */
+
+    text-align: left;
+    margin: 0;
+  }
+
+  .activity-card .arrow,
+  .activity-card:hover .arrow {
+    display: none !important;
+  }
+
+  /* 5. 상세 페이지 모바일 */
+  .news-detail-container {
+    padding: 0 2.4rem;
+    box-sizing: border-box;
+  }
+
+  .detail-header {
+    margin-top: 5rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .detail-header .detail-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .detail-header .detail-badge {
+    width: 3.3rem;
+    height: 1.6rem;
+    font-size: 1.2rem;
+  }
+
+  .detail-header .detail-title {
+    display: block;
+    font-size: 2.2rem;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  .detail-header .detail-title.has-megaphone::before,
+  .detail-header .detail-title .notice-megaphone {
+    display: inline-block;
+    width: 2.2rem;
+    height: 2.2rem;
+    vertical-align: -0.35rem;
+    margin-right: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .detail-header .detail-date {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  .detail-contents {
+    margin-top: 5rem;
+    text-align: left;
+    font-size: 1.4rem;
+  }
+
+  .detail-contents .detail-text {
+    font-size: 1.4rem;
+  }
+
+  .detail-contents .detail-img-wrap {
+    margin-top: 2.4rem;
+  }
+
+  .detail-attachments {
+    height: 5.6rem;
+    padding: 0 2.4rem;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .detail-attachments .attachment-label {
+    font-size: 1.4rem;
+  }
+
+  .detail-attachments .attachment-link {
+    font-size: 1.4rem;
+  }
+
+  .detail-navigation-bar {
+    position: relative;
+    flex-direction: column-reverse;
+    gap: 2.4rem;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding-top: 5rem;
+  }
+
+  .detail-navigation-bar .btn-wrap {
+    top: 5rem;
+    max-width: 8rem;
+  }
+
+  .detail-navigation-bar .nav-btn-group {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .detail-navigation-bar .nav-btn {
+    font-size: 1.4rem;
+  }
+
+  .detail-contents .detail-text-title {
+    font-size: 1.6rem;
+  }
+  .detail-contents .detail-contents-desc {
+    font-size: 1.8rem;
+  }
+  .detail-contents .detail-contents-title {
+    font-size: 2rem;
+  }
+
+  .detail-contents dd {
+    padding-left: 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+}
